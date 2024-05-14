@@ -47,6 +47,8 @@ if whichCoinSet == 'A':
         NV_2 = [0.2, -1.3, 0.0]
 
         collectionOrder_List = [HV_2, NV_1, LV_2, NV_2, LV_1, HV_1]
+        collectionOrder_List_str = ['HV_2', 'NV_1', 'LV_2', 'NV_2', 'LV_1', 'HV_1']
+        actual_startPos = tuple(pos2[0])
 
 elif whichCoinSet == 'B':
         ############# Set B Coins ###############
@@ -65,6 +67,8 @@ elif whichCoinSet == 'B':
         NV_1 = [-2.7, 1.3, 0.0]
         NV_2 = [3.0, -1.5, 0.0]
         collectionOrder_List = [HV_2, NV_1, LV_2, NV_2, LV_1, HV_1]
+        collectionOrder_List_str = ['HV_2', 'NV_1', 'LV_2', 'NV_2', 'LV_1', 'HV_1']
+        actual_startPos = tuple(pos6[0])
 
 elif whichCoinSet == 'C':
         ############# Set C Coins ###############
@@ -82,7 +86,8 @@ elif whichCoinSet == 'C':
         NV_1 = [1.75, 2.8, 0.0]
         NV_2 = [0.5, -0.5, 0.0]
         collectionOrder_List = [HV_2, NV_1, LV_2, NV_2, LV_1, HV_1]
-
+        collectionOrder_List_str = ['HV_2', 'NV_1', 'LV_2', 'NV_2', 'LV_1', 'HV_1']
+        actual_startPos = tuple(pos7[0])
 elif whichCoinSet == 'D':
         ############# Set D Coins ###############
         # [x, z, orig value]
@@ -99,6 +104,8 @@ elif whichCoinSet == 'D':
         NV_1 = [0.75, 1.0, 0.0]
         NV_2 = [2.3, -2.5, 0.0]
         collectionOrder_List = [HV_2, NV_1, LV_2, NV_2, LV_1, HV_1]
+        collectionOrder_List_str = ['HV_2', 'NV_1', 'LV_2', 'NV_2', 'LV_1', 'HV_1']
+        actual_startPos = tuple(pos7[0])
 # elif whichCoinSet == 'Blank':
 #         ############# Blank Coin Set ###############
 #         # [x, z, orig value]
@@ -115,3 +122,6 @@ elif whichCoinSet == 'D':
 #         NV_1 = [, 0.0]
 #         NV_2 = [, 0.0]
 #         collectionOrder_List = []
+#         collectionOrder_List_str = []
+#         actual_startPos = tuple(posX[0])
+

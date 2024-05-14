@@ -11,6 +11,7 @@ import random
 import pandas as pd
 import math
 import os
+from helper_functions.path_check import path_check
 ################### inputs #################
 
 #### Positions ######
@@ -25,10 +26,10 @@ pos6 = [[-3.5, -3.5],	[-4.25, -1.75]]
 pos7 = [[-5.0, 0.0],	[-4.25, 1.75]]
 pos8 = [[-3.5, 3.5],	[-1.75, 4.25]]
 
-tutorial_pos = [[-2, -5], [0, -5]]
+tutorial_pos = [[5, 1], [5, -1]]
 
 #first position set
-firstpos = 1
+firstpos = 2 # Set A: 2, Set B: 6, Set C: 7, Set D: 7
 
 #criterion is the number of consecutive perfect rounds to hit in TP1 to reach TP2
 criterion = 3
@@ -40,8 +41,8 @@ ratio = 3
 EV_trials = 4
 
 # outpath 
-outpath = 'Desktop/task_test/'
-
+outpath = '/Users/mairahmac/Desktop/task_test/'
+path_check(outpath)
 ###################################################################################################################
 ###################################################################################################################
 

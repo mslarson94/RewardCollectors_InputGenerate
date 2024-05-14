@@ -6,12 +6,14 @@ Created on March, 14 2024
 generate CoinLocations.csv files from given x,y,z coordinates
 '''
 #from .coinLoc_generator_test_cfg.py import *
-from coinLoc_generator_test_cfg import *
+from dataConfigs import *
+from helper_functions.path_check import path_check
 import csv
 import pandas as pd 
 import numpy as np
 
-outFile = outFile_pre + '_' + whichCoinSet + '.csv'
+path_check(outPath)
+outFile = outPath + outFile_pre + '_' + whichCoinSet + '.csv'
 outFile_type = outFile_pre + '_Annotated_' + whichCoinSet + '.csv'
 ## All Coins Dataframe
 x_vals = [HV_1[0], HV_2[0], LV_1[0], LV_2[0], NV_1[0], NV_2[0]]

@@ -32,9 +32,6 @@ def getTheoVector(p, WhichTheo, droppedY=False):
 	else:
 		#print('stuff worked')
 		if WhichTheo == 'startPos':
-			position_list = [pos1, pos2, pos3, pos4, pos5, pos6, pos7, pos8, tutorial_pos]
-			AN_positions = list(list(zip(*position_list))[0])
-			PO_positions = list(list(zip(*position_list))[1])
 			positionPossibilities = AN_positions + PO_positions
 			whoStartList = ['AN']*9 + ['PO']*9
 		else:

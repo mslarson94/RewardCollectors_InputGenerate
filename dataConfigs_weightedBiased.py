@@ -40,8 +40,8 @@ if whichCoinSet == 'A':
         # [x, z, orig value]
 
         #High Value
-        HV_1 = [-2.5,1.9, 10.0]
-        HV_2=  [1.8,-3.1, 10.0]
+        HV_1 = (-2.5,1.9)
+        HV_2=  (1.8,-3.1)
 
         #Low Value
         LV_1 = [2.8,1.2, 2.0]
@@ -53,15 +53,16 @@ if whichCoinSet == 'A':
 
         collectionOrder_List = [LV_1, HV_1, NV_2, LV_2, HV_2, NV_1]
         collectionOrder_List_str = ['LV_1', 'HV_1', 'NV_2', 'LV_2', 'HV_2', 'NV_1']
-        actual_startPos = tuple(pos2[0])
+        actual_startPos = [HV_2, HV_1,    HV_1,    HV_1,    HV_1,    HV_1,    HV_2,   HV_2]
+        actual_startPos_str = [HV_2, HV_1,    HV_1,    HV_1,    HV_1,    HV_1,    HV_2,   HV_2]
 
 elif whichCoinSet == 'B':
         ############# Set B Coins ###############
         # [x, z, orig value]
 
         #High Value
-        HV_1 = [2.0, 2.0, 10.0]
-        HV_2=  [-1.5, -2.7, 10.0]
+        HV_1 = (2.0, 2.0)
+        HV_2=  (-1.5, -2.7)
 
         #Low Value
         LV_1 = [-0.4, 3.1, 2.0]
@@ -73,7 +74,8 @@ elif whichCoinSet == 'B':
         NV_2 = [-0.5, -0.5, 0.0]
         collectionOrder_List = [LV_1, NV_2, HV_1, NV_1, HV_2, LV_2]
         collectionOrder_List_str = ['LV_1', 'NV_2', 'HV_1', 'NV_1', 'HV_2', 'LV_2']
-        actual_startPos = tuple(pos6[0])
+        actual_startPos = [HV_2, HV_2,    HV_2,    HV_1,    HV_1,    HV_1,    HV_1,    HV_2]
+        actual_startPos_str = ['HV_2', 'HV_2',    'HV_2',    'HV_1',    'HV_1',    'HV_1',    'HV_1',    'HV_2']
 
 elif whichCoinSet == 'C':
         ############# Set C Coins ###############

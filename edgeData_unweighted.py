@@ -45,13 +45,7 @@ def getPoints():
         print('afterremoving stuff ')
         print(sublist)
         sublist.insert(1, coordinate)
-        weight = ""
-        if sublist[0].startswith('N'):
-            weight = 20.0
-        elif sublist[0].startswith('L'):
-            weight = 12.0
-        elif sublist[0].startswith('H'):
-            weight = 0.0
+        weight = 0.0
         sublist.insert(3, weight)
         print(sublist)
         key, coordinates, reward, weight = sublist
@@ -198,7 +192,7 @@ for specGraph in graph_startList:
 df = pd.DataFrame(allNodeVisitOrders)
 
 df.insert(0, "CoinSet", [dataConfigs.whichCoinSet]*8)
-df.insert(0, 'TheoPathType', ["PureWeightedDijkstra"]*8)
+df.insert(0, 'TheoPathType', ["PureUnweightedDijkstra"]*8)
 df.rename(columns={0: "startPosition"}, inplace=True)
 df.to_csv("WeightedDijkstra.csv", index=False)
 

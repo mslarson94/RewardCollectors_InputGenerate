@@ -1,0 +1,4 @@
+        elif sublist[0].startswith('L'):
+            weight = 10.0
+
+Switch all low value coins to 4.0

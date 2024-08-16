@@ -1,9 +1,0 @@
-TheoPathType,CoinSet,startPosition,1,2,3,4,5,6
-PureWeightedDijkstra,D,pos1,HV_1,HV_2,LV_1,LV_2,NV_1,NV_2
-PureWeightedDijkstra,D,pos2,HV_1,HV_2,LV_2,LV_1,NV_1,NV_2
-PureWeightedDijkstra,D,pos3,HV_1,HV_2,LV_2,LV_1,NV_2,NV_1
-PureWeightedDijkstra,D,pos4,HV_1,HV_2,LV_2,NV_2,LV_1,NV_1
-PureWeightedDijkstra,D,pos5,HV_2,HV_1,LV_2,NV_2,LV_1,NV_1
-PureWeightedDijkstra,D,pos6,HV_2,HV_1,LV_2,LV_1,NV_2,NV_1
-PureWeightedDijkstra,D,pos7,HV_2,HV_1,LV_1,LV_2,NV_1,NV_2
-PureWeightedDijkstra,D,pos8,HV_2,HV_1,LV_1,LV_2,NV_1,NV_2

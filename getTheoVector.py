@@ -53,5 +53,5 @@ def getTheoVector(p, WhichTheo, droppedY=False):
 		return actualPosition, coinValue, whoStart
 
 
-# myCoordinate = [0, 0, 1]
-# getTheoVector(myCoordinate, 'startPos')
+myCoordinate = [0, 0, 1]
+getTheoVector(myCoordinate, 'startPos')

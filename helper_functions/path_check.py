@@ -1,17 +1,11 @@
 # Import Calls
-from __future__ import division
-import os
+from pathlib import Path
 
 
-def path_check(Path):
+def path_check(myPath):
     ''' Simple function to check whether a path
     exists or not. If not, will create that
     directory
     Path: path string.
     '''
-    if not os.path.exists(Path):
-        os.mkdir(Path)
-        print("Directory " , Path ,  " Created ")
-    else:    
-        print("Directory " , Path ,  " already exists")
-        
+    Path(myPath).mkdir(parents=True, exist_ok=True)

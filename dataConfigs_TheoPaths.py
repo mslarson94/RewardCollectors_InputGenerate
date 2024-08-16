@@ -7,29 +7,12 @@ generate CoinLocations.csv files from given x,y,z coordinates
 '''
 from helper_functions.path_check import path_check
 ########### Files & Coin Set ###### 
-whichDevice_AN = 'A' # Possible Values (str): A, E
-whichDevice_PO = 'D' # Possible Values (str): D
-
-whichCoinSet = 'E' # Possible Values (str): A, B, C, D
-outPath = '/Users/mairahmac/Desktop/RC_Data_Analysis/task_test'
-outFile_pre = 'CoinLocations'
+whichCoinSet = 'E' # Possible Values (str): A, B, C, D, E, Dummy
+myPath = '/Users/mairahmac/Desktop/task_test'
+whichWeight = 'WeightedUnweighted' # PureUnweighted, PureWeighted, InitialPath, WeightedUnweighted, WeightedInitialPath
+outPath = myPath + '/Djikstra/' + whichWeight + '/CoinSet_' + whichCoinSet
 path_check(outPath)
-troubleshootingFolder = outPath + '/troubleshootingFiles'
-path_check(troubleshootingFolder)
 
-
-#criterion is the number of consecutive perfect rounds to hit in TP1 to reach TP2
-criterion = 3
-
-# ratio of total number of normal trials to EV trials. e.g. ratio = 3 is 3:1 normal:EV 
-ratio = 2
-
-# total number of trials for a EV sub-swap type e.g. swap type = HV-NV, sub-swap types are : HV1-NV1, HV2-NV2, HV1-NV2, HV2-NV1
-EV_trials = 4
-
-
-# Which Djikstra Calculation? 
-whichWeight = 'PureUnweighted' # PureUnweighted, PureWeighted, InitialPath, WeightedUnweighted, WeightedInitialPath
 ############# Start Positions ###########
 # pos_ = [AN, PO]
 pos1 = [[0.0, 5.0],     [1.75, 4.25]] 

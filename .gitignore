@@ -1,2 +1,14 @@
 .DS_Store
 __pycache__/*
+*.fbx
+*.mp4
+*.stl
+FileDescriptions.xlsx
+MyraMovements.csv
+MyraMovements_yFixed.csv
+MyraMovements_yFixed.xlsx
+djikstraOutput/
+dummy.txt
+helper_functions/__pycache__/path_check.cpython-310.pyc
+labspace.unitypackage
+notes/

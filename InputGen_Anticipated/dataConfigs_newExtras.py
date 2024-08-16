@@ -7,11 +7,8 @@ generate CoinLocations.csv files from given x,y,z coordinates
 '''
 from helper_functions.path_check import path_check
 ########### Files & Coin Set ###### 
-whichDevice_AN = 'A' # Possible Values (str): A, E
-whichDevice_PO = 'D' # Possible Values (str): D
-
-whichCoinSet = 'E' # Possible Values (str): A, B, C, D
-outPath = '/Users/mairahmac/Desktop/RC_Data_Analysis/task_test'
+whichCoinSet = 'B' # Possible Values (str): A, B, C, D, E, Dummy
+outPath = '/Users/mairahmac/Desktop/task_test_newExtras'
 outFile_pre = 'CoinLocations'
 path_check(outPath)
 troubleshootingFolder = outPath + '/troubleshootingFiles'
@@ -26,10 +23,6 @@ ratio = 2
 
 # total number of trials for a EV sub-swap type e.g. swap type = HV-NV, sub-swap types are : HV1-NV1, HV2-NV2, HV1-NV2, HV2-NV1
 EV_trials = 4
-
-
-# Which Djikstra Calculation? 
-whichWeight = 'PureUnweighted' # PureUnweighted, PureWeighted, InitialPath, WeightedUnweighted, WeightedInitialPath
 ############# Start Positions ###########
 # pos_ = [AN, PO]
 pos1 = [[0.0, 5.0],     [1.75, 4.25]] 
@@ -54,6 +47,9 @@ tutorial_1 = [-2.0, -6.0, 0.0]
 tutorial_2 = [-1.0, -6.0, 5.0]
 tutorial_3 = [0.0, -6.0, 10.0]
 
+tutorial_NV_swap = [-2.0, -6.0, 10.0]
+tutorial_HV_swap = [0.0, -6.0, 0.0]
+
 if whichCoinSet == 'A':
         ############# Set A Coins ###############
         # [x, z, orig value]
@@ -69,6 +65,14 @@ if whichCoinSet == 'A':
         #Null Value
         NV_1 = [0.75, 3.0, 0.0]
         NV_2 = [0.2, -1.3, 0.0]
+
+        #Swaps
+        HV_1_swap = [-2.5,1.9, 0.0]
+        HV_2_swap=  [1.8,-3.1, 0.0]
+
+        #Null Value
+        NV_1_swap = [0.75, 3.0, 10.0]
+        NV_2_swap = [0.2, -1.3, 10.0]
 
         collectionOrder_List = [LV_1, HV_1, NV_2, LV_2, HV_2, NV_1]
         collectionOrder_List_str = ['LV_1', 'HV_1', 'NV_2', 'LV_2', 'HV_2', 'NV_1']
@@ -91,6 +95,14 @@ elif whichCoinSet == 'B':
         #Null Value
         NV_1 = [-2.7, 1.3, 0.0]
         NV_2 = [-0.5, -0.5, 0.0]
+
+        #Swaps
+
+        HV_1_swap = [2.0, 2.0, 0.0]
+        HV_2_swap=  [-1.5, -2.7, 0.0]
+
+        NV_1_swap = [-2.7, 1.3, 10.0]
+        NV_2_swap = [-0.5, -0.5, 10.0]
         collectionOrder_List = [LV_1, NV_2, HV_1, NV_1, HV_2, LV_2]
         collectionOrder_List_str = ['LV_1', 'NV_2', 'HV_1', 'NV_1', 'HV_2', 'LV_2']
         actual_startPos = tuple(pos6[0])
@@ -111,6 +123,13 @@ elif whichCoinSet == 'C':
         #Null Value
         NV_1 = [1.75, 2.8, 0.0]
         NV_2 = [0.5, -0.5, 0.0]
+
+        #Swaps
+        HV_1_swap = [-2.8, -1.2, 0.0] 
+        HV_2_swap = [3.0, 0.5, 0.0]
+        NV_1_swap = [1.75, 2.8, 10.0]
+        NV_2_swap = [0.5, -0.5, 10.0]
+
         collectionOrder_List = [LV_1, NV_2, HV_1, NV_1, HV_2, LV_2]
         collectionOrder_List_str = ['LV_1', 'NV_2', 'HV_1', 'NV_1', 'HV_2', 'LV_2']
         actual_startPos = tuple(pos7[0])
@@ -131,6 +150,14 @@ elif whichCoinSet == 'D':
         #Null Value
         NV_1 = [0.75, 1.0, 0.0]
         NV_2 = [2.3, -2.5, 0.0]
+
+        #Swaps
+        HV_1_swap = [2.9, 1.5, 0.0]
+        HV_2_swap=  [-2.7, -2.0, 0.0]
+
+        NV_1_swap = [0.75, 1.0, 10.0]
+        NV_2_swap = [2.3, -2.5, 10.0]
+
         collectionOrder_List = [LV_1, NV_1, HV_1, NV_2, HV_2, LV_2]
         collectionOrder_List_str = ['LV_1', 'NV_1', 'HV_1', 'NV_2', 'HV_2', 'LV_2']
         actual_startPos = tuple(pos7[0])
@@ -145,12 +172,20 @@ elif whichCoinSet == 'E':
         HV_2=  [0.2, -3.3, 10.0]
 
         #Low Value
-        LV_1 = [2.9, 1.5, 5.0]
-        LV_2 = [-3.4, -0.5, 5.0]
+        LV_1 = [2.9, 1.5, 2.0]
+        LV_2 = [-3.4, -0.5, 2.0]
 
         #Null Value
         NV_1 = [0.8, 3.1, 0.0]
         NV_2 = [3.2, -1.6, 0.0]
+
+        #Swaps
+        HV_1_swap = [-2, 2.5, 0.0]
+        HV_2_swap=  [0.2, -3.3, 0.0]
+
+        NV_1_swap = [0.8, 3.1, 10.0]
+        NV_2_swap = [3.2, -1.6, 10.0]
+
         collectionOrder_List = [HV_1, LV_2, NV_2, LV_1, HV_2, NV_1]
         collectionOrder_List_str = ['HV_1', 'LV_2', 'NV_2', 'LV_1', 'HV_2', 'NV_1']
         actual_startPos = tuple(pos6[0])
@@ -165,12 +200,21 @@ elif whichCoinSet == 'Dummy':
         HV_2=  [1.0, -1.0, 10.0]
 
         #Low Value
-        LV_1 = [0.0, 1.0, 5.0]
-        LV_2 = [0.0, -1.0, 5.0]
+        LV_1 = [0.0, 1.0, 2.0]
+        LV_2 = [0.0, -1.0, 2.0]
 
         #Null Value
         NV_1 = [-1.0, 1.0, 0.0]
         NV_2 = [-1.0, -1.0, 0.0]
+
+        #Swaps
+        HV_1_swap = [1.0, 1.0, 10.0]
+        HV_2_swap=  [1.0, -1.0, 10.0]
+
+        NV_1_swap = [-1.0, 1.0, 0.0]
+        NV_2_swap = [-1.0, -1.0, 0.0]
+
+
         collectionOrder_List = [NV_1, NV_2, LV_1, LV_2, HV_1, HV_2]
         collectionOrder_List_str = ['NV_1', 'NV_2', 'LV_1', 'LV_2', 'HV_1', 'HV_2']
         actual_startPos = tuple(pos1[0])
@@ -185,13 +229,20 @@ elif whichCoinSet == 'Dummy':
 #         HV_2=  [, 10.0]
 
 #         #Low Value
-#         LV_1 = [, 5.0]
-#         LV_2 = [, 5.0]
+#         LV_1 = [, 2.0]
+#         LV_2 = [, 2.0]
 
 #         #Null Value
 #         NV_1 = [, 0.0]
 #         NV_2 = [, 0.0]
+
+#         #Swaps
+#         HV_1_swap = [, 0.0]
+#         HV_2_swap=  [, 0.0]
+
+#         NV_1_swap = [, 10.0]
+#         NV_2_swap = [, 10.0]
+
 #         collectionOrder_List = []
 #         collectionOrder_List_str = []
 #         actual_startPos = tuple(posX[0])
-

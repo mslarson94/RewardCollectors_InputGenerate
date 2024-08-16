@@ -17,7 +17,7 @@ from dataConfigs import *
 ######################################################################################
 ################################## Basic Stuff #######################################
 
-fileEnding = '_ratio' + str(ratio) + 'to1.csv'
+fileEnding = '_dummy.csv'
 setListOrder = ['normal', 'collectionOrder',
 						  'HV1_NV1', 'HV1_NV2', 'HV2_NV1', 'HV2_NV2', 'tutorial']
 
@@ -39,9 +39,9 @@ pos_dict = {
 	"PO_vals": PO_positions,
 	"strPositions": single_list
 	}
-# print('8'*20)
+
 positions = pd.DataFrame.from_dict(pos_dict)
-# print(positions.strPositions)
+
 ######################################################################################
 ################## Generating the long multi line for the TP1 phase ##################
 
@@ -52,8 +52,7 @@ tutorial_AN_pos = str(tutorial_pos[0][0]) + ' 0.0 ' + str(tutorial_pos[0][1])
 tutorial_PO_pos = str(tutorial_pos[1][0]) + ' 0.0 ' + str(tutorial_pos[1][1])
 tutorial_AN_tp1_pos = str(tutorial_pos[0][0]) + '|0.0|' + str(tutorial_pos[0][1])
 tutorial_PO_tp1_pos = str(tutorial_pos[1][0]) + '|0.0|' + str(tutorial_pos[1][1])
-# print('tutorial AN position', tutorial_AN_pos, '\n')
-# print('tutorial PO position', tutorial_PO_pos)
+
 tutorial_ie_block = '6,'+ tutorial_AN_pos + ',' + tutorial_PO_pos + ',AcollectBwatch'
 tutorial_tp1_blocka = '6,' + tutorial_AN_pos + ',' + tutorial_PO_pos + ',ApindropBwatch,'+ str(criterion) + ','
 tutorial_tp1_block = tutorial_tp1_blocka + tutorial_AN_tp1_pos + ',' + tutorial_PO_tp1_pos
@@ -114,11 +113,11 @@ tp1_block = tp1_block_a + multi_AN_str + ',' + multi_PO_str
 
 subType_EV_trials = setListOrder[2:-1]
 print(subType_EV_trials)
-total_EV_trials = 4 * EV_trials
+total_EV_trials = EV_trials
 
 #print('length of positions list', len(subType_EV_trials))
-normal_trials = ratio * total_EV_trials
-total_trials = (ratio + 1) * total_EV_trials
+normal_trials = total_EV_trials
+total_trials = 2 * total_EV_trials
 
 positions_div = math.ceil(total_trials/8)
 print(total_trials, 8*positions_div)
@@ -129,15 +128,9 @@ new_EV_list = []
 #set_list = []
 #trialType_list = []
 set_list = [1]*normal_trials
-trialType_list = ['normal']*normal_trials
+trialType_list = ['normal', 'HV1_NV1', 'normal', 'HV2_NV1', 'normal', 'HV1_NV2', 'normal', 'HV2_NV2']
+set_list = [1, 2, 1, 3, 1, 4, 1, 5]
 
-step = 1
-for ev in subType_EV_trials:
-	step += 1
-	num_EV = [ev]*EV_trials
-	new_step = [step]*EV_trials
-	set_list.extend(new_step)
-	trialType_list.extend(num_EV)
 
 print(len(trialType_list), len(set_list))
 print(set_list)
@@ -152,7 +145,7 @@ large_positions = pd.concat([positions]*positions_div, ignore_index=True)
 
 large_positions = large_positions.sample(frac=1).reset_index(drop=True)
 #print(positions)
-big_df = big_df.sample(frac=1).reset_index(drop=True)
+#big_df = big_df.sample(frac=1).reset_index(drop=True)
 print('length of big_df')
 print(len(big_df))
 print(len(large_positions))

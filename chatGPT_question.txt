@@ -1,0 +1,41 @@
+hi! I have this data, and I'd like to make a 2x6 grid of plots, where the top and bottom of the grid correspond to the judgement (good, bad) of each of the 6 coins. Each coin is a key/value pair in dict coinDict, where key = coinName and value = coinLocation. In each plot within the grid, I'd like to plot the coin's coinLoc within a circle with a diameter of 1.1, with the subplot's title being the coin's coinName. I'd also like to plot headPositions and handPositions as vectors for each block number where the value of headPos_anc is the tail and handPos_ancs is the head of the vector, and the color of each vector corresponds to its BlockNum.
+
+blockNum = values in column 'BlockNum' are NaNs and integers. 
+blockType = Values in column 'BlockType' are categorical variables that can only be ['noRunningBlock', 'collecting', and 'pindropping']. 
+I want to exclude all 'noRunningBlock' & 'collecting' blocks for these analyses. 
+timeStamp = Values in column 'AppTime' (not included in plot)
+appTime = Values in column 'AppTime' (not included in plot)
+coinDict is a dict of coins where key = coinName and value = coinLocation
+
+headPos_anc are 3D positions in column 'HeadPosAnchored' in the pattern: 
+xyz, where each value is separated by ' '
+Example: '-2.355 1.421 0.538'; where x = -2.355, y = 1.421, and z = 0.538.
+I'd like to drop the y value and only use (x, z) for headPos_anc coordinates 
+
+
+coinLoc, actualDist, judgement, coinValue are recorded in the 'Messages' column in the pattern:
+coinLoc, actualDist, judgement, coinValue; where each variable is separated by ' | '
+
+coinLoc always begin with 'Closest location was: ' followed by a string of 3 floats separated by a ' ' character. I'd like to drop the y value and only use (x, z)
+coinLoc will equal one of the values of the 6 coins in coinDict. 
+I'd like to create a new string variable coinLabel from the corresponding key to coinLoc's value in coinDict. 
+
+actualDist (not included in the plot) always begin with 'actual distance: ' followed by the actual distance 
+judgement can be either 'good drop' or 'bad drop'
+coinValue (not included in the plot) always begins with 'coinValue: ' followed by a float. 
+Example: 'Closest location was: -1.000 0.000 -6.000 | actual distance: 0.347 | good drop | coinValue: 5.00'
+
+collectedCoinValue (not included in the plot), and totalReward (not included in the plot) are also found in the Message column within the pattern: 
+collected coin value total reward
+collected coin value always starts with 'Collected feedback coin:' and is separated from the next variable by a ' ' character.
+Example: 'Collected feedback coin:5.00 total reward: 0.00'
+
+handPos_anc are also found in the 'Messages' column within the pattern: 
+handPos_raw handPos_anc  
+handPos_anc always begins with ' localpos: ' followed by the xyz positions, where x, y, and z are separated by ' '
+Example: 'Dropped a new pin at -10.054 -1.549 -3.929 localpos: -1.781 0.000 1.624'
+I'd like to drop the y value and only use (x, z) for handPos_anc coordinates 
+
+
+I'd like to save data in a new dataframe named 'waypoint_df' that consists of values for timeStamp, appTime, blockNum, blockType, headPos_anc, headRot_anc, handPos_anc, coinLabel, coinLoc, coinValue, judgement, actualDist, collectedCoinValue, leftEyeOpen, rightEyeOpen, eyeTarget, eyeDir_anc, fixationPoint_anc, ampDeg, dirRadial, eyeLeft, eyeRight, velocityDegps
+

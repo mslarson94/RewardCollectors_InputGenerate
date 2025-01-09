@@ -1,0 +1,111 @@
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import re
+
+# Sample coinDict for testing
+coinDict = {
+    'HV_1': (-2.5, 1.9),
+    'HV_2': (1.8, -3.1),
+    'LV_1': (2.8, 1.2),
+    'LV_2': (-2.1, -2.2),
+    'NV_1': (0.75, 3.0),
+    'NV_2': (0.2, -1.3)
+}
+
+# Load the data
+fileDir = '/Users/mairahmac/Desktop/RewardCollectorsCentral/TestingNotes_Misc/08312024/magicLeap'
+inFileName = 'ObsReward_A_08_31_2024'
+outFileName = inFileName + '_waypoints'
+plotFileBase = fileDir + '/' + outFileName  # Base name for saving plots
+outCsv = fileDir + '/' + outFileName + '.csv'
+
+# Load the dataset
+inFile = fileDir + '/' + inFileName + '_allCleaned_RoundNum.csv'
+tutorialBlocks = [0, 1]
+
+data = pd.read_csv(inFile)
+
+data = pd.read_csv(inFile)
+print(data['BlockType'].unique())
+
+# Filter the data for relevant block types ('pindropping') and exclude BlockNum values 0 and 1
+filtered_data = data[data['BlockType'] == 'pindropping'].copy()
+print(f"Number of rows after filtering: {len(filtered_data)}")
+filtered_data = filtered_data.dropna(subset=['BlockNumber'])
+filtered_data['BlockNumber'] = filtered_data['BlockNumber'].astype(int)
+filtered_data = filtered_data[~filtered_data['BlockNumber'].isin(tutorialBlocks)]
+filtered_data = filtered_data.reset_index(drop=True)
+
+# We will now use the already existing 'RoundNum' in the data
+# Create an empty list to store the rows for waypoints
+waypoint_rows = []
+
+# Iterate through the dataset to find waypoints and collect relevant information
+for i, row in filtered_data.iterrows():
+    if row['Message'] == 'Just dropped a pin.':
+        headRow = filtered_data.at[i - 1, 'HeadPosAnchored']
+        head_pos = (float(headRow.split()[0]), float(headRow.split()[2]))
+        handRowRaw = filtered_data.at[i + 1, 'Message'].split("Dropped a new pin at ")[1]
+        handRow_1 = handRowRaw.split('localpos: ')[1]
+        handRow = handRow_1.split(' ')
+        hand_pos = (float(handRow[0]), float(handRow[2]))
+        coinRow = filtered_data.at[i + 2, 'Message'].split(" | ")
+        coin_locRaw = coinRow[0].split('Closest location was: ')[1]
+        coin_locRaw_1 = coin_locRaw.split()
+        coin_loc = (float(coin_locRaw_1[0]), float(coin_locRaw_1[2]))
+        actual_dist = float(coinRow[1].split('actual distance: ')[1])
+        judgement = coinRow[2]
+        coin_value = float(coinRow[3].split('coinValue: ')[1])
+
+        waypoint_rows.append({
+            'Timestamp': row['Timestamp'],
+            'AppTime': row['AppTime'],
+            'BlockNumber': row['BlockNumber'],
+            'RoundNum': row['RoundNum'],  # Using the existing RoundNum
+            'headPos_anc': head_pos,
+            'handPos_anc': hand_pos,
+            'coinLoc': coin_loc,
+            'actualDist': actual_dist,
+            'judgement': judgement,
+            'coinValue': coin_value,
+        })
+
+waypoint_df = pd.DataFrame(waypoint_rows)
+
+# Exclude rows where 'coinLoc' is NaN
+waypoint_df = waypoint_df.dropna(subset=['coinLoc'])
+waypoint_df.to_csv(outCsv, index=False)
+
+# Plot the paths between waypoints for each round in each block
+blocks = waypoint_df['BlockNumber'].unique()
+
+for block_num in blocks:
+    block_data = waypoint_df[waypoint_df['BlockNumber'] == block_num]
+    rounds = block_data['RoundNum'].unique()
+
+    for round_num in rounds:
+        round_data = block_data[block_data['RoundNum'] == round_num]
+        if round_data.empty:
+            continue
+
+        plt.figure(figsize=(8, 6))
+        plt.title(f"Block {block_num}, Round {round_num}: Path Between Waypoints")
+
+        # Plot the path between waypoints
+        for i in range(len(round_data) - 1):
+            plt.plot([round_data.iloc[i]['handPos_anc'][0], round_data.iloc[i + 1]['handPos_anc'][0]],
+                     [round_data.iloc[i]['handPos_anc'][1], round_data.iloc[i + 1]['handPos_anc'][1]],
+                     marker='o', color='blue', label='Path between waypoints')
+
+        plt.xlim(-5, 5)
+        plt.ylim(-5, 5)
+        plt.gca().set_aspect('equal', adjustable='box')
+        plt.grid(True)
+
+        # Save the plot for each round as a separate .png file
+        plot_file = f"{plotFileBase}_Block_{block_num}_Round_{round_num}.png"
+        plt.savefig(plot_file)
+        plt.close()
+
+        print(f"Saved plot for Block {block_num}, Round {round_num} to {plot_file}")

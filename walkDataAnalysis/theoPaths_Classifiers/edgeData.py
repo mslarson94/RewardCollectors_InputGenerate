@@ -1,4 +1,4 @@
-import dataConfigs
+import dataConfigs_3Coins
 import math
 import networkx as nx
 import matplotlib.pyplot as plt
@@ -19,9 +19,10 @@ def getPoints():
                 'C': {'coord': (7, 8), 'weight': 3.0}
                 }
     '''
+
     result_dict = {}
-    collectionOrder_List = dataConfigs.collectionOrder_List
-    collectionOrder_List_str = dataConfigs.collectionOrder_List_str
+    collectionOrder_List = dataConfigs_3Coins.collectionOrder_List
+    collectionOrder_List_str = dataConfigs_3Coins.collectionOrder_List_str
     print(collectionOrder_List)
     for i, sublist in enumerate(collectionOrder_List):
         coinName = collectionOrder_List_str[i]
@@ -49,7 +50,7 @@ def getPoints():
         if sublist[0].startswith('N'):
             weight = 20.0
         elif sublist[0].startswith('L'):
-            weight = 12.0
+            weight = 10.0
         elif sublist[0].startswith('H'):
             weight = 0.0
         sublist.insert(3, weight)
@@ -90,13 +91,13 @@ def getEdgeWeights(points):
     return G
 
 def iterate_startPos():
-    startPosList = dataConfigs.AN_positions
-    pos_strList = dataConfigs.pos_strList
+    startPosList = dataConfigs_3Coins.AN_positions
+    pos_strList = dataConfigs_3Coins.pos_strList
 
     del startPosList[-1]
     del pos_strList[-1]
     edgeWeightList =[]
-    #print(pos_strList)
+
     points = getPoints()
     print(points)
     for pos in range(len(pos_strList)):

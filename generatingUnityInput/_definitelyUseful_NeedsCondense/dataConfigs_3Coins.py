@@ -1,5 +1,5 @@
 '''
-dataConfigs.py
+dataConfigs_3Coins.py
 Created on March, 14 2024
 @author: myra
 
@@ -24,7 +24,7 @@ whichDevice_AN = 'F' # Possible Values (str): A, E, F?
 whichDevice_PO = 'D' # Possible Values (str): D, B, G?
 
 #################  Task Design  ####################
-whichCoinSet = 'Conf'      # Possible Values (str): A or B
+whichCoinSet = 'Conf'      # Possible Values (str): 'A', 'B', 'Conf', 'Dummy'
 criterion = 3           #criterion is the number of consecutive perfect rounds to hit in TP1 to reach TP2
 ratio = 2               # ratio of total number of normal trials to a single EV type of trials. 
                         #       e.g. ratio = 3 is 3:1:1 for Normal:PPE:NPE

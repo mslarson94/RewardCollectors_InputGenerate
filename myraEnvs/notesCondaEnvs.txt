@@ -1,0 +1,78 @@
+Virtual Environments w/ Myra!
+
+I work in conda virtual environments so I can have different installations of python or diff libraries to use w diff scripts - you can install my *exact current* environment & activate it using these commands: 
+
+	conda create --name <env> --file condaEnv.txt
+	conda activate <env>
+	pip install -r requirements.txt
+
+my environment is RewardCollectors but name yours however you like!
+
+Alternatively, you could install everything with this command: 
+
+	conda env create -f environment.yml
+
+Just change line 170 from 
+	
+	prefix: /Users/mairahmac/opt/anaconda3/envs/RewardCollectors
+
+to whereever your conda environmets are 
+
+
+############# Myra's Quality of Life Additions for Terminal #################
+
+To make things easier on myself I made a few aliases in my .zshrc file that might help you too: 
+
+############ clear previous envs, activate RewardCollectors env and cd into the directory where I have my code 
+
+	alias RC_IG="conda deactivate; conda activate RewardCollectors; cd ~/Desktop/myra_code/Python/RewardCollectors_InputGenerate"
+
+
+#### small commands that make using mv/rm/cp safer, always loads grep with color, quick ip grabs, and a way to search through your recent commands 
+
+	alias mv='mv -i'
+	alias rm='rm -i'
+	alias cp='cp -i'
+	alias clr='clear'
+	alias grep='grep --color=auto'
+	alias get_ip='ipconfig getifaddr en0'
+	alias search_history='history | grep'
+
+	## search_history is actually my fav alias to use, it really helps me remember how I previously did something - for ex: 
+		
+		search_history git 
+
+		# would produce output like this: 
+
+			5726  git status
+			5727  git rm ~$FileDescriptions.xlsx
+			5728  git rm "~$FileDescriptions.xlsx"
+			5729  nano .gitignore
+			5730  git status
+			5731  git add .gitignore
+			5732  git status
+			5733  git add -A
+			5734  git status
+			5735  git commit -m "fixing a weird temp files issue"
+			5736  git push origin master --force
+			5737  git status
+
+##################
+
+### I hate using nano or vim, so to launch Sublime Text, my preferred text editor for all scripts except Matlab, I added this to my path 
+	
+	export PATH="/Applications/Sublime Text.app/Contents/SharedSupport/bin:$PATH"
+
+	# to open a file with sublime from terminal you'd just enter a command like this: 
+		subl someFile.txt
+
+### I have this added to my path but I can't remember why exactly - you might need it or might not 
+	export PATH="/usr/local/opt/libxml2/bin:$PATH"
+
+
+Also - my .oh-my-zsh theme is the alanpeabody which I added to the repo - I like it b.c I know what environment I'm using, what git branch I'm in, and whether my last command error'ed out. If you like that, change line 23 to your preferred emoji's
+
+	PROMPT="%(?:🐙  :🐳  )"
+
+For me, the octopus means good command execution & the whale is error/null result - this doesn't give any info about the error, but it'll at least be immediately obvious to me that there was one.
+

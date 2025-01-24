@@ -1,4 +1,10 @@
-#bioPac_sync_1st.py
+'''
+basicCleaning_1.py
+author: Myra Saraí Larson  
+email: mairahsarai94@gmail.com
+
+script that attempts to align timestamps to biopac data
+'''
 from datetime import datetime, timedelta
 import pandas as pd
 

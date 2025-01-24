@@ -1,5 +1,5 @@
 .DS_Store
-__pycache__/*
+*__pycache__/*
 *.fbx
 *.mp4
 *.stl
@@ -13,3 +13,4 @@ helper_functions/__pycache__/path_check.cpython-310.pyc
 labspace.unitypackage
 notes/
 ~$*
+RewardCollectors_HelperFunctions.egg-info/

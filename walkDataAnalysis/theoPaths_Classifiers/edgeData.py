@@ -10,63 +10,18 @@ import imageio.v2 as imageio
 import pandas as pd
 from collections import OrderedDict
 
-def getPoints():
-    '''
-     import the coin set data & format in a points dict like this 
-     points = {
-                'A': {'coord': (1, 2), 'weight': 1.5},
-                'B': {'coord': (4, 6), 'weight': 2.5},
-                'C': {'coord': (7, 8), 'weight': 3.0}
-                }
-    '''
-
-    result_dict = {}
-    collectionOrder_List = dataConfigs_3Coins.collectionOrder_List
-    collectionOrder_List_str = dataConfigs_3Coins.collectionOrder_List_str
-    print(collectionOrder_List)
-    for i, sublist in enumerate(collectionOrder_List):
-        coinName = collectionOrder_List_str[i]
-        print(coinName)
-        sublist.insert(0, coinName)
-        print(sublist)
-        if sublist[0] == sublist[1]:
-            del sublist[0]
-        print('after removing non unique items')
-        print(sublist)
-        coordinate = [sublist[1], sublist[2]]
-        print(coordinate)
-        coordinate = tuple(coordinate)
-        print(coordinate)
-        print('gonna cry', sublist)
-        del sublist[1]
-        print('blahhhhhhh')
-        print(sublist[1])
-
-        del sublist[1]
-        print('afterremoving stuff ')
-        print(sublist)
-        sublist.insert(1, coordinate)
-        weight = ""
-        if sublist[0].startswith('N'):
-            weight = 20.0
-        elif sublist[0].startswith('L'):
-            weight = 10.0
-        elif sublist[0].startswith('H'):
-            weight = 0.0
-        sublist.insert(3, weight)
-        print(sublist)
-        key, coordinates, reward, weight = sublist
-        result_dict[key] = {'coord':coordinates,'weight': weight}
-    return result_dict
 
 
-def calculate_edge_weight(coord1, coord2, weight1, weight2):
-    # Calculate Euclidean distance between points
+def calculate_dynamic_edge_weight(coord1, coord2, weight1, weight2, unvisited_coins):
+    """
+    Calculate the dynamic weight of an edge based on the Euclidean distance and coin values.
+    """
     distance = math.sqrt((coord1[0] - coord2[0])**2 + (coord1[1] - coord2[1])**2)
-    # Average the weights
     average_weight = (weight1 + weight2) / 2
-    # Combine the distance and average weight
-    return distance + average_weight
+
+    # Adjust weight based on the value of unvisited coins
+    bonus = sum(COIN_POINTS[coin] for coin in unvisited_coins)
+    return distance + average_weight - bonus  # Prioritize paths to valuable coins
 
 def getEdgeWeights(points):
     # Create a graph
@@ -74,7 +29,7 @@ def getEdgeWeights(points):
 
     # Add nodes
     for point, attrs in points.items():
-        G.add_node(point, coord=attrs['coord'], weight=attrs['weight'])
+        G.add_node(point, coords=attrs['coords'], weight=attrs['weight'])
 
     # Add edges with calculated weights
     nodes = list(G.nodes(data=True))  # List of tuples (node, attr_dict)
@@ -82,13 +37,74 @@ def getEdgeWeights(points):
         for j in range(i + 1, len(nodes)):
             node1, attrs1 = nodes[i]
             node2, attrs2 = nodes[j]
-            edge_weight = calculate_edge_weight(attrs1['coord'], attrs2['coord'], attrs1['weight'], attrs2['weight'])
+            edge_weight = calculate_edge_weight(attrs1['coords'], attrs2['coords'], attrs1['weight'], attrs2['weight'])
             G.add_edge(node1, node2, weight=edge_weight)
 
-    # # Print all edges with their attributes
-    # for u, v, attr in G.edges(data=True):
-    #     print(f"Edge from {u} to {v} has weight {attr['weight']}")
     return G
+
+def update_graph_after_visit(graph, visited_node, unvisited_coins):
+    """
+    Remove the visited node and recalculate edge weights for the remaining graph.
+    """
+    unvisited_coins.remove(visited_node)
+    graph.remove_node(visited_node)
+
+    # Recalculate edge weights for remaining nodes
+    for u, v, attrs in graph.edges(data=True):
+        coord1 = graph.nodes[u]['coords']
+        coord2 = graph.nodes[v]['coords']
+        weight1 = graph.nodes[u]['weight']
+        weight2 = graph.nodes[v]['weight']
+        attrs['weight'] = calculate_dynamic_edge_weight(coord1, coord2, weight1, weight2, unvisited_coins)
+
+    return graph
+
+
+def dynamic_traversal_with_start(points, start_position):
+    """
+    Perform dynamic traversal, starting from a given position, collecting coins, and recalculating edge weights.
+    """
+    # Create the initial graph
+    G = nx.Graph()
+    for point, attrs in points.items():
+        G.add_node(point, coords=attrs['coords'], weight=attrs['weight'])
+
+    for point1 in points:
+        for point2 in points:
+            if point1 != point2:
+                coord1 = points[point1]['coords']
+                coord2 = points[point2]['coords']
+                weight1 = points[point1]['weight']
+                weight2 = points[point2]['weight']
+                edge_weight = calculate_dynamic_edge_weight(coord1, coord2, weight1, weight2, points.keys())
+                G.add_edge(point1, point2, weight=edge_weight)
+
+    # Perform traversal
+    collected_coins = []
+    unvisited_coins = list(points.keys())
+    total_score = 0
+
+    # Start traversal from the given starting position
+    current_node = start_position
+
+    while unvisited_coins:
+        # Find the next node to visit (min weight edge)
+        neighbors = [(neighbor, G[current_node][neighbor]["weight"]) for neighbor in G.neighbors(current_node)]
+        neighbors.sort(key=lambda x: x[1])  # Sort by edge weight
+        next_node = neighbors[0][0]  # Choose the nearest node
+
+        # Collect points if the node is a coin
+        if next_node in COIN_POINTS:
+            multiplier = 2 if len(collected_coins) < 2 else 1
+            total_score += COIN_POINTS[next_node] * multiplier
+            collected_coins.append(next_node)
+
+        # Update graph and state
+        G = update_graph_after_visit(G, next_node, unvisited_coins)
+        current_node = next_node  # Move to the next node
+
+    return collected_coins, total_score
+
 
 def iterate_startPos():
     startPosList = dataConfigs_3Coins.AN_positions
@@ -98,14 +114,15 @@ def iterate_startPos():
     del pos_strList[-1]
     edgeWeightList =[]
 
-    points = getPoints()
+    points = dataConfigs_3Coins.CoinSet
+    del points['PPE']
+    del points['NPE']
     print(points)
     for pos in range(len(pos_strList)):
         posStr = pos_strList[pos]
-        coordUnformat = startPosList[pos]
-        coord = tuple(coordUnformat)
+        coord = startPosList[pos]
         print(coord)
-        points[posStr] = {'coord':coord, 'reward': 0.0, 'weight': 20.0}
+        points[posStr] = {'coords':coord, 'pts': 0.0, 'weight': 0.0}
         print(points)
         edgeWeights = getEdgeWeights(points)
         #print(edgeWeights)
@@ -115,47 +132,68 @@ def iterate_startPos():
 
 graph_startList = iterate_startPos()
 print(graph_startList)
-# points = getPoints()
-# print(points)
-# edgeWeights = getEdgeWeights(points)
-# print('*'*27)
-# print(edgeWeights)
 
-def draw_graph(G, node_colors, edge_colors, pos, frame_id):
+def draw_graph_with_labels(G, node_colors, edge_colors, pos, frame_id):
+    """
+    Draw the graph with node and edge labels and save as an image.
+    """
     plt.figure(figsize=(8, 6))
-    nx.draw(G, pos, node_color=node_colors, edge_color=edge_colors, with_labels=True, node_size=800, font_size=16)
+    
+    # Draw nodes with specified colors
+    nx.draw_networkx_nodes(G, pos, node_color=node_colors, node_size=800)
+    
+    # Draw edges with specified colors
+    nx.draw_networkx_edges(G, pos, edge_color=edge_colors, width=2)
+    
+    # Draw node labels
+    nx.draw_networkx_labels(G, pos, font_size=12, font_color="white")
+    
+    # Add edge labels for weights
+    edge_labels = nx.get_edge_attributes(G, "weight")
+    formatted_edge_labels = {k: f"{v:.2f}" for k, v in edge_labels.items()}  # Format weights to 2 decimal places
+    nx.draw_networkx_edge_labels(G, pos, edge_labels=formatted_edge_labels, font_size=10)
+    
+    # Save the frame
     plt.savefig(f"frames/frame_{frame_id:03d}.png")
     plt.close()
 
-def animate_dijkstra(graph, start_node, filename):
+def animate_dijkstra_with_labels(graph, start_node, filename):
+    """
+    Animate Dijkstra's algorithm with edge labels annotated in each frame.
+    """
     os.makedirs("frames", exist_ok=True)
     frame_id = 0
     
-    pos = nx.spring_layout(graph, seed=42)
+    pos = nx.spring_layout(graph, seed=42)  # Generate graph layout
     visited = {node: False for node in graph.nodes}
     distances = {node: float("inf") for node in graph.nodes}
     distances[start_node] = 0
     pq = [(0, start_node)]
-    node_visitOrder = []
+    node_visit_order = []
+    
     while pq:
         current_distance, current_node = heapq.heappop(pq)
-        node_visitOrder.append(current_node)
+        node_visit_order.append(current_node)
         if visited[current_node]:
             continue
 
         visited[current_node] = True
 
-        # Draw the graph at this step
-        node_colors = ["green" if node == current_node else ("red" if visited[node] else "gray") for node in graph.nodes]
+        # Draw the graph at this step with labels
+        node_colors = [
+            "green" if node == current_node else ("red" if visited[node] else "gray")
+            for node in graph.nodes
+        ]
         edge_colors = ["black" for edge in graph.edges]
-        draw_graph(graph, node_colors, edge_colors, pos, frame_id)
+        draw_graph_with_labels(graph, node_colors, edge_colors, pos, frame_id)
         frame_id += 1
 
-        for neighbor, edge_weight in graph[current_node].items():
-            new_distance = current_distance + edge_weight["weight"]
+        for neighbor, edge_data in graph[current_node].items():
+            new_distance = current_distance + edge_data["weight"]
             if not visited[neighbor] and new_distance < distances[neighbor]:
                 distances[neighbor] = new_distance
                 heapq.heappush(pq, (new_distance, neighbor))
+
     # Generate the animated GIF
     images = []
     for i in range(frame_id):
@@ -164,12 +202,12 @@ def animate_dijkstra(graph, start_node, filename):
 
     # Clean up the frames folder
     shutil.rmtree("frames")
-    return node_visitOrder
+    return node_visit_order
 
 allNodeVisitOrders = []
 for specGraph in graph_startList:
     filename = specGraph[0] + "_dijkstra.gif"
-    nodevisit = animate_dijkstra(specGraph[1], specGraph[0], filename)
+    nodevisit = animate_dijkstra_with_labels(specGraph[1], specGraph[0], filename)
     allNodeVisitOrders.append(nodevisit)
 
 # # Extract column names and transpose data
@@ -198,7 +236,7 @@ for specGraph in graph_startList:
 # df = pd.DataFrame(columns=column_names, data=row_data)
 df = pd.DataFrame(allNodeVisitOrders)
 
-df.insert(0, "CoinSet", [dataConfigs.whichCoinSet]*8)
+df.insert(0, "CoinSet", [dataConfigs_3Coins.whichCoinSet]*8)
 df.insert(0, 'TheoPathType', ["PureWeightedDijkstra"]*8)
 df.rename(columns={0: "startPosition"}, inplace=True)
 df.to_csv("WeightedDijkstra.csv", index=False)

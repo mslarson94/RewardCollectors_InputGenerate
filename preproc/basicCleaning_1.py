@@ -1,17 +1,19 @@
-#basicCleaning_1.py
+'''
+basicCleaning_1.py
+author: Myra Saraí Larson  
+email: mairahsarai94@gmail.com
+
+script to remedy the accidental data overflow in the 'Messages' column when text contains ','
+'''
 import pandas as pd
 import numpy as np
 import os
 import re
 
-# Define the directory containing the files
-#testing_path = '/Users/mairahmac/Desktop/RewardCollectorsCentral/TestingNotes_Misc'  # Replace with the actual directory path
-#testingDate = '07092024'
-#directory_path = testing_path + '/' + testingDate
-directory_path = '/Users/mairahmac/Desktop/RC_TestingNotes/12032024'
+
+directory_path = '/Users/mairahmac/Desktop/RC_TestingNotes/12032024' # Replace with the actual directory path
 output_directory = directory_path + '/Cleaned'  # Where cleaned files will be saved
-# Create the output directory if it doesn't exist
-os.makedirs(output_directory, exist_ok=True)
+os.makedirs(output_directory, exist_ok=True) # Create the output directory if it doesn't exist
 
 # Define the regex pattern for matching the file names
 pattern = re.compile(r"^ObsReward_[AB]_\d{2}_\d{2}_\d{4}_\d{2}_\d{2}.csv$")

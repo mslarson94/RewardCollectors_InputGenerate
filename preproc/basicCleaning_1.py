@@ -11,7 +11,7 @@ import os
 import re
 
 
-directory_path = '/Users/mairahmac/Desktop/RC_TestingNotes/12032024' # Replace with the actual directory path
+directory_path = '/Users/mairahmac/Desktop/myra_code/Python/RewardCollectors_InputGenerate/preproc/SampleData/01202025/ML2C' # Replace with the actual directory path
 output_directory = directory_path + '/Cleaned'  # Where cleaned files will be saved
 os.makedirs(output_directory, exist_ok=True) # Create the output directory if it doesn't exist
 
@@ -35,9 +35,9 @@ for filename in os.listdir(directory_path):
                 split_line = line.strip().split(',')
 
                 # If there are more than 19 columns, combine the extras into column 19
-                if len(split_line) > 19:
-                    combined_value = ','.join(split_line[18:])
-                    split_line = split_line[:18] + [combined_value]
+                if len(split_line) > 24:
+                    combined_value = ','.join(split_line[23:])
+                    split_line = split_line[:23] + [combined_value]
 
                 # Add the cleaned line to the list
                 cleaned_data.append(split_line)

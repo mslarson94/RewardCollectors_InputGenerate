@@ -1,4 +1,4 @@
-import dataConfigs_3Coins
+from RC_utilities.configs.dataConfigs_3Coins import * # Import from the package
 import math
 import networkx as nx
 import matplotlib.pyplot as plt
@@ -12,7 +12,7 @@ from collections import OrderedDict
 
 
 
-def calculate_dynamic_edge_weight(coord1, coord2, weight1, weight2, unvisited_coins):
+def calculate_dynamic_edge_weight(coord1, coord2, weight1, weight2, unvisited_coins=[]):
     """
     Calculate the dynamic weight of an edge based on the Euclidean distance and coin values.
     """
@@ -37,7 +37,7 @@ def getEdgeWeights(points):
         for j in range(i + 1, len(nodes)):
             node1, attrs1 = nodes[i]
             node2, attrs2 = nodes[j]
-            edge_weight = calculate_edge_weight(attrs1['coords'], attrs2['coords'], attrs1['weight'], attrs2['weight'])
+            edge_weight = calculate_dynamic_edge_weight(attrs1['coords'], attrs2['coords'], attrs1['weight'], attrs2['weight'])
             G.add_edge(node1, node2, weight=edge_weight)
 
     return G
@@ -107,14 +107,13 @@ def dynamic_traversal_with_start(points, start_position):
 
 
 def iterate_startPos():
-    startPosList = dataConfigs_3Coins.AN_positions
-    pos_strList = dataConfigs_3Coins.pos_strList
+    startPosList = AN_positions
 
     del startPosList[-1]
     del pos_strList[-1]
     edgeWeightList =[]
 
-    points = dataConfigs_3Coins.CoinSet
+    points = CoinSet
     del points['PPE']
     del points['NPE']
     print(points)
@@ -236,7 +235,7 @@ for specGraph in graph_startList:
 # df = pd.DataFrame(columns=column_names, data=row_data)
 df = pd.DataFrame(allNodeVisitOrders)
 
-df.insert(0, "CoinSet", [dataConfigs_3Coins.whichCoinSet]*8)
+df.insert(0, "CoinSet", [whichCoinSet]*8)
 df.insert(0, 'TheoPathType', ["PureWeightedDijkstra"]*8)
 df.rename(columns={0: "startPosition"}, inplace=True)
 df.to_csv("WeightedDijkstra.csv", index=False)

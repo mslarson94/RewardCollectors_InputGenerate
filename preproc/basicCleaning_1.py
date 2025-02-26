@@ -10,8 +10,24 @@ import numpy as np
 import os
 import re
 
+#directory_path = '/Users/mairahmac/Desktop/RC_TestingNotes/pair_06/02082025/ML2C'
+#directory_path = '/Users/mairahmac/Desktop/RC_TestingNotes/pair_06/02082025/ML2D'
 
-directory_path = '/Users/mairahmac/Desktop/myra_code/Python/RewardCollectors_InputGenerate/preproc/SampleData/01202025/ML2C' # Replace with the actual directory path
+#directory_path = '/Users/mairahmac/Desktop/RC_TestingNotes/pair_06/02092025/ML2C'
+#directory_path = '/Users/mairahmac/Desktop/RC_TestingNotes/pair_06/02092025/ML2D'
+
+#directory_path = '/Users/mairahmac/Desktop/RC_TestingNotes/02052025/ML2C'
+#directory_path = '/Users/mairahmac/Desktop/RC_TestingNotes/02052025/ML2D'
+
+#directory_path = '/Users/mairahmac/Desktop/RC_TestingNotes/02012025/ML2C'
+#directory_path = '/Users/mairahmac/Desktop/RC_TestingNotes/02012025/ML2D'
+
+#directory_path = '/Users/mairahmac/Desktop/RC_TestingNotes/01262025/ML2C'
+#directory_path = '/Users/mairahmac/Desktop/RC_TestingNotes/01262025/ML2D'
+
+directory_path = '/Users/mairahmac/Desktop/RC_TestingNotes/01252025/ML2C'
+# Process all matching files in the directory
+#directory_path = '/Users/mairahmac/Desktop/myra_code/Python/RewardCollectors_InputGenerate/preproc/SampleData/01202025/ML2C' # Replace with the actual directory path
 output_directory = directory_path + '/Cleaned'  # Where cleaned files will be saved
 os.makedirs(output_directory, exist_ok=True) # Create the output directory if it doesn't exist
 

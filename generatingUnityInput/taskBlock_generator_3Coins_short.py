@@ -5,21 +5,22 @@ Created on March, 14 2024
 
 generate TaskBlocks.csv files from given x,y,z coordinates
 '''
+import sys
+import os
+from RC_utilities.configs.dataConfigs_3Coins import * # Import from the package
 
-import csv
+import csv 
 import random
 import pandas as pd
 import math
-import os
-from helper_functions.path_check import path_check
-from dataConfigs_3Coins import *
+
 def generate_balanced_segments(trial_ratio, ev_types, segment_count=5, segment_size=24):
     """
     Generate balanced and randomized segments for trialType_list and pathIDs.
 
     Args:
         trial_ratio (list): Actual counts of trial types in one segment (e.g., [16, 4, 4]).
-        ev_types (list): List of trial types, e.g., ["normal", "PPE", "NPE"].
+        ev_types (list): List of EV trial types, e.g., ["PPE", "NPE"].
         segment_count (int): Number of segments.
         segment_size (int): Total size of each segment.
 
@@ -32,13 +33,17 @@ def generate_balanced_segments(trial_ratio, ev_types, segment_count=5, segment_s
             f"The trial ratio ({sum(trial_ratio)}) must sum up to the segment size ({segment_size})."
         )
 
-    path_id_map = {"normal": 1, "PPE": 2, "NPE": 3}  # Map trial types to PathIDs
+    # Ensure 'normal' is included
+    ordered_types = ['normal'] + ev_types  # ['normal', 'PPE', 'NPE']
+
+    # Create a dictionary mapping each type to a unique 1-based index
+    path_id_map = {ev_type: idx + 1 for idx, ev_type in enumerate(ordered_types)}
 
     # Create a DataFrame for all segments
     all_segments = []
     for seg in range(1, segment_count + 1):
         segment = []
-        for ev_type, count in zip(ev_types, trial_ratio):
+        for ev_type, count in zip(ordered_types, trial_ratio):  # FIXED!
             path_id = path_id_map[ev_type]  # Get PathID for the trial type
             segment.extend([(ev_type, seg, path_id)] * count)
 
@@ -53,12 +58,11 @@ def generate_balanced_segments(trial_ratio, ev_types, segment_count=5, segment_s
     df = pd.concat(all_segments, ignore_index=True)
 
     # Debugging: Ensure all PathIDs and segments are populated correctly
-    segment_summary = df.groupby(["Segment", "set"]).size().reset_index(name="TrialCount")
+    segment_summary = df.groupby(["Segment", "TrialType"]).size().reset_index(name="TrialCount")
     print("Segment Summary:")
     print(segment_summary)
 
     return df
-
 
 
 
@@ -88,14 +92,8 @@ pos_dict = {
 }
 positions = pd.DataFrame.from_dict(pos_dict)
 
-# Parameters
-trial_ratio = [16, 4, 4]  # Ratio of Normal:PPE:NPE for 80:20:20
-ev_types = ["normal", "PPE", "NPE"]  # Event types
-segment_count = 5  # Number of segments
-segment_size = 24  # Number of items in each segment
-
 # Generate balanced and randomized segments
-df_balanced = generate_balanced_segments(trial_ratio, ev_types, segment_count, segment_size)
+df_balanced = generate_balanced_segments(trial_ratio, EV_types, segment_count, segment_size)
 
 # Save the generated trials for verification
 balanced_trials_file = os.path.join(troubleshootingFolder, f"balanced_trials_{fileEnding}")
@@ -159,33 +157,14 @@ shuffling_PO_pos.append(PO_firstpos)
 
 shuffling_AN_pos.append(AN_secondpos)
 shuffling_PO_pos.append(PO_secondpos)
-# multi_AN_str = ""
-# multi_PO_str = ""
 
 multi_AN_str = ' | '.join(f"{an[0]}|0.0|{an[1]}" for an in shuffling_AN_pos)
 multi_PO_str = ' | '.join(f"{po[0]}|0.0|{po[1]}" for po in shuffling_PO_pos)
-
-# for an in shuffling_AN_pos[:-1]:
-# 	multi_AN_str += str(an[0]) + '|0.0|' + str(an[1]) + ' |'
-
-# last_AN_item = shuffling_AN_pos[-1]
-# multi_AN_str += str(last_AN_item[0]) + '|0.0|' + str(last_AN_item[1])
-
-# for po in shuffling_PO_pos[:-1]:
-# 	multi_PO_str += str(po[0]) + '|0.0|' + str(po[1]) + ' |'
-
-# last_PO_item = shuffling_PO_pos[-1]
-# multi_PO_str += str(last_PO_item[0]) + '|0.0|' + str(last_PO_item[1])
-
-
-# print(tp1_block_a)
 
 tp1_block = tp1_block_a + multi_AN_str + ',' + multi_PO_str
 
 #######################################################################################
 ################################## Generating Data ###################################
-#trialType_list = ['normal', 'normal', 'normal', 'normal', 'PPE', 'NPE']
-trialType_list = ['normal', 'PPE', 'NPE']
 # Read the balanced trials file
 df_balanced = pd.read_csv(balanced_trials_file)
 
@@ -209,30 +188,54 @@ big_df["strPositions"] = position_data["strPositions"]
 ######################################################################################
 #################### Generating and Saving Additional DataFrames #####################
 ######################################################################################
+temp_str_AN = '0.0|0.0|5.0,1.75|0.0|4.25'
 
-# Generate RR data (role-reversal trials)
-roleReversalTrials = 20
-rr_trialType_list = ["rr"] * roleReversalTrials
-rr_set_list = [1] * roleReversalTrials
-rr_positions = pd.concat([positions] * math.ceil(roleReversalTrials / len(positions)), ignore_index=True)
-rr_positions = rr_positions.sample(n=roleReversalTrials, random_state=42).reset_index(drop=True)
+if roleReversal_EV == True: 
+    # Generate balanced segments for role-reversal trials (2 segments of 10 trials each)
+    rr_trial_ratio = [6, 2, 2]  # Ratio that sums to 10
+    rr_ev_types = ["normal", "PPE", "NPE"]
+    rr_segment_size = 10  # Each segment contains 10 trials
+    rr_segment_count = 2  # Total 20 trials (2x10)
 
-rr_big_df = pd.DataFrame({
-    "TrialType": rr_trialType_list,
-    "set": rr_set_list,
-    "strPositions": rr_positions["strPositions"]
-})
+    # Generate balanced segments
+    rr_balanced_df = generate_balanced_segments(rr_trial_ratio, rr_ev_types, segment_count=rr_segment_count, segment_size=rr_segment_size)
 
-# Save RR DataFrames
-rr_big_df_file = os.path.join(troubleshootingFolder, f"rr_big_df_{fileEnding}")
-rr_big_df.to_csv(rr_big_df_file, index=False)
-print(f"Saved rr_big_df to: {rr_big_df_file}")
+    # Map positions for 20 trials
+    rr_positions = pd.concat([positions] * math.ceil(len(rr_balanced_df) / len(positions)), ignore_index=True)
+    rr_positions = rr_positions.sample(n=len(rr_balanced_df), random_state=42).reset_index(drop=True)
+
+    # Merge randomized segments with positions
+    rr_big_df = rr_balanced_df.copy()
+    rr_big_df["strPositions"] = rr_positions["strPositions"]
+
+    # Generate role-reversal block using randomized data
+    rr_block = [
+        f"{row['set']},{row['strPositions']}ApindropBwatch,0,{temp_str_AN}"
+        for _, row in rr_big_df.iterrows()
+    ]
+
+    rr_big_df["rr_block"] = rr_block
+else:
+    # Map positions for the specified number of roleReversalTrials 
+    rr_big_df = pd.concat([positions] * math.ceil(roleReversalTrials / len(positions)), ignore_index=True)
+    rr_big_df = rr_big_df.sample(n=roleReversalTrials, random_state=42).reset_index(drop=True)
+
+    # Merge randomized segments with positions
+    rr_big_df = rr_big_df[["strPositions"]]
+
+    # Generate role-reversal block using randomized data
+    rr_block = [
+        f"1,{row['strPositions']}ApindropBwatch,0,{temp_str_AN}"
+        for _, row in rr_big_df.iterrows()
+    ]
+
+    rr_big_df["rr_block"] = rr_block
+
 
 ######################################################################################
 ########################## Generating TP2 and Role-Reversal Blocks ###################
 ######################################################################################
 
-temp_str_AN = '0.0|0.0|5.0,1.75|0.0|4.25'
 
 # Generate tp2_block for big_df
 tp2_block = [
@@ -246,17 +249,15 @@ biggest_df_file = os.path.join(troubleshootingFolder, f"biggest_df_{fileEnding}"
 big_df.to_csv(biggest_df_file, index=False)
 print(f"Saved biggest_df to: {biggest_df_file}")
 
-# Generate rr_block for rr_big_df
-rr_block = [
-    f"{row['set']},{row['strPositions']}ApindropBwatch,0,{temp_str_AN}"
-    for _, row in rr_big_df.iterrows()
-]
-rr_big_df["rr_block"] = rr_block
-
-# Save rr_biggest_df
+# Save updated role-reversal DataFrame
 rr_biggest_df_file = os.path.join(troubleshootingFolder, f"rr_biggest_df_{fileEnding}")
 rr_big_df.to_csv(rr_biggest_df_file, index=False)
-print(f"Saved rr_biggest_df to: {rr_biggest_df_file}")
+print(f"Saved updated rr_biggest_df to: {rr_biggest_df_file}")
+
+# Update roleReversal block to reflect randomized trial order
+roleReversal = [initial_text]
+roleReversal.append(tutorial_tp1_block)
+roleReversal.extend(rr_block)
 
 
 nearly_there = [initial_text]
@@ -311,3 +312,8 @@ with open(rolepath, "w+") as csvFile:
 		csvFile.write(line)
 		csvFile.write('\n')
 	csvFile.write(roleReversal[-1])
+print(f"df_balanced rows: {df_balanced.shape[0]}")
+print(f"big_df rows: {big_df.shape[0]}")
+print(f"tp2_block rows: {len(tp2_block)}")
+print(f"nearly_there contains {len(nearly_there)} entries")
+print(df_balanced['TrialType'].value_counts())

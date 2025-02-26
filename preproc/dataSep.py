@@ -11,8 +11,8 @@ def correct_malformed_string(raw_string):
 
 
 # Define the pattern for matching files
+##pattern = re.compile(r"^ObsReward_[AB]_\d{2}_\d{2}_\d{4}_\d{2}_\d{2}_cleaned_data.csv$")
 pattern = re.compile(r"^ObsReward_[AB]_\d{2}_\d{2}_\d{4}_\d{2}_\d{2}.csv$")
-
 def process_blocks_rounds_with_correct_rounds(data):
     # Initialize columns
     data['BlockNum'] = None
@@ -111,6 +111,7 @@ def process_blocks_rounds_with_correct_rounds(data):
 
 # Function to process all matching files in a directory
 def process_directory(directory):
+    os.chdir(directory)
     for filename in os.listdir(directory):
         if pattern.match(filename):
             file_path = os.path.join(directory, filename)
@@ -131,22 +132,46 @@ def process_directory(directory):
             print(f"Processed data saved to {output_file}")
 
 # Set the directory path (replace with your actual directory path)
-directory_path = '/Users/mairahmac/Desktop/myra_code/Python/RewardCollectors_InputGenerate/preproc/SampleData/01202025/ML2F'
-
-# Process all matching files in the directory
+#directory_path = '/Users/mairahmac/Desktop/RC_TestingNotes/pair_06/02082025/ML2G'
+directory_path = '/Users/mairahmac/Desktop/RC_TestingNotes/pair_06/02082025/ML2C/Cleaned'
 process_directory(directory_path)
-
-reasonable max 
-normal = 2400, PPE = 1000, NPE = 200, TP1 = 90/150  crit = 3 -> 3690, crit = 5 -> 3750
-(50 pts / $) crit = 3 ~ $73.80 crit = 5 ~ $75.00
-(75 pts / $ ) crit = 3 ~ $49.20, crit = 5 ~ $50.00
-(90 pts / $) crit = 3 ~ $41.00 , crit = 5 ~ $ 31.55
-(100 pts / $ 1) crit = 3 ~ $36.90, crit = 5 ~ $ 37.50
-
-unreasonable max (weirdly max'ing the PPE setting)
-normal = 2400, PPE = 1300, NPE = 200, TP1 = 90/150 crit = 3 -> 3990, crit = 5 -> 4050
-
-(50 pts / $) crit = 3 ~ $79.80 crit = 5 ~ $81.00
-(75 pts / $ ) crit = 3 ~ $53.20, crit = 5 ~ $54.00
-(90 pts / $) crit = 3 ~ $44.33 , crit = 5 ~ $ 45.00
-(100 pts / $ 1) crit = 3 ~ $39.90, crit = 5 ~ $ 40.50
+directory_path1 = '/Users/mairahmac/Desktop/RC_TestingNotes/pair_06/02082025/ML2D/Cleaned'
+process_directory(directory_path1)
+# directory_path = '/Users/mairahmac/Desktop/RC_TestingNotes/pair_06/02082025/ML2A'
+# process_directory(directory_path)
+# directory_path = '/Users/mairahmac/Desktop/RC_TestingNotes/pair_06/02092025/ML2G'
+# process_directory(directory_path)
+directory_path2 = '/Users/mairahmac/Desktop/RC_TestingNotes/pair_06/02092025/ML2C/Cleaned'
+process_directory(directory_path2)
+directory_path3 = '/Users/mairahmac/Desktop/RC_TestingNotes/pair_06/02092025/ML2D/Cleaned'
+process_directory(directory_path3)
+# directory_path = '/Users/mairahmac/Desktop/RC_TestingNotes/pair_06/02092025/ML2A'
+# process_directory(directory_path)
+# directory_path = '/Users/mairahmac/Desktop/RC_TestingNotes/02052025/ML2G'
+# process_directory(directory_path)
+directory_path4 = '/Users/mairahmac/Desktop/RC_TestingNotes/02052025/ML2C/Cleaned'
+process_directory(directory_path4)
+directory_path5 = '/Users/mairahmac/Desktop/RC_TestingNotes/02052025/ML2D/Cleaned'
+process_directory(directory_path5)
+# directory_path = '/Users/mairahmac/Desktop/RC_TestingNotes/02052025/ML2A'
+# process_directory(directory_path)
+# directory_path = '/Users/mairahmac/Desktop/RC_TestingNotes/02012025/ML2G'
+# process_directory(directory_path)
+directory_path6 = '/Users/mairahmac/Desktop/RC_TestingNotes/02012025/ML2C/Cleaned'
+process_directory(directory_path6)
+directory_path7 = '/Users/mairahmac/Desktop/RC_TestingNotes/02012025/ML2D/Cleaned'
+process_directory(directory_path7)
+# directory_path = '/Users/mairahmac/Desktop/RC_TestingNotes/02012025/ML2A'
+# process_directory(directory_path)
+# directory_path = '/Users/mairahmac/Desktop/RC_TestingNotes/01262025/ML2G'
+# process_directory(directory_path)
+directory_path8 = '/Users/mairahmac/Desktop/RC_TestingNotes/01262025/ML2C/Cleaned'
+process_directory(directory_path8)
+directory_path9 = '/Users/mairahmac/Desktop/RC_TestingNotes/01262025/ML2D/Cleaned'
+process_directory(directory_path9)
+# directory_path = '/Users/mairahmac/Desktop/RC_TestingNotes/01262025/ML2A'
+# process_directory(directory_path)
+#directory_path = '/Users/mairahmac/Desktop/RC_TestingNotes/01252025/ML2G'
+directory_path0 = '/Users/mairahmac/Desktop/RC_TestingNotes/01252025/ML2C/Cleaned'
+# Process all matching files in the directory
+process_directory(directory_path0)

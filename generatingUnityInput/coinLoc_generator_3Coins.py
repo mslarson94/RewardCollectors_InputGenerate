@@ -7,10 +7,12 @@ generate CoinLocations.csv files from given x,y,z coordinates & which Magic Leap
 
 '''
 #from .coinLoc_generator_test_cfg.py import *
-from dataConfigs_3Coins import *
+import sys
+import os
 import csv
 import pandas as pd 
 import numpy as np
+from RC_utilities.configs.dataConfigs_3Coins import * # Import from the package
 
 ## Outpaths & Out File Names
 outFile = outPath + '/' + outFile_pre + '_' + whichCoinSet + '.csv'
@@ -25,17 +27,17 @@ with open(outFile_type, 'w') as file2:
         file2.write(header_string_type )
 
 ## All Coins Dataframe
-x_vals = [list(CoinSet['HV'][0])[0], list(CoinSet['LV'][0])[0], list(CoinSet['NV'][0])[0]]
+x_vals = [list(CoinSet['HV']['coords'])[0], list(CoinSet['LV']['coords'])[0], list(CoinSet['NV']['coords'])[0]]
 y_vals = [0.0]*3
-z_vals = [list(CoinSet['HV'][0])[1], list(CoinSet['LV'][0])[1], list(CoinSet['NV'][0])[1]]
+z_vals = [list(CoinSet['HV']['coords'])[1], list(CoinSet['LV']['coords'])[1], list(CoinSet['NV']['coords'])[1]]
 
-tutorial_x_vals = [list(tut_CoinSet['HV'][0])[0], list(tut_CoinSet['LV'][0])[0], list(tut_CoinSet['NV'][0])[0]]
+tutorial_x_vals = [list(tut_CoinSet['HV']['coords'])[0], list(tut_CoinSet['LV']['coords'])[0], list(tut_CoinSet['NV']['coords'])[0]]
 
-tutorial_z_vals = [list(tut_CoinSet['HV'][0])[1], list(tut_CoinSet['LV'][0])[1], list(tut_CoinSet['NV'][0])[1]]
+tutorial_z_vals = [list(tut_CoinSet['HV']['coords'])[1], list(tut_CoinSet['LV']['coords'])[1], list(tut_CoinSet['NV']['coords'])[1]]
 
 
-tut2_x_vals = [list(tut_CoinSet['NPE'][0])[0], list(tut_CoinSet['LV'][0])[0], list(tut_CoinSet['PPE'][0])[0]]
-tut2_z_vals = [list(tut_CoinSet['NPE'][0])[1], list(tut_CoinSet['LV'][0])[1], list(tut_CoinSet['PPE'][0])[1]]
+tut2_x_vals = [list(tut_CoinSet['NPE']['coords'])[0], list(tut_CoinSet['LV']['coords'])[0], list(tut_CoinSet['PPE']['coords'])[0]]
+tut2_z_vals = [list(tut_CoinSet['NPE']['coords'])[1], list(tut_CoinSet['LV']['coords'])[1], list(tut_CoinSet['PPE']['coords'])[1]]
 
 
 ## Orig Values
@@ -45,15 +47,15 @@ PPE_vals = [HV_pts, LV_pts, PPE_pts]
 NPE_vals = [NPE_pts, LV_pts, NV_pts]
 tut2_vals = [NPE_pts, LV_pts, PPE_pts]
 
-collectionOrder_x = [list(CoinSet['LV'][0])[0], list(CoinSet['NV'][0])[0], list(CoinSet['HV'][0])[0]]
-collectionOrder_z = [list(CoinSet['LV'][0])[1], list(CoinSet['NV'][0])[1], list(CoinSet['HV'][0])[1]]
+collectionOrder_x = [list(CoinSet['LV']['coords'])[0], list(CoinSet['NV']['coords'])[0], list(CoinSet['HV']['coords'])[0]]
+collectionOrder_z = [list(CoinSet['LV']['coords'])[1], list(CoinSet['NV']['coords'])[1], list(CoinSet['HV']['coords'])[1]]
 
-PPE_x_vals = list(CoinSet['HV'][0])[0], list(CoinSet['LV'][0])[0], list(CoinSet['PPE'][0])[0]
-PPE_z_vals = list(CoinSet['HV'][0])[1], list(CoinSet['LV'][0])[1], list(CoinSet['PPE'][0])[1]
+PPE_x_vals = list(CoinSet['HV']['coords'])[0], list(CoinSet['LV']['coords'])[0], list(CoinSet['PPE']['coords'])[0]
+PPE_z_vals = list(CoinSet['HV']['coords'])[1], list(CoinSet['LV']['coords'])[1], list(CoinSet['PPE']['coords'])[1]
 
 
-NPE_x_vals = list(CoinSet['NPE'][0])[0], list(CoinSet['LV'][0])[0], list(CoinSet['NV'][0])[0]
-NPE_z_vals = list(CoinSet['NPE'][0])[1], list(CoinSet['LV'][0])[1], list(CoinSet['NV'][0])[1]
+NPE_x_vals = list(CoinSet['NPE']['coords'])[0], list(CoinSet['LV']['coords'])[0], list(CoinSet['NV']['coords'])[0]
+NPE_z_vals = list(CoinSet['NPE']['coords'])[1], list(CoinSet['LV']['coords'])[1], list(CoinSet['NV']['coords'])[1]
 
 print(collectionOrder_List[0])
 

@@ -1,0 +1,75 @@
+
+Within either the PilotData or RNSData 
+
+RawData	> pair_008	> 02_17_2025	> Morning	> Magic Leaps
+													> ML2A
+													> ML2D
+
+												> BioPac
+													- RC_p008_02_17_2025.acq 
+													- RC_p008_01_17_2025.mat
+													- RC_p008_02_17_2025.mat
+
+												> Marks
+													> BioPac_p008_02_17_2025
+													> RNS_p008_02_17_2025
+
+												> Motive
+													> csvFiles
+													> rawTakes
+													> solvedTakes
+									
+									> Afternoon	> Magic Leaps
+													> ML2A
+													> ML2D
+
+												> BioPac
+													- RC_p008_02_17_2025.acq 
+													- RC_p008_01_17_2025.mat
+													- RC_p008_02_17_2025.mat
+
+												> Marks
+													> BioPac_p008_02_17_2025
+													> RNS_p008_02_17_2025
+
+												> Motive
+													> csvFiles
+													> rawTakes
+													> solvedTakes
+					
+					> 02_19_2025	> Morning	> Magic Leaps
+													> ML2A
+													> ML2D
+
+												> BioPac
+													- RC_p008_02_19_2025.acq 
+													- RC_p008_01_19_2025.mat
+													- RC_p008_02_19_2025.mat
+
+												> Marks
+													> BioPac_p008_02_19_2025
+													> RNS_p008_02_19_2025
+
+												> Motive
+													> csvFiles
+													> rawTakes
+													> solvedTakes
+
+									> Afternoon	> Magic Leaps
+													> ML2A
+													> ML2D
+
+												> BioPac
+													- RC_p008_02_19_2025.acq 
+													- RC_p008_01_19_2025.mat
+													- RC_p008_02_19_2025.mat
+
+												> Marks
+													> BioPac_p008_02_19_2025
+													> RNS_p008_02_19_2025
+
+												> Motive
+													> csvFiles
+													> rawTakes
+													> solvedTakes
+

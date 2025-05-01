@@ -1,5 +1,5 @@
 #loggerTranslations.py
-
+# as of 4/28/25 this needs to be updated, but is a good base so I'm temporarily keeping it - Myra
 ## Specific Round
 markTime = "Mark should happen if checked on terminal." 
 # Is logged at the end of the previous block, but it is actually the start of the next block
@@ -21,10 +21,10 @@ blockEnd = "finished current task"
 
 ## Initial Encoding 
 chestOpened_IE_start = "Chest opened:" 
-# value is 0-2 (tutorial) or 0-5 (actual) for the current coin collected in the round e.g. 3 / 5 = 4th coin collected out of 6
+# value is 0-2
 
 coinCollect_IE_start = "coin collected:" 
-# value is 0-2 (tutorial) or 0-5 (actual) for the current coin collected in the round e.g. 3 / 5 = 4th coin collected out of 6
+# value is 0-2
 
 ## Pin Drop
 pinDrop = "Just dropped a pin." 
@@ -53,7 +53,7 @@ collectFeedBack = "Collected feedback coin"
 # For example: "Collected feedback coin:0.00 total reward: 0.00" 
 
 whichFeedBackCollected = "Collected pin feedback coin: "
-# value is 0-2 (tutorial) or 0-5 (actual) for the current coin collected in the round e.g. 3 / 5 = 4th coin collected out of 6
+# value is 0-2
 
 pinDrop_RoundEnd_start = "Finished pindrop round:" 
 # Current round number within block, important for Test Phase 1 blocks 

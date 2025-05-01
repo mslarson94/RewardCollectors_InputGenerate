@@ -44,7 +44,7 @@ coinLockedTime = 1.0
 
 pinDropSound = 0.403
 
-chestOpenSound = 0.4 ## previously 1.660 seconds - I need to remember to push the updated version 
+chestOpenSound = 0.4 
 
 coinPresSound_orig = 0.650
 

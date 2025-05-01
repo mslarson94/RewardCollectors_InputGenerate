@@ -192,7 +192,7 @@ temp_str_AN = '0.0|0.0|5.0,1.75|0.0|4.25'
 
 if roleReversal_EV == True: 
     # Generate balanced segments for role-reversal trials (2 segments of 10 trials each)
-    rr_trial_ratio = [6, 2, 2]  # Ratio that sums to 10
+    rr_trial_ratio = [1, 1, 1]  # Ratio that sums to 10
     rr_ev_types = ["normal", "PPE", "NPE"]
     rr_segment_size = 10  # Each segment contains 10 trials
     rr_segment_count = 2  # Total 20 trials (2x10)

@@ -6,7 +6,6 @@ RC_utilities.egg-info/dependency_links.txt
 RC_utilities.egg-info/top_level.txt
 RC_utilities/configs/__init__.py
 RC_utilities/configs/dataConfigs_3Coins.py
-RC_utilities/configs/dataConfigs_3Coins_old.py
 RC_utilities/configs/hardCodedTimeline.py
 RC_utilities/configs/loggerTranslations.py
 RC_utilities/helper_functions/__init__.py

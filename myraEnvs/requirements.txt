@@ -1,3 +1,4 @@
+ace_tools==0.0
 anyio @ file:///opt/concourse/worker/volumes/live/eb44598f-565b-45e7-4c50-c1ae70306e18/volume/anyio_1644481722202/work/dist
 appnope @ file:///Users/builder/ci_310/appnope_1642500616005/work
 argon2-cffi @ file:///opt/conda/conda-bld/argon2-cffi_1645000214183/work
@@ -13,6 +14,7 @@ certifi @ file:///home/conda/feedstock_root/build_artifacts/certifi_170702213979
 cffi @ file:///Users/builder/ci_310/cffi_1643393868399/work
 charset-normalizer @ file:///tmp/build/80754af9/charset-normalizer_1630003229654/work
 contourpy==1.2.1
+cpl_pipeline @ git+https://github.com/FlynnOConnell/cpl_pipeline.git@6b4eccdcd1918facf218c1fec0cd8a786e98b73b
 cryptography @ file:///private/var/folders/sy/f16zz6x50xz3113nwtb9bvq00000gp/T/abs_b470f7cb-c8f1-42c9-b84f-23789ea77e7c9difcqh4/croots/recipe/cryptography_1652101134392/work
 cycler==0.12.1
 debugpy @ file:///Users/builder/ci_310/debugpy_1642501698574/work
@@ -20,11 +22,13 @@ decorator @ file:///opt/conda/conda-bld/decorator_1643638310831/work
 defusedxml @ file:///tmp/build/80754af9/defusedxml_1615228127516/work
 dtw==1.4.0
 entrypoints @ file:///opt/concourse/worker/volumes/live/5eb4850e-dcbc-41ad-5f22-922bac778f70/volume/entrypoints_1649926457041/work
+et_xmlfile==2.0.0
 executing @ file:///opt/conda/conda-bld/executing_1646925071911/work
 fastdtw==0.3.4
 fastjsonschema @ file:///tmp/build/80754af9/python-fastjsonschema_1620414857593/work/dist
 ffmpeg==1.4
 fonttools==4.51.0
+h5py==3.12.1
 idna @ file:///tmp/build/80754af9/idna_1637925883363/work
 imageio==2.34.1
 ipykernel @ file:///opt/concourse/worker/volumes/live/b899b150-2bf0-46bf-5730-9e8a3e9ee440/volume/ipykernel_1647000787125/work/dist/ipykernel-6.9.1-py3-none-any.whl
@@ -46,6 +50,7 @@ jupyterlab-server @ file:///private/var/folders/sy/f16zz6x50xz3113nwtb9bvq00000g
 jupyterlab-widgets @ file:///tmp/build/80754af9/jupyterlab_widgets_1609884341231/work
 kiwisolver==1.4.5
 MarkupSafe @ file:///private/var/folders/sy/f16zz6x50xz3113nwtb9bvq00000gp/T/abs_d4a9444f-bd4c-4043-b47d-cede33979b0fve7bm42r/croots/recipe/markupsafe_1654597878200/work
+mat73==0.65
 matplotlib==3.9.0
 matplotlib-inline @ file:///tmp/build/80754af9/matplotlib-inline_1628242447089/work
 mistune @ file:///Users/builder/ci_310/mistune_1642534169737/work
@@ -53,11 +58,13 @@ nbclassic @ file:///opt/conda/conda-bld/nbclassic_1644943264176/work
 nbclient @ file:///opt/concourse/worker/volumes/live/7d38d6af-a5d4-4a2f-68ef-fc787e52a70c/volume/nbclient_1650308404062/work
 nbconvert @ file:///private/var/folders/sy/f16zz6x50xz3113nwtb9bvq00000gp/T/abs_croot-mv2swkk7/nbconvert_1649751922903/work
 nbformat @ file:///opt/concourse/worker/volumes/live/5b25a8da-f32e-40eb-495e-f52044c33c92/volume/nbformat_1649844955264/work
+neo @ git+https://github.com/NeuralEnsemble/python-neo.git@f0a7fb9c34a6c460e147f0a87b7ef368d925cc99
 nest-asyncio @ file:///opt/concourse/worker/volumes/live/4c28d7d6-d544-4f26-7811-eac0cb2a490e/volume/nest-asyncio_1649847935212/work
 networkx==3.3
 notebook @ file:///private/var/folders/sy/f16zz6x50xz3113nwtb9bvq00000gp/T/abs_98mevid06x/croots/recipe/notebook_1659083668559/work
 numpy==1.23.4
 numpy-stl==3.1.1
+openpyxl==3.1.5
 packaging @ file:///tmp/build/80754af9/packaging_1637314298585/work
 pandas==1.5.1
 pandocfilters @ file:///opt/conda/conda-bld/pandocfilters_1643405455980/work
@@ -80,17 +87,21 @@ pyrsistent @ file:///Users/builder/ci_310/pyrsistent_1642541562041/work
 PySocks @ file:///Users/builder/ci_310/pysocks_1642536366386/work
 python-dateutil @ file:///tmp/build/80754af9/python-dateutil_1626374649649/work
 python-utils==3.8.2
-pytz @ file:///private/var/folders/sy/f16zz6x50xz3113nwtb9bvq00000gp/T/abs_1caf090c-01b6-4973-adac-d2eb884a674e7zonb9eb/croots/recipe/pytz_1654762641285/work
+pytz==2022.1
 pyzmq @ file:///private/var/folders/sy/f16zz6x50xz3113nwtb9bvq00000gp/T/abs_15f7a459-ad98-422b-b8da-cbf1f626e2115nt0ocwy/croots/recipe/pyzmq_1657724193704/work
 qtconsole @ file:///private/var/folders/sy/f16zz6x50xz3113nwtb9bvq00000gp/T/abs_3bc_oi02i2/croots/recipe/qtconsole_1659510292086/work
 QtPy @ file:///opt/conda/conda-bld/qtpy_1649073884068/work
+quantities==0.16.1
+-e git+ssh://git@github.com/mslarson94/RewardCollectors_InputGenerate@b03f370a2d431be218f8f1e25ddf76750a48f386#egg=RC_utilities
 requests @ file:///private/var/folders/sy/f16zz6x50xz3113nwtb9bvq00000gp/T/abs_516b78ce-034d-4395-b9b5-1d78c2847384qtnol99l/croots/recipe/requests_1657734628886/work
 scipy==1.9.3
 seaborn==0.13.2
 Send2Trash @ file:///tmp/build/80754af9/send2trash_1632406701022/work
+shapely==2.0.7
 sip @ file:///private/var/folders/sy/f16zz6x50xz3113nwtb9bvq00000gp/T/abs_88z1zrsfrf/croots/recipe/sip_1659012373083/work
-six @ file:///tmp/build/80754af9/six_1644875935023/work
+six==1.12.0
 sniffio @ file:///Users/builder/ci_310/sniffio_1642537651147/work
+sonpy @ git+https://github.com/divieira/sonpy.git@aa5fdfe524d1b1b2d73e28e5e546f64e0ead1a14
 soupsieve @ file:///tmp/build/80754af9/soupsieve_1636706018808/work
 stack-data @ file:///opt/conda/conda-bld/stack_data_1646927590127/work
 statsmodels==0.14.2

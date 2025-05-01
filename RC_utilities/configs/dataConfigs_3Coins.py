@@ -20,8 +20,8 @@ path_check(troubleshootingFolder)
 
 #################    Hardware   ####################
 whichWifi = 'SuthanaLabResearch' # 'SuthanaLab' 'SuthanaLabResearch'
-whichDevice_AN = 'G' # Possible Values (str): A,  G
-whichDevice_PO = 'C' # Possible Values (str): D,  C
+whichDevice_AN = 'A' # Possible Values (str): A,  G
+whichDevice_PO = 'D' # Possible Values (str): D,  C
 
 #################  Task Design  ####################
 whichCoinSet = 'A'              # Possible Values (str): 'A', 'B', 'Conf', 'Dummy'

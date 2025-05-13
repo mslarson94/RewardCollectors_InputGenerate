@@ -1,0 +1,396 @@
+########################################################################
+## Coin Collecting Block
+########################################################################
+
+###################
+## Round 0
+###################
+
+Mark should happen if checked on terminal.
+
+	###################
+	## Round 7777
+	###################
+
+Repositioned and ready to start block or round
+
+**** Sending Headset mark **** 
+**** Sending Headset mark **** 
+**** Sending Headset mark **** 
+
+###################
+## Round 1
+###################
+
+Started watching other participant's collecting. Block:2
+
+coinsetID:1 absolute and delta(local position)
+coinpoint0:  x: 0.6399221 y: -1.557099 z: -6.77464 deltax:-3.76 deltay:0 deltaz:-0.1
+coinpoint1:  x: -2.74736 y: -1.557099 z: -9.000044 deltax:-0.57 deltay:0 deltaz:2.4
+coinpoint2:  x: -4.217202 y: -1.557099 z: -3.418102 deltax:1.36 deltay:0 deltaz:-3.04
+
+Other participant just collected coin: 0
+Other participant just collected coin: 1
+Other participant just collected coin: 2
+
+	###################
+	## Round 9999
+	###################
+Finished watching other participant's collection.
+finished current task
+
+
+########################################################################
+## Multi Round Pin Dropping Block
+########################################################################
+
+###################
+## Round 0
+###################
+
+Mark should happen if checked on terminal.
+
+coinsetID:1 absolute and delta(local position)
+coinpoint0:  x: 0.6399221 y: -1.557099 z: -6.77464 deltax:-3.76 deltay:0 deltaz:-0.1
+coinpoint1:  x: -2.74736 y: -1.557099 z: -9.000044 deltax:-0.57 deltay:0 deltaz:2.4
+coinpoint2:  x: -4.217202 y: -1.557099 z: -3.418102 deltax:1.36 deltay:0 deltaz:-3.04
+
+	###################
+	## Round 7777
+	###################
+
+Repositioned and ready to start block or round
+
+###################
+## Round 1
+###################
+Started watching other participant's pin dropping. Block: 3
+
+## Pin 1
+Other participant just dropped a new pin at -3.286 -1.557 -4.906
+	Dropped pin was dropped at 1.75 from chest 2 originally at (-4.22, -1.56, -3.42):INCORRECT
+Observer did not vote for this pindrop from the navigator
+A.N. collected coin:0 round reward: 0.00
+
+## Pin 2
+Other participant just dropped a new pin at -1.531 -1.557 -8.773
+	Dropped pin was dropped at 1.24 from chest 1 originally at (-2.75, -1.56, -9.00):INCORRECT
+Observer chose CORRECT for this pindrop from the navigator
+A.N. collected coin:0 round reward: 0.00
+
+## Pin 3
+Other participant just dropped a new pin at -4.947 -1.557 -9.049
+	Dropped pin was dropped at 6.03 from chest 0 originally at (0.64, -1.56, -6.77):INCORRECT
+Observer chose INCORRECT for this pindrop from the navigator
+A.N. collected coin:0 round reward: 0.00
+
+	###################
+	## Round 8888
+	###################
+
+###################
+## Round 2
+###################
+
+Repositioned and ready to start block or round
+
+## Pin 1
+Other participant just dropped a new pin at -4.386 -1.557 -4.633
+	Dropped pin was dropped at 1.23 from chest 2 originally at (-4.22, -1.56, -3.42):INCORRECT
+Observer chose CORRECT for this pindrop from the navigator
+A.N. collected coin:0 round reward: 0.00
+
+## Pin 2
+Other participant just dropped a new pin at -4.614 -1.557 -3.704
+	Dropped pin was dropped at 5.62 from chest 1 originally at (-2.75, -1.56, -9.00):INCORRECT
+Observer chose CORRECT for this pindrop from the navigator
+A.N. collected coin:0 round reward: 0.00
+
+## Pin 3
+Other participant just dropped a new pin at -2.148 -1.557 -9.033
+	Dropped pin was dropped at 3.59 from chest 0 originally at (0.64, -1.56, -6.77):INCORRECT
+Observer chose INCORRECT for this pindrop from the navigator
+A.N. collected coin:0 round reward: 0.00
+
+	###################
+	## Round 8888
+	###################
+
+###################
+## Round 3
+###################
+
+Repositioned and ready to start block or round
+
+## Pin 1
+Other participant just dropped a new pin at -2.654 -1.557 -2.793
+	Dropped pin was dropped at 1.68 from chest 2 originally at (-4.22, -1.56, -3.42):INCORRECT
+Observer chose CORRECT for this pindrop from the navigator
+A.N. collected coin:0 round reward: 0.00
+
+## Pin 2
+Other participant just dropped a new pin at -4.126 -1.557 -3.669
+	Dropped pin was dropped at 5.51 from chest 1 originally at (-2.75, -1.56, -9.00):INCORRECT
+Observer chose CORRECT for this pindrop from the navigator
+A.N. collected coin:0 round reward: 0.00
+
+## Pin 3
+Other participant just dropped a new pin at -2.263 -1.557 -8.560
+	Dropped pin was dropped at 3.41 from chest 0 originally at (0.64, -1.56, -6.77):INCORRECT
+Observer chose INCORRECT for this pindrop from the navigator
+A.N. collected coin:0 round reward: 0.00
+
+	###################
+	## Round 8888
+	###################
+
+###################
+## Round 4
+###################
+
+Repositioned and ready to start block or round
+
+## Pin 1
+Other participant just dropped a new pin at 0.537 -1.557 -6.808
+	Dropped pin was dropped at 0.11 from chest 0 originally at (0.64, -1.56, -6.77):CORRECT
+Observer chose CORRECT for this pindrop from the navigator
+A.N. collected coin:10 round reward: 10.00
+
+## Pin 2
+Other participant just dropped a new pin at -4.065 -1.557 -3.785
+	Dropped pin was dropped at 0.40 from chest 1 originally at (-4.22, -1.56, -3.42):CORRECT
+Observer chose CORRECT for this pindrop from the navigator
+A.N. collected coin:20 round reward: 30.00
+
+## Pin 3
+Other participant just dropped a new pin at -2.823 -1.557 -8.681
+	Dropped pin was dropped at 0.33 from chest 0 originally at (-2.75, -1.56, -9.00):CORRECT
+Observer chose CORRECT for this pindrop from the navigator
+A.N. collected coin:0 round reward: 30.00
+
+	###################
+	## Round 8888
+	###################
+
+**** A.N. finished a perfect dropround with:30.00 total reward: 0.00 **** 
+
+**** Sending Headset mark **** 
+**** Sending Headset mark **** 
+
+###################
+## Round 5
+###################
+
+Repositioned and ready to start block or round
+
+## Pin 1
+Other participant just dropped a new pin at 0.250 -1.557 -6.716
+	Dropped pin was dropped at 0.39 from chest 0 originally at (0.64, -1.56, -6.77):CORRECT
+Observer chose CORRECT for this pindrop from the navigator
+A.N. collected coin:10 round reward: 10.00
+
+## Pin 2
+Other participant just dropped a new pin at -2.368 -1.557 -5.480
+	Dropped pin was dropped at 2.77 from chest 1 originally at (-4.22, -1.56, -3.42):INCORRECT
+Observer chose CORRECT for this pindrop from the navigator
+A.N. collected coin:0 round reward: 0.00
+
+## Pin 3
+Other participant just dropped a new pin at -4.055 -1.557 -4.229
+	Dropped pin was dropped at 4.95 from chest 0 originally at (-2.75, -1.56, -9.00):INCORRECT
+Observer chose CORRECT for this pindrop from the navigator
+A.N. collected coin:0 round reward: 0.00
+
+	###################
+	## Round 8888
+	###################
+
+###################
+## Round 6
+###################
+
+Repositioned and ready to start block or round
+
+## Pin 1
+Other participant just dropped a new pin at -3.613 -1.557 -8.560
+	Dropped pin was dropped at 0.97 from chest 1 originally at (-2.75, -1.56, -9.00):CORRECT
+Observer chose CORRECT for this pindrop from the navigator
+A.N. collected coin:0 round reward: 0.00
+
+## Pin 2
+Other participant just dropped a new pin at -2.196 -1.557 -8.133
+	Dropped pin was dropped at 3.14 from chest 0 originally at (0.64, -1.56, -6.77):INCORRECT
+Observer chose INCORRECT for this pindrop from the navigator
+A.N. collected coin:0 round reward: 0.00
+
+## Pin 3
+Other participant just dropped a new pin at -3.820 -1.557 -3.792
+	Dropped pin was dropped at 0.55 from chest 0 originally at (-4.22, -1.56, -3.42):CORRECT
+Observer chose CORRECT for this pindrop from the navigator
+A.N. collected coin:0 round reward: 0.00
+
+	###################
+	## Round 8888
+	###################
+
+###################
+## Round 7
+###################
+
+Repositioned and ready to start block or round
+
+## Pin 1
+Other participant just dropped a new pin at -3.051 -1.557 -8.434
+	Dropped pin was dropped at 0.64 from chest 1 originally at (-2.75, -1.56, -9.00):CORRECT
+Observer chose INCORRECT for this pindrop from the navigator
+A.N. collected coin:0 round reward: 0.00
+
+## Pin 2
+Other participant just dropped a new pin at 0.028 -1.557 -6.750
+	Dropped pin was dropped at 0.61 from chest 0 originally at (0.64, -1.56, -6.77):CORRECT
+Observer chose CORRECT for this pindrop from the navigator
+A.N. collected coin:10 round reward: 10.00
+
+## Pin 3
+Other participant just dropped a new pin at -3.824 -1.557 -3.715
+	Dropped pin was dropped at 0.49 from chest 0 originally at (-4.22, -1.56, -3.42):CORRECT
+Observer chose CORRECT for this pindrop from the navigator
+A.N. collected coin:10 round reward: 20.00
+
+	###################
+	## Round 8888
+	###################
+
+**** A.N. finished a perfect dropround with:20.00 total reward: 0.00 **** 
+
+###################
+## Round 8
+###################
+
+Repositioned and ready to start block or round
+
+## Pin 1
+Other participant just dropped a new pin at -2.840 -1.557 -8.394
+	Dropped pin was dropped at 0.61 from chest 1 originally at (-2.75, -1.56, -9.00):CORRECT
+Observer chose CORRECT for this pindrop from the navigator
+A.N. collected coin:0 round reward: 0.00
+
+## Pin 2
+Other participant just dropped a new pin at 0.117 -1.557 -6.662
+	Dropped pin was dropped at 0.53 from chest 0 originally at (0.64, -1.56, -6.77):CORRECT
+Observer chose CORRECT for this pindrop from the navigator
+A.N. collected coin:10 round reward: 10.00
+
+## Pin 3
+Other participant just dropped a new pin at -3.876 -1.557 -3.811
+	Dropped pin was dropped at 0.52 from chest 0 originally at (-4.22, -1.56, -3.42):CORRECT
+Observer chose CORRECT for this pindrop from the navigator
+A.N. collected coin:10 round reward: 20.00
+	
+	###################
+	## Round 8888
+	###################
+
+**** A.N. finished a perfect dropround with:20.00 total reward: 0.00 **** 
+
+###################
+## Round 9
+###################
+
+Repositioned and ready to start block or round
+
+## Pin 1
+Other participant just dropped a new pin at -2.897 -1.557 -8.714
+	Dropped pin was dropped at 0.32 from chest 1 originally at (-2.75, -1.56, -9.00):CORRECT
+Observer chose CORRECT for this pindrop from the navigator
+A.N. collected coin:0 round reward: 0.00
+
+## Pin 2
+Other participant just dropped a new pin at 0.269 -1.557 -6.567
+	Dropped pin was dropped at 0.43 from chest 0 originally at (0.64, -1.56, -6.77):CORRECT
+Observer chose CORRECT for this pindrop from the navigator
+A.N. collected coin:10 round reward: 10.00
+
+## Pin 3
+Other participant just dropped a new pin at -3.838 -1.557 -3.802
+	Dropped pin was dropped at 0.54 from chest 0 originally at (-4.22, -1.56, -3.42):CORRECT
+Observer chose CORRECT for this pindrop from the navigator
+A.N. collected coin:10 round reward: 20.00
+
+	###################
+	## Round 8888
+	###################
+
+**** A.N. finished a perfect dropround with:20.00 total reward: 60.00 **** 
+
+	###################
+	## Round 9999
+	###################
+
+Finished watching other participant's pindropping.
+
+**** Sending Headset mark **** 
+**** Sending Headset mark **** 
+**** Sending Headset mark **** 
+**** Sending Headset mark **** 
+
+########################################################################
+## Single Round Pin Dropping Block
+########################################################################
+
+###################
+## Round 0
+###################
+
+Mark should happen if checked on terminal.
+coinsetID:3 absolute and delta(local position)
+coinpoint0:  x: -4.217202 y: -1.557099 z: -3.418102 deltax:1.36 deltay:0 deltaz:-3.04
+coinpoint1:  x: 0.6399221 y: -1.557099 z: -6.77464 deltax:-3.76 deltay:0 deltaz:-0.1
+coinpoint2:  x: -2.74736 y: -1.557099 z: -9.000044 deltax:-0.57 deltay:0 deltaz:2.4
+Sending Headset mark
+Sending Headset mark
+Sending Headset mark
+
+	###################
+	## Round 7777
+	###################
+
+Repositioned and ready to start block or round
+
+###################
+## Round 1
+###################
+
+Started watching other participant's pin dropping. Block: 4
+
+## Pin 1
+Other participant just dropped a new pin at -6.522 -1.557 -9.250
+	Dropped pin was dropped at 3.78 from chest 2 originally at (-2.75, -1.56, -9.00):INCORRECT
+Observer chose CORRECT for this pindrop from the navigator
+A.N. collected coin:0 round reward: 0.00
+
+## Pin 2
+Other participant just dropped a new pin at 0.255 -1.557 -6.445
+	Dropped pin was dropped at 0.51 from chest 1 originally at (0.64, -1.56, -6.77):CORRECT
+Observer chose CORRECT for this pindrop from the navigator
+A.N. collected coin:0 round reward: 0.00
+
+## Pin 3
+Other participant just dropped a new pin at -3.702 -1.557 -3.871
+	Dropped pin was dropped at 0.69 from chest 0 originally at (-4.22, -1.56, -3.42):CORRECT
+Observer chose CORRECT for this pindrop from the navigator
+A.N. collected coin:0 round reward: 0.00
+
+	###################
+	## Round 8888
+	###################
+
+**** A.N. finished a perfect dropround with:0.00 total reward: 60.00 ****
+
+Observer says it was a NEW round.
+
+	###################
+	## Round 9999
+	###################
+	
+Finished watching other participant's pindropping.

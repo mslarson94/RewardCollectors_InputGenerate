@@ -1,0 +1,717 @@
+bash: run_overnight.sh: No such file or directory
+bash: run_overnight.sh: No such file or directory
+
+CommandNotFoundError: Your shell has not been properly configured to use 'conda activate'.
+To initialize your shell, run
+
+    $ conda init <SHELL_NAME>
+
+Currently supported shells are:
+  - bash
+  - fish
+  - tcsh
+  - xonsh
+  - zsh
+  - powershell
+
+See 'conda init --help' for more information and options.
+
+IMPORTANT: You may need to close and restart your shell after running 'conda init'.
+
+
+🚀 AN cascading: Starting integration_with_logger.py at Wed May  7 20:28:00 PDT 2025
+✅ AN cascading: python integration_with_logger.py  completed at Wed May  7 20:28:00 PDT 2025
+
+CommandNotFoundError: Your shell has not been properly configured to use 'conda activate'.
+To initialize your shell, run
+
+    $ conda init <SHELL_NAME>
+
+Currently supported shells are:
+  - bash
+  - fish
+  - tcsh
+  - xonsh
+  - zsh
+  - powershell
+
+See 'conda init --help' for more information and options.
+
+IMPORTANT: You may need to close and restart your shell after running 'conda init'.
+
+
+🚀 AN cascading: Starting integration_with_logger.py at Wed May  7 20:33:34 PDT 2025
+✅ AN cascading: python integration_with_logger.py  completed at Wed May  7 20:33:34 PDT 2025
+
+CommandNotFoundError: Your shell has not been properly configured to use 'conda activate'.
+To initialize your shell, run
+
+    $ conda init <SHELL_NAME>
+
+Currently supported shells are:
+  - bash
+  - fish
+  - tcsh
+  - xonsh
+  - zsh
+  - powershell
+
+See 'conda init --help' for more information and options.
+
+IMPORTANT: You may need to close and restart your shell after running 'conda init'.
+
+
+🚀 AN cascading: Starting integration_with_logger.py at Wed May  7 20:34:51 PDT 2025
+✅ AN cascading: python integration_with_logger.py  completed at Wed May  7 20:34:51 PDT 2025
+
+CommandNotFoundError: Your shell has not been properly configured to use 'conda activate'.
+To initialize your shell, run
+
+    $ conda init <SHELL_NAME>
+
+Currently supported shells are:
+  - bash
+  - fish
+  - tcsh
+  - xonsh
+  - zsh
+  - powershell
+
+See 'conda init --help' for more information and options.
+
+IMPORTANT: You may need to close and restart your shell after running 'conda init'.
+
+
+🚀 AN cascading: Starting integration_with_logger.py at Wed May  7 20:46:28 PDT 2025
+✅ AN cascading: python integration_with_logger.py  completed at Wed May  7 20:46:28 PDT 2025
+
+CommandNotFoundError: Your shell has not been properly configured to use 'conda activate'.
+To initialize your shell, run
+
+    $ conda init <SHELL_NAME>
+
+Currently supported shells are:
+  - bash
+  - fish
+  - tcsh
+  - xonsh
+  - zsh
+  - powershell
+
+See 'conda init --help' for more information and options.
+
+IMPORTANT: You may need to close and restart your shell after running 'conda init'.
+
+
+🚀 AN cascading: Starting integration_with_logger.py at Wed May  7 20:47:23 PDT 2025
+✅ AN cascading: python integration_with_logger.py  completed at Wed May  7 20:47:23 PDT 2025
+📄 Logging to /Users/mairahmac/Desktop/processing_log_2025-05-07_20-50-38.log
+
+CommandNotFoundError: Your shell has not been properly configured to use 'conda activate'.
+To initialize your shell, run
+
+    $ conda init <SHELL_NAME>
+
+Currently supported shells are:
+  - bash
+  - fish
+  - tcsh
+  - xonsh
+  - zsh
+  - powershell
+
+See 'conda init --help' for more information and options.
+
+IMPORTANT: You may need to close and restart your shell after running 'conda init'.
+
+
+🚀 AN cascading: Starting eventCascades_AN.py at Wed May  7 20:50:39 PDT 2025
+▶️ Mode: ALL — processing entire dataDir
+✅ AN cascading: eventCascades_AN.py completed at Wed May  7 20:50:39 PDT 2025
+📄 Logging to /Users/mairahmac/Desktop/processing_log_2025-05-07_20-52-33.log
+
+CommandNotFoundError: Your shell has not been properly configured to use 'conda activate'.
+To initialize your shell, run
+
+    $ conda init <SHELL_NAME>
+
+Currently supported shells are:
+  - bash
+  - fish
+  - tcsh
+  - xonsh
+  - zsh
+  - powershell
+
+See 'conda init --help' for more information and options.
+
+IMPORTANT: You may need to close and restart your shell after running 'conda init'.
+
+
+🚀 AN cascading: Starting eventCascades_AN.py at Wed May  7 20:52:33 PDT 2025
+▶️ Mode: ALL — processing entire dataDir
+✅ AN cascading: eventCascades_AN.py completed at Wed May  7 20:52:34 PDT 2025
+📄 Logging to /Users/mairahmac/Desktop/processing_log_2025-05-07_21-01-40.log
+
+CommandNotFoundError: Your shell has not been properly configured to use 'conda activate'.
+To initialize your shell, run
+
+    $ conda init <SHELL_NAME>
+
+Currently supported shells are:
+  - bash
+  - fish
+  - tcsh
+  - xonsh
+  - zsh
+  - powershell
+
+See 'conda init --help' for more information and options.
+
+IMPORTANT: You may need to close and restart your shell after running 'conda init'.
+
+
+🚀 AN cascading: Starting eventCascades_AN.py at Wed May  7 21:01:40 PDT 2025
+▶️ Mode: ALL — processing entire dataDir
+✅ AN cascading: eventCascades_AN.py completed at Wed May  7 21:01:41 PDT 2025
+📄 Logging to /Users/mairahmac/Desktop/processing_log_2025-05-07_21-03-56.log
+
+CommandNotFoundError: Your shell has not been properly configured to use 'conda activate'.
+To initialize your shell, run
+
+    $ conda init <SHELL_NAME>
+
+Currently supported shells are:
+  - bash
+  - fish
+  - tcsh
+  - xonsh
+  - zsh
+  - powershell
+
+See 'conda init --help' for more information and options.
+
+IMPORTANT: You may need to close and restart your shell after running 'conda init'.
+
+
+🚀 AN cascading: Starting eventCascades_AN.py at Wed May  7 21:03:56 PDT 2025
+▶️ Mode: ALL — processing entire dataDir
+✅ AN cascading: eventCascades_AN.py completed at Wed May  7 21:03:58 PDT 2025
+📄 Logging to /Users/mairahmac/Desktop/processing_log_2025-05-07_21-14-18.log
+
+CommandNotFoundError: Your shell has not been properly configured to use 'conda activate'.
+To initialize your shell, run
+
+    $ conda init <SHELL_NAME>
+
+Currently supported shells are:
+  - bash
+  - fish
+  - tcsh
+  - xonsh
+  - zsh
+  - powershell
+
+See 'conda init --help' for more information and options.
+
+IMPORTANT: You may need to close and restart your shell after running 'conda init'.
+
+
+🚀 AN cascading: Starting eventCascades_AN.py at Wed May  7 21:14:18 PDT 2025
+▶️ Mode: ALL — processing entire dataDir
+✅ AN cascading: eventCascades_AN.py completed at Wed May  7 21:14:19 PDT 2025
+📄 Logging to /Users/mairahmac/Desktop/processing_log_2025-05-07_21-18-51.log
+
+CommandNotFoundError: Your shell has not been properly configured to use 'conda activate'.
+To initialize your shell, run
+
+    $ conda init <SHELL_NAME>
+
+Currently supported shells are:
+  - bash
+  - fish
+  - tcsh
+  - xonsh
+  - zsh
+  - powershell
+
+See 'conda init --help' for more information and options.
+
+IMPORTANT: You may need to close and restart your shell after running 'conda init'.
+
+
+🚀 AN cascading: Starting eventCascades_AN.py at Wed May  7 21:18:52 PDT 2025
+▶️ Mode: ALL — processing entire dataDir
+/Users/mairahmac/Desktop/RC_TestingNotes/SmallSelectedData/idealTestFile
+✅ AN cascading: eventCascades_AN.py completed at Wed May  7 21:18:52 PDT 2025
+📄 Logging to /Users/mairahmac/Desktop/processing_log_2025-05-07_21-19-49.log
+
+CommandNotFoundError: Your shell has not been properly configured to use 'conda activate'.
+To initialize your shell, run
+
+    $ conda init <SHELL_NAME>
+
+Currently supported shells are:
+  - bash
+  - fish
+  - tcsh
+  - xonsh
+  - zsh
+  - powershell
+
+See 'conda init --help' for more information and options.
+
+IMPORTANT: You may need to close and restart your shell after running 'conda init'.
+
+
+🚀 AN cascading: Starting eventCascades_AN.py at Wed May  7 21:19:49 PDT 2025
+▶️ Mode: ALL — processing entire dataDir
+/Users/mairahmac/Desktop/RC_TestingNotes/SmallSelectedData/idealTestFile
+✅ AN cascading: eventCascades_AN.py completed at Wed May  7 21:19:50 PDT 2025
+📄 Logging to /Users/mairahmac/Desktop/processing_log_2025-05-07_21-24-56.log
+
+CommandNotFoundError: Your shell has not been properly configured to use 'conda activate'.
+To initialize your shell, run
+
+    $ conda init <SHELL_NAME>
+
+Currently supported shells are:
+  - bash
+  - fish
+  - tcsh
+  - xonsh
+  - zsh
+  - powershell
+
+See 'conda init --help' for more information and options.
+
+IMPORTANT: You may need to close and restart your shell after running 'conda init'.
+
+
+🚀 AN cascading: Starting eventCascades_AN.py at Wed May  7 21:24:56 PDT 2025
+✅ AN cascading: eventCascades_AN.py completed at Wed May  7 21:24:57 PDT 2025
+📄 Logging to /Users/mairahmac/Desktop/processing_log_2025-05-07_21-28-40.log
+
+CommandNotFoundError: Your shell has not been properly configured to use 'conda activate'.
+To initialize your shell, run
+
+    $ conda init <SHELL_NAME>
+
+Currently supported shells are:
+  - bash
+  - fish
+  - tcsh
+  - xonsh
+  - zsh
+  - powershell
+
+See 'conda init --help' for more information and options.
+
+IMPORTANT: You may need to close and restart your shell after running 'conda init'.
+
+
+🚀 AN cascading: Starting eventCascades_AN.py at Wed May  7 21:28:40 PDT 2025
+✅ AN cascading: eventCascades_AN.py completed at Wed May  7 21:28:40 PDT 2025
+📄 Logging to /Users/mairahmac/Desktop/processing_log_2025-05-07_21-30-59.log
+
+CommandNotFoundError: Your shell has not been properly configured to use 'conda activate'.
+To initialize your shell, run
+
+    $ conda init <SHELL_NAME>
+
+Currently supported shells are:
+  - bash
+  - fish
+  - tcsh
+  - xonsh
+  - zsh
+  - powershell
+
+See 'conda init --help' for more information and options.
+
+IMPORTANT: You may need to close and restart your shell after running 'conda init'.
+
+
+🚀 AN cascading: Starting eventCascades_AN.py at Wed May  7 21:30:59 PDT 2025
+✅ AN cascading: eventCascades_AN.py completed at Wed May  7 21:31:00 PDT 2025
+📄 Logging to /Users/mairahmac/Desktop/processing_log_2025-05-07_21-38-34.log
+
+CommandNotFoundError: Your shell has not been properly configured to use 'conda activate'.
+To initialize your shell, run
+
+    $ conda init <SHELL_NAME>
+
+Currently supported shells are:
+  - bash
+  - fish
+  - tcsh
+  - xonsh
+  - zsh
+  - powershell
+
+See 'conda init --help' for more information and options.
+
+IMPORTANT: You may need to close and restart your shell after running 'conda init'.
+
+
+🚀 AN cascading: Starting eventCascades_AN.py at Wed May  7 21:38:34 PDT 2025
+✅ AN cascading: eventCascades_AN.py completed at Wed May  7 21:38:36 PDT 2025
+📄 Logging to /Users/mairahmac/Desktop/processing_log_2025-05-07_21-39-35.log
+
+CommandNotFoundError: Your shell has not been properly configured to use 'conda activate'.
+To initialize your shell, run
+
+    $ conda init <SHELL_NAME>
+
+Currently supported shells are:
+  - bash
+  - fish
+  - tcsh
+  - xonsh
+  - zsh
+  - powershell
+
+See 'conda init --help' for more information and options.
+
+IMPORTANT: You may need to close and restart your shell after running 'conda init'.
+
+
+🚀 AN cascading: Starting eventCascades_AN.py at Wed May  7 21:39:35 PDT 2025
+✅ AN cascading: eventCascades_AN.py completed at Wed May  7 21:39:36 PDT 2025
+📄 Logging to /Users/mairahmac/Desktop/processing_log_2025-05-07_21-46-16.log
+
+CommandNotFoundError: Your shell has not been properly configured to use 'conda activate'.
+To initialize your shell, run
+
+    $ conda init <SHELL_NAME>
+
+Currently supported shells are:
+  - bash
+  - fish
+  - tcsh
+  - xonsh
+  - zsh
+  - powershell
+
+See 'conda init --help' for more information and options.
+
+IMPORTANT: You may need to close and restart your shell after running 'conda init'.
+
+
+🚀 AN cascading: Starting eventCascades_AN.py at Wed May  7 21:46:16 PDT 2025
+✅ AN cascading: eventCascades_AN.py completed at Wed May  7 21:46:17 PDT 2025
+📄 Logging to /Users/mairahmac/Desktop/processing_log_2025-05-07_21-48-01.log
+
+CommandNotFoundError: Your shell has not been properly configured to use 'conda activate'.
+To initialize your shell, run
+
+    $ conda init <SHELL_NAME>
+
+Currently supported shells are:
+  - bash
+  - fish
+  - tcsh
+  - xonsh
+  - zsh
+  - powershell
+
+See 'conda init --help' for more information and options.
+
+IMPORTANT: You may need to close and restart your shell after running 'conda init'.
+
+
+🚀 AN cascading: Starting eventCascades_AN.py at Wed May  7 21:48:01 PDT 2025
+✅ AN cascading: eventCascades_AN.py completed at Wed May  7 21:48:02 PDT 2025
+📄 Logging to /Users/mairahmac/Desktop/processing_log_2025-05-07_21-50-47.log
+
+CommandNotFoundError: Your shell has not been properly configured to use 'conda activate'.
+To initialize your shell, run
+
+    $ conda init <SHELL_NAME>
+
+Currently supported shells are:
+  - bash
+  - fish
+  - tcsh
+  - xonsh
+  - zsh
+  - powershell
+
+See 'conda init --help' for more information and options.
+
+IMPORTANT: You may need to close and restart your shell after running 'conda init'.
+
+
+🚀 AN cascading: Starting eventCascades_AN.py at Wed May  7 21:50:48 PDT 2025
+✅ AN cascading: eventCascades_AN.py completed at Wed May  7 21:50:49 PDT 2025
+📄 Logging to /Users/mairahmac/Desktop/processing_log_2025-05-07_21-58-02.log
+
+CommandNotFoundError: Your shell has not been properly configured to use 'conda activate'.
+To initialize your shell, run
+
+    $ conda init <SHELL_NAME>
+
+Currently supported shells are:
+  - bash
+  - fish
+  - tcsh
+  - xonsh
+  - zsh
+  - powershell
+
+See 'conda init --help' for more information and options.
+
+IMPORTANT: You may need to close and restart your shell after running 'conda init'.
+
+
+🚀 AN cascading: Starting eventCascades_AN.py at Wed May  7 21:58:02 PDT 2025
+✅ AN cascading: eventCascades_AN.py completed at Wed May  7 21:58:04 PDT 2025
+📄 Logging to /Users/mairahmac/Desktop/processing_log_2025-05-07_22-00-05.log
+
+CommandNotFoundError: Your shell has not been properly configured to use 'conda activate'.
+To initialize your shell, run
+
+    $ conda init <SHELL_NAME>
+
+Currently supported shells are:
+  - bash
+  - fish
+  - tcsh
+  - xonsh
+  - zsh
+  - powershell
+
+See 'conda init --help' for more information and options.
+
+IMPORTANT: You may need to close and restart your shell after running 'conda init'.
+
+
+🚀 AN cascading: Starting eventCascades_AN.py at Wed May  7 22:00:05 PDT 2025
+✅ AN cascading: eventCascades_AN.py completed at Wed May  7 22:00:06 PDT 2025
+📄 Logging to /Users/mairahmac/Desktop/processing_log_2025-05-07_22-03-54.log
+
+CommandNotFoundError: Your shell has not been properly configured to use 'conda activate'.
+To initialize your shell, run
+
+    $ conda init <SHELL_NAME>
+
+Currently supported shells are:
+  - bash
+  - fish
+  - tcsh
+  - xonsh
+  - zsh
+  - powershell
+
+See 'conda init --help' for more information and options.
+
+IMPORTANT: You may need to close and restart your shell after running 'conda init'.
+
+
+🚀 AN cascading: Starting eventCascades_AN.py at Wed May  7 22:03:54 PDT 2025
+✅ AN cascading: eventCascades_AN.py completed at Wed May  7 22:03:55 PDT 2025
+📄 Logging to /Users/mairahmac/Desktop/processing_log_2025-05-07_22-07-00.log
+
+CommandNotFoundError: Your shell has not been properly configured to use 'conda activate'.
+To initialize your shell, run
+
+    $ conda init <SHELL_NAME>
+
+Currently supported shells are:
+  - bash
+  - fish
+  - tcsh
+  - xonsh
+  - zsh
+  - powershell
+
+See 'conda init --help' for more information and options.
+
+IMPORTANT: You may need to close and restart your shell after running 'conda init'.
+
+
+🚀 AN cascading: Starting eventCascades_AN.py at Wed May  7 22:07:00 PDT 2025
+✅ AN cascading: eventCascades_AN.py completed at Wed May  7 22:07:01 PDT 2025
+📄 Logging to /Users/mairahmac/Desktop/processing_log_2025-05-07_22-09-35.log
+
+CommandNotFoundError: Your shell has not been properly configured to use 'conda activate'.
+To initialize your shell, run
+
+    $ conda init <SHELL_NAME>
+
+Currently supported shells are:
+  - bash
+  - fish
+  - tcsh
+  - xonsh
+  - zsh
+  - powershell
+
+See 'conda init --help' for more information and options.
+
+IMPORTANT: You may need to close and restart your shell after running 'conda init'.
+
+
+🚀 AN cascading: Starting eventCascades_AN.py at Wed May  7 22:09:35 PDT 2025
+✅ AN cascading: eventCascades_AN.py completed at Wed May  7 22:09:50 PDT 2025
+📄 Logging to /Users/mairahmac/Desktop/processing_log_2025-05-07_22-17-51.log
+
+CommandNotFoundError: Your shell has not been properly configured to use 'conda activate'.
+To initialize your shell, run
+
+    $ conda init <SHELL_NAME>
+
+Currently supported shells are:
+  - bash
+  - fish
+  - tcsh
+  - xonsh
+  - zsh
+  - powershell
+
+See 'conda init --help' for more information and options.
+
+IMPORTANT: You may need to close and restart your shell after running 'conda init'.
+
+
+📄 Logging to /Users/mairahmac/Desktop/processing_log_2025-05-07_22-19-51.log
+
+CommandNotFoundError: Your shell has not been properly configured to use 'conda activate'.
+To initialize your shell, run
+
+    $ conda init <SHELL_NAME>
+
+Currently supported shells are:
+  - bash
+  - fish
+  - tcsh
+  - xonsh
+  - zsh
+  - powershell
+
+See 'conda init --help' for more information and options.
+
+IMPORTANT: You may need to close and restart your shell after running 'conda init'.
+
+
+📄 Logging to /Users/mairahmac/Desktop/processing_log_2025-05-07_22-20-43.log
+
+CommandNotFoundError: Your shell has not been properly configured to use 'conda activate'.
+To initialize your shell, run
+
+    $ conda init <SHELL_NAME>
+
+Currently supported shells are:
+  - bash
+  - fish
+  - tcsh
+  - xonsh
+  - zsh
+  - powershell
+
+See 'conda init --help' for more information and options.
+
+IMPORTANT: You may need to close and restart your shell after running 'conda init'.
+
+
+📄 Logging to /Users/mairahmac/Desktop/processing_log_2025-05-07_22-24-11.log
+
+CommandNotFoundError: Your shell has not been properly configured to use 'conda activate'.
+To initialize your shell, run
+
+    $ conda init <SHELL_NAME>
+
+Currently supported shells are:
+  - bash
+  - fish
+  - tcsh
+  - xonsh
+  - zsh
+  - powershell
+
+See 'conda init --help' for more information and options.
+
+IMPORTANT: You may need to close and restart your shell after running 'conda init'.
+
+
+📄 Logging to /Users/mairahmac/Desktop/processing_log_2025-05-07_22-26-01.log
+
+CommandNotFoundError: Your shell has not been properly configured to use 'conda activate'.
+To initialize your shell, run
+
+    $ conda init <SHELL_NAME>
+
+Currently supported shells are:
+  - bash
+  - fish
+  - tcsh
+  - xonsh
+  - zsh
+  - powershell
+
+See 'conda init --help' for more information and options.
+
+IMPORTANT: You may need to close and restart your shell after running 'conda init'.
+
+
+📄 Logging to /Users/mairahmac/Desktop/processing_log_2025-05-07_22-29-00.log
+
+CommandNotFoundError: Your shell has not been properly configured to use 'conda activate'.
+To initialize your shell, run
+
+    $ conda init <SHELL_NAME>
+
+Currently supported shells are:
+  - bash
+  - fish
+  - tcsh
+  - xonsh
+  - zsh
+  - powershell
+
+See 'conda init --help' for more information and options.
+
+IMPORTANT: You may need to close and restart your shell after running 'conda init'.
+
+
+📄 Logging to /Users/mairahmac/Desktop/processing_log_2025-05-07_22-30-01.log
+
+CommandNotFoundError: Your shell has not been properly configured to use 'conda activate'.
+To initialize your shell, run
+
+    $ conda init <SHELL_NAME>
+
+Currently supported shells are:
+  - bash
+  - fish
+  - tcsh
+  - xonsh
+  - zsh
+  - powershell
+
+See 'conda init --help' for more information and options.
+
+IMPORTANT: You may need to close and restart your shell after running 'conda init'.
+
+
+bash: tester_cli_integration.sh: No such file or directory
+📄 Logging to /Users/mairahmac/Desktop/processing_log_2025-05-07_22-37-29.log
+
+CommandNotFoundError: Your shell has not been properly configured to use 'conda activate'.
+To initialize your shell, run
+
+    $ conda init <SHELL_NAME>
+
+Currently supported shells are:
+  - bash
+  - fish
+  - tcsh
+  - xonsh
+  - zsh
+  - powershell
+
+See 'conda init --help' for more information and options.
+
+IMPORTANT: You may need to close and restart your shell after running 'conda init'.
+
+

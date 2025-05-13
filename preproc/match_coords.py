@@ -15,6 +15,7 @@ posData = {
     'tutorial': (0, -6)
 }
 
+
 # Function to calculate Euclidean distance using (x, z) values
 def euclidean_distance(point1, point2):
     return np.sqrt((point1[0] - point2[0]) ** 2 + (point1[1] - point2[1]) ** 2)

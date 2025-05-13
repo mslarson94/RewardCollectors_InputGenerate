@@ -1,0 +1,247 @@
+AppTime                      365.3518
+Message           Just dropped a pin.
+original_index                   8086
+Name: 8080, dtype: object
+AppTime                      383.5109
+Message           Just dropped a pin.
+original_index                   8626
+Name: 8620, dtype: object
+AppTime                      411.2873
+Message           Just dropped a pin.
+original_index                   9421
+Name: 9415, dtype: object
+AppTime                      483.9583
+Message           Just dropped a pin.
+original_index                  11496
+Name: 11490, dtype: object
+AppTime                      503.9676
+Message           Just dropped a pin.
+original_index                  12052
+Name: 12046, dtype: object
+AppTime                      525.4515
+Message           Just dropped a pin.
+original_index                  12671
+Name: 12665, dtype: object
+AppTime                      577.6148
+Message           Just dropped a pin.
+original_index                  14140
+Name: 14134, dtype: object
+AppTime                      622.4763
+Message           Just dropped a pin.
+original_index                  15406
+Name: 15400, dtype: object
+AppTime                      635.1081
+Message           Just dropped a pin.
+original_index                  15762
+Name: 15756, dtype: object
+AppTime                       673.821
+Message           Just dropped a pin.
+original_index                  16865
+Name: 16859, dtype: object
+AppTime                      701.7484
+Message           Just dropped a pin.
+original_index                  17660
+Name: 17654, dtype: object
+AppTime                      720.9763
+Message           Just dropped a pin.
+original_index                  18218
+Name: 18212, dtype: object
+AppTime                      755.6422
+Message           Just dropped a pin.
+original_index                  19234
+Name: 19228, dtype: object
+AppTime                      769.7552
+Message           Just dropped a pin.
+original_index                  19639
+Name: 19633, dtype: object
+AppTime                      788.0955
+Message           Just dropped a pin.
+original_index                  20158
+Name: 20152, dtype: object
+AppTime                      818.1826
+Message           Just dropped a pin.
+original_index                  21016
+Name: 21010, dtype: object
+AppTime                      859.0954
+Message           Just dropped a pin.
+original_index                  22185
+Name: 22179, dtype: object
+AppTime                      879.8563
+Message           Just dropped a pin.
+original_index                  22796
+Name: 22790, dtype: object
+AppTime                      904.4451
+Message           Just dropped a pin.
+original_index                  23522
+Name: 23516, dtype: object
+AppTime                      917.1043
+Message           Just dropped a pin.
+original_index                  23888
+Name: 23882, dtype: object
+AppTime                      931.1635
+Message           Just dropped a pin.
+original_index                  24305
+Name: 24299, dtype: object
+AppTime                       957.538
+Message           Just dropped a pin.
+original_index                  25088
+Name: 25082, dtype: object
+AppTime                      970.7242
+Message           Just dropped a pin.
+original_index                  25467
+Name: 25461, dtype: object
+AppTime                      984.1432
+Message           Just dropped a pin.
+original_index                  25863
+Name: 25857, dtype: object
+AppTime                      1008.508
+Message           Just dropped a pin.
+original_index                  26592
+Name: 26586, dtype: object
+AppTime                      1021.718
+Message           Just dropped a pin.
+original_index                  26979
+Name: 26973, dtype: object
+AppTime                      1033.471
+Message           Just dropped a pin.
+original_index                  27329
+Name: 27323, dtype: object
+AppTime                      1298.699
+Message           Just dropped a pin.
+original_index                  34975
+Name: 34969, dtype: object
+AppTime                      1312.815
+Message           Just dropped a pin.
+original_index                  35386
+Name: 35380, dtype: object
+AppTime                      1327.629
+Message           Just dropped a pin.
+original_index                  35819
+Name: 35813, dtype: object
+AppTime                      1400.898
+Message           Just dropped a pin.
+original_index                  37944
+Name: 37938, dtype: object
+AppTime                      1415.143
+Message           Just dropped a pin.
+original_index                  38350
+Name: 38344, dtype: object
+AppTime                      1429.995
+Message           Just dropped a pin.
+original_index                  38779
+Name: 38773, dtype: object
+AppTime                      1465.976
+Message           Just dropped a pin.
+original_index                  39828
+Name: 39822, dtype: object
+AppTime                      1479.058
+Message           Just dropped a pin.
+original_index                  40215
+Name: 40209, dtype: object
+AppTime                      1492.812
+Message           Just dropped a pin.
+original_index                  40620
+Name: 40614, dtype: object
+AppTime                      1525.273
+Message           Just dropped a pin.
+original_index                  41574
+Name: 41568, dtype: object
+AppTime                      1539.969
+Message           Just dropped a pin.
+original_index                  41996
+Name: 41990, dtype: object
+AppTime                      1561.739
+Message           Just dropped a pin.
+original_index                  42631
+Name: 42625, dtype: object
+AppTime                      1597.361
+Message           Just dropped a pin.
+original_index                  43654
+Name: 43648, dtype: object
+AppTime                      1613.105
+Message           Just dropped a pin.
+original_index                  44118
+Name: 44112, dtype: object
+AppTime                      1627.737
+Message           Just dropped a pin.
+original_index                  44550
+Name: 44544, dtype: object
+AppTime                      1674.571
+Message           Just dropped a pin.
+original_index                  45902
+Name: 45896, dtype: object
+AppTime                      1691.551
+Message           Just dropped a pin.
+original_index                  46382
+Name: 46376, dtype: object
+AppTime                      1703.902
+Message           Just dropped a pin.
+original_index                  46750
+Name: 46744, dtype: object
+AppTime                      1738.158
+Message           Just dropped a pin.
+original_index                  47742
+Name: 47736, dtype: object
+AppTime                      1815.979
+Message           Just dropped a pin.
+original_index                  49984
+Name: 49978, dtype: object
+AppTime                      1828.179
+Message           Just dropped a pin.
+original_index                  50343
+Name: 50337, dtype: object
+AppTime                      1864.503
+Message           Just dropped a pin.
+original_index                  51411
+Name: 51405, dtype: object
+AppTime                      1878.366
+Message           Just dropped a pin.
+original_index                  51818
+Name: 51812, dtype: object
+AppTime                      1890.718
+Message           Just dropped a pin.
+original_index                  52184
+Name: 52178, dtype: object
+AppTime                      1917.583
+Message           Just dropped a pin.
+original_index                  52964
+Name: 52958, dtype: object
+AppTime                      1930.658
+Message           Just dropped a pin.
+original_index                  53330
+Name: 53324, dtype: object
+AppTime                      1942.962
+Message           Just dropped a pin.
+original_index                  53696
+Name: 53690, dtype: object
+AppTime                      1979.329
+Message           Just dropped a pin.
+original_index                  54751
+Name: 54745, dtype: object
+AppTime                       1998.63
+Message           Just dropped a pin.
+original_index                  55311
+Name: 55305, dtype: object
+AppTime                       2011.45
+Message           Just dropped a pin.
+original_index                  55685
+Name: 55679, dtype: object
+AppTime                      2076.826
+Message           Just dropped a pin.
+original_index                  57567
+Name: 57561, dtype: object
+AppTime                      2095.376
+Message           Just dropped a pin.
+original_index                  58095
+Name: 58089, dtype: object
+AppTime                      2108.314
+Message           Just dropped a pin.
+original_index                  58481
+Name: 58475, dtype: object
+AppTime                       2144.07
+Message           Just dropped a pin.
+original_index                  59516
+Name: 59510, dtype: object
+✓ Processed: ObsReward_A_02_17_2025_15_11_processed.csv
+📄 Manifest saved to /Users/mairahmac/Desktop/RC_TestingNotes/SmallSelectedData/idealTestFile/ExtractedEvents/run_manifest.csv
+⚠️ Warnings saved to: /Users/mairahmac/Desktop/RC_TestingNotes/SmallSelectedData/idealTestFile/Summary/processing_warnings.txt

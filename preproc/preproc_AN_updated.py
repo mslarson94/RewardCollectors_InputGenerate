@@ -3,48 +3,6 @@ import pandas as pd
 import numpy as np
 import re
 
-
-def summarize_block_structure_with_durations(df):
-    import numpy as np
-
-    df = df.copy()
-    df["is_special"] = df["RoundNum"].isin([0, 7777, 8888, 9999])
-    block_summaries = []
-
-    for block_num, block_df in df.groupby("BlockNum"):
-        round_set = set(block_df["RoundNum"].dropna().unique())
-        round_nums = sorted(round_set)
-
-        block_status = block_df["BlockStatus"].iloc[0] if not block_df["BlockStatus"].isna().all() else "unknown"
-
-        # Identify uninterrupted spans of 7777
-        block_df = block_df.copy()
-        block_df["is_7777"] = block_df["RoundNum"] == 7777
-        block_df["transition"] = block_df["is_7777"].ne(block_df["is_7777"].shift()).cumsum()
-        grouped = block_df.groupby(["transition", "is_7777"])
-        unique_7777_spans = grouped.size().reset_index(name="count")
-        num_7777_segments = unique_7777_spans[unique_7777_spans["is_7777"]].shape[0]
-
-        # Compute block duration
-        app_time_min = block_df["AppTime"].min()
-        app_time_max = block_df["AppTime"].max()
-        duration_sec = app_time_max - app_time_min
-
-        block_summaries.append({
-            "BlockNum": block_num,
-            "BlockStatus": block_status,
-            "AllRoundNums": round_nums,
-            "SpecialRoundNums": sorted(round_set.intersection({0, 7777, 8888, 9999})),
-            "NumTrueRounds": len([r for r in round_nums if 1 <= r <= 20]),
-            "Num7777Segments": num_7777_segments,
-            "BlockDuration_sec": duration_sec
-        })
-
-    return pd.DataFrame(block_summaries)
-
-# Apply the function
-# block_structure_with_duration_df = summarize_block_structure_with_durations(df_filtered)
-
 def correct_malformed_string(raw_string):
     """Fixes concatenated numeric values like -1.0000.000-6.000"""
     pattern = r"(-?\d+\.\d{3})(-?\d+\.\d{3})(-?\d+\.\d{3})"
@@ -63,7 +21,46 @@ def detect_and_tag_blocks(data):
     data["CoinSetID"] = np.nan
     data["BlockType"] = np.nan
 
+    
+    data["chestPin_num"] = np.nan
+    data["totalRounds"] = np.nan
+    current_round_start_idx = None
+    chest_pin_count = 0
+    round_ids_in_block = set()
+
     for idx, row in data.iterrows():
+        message = row.get("Message", "")
+
+        if isinstance(message, str):
+            # Block start detection
+            if message == "Mark should happen if checked on terminal.":
+                block_start_idx = idx
+                round_num = 0
+                data.at[idx, "RoundNum"] = round_num  # Tag block start with 0
+
+                round_ids_in_block = set()
+                current_round_start_idx = idx
+                chest_pin_count = 0
+
+            elif message.startswith("This is round number"):
+                round_num = int(re.findall(r"\d+", message)[0])
+                data.at[idx, "RoundNum"] = round_num
+                if current_round_start_idx is not None:
+                    data.loc[current_round_start_idx:idx - 1, "chestPin_num"] = chest_pin_count
+                current_round_start_idx = idx
+                chest_pin_count = 0
+                if round_num not in [0, 7777, 8888, 9999]:
+                    round_ids_in_block.add(round_num)
+
+            elif "opened a chest" in message or "dropped a pin" in message:
+                chest_pin_count += 1
+
+            elif message == "CoinSet Ended":
+                if current_round_start_idx is not None:
+                    data.loc[current_round_start_idx:idx, "chestPin_num"] = chest_pin_count
+                if block_start_idx is not None:
+                    data.loc[block_start_idx:idx, "totalRounds"] = len(round_ids_in_block)
+for idx, row in data.iterrows():
         message = row.get("Message", "")
 
         if isinstance(message, str):

@@ -8,21 +8,21 @@ conda activate RewardCollectors
 
 ##############################################
 
-# ##### AN proc
+##### AN proc
 
-# echo "🚀 AN processing: Starting python preproc_AN.py  at $(date)" | tee -a "$LOG_FILE"
+echo "🚀 AN processing: Starting python preproc_AN.py  at $(date)" | tee -a "$LOG_FILE"
 
-# python /Users/mairahmac/Desktop/myra_code/Python/RewardCollectors_InputGenerate/preproc/preproc_AN.py  >> "$LOG_FILE" 2>&1
+python /Users/mairahmac/Desktop/myra_code/Python/RewardCollectors_InputGenerate/preproc/baseline_pipeline/preproc_AN_augment_1.py  >> "$LOG_FILE" 2>&1
 
-# echo "✅ AN processing: python preproc_AN.py  completed at $(date)" | tee -a "$LOG_FILE"
+echo "✅ AN processing: python preproc_AN.py  completed at $(date)" | tee -a "$LOG_FILE"
 
-# ##### AN Events 
+# # ##### AN Events 
+#
+# echo "🚀 AN cascading: Starting integration_with_logger.py at $(date)" | tee -a "$LOG_FILE"
 
-echo "🚀 AN cascading: Starting integration_with_logger.py at $(date)" | tee -a "$LOG_FILE"
+# python /Users/mairahmac/Desktop/myra_code/Python/RewardCollectors_InputGenerate/preproc/integration_with_logger.py  >> "$LOG_FILE" 2>&1
 
-python /Users/mairahmac/Desktop/myra_code/Python/RewardCollectors_InputGenerate/preproc/integration_with_logger.py  >> "$LOG_FILE" 2>&1
-
-echo "✅ AN cascading: python integration_with_logger.py  completed at $(date)" | tee -a "$LOG_FILE"
+# echo "✅ AN cascading: python integration_with_logger.py  completed at $(date)" | tee -a "$LOG_FILE"`
 
 
 ##############################################

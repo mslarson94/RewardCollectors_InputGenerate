@@ -1,0 +1,83 @@
+
+CommandNotFoundError: Your shell has not been properly configured to use 'conda activate'.
+To initialize your shell, run
+
+    $ conda init <SHELL_NAME>
+
+Currently supported shells are:
+  - bash
+  - fish
+  - tcsh
+  - xonsh
+  - zsh
+  - powershell
+
+See 'conda init --help' for more information and options.
+
+IMPORTANT: You may need to close and restart your shell after running 'conda init'.
+
+
+🚀 AN processing: Starting python preproc_AN.py  at Thu May 22 21:15:19 PDT 2025
+✅ AN processing: python preproc_AN.py  completed at Thu May 22 21:15:19 PDT 2025
+
+CommandNotFoundError: Your shell has not been properly configured to use 'conda activate'.
+To initialize your shell, run
+
+    $ conda init <SHELL_NAME>
+
+Currently supported shells are:
+  - bash
+  - fish
+  - tcsh
+  - xonsh
+  - zsh
+  - powershell
+
+See 'conda init --help' for more information and options.
+
+IMPORTANT: You may need to close and restart your shell after running 'conda init'.
+
+
+🚀 AN processing: Starting python preproc_AN.py  at Thu May 22 21:15:49 PDT 2025
+
+CommandNotFoundError: Your shell has not been properly configured to use 'conda activate'.
+To initialize your shell, run
+
+    $ conda init <SHELL_NAME>
+
+Currently supported shells are:
+  - bash
+  - fish
+  - tcsh
+  - xonsh
+  - zsh
+  - powershell
+
+See 'conda init --help' for more information and options.
+
+IMPORTANT: You may need to close and restart your shell after running 'conda init'.
+
+
+🚀 AN processing: Starting python preproc_AN.py  at Thu May 22 21:16:56 PDT 2025
+✅ AN processing: python preproc_AN.py  completed at Thu May 22 21:33:40 PDT 2025
+
+CommandNotFoundError: Your shell has not been properly configured to use 'conda activate'.
+To initialize your shell, run
+
+    $ conda init <SHELL_NAME>
+
+Currently supported shells are:
+  - bash
+  - fish
+  - tcsh
+  - xonsh
+  - zsh
+  - powershell
+
+See 'conda init --help' for more information and options.
+
+IMPORTANT: You may need to close and restart your shell after running 'conda init'.
+
+
+🚀 AN processing: Starting python preproc_AN.py  at Fri May 23 03:35:47 PDT 2025
+✅ AN processing: python preproc_AN.py  completed at Fri May 23 03:51:37 PDT 2025

@@ -43,10 +43,8 @@ def save_manifest(records, output_dir):
     pd.DataFrame(records).to_csv(manifest_path, index=False)
     print(f"📄 Manifest saved to {manifest_path}")
 
-
-
 # --- Utility: Loading Data & MetaData ---
-def load_filtered_df(file_path):
+def load_filtered_dfv1(file_path):
     with open(file_path, "r") as f:
         lines = f.readlines()
 
@@ -58,7 +56,33 @@ def load_filtered_df(file_path):
     filtered_lines = [header] + lines[start_index:]
     df = pd.read_csv(StringIO("".join(filtered_lines)))
     df["original_index"] = list(range(start_index + 1, start_index + 1 + len(df)))
+    print(df.columns)
+    print(df.head())
 
+    return df
+import os
+from io import StringIO
+import pandas as pd
+
+def load_filtered_df(file_path):
+    with open(file_path, "r") as f:
+        lines = f.readlines()
+
+    header = lines[0]
+    start_index = next((i for i, line in enumerate(lines) if "Mark should happen" in line), 1)
+
+    filtered_lines = [header] + lines[start_index:]
+    df = pd.read_csv(StringIO("".join(filtered_lines)))
+    df["original_index"] = list(range(start_index + 1, start_index + 1 + len(df)))
+
+    # Construct filtered filename
+    base, ext = os.path.splitext(file_path)
+    filtered_path = f"{base}_filtered{ext}"
+
+    # Save the filtered DataFrame
+    df.to_csv(filtered_path, index=False)
+
+    print(f"🔄 Filtered DataFrame saved to: {filtered_path}")
     return df
 
 def pullMetaData(metadataFile):

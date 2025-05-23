@@ -1,0 +1,30 @@
+run_overnight.sh
+	- used previously to batch process my raw log files from Terminal using this command: nohup bash run_overnight.sh &
+
+preproc_AN_augment.py
+	- current version of the preproc_AN script, still not totally integrated with the recent changes suggested. Is meant to be directly called via run_overnight.sh
+
+eventParser_AN_patch_hiMeta_new.py
+	- the center of the event tagging pipeline, has all of the functions that do the heavy lifting on a log file's contents to parse out the different events. 
+
+metadata_and_manifest_utils.py
+	- major helper script that is pulling all the metadata & also setting up manifest logging things 
+
+warning_logger.py
+	- helper script that just has the warning // logger functions. I need to make more use of the warning logs 
+
+eventCascadeBuilder_AN_patched.py
+	- The wrapper script to the eventParser_AN script. It is iterating either over a directory or a file list to generate the _events.csv // _events.json files while logging important information about file directories & data integrity. 
+
+
+Not Currently in Use: 
+
+run_overnight.sh
+	- used previously to batch process my raw log files from Terminal using this command: nohup bash run_overnight.sh &
+	- this can still technically work, I'd just need to update the names, but I'd prefer to update to the format to the runOvernight_AN.sh script 
+
+runOvernight_AN.sh 
+	- what I used previously to generate all the _events.* files after providing all the changeable variables. Made with the intention to be able to share with others to preprocess future data 
+
+eventCascades_AN.py 
+	- wrapper script the eventCascadeBuilder_AN script - makes it so that variables from the .sh script can be piped in and applied to the eventCascadeBuilder_AN script.  

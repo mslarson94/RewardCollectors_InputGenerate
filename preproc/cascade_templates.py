@@ -1,33 +1,95 @@
 # Canonical cascade structures for PinDrop and ChestOpen workflows
 
-CANONICAL_CASCADE_TEMPLATES = {
-    "pinDrop": {
-        "sequence": [
-            {"type": "WalkingPeriod", "tag": "walk2pinDrop"},
-            {"type": "PinDrop", "tag": "pinDrop"},
-            {"type": "GrayPin_Visible_start", "tag": "pinStartVisual"},
-            {"type": "Feedback_textNcolor_Visible_start", "tag": "wait4feedback"},
-            {"type": "Feedback_textNcolor_Visible_end", "tag": "feedbackComplete"},
-            {"type": "Coin_Visible_start", "tag": "coinVisible", "optional": True},
-            {"type": "Coin_Released", "tag": "coinReleased", "optional": True}
-        ],
-        "typical_durations": {
-            "Feedback_textNcolor_Visible_end": 3.0,
-            "Coin_Released": 4.0
-        }
-    },
-    "chestOpen": {
-        "sequence": [
-            {"type": "WalkingPeriod", "tag": "walk2chest"},
-            {"type": "ChestOpen", "tag": "chestOpen"},
-            {"type": "Coin_Visible_start", "tag": "wait4coin"},
-            {"type": "Coin_Collected", "tag": "coinCollect"}
-        ],
-        "typical_durations": {
-            "Coin_Visible_start": 2.0,
-            "Coin_Collected": 4.0
-        }
-    }
+"hi_eventType" = {
+
+    "SwapVote": [
+        {"mid_eventType": "SwapVote", 
+            "lo_eventType": "SwapVoteMoment",
+            "optional": False},
+
+        {"mid_eventType": "FullFeedbackAnimation", 
+            "lo_eventType": ("SwapVoteText_end", "BlockScoreText_start", "BlockScoreText_start")
+            "optional": False},
+
+        {"mid_eventType": "NonRewardDrivenNavigation", 
+            "lo_eventType": ("InterRound_PostCylinderWalk", "InterBlock_Idle"),
+            "optional": False},
+
+        {"mid_eventType": "Infrastructure", 
+            "lo_eventType": "Mark",
+            "optional": True},
+
+        ], 
+
+    "PinDrop": [
+        {"mid_eventType": "PinDrop", 
+            "lo_eventType": "PinDropMoment",
+            "optional": False},
+
+        {"mid_eventType": "FullPinDropAnimation", 
+            "lo_eventType": ("PinDropSound_start", "GrayPinVis_start", "PinDropSound_end","GrayPinVis_end", 
+                                "Feedback_Sound_start", "FeedbackTextVis_start", "FeedbackPinColor_start",
+                                "FeedbackTextVis_end", "FeedbackPinColor_end", "CoinVis_start",
+                                "CoinPresentSound_start", "CoinPresentSound_end", "Coin_Released")
+            "optional": False},
+
+        {"mid_eventType": "FeedbackCoinCollect", 
+            "lo_eventType": "FeedbackCoinCollectMoment",
+            "optional": False},
+
+        {"mid_eventType": "FullFeedbackCoinCollect_Animation", 
+            "lo_eventType": ("CoinVis_end", "CoinValueTextVis_start", "CoinCollectSound_start",
+                                "CoinCollectSound_end", "CoinValueTextVis_end"),
+            "optional": False},
+
+        {"mid_eventType": "NonRewardDrivenNavigation", 
+            "lo_eventType": ("PreBlock_CylinderWalk", "InterRound_CylinderWalk",
+                                "InterRound_PostCylinderWalk", "InterBlock_Idle"),
+            "optional": False},
+
+        {"mid_eventType": "RewardDrivenNavigation", 
+            "lo_eventType": ("Walk2PinDrop", "Wait4Feedback"),
+            "optional": False},
+
+        {"mid_eventType": "Infrastructure", 
+            "lo_eventType": "Mark",
+            "optional": True},
+
+        ], 
+
+    "ChestOpen": [
+        {"mid_eventType": "ChestOpen", 
+            "lo_eventType": "ChestOpenMoment",
+            "optional": False},
+        {"mid_eventType": "FullChestOpenAnimation", 
+            "lo_eventType": ("ChestOpenAnimation_start", "ChestOpenSound_start", 
+                                "ChestOpenAnimation_end", "ChestOpenSound_end", 
+                                "ChestOpenEmpty_start", "ChestOpenEmpty_end", "CoinVis_start", 
+                                "CoinPresentSound_start", "CoinPresentSound_end","Coin_Released"),
+            "optional": False},
+        {"mid_eventType": "CoinCollect_IE", 
+            "lo_eventType": "CoinCollectMoment_IE",
+            "optional": False},
+
+        {"mid_eventType": "FullCoinCollectIE_Animation", 
+            "lo_eventType": ("CoinVis_end", "ChestVis_end", "CoinCollectSound_start", 
+                                "CoinValueTextVis_start", "NextChestVisible", "CoinCollectSound_end", 
+                                "CoinValueTextVis_end"),
+            "optional": False},
+
+        {"mid_eventType": "NonRewardDrivenNavigation", 
+            "lo_eventType": ("PreBlock_CylinderWalk", "InterRound_CylinderWalk",
+                                "InterRound_PostCylinderWalk", "InterBlock_Idle"),
+            "optional": False},
+
+        {"mid_eventType": "RewardDrivenNavigation", 
+            "lo_eventType": ("Walk2PinDrop", "Wait4Feedback"),
+            "optional": False},
+
+        {"mid_eventType": "Infrastructure", 
+            "lo_eventType": "Mark",
+            "optional": True}
+        ]
 }
 
 '''
@@ -42,8 +104,6 @@ Validation: You can compare extracted cascades against this structure to:
 Detect missing or misordered events
 
 Test log integrity
-
-Inference Templates: If a field is missing, the typical durations can help synthesize timing.
 
 Consistency Checking across legacy → modern formats.
 '''

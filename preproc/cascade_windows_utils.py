@@ -25,7 +25,6 @@ def find_cascade_windows_from_events(events):
 
     return windows
 
-
 def assign_cascade_id(event, cascade_windows, debug=False):
     """
     Given an event, assigns it the correct cascade_id if it falls within a known cascade window.
@@ -39,7 +38,6 @@ def assign_cascade_id(event, cascade_windows, debug=False):
     if debug:
         print(f"⚠️ No cascade match for event at AppTime {time} — type: {event.get('event_type')}")
     return None
-
 
 def extract_walking_periods_with_cascade_ids(df, cascade_windows):
     """
@@ -91,3 +89,68 @@ def extract_walking_periods_with_cascade_ids(df, cascade_windows):
             })
 
     return walking_periods
+
+
+def build_common_event_fields(row, index=None):
+    """
+    Constructs a standardized dictionary of shared event fields from a row.
+    
+    Parameters:
+        row (pd.Series): A row from the dataframe representing an event.
+        index (int or None): The row index for original_row_start/end. If None, infer from row name.
+    
+    Returns:
+        dict: Common fields used across event definitions.
+    """
+    idx = index if index is not None else row.name
+    return {
+        "BlockNum": row.get("BlockNum", None),
+        "RoundNum": row.get("RoundNum", None),
+        "CoinSetID": row.get("CoinSetID", None),
+        "BlockStatus": row.get("BlockStatus", "unknown"),
+        "chestPin_num": row.get("chestPin_num", None),
+        "original_row_start": row.get("original_index", idx),
+        "original_row_end": row.get("original_index", idx),
+        "cascade_id": None
+    }
+
+def generate_synthetic_events(base_time, timestamp_str, offsets_events, base_info, event_meta):
+    """
+    Generate synthetic events with specified time offsets.
+
+    Parameters:
+        base_time (float): Base AppTime from original event.
+        timestamp_str (str): Timestamp string (e.g., '13:45:23:123').
+        offsets_events (list of tuples): (offset_seconds, lo_eventType) pairs.
+        base_info (dict): Shared event data (e.g., common_info).
+        event_meta (dict): Keys like 'med_eventType', 'hi_eventType'.
+
+    Returns:
+        List[dict]: List of synthetic events.
+    """
+    synthetic_events = []
+    try:
+        base_timestamp = safe_parse_timestamp(timestamp_str)
+        for offset, lo_evt in offsets_events:
+            synthetic_time = base_timestamp + timedelta(seconds=offset)
+            synthetic_events.append({
+                "AppTime": base_time + offset,
+                "Timestamp": synthetic_time.strftime('%H:%M:%S:%f'),
+                "lo_eventType": lo_evt,
+                "details": {},
+                "source": "synthetic",
+                **event_meta,
+                **base_info
+            })
+    except Exception as e:
+        print(f"⚠️ Failed to create synthetic event at {timestamp_str}: {e}")
+    return synthetic_events
+
+
+def safe_parse_timestamp(ts):
+    try:
+        return datetime.strptime(ts, '%H:%M:%S:%f')
+    except Exception:
+        return None
+
+

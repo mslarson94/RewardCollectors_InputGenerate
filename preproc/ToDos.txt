@@ -1,0 +1,17 @@
+hi! this file is *nearly* correct (I still need to iron a couple things out), but I have a bunch of log files that each have their own _processed_events.csv & .json files. There are multiple log files per testing session for a given participant pair & multiple testing sessions for each participant pair. I need a lot of help with this ahead of my committee meeting next week -  Can you help with drafting scripts that can augment & pull out summary information from the _events files? I need things like: 
+
+Augmenting Data
+- classifying each coin for a testing session
+- classifying swap votes for a testing session 
+- concatenating _events files for an individual testing session (based on values from values 'testingDate', 'main_RR', 'coinSet', 'pairID' from the sheet 'MagicLeapFiles' from the collatedData.xlsx file) 
+
+Providing Summary Information Per Testing Session
+- average duration of a PinDrop cascade event (hi_eventType) for each Round (RoundNum) over the course of each testing session (based on value from "Timestamp")
+- total duration of each PinDrop Round (RoundNum) over the course of each testing session 
+- average values of the 'dropDist' variable provided in the 'details' dict column for 'PinDrop_Moment' events (lo_eventType)
+- total points earned ( the value of 'currGrandTotal' in the 'details' dict for the last 'PinDrop_Moment' for each of the original _events files, all added together) 
+- average total block points earned (the value "runningBlockTotal" from the last 'PinDrop_Moment' in each 'RoundNum')
+- total number of 'PinDrop' blocks for each of the following CoinSetID's [1, 2, 3]
+- total score of all swap votes
+
+

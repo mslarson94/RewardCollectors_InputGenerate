@@ -18,12 +18,12 @@ if row["Type"] == "Event" and isinstance(row["Message"], str) and "Just dropped 
             synthetic_events = [
                             (0.000, "Pin drop sound (start)"),
                             (0.000, "Gray pin visible (start)"),
-                            (0.654, "Pin drop sound (end)"),
+                            (0.403, "Pin drop sound (end)"),
                             (2.000, "Gray pin visible (end)"),
                             (2.000, "Feedback sound (start)"),
                             (2.000, "Feedback text and color visible (start)"),
                             (2.000, "Coin value text visible (start)")
-                            (2.650, "Feedback sound end"),
+                            (2.182, "Feedback sound end"),
                             (3.000, "Feedback text and color visible (end)"),
                             (3.000, "Coin visible (start)"),
                             (3.000, "Coin presentation sound (start)"),

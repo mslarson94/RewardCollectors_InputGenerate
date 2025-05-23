@@ -3,48 +3,6 @@ import pandas as pd
 import numpy as np
 import re
 
-
-def summarize_block_structure_with_durations(df):
-    import numpy as np
-
-    df = df.copy()
-    df["is_special"] = df["RoundNum"].isin([0, 7777, 8888, 9999])
-    block_summaries = []
-
-    for block_num, block_df in df.groupby("BlockNum"):
-        round_set = set(block_df["RoundNum"].dropna().unique())
-        round_nums = sorted(round_set)
-
-        block_status = block_df["BlockStatus"].iloc[0] if not block_df["BlockStatus"].isna().all() else "unknown"
-
-        # Identify uninterrupted spans of 7777
-        block_df = block_df.copy()
-        block_df["is_7777"] = block_df["RoundNum"] == 7777
-        block_df["transition"] = block_df["is_7777"].ne(block_df["is_7777"].shift()).cumsum()
-        grouped = block_df.groupby(["transition", "is_7777"])
-        unique_7777_spans = grouped.size().reset_index(name="count")
-        num_7777_segments = unique_7777_spans[unique_7777_spans["is_7777"]].shape[0]
-
-        # Compute block duration
-        app_time_min = block_df["AppTime"].min()
-        app_time_max = block_df["AppTime"].max()
-        duration_sec = app_time_max - app_time_min
-
-        block_summaries.append({
-            "BlockNum": block_num,
-            "BlockStatus": block_status,
-            "AllRoundNums": round_nums,
-            "SpecialRoundNums": sorted(round_set.intersection({0, 7777, 8888, 9999})),
-            "NumTrueRounds": len([r for r in round_nums if 1 <= r <= 20]),
-            "Num7777Segments": num_7777_segments,
-            "BlockDuration_sec": duration_sec
-        })
-
-    return pd.DataFrame(block_summaries)
-
-# Apply the function
-# block_structure_with_duration_df = summarize_block_structure_with_durations(df_filtered)
-
 def correct_malformed_string(raw_string):
     """Fixes concatenated numeric values like -1.0000.000-6.000"""
     pattern = r"(-?\d+\.\d{3})(-?\d+\.\d{3})(-?\d+\.\d{3})"
@@ -148,8 +106,7 @@ def forward_fill_block_info(data):
 
     return data
 
-# Updated assign_temporal_intervals with new phase definitions (6666, 7777, 8888, 9999)
-# Simplified version that removes 6666 logic and keeps RoundNum = 0 for pre-first-round period
+# Updated assign_temporal_intervals with new phase definitions (7777, 8888, 9999)
 def assign_temporal_intervals(data):
     all_indices = data.index.tolist()
     idx_limit = len(data)
@@ -195,7 +152,104 @@ def assign_temporal_intervals(data):
                         data.at[j, "RoundNum"] = 9999
     return data
 
-def process_obsreward_file(data, file_path):
+# Define a separate function to compute chestPin_num and totalRounds after detect_and_tag_blocks is run
+def augment_with_chestpin_and_totalrounds_v1(data):
+    data["chestPin_num"] = np.nan
+    data["totalRounds"] = np.nan
+
+    # Fill missing RoundNum and BlockNum with forward fill for grouping
+    data["RoundNum_filled"] = data["RoundNum"].ffill()
+    data["BlockNum_filled"] = data["BlockNum"].ffill()
+
+    # Compute totalRounds per block
+    valid_rounds = data[~data["RoundNum_filled"].isin([0, 7777, 8888, 9999])]
+    round_counts = valid_rounds.groupby("BlockNum_filled")["RoundNum_filled"].nunique()
+    data["totalRounds"] = data["BlockNum_filled"].map(round_counts)
+
+    # Reset chestPin_num on round start, accumulate within the round
+    chest_pin_count = 0
+    for idx, row in data.iterrows():
+        message = row.get("Message", "")
+
+        # Reset count on round start
+        if isinstance(message, str) and message.startswith("Repositioned and ready to start block or round"):
+            chest_pin_count = 0
+
+        # Count chest/pin events
+        if isinstance(message, str) and (message.startswith("Chest opened: ") or message.startswith("Just dropped a pin.")):
+            chest_pin_count += 1
+
+        # Assign the current count
+        data.at[idx, "chestPin_num"] = chest_pin_count
+
+    # Clean up temporary columns
+    data.drop(columns=["RoundNum_filled", "BlockNum_filled"], inplace=True)
+
+    return data
+
+
+def augment_with_chestpin_and_totalrounds(data):
+    data["chestPin_num"] = np.nan
+    data["totalRounds"] = np.nan
+
+    # Find the index of the first real block
+    first_valid_block_idx = data["BlockNum"].first_valid_index()
+    if first_valid_block_idx is None:
+        return data  # No blocks found, return unmodified
+
+    # Slice the data from the first valid block onward
+    working_data = data.loc[first_valid_block_idx:].copy()
+
+    # Fill missing RoundNum and BlockNum with forward fill for grouping
+    working_data["RoundNum_filled"] = working_data["RoundNum"].ffill()
+    working_data["BlockNum_filled"] = working_data["BlockNum"].ffill()
+
+    # Compute totalRounds per block
+    valid_rounds = working_data[~working_data["RoundNum_filled"].isin([0, 7777, 8888, 9999])]
+    round_counts = valid_rounds.groupby("BlockNum_filled")["RoundNum_filled"].nunique()
+    working_data["totalRounds"] = working_data["BlockNum_filled"].map(round_counts)
+
+    # Reset chestPin_num on round start, accumulate within the round
+    chest_pin_count = 0
+    for idx, row in working_data.iterrows():
+        message = row.get("Message", "")
+
+        # Reset count on round start
+        if isinstance(message, str) and message.startswith("Repositioned and ready to start block or round"):
+            chest_pin_count = 0
+
+        # Count chest/pin events
+        if isinstance(message, str) and (message.startswith("Chest opened: ") or message.startswith("Just dropped a pin.")):
+            chest_pin_count += 1
+
+        # Assign the current count
+        working_data.at[idx, "chestPin_num"] = chest_pin_count
+
+    # Copy augmented values back into the original DataFrame
+    data.loc[working_data.index, ["chestPin_num", "totalRounds"]] = working_data[["chestPin_num", "totalRounds"]]
+
+    return data
+
+def fix_collecting_block_coinsetids(data):
+    for block_id in data["BlockNum"].dropna().unique():
+        block_rows = data[data["BlockNum"] == block_id]
+        if block_rows["BlockType"].iloc[0] != "collecting":
+            continue  # Only fix collecting blocks
+
+        # Look within this block for the correct coinsetID
+        correct_coinset = None
+        for msg in block_rows["Message"].dropna():
+            match = re.search(r"coinsetID:(\d+)", msg)
+            if match:
+                correct_coinset = int(match.group(1))
+                break
+
+        if correct_coinset is not None:
+            data.loc[data["BlockNum"] == block_id, "CoinSetID"] = correct_coinset
+
+    return data
+
+def process_obsreward_file(data, file_path, file_path2):
     data['BlockNum'] = None
     data['RoundNum'] = None
     data['BlockType'] = None
@@ -203,6 +257,7 @@ def process_obsreward_file(data, file_path):
 
     detect_and_tag_blocks(data)
     forward_fill_block_info(data)
+    fix_collecting_block_coinsetids(data)
     assign_temporal_intervals(data)
     data["Messages_filled"] = data["Message"].fillna(method='ffill')
     data['BlockStatus'] = None
@@ -210,7 +265,10 @@ def process_obsreward_file(data, file_path):
         block_mask = data['BlockNum'] == block_num
         status = detect_block_completeness(data, block_num, data[block_mask])
         data.loc[block_mask, 'BlockStatus'] = status
-    data.to_csv(file_path, index=False)
+
+    #data.to_csv(file_path, index=False)
+    newData = augment_with_chestpin_and_totalrounds(data)
+    newData.to_csv(file_path, index=False)
     print(f"Processed and saved: {file_path}")
 
 def clean_and_process_files(root_directory, output_root_directory, magic_leap_data, save_large_files=True, max_memory_mb=500):
@@ -229,6 +287,7 @@ def clean_and_process_files(root_directory, output_root_directory, magic_leap_da
                 os.makedirs(output_dir, exist_ok=True)
 
                 outFile = os.path.join(output_dir, f"{filename.replace('.csv', '_processed.csv')}")
+                outFile2 = os.path.join(output_dir, f"{filename.replace('.csv', '_processed_new.csv')}")
                 print(f"Processing file: {file_path}")
                 data = pd.read_csv(file_path)
 
@@ -243,16 +302,46 @@ def clean_and_process_files(root_directory, output_root_directory, magic_leap_da
                             print(f"Error correcting malformed string in message '{message}': {e}")
 
                 # ✅ Continue processing
-                process_obsreward_file(data, outFile)
-                
+                process_obsreward_file(data, outFile, outFile2)
 
+
+# # Function to fix CoinSetID using per-block search
+# def backfill_coinsetid_by_block(data):
+#     for block_id in data["BlockNum"].dropna().unique():
+#         block_mask = data["BlockNum"] == block_id
+#         messages = data.loc[block_mask, "Message"].dropna().astype(str)
+
+#         # Search for the last seen coinsetID in the block
+#         coinset_id = None
+#         for msg in messages:
+#             match = re.search(r"coinsetID:(\d+)", msg)
+#             if match:
+#                 coinset_id = int(match.group(1))
+
+#         if coinset_id is not None:
+#             data.loc[block_mask, "CoinSetID"] = coinset_id
+
+#     return data
+
+# # Apply to the previously fixed processed file
+# repaired_data = backfill_coinsetid_by_block(data_corrected.copy())
+
+# # Save to a new CSV
+# final_coinsetid_patch_path = "/mnt/data/ObsReward_A_02_17_2025_15_11_processed_FINAL_FIXED.csv"
+# repaired_data.to_csv(final_coinsetid_patch_path, index=False)
+
+# final_coinsetid_patch_path
+
+
+
+########### Execution Block #############
 # Execution block
 root_directory = "/Users/mairahmac/Desktop/RC_TestingNotes/SelectedData/RawData"
 output_root_directory = "/Users/mairahmac/Desktop/RC_TestingNotes/SelectedData/ProcessedData"
 
 # # Single Test File 
-# root_directory = "/Users/mairahmac/Desktop/RC_TestingNotes/SmallSelectedData/idealTestFile/RawData"
-# output_root_directory = "/Users/mairahmac/Desktop/RC_TestingNotes/SmallSelectedData/idealTestFile/ProcessedData"
+# root_directory = "/Users/mairahmac/Desktop/RC_TestingNotes/SmallSelectedData/idealTestFile2/RawData"
+# output_root_directory = "/Users/mairahmac/Desktop/RC_TestingNotes/SmallSelectedData/idealTestFile2/ProcessedData"
 
 metadata_file = "/Users/mairahmac/Desktop/RC_TestingNotes/collatedData.xlsx"
 magic_leap_data = pd.read_excel(metadata_file, sheet_name="MagicLeapFiles")

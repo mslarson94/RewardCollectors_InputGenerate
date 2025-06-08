@@ -1,0 +1,274 @@
+import os
+import pandas as pd
+import numpy as np
+import re
+from datetime import datetime
+
+# preprocHelpers.py
+
+cols_2D = ['EyeLeft', 'EyeRight']
+cols_3D = ["HeadPosAnchored", "EyeDirectionAnchored", "FixationPointAnchored"]
+cols_rotation = ["HeadForthAnchored"]
+cols2Drop = [
+    "GlobalBlock", "HeadPos", "HeadRot(pitch yaw roll)", "EyeDirection",
+    "optiRbodyposA", "optiRbodyposB", "optiRbodyrotA", "optiRbodyrotB",
+    "Messages_filled"
+]
+final_column_order = [
+    "ParsedTimestamp", "Timestamp", "AppTime", "Type", "original_index", 
+    "HeadPosAnchored_x", "HeadPosAnchored_y", "HeadPosAnchored_z", 
+    "HeadForthAnchored_yaw", "HeadForthAnchored_pitch", "HeadForthAnchored_roll", 
+    "EyeDirectionAnchored_x", "EyeDirectionAnchored_y", "EyeDirectionAnchored_z", 
+    "FixationPointAnchored_x", "FixationPointAnchored_y", "FixationPointAnchored_z", 
+    "LeftEyeOpen", "RightEyeOpen", "EyeLeft_x", "EyeLeft_y", 
+    "EyeRight_x", "EyeRight_y", "EyeTarget", "AmplitudeDeg", 
+    "DirectionRadial", "VelocityDegps", "Message", "BlockInstance", 
+    "BlockNum", "RoundNum", "BlockType", "CoinSetID", "BlockStatus", 
+    "chestPin_num", "totalRounds", "SessionElapsedTime", 
+    "BlockElapsedTime", "RoundElapsedTime"
+]
+def detect_and_tag_blocks(data, role):
+    block_start_idx = None
+    block_num = None
+    coinset_id = None
+    block_type = None
+    last_seen_coinset = None
+    round_num = None
+    block_instance = 0
+
+    data["RoundNum"] = np.nan
+    data["BlockNum"] = np.nan
+    data["CoinSetID"] = np.nan
+    data["BlockType"] = np.nan
+    data["BlockInstance"] = np.nan  # Add BlockInstance column
+
+    for idx, row in data.iterrows():
+        message = row.get("Message", "")
+
+        if isinstance(message, str):
+
+            if message == "Mark should happen if checked on terminal.":
+                block_start_idx = idx
+                round_num = 0  # round starts counting from this row forward
+                block_instance += 1  # Increment BlockInstance
+                continue  # don't set RoundNum here
+
+            if message.startswith("coinsetID:"):
+                match = re.search(r"coinsetID:(\d+)", message)
+                if match:
+                    last_seen_coinset = int(match.group(1))
+
+            # Unified regex for both PO and AN participants
+            block_match = re.search(
+                r"Started (?:watching other participant's )?(collecting|pin dropping|pindropping)\. Block:\s*(\d+)",
+                message,
+                re.IGNORECASE
+            )
+
+            if block_match:
+                block_type_raw = block_match.group(1)
+                block_num = int(block_match.group(2))
+                coinset_id = last_seen_coinset
+                block_type = 'collecting' if 'collecting' in block_type_raw else 'pindropping'
+                if role.upper() == "PO":
+                    start = block_start_idx + 1 if block_start_idx is not None else idx
+                else:
+                    start = block_start_idx if block_start_idx is not None else idx
+
+                for j in range(start, idx + 1):
+                    data.at[j, "BlockNum"] = block_num
+                    data.at[j, "CoinSetID"] = coinset_id
+                    data.at[j, "BlockType"] = block_type
+                    data.at[j, "BlockInstance"] = block_instance
+                block_start_idx = None
+
+            if "Repositioned and ready to start block or round" in message:
+                if round_num is not None:
+                    round_num += 1
+                    data.at[idx, "RoundNum"] = round_num
+
+    return data
+
+def forward_fill_block_info(data):
+    """
+    Generic forward-fill function.
+    """
+    current_block_num = None
+    current_coinset_id = None
+    current_block_type = None
+    # current_round_num = None
+    current_block_instance = None
+
+    for idx in range(len(data)):
+        row = data.iloc[idx]
+        # round_num = row["RoundNum"]
+
+        if not pd.isna(row["BlockNum"]):
+            current_block_num = row["BlockNum"]
+            current_coinset_id = row["CoinSetID"]
+            current_block_type = row["BlockType"]
+
+        if not pd.isna(row["BlockInstance"]):
+            current_block_instance = row["BlockInstance"]
+
+        # if not pd.isna(round_num):
+        #     current_round_num = round_num
+
+        if current_block_num is not None:
+            data.at[idx, "BlockNum"] = current_block_num
+            data.at[idx, "CoinSetID"] = current_coinset_id
+            data.at[idx, "BlockType"] = current_block_type
+            data.at[idx, "BlockInstance"] = current_block_instance
+
+        # if current_round_num is not None and pd.isna(round_num):
+        #     data.at[idx, "RoundNum"] = current_round_num
+
+    return data
+
+def detect_block_completeness(block_rows):
+    messages = block_rows["Message"].dropna().str.lower()
+    has_start = any("mark should happen" in m for m in messages)
+    has_end = any("finished current task" in m or "finished watching other participant's" in m for m in messages)
+
+    if has_start and has_end:
+        return "complete"
+    elif has_start:
+        return "truncated"
+    return "incomplete"
+
+def fix_collecting_block_coinsetids(data):
+    for block_id in data["BlockNum"].dropna().unique():
+        block_rows = data[data["BlockNum"] == block_id]
+        if block_rows["BlockType"].iloc[0] != "collecting":
+            continue  # Only fix collecting blocks
+
+        # Look within this block for the correct coinsetID
+        correct_coinset = None
+        for msg in block_rows["Message"].dropna():
+            match = re.search(r"coinsetID:(\d+)", msg)
+            if match:
+                correct_coinset = int(match.group(1))
+                break
+
+        if correct_coinset is not None:
+            data.loc[data["BlockNum"] == block_id, "CoinSetID"] = correct_coinset
+
+    return data
+
+## Handling Coodinates
+def split_coordinates(val):
+    if isinstance(val, str):
+        parts = val.strip().split()
+        if len(parts) == 2:
+            try:
+                return float(parts[0]), float(parts[1])
+            except ValueError:
+                return None, None
+        elif len(parts) == 3:
+            try:
+                return float(parts[0]), float(parts[1]), float(parts[2])
+            except ValueError:
+                return None, None, None
+    return None
+
+def parse_2D_coords(df, coords2DList):
+    for col in coords2DList:
+        df[[f"{col}_x", f"{col}_y"]] = df[col].apply(lambda x: pd.Series(split_coordinates(x)))
+    df.drop(columns=coords2DList, inplace=True)
+    return df
+
+def parse_3D_coords(df, coords3DList):
+    for col in coords3DList:
+        df[[f"{col}_x", f"{col}_y", f"{col}_z"]] = df[col].apply(lambda x: pd.Series(split_coordinates(x)))
+    df.drop(columns=coords3DList, inplace=True)
+    return df
+
+def parse_rotation(df, rotationList):
+    for col in rotationList:
+        df[[f"{col}_yaw", f"{col}_pitch", f"{col}_roll"]] = df[col].apply(lambda x: pd.Series(split_coordinates(x)))
+    df.drop(columns=rotationList, inplace=True)
+    return df
+
+def drop_dead_cols(df, cols2Drop):
+    df.drop(columns=cols2Drop, inplace=True, errors='ignore')
+    return df
+
+## Prelim Timestamp Handling
+def safe_parse_timestamp(ts):
+    try:
+        if isinstance(ts, str) and ts.count(':') == 3:
+            hh, mm, ss, ms = ts.split(':')
+            ms = (ms + '000')[:6]
+            return datetime.strptime(f"{hh}:{mm}:{ss}:{ms}", "%H:%M:%S:%f")
+        return datetime.strptime(ts, "%H:%M:%S:%f")
+    except Exception:
+        return None
+
+def add_elapsed_time_columns(df):
+    if 'Timestamp' not in df.columns:
+        print("⚠️ Timestamp column missing, skipping elapsed time calculations.")
+        return df
+
+    print("\n🔍 Original Timestamp column head:")
+    print(df['Timestamp'].head())
+
+    # Apply safe_parse_timestamp directly — safe_parse_timestamp() returns datetime or None
+    df['ParsedTimestamp'] = df['Timestamp'].apply(safe_parse_timestamp)
+
+    print("\n🔍 ParsedTimestamp column head:")
+    print(df['ParsedTimestamp'].head())
+
+    df = df[df['ParsedTimestamp'].notnull()].copy()
+
+    print(f"\n🔍 Rows after filtering valid timestamps: {len(df)}")
+    if df.empty:
+        print("⚠️ No valid timestamps found after filtering. Skipping elapsed time calculations.")
+        return df
+
+    session_start_time = df['ParsedTimestamp'].iloc[0]
+    df['SessionElapsedTime'] = (df['ParsedTimestamp'] - session_start_time).dt.total_seconds()
+
+    if 'BlockNum' in df.columns:
+        df['BlockElapsedTime'] = df.groupby('BlockNum')['ParsedTimestamp'].transform(
+            lambda x: (x - x.iloc[0]).dt.total_seconds()
+        )
+    else:
+        df['BlockElapsedTime'] = pd.NA
+
+    if 'RoundNum' in df.columns:
+        df['RoundElapsedTime'] = df.groupby('RoundNum')['ParsedTimestamp'].transform(
+            lambda x: (x - x.iloc[0]).dt.total_seconds()
+        )
+    else:
+        df['RoundElapsedTime'] = pd.NA
+
+    #df.drop(columns=['ParsedTimestamp'], inplace=True)
+    print("✅ Elapsed time columns added successfully.")
+    return df
+
+
+## Tying Nearly Everything Together
+def process_obsreward_file(data, role):
+    data["BlockNum"] = None
+    data["RoundNum"] = None
+    data["BlockType"] = None
+    data["CoinSetID"] = None
+    data["BlockStatus"] = None
+
+    detect_and_tag_blocks(data, role)
+    forward_fill_block_info(data)
+    fix_collecting_block_coinsetids(data)
+
+    data["Messages_filled"] = data["Message"].fillna(method='ffill')
+
+    for block_instance in data["BlockInstance"].dropna().unique():
+        block_mask = data["BlockInstance"] == block_instance
+        block_rows = data[block_mask]
+        status = detect_block_completeness(block_rows)
+        data.loc[block_mask, "BlockStatus"] = status
+
+    data = drop_dead_cols(data, cols2Drop)
+    data = parse_2D_coords(data, cols_2D)
+    data = parse_3D_coords(data, cols_3D)
+    data = parse_rotation(data, cols_rotation)
+    return data

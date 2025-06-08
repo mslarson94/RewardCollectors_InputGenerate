@@ -3,6 +3,13 @@ import pandas as pd
 import numpy as np
 import re
 
+from preprocHelpers import (
+    split_coordinates, parse_2D_coords, parse_3D_coords, parse_rotation, 
+    drop_dead_cols, safe_parse_timestamp, add_elapsed_time_columns,
+    cols_2D, cols_3D, cols_rotation, cols2Drop)
+
+
+
 def correct_malformed_string(raw_string):
     """Fixes concatenated numeric values like -1.0000.000-6.000"""
     pattern = r"(-?\d+\.\d{3})(-?\d+\.\d{3})(-?\d+\.\d{3})"
@@ -249,7 +256,7 @@ def fix_collecting_block_coinsetids(data):
 
     return data
 
-def process_obsreward_file(data, file_path, file_path2):
+def process_obsreward_file(data, nestedPath, flatPath):
     data['BlockNum'] = None
     data['RoundNum'] = None
     data['BlockType'] = None
@@ -265,17 +272,28 @@ def process_obsreward_file(data, file_path, file_path2):
         block_mask = data['BlockNum'] == block_num
         status = detect_block_completeness(data, block_num, data[block_mask])
         data.loc[block_mask, 'BlockStatus'] = status
+    data["AN_AlignTS"] = data["Timestamp"]  # add AN_AlignTS
+    data = augment_with_chestpin_and_totalrounds(data)
+    # Coordinate Parsing
+    data = drop_dead_cols(data, cols2Drop)
+    data = parse_2D_coords(data, cols_2D)
+    data = parse_3D_coords(data, cols_3D)
+    data = parse_rotation(data, cols_rotation)
+    data = add_elapsed_time_columns(data)
+    data.to_csv(nestedPath, index=False)
+    data.to_csv(flatPath, index=False)
 
-    #data.to_csv(file_path, index=False)
-    newData = augment_with_chestpin_and_totalrounds(data)
-    newData.to_csv(file_path, index=False)
-    print(f"Processed and saved: {file_path}")
+    print(f"Processed and saved: {nestedPath}")
 
-def clean_and_process_files(root_directory, output_root_directory, magic_leap_data, save_large_files=True, max_memory_mb=500):
+def clean_and_process_files(root_directory, magic_leap_data, save_large_files=True, max_memory_mb=500):
     pattern = re.compile(r"^ObsReward_A_\d{2}_\d{2}_\d{4}_\d{2}_\d{2}.csv$")
     print('Started AN-specific processing!')
-
-    for dirpath, _, filenames in os.walk(root_directory):
+    output_dir_flat = os.path.join(root_directory, "ProcessedData_Flat")
+    baseDir = os.path.join(root_directory, "RawData")
+    output_dir = os.path.join(root_directory, "ProcessedData")
+    os.makedirs(output_dir, exist_ok=True)
+    os.makedirs(output_dir_flat, exist_ok=True)
+    for dirpath, _, filenames in os.walk(baseDir):
         for filename in filenames:
             #print(f"Checking file: {filename}")
             if pattern.match(filename):  
@@ -283,13 +301,17 @@ def clean_and_process_files(root_directory, output_root_directory, magic_leap_da
                 file_path = os.path.join(dirpath, filename)
 
                 relative_path = os.path.relpath(dirpath, root_directory)
-                output_dir = os.path.join(output_root_directory, relative_path)
-                os.makedirs(output_dir, exist_ok=True)
+                #relative_path = os.path.relpath(dirpath, baseDir)
 
-                outFile = os.path.join(output_dir, f"{filename.replace('.csv', '_processed.csv')}")
-                outFile2 = os.path.join(output_dir, f"{filename.replace('.csv', '_processed_new.csv')}")
+                full_output_dir = os.path.join(output_dir, relative_path)
+                os.makedirs(full_output_dir, exist_ok=True)
+
+                outFile_nested = os.path.join(full_output_dir, f"{filename.replace('.csv', '_processed.csv')}")
+                outFile_flat = os.path.join(output_dir_flat, f"{filename.replace('.csv', '_processed.csv')}")
                 print(f"Processing file: {file_path}")
                 data = pd.read_csv(file_path)
+                # ✅ Track original row index before any manipulation
+                data["original_index"] = data.index
 
                 # ✅ Fix malformed 'Closest location was:' strings
                 for idx, message in data['Message'].dropna().items():
@@ -302,47 +324,18 @@ def clean_and_process_files(root_directory, output_root_directory, magic_leap_da
                             print(f"Error correcting malformed string in message '{message}': {e}")
 
                 # ✅ Continue processing
-                process_obsreward_file(data, outFile, outFile2)
-
-
-# # Function to fix CoinSetID using per-block search
-# def backfill_coinsetid_by_block(data):
-#     for block_id in data["BlockNum"].dropna().unique():
-#         block_mask = data["BlockNum"] == block_id
-#         messages = data.loc[block_mask, "Message"].dropna().astype(str)
-
-#         # Search for the last seen coinsetID in the block
-#         coinset_id = None
-#         for msg in messages:
-#             match = re.search(r"coinsetID:(\d+)", msg)
-#             if match:
-#                 coinset_id = int(match.group(1))
-
-#         if coinset_id is not None:
-#             data.loc[block_mask, "CoinSetID"] = coinset_id
-
-#     return data
-
-# # Apply to the previously fixed processed file
-# repaired_data = backfill_coinsetid_by_block(data_corrected.copy())
-
-# # Save to a new CSV
-# final_coinsetid_patch_path = "/mnt/data/ObsReward_A_02_17_2025_15_11_processed_FINAL_FIXED.csv"
-# repaired_data.to_csv(final_coinsetid_patch_path, index=False)
-
-# final_coinsetid_patch_path
-
+                process_obsreward_file(data=data, nestedPath=outFile_nested, flatPath=outFile_flat)
 
 
 ########### Execution Block #############
 # Execution block
-root_directory = "/Users/mairahmac/Desktop/RC_TestingNotes/SelectedData/RawData"
-output_root_directory = "/Users/mairahmac/Desktop/RC_TestingNotes/SelectedData/ProcessedData"
 
-# # Single Test File 
-# root_directory = "/Users/mairahmac/Desktop/RC_TestingNotes/SmallSelectedData/idealTestFile2/RawData"
-# output_root_directory = "/Users/mairahmac/Desktop/RC_TestingNotes/SmallSelectedData/idealTestFile2/ProcessedData"
+trueRootDir = '/Users/mairahmac/Desktop/RC_TestingNotes'
+#procDir = 'SmallSelectedData/RNS'
+procDir = 'SelectedData'
+root_directory = os.path.join(trueRootDir, procDir)
+
 
 metadata_file = "/Users/mairahmac/Desktop/RC_TestingNotes/collatedData.xlsx"
 magic_leap_data = pd.read_excel(metadata_file, sheet_name="MagicLeapFiles")
-clean_and_process_files(root_directory, output_root_directory, magic_leap_data, save_large_files=True, max_memory_mb=500)
+clean_and_process_files(root_directory, magic_leap_data, save_large_files=True, max_memory_mb=500)

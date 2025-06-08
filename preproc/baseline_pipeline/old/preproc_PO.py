@@ -243,28 +243,6 @@ def process_obsreward_file(data, file_path, numOfCoins):
     data.to_csv(file_path, index=False)
     print(f"Processed and saved: {file_path}")
 
-### version of clean_and_process_files that saves the files in a nested directory 'unaligned'
-# def clean_and_process_files(root_directory, output_root_directory, magic_leap_data, numOfCoins, save_large_files=True, max_memory_mb=500):
-#     pattern = re.compile(r"^ObsReward_B_\d{2}_\d{2}_\d{4}_\d{2}_\d{2}.csv$")
-#     print('Started PO-specific processing!')
-
-#     for dirpath, _, filenames in os.walk(root_directory):
-#         for filename in filenames:
-#             #print(f"Checking file: {filename}")
-#             if pattern.match(filename):  
-#                 print(f'Match found: {filename}')
-#                 file_path = os.path.join(dirpath, filename)
-
-#                 relative_path = os.path.relpath(dirpath, root_directory)
-#                 output_dir = os.path.join(output_root_directory, relative_path, 'unaligned')
-#                 os.makedirs(output_dir, exist_ok=True)
-
-#                 outFile = os.path.join(output_dir, f"{filename.replace('.csv', '_processed_unaligned.csv')}")
-#                 print(f"Processing file: {file_path}")
-#                 #data = pd.read_csv(file_path)
-#                 data = correct_extraColumns(file_path, output_dir, save_large_files, max_memory_mb)
-#                 # ✅ Continue processing
-#                 process_obsreward_file(data, outFile, numOfCoins)
 def clean_and_process_files(root_directory, output_root_directory, magic_leap_data, numOfCoins, save_large_files=True, max_memory_mb=500):
     pattern = re.compile(r"^ObsReward_B_\d{2}_\d{2}_\d{4}_\d{2}_\d{2}.csv$")
     print('Started PO-specific processing!')

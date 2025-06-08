@@ -11,8 +11,9 @@ from metadata_and_manifest_utils import attach_metadata_to_events, record_to_man
 #from coin_utils import classify_coin_type, classify_swap_vote, process_marks
 from warning_logger import WarningLogger
 #from eventParser_AN_patch_hiMeta_new import buildEvents_AN_v4
-from eventParser_AN_patch_hiMeta_new_fixed import buildEvents_AN_v4
-from eventParser_PO import buildEvents_PO
+from eventParser_AN_patch_hiMeta_new_fixed5 import buildEvents_AN_v4
+#from eventParser_AN_patch_hiMeta_original import buildEvents_AN_v4
+from eventParser_PO_patch import buildEvents_PO
 from extraMetaExtract import generate_meta_json
 
 # # Inside the file processing loop, after df is loaded and before final save
@@ -33,6 +34,7 @@ def process_all_obsreward_files_AN(dataDir, metadata, role, subDirs=None, allowe
             pattern = re.compile(r"ObsReward_A_\d{2}_\d{2}_\d{4}_\d{2}_\d{2}.*_processed\.csv$")
         elif role == 'PO':
             pattern = re.compile(r"ObsReward_B_\d{2}_\d{2}_\d{4}_\d{2}_\d{2}.*_processed\.csv$")
+            #$pattern = re.compile(r"Align_ObsReward_B_\d{2}_\d{2}_\d{4}_\d{2}_\d{2}.*_processed\.csv$")
         else: 
             raise Exception("The parameter 'role' can only take the values 'AN' or 'PO' - please check your inputs!")
         manifest_records = []
@@ -45,6 +47,7 @@ def process_all_obsreward_files_AN(dataDir, metadata, role, subDirs=None, allowe
         logger = WarningLogger(output_dir=summary_dir)
         output_dataDir = os.path.join(dataDir, 'ExtractedEvents')
         input_dataDir = os.path.join(dataDir, 'ProcessedData')
+        #input_dataDir = os.path.join(dataDir, 'alignedPO')
         flat_outputEvents_csv = os.path.join(dataDir, 'ExtractedEvents_csv_Flat')
         flat_outputEvents_json = os.path.join(dataDir, 'ExtractedEvents_json_Flat')
         flat_outputMetaData = os.path.join(dataDir, 'MetaData_Flat')
@@ -118,6 +121,7 @@ def process_all_obsreward_files_AN(dataDir, metadata, role, subDirs=None, allowe
                         df = load_filtered_df(file_path)
                         os.makedirs(output_dir, exist_ok=True)
                         all_events = buildEvents_PO(df, allowed_statuses)
+                        meta_json = generate_meta_json(df, full_metadata_df, source_file)
 
                     out_source_file = fname.replace(".csv", "")
                     events_csv_path = os.path.join(output_dir, f"{out_source_file}_events.csv")
@@ -136,6 +140,8 @@ def process_all_obsreward_files_AN(dataDir, metadata, role, subDirs=None, allowe
                         enriched_events = all_events
 
                     enriched_events = pd.DataFrame(enriched_events).sort_values(by=["AppTime", "Timestamp"])
+                    enriched_events = add_elapsed_time_columns(enriched_events)
+
                     enriched_events.to_csv(events_csv_path, index=False)
                     enriched_events.to_json(events_json_path, orient='records', lines=True)
                     enriched_events.to_csv(eventsFlat_csv_path, index=False)
@@ -273,8 +279,8 @@ def process_all_obsreward_files_AN(dataDir, metadata, role, subDirs=None, allowe
                         meta_json = generate_meta_json(df, full_metadata_df, source_file)
                     else:
                         all_events = buildEvents_PO(df, allowed_statuses)
-                        meta_json = {}
-
+                        meta_json = generate_meta_json(df, full_metadata_df, source_file)
+                    print('yay')
                     out_source_file = fname.replace(".csv", "")
                     events_csv_path = os.path.join(output_dir, f"{out_source_file}_events.csv")
                     events_json_path = os.path.join(output_dir, f"{out_source_file}_events.json")
@@ -340,10 +346,11 @@ def process_all_obsreward_files_AN(dataDir, metadata, role, subDirs=None, allowe
 
 # --- For Running This as a Script By Itself (and debugging) ---
 def main():
-    allowed_statuses = {"complete", "truncated"}
+    allowed_statuses = ["complete", "truncated"]
     trueRootDir = '/Users/mairahmac/Desktop/RC_TestingNotes'
-    #procDir = 'SmallSelectedData/threepairs'
-    procDir = 'SmallSelectedData/idealTestFile2'
+    #procDir = 'SmallSelectedData/RNS/alignedPO'
+    #procDir = 'SelectedData'
+    procDir = 'SmallSelectedData/idealTestFile3'
     #procDir = 'SmallSelectedData/idealTestFile_singlePinDrop'
     #procDir = 'SmallSelectedData/idealTestFile_multiPinDrop'
     #procDir = 'SmallSelectedData/idealTestFile_coinCollect'
@@ -357,7 +364,7 @@ def main():
     ]
     #process_file_list(file_list, metaDataFile, dataDir, allowed_statuses=["complete", "truncated"])
     #process_all_obsreward_files_AN(dataDir, metaDataFile, role='AN', subDirs=['pair_008', 'pair_006'], allowed_statuses=["complete"])
-    process_all_obsreward_files_AN(dataDir, metaDataFile, role='AN', allowed_statuses=["complete"], flat_output_dir=dataDir)
-
+    process_all_obsreward_files_AN(dataDir, metaDataFile, role='AN', allowed_statuses=allowed_statuses, flat_output_dir=dataDir)
+    process_all_obsreward_files_AN(dataDir, metaDataFile, role='PO', allowed_statuses=allowed_statuses, flat_output_dir=dataDir)
 if __name__ == "__main__":
     main()

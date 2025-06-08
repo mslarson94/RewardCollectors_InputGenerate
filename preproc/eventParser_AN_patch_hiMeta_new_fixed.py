@@ -27,7 +27,7 @@ def safe_parse_timestamp(ts):
             hh, mm, ss, ms = ts.split(':')
             ms = (ms + '000')[:6]
             return datetime.strptime(f"{hh}:{mm}:{ss}:{ms}", "%H:%M:%S:%f")
-        return datetime.strptime(ts, "%H:%M:%S:%f")
+        return datetime.strptime(ts, "%H:%M:%S:%f").time()
     except Exception:
         return None
 
@@ -43,7 +43,8 @@ def backfill_approx_row_indices(events, df):
     for event in events:
         if event.get("source") != "synthetic":
             continue
-
+        if isinstance(event, list):
+            raise TypeError("❌ Event inside backfill is a list — expected a dict.")
         app_time = event.get("AppTime")
         if app_time is not None:
             candidates = df_sorted[df_sorted["AppTime"] <= app_time]
@@ -60,11 +61,15 @@ def backfill_approx_row_indices(events, df):
                 matched_row = candidates.iloc[-1]
                 event["original_row_start"] = matched_row["index"]
                 event["original_row_end"] = matched_row["index"]
-
+        print("DEBUG: event type in backfill =", type(event))
+        
     return events
 
 
 def build_common_event_fields(row, index=None):
+    #print("DEBUG: build_common_event_fields — row type:", type(row))
+    if isinstance(row, tuple):
+        raise TypeError("❌ build_common_event_fields was passed a tuple instead of a Series.")
     idx = index if index is not None else row.name
 
     #print(f"🔎 Assigning original_row_start from row: {row.to_dict()}")
@@ -88,9 +93,10 @@ def generate_synthetic_events_v2(base_time, timestamp_str, timed_events, base_in
             print(f"⚠️ base_timestamp is None for input: {timestamp_str} with base_info: {base_info}")
         for evt_name, offset, duration in timed_events:
             start_time = base_time + offset
-            start_ts = (base_timestamp + timedelta(seconds=offset)).strftime('%H:%M:%S:%f') if base_timestamp else None
+            #start_ts = (base_timestamp + timedelta(seconds=offset)).strftime('%H:%M:%S:%f') if base_timestamp else None
+            start_ts = (base_timestamp + timedelta(seconds=offset)).time()
             end_time = start_time + duration if duration else None
-            end_ts = (base_timestamp + timedelta(seconds=offset + duration)).strftime('%H:%M:%S:%f') if duration and base_timestamp else None
+            end_ts = (base_timestamp + timedelta(seconds=offset + duration)).time() if duration and base_timestamp else None
 
             synthetic_events.append({
                 "AppTime": start_time,
@@ -129,10 +135,12 @@ def process_swap_votes_v4(df, allowed_statuses):
                 try:
                     start_time = row["AppTime"]
                     timestamp = row["Timestamp"]
-
-                    base_timestamp = safe_parse_timestamp(start_time)
-
                     common_info = build_common_event_fields(row, i)
+                    start_ts = safe_parse_timestamp(timestamp)
+                    if start_ts is None:
+                        print(f"⚠️ base_timestamp is None for input: {timestamp} with base_info: {common_info}")
+
+                    #common_info = build_common_event_fields(row, i)
 
                     events.append({
                         "AppTime": start_time,
@@ -239,12 +247,9 @@ def process_marks_v2(df, allowed_statuses, cascade_windows=None):
             start_time = row["AppTime"]
             timestamp = row["Timestamp"]
 
-            base_timestamp = safe_parse_timestamp(timestamp_str)
-            if base_timestamp is None:
-                print(f"⚠️ base_timestamp is None for input: {timestamp_str} with base_info: {base_info}")
-            for evt_name, offset, duration in timed_events:
-                start_time = base_time + offset
-                start_ts = (base_timestamp + timedelta(seconds=offset)).strftime('%H:%M:%S:%f') if base_timestamp else None
+            start_ts = safe_parse_timestamp(timestamp)
+            if start_ts is None:
+                print(f"⚠️ base_timestamp is None for input: {timestamp} with base_info: {common_info}")
 
             events.append({
                 "AppTime": start_time,
@@ -286,12 +291,9 @@ def process_pin_drop_v5(df,allowed_statuses):
                 start_time = row["AppTime"]
                 timestamp = row["Timestamp"]
 
-                base_timestamp = safe_parse_timestamp(timestamp_str)
-                if base_timestamp is None:
-                    print(f"⚠️ base_timestamp is None for input: {timestamp_str} with base_info: {base_info}")
-                for evt_name, offset, duration in timed_events:
-                    start_time = base_time + offset
-                    start_ts = (base_timestamp + timedelta(seconds=offset)).strftime('%H:%M:%S:%f') if base_timestamp else None
+                start_ts = safe_parse_timestamp(timestamp)
+                if start_ts is None:
+                    print(f"⚠️ base_timestamp is None for input: {timestamp} with base_info: {common_info}")
 
                 event = {
                     "AppTime": start_time,
@@ -446,12 +448,9 @@ def process_feedback_collect_v5(df, allowed_statuses):
             start_time = row["AppTime"]
             timestamp = row["Timestamp"]
 
-            base_timestamp = safe_parse_timestamp(timestamp_str)
-            if base_timestamp is None:
-                print(f"⚠️ base_timestamp is None for input: {timestamp_str} with base_info: {base_info}")
-            for evt_name, offset, duration in timed_events:
-                start_time = base_time + offset
-                start_ts = (base_timestamp + timedelta(seconds=offset)).strftime('%H:%M:%S:%f') if base_timestamp else None
+            start_ts = safe_parse_timestamp(timestamp)
+            if start_ts is None:
+                print(f"⚠️ base_timestamp is None for input: {timestamp} with base_info: {common_info}")
 
             #msg_body = row.Message.replace("Collected pin feedback coin:", "").replace(" round reward", "")
             msg_body = row.Message.replace("Collected feedback coin:", "").replace(" round reward", "")
@@ -541,12 +540,10 @@ def process_chest_opened_v4(df, allowed_statuses):
                 start_time = row["AppTime"]
                 timestamp = row["Timestamp"]
 
-                base_timestamp = safe_parse_timestamp(timestamp_str)
-                if base_timestamp is None:
-                    print(f"⚠️ base_timestamp is None for input: {timestamp_str} with base_info: {base_info}")
-                for evt_name, offset, duration in timed_events:
-                    start_time = base_time + offset
-                    start_ts = (base_timestamp + timedelta(seconds=offset)).strftime('%H:%M:%S:%f') if base_timestamp else None
+                start_ts = safe_parse_timestamp(timestamp)
+                if start_ts is None:
+                    print(f"⚠️ base_timestamp is None for input: {timestamp} with base_info: {common_info}")
+
                 event = {
                     "AppTime": start_time,
                     "Timestamp": start_ts,
@@ -628,12 +625,10 @@ def process_chest_collect_v3(df, allowed_statuses):
                 start_time = row["AppTime"]
                 timestamp = row["Timestamp"]
 
-                base_timestamp = safe_parse_timestamp(timestamp_str)
-                if base_timestamp is None:
-                    print(f"⚠️ base_timestamp is None for input: {timestamp_str} with base_info: {base_info}")
-                for evt_name, offset, duration in timed_events:
-                    start_time = base_time + offset
-                    start_ts = (base_timestamp + timedelta(seconds=offset)).strftime('%H:%M:%S:%f') if base_timestamp else None
+                start_ts = safe_parse_timestamp(timestamp)
+                if start_ts is None:
+                    print(f"⚠️ base_timestamp is None for input: {timestamp} with base_info: {common_info}")
+ 
                 event = {
                     "AppTime": start_time,
                     "Timestamp": start_ts,
@@ -695,57 +690,6 @@ def process_chest_collect_v3(df, allowed_statuses):
     return events
 
 # -- Putting Everything Together
-
-# def buildEvents_AN_v4a(df, allowed_statuses):
-#     try:
-#         # 1. Build cascades from all known sources
-#         cascades = (
-#             process_pin_drop_v5(df, allowed_statuses) +
-#             process_feedback_collect_v5(df, allowed_statuses) +
-#             process_chest_opened_v4(df, allowed_statuses) +
-#             process_chest_collect_v3(df, allowed_statuses) +
-#             process_marks_v2(df, allowed_statuses) +
-#             process_swap_votes_v4(df, allowed_statuses) +
-#             process_block_periods_v4(df, allowed_statuses)
-#         )
-
-#         # 2. Generate cascade windows from them
-#         cascade_windows = find_cascade_windows_from_events_v4(cascades)
-
-#         # 3. Assign cascade metadata to each event
-#         cascades_updated = []
-#         for e in cascades:
-#             matched = match_cascade_window_v3(e, cascade_windows)
-#             if matched:
-#                 e.update(matched)
-#             else:
-#                 e["cascade_id"] = None
-#             cascades_updated.append(e)
-#         cascades = cascades_updated
-
-#         # 4. Generate and refine synthetic reward navigation events
-#         reward_walks = generate_reward_walking_periods_v2(df, cascades)
-#         for rw in reward_walks:
-#             print(rw["lo_eventType"], rw.get("original_row_start"), rw.get("cascade_id"))
-#         print(f"Generated {len(reward_walks)} reward walks")
-
-#         refined_walks_df = synthesize_reward_driven_walking_periods_v3(df, reward_walks)
-#         print(f"Generated {len(refined_walks_df)} refined walks df")
-#         refined_walks = refine_reward_walking_periods_v2(refined_walks_df.to_dict("records"))
-#         print(f"Refined {len(refined_walks)} walking periods")
-#         # 5. Combine cascades + synthetic walking periods
-#         all_events = cascades + refined_walks
-
-#         # 6. Clean internal-use-only fields
-#         for e in all_events:
-#             e.pop("event_type", None)
-
-#         return all_events
-
-#     except KeyError as e:
-#         print(f"🔥 KEY ERROR: {e}")
-#         traceback.print_exc()
-#         raise
 
 def process_special_round_segments(df, allowed_statuses):
     """
@@ -862,12 +806,113 @@ def process_special_round_segments(df, allowed_statuses):
     return events
 
 
+def process_block_and_round_boundaries(df, allowed_statuses):
+    events = []
+    current_block = None
+    current_round = None
+    current_block_segment = []
+    current_round_segment = []
+
+    special_rounds = {0, 7777, 8888, 9999}
+
+    def emit_event(row_tuple, tag, event_type, meta):
+        if not isinstance(row_tuple, tuple) or len(row_tuple) != 2:
+            raise ValueError(f"emit_event expected a tuple (idx, row), got {type(row_tuple)}")
+
+        idx, row = row_tuple
+        if not isinstance(row, pd.Series):
+            raise ValueError(f"emit_event expects row to be a pandas.Series, got {type(row)}")
+
+        try:
+            return {
+                "AppTime": row["AppTime"],
+                "Timestamp": safe_parse_timestamp(row["Timestamp"]),
+                "start_AppTime": row["AppTime"],
+                "end_AppTime": row["AppTime"],
+                "start_Timestamp": safe_parse_timestamp(row["Timestamp"]),
+                "end_Timestamp": safe_parse_timestamp(row["Timestamp"]),
+                "lo_eventType": event_type,
+                "med_eventType": f"{event_type.split('Start')[0]}Boundary",
+                "hi_eventType": f"{event_type.split('Start')[0]}Boundary",
+                "hiMeta_eventType": "BlockStructure",
+                #"details": {"tag": tag},
+                "details": {},
+                "source": "synthetic",
+                **meta
+            }
+        except Exception as e:
+            print(f"🔥 ERROR IN EMIT_EVENT: {e}")
+            print("Row keys:", list(row.keys()) if isinstance(row, pd.Series) else "N/A")
+            raise
+
+    for idx, row in df.iterrows():
+        block = row.get("BlockNum")
+        round_ = row.get("RoundNum")
+        status = row.get("BlockStatus", "unknown")
+
+        # --- BLOCK ---
+        if block != current_block:
+            if current_block_segment:
+                first_idx, first_row = current_block_segment[0]
+                last_idx, last_row = current_block_segment[-1]
+                if first_row.get("BlockStatus") in allowed_statuses:
+                    meta = build_common_event_fields(first_row, first_idx)
+                    events.append(emit_event((first_idx, first_row), "start", "BlockStart", meta))
+                    events.append(emit_event((last_idx, last_row), "end", "BlockEnd", meta))
+            current_block_segment = [(idx, row)]
+            current_block = block
+        else:
+            current_block_segment.append((idx, row))
+
+        # --- ROUND ---
+        if round_ not in special_rounds:
+            if current_round is None or round_ != current_round:
+                if current_round_segment:
+                    first_idx, first_row = current_round_segment[0]
+                    last_idx, last_row = current_round_segment[-1]
+                    meta = build_common_event_fields(first_row, first_idx)
+                    events.append(emit_event((first_idx, first_row), "start", "RoundStart", meta))
+                    events.append(emit_event((last_idx, last_row), "end", "RoundEnd", meta))
+                current_round_segment = [(idx, row)]
+                current_round = round_
+            else:
+                current_round_segment.append((idx, row))
+        else:
+            if current_round_segment:
+                first_idx, first_row = current_round_segment[0]
+                last_idx, last_row = current_round_segment[-1]
+                meta = build_common_event_fields(first_row, first_idx)
+                events.append(emit_event((first_idx, first_row), "start", "RoundStart", meta))
+                events.append(emit_event((last_idx, last_row), "end", "RoundEnd", meta))
+            current_round_segment = []
+            current_round = None
+
+    # Final flush
+    if current_block_segment:
+        first_idx, first_row = current_block_segment[0]
+        last_idx, last_row = current_block_segment[-1]
+        if first_row.get("BlockStatus") in allowed_statuses:
+            meta = build_common_event_fields(first_row, first_idx)
+            events.append(emit_event((first_idx, first_row), "start", "BlockStart", meta))
+            events.append(emit_event((last_idx, last_row), "end", "BlockEnd", meta))
+
+    if current_round_segment:
+        first_idx, first_row = current_round_segment[0]
+        last_idx, last_row = current_round_segment[-1]
+        meta = build_common_event_fields(first_row, first_idx)
+        events.append(emit_event((first_idx, first_row), "start", "RoundStart", meta))
+        events.append(emit_event((last_idx, last_row), "end", "RoundEnd", meta))
+
+    return events
+
+
 def buildEvents_AN_v4(df, allowed_statuses):
     try:
         # 1. Build cascades from all known sources
         cascades = (
             #process_block_periods_v4(df, allowed_statuses) +
             process_special_round_segments(df, allowed_statuses) +
+            #process_block_and_round_boundaries(df, allowed_statuses) +
             process_pin_drop_v5(df, allowed_statuses) +
             process_feedback_collect_v5(df, allowed_statuses) +
             process_chest_opened_v4(df, allowed_statuses) +
@@ -876,8 +921,12 @@ def buildEvents_AN_v4(df, allowed_statuses):
             process_swap_votes_v4(df, allowed_statuses)
             #process_block_periods_v4(df, allowed_statuses)
         )
-
+        #cascades['AppTime'] = cascades['AppTime'].round(3)
         # 2. Generate cascade windows from them
+        # print("FINAL DEBUG: Cascades type =", type(cascades))
+        # print("Sample event type =", type(cascades[0]))
+        # print("Sample keys =", list(cascades[0].keys()) if isinstance(cascades[0], dict) else "Not a dict")
+
         all_events = backfill_approx_row_indices(cascades, df)
 
         return all_events

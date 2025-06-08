@@ -1,5 +1,5 @@
 .DS_Store
-*__pycache__/*
+__pycache__/
 *.fbx
 *.mp4
 *.stl
@@ -18,3 +18,8 @@ RewardCollectors.egg-info/*
 *ChatGPT*
 *chatGPT*
 *chat\ gpt\ to\ Do\ summary.txt
+*.csv
+*.zip
+*.fig
+*.mat
+*.asv

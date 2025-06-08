@@ -10,9 +10,10 @@ def attach_metadata_to_events(events, metadata_row, source_file, relative_path):
         "participantID": metadata_row.get("participantID", "unknown"),
         "pairID": metadata_row.get("pairID", "unknown"),
         "testingDate": metadata_row.get("testingDate", "unknown"),
-        "sessionType": metadata_row.get("testingDate", "unknown"),
-        "AorB": metadata_row.get("AorB", "unknown"),
+        "sessionType": metadata_row.get("sessionType", "unknown"),
+        "ptIsAorB": metadata_row.get("AorB", "unknown"),
         "coinSet": metadata_row.get("coinSet", "unknown"),
+        "device": metadata_row.get("device", "unknown"),
         "main_RR": metadata_row.get("main_RR", "unknown"),
         "currentRole": metadata_row.get("currentRole", "unknown"),
         "source_file": source_file,
@@ -25,9 +26,10 @@ def record_to_manifest(metadata_row, source_file, relative_path, processed_path,
         "participantID": metadata_row.get("participantID", "unknown"),
         "pairID": metadata_row.get("pairID", "unknown"),
         "testingDate": metadata_row.get("testingDate", "unknown"),
-        "sessionType": metadata_row.get("testingDate", "unknown"),
-        "AorB": metadata_row.get("AorB", "unknown"),
+        "sessionType": metadata_row.get("sessionType", "unknown"),
+        "ptIsAorB": metadata_row.get("AorB", "unknown"),
         "coinSet": metadata_row.get("coinSet", "unknown"),
+        "device": metadata_row.get("device", "unknown"),
         "main_RR": metadata_row.get("main_RR", "unknown"),
         "currentRole": metadata_row.get("currentRole", "unknown"),
         "source_file": source_file,
@@ -44,25 +46,43 @@ def save_manifest(records, output_dir):
     print(f"📄 Manifest saved to {manifest_path}")
 
 # --- Utility: Loading Data & MetaData ---
-def load_filtered_dfv1(file_path):
-    with open(file_path, "r") as f:
-        lines = f.readlines()
+# def load_filtered_dfv1(file_path):
+#     with open(file_path, "r") as f:
+#         lines = f.readlines()
 
-    header = lines[0]
-    start_index = next(
-        (i for i, line in enumerate(lines) if "Mark should happen" in line), 1
-    )
+#     header = lines[0]
+#     start_index = next(
+#         (i for i, line in enumerate(lines) if "Mark should happen" in line), 1
+#     )
 
-    filtered_lines = [header] + lines[start_index:]
-    df = pd.read_csv(StringIO("".join(filtered_lines)))
-    df["original_index"] = list(range(start_index + 1, start_index + 1 + len(df)))
-    print(df.columns)
-    print(df.head())
+#     filtered_lines = [header] + lines[start_index:]
+#     df = pd.read_csv(StringIO("".join(filtered_lines)))
+#     df["original_index"] = list(range(start_index + 1, start_index + 1 + len(df)))
+#     print(df.columns)
+#     print(df.head())
 
-    return df
-import os
-from io import StringIO
-import pandas as pd
+#     return df
+
+# def load_filtered_df_v1(file_path):
+#     with open(file_path, "r") as f:
+#         lines = f.readlines()
+
+#     header = lines[0]
+#     start_index = next((i for i, line in enumerate(lines) if "Mark should happen" in line), 1)
+
+#     filtered_lines = [header] + lines[start_index:]
+#     df = pd.read_csv(StringIO("".join(filtered_lines)))
+#     df["original_index"] = list(range(start_index + 1, start_index + 1 + len(df)))
+
+#     # Construct filtered filename
+#     base, ext = os.path.splitext(file_path)
+#     filtered_path = f"{base}_filtered{ext}"
+
+#     # Save the filtered DataFrame
+#     df.to_csv(filtered_path, index=False)
+
+#     print(f"🔄 Filtered DataFrame saved to: {filtered_path}")
+#     return df
 
 def load_filtered_df(file_path):
     with open(file_path, "r") as f:
@@ -73,7 +93,8 @@ def load_filtered_df(file_path):
 
     filtered_lines = [header] + lines[start_index:]
     df = pd.read_csv(StringIO("".join(filtered_lines)))
-    df["original_index"] = list(range(start_index + 1, start_index + 1 + len(df)))
+
+    # 🚫 Removed original_index assignment
 
     # Construct filtered filename
     base, ext = os.path.splitext(file_path)
@@ -102,3 +123,13 @@ def pullMetaData(metadataFile):
     print(f"🚮 Known trash entries: {len(full_metadata_df) - len(metadata_df)}")
 
     return full_metadata_df, metadata_df, all_known_files, valid_files
+
+
+def get_metadata_row_for_file(source_file, metadata_df):
+    """
+    Retrieve the metadata row corresponding to a given source file.
+    """
+    matched_rows = metadata_df.loc[metadata_df["source_file"] == os.path.basename(source_file)]
+    if matched_rows.empty:
+        raise ValueError(f"❌ No metadata found for {source_file} in metadata_df.")
+    return matched_rows.iloc[0]

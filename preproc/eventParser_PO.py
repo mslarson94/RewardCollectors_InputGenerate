@@ -19,15 +19,15 @@ def classify_coin_type(CoinSetID, idvCoinID):
         return "TutorialRPE"
     return "Unknown"
 
-def classify_swap_vote(CoinSetID, swapvote):
-    if CoinSetID in [2, 3] and swapvote == "NEW":
+def classify_swap_vote(coinType, swapvote):
+    if (coinType not in ["Normal", "TutorialNorm"]) and swapvote == "NEW":
         return "Correct"
-    elif CoinSetID == 1 and swapvote == "OLD":
+    elif (coinType in ["Normal", "TutorialNorm"]) and swapvote == "NEW":
+        return "Incorrect"
+    elif (coinType not in ["Normal", "TutorialNorm"]) and swapvote == "OLD":
+        return "Incorrect"
+    elif (coinType in ["Normal", "TutorialNorm"]) and swapvote == "OLD":
         return "Correct"
-    elif CoinSetID == 1 and swapvote == "NEW":
-        return "Incorrect"
-    elif CoinSetID in [2, 3] and swapvote == "OLD":
-        return "Incorrect"
     return "Unknown"
 
 # --- Pin Drops and Coin Collection Events  ---

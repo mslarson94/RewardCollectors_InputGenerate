@@ -1,0 +1,60 @@
+Self - R019, 
+
+Chest 1 to Cylinder 1  : Correlation coefficient: -0.0022911
+
+
+Channel 1:
+  Mean Chest Walk Power: 353.7897
+  Mean Cylinder Walk Power (Self): 367.9716
+  Correlation (r) between Chest and Cylinder Walks (Self): -0.0732
+
+Channel 2:
+  Mean Chest Walk Power: 357.8976
+  Mean Cylinder Walk Power (Self): 397.6918
+  Correlation (r) between Chest and Cylinder Walks (Self): -0.0199
+
+Analysis complete!
+
+
+
+% Concatenate Walks
+chest_concat = [];
+cylinder_concat = [];
+for i = 1:num_walks
+    chest_concat = [chest_concat, chest_walks{i}];
+    cylinder_concat = [cylinder_concat, cylinder_walks{i}];
+end
+
+%% Generate Spectrogram Heatmaps
+window_length = 2 * Fs;  % 2-second window
+noverlap = round(0.5 * window_length);
+
+for ch_idx = 1:length(channels_of_interest)
+    channel = channels_of_interest(ch_idx);
+    
+    % Chest Walks
+    figure;
+    [S_chest, F_chest, T_chest, P_chest] = spectrogram(chest_concat(ch_idx,:), window_length, noverlap, [], Fs, 'yaxis');
+    imagesc(T_chest, F_chest, 10*log10(P_chest));
+    axis xy;
+    colorbar;
+    xlabel('Time (s)');
+    ylabel('Frequency (Hz)');
+    title(sprintf('Chest Walks - Spectrogram - Channel %d', channel));
+    ylim([0 100]);
+    set(gca, 'FontSize', 14);
+    
+    % Cylinder Walks
+    figure;
+    [S_cyl, F_cyl, T_cyl, P_cyl] = spectrogram(cylinder_concat(ch_idx,:), window_length, noverlap, [], Fs, 'yaxis');
+    imagesc(T_cyl, F_cyl, 10*log10(P_cyl));
+    axis xy;
+    colorbar;
+    xlabel('Time (s)');
+    ylabel('Frequency (Hz)');
+    title(sprintf('Cylinder Walks - Spectrogram - Channel %d', channel));
+    ylim([0 100]);
+    set(gca, 'FontSize', 14);
+end
+
+disp('Spectrogram analysis complete!');

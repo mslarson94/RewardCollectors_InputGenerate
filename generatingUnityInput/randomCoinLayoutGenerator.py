@@ -26,7 +26,7 @@ def triangle_area(p1, p2, p3):
     x3, y3 = p3
     return 0.5 * abs(x1*(y2 - y3) + x2*(y3 - y1) + x3*(y1 - y2))
 
-def generate_valid_triangle(octagon, min_area=10, max_area=12):
+def generate_valid_triangle(octagon, min_area=8, max_area=10): # previously used 10 & 12
     '''Generate a valid triangle with an area between min_area and max_area'''
     while True:
         p1 = random_point_in_octagon(octagon)
@@ -164,7 +164,7 @@ myOutDir = '/Users/mairahmac/Desktop/TriangleSets'
 # Run multiple iterations and save outputs
 iterateTriangles(myStartOctagon, myArenaOctagon, myOutDir, 10)
 
-csv_file = os.path.join(myOutDir, 'triangle_positions_Selected.csv')
+#csv_file = os.path.join(myOutDir, 'triangle_positions_Selected.csv')
 #plot_selected_triangles(myStartOctagon, myArenaOctagon, csv_file, version_list=[2, 3, 8], outFile='selected_triangles_1a.png')
 
 # plot_selected_triangles(myStartOctagon, myArenaOctagon, csv_file, version_list=[3], outFile='selected_triangles_3.png')
@@ -180,18 +180,18 @@ csv_file = os.path.join(myOutDir, 'triangle_positions_Selected.csv')
 # plot_selected_triangles(myStartOctagon, myArenaOctagon, csv_file, version_list=[13], outFile='selected_triangles_13.png')
 # plot_selected_triangles(myStartOctagon, myArenaOctagon, csv_file, version_list=[5], outFile='selected_triangles_5.png')
 
-plot_selected_triangles(myStartOctagon, myArenaOctagon, csv_file, version_list=[1, 7], outFile='selected_triangles_AB.png')
-plot_selected_triangles(myStartOctagon, myArenaOctagon, csv_file, version_list=[9, 15], outFile='selected_triangles_BC.png')
-plot_selected_triangles(myStartOctagon, myArenaOctagon, csv_file, version_list=[1, 10, 15, 3, 9], outFile='selected_triangles_CD.png')
-plot_selected_triangles(myStartOctagon, myArenaOctagon, csv_file, version_list=[1, 7, 9, 15 ], outFile='selected_triangles_DE.png')
-plot_selected_triangles(myStartOctagon, myArenaOctagon, csv_file, version_list=[1, 7, 3, 15], outFile='selected_triangles_EF.png')
+# plot_selected_triangles(myStartOctagon, myArenaOctagon, csv_file, version_list=[1, 7], outFile='selected_triangles_AB.png')
+# plot_selected_triangles(myStartOctagon, myArenaOctagon, csv_file, version_list=[9, 15], outFile='selected_triangles_BC.png')
+# plot_selected_triangles(myStartOctagon, myArenaOctagon, csv_file, version_list=[1, 10, 15, 3, 9], outFile='selected_triangles_CD.png')
+# plot_selected_triangles(myStartOctagon, myArenaOctagon, csv_file, version_list=[1, 7, 9, 15 ], outFile='selected_triangles_DE.png')
+# plot_selected_triangles(myStartOctagon, myArenaOctagon, csv_file, version_list=[1, 7, 3, 15], outFile='selected_triangles_EF.png')
 
-plot_selected_triangles(myStartOctagon, myArenaOctagon, csv_file, version_list=[15], outFile='selected_triangles_FG.png')
-plot_selected_triangles(myStartOctagon, myArenaOctagon, csv_file, version_list=[7, 10], outFile='selected_triangles_710.png')
-plot_selected_triangles(myStartOctagon, myArenaOctagon, csv_file, version_list=[7, 15], outFile='selected_triangles_715.png')
-plot_selected_triangles(myStartOctagon, myArenaOctagon, csv_file, version_list=[7, 15, 8, 12], outFile='selected_triangles_josh.png')
-plot_selected_triangles(myStartOctagon, myArenaOctagon, csv_file, version_list=[7, 10, 8, 12], outFile='selected_triangles_johnson.png')
-plot_selected_triangles(myStartOctagon, myArenaOctagon, csv_file, version_list=[1, 4, 12, 8], outFile='selected_triangles_napo.png')
+# plot_selected_triangles(myStartOctagon, myArenaOctagon, csv_file, version_list=[15], outFile='selected_triangles_FG.png')
+# plot_selected_triangles(myStartOctagon, myArenaOctagon, csv_file, version_list=[7, 10], outFile='selected_triangles_710.png')
+# plot_selected_triangles(myStartOctagon, myArenaOctagon, csv_file, version_list=[7, 15], outFile='selected_triangles_715.png')
+# plot_selected_triangles(myStartOctagon, myArenaOctagon, csv_file, version_list=[7, 15, 8, 12], outFile='selected_triangles_josh.png')
+# plot_selected_triangles(myStartOctagon, myArenaOctagon, csv_file, version_list=[7, 10, 8, 12], outFile='selected_triangles_johnson.png')
+# plot_selected_triangles(myStartOctagon, myArenaOctagon, csv_file, version_list=[1, 4, 12, 8], outFile='selected_triangles_napo.png')
 
 # plot_selected_triangles(myStartOctagon, myArenaOctagon, csv_file, version_list=[2, 3, 9, 4, 13], outFile='selected_triangles_2_13.png')
 # plot_selected_triangles(myStartOctagon, myArenaOctagon, csv_file, version_list=[7, 8], outFile='selected_triangles_7_8.png')

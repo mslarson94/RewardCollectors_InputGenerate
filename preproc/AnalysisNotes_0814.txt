@@ -1,0 +1,75 @@
+file processor for both 
+	- AN done
+	- PO done 
+
+event parser for both 
+	- AN done
+	- PO done 
+
+preprocess_events_for_alignment.py 
+	- AN done
+	- PO done 
+
+alignPO2AN_part1.py
+	- done
+
+flat event for both 
+	- AN done
+	- PO done 
+
+AN compute walks 
+	- AN done
+	- PO done
+
+PO compute walks Amendment
+	- new lo_eventType == 'WatchingNav'
+	- need to finish script
+	- lowest priority 
+
+Things to show on Friday 
+	- big tables of scores
+		- % correct & total correct & 
+		- total points earned
+		- % correct swap votes 
+		- % correct pin votes 
+		- % points earned (total points / total time in mins)
+		- demo breakdowns
+	- individual plots 
+		- Overall individual description 
+			- number of blocks completed 
+			- number of different files generated (starts & stops)
+			- which coin set 
+			- total points earned 
+			- total time taken
+			- % correct swap votes 
+			- % correct pin votes
+			- # of rounds to criterion
+			- data streams collected
+		- Testing Session (same role, same coin set) - separate training set from the real set:
+			- dist pin to actual closest coin over time 
+				- early learning >> don't prioritize this at the moment 
+			- plot of individual values (color coded for HV vs. LV vs. NV vs. Avg for Rd): dist pin to closest coin *not yet collected* over time 
+				- full testing session 
+				- early learning / learned / late over learning (TP1 vs. first half of TP2, vs. second half of TP2)  >> don't prioritize this at the moment 
+				- 10 min segments >> don't prioritize this at the moment 
+				- 15 min segments >> don't prioritize this at the moment 
+		 	- plots of physical distance in walk (color coded for HV vs. LV vs. NV): dist pin to closest coin *not yet collected* over time
+				- full testing session 
+				- live walk - learning >> don't prioritize this at the moment 
+				- early learning / learned / late over learning (TP1 vs. first half of TP2, vs. second half of TP2) >> don't prioritize this at the moment 
+				- 10 blocks >> don't prioritize this at the moment 
+				- within original file (start & stop set up has happened) >> don't prioritize this at the moment 
+			- sub plot of integral of money collected >> don't prioritize this at the moment 
+			- angle of entry pin placement over time >> don't prioritize this at the moment 
+				- sub plot of HV vs. LV vs. NV 
+			- pure & weighted djikstra references & the initial learning reference - path 
+			- pure & weighted djikstra references & the initial learning reference - angle of entry
+			- path efficiency (pure) over time 
+				- full testing session 
+				- early learning / learned / late over learning (TP1 vs. first half of TP2, vs. second half of TP2)>> don't prioritize this at the moment 
+			- latency of pindrop over time from trial onset by coin type 
+			- path efficiency (weighted) over time 
+				- full testing session 
+				- early learning / learned / late over learning (TP1 vs. first half of TP2, vs. second half of TP2)>> don't prioritize this at the moment 
+
+

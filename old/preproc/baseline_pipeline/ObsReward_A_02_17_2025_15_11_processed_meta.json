@@ -1,0 +1,360 @@
+{
+  "file": "obsreward_a_02_17_2025_15_11_processed.csv",
+  "participantID": "116A",
+  "pairID": "08",
+  "testingDate": "02_17_2025",
+  "device": "A",
+  "coinSet": "A",
+  "sessionType": "Morning",
+  "main_RR": "main",
+  "CoinRegistry": {
+    "4": {
+      "0": {
+        "deltax": -2.0,
+        "deltay": 0.0,
+        "deltaz": -6.0
+      },
+      "1": {
+        "deltax": -1.0,
+        "deltay": 0.0,
+        "deltaz": -6.0
+      },
+      "2": {
+        "deltax": 0.0,
+        "deltay": 0.0,
+        "deltaz": -6.0
+      }
+    },
+    "1": {
+      "0": {
+        "deltax": -3.76,
+        "deltay": 0.0,
+        "deltaz": -0.1
+      },
+      "1": {
+        "deltax": -0.57,
+        "deltay": 0.0,
+        "deltaz": 2.4
+      },
+      "2": {
+        "deltax": 1.36,
+        "deltay": 0.0,
+        "deltaz": -3.04
+      }
+    },
+    "3": {
+      "0": {
+        "deltax": 1.36,
+        "deltay": 0.0,
+        "deltaz": -3.04
+      },
+      "1": {
+        "deltax": -3.76,
+        "deltay": 0.0,
+        "deltaz": -0.1
+      },
+      "2": {
+        "deltax": -0.57,
+        "deltay": 0.0,
+        "deltaz": 2.4
+      }
+    },
+    "2": {
+      "0": {
+        "deltax": 1.36,
+        "deltay": 0.0,
+        "deltaz": -3.04
+      },
+      "1": {
+        "deltax": -3.76,
+        "deltay": 0.0,
+        "deltaz": -0.1
+      },
+      "2": {
+        "deltax": -0.57,
+        "deltay": 0.0,
+        "deltaz": 2.4
+      }
+    }
+  },
+  "BlockStructureSummary": [
+    {
+      "BlockNum": 0,
+      "BlockStatus": "complete",
+      "AllRoundNums": [
+        0.0,
+        1.0,
+        8888.0,
+        9999.0
+      ],
+      "SpecialRoundNums": [
+        0,
+        8888,
+        9999
+      ],
+      "NumTrueRounds": 1,
+      "Num7777Segments": 0,
+      "BlockDuration_sec": 58.771
+    },
+    {
+      "BlockNum": 2,
+      "BlockStatus": "complete",
+      "AllRoundNums": [
+        0.0,
+        1.0,
+        8888.0,
+        9999.0
+      ],
+      "SpecialRoundNums": [
+        0,
+        8888,
+        9999
+      ],
+      "NumTrueRounds": 1,
+      "Num7777Segments": 0,
+      "BlockDuration_sec": 162.328
+    },
+    {
+      "BlockNum": 3,
+      "BlockStatus": "complete",
+      "AllRoundNums": [
+        0.0,
+        1.0,
+        2.0,
+        3.0,
+        4.0,
+        5.0,
+        6.0,
+        7.0,
+        8.0,
+        9.0,
+        7777.0,
+        8888.0,
+        9999.0
+      ],
+      "SpecialRoundNums": [
+        0,
+        7777,
+        8888,
+        9999
+      ],
+      "NumTrueRounds": 9,
+      "Num7777Segments": 8,
+      "BlockDuration_sec": 958.148
+    },
+    {
+      "BlockNum": 4,
+      "BlockStatus": "complete",
+      "AllRoundNums": [
+        0.0,
+        1.0,
+        8888.0,
+        9999.0
+      ],
+      "SpecialRoundNums": [
+        0,
+        8888,
+        9999
+      ],
+      "NumTrueRounds": 1,
+      "Num7777Segments": 0,
+      "BlockDuration_sec": 115.209
+    },
+    {
+      "BlockNum": 5,
+      "BlockStatus": "complete",
+      "AllRoundNums": [
+        0.0,
+        1.0,
+        8888.0,
+        9999.0
+      ],
+      "SpecialRoundNums": [
+        0,
+        8888,
+        9999
+      ],
+      "NumTrueRounds": 1,
+      "Num7777Segments": 0,
+      "BlockDuration_sec": 60.511
+    },
+    {
+      "BlockNum": 6,
+      "BlockStatus": "complete",
+      "AllRoundNums": [
+        0.0,
+        1.0,
+        8888.0,
+        9999.0
+      ],
+      "SpecialRoundNums": [
+        0,
+        8888,
+        9999
+      ],
+      "NumTrueRounds": 1,
+      "Num7777Segments": 0,
+      "BlockDuration_sec": 68.31
+    },
+    {
+      "BlockNum": 7,
+      "BlockStatus": "complete",
+      "AllRoundNums": [
+        0.0,
+        1.0,
+        8888.0,
+        9999.0
+      ],
+      "SpecialRoundNums": [
+        0,
+        8888,
+        9999
+      ],
+      "NumTrueRounds": 1,
+      "Num7777Segments": 0,
+      "BlockDuration_sec": 63.115
+    },
+    {
+      "BlockNum": 8,
+      "BlockStatus": "complete",
+      "AllRoundNums": [
+        0.0,
+        1.0,
+        8888.0,
+        9999.0
+      ],
+      "SpecialRoundNums": [
+        0,
+        8888,
+        9999
+      ],
+      "NumTrueRounds": 1,
+      "Num7777Segments": 0,
+      "BlockDuration_sec": 74.273
+    },
+    {
+      "BlockNum": 9,
+      "BlockStatus": "complete",
+      "AllRoundNums": [
+        0.0,
+        1.0,
+        8888.0,
+        9999.0
+      ],
+      "SpecialRoundNums": [
+        0,
+        8888,
+        9999
+      ],
+      "NumTrueRounds": 1,
+      "Num7777Segments": 0,
+      "BlockDuration_sec": 69.215
+    },
+    {
+      "BlockNum": 10,
+      "BlockStatus": "complete",
+      "AllRoundNums": [
+        0.0,
+        1.0,
+        8888.0,
+        9999.0
+      ],
+      "SpecialRoundNums": [
+        0,
+        8888,
+        9999
+      ],
+      "NumTrueRounds": 1,
+      "Num7777Segments": 0,
+      "BlockDuration_sec": 128.305
+    },
+    {
+      "BlockNum": 11,
+      "BlockStatus": "complete",
+      "AllRoundNums": [
+        0.0,
+        1.0,
+        8888.0,
+        9999.0
+      ],
+      "SpecialRoundNums": [
+        0,
+        8888,
+        9999
+      ],
+      "NumTrueRounds": 1,
+      "Num7777Segments": 0,
+      "BlockDuration_sec": 56.957
+    },
+    {
+      "BlockNum": 12,
+      "BlockStatus": "complete",
+      "AllRoundNums": [
+        0.0,
+        1.0,
+        8888.0,
+        9999.0
+      ],
+      "SpecialRoundNums": [
+        0,
+        8888,
+        9999
+      ],
+      "NumTrueRounds": 1,
+      "Num7777Segments": 0,
+      "BlockDuration_sec": 52.734
+    },
+    {
+      "BlockNum": 13,
+      "BlockStatus": "complete",
+      "AllRoundNums": [
+        0.0,
+        1.0,
+        8888.0,
+        9999.0
+      ],
+      "SpecialRoundNums": [
+        0,
+        8888,
+        9999
+      ],
+      "NumTrueRounds": 1,
+      "Num7777Segments": 0,
+      "BlockDuration_sec": 92.907
+    },
+    {
+      "BlockNum": 14,
+      "BlockStatus": "complete",
+      "AllRoundNums": [
+        0.0,
+        1.0,
+        8888.0,
+        9999.0
+      ],
+      "SpecialRoundNums": [
+        0,
+        8888,
+        9999
+      ],
+      "NumTrueRounds": 1,
+      "Num7777Segments": 0,
+      "BlockDuration_sec": 74.158
+    },
+    {
+      "BlockNum": 15,
+      "BlockStatus": "truncated",
+      "AllRoundNums": [
+        0.0,
+        1.0,
+        8888.0
+      ],
+      "SpecialRoundNums": [
+        0.0,
+        8888.0
+      ],
+      "NumTrueRounds": 1,
+      "Num7777Segments": 0,
+      "BlockDuration_sec": 129.568
+    }
+  ]
+}

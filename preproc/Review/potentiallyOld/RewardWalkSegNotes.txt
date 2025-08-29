@@ -1,0 +1,78 @@
+Absolutely — here’s a full summary of the **True Round Walking Segments strategy** we developed together, so you can resume seamlessly:
+
+---
+
+### 🧭 **True Round Walking Period Strategy**
+
+#### 🧱 **Conceptual Goal**
+
+To label **uninterrupted walking periods** (from `Type == "RTdata"`) in a way that accurately reflects task structure, including:
+
+* `Walk2PinDrop`
+* `Wait4Feedback`
+* `Wait4SwapVote`
+* and also capturing walking during Special Rounds like `0`, `7777`, `8888`, `9999`
+
+---
+
+### 🔄 **Final Strategy: Segment First, Label Later**
+
+#### ✅ Step 1: **Segment RTdata Walking Periods**
+
+Using:
+
+```python
+def segment_rtdata_walking_periods(df):
+    # Returns list of dicts for uninterrupted RTdata blocks
+```
+
+Each walking segment includes:
+
+* Start and end row indices
+* AppTime range
+* BlockNum, RoundNum, chestPin\_num, etc.
+
+#### ✅ Step 2: **Tag Segments with Labels**
+
+After segmentation, walking segments can be classified based on context:
+
+```text
+IF RoundNum in [0, 7777, 8888, 9999] → label based on known mapping:
+    0 → PreBlockActivity
+    7777 → InterRound_CylinderWalk
+    8888 → InterRound_PostCylinderWalk
+    9999 → PostBlockActivity
+
+ELSE:
+    - IF ends at PinDrop_Moment → Walk2PinDrop
+    - IF between PinDrop_Moment and CoinCollect_Moment_PinDrop → Wait4Feedback
+    - IF between CoinCollect_Moment_PinDrop and SwapVoteMoment → Wait4SwapVote
+```
+
+Matching is based on `original_row_start` and `original_row_end` from logged event annotations.
+
+---
+
+### 🛠️ Future Function Plan
+
+```python
+def tag_walking_segments(segments, events):
+    # Annotates each RTdata segment with context-aware labels using tagged events
+```
+
+This function will:
+
+* Find surrounding events per segment
+* Assign `"walk_type"` or `"hi_eventType"` to each
+
+---
+
+### 🧠 Why This Works
+
+* **Decouples logic**: segmentation is clean, tagging is context-aware.
+* **Robust to timing variations**.
+* **Future-proof**: you can add new walk tags like Wait4SwapVote easily.
+
+---
+
+Let me know when you’re ready to implement Step 2 or fold this into analytics — everything’s set up cleanly!

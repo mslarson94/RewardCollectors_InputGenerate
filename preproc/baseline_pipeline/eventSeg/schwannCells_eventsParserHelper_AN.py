@@ -115,7 +115,6 @@ def build_common_event_fields_bony(row, index=None):
     return {
         "mLTimestamp": row.get("mLTimestamp", None),
         "mLTimestamp_raw": row.get("mLTimestamp_raw", None),
-        #"mLTs_AN": row.get("mLTs_AN", None),
         "BlockInstance": row.get("BlockInstance", None),
         "origRow_start": row.get("origRow", idx),
         "BlockNum": row.get("BlockNum", None),
@@ -130,7 +129,6 @@ def build_common_event_fields_full(row, index=None):
     #print(f"🔎 Assigning origRow_start from row: {row.to_dict()}")
     return {
         "mLTimestamp": row.get("mLTimestamp", None),
-        #"mLTs_AN": row.get("mLTs_AN", None),
         "mLTimestamp_raw": row.get("mLTimestamp_raw", None),
         "BlockInstance": row.get("BlockInstance", None),
         "BlockNum": row.get("BlockNum", None),
@@ -172,82 +170,7 @@ def build_segment_event(start_row, end_row, event_type):
         "origRow_end": end_row.name
     }
 
-def generate_synthetic_events_v2(base_time, timestamp_str, timed_events, base_info, event_meta):
-    synthetic_events = []
-    try:
-        base_timestamp = safe_parse_timestamp(timestamp_str)
-        if base_timestamp is None:
-            print(f"⚠️ base_timestamp is None for input: {timestamp_str} with base_info: {base_info}")
-        for evt_name, offset, duration in timed_events:
-            start_time = base_time + offset
-            start_ts_dt = base_timestamp + timedelta(seconds=offset)
-            start_ts = start_ts_dt.time().strftime('%H:%M:%S:%f') if base_timestamp else None
-            #start_ts = (base_timestamp + timedelta(seconds=offset)).strftime('%H:%M:%S:%f') if base_timestamp else None
-            end_time = start_time + duration if duration else None
-            end_ts_dt = base_timestamp + timedelta(seconds=offset + duration)
-            end_ts = start_ts_dt.time().strftime('%H:%M:%S:%f') if base_timestamp else None
-            
-            #end_ts = (base_timestamp + timedelta(seconds=offset + duration)).strftime('%H:%M:%S:%f') if duration and base_timestamp else None
-
-            synthetic_events.append({
-                "AppTime": start_time,
-                "mLTimestamp": start_ts,
-                #"mLTimestamp_raw": start_row["mLTimestamp_raw"],
-                "start_AppTime": start_time,
-                "end_AppTime": end_time,
-
-                "start_mLT": start_ts,
-                "end_mLT": end_ts,
-                "lo_eventType": evt_name,
-                "details": {},
-                "source": "synthetic",
-                "origRow_start": base_info.get("origRow_start", -1),
-                "origRow_end": base_info.get("origRow_end", -1),
-                **event_meta,
-                **base_info
-            })
-    except Exception as e:
-        print(f"⚠️ Failed to create synthetic event at {timestamp_str}: {e}")
-    return synthetic_events
-
-def generate_synthetic_events_v2a(base_time, timed_events, base_info, event_meta):
-    """
-    Generate synthetic events based on a base datetime and list of (name, offset, duration).
-    Assumes base_time is a valid datetime object.
-    """
-    synthetic_events = []
-
-    try:
-        for evt_name, offset, duration in timed_events:
-            start_time = base_time + timedelta(seconds=offset)
-            end_time = start_time + timedelta(seconds=duration) if duration else None
-
-            synthetic_events.append({
-                "AppTime": offset + base_info.get("AppTime", 0),
-                "mLTimestamp": start_time.time().strftime('%H:%M:%S:%f'),
-                #"mLTimestamp_raw": start_row["mLTimestamp_raw"],
-                "start_AppTime": offset + base_info.get("AppTime", 0),
-                "end_AppTime": (offset + duration + base_info.get("AppTime", 0)) if duration else None,
-
-                "start_mLT": start_time.time().strftime('%H:%M:%S:%f'),
-                "end_mLT": end_time.time().strftime('%H:%M:%S:%f') if end_time else None,
-
-                "lo_eventType": evt_name,
-                "details": {},
-                "source": "synthetic",
-                "origRow_start": base_info.get("origRow_start", -1),
-                "origRow_end": base_info.get("origRow_end", -1),
-                **event_meta,
-                **base_info
-            })
-
-    except Exception as e:
-        print(f"⚠️ Failed to create synthetic events from base_time {base_time}: {e}")
-
-    return synthetic_events
-
-
-def generate_synthetic_events_v3(base_time, timed_events, base_info, event_meta):
+def generate_synthetic_events_v3(base_time, appTime, timed_events, base_info, event_meta):
     """
     Generate synthetic events based on a base datetime and list of (name, offset, duration).
     Assumes base_time is a valid datetime object.
@@ -258,14 +181,13 @@ def generate_synthetic_events_v3(base_time, timed_events, base_info, event_meta)
     try:
         for evt_name, offset, duration in timed_events:
             start_time = base_time + timedelta(seconds=offset)
-            end_time = start_time + timedelta(seconds=duration) if duration else None
-
+            end_time = start_time + timedelta(seconds=duration) if duration > 0  else None
+            #print(appTime)
             synthetic_events.append({
-                "AppTime": offset + base_info.get("AppTime", 0),
+                "AppTime":  appTime,
                 "mLTimestamp": start_time.isoformat(sep=' '),
-                #"mLTimestamp_raw": start_row["mLTimestamp_raw"],
-                "start_AppTime": offset + base_info.get("AppTime", 0),
-                "end_AppTime": (offset + duration + base_info.get("AppTime", 0)) if duration else None,
+                "start_AppTime": offset + appTime,
+                "end_AppTime": (offset + duration + appTime) if duration > 0 else None,
 
                 "start_mLT": start_time.isoformat(sep=' '),
                 "end_mLT": end_time.isoformat(sep=' ') if end_time else None,

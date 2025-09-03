@@ -36,7 +36,7 @@ from muscles_eventParser_AN import buildEvents_AN_v4
 from glia_eventsParserHelper_PO import buildGliaEvents_PO_v2
 from muscles_eventParser_PO import buildEvents_PO
 
-from bareBonesEvents import buildBareBonesEvents
+#from bareBonesEvents import buildBareBonesEvents
 
 
 # --- Processing All Data with Entire Directory or Specified Directories ---
@@ -115,6 +115,9 @@ def process_all_obsreward_files(dataDir, metadata, role, segmentType, subDirs=No
                     continue
 
                 source_file = fname.strip().lower()
+                flatOutCsvName = fname.strip() + "_events.csv"
+                flatOutJsonName = fname.strip() + "_events.json"
+                flatOutMetaName = fname.strip() + "_meta.json"
                                 # Normalize to match metadata naming
                 if role == "PO" and segmentType == "glia":
                     source_file = source_file.replace("_orig", "")
@@ -178,20 +181,40 @@ def process_all_obsreward_files(dataDir, metadata, role, segmentType, subDirs=No
                         enriched_events = all_events
 
                     enriched_events = pd.DataFrame(enriched_events).sort_values(by=[timestamp_col])
-
+                    #print("this is the nestedOutDir['events_csv_path']", nestedOutDirs["events_csv_path"])
                     enriched_events.to_csv(nestedOutDirs["events_csv_path"], index=False)
+                    #print('saving the nestedOutDir events csv worked')
                     enriched_events.to_json(nestedOutDirs["events_json_path"], orient='records', lines=True)
+                    #print('saving the nestedOutDir events json worked')
 
-                    enriched_events.to_csv(nestedOutDirs["eventsFlat_csv_path"], index=False)
-                    enriched_events.to_json(nestedOutDirs["eventsFlat_json_path"], orient='records', lines=True)
+                    flatOutCsv = nonNestedOutDirs["flat_outputEvents_csv"] + "/" + flatOutCsvName
+                    flatOutJson = nonNestedOutDirs["flat_outputEvents_json"] + "/" + flatOutJsonName
+                    #print("this is the flatOutCsv", flatOutCsv)
+                    enriched_events.to_csv(flatOutCsv, index=False)
+                    #print("saving the nonNestedOutDirs event flat csvs worked")
+                    enriched_events.to_json(flatOutJson, orient='records', lines=True)
+                    #print("saving the nonNestedOutDirs event flat jsons worked")
+                    # if segmentType == 'full':
+                    #     metaData_json_path = nestedOutDirs["metaData_json_path"]
+                    #     with open(nestedOutDirs["metaData_json_path"], "w") as f:
+                    #         json.dump(meta_json, f, indent=2)
+                    #     with open(nestedOutDirs["metaData_json_path"], "w") as f2:
+                    #         json.dump(meta_json, f2, indent=2)
+                    #     print(f"🧩 Meta JSON saved to: {metaData_json_path}")
 
-                    if segmentType == 'full':
-                        metaData_json_path = nestedOutDirs["metaData_json_path"]
-                        with open(nestedOutDirs["metaData_json_path"], "w") as f:
-                            json.dump(meta_json, f, indent=2)
-                        with open(nestedOutDirs["metaData_json_path"], "w") as f2:
-                            json.dump(meta_json, f2, indent=2)
-                        print(f"🧩 Meta JSON saved to: {metaData_json_path}")
+
+                    metaData_json_path = nestedOutDirs["metaData_json_path"]
+                    #print(metaData_json_path)
+                    flatOutMeta = nonNestedOutDirs["flat_outputMetaData"]  + '/' + flatOutMetaName
+                    #print("this is the metaData_json_path", metaData_json_path)
+                    #print("this is flatOutMeta", flatOutMeta)
+                    with open(nestedOutDirs["metaData_json_path"], "w") as f:
+                        json.dump(meta_json, f, indent=2)
+                    #print("saving the nested MetaData file worked")
+                    #print("this is the nonNested MetaData file", nestedOutDirs["metaDataFlat_json_path"])
+                    with open(flatOutMeta, "w") as f2:
+                        json.dump(meta_json, f2, indent=2)
+                    print(f"🧩 Meta JSON saved to: {metaData_json_path} and {flatOutMeta}")
 
                     manifest_records.append(
                         record_to_manifest(meta_row if not matched_meta.empty else {}, fname, relative_path,
@@ -249,14 +272,14 @@ def main():
     trueRootDir = '/Users/mairahmac/Desktop/RC_TestingNotes'
     metaDataFile = os.path.join(trueRootDir, 'collatedData.xlsx')
 
-    procDir = 'FreshStart_mini'
+    procDir = 'FreshStart'
     dataDir = os.path.join(trueRootDir, procDir)
 
-    process_all_obsreward_files(dataDir, metaDataFile, role='AN', segmentType='glia')
-    process_all_obsreward_files(dataDir, metaDataFile, role='PO', segmentType='glia')
+    # process_all_obsreward_files(dataDir, metaDataFile, role='AN', segmentType='glia')
+    # process_all_obsreward_files(dataDir, metaDataFile, role='PO', segmentType='glia')
 
-    #process_all_obsreward_files(dataDir, metaDataFile, role='AN', segmentType='full')
-    #process_all_obsreward_files(dataDir, metaDataFile, role='PO', segmentType='full')
+    process_all_obsreward_files(dataDir, metaDataFile, role='AN', segmentType='full')
+    process_all_obsreward_files(dataDir, metaDataFile, role='PO', segmentType='full')
 
 if __name__ == "__main__":
     main()

@@ -207,6 +207,7 @@ def batch_compute_walks(events_dir, meta_dir, output_dir):
     events_dir = Path(events_dir)
     meta_dir = Path(meta_dir)
     output_dir = Path(output_dir)
+    print(events_dir)
     output_dir.mkdir(parents=True, exist_ok=True)
 
     meta_files = {f.stem.replace("_processed_meta", ""): f for f in meta_dir.glob("*_meta.json")}
@@ -223,8 +224,11 @@ def batch_compute_walks(events_dir, meta_dir, output_dir):
 
 
 if __name__ == "__main__":
-    base_dir = "/Users/mairahmac/Desktop/RC_TestingNotes/ResurrectedData"
-    events_dir = os.path.join(base_dir, "Events_AugmentedPart3")   # *_events_flat.csv
+    trueRootDir = '/Users/mairahmac/Desktop/RC_TestingNotes'
+    procDir = 'FreshStart'
+    base_dir = os.path.join(trueRootDir, procDir, "full")
+
+    events_dir = os.path.join(base_dir, "Events_AugPart1")   # *_events_flat.csv
     meta_dir = os.path.join(base_dir, "MetaData_Flat")             # *_meta.json
     output_dir = os.path.join(base_dir, "Events_ComputedWalks")    # output
     print("🚀 Starting batch compute walks..")

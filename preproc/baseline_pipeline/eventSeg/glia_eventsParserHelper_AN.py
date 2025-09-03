@@ -30,6 +30,7 @@ from schwannCells_eventsParserHelper_AN import (build_common_event_fields_noTime
 # Bare Bones Events Handling 
 
 def process_marks(df, allowed_statuses, role):
+    #print('starting process marks')
     if role not in ("AN", "PO"):
         raise ValueError(f"Invalid role '{role}'. Expected 'AN' or 'PO'.")
 
@@ -59,10 +60,11 @@ def process_marks(df, allowed_statuses, role):
                 "source": "logged",
                 **common_info
             })
-
+    #print('ending process marks')
     return events
 
 def process_true_round_segments(df, allowed_statuses):
+    #print('starting process true round segments')
     events = []
     df = df.reset_index(drop=True)
     
@@ -96,7 +98,7 @@ def process_true_round_segments(df, allowed_statuses):
         end_row = df.iloc[-1]
         events.append(build_segment_event(start_row, start_row, "RoundStart"))
         events.append(build_segment_event(end_row, end_row, "RoundEnd"))
-
+    #print('ending process true round segments')
     return events
 
 def process_special_round_segments(df, allowed_statuses):
@@ -104,6 +106,7 @@ def process_special_round_segments(df, allowed_statuses):
     Scans the DataFrame row-by-row to find uninterrupted spans of special RoundNums
     [0, 7777, 8888, 9999] and emits a single synthetic event for each span.
     """
+    #print('starting process special round segments')
     special_round_map = {
         0: ("PreBlock_CylinderWalk", "PreBlockActivity"),
         7777: ("InterRound_CylinderWalk", "BlockActivity"),
@@ -216,10 +219,11 @@ def process_special_round_segments(df, allowed_statuses):
             "origRow_start": start_i,
             "origRow_end": end_i
         })
-
+    #print('ending process special round segments')
     return events
 
 def process_block_segments(df, allowed_statuses):
+    #print('starting process block segments')
     events = []
     df = df.reset_index(drop=True)
     
@@ -250,10 +254,11 @@ def process_block_segments(df, allowed_statuses):
         end_row = df.iloc[-1]
         events.append(build_segment_event(start_row, start_row, "BlockStart"))
         events.append(build_segment_event(end_row, end_row, "BlockEnd"))
-
+    #print('ending process block segments')
     return events
 
 def process_block_periods_v4(df, allowed_statuses):
+    #print('starting block periods v4')
     events = []
     df = df.reset_index(drop=True)
 
@@ -290,9 +295,10 @@ def process_block_periods_v4(df, allowed_statuses):
 
         synthetic = generate_synthetic_events_v3(
             start_ts,
+            start_time,
             [
-                (f"{lo_event}_start", 0.0, 0.0),
-                (f"{lo_event}_end", duration, 0.0)
+                (f"{lo_event}_start", 0.0, 0),
+                (f"{lo_event}_end", duration, 0)
             ],
             common_info,
             {
@@ -302,11 +308,11 @@ def process_block_periods_v4(df, allowed_statuses):
             }
         )
         events.extend(synthetic)
-
+    #print('ending block periods v4')
     return events
 
 def process_TrueContent(df, allowed_statuses):
-
+    #print('starting TrueContent')
     events = []
     for idx, row in df.iterrows():
         if isinstance(row.Message, str) and (
@@ -323,7 +329,6 @@ def process_TrueContent(df, allowed_statuses):
             round_start_event = {
                 **common_info,
                 "mLTimestamp": start_ts,
-                #"mLTs_AN": start_ts,
                 "AppTime": start_time,
                 
                 "start_AppTime": start_time,
@@ -368,7 +373,7 @@ def process_TrueContent(df, allowed_statuses):
                 "source": "logged",
                 **common_info
             })
-
+    #print('end True Content')
     return events
 
 

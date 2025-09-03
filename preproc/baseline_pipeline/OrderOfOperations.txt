@@ -1,0 +1,32 @@
+preprocRaw_AN.py
+preprocRaw_PO.py
+prefrontalCortex_unifiedEvents.py (comment *out* the 'full' option)
+alignPO2AN.py
+prefrontalCortex_unifiedEvents.py (swap commenting for the 'glia' & 'full' options)
+(I'm unsure why, but you will probably have to use the fix_events_suffix.sh and renameMetas.sh because as it stands now, the PFC events script is saving things as _processed_events.csv_events.csv I think. The files have the correct stuff. I also re-ran the fix_events_suffix.sh for the .csv & .json events files)
+flattenAndLabel.py
+computeWalks.py
+mergeWalks.py
+
+## No Walks
+python getPositionsAndElapsedTime.py \
+  --events-dir /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/Events_AugPart1 \
+  --processed-dir /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData_Flat \
+  --out-dir /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/Events_AugFinal_noWalks \
+  --pattern '*_events_flat.csv'
+
+## With Walks
+python getPositionsAndElapsedTime.py \
+  --events-dir /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/Events_AugmentedPart2 \
+  --processed-dir /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData_Flat \
+  --out-dir /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/Events_AugFinal_withWalks \
+  --pattern '*_events_with_walks.csv'
+
+
+  mergeEvents_V2.py 
+
+  You have to change manually the directory taht is pointed in the filePaths function for mergeEvents to be able to get the merges for the noWalks & withWalks options
+
+  rename as needed for the final directory structure as needed for clarity. 
+
+  

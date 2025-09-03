@@ -189,7 +189,7 @@ def clean_and_process_files(root_directory, magic_leap_data, save_large_files=Tr
 if __name__ == "__main__":
     trueRootDir = '/Users/mairahmac/Desktop/RC_TestingNotes'
     #procDir = 'SmallSelectedData/idealTestFile3'
-    procDir = 'FreshStart_mini'
+    procDir = 'FresherStart'
     root_directory = os.path.join(trueRootDir, procDir)
 
 

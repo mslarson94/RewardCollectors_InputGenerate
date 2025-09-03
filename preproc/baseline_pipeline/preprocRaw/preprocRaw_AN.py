@@ -190,7 +190,7 @@ if __name__ == "__main__":
     trueRootDir = '/Users/mairahmac/Desktop/RC_TestingNotes'
     #procDir = 'SmallSelectedData/idealTestFile3'
     #procDir = 'SelectedData'
-    procDir = 'FreshStart'
+    procDir = 'FresherStart'
     root_directory = os.path.join(trueRootDir, procDir)
 
     metadata_file = trueRootDir + "/collatedData.xlsx"

@@ -22,23 +22,27 @@ def merge_events_and_walks(events_path, walks_path, meta_path, out_path):
     # Load and fix timestamps
     df_events = pd.read_csv(events_path)
     df_walks = pd.read_csv(walks_path)
+    df_events['start_mLT'] = pd.to_datetime(df_events['start_mLT'], errors="coerce")
+    df_events['end_mLT'] = pd.to_datetime(df_events['end_mLT'], errors="coerce")
 
+    df_walks['start_mLT'] = pd.to_datetime(df_walks['start_mLT'], errors="coerce")
+    df_walks['end_mLT'] = pd.to_datetime(df_walks['end_mLT'], errors="coerce")
     # Apply timestamp parsing using shared logic
-    def fix_time_str(ts):
-        if not isinstance(ts, str):
-            return pd.NaT
-        if ts.count(":") == 3:
-            ts = ".".join(ts.rsplit(":", 1))
-        try:
-            return pd.to_datetime(f"{session_date.strftime('%Y-%m-%d')} {ts}", format="%Y-%m-%d %H:%M:%S.%f")
-        except Exception:
-            return pd.NaT
+    # def fix_time_str(ts):
+    #     if not isinstance(ts, str):
+    #         return pd.NaT
+    #     if ts.count(":") == 3:
+    #         ts = ".".join(ts.rsplit(":", 1))
+    #     try:
+    #         return pd.to_datetime(f"{session_date.strftime('%Y-%m-%d')} {ts}", format="%Y-%m-%d %H:%M:%S.%f")
+    #     except Exception:
+    #         return pd.NaT
 
-    df_events['start_mLT'] = df_events['start_mLT'].apply(fix_time_str)
-    df_events['end_mLT'] = df_events['end_mLT'].apply(fix_time_str)
+    # df_events['start_mLT'] = df_events['start_mLT'].apply(fix_time_str)
+    # df_events['end_mLT'] = df_events['end_mLT'].apply(fix_time_str)
 
-    df_walks['start_mLT'] = df_walks['start_mLT'].apply(fix_time_str)
-    df_walks['end_mLT'] = df_walks['end_mLT'].apply(fix_time_str)
+    # df_walks['start_mLT'] = df_walks['start_mLT'].apply(fix_time_str)
+    # df_walks['end_mLT'] = df_walks['end_mLT'].apply(fix_time_str)
 
     # No overwriting or manual manipulation — just concat and sort
     df_combined = pd.concat([df_events, df_walks], ignore_index=True)
@@ -91,13 +95,13 @@ if __name__ == "__main__":
     trueRootDir = "/Users/mairahmac/Desktop/RC_TestingNotes"
 
 
-    base_dir = os.path.join(trueRootDir, "FreshStart")
+    base_dir = os.path.join(trueRootDir, "FreshStart", "full")
     
 
     #base_dir = '/Users/mairahmac/Desktop/RC_TestingNotes/SmallBatchData/Ideals/ideal_day'
-    events_dir = os.path.join(base_dir, "glia")
+    events_dir = os.path.join(base_dir, "Events_AugPart1")
     meta_dir = os.path.join(base_dir, "MetaData_Flat")
     walks_dir = os.path.join(base_dir, "Events_ComputedWalks")
-    output_dir = os.path.join(base_dir, "Events_AugmentedPart4")
+    output_dir = os.path.join(base_dir, "Events_AugmentedPart2")
     print("🚀 Starting batch flatten...")
     batch_merge_events(events_dir, meta_dir, walks_dir, output_dir)

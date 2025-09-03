@@ -37,6 +37,7 @@ from schwannCells_eventsParserHelper_AN import (build_common_event_fields_noTime
 ###########################
 
 def process_swap_votes_v4(df, allowed_statuses):
+    #print('starting swap votes')
     events = []
     for i in range(len(df)):
         row = df.iloc[i]
@@ -72,7 +73,6 @@ def process_swap_votes_v4(df, allowed_statuses):
 
                     events.append({
                         "mLTimestamp": start_ts,
-                        "mLTs_AN": start_ts,
                         "AppTime": start_time,
                         "mLTimestamp_raw": mLTimestamp_raw,
 
@@ -103,17 +103,18 @@ def process_swap_votes_v4(df, allowed_statuses):
                         "hi_eventType": "SwapVote",
                         "hiMeta_eventType": "SwapVote"
                     }
-                    synthetic = generate_synthetic_events_v3(start_ts, offsets_events, common_info, event_meta)
+                    synthetic = generate_synthetic_events_v3(start_ts, start_time, offsets_events, common_info, event_meta)
                     events.extend(synthetic)
 
                 except Exception as e:
                     print(f"⚠️ Failed to process swap vote at row {i}: {e}")
-
+    #print('ending swap votes')
     return events
 # Myra Patched
 # -- Pin Dropping Events
 
 def process_pin_drop_v5(df,allowed_statuses):
+    #print('starting process pin drop')
     events = []
     i = 0
 
@@ -137,7 +138,6 @@ def process_pin_drop_v5(df,allowed_statuses):
 
                 event = {
                     "mLTimestamp": start_ts,
-                    "mLTs_AN": start_ts,
                     "AppTime": start_time,
                     "mLTimestamp_raw": mLTimestamp_raw,
                     
@@ -251,7 +251,7 @@ def process_pin_drop_v5(df,allowed_statuses):
                     "hiMeta_eventType": "BlockActivity"
                     }
 
-                synthetic = generate_synthetic_events_v3(start_ts, offsets_events, common_info, event_meta)
+                synthetic = generate_synthetic_events_v3(start_ts, start_time, offsets_events, common_info, event_meta)
                 events.extend(synthetic)
 
             except Exception as e:
@@ -260,10 +260,11 @@ def process_pin_drop_v5(df,allowed_statuses):
             i = j
         else:
             i += 1
-
+    #print('ending process pin drop')
     return events
 
 def process_feedback_collect_v5(df, allowed_statuses):
+    #print('starting process feedback collect')
     events = []
 
     for i in range(len(df)):
@@ -301,7 +302,6 @@ def process_feedback_collect_v5(df, allowed_statuses):
                 # Logged event
                 event = {
                     "mLTimestamp": start_ts,
-                    "mLTs_AN": start_ts,
                     "AppTime": start_time,
                     "mLTimestamp_raw": mLTimestamp_raw,
                     
@@ -332,17 +332,18 @@ def process_feedback_collect_v5(df, allowed_statuses):
                     "hiMeta_eventType": "BlockActivity"
                     }
 
-                synthetic = generate_synthetic_events_v3(start_ts, offsets_events, common_info, event_meta)
+                synthetic = generate_synthetic_events_v3(start_ts, start_time, offsets_events, common_info, event_meta)
                 events.extend(synthetic)
 
             except Exception as e:
                 print(f"⚠️ Failed to parse feedback values at row {i}: {e}")
-
+    #print('ending process feedback collect')
     return events
 
 # -- Chest Opening Events
 
 def process_chest_opened_v4(df, allowed_statuses):
+    #print('starting process chest opened')
     events = []
 
     for i in range(len(df)):
@@ -363,7 +364,6 @@ def process_chest_opened_v4(df, allowed_statuses):
 
                 event = {
                     "mLTimestamp": start_ts,
-                    "mLTs_AN": start_ts,
                     "AppTime": start_time,
                     "mLTimestamp_raw": mLTimestamp_raw,
                     
@@ -396,15 +396,16 @@ def process_chest_opened_v4(df, allowed_statuses):
                     "hiMeta_eventType": "BlockActivity"
                     }
 
-                synthetic = generate_synthetic_events_v3(start_ts, offsets_events, common_info, event_meta)
+                synthetic = generate_synthetic_events_v3(start_ts, start_time, offsets_events, common_info, event_meta)
                 events.extend(synthetic)
 
             except Exception as e:
                 print(f"⚠️ Failed to process chest open at row {i}: {e}")
-
+    #print('ending process chest opened')
     return events
 
 def process_chest_collect_v3(df, allowed_statuses):
+    #print('starting process chest collect')
     events = []
 
     for i in range(len(df)):
@@ -417,14 +418,13 @@ def process_chest_collect_v3(df, allowed_statuses):
         if row["Type"] == "Event" and isinstance(row["Message"], str) and row.Message.startswith("coin collected"):
             try:
                 common_info = build_common_event_fields_full(row, i)
-                start_time = row["AppTime"]
+                start_time = float(row["AppTime"])
                 start_ts = row["mLTimestamp"]
                 mLTimestamp_raw = row["mLTimestamp_raw"]
 
  
                 event = {
                     "mLTimestamp": start_ts,
-                    "mLTs_AN": start_ts,
                     "AppTime": start_time,
                     "mLTimestamp_raw": mLTimestamp_raw,
                     
@@ -455,12 +455,12 @@ def process_chest_collect_v3(df, allowed_statuses):
                     "hi_eventType": "ChestOpen",
                     "hiMeta_eventType": "BlockActivity"
                 }
-                synthetic = generate_synthetic_events_v3(start_ts, offsets_events, common_info, event_meta)
+                synthetic = generate_synthetic_events_v3(start_ts, start_time, offsets_events, common_info, event_meta)
                 events.extend(synthetic)
 
             except Exception as e:
                 print(f"⚠️ Failed to process chest coin collect at row {i}: {e}")
-
+    #print('ending process chest collect')
     return events
 
 def buildEvents_AN_v4(df, allowed_statuses):

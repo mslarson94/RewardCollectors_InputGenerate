@@ -161,16 +161,18 @@ def flatten_events(events_path, meta_path, out_path, distance_threshold=None):
 
 
 # ---- batch driver ------------------------------------------------------------
-def batch_flatten_events(events_dir, meta_dir, output_dir, distance_threshold=None):
-    events_dir = Path(events_dir)
-    meta_dir = Path(meta_dir)
-    output_dir = Path(output_dir)
-    output_dir.mkdir(parents=True, exist_ok=True)
+def batch_flatten_events_v2(baseDir, distance_threshold=None):
+
+    events_dir = os.path.join(base_dir, 'full', 'Events_Flat_csv')
+    meta_dir = os.path.join(base_dir, 'full','MetaData_Flat')
+    print(events_dir)
+    os.makedirs(os.path.join(base_dir, "full", "Events_AugPart1"), exist_ok=True)
 
     # Match keys like "ObsReward_A_02_17_2025_15_11"
     meta_files = {f.stem.replace("_processed_meta", ""): f for f in meta_dir.glob("*_meta.json")}
-    event_files = {f.stem.replace("_processed_events_augmented", ""): f for f in events_dir.glob("*_processed_events_augmented.csv")}
-
+    print(meta_files)
+    #event_files = {f.stem.replace("_processed_events_augmented", ""): f for f in events_dir.glob("*_processed_events_augmented.csv")}
+    event_files = {f.stem.replace("_processed_events", ""): f for f in events_dir.glob("*_processed_events.csv")}
     matched_keys = set(meta_files) & set(event_files)
     print(f"🔍 Found {len(matched_keys)} matched file pairs to process.")
 
@@ -181,14 +183,52 @@ def batch_flatten_events(events_dir, meta_dir, output_dir, distance_threshold=No
         print(f"➡️ Processing pair: {events_path.name} & {meta_path.name}")
         flatten_events(events_path, meta_path, out_path, distance_threshold=distance_threshold)
 
+from pathlib import Path
+
+def batch_flatten_events(base_dir, distance_threshold=None):
+    base_dir   = Path(base_dir)
+    events_dir = base_dir / "full" / "Events_Flat_csv"
+    meta_dir   = base_dir / "full" / "MetaData_Flat"
+    output_dir = base_dir / "full" / "Events_AugPart1"
+
+    # make sure directories exist
+    for d in (events_dir, meta_dir, output_dir):
+        d.mkdir(parents=True, exist_ok=True)
+
+    print(events_dir)
+
+    meta_files  = {p.stem.replace("_processed_meta", ""): p
+                   for p in meta_dir.glob("*_meta.json")}
+    event_files = {p.stem.replace("_processed_events", ""): p
+                   for p in events_dir.glob("*_processed_events.csv")}
+
+    matched_keys = sorted(set(meta_files) & set(event_files))
+    print(f"🔍 Found {len(matched_keys)} matched file pairs to process.")
+
+    for key in matched_keys:
+        meta_path   = meta_files[key]
+        events_path = event_files[key]
+        out_path    = output_dir / f"{key}_events_flat.csv"
+        print(f"➡️ Processing pair: {events_path.name} & {meta_path.name}")
+        flatten_events(events_path, meta_path, out_path, distance_threshold=distance_threshold)
+
 
 if __name__ == "__main__":
-    base_dir = "/Users/mairahmac/Desktop/RC_TestingNotes/ResurrectedData"
-    events_dir = os.path.join(base_dir, "Events_AugmentedPart1")  # aligned, augmented events
-    meta_dir = os.path.join(base_dir, "MetaData_Flat")
-    output_dir = os.path.join(base_dir, "Events_AugmentedPart3")
+    trueRootDir = '/Users/mairahmac/Desktop/RC_TestingNotes'
+    #eventsDir = 'full/Events_Flat_csv'
+
+    procDir = 'FreshStart'
+    
+    base_dir = os.path.join(trueRootDir, procDir)
+    print(base_dir)
+
+
+    #events_dir = os.path.join(base_dir, eventsDir)  # aligned, augmented events
+    #print(events_dir)
+    #meta_dir = os.path.join(base_dir, "MetaData_Flat")
+    #output_dir = os.path.join(base_dir, "Events_AugPart1")
 
     print("🚀 Starting batch flatten...")
     # Optionally set a tolerance (in meters) to drop dubious matches:
     # e.g., distance_threshold=0.75
-    batch_flatten_events(events_dir, meta_dir, output_dir, distance_threshold=None)
+    batch_flatten_events(base_dir, distance_threshold=None)

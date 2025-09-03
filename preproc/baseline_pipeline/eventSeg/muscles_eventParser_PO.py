@@ -9,7 +9,7 @@ import traceback
 from schwannCells_eventsParserHelper_PO import (build_common_event_fields_noTime, build_common_event_fields_bony, 
                                         build_common_event_fields_full, backfill_approx_row_indices_v2,
                                         build_segment_event, generate_synthetic_events_v3, process_block_segments)
-from  glia_eventsParserHelper_PO_part2  import process_true_round_segments, process_special_round_segments, process_marks
+from  glia_eventsParserHelper_PO  import process_true_round_segments, process_special_round_segments, process_marks
 
 ###########################
 

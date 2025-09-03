@@ -227,7 +227,7 @@ if __name__ == "__main__":
     base_dir = os.path.join(trueRootDir, 'FreshStart')
     metadataFile = os.path.join(trueRootDir, "collatedData.xlsx")
 
-    events_dir = os.path.join(base_dir, "glia/EventsFlat_csv")
+    events_dir = os.path.join(base_dir, "glia/Events_Flat_csv")
     print(events_dir)
     proc_dir = os.path.join(base_dir, "ProcessedData_Flat_PO_orig")
     finalproc_dir = os.path.join(base_dir, "ProcessedData_Flat")

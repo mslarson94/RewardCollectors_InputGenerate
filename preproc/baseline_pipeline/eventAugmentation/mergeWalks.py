@@ -54,7 +54,7 @@ def strip_suffix(filename, suffix):
     return re.sub(f"{suffix}$", "", filename)
 
 
-def batch_merge_events(events_dir, meta_dir, walks_dir, output_dir):
+def batch_merge_events(events_dir, meta_dir, walks_dir, output_dir, eventsEnding="events_flat"):
     events_dir = Path(events_dir)
     meta_dir =  Path(meta_dir)
     walks_dir =  Path(walks_dir)
@@ -68,11 +68,17 @@ def batch_merge_events(events_dir, meta_dir, walks_dir, output_dir):
 
     # Find all meta and event files
     meta_files = {f.stem.replace("_processed_meta", ""): f for f in meta_dir.glob("*_meta.json")}
-    events_files = {f.stem.replace("_events_flat", ""): f for f in events_dir.glob("*_events_flat.csv")}
+    events_files = {f.stem.replace(f"_{eventsEnding}", ""): f for f in events_dir.glob(f"*_{eventsEnding}.csv")}
     walks_files = {f.stem.replace("_walks", ""): f for f in walks_dir.glob("*_walks.csv")}
     #print('len meta files', meta_files)
     #print('len events files', events_files)
     #print('len walks files', walks_files)
+    print(meta_files)
+    print('METAAAAAAAAAA')
+    print(events_files)
+    print('EVENTSSSSSS')
+    print(walks_files)
+    print('WALKSSSSSS')
     matched_keys = set(events_files) & set(walks_files) & set(meta_files)
     print(f"🔍 Found {len(matched_keys)} complete file sets.")
 
@@ -91,17 +97,52 @@ def batch_merge_events(events_dir, meta_dir, walks_dir, output_dir):
 
 # batch_merge_events(output_dir, output_dir)
 
-if __name__ == "__main__":
-    trueRootDir = "/Users/mairahmac/Desktop/RC_TestingNotes"
+# if __name__ == "__main__":
+#     trueRootDir = "/Users/mairahmac/Desktop/RC_TestingNotes"
 
 
-    base_dir = os.path.join(trueRootDir, "FreshStart", "full")
+#     base_dir = os.path.join(trueRootDir, "FreshStart", "full")
     
 
-    #base_dir = '/Users/mairahmac/Desktop/RC_TestingNotes/SmallBatchData/Ideals/ideal_day'
-    events_dir = os.path.join(base_dir, "Events_AugPart1")
-    meta_dir = os.path.join(base_dir, "MetaData_Flat")
-    walks_dir = os.path.join(base_dir, "Events_ComputedWalks")
-    output_dir = os.path.join(base_dir, "Events_AugmentedPart2")
-    print("🚀 Starting batch flatten...")
-    batch_merge_events(events_dir, meta_dir, walks_dir, output_dir)
+#     #base_dir = '/Users/mairahmac/Desktop/RC_TestingNotes/SmallBatchData/Ideals/ideal_day'
+#     events_dir = os.path.join(base_dir, "Events_AugPart1")
+#     meta_dir = os.path.join(base_dir, "MetaData_Flat")
+#     walks_dir = os.path.join(base_dir, "Events_ComputedWalks")
+#     output_dir = os.path.join(base_dir, "Events_MergedWalks")
+#     print("🚀 Starting batch flatten...")
+#     batch_merge_events(events_dir, meta_dir, walks_dir, output_dir)
+
+import argparse
+from pathlib import Path
+
+def cli():
+    p = argparse.ArgumentParser(description="merging regular events files with the computed walk files")
+    p.add_argument("--root-dir", required=True, type=Path)
+    p.add_argument("--proc-dir", required=True, type=Path)
+    p.add_argument("--events-dir", required=True, type=Path)
+    p.add_argument("--output-dir", required=True, type=Path)
+    p.add_argument("--eventsEnding", default="events_flat", type=str)
+
+    args = p.parse_args()
+
+    root = args.root_dir.expanduser()
+    proc = args.proc_dir
+    base_dir = proc if proc.is_absolute() else (root / proc)
+
+    # sanity checks
+    if not base_dir.exists():
+        p.error(f"Not found: {base_dir}")
+
+    events_dir = base_dir / "full" / args.events_dir
+    print(events_dir)
+    meta_dir = base_dir / "full" / "MetaData_Flat"
+    walks_dir = base_dir / "full" / "Events_ComputedWalks"
+    output_dir = base_dir / "full" / args.output_dir
+
+    # call your pipeline
+    batch_merge_events(str(events_dir), str(meta_dir), str(walks_dir), str(output_dir), args.eventsEnding)
+    # if args.fail_on_miss and code != 0:
+    #     sys.exit(code)
+
+if __name__ == "__main__":
+    cli()

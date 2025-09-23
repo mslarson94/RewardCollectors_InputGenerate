@@ -23,9 +23,9 @@ from datetime import datetime, timedelta
 from io import StringIO
 import traceback
 import pandas as pd
-from schwannCells_eventsParserHelper_AN import (build_common_event_fields_noTime, build_common_event_fields_bony, 
-                                        build_common_event_fields_full, backfill_approx_row_indices_v2,
-                                        build_segment_event, generate_synthetic_events_v3)
+from schwannCells_eventsParserHelper_AN import (build_common_event_fields_noTime, 
+                                                build_segment_event, 
+                                                generate_synthetic_events_v3)
 
 # Bare Bones Events Handling 
 
@@ -285,7 +285,7 @@ def process_block_periods_v4(df, allowed_statuses):
         end_ts = end_row.mLTimestamp
         duration = end_time - start_time
 
-        common_info = build_common_event_fields_full(start_row, start_row.name) ### Fix Me
+        common_info = build_common_event_fields_noTime(start_row, start_row.name) ### Fix Me
         common_info.update({
             "start_AppTime": start_time,
             "end_AppTime": end_time,
@@ -379,10 +379,11 @@ def process_TrueContent(df, allowed_statuses):
 
 def buildGliaEvents_AN(df, role, allowed_statuses):
     return (
-        process_TrueContent(df, allowed_statuses) +
         process_marks(df, allowed_statuses, role) +
         process_true_round_segments(df, allowed_statuses) +
         process_special_round_segments(df, allowed_statuses) +
         process_block_segments(df, allowed_statuses) +
-        process_block_periods_v4(df, allowed_statuses)
+        process_block_periods_v4(df, allowed_statuses +
+        process_TrueContent(df, allowed_statuses)
+        )
     )

@@ -6,15 +6,20 @@ from collections import defaultdict
 
 # ===== USER INPUTS =====
 root_dir = "/Users/mairahmac/Desktop/RC_TestingNotes"
-base_dir = Path(root_dir) / "ResurrectedData"
-events_dir = base_dir / "Events_AugmentedPart4"
-meta_dir = base_dir / "MetaData_Flat"
+base_dir = Path(root_dir) / "FreshStart" / "full"
+mergeNoMerge = base_dir / "MergedEvents_noWalks" / "Merged_ParticipantDayRoleCoinSet"
+events_dir = mergeNoMerge / "MergedEvents"
+meta_dir = mergeNoMerge / "MergedEvents_meta"
+
+print(events_dir)
+# change the mergeNoMerge, events_dir, and meta_dir as needed
 output_dir = base_dir / "pin_drops"
 output_dir.mkdir(parents=True, exist_ok=True)
 
 # ===== MATCH FILE PAIRS =====
-meta_files = {f.stem.replace("_processed_meta", ""): f for f in meta_dir.glob("*_processed_meta.json")}
-event_files = {f.stem.replace("_events_with_walks", ""): f for f in events_dir.glob("*_events_with_walks.csv")}
+meta_files = {f.stem.replace("_meta", ""): f for f in meta_dir.glob("*_meta.json")}
+event_files = {f.stem.replace("_events", ""): f for f in events_dir.glob("*_events.csv")}
+#print(event_files)
 matched_keys = set(meta_files) & set(event_files)
 
 print(f"🔍 Found {len(matched_keys)} matched file pairs to process.")
@@ -64,8 +69,10 @@ for key in sorted(matched_keys):
 
         # Select relevant columns
         pin_cols = [
-            "mLTimestamp",  "BlockNum", "RoundNum",
-            "BlockElapsedTime", "RoundElapsedTime", "SessionElapsedTime",
+            "mLTimestamp",  "BlockNum", "RoundNum", "begOfFile",
+            "block_elapsed_s","round_elapsed_s","truecontent_elapsed_s",
+            "HeadPosAnchored_x_at_start","HeadPosAnchored_y_at_start","HeadPosAnchored_z_at_start",
+            "HeadForthAnchored_yaw_at_start","HeadForthAnchored_pitch_at_start","HeadForthAnchored_roll_at_start",
             "dropDist", "dropQual", "coinLabel","chestPin_num",
             "pinLocal_x", "pinLocal_y", "pinLocal_z",
             "coinPos_x", "coinPos_y", "coinPos_z"
@@ -83,6 +90,7 @@ for key in sorted(matched_keys):
         continue
 
 # ===== SAVE PER-PARTICIPANT FILES =====
+print(participant_data.items())
 for participant_id, rows in participant_data.items():
     df = pd.DataFrame(rows)
     out_path = output_dir / f"{participant_id}_pin_drops.csv"

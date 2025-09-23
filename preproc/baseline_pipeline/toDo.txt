@@ -13,3 +13,4 @@ python flattenAndLabel.py
 python computeWalks.py
 python mergeWalks.py
 
+what is happening with the extract_pin_drops script 

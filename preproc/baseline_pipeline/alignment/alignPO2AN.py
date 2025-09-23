@@ -8,6 +8,8 @@ import os
 import pandas as pd
 import numpy as np
 import sys
+import argparse
+from pathlib import Path
 base_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'eventSeg'))
 sys.path.append(base_dir)
 # Add the baseline_pipeline directory to the path
@@ -154,6 +156,7 @@ def generate_nestedDir(proc_dir, metadataFile, target_file):
     meta_df = meta_df.dropna(subset=["cleanedFile"])
     meta_df["cleanedFile"] = meta_df["cleanedFile"].astype(str).str.strip().str.lower()
 
+    #matched_meta = meta_df[meta_df["cleanedFile"].replace('_processed', '') == target_file.lower()]
     matched_meta = meta_df[meta_df["cleanedFile"] == target_file.lower()]
     if matched_meta.empty:
         raise ValueError(f"❌ No metadata match found for: {target_file}")
@@ -186,7 +189,7 @@ def generate_nestedDir(proc_dir, metadataFile, target_file):
 def batch_align_all(events_dir, proc_dir, finalproc_dir, metadataFile, base_dir):
     print("we have started the function batch_align_all")
     for filename in os.listdir(events_dir):
-        if not filename.startswith("ObsReward_B_") or not filename.endswith("_processed_orig_events.csv"):
+        if not filename.startswith("ObsReward_B_") or not filename.endswith("_events_orig.csv"):
             continue
 
 
@@ -195,7 +198,7 @@ def batch_align_all(events_dir, proc_dir, finalproc_dir, metadataFile, base_dir)
         file_base_A = f"ObsReward_A_{time_id}"
 
         an_events_file = os.path.join(events_dir, f"{file_base_A}_processed_events.csv")
-        po_events_file = os.path.join(events_dir, f"{file_base_B}_processed_orig_events.csv")
+        po_events_file = os.path.join(events_dir, f"{file_base_B}_processed_events_orig.csv")
         po_proc_file = os.path.join(proc_dir, f"{file_base_B}_processed_orig.csv")
         aligned_proc_outfile = os.path.join(finalproc_dir, f"{file_base_B}_processed.csv")
         updated_events_outfile = os.path.join(events_dir, f"{file_base_B}_processed_events.csv")
@@ -216,21 +219,68 @@ def batch_align_all(events_dir, proc_dir, finalproc_dir, metadataFile, base_dir)
         backfill_event_AN_parsedTS(po_events_file, aligned_df, updated_events_outfile, nestedDirName)
 
 
-if __name__ == "__main__":
-    #base_dir = "/Users/mairahmac/Desktop/RC_TestingNotes/ResurrectedData"
-    #base_dir = '/Users/mairahmac/Desktop/RC_TestingNotes/SmallBatchData/Ideals/ideal_day'
+# if __name__ == "__main__":
+#     #base_dir = "/Users/mairahmac/Desktop/RC_TestingNotes/ResurrectedData"
+#     #base_dir = '/Users/mairahmac/Desktop/RC_TestingNotes/SmallBatchData/Ideals/ideal_day'
 
 
-    allowed_statuses = ["complete", "truncated"]
-    trueRootDir = '/Users/mairahmac/Desktop/RC_TestingNotes'
-    #procDir = 'SmallSelectedData/RNS/alignedPO'
-    base_dir = os.path.join(trueRootDir, 'FreshStart')
-    metadataFile = os.path.join(trueRootDir, "collatedData.xlsx")
+#     allowed_statuses = ["complete", "truncated"]
+#     trueRootDir = '/Users/mairahmac/Desktop/RC_TestingNotes'
+#     #procDir = 'SmallSelectedData/RNS/alignedPO'
+#     base_dir = os.path.join(trueRootDir, 'FreshStart')
+#     metadataFile = os.path.join(trueRootDir, "collatedData.xlsx")
 
-    events_dir = os.path.join(base_dir, "glia/Events_Flat_csv")
-    print(events_dir)
-    proc_dir = os.path.join(base_dir, "ProcessedData_Flat_PO_orig")
-    finalproc_dir = os.path.join(base_dir, "ProcessedData_Flat")
+#     events_dir = os.path.join(base_dir, "glia/Events_Flat_csv")
+#     print(events_dir)
+#     proc_dir = os.path.join(base_dir, "ProcessedData_Flat_PO_orig")
+#     finalproc_dir = os.path.join(base_dir, "ProcessedData_Flat")
+
+#     print("🚀 Starting batch alignment and backfill...")
+#     batch_align_all(events_dir, proc_dir, finalproc_dir, metadataFile, base_dir)
+
+
+def cli() -> None:
+    parser = argparse.ArgumentParser(
+        prog="alignPO2AN",
+        description="Align PO _orig processed files to AN time and backfill."
+    )
+
+    parser.add_argument(
+        "--root-dir", required=True, type=Path,
+        help="Base project directory (e.g., '/Users/you/RC_TestingNotes')."
+    )
+    parser.add_argument(
+        "--base-dir", required=True, type=Path,
+        help="Dataset subdirectory under --root-dir (e.g., 'FreshStart'). "
+             "If absolute, --root-dir is ignored."
+    )
+
+    args = parser.parse_args()
+
+    root = args.root_dir.expanduser()
+    base = args.base_dir
+    base_dir = base if base.is_absolute() else (root / base)
+    metadata_path = root / "collatedData.xlsx"
+
+    if not base_dir.exists():
+        parser.error(f"Data root not found: {base_dir}")
+    if not metadata_path.exists():
+        parser.error(f"Metadata file not found: {metadata_path}")
+
+    events_dir = base_dir / "glia" / "Events_Flat_csv"
+    proc_dir = base_dir / "ProcessedData_Flat_PO_orig"
+    finalproc_dir = base_dir / "ProcessedData_Flat"
 
     print("🚀 Starting batch alignment and backfill...")
-    batch_align_all(events_dir, proc_dir, finalproc_dir, metadataFile, base_dir)
+    print(f"events_dir={events_dir}")
+
+    batch_align_all(
+        events_dir=str(events_dir),
+        proc_dir=str(proc_dir),
+        finalproc_dir=str(finalproc_dir),
+        metadataFile=str(metadata_path),
+        base_dir=str(base_dir),
+    )
+
+if __name__ == "__main__":
+    cli()

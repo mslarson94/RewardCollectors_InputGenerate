@@ -1,0 +1,10 @@
+Fit BioPac ≈ a_MLA·ML_A + b_MLA and BioPac ≈ a_EEGA·EEG_A + b_EEGA
+
+Then EEG_A ≈ (a_MLA/a_EEGA)·ML_A + (b_MLA - b_EEGA)/a_EEGA (i.e., EEG_A = f_EEGA^{-1} ∘ f_MLA(ML_A))
+
+
+Per-session constant baseline (simple & robust):
+Estimate the lower envelope of the mark latencies and use that as the offset b. Ignore the big delays from queueing. This gives one affine map per session.
+
+Slowly varying offset (if latency meanders over time):
+Fit the drift (slope a) once, then model a small, smooth, time-varying offset δ(t) from the rolling lower quantile of residuals. Use E ≈ a·M + b + δ(t).

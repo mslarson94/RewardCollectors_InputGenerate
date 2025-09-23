@@ -2,6 +2,8 @@ import os
 import pandas as pd
 import numpy as np
 import re
+import argparse
+from pathlib import Path
 from preprocRawHelpers import (
     detect_and_tag_blocks,
     forward_fill_block_info,
@@ -186,13 +188,72 @@ def clean_and_process_files(root_directory, magic_leap_data, save_large_files=Tr
 # magic_leap_data = pd.read_excel(metadata_file, sheet_name="MagicLeapFiles")
 # clean_and_process_files(root_directory,  magic_leap_data, save_large_files=True, max_memory_mb=500)
 
+# if __name__ == "__main__":
+#     trueRootDir = '/Users/mairahmac/Desktop/RC_TestingNotes'
+#     #procDir = 'SmallSelectedData/idealTestFile3'
+#     procDir = 'FresherStart'
+#     root_directory = os.path.join(trueRootDir, procDir)
+
+
+#     metadata_file = "/Users/mairahmac/Desktop/RC_TestingNotes/collatedData.xlsx"
+#     magic_leap_data = pd.read_excel(metadata_file, sheet_name="MagicLeapFiles")
+#     clean_and_process_files(root_directory,  magic_leap_data, save_large_files=True, max_memory_mb=500)
+
+
+def cli() -> None:
+    parser = argparse.ArgumentParser(
+        prog="preprocRaw_PO",
+        description="Basic preprocessing of Magic Leap data for PO participants."
+    )
+
+    # Paths
+    parser.add_argument(
+        "--root-dir", required=True, type=Path,
+        help="Base project directory (e.g., '/Users/you/RC_TestingNotes')."
+    )
+    parser.add_argument(
+        "--proc-dir", required=True, type=Path,
+        help="Dataset subdirectory under --root-dir (e.g., 'FresherStart')."
+    )
+
+    # Options (mirror defaults from original main)
+    parser.add_argument(
+        "--max-memory-mb", type=int, default=500,
+        help="Max memory (MB) for processing (default: 500)."
+    )
+    save_group = parser.add_mutually_exclusive_group()
+    save_group.add_argument(
+        "--save-large-files", dest="save_large_files",
+        action="store_true", default=True,
+        help="Save intermediary large files (default)."
+    )
+    save_group.add_argument(
+        "--no-save-large-files", dest="save_large_files",
+        action="store_false",
+        help="Do not save intermediary large files."
+    )
+
+    args = parser.parse_args()
+
+    root = args.root_dir.expanduser()
+    proc = args.proc_dir
+    root_directory = proc if proc.is_absolute() else (root / proc)
+    metadata_path = root / "collatedData.xlsx"
+
+    # Optional sanity checks
+    if not metadata_path.exists():
+        parser.error(f"Metadata file not found: {metadata_path}")
+    if not root_directory.exists():
+        parser.error(f"Data root not found: {root_directory}")
+
+    magic_leap_data = pd.read_excel(metadata_path, sheet_name="MagicLeapFiles")
+
+    clean_and_process_files(
+        root_directory=str(root_directory),
+        magic_leap_data=magic_leap_data,
+        save_large_files=args.save_large_files,
+        max_memory_mb=args.max_memory_mb,
+    )
+
 if __name__ == "__main__":
-    trueRootDir = '/Users/mairahmac/Desktop/RC_TestingNotes'
-    #procDir = 'SmallSelectedData/idealTestFile3'
-    procDir = 'FresherStart'
-    root_directory = os.path.join(trueRootDir, procDir)
-
-
-    metadata_file = "/Users/mairahmac/Desktop/RC_TestingNotes/collatedData.xlsx"
-    magic_leap_data = pd.read_excel(metadata_file, sheet_name="MagicLeapFiles")
-    clean_and_process_files(root_directory,  magic_leap_data, save_large_files=True, max_memory_mb=500)
+    cli()

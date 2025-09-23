@@ -2,9 +2,11 @@ preprocRaw_AN.py
 preprocRaw_PO.py
 prefrontalCortex_unifiedEvents.py (comment *out* the 'full' option)
 alignPO2AN.py
+
 prefrontalCortex_unifiedEvents.py (swap commenting for the 'glia' & 'full' options)
-(I'm unsure why, but you will probably have to use the fix_events_suffix.sh and renameMetas.sh because as it stands now, the PFC events script is saving things as _processed_events.csv_events.csv I think. The files have the correct stuff. I also re-ran the fix_events_suffix.sh for the .csv & .json events files)
-flattenAndLabel.py
+
+##flattenAndLabel.py
+justFlatten.py
 computeWalks.py
 mergeWalks.py
 
@@ -22,6 +24,14 @@ python getPositionsAndElapsedTime.py \
   --out-dir /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/Events_AugFinal_withWalks \
   --pattern '*_events_with_walks.csv'
 
+
+python add_coin_labels.py \
+    --compiled "/Users/mairahmac/Desktop/RC_TestingNotes/compiledCoinLocations.csv" \
+    --events-dir "/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/Events_Flattened" \
+    --out-dir "/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/Events_Labeled" \
+    --pattern "*_events_flat.csv" \
+    --fail-on-miss \
+    --debug
 
   mergeEvents_V2.py 
 

@@ -1,4 +1,4 @@
-# glia_eventsParserHelper.py
+# schwannCells_eventsParserHelper_PO.py
 
 '''
 
@@ -96,8 +96,8 @@ def backfill_approx_row_indices_v2(events, df, segmentType):
             candidates = df_sorted[df_sorted["AppTime"] <= app_time]
             if not candidates.empty:
                 matched_row = candidates.iloc[-1]
-                event["original_row_start"] = matched_row["index"]
-                event["original_row_end"] = matched_row["index"]
+                event["origRow_start"] = matched_row["index"]
+                event["origRow_end"] = matched_row["index"]
             continue
 
         ts = event.get(timestamp_col)
@@ -108,8 +108,8 @@ def backfill_approx_row_indices_v2(events, df, segmentType):
                 candidates = df_sorted[df_sorted[timestamp_col] <= ts]
                 if not candidates.empty:
                     matched_row = candidates.iloc[-1]
-                    event["original_row_start"] = matched_row["index"]
-                    event["original_row_end"] = matched_row["index"]
+                    event["origRow_start"] = matched_row["index"]
+                    event["origRow_end"] = matched_row["index"]
 
     return events
 
@@ -191,7 +191,6 @@ def build_common_event_fields_full(row, index=None, segmentType='glia'):
         "origRow_start": row.get("origRow", idx),
         "origRow_end": row.get("origRow", idx)
     }
-
 
 def build_segment_event(start_row, end_row, event_type, segmentType):
     if  segmentType == "glia":
@@ -287,6 +286,7 @@ def generate_synthetic_events_v3(base_time, appTime, timed_events, base_info, ev
         except Exception as e:
             print(f"⚠️ Failed to create synthetic event '{evt_name}' from base_time {base_time}: {e}")
     return synthetic_events
+    
 def process_block_segments(df, allowed_statuses, segmentType):
     if  segmentType == "glia":
         timestamp_col = "mLTimestamp_orig"

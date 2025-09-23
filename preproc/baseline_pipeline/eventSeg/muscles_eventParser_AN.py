@@ -22,17 +22,11 @@ from datetime import datetime, timedelta
 from io import StringIO
 import traceback
 
-# from eventsParserHelper_AN import (safe_parse_timestamp, backfill_approx_row_indices, build_common_event_fields, 
-#                                 generate_synthetic_events_v3, process_marks, process_true_round_segments,
-#                                 process_block_segments, process_special_round_segments, process_block_periods_v4, 
-#                                 process_TrueBlocks, add_elapsed_time_columns)
 
-#from glia_eventsParserHelper_AN import (backfill_approx_row_indices, build_common_event_fields, generate_synthetic_events_v3)
-#from glia_eventsParserHelper import (backfill_approx_row_indices, build_common_event_fields, generate_synthetic_events_v3)
-from schwannCells_eventsParserHelper_AN import (build_common_event_fields_noTime, build_common_event_fields_bony, 
-                                        build_common_event_fields_full, backfill_approx_row_indices_v2,
-                                        build_segment_event, generate_synthetic_events_v3)
-
+from schwannCells_eventsParserHelper_AN import (build_common_event_fields_noTime,
+                                                backfill_approx_row_indices_v2, 
+                                                generate_synthetic_events_v3)
+# do we need build_segment_event?
 
 ###########################
 
@@ -51,10 +45,10 @@ def process_swap_votes_v4(df, allowed_statuses):
             if match:
                 swapvote = match.group(1).strip().upper()
                 try:
-                    start_time = row["AppTime"]
+                    appTime = row["AppTime"]
                     mLTimestamp_raw = row["mLTimestamp_raw"]
                     start_ts = row["mLTimestamp"]
-                    common_info = build_common_event_fields_full(row, i)
+                    common_info = build_common_event_fields_noTime(row, i)
 
                     # Determine correctness of vote
                     coinset = row.get("CoinSetID")
@@ -73,15 +67,15 @@ def process_swap_votes_v4(df, allowed_statuses):
 
                     events.append({
                         "mLTimestamp": start_ts,
-                        "AppTime": start_time,
+                        "AppTime": appTime,
                         "mLTimestamp_raw": mLTimestamp_raw,
 
-                        "start_AppTime": start_time,
-                        "end_AppTime": start_time,
+                        "start_AppTime": appTime,
+                        "end_AppTime": appTime,
                         "start_mLT": start_ts,
                         "end_mLT": start_ts,
 
-                        "lo_eventType": "SwapVoteMoment",
+                        "lo_eventType": "SwapVote_Moment",
                         "med_eventType": "SwapVote",
                         "hi_eventType": "SwapVote",
                         "hiMeta_eventType": "SwapVote",
@@ -94,8 +88,8 @@ def process_swap_votes_v4(df, allowed_statuses):
                     })
                     #events.append(event)
                     offsets_events = [
-                        ("SwapVoteText_Vis", 0.000, 0.000),
-                        ("BlockScoreText_Vis", 0.000, 2.000)
+                        ("SwapVoteText_Vis_end", 0.000, 0.000),
+                        ("BlockScoreText_Vis_start", 0.000, 2.000)
                     ]
 
                     event_meta = {
@@ -103,14 +97,13 @@ def process_swap_votes_v4(df, allowed_statuses):
                         "hi_eventType": "SwapVote",
                         "hiMeta_eventType": "SwapVote"
                     }
-                    synthetic = generate_synthetic_events_v3(start_ts, start_time, offsets_events, common_info, event_meta)
+                    synthetic = generate_synthetic_events_v3(start_ts, appTime, offsets_events, common_info, event_meta)
                     events.extend(synthetic)
 
                 except Exception as e:
                     print(f"⚠️ Failed to process swap vote at row {i}: {e}")
-    #print('ending swap votes')
     return events
-# Myra Patched
+
 # -- Pin Dropping Events
 
 def process_pin_drop_v5(df,allowed_statuses):
@@ -129,7 +122,7 @@ def process_pin_drop_v5(df,allowed_statuses):
 
         if row["Type"] == "Event" and isinstance(row["Message"], str) and "Just dropped a pin" in row["Message"]:
             try:
-                common_info = build_common_event_fields_full(row, i)
+                common_info = build_common_event_fields_noTime(row, i)
 
                 start_time = row["AppTime"]
                 start_ts = row["mLTimestamp"]
@@ -276,7 +269,7 @@ def process_feedback_collect_v5(df, allowed_statuses):
             #Collected pin feedback coin: 2
             #Collected feedback coin:0.00 round reward: 0.00
         if row["Type"] == "Event" and isinstance(row["Message"], str) and row.Message.startswith("Collected feedback coin:"):
-            common_info = build_common_event_fields_full(row, i)
+            common_info = build_common_event_fields_noTime(row, i)
             start_time = row["AppTime"]
             start_ts = row["mLTimestamp"]
             mLTimestamp_raw = row["mLTimestamp_raw"]
@@ -355,7 +348,7 @@ def process_chest_opened_v4(df, allowed_statuses):
 
         if row["Type"] == "Event" and isinstance(row["Message"], str) and row.Message.startswith("Chest opened:"):
             try:
-                common_info = build_common_event_fields_full(row, i)
+                common_info = build_common_event_fields_noTime(row, i)
                 coin_id = int(row.Message.replace("Chest opened: ", "").strip())
                 start_time = row["AppTime"]
                 start_ts = row["mLTimestamp"]
@@ -417,7 +410,7 @@ def process_chest_collect_v3(df, allowed_statuses):
 
         if row["Type"] == "Event" and isinstance(row["Message"], str) and row.Message.startswith("coin collected"):
             try:
-                common_info = build_common_event_fields_full(row, i)
+                common_info = build_common_event_fields_noTime(row, i)
                 start_time = float(row["AppTime"])
                 start_ts = row["mLTimestamp"]
                 mLTimestamp_raw = row["mLTimestamp_raw"]

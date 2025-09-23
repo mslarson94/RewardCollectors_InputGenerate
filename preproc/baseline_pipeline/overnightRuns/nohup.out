@@ -7998,3 +7998,1409 @@ we have started the function backfill_event_AN_parsedTS
 
 🚀 Starting mergeWalks.py  at Mon Sep  1 23:25:33 PDT 2025
 ✅ mergeWalks.py completed at Mon Sep  1 23:25:35 PDT 2025
+
+CommandNotFoundError: Your shell has not been properly configured to use 'conda activate'.
+To initialize your shell, run
+
+    $ conda init <SHELL_NAME>
+
+Currently supported shells are:
+  - bash
+  - fish
+  - tcsh
+  - xonsh
+  - zsh
+  - powershell
+
+See 'conda init --help' for more information and options.
+
+IMPORTANT: You may need to close and restart your shell after running 'conda init'.
+
+
+🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿
+
+🚀 Starting preFrontalCortex_unifiedEventSeg.py  at Sun Sep  7 08:30:00 PDT 2025
+✅ preFrontalCortex_unifiedEventSeg.py completed at Sun Sep  7 08:59:17 PDT 2025
+🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝
+
+🚀 alignPO2AN_part1.py  at Sun Sep  7 08:59:17 PDT 2025
+/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/glia/Events_Flat_csv
+🚀 Starting batch alignment and backfill...
+we have started the function batch_align_all
+✅ alignPO2AN_part1.py  completed at Sun Sep  7 08:59:18 PDT 2025
+
+CommandNotFoundError: Your shell has not been properly configured to use 'conda activate'.
+To initialize your shell, run
+
+    $ conda init <SHELL_NAME>
+
+Currently supported shells are:
+  - bash
+  - fish
+  - tcsh
+  - xonsh
+  - zsh
+  - powershell
+
+See 'conda init --help' for more information and options.
+
+IMPORTANT: You may need to close and restart your shell after running 'conda init'.
+
+
+🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿
+
+🚀 Starting preFrontalCortex_unifiedEventSeg.py  at Sun Sep  7 16:01:03 PDT 2025
+✅ preFrontalCortex_unifiedEventSeg.py completed at Sun Sep  7 16:30:15 PDT 2025
+🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝
+
+🚀 alignPO2AN_part1.py  at Sun Sep  7 16:30:15 PDT 2025
+/Users/mairahmac/Desktop/myra_code/Python/RewardCollectors_InputGenerate/preproc/baseline_pipeline/alignment/alignPO2AN.py:84: DtypeWarning: Columns (29) have mixed types. Specify dtype option on import or set low_memory=False.
+  df_po = pd.read_csv(po_processed_file)
+/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/glia/Events_Flat_csv
+🚀 Starting batch alignment and backfill...
+we have started the function batch_align_all
+📂 Loading AN events file: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/glia/Events_Flat_csv/ObsReward_A_02_17_2025_15_49_processed_events.csv
+📂 Loaded PO processed file: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData_Flat_PO_orig/ObsReward_B_02_17_2025_15_49_processed_orig.csv
+✅ Aligned processed file saved to /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData_Flat/ObsReward_B_02_17_2025_15_49_processed.csv
+✅ Aligned processed file saved to /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData/pair_008/02_17_2025/Morning/MagicLeaps/ML2D/ObsReward_B_02_17_2025_15_49_processed.csv
+we have started the function backfill_event_AN_parsedTS
+📝 Updated mLTimestamp in: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/glia/Events_Flat_csv/ObsReward_B_02_17_2025_15_49_processed_events.csv
+📂 Loading AN events file: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/glia/Events_Flat_csv/ObsReward_A_02_01_2025_17_48_processed_events.csv
+📂 Loaded PO processed file: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData_Flat_PO_orig/ObsReward_B_02_01_2025_17_48_processed_orig.csv
+✅ Aligned processed file saved to /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData_Flat/ObsReward_B_02_01_2025_17_48_processed.csv
+✅ Aligned processed file saved to /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData/pair_003/02_01_2025/Morning/MagicLeaps/ML2C/ObsReward_B_02_01_2025_17_48_processed.csv
+we have started the function backfill_event_AN_parsedTS
+📝 Updated mLTimestamp in: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/glia/Events_Flat_csv/ObsReward_B_02_01_2025_17_48_processed_events.csv
+📂 Loading AN events file: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/glia/Events_Flat_csv/ObsReward_A_02_19_2025_18_14_processed_events.csv
+📂 Loaded PO processed file: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData_Flat_PO_orig/ObsReward_B_02_19_2025_18_14_processed_orig.csv
+✅ Aligned processed file saved to /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData_Flat/ObsReward_B_02_19_2025_18_14_processed.csv
+✅ Aligned processed file saved to /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData/pair_008/02_19_2025/Morning/MagicLeaps/ML2C/ObsReward_B_02_19_2025_18_14_processed.csv
+we have started the function backfill_event_AN_parsedTS
+📝 Updated mLTimestamp in: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/glia/Events_Flat_csv/ObsReward_B_02_19_2025_18_14_processed_events.csv
+📂 Loading AN events file: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/glia/Events_Flat_csv/ObsReward_A_02_09_2025_12_53_processed_events.csv
+📂 Loaded PO processed file: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData_Flat_PO_orig/ObsReward_B_02_09_2025_12_53_processed_orig.csv
+✅ Aligned processed file saved to /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData_Flat/ObsReward_B_02_09_2025_12_53_processed.csv
+✅ Aligned processed file saved to /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData/pair_006/02_09_2025/Morning/MagicLeaps/ML2C/ObsReward_B_02_09_2025_12_53_processed.csv
+we have started the function backfill_event_AN_parsedTS
+📝 Updated mLTimestamp in: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/glia/Events_Flat_csv/ObsReward_B_02_09_2025_12_53_processed_events.csv
+📂 Loading AN events file: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/glia/Events_Flat_csv/ObsReward_A_02_17_2025_14_48_processed_events.csv
+📂 Loaded PO processed file: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData_Flat_PO_orig/ObsReward_B_02_17_2025_14_48_processed_orig.csv
+✅ Aligned processed file saved to /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData_Flat/ObsReward_B_02_17_2025_14_48_processed.csv
+✅ Aligned processed file saved to /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData/pair_008/02_17_2025/Morning/MagicLeaps/ML2D/ObsReward_B_02_17_2025_14_48_processed.csv
+we have started the function backfill_event_AN_parsedTS
+📝 Updated mLTimestamp in: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/glia/Events_Flat_csv/ObsReward_B_02_17_2025_14_48_processed_events.csv
+📂 Loading AN events file: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/glia/Events_Flat_csv/ObsReward_A_02_01_2025_17_04_processed_events.csv
+📂 Loaded PO processed file: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData_Flat_PO_orig/ObsReward_B_02_01_2025_17_04_processed_orig.csv
+✅ Aligned processed file saved to /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData_Flat/ObsReward_B_02_01_2025_17_04_processed.csv
+✅ Aligned processed file saved to /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData/pair_003/02_01_2025/Morning/MagicLeaps/ML2D/ObsReward_B_02_01_2025_17_04_processed.csv
+we have started the function backfill_event_AN_parsedTS
+📝 Updated mLTimestamp in: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/glia/Events_Flat_csv/ObsReward_B_02_01_2025_17_04_processed_events.csv
+📂 Loading AN events file: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/glia/Events_Flat_csv/ObsReward_A_01_20_2025_15_41_processed_events.csv
+📂 Loaded PO processed file: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData_Flat_PO_orig/ObsReward_B_01_20_2025_15_41_processed_orig.csv
+✅ Aligned processed file saved to /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData_Flat/ObsReward_B_01_20_2025_15_41_processed.csv
+✅ Aligned processed file saved to /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData/pair_000/01_20_2025/Morning/MagicLeaps/ML2D/ObsReward_B_01_20_2025_15_41_processed.csv
+we have started the function backfill_event_AN_parsedTS
+📝 Updated mLTimestamp in: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/glia/Events_Flat_csv/ObsReward_B_01_20_2025_15_41_processed_events.csv
+📂 Loading AN events file: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/glia/Events_Flat_csv/ObsReward_A_02_12_2025_13_20_processed_events.csv
+📂 Loaded PO processed file: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData_Flat_PO_orig/ObsReward_B_02_12_2025_13_20_processed_orig.csv
+✅ Aligned processed file saved to /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData_Flat/ObsReward_B_02_12_2025_13_20_processed.csv
+✅ Aligned processed file saved to /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData/pair_007/02_12_2025/Morning/MagicLeaps/ML2C/ObsReward_B_02_12_2025_13_20_processed.csv
+we have started the function backfill_event_AN_parsedTS
+📝 Updated mLTimestamp in: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/glia/Events_Flat_csv/ObsReward_B_02_12_2025_13_20_processed_events.csv
+📂 Loading AN events file: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/glia/Events_Flat_csv/ObsReward_A_01_26_2025_13_12_processed_events.csv
+📂 Loaded PO processed file: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData_Flat_PO_orig/ObsReward_B_01_26_2025_13_12_processed_orig.csv
+✅ Aligned processed file saved to /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData_Flat/ObsReward_B_01_26_2025_13_12_processed.csv
+✅ Aligned processed file saved to /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData/pair_002/01_26_2025/Morning/MagicLeaps/ML2C/ObsReward_B_01_26_2025_13_12_processed.csv
+we have started the function backfill_event_AN_parsedTS
+📝 Updated mLTimestamp in: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/glia/Events_Flat_csv/ObsReward_B_01_26_2025_13_12_processed_events.csv
+📂 Loading AN events file: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/glia/Events_Flat_csv/ObsReward_A_03_17_2025_14_16_processed_events.csv
+📂 Loaded PO processed file: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData_Flat_PO_orig/ObsReward_B_03_17_2025_14_16_processed_orig.csv
+✅ Aligned processed file saved to /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData_Flat/ObsReward_B_03_17_2025_14_16_processed.csv
+✅ Aligned processed file saved to /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData/pair_200/03_17_2025/Afternoon/MagicLeaps/ML2C/ObsReward_B_03_17_2025_14_16_processed.csv
+we have started the function backfill_event_AN_parsedTS
+📝 Updated mLTimestamp in: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/glia/Events_Flat_csv/ObsReward_B_03_17_2025_14_16_processed_events.csv
+📂 Loading AN events file: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/glia/Events_Flat_csv/ObsReward_A_03_17_2025_10_44_processed_events.csv
+📂 Loaded PO processed file: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData_Flat_PO_orig/ObsReward_B_03_17_2025_10_44_processed_orig.csv
+✅ Aligned processed file saved to /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData_Flat/ObsReward_B_03_17_2025_10_44_processed.csv
+✅ Aligned processed file saved to /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData/pair_200/03_17_2025/Morning/MagicLeaps/ML2D/ObsReward_B_03_17_2025_10_44_processed.csv
+we have started the function backfill_event_AN_parsedTS
+📝 Updated mLTimestamp in: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/glia/Events_Flat_csv/ObsReward_B_03_17_2025_10_44_processed_events.csv
+📂 Loading AN events file: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/glia/Events_Flat_csv/ObsReward_A_03_06_2025_11_35_processed_events.csv
+📂 Loaded PO processed file: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData_Flat_PO_orig/ObsReward_B_03_06_2025_11_35_processed_orig.csv
+✅ Aligned processed file saved to /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData_Flat/ObsReward_B_03_06_2025_11_35_processed.csv
+✅ Aligned processed file saved to /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData/pair_009/03_06_2025/Morning/MagicLeaps/ML2C/ObsReward_B_03_06_2025_11_35_processed.csv
+we have started the function backfill_event_AN_parsedTS
+📝 Updated mLTimestamp in: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/glia/Events_Flat_csv/ObsReward_B_03_06_2025_11_35_processed_events.csv
+📂 Loading AN events file: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/glia/Events_Flat_csv/ObsReward_A_02_12_2025_12_29_processed_events.csv
+📂 Loaded PO processed file: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData_Flat_PO_orig/ObsReward_B_02_12_2025_12_29_processed_orig.csv
+✅ Aligned processed file saved to /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData_Flat/ObsReward_B_02_12_2025_12_29_processed.csv
+✅ Aligned processed file saved to /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData/pair_007/02_12_2025/Morning/MagicLeaps/ML2D/ObsReward_B_02_12_2025_12_29_processed.csv
+we have started the function backfill_event_AN_parsedTS
+📝 Updated mLTimestamp in: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/glia/Events_Flat_csv/ObsReward_B_02_12_2025_12_29_processed_events.csv
+📂 Loading AN events file: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/glia/Events_Flat_csv/ObsReward_A_02_05_2025_13_35_processed_events.csv
+📂 Loaded PO processed file: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData_Flat_PO_orig/ObsReward_B_02_05_2025_13_35_processed_orig.csv
+✅ Aligned processed file saved to /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData_Flat/ObsReward_B_02_05_2025_13_35_processed.csv
+✅ Aligned processed file saved to /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData/pair_005/02_05_2025/Morning/MagicLeaps/ML2C/ObsReward_B_02_05_2025_13_35_processed.csv
+we have started the function backfill_event_AN_parsedTS
+📝 Updated mLTimestamp in: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/glia/Events_Flat_csv/ObsReward_B_02_05_2025_13_35_processed_events.csv
+📂 Loading AN events file: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/glia/Events_Flat_csv/ObsReward_A_01_20_2025_16_07_processed_events.csv
+📂 Loaded PO processed file: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData_Flat_PO_orig/ObsReward_B_01_20_2025_16_07_processed_orig.csv
+✅ Aligned processed file saved to /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData_Flat/ObsReward_B_01_20_2025_16_07_processed.csv
+✅ Aligned processed file saved to /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData/pair_000/01_20_2025/Morning/MagicLeaps/ML2D/ObsReward_B_01_20_2025_16_07_processed.csv
+we have started the function backfill_event_AN_parsedTS
+📝 Updated mLTimestamp in: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/glia/Events_Flat_csv/ObsReward_B_01_20_2025_16_07_processed_events.csv
+📂 Loading AN events file: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/glia/Events_Flat_csv/ObsReward_A_02_12_2025_13_38_processed_events.csv
+📂 Loaded PO processed file: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData_Flat_PO_orig/ObsReward_B_02_12_2025_13_38_processed_orig.csv
+✅ Aligned processed file saved to /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData_Flat/ObsReward_B_02_12_2025_13_38_processed.csv
+✅ Aligned processed file saved to /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData/pair_007/02_12_2025/Morning/MagicLeaps/ML2C/ObsReward_B_02_12_2025_13_38_processed.csv
+we have started the function backfill_event_AN_parsedTS
+📝 Updated mLTimestamp in: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/glia/Events_Flat_csv/ObsReward_B_02_12_2025_13_38_processed_events.csv
+📂 Loading AN events file: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/glia/Events_Flat_csv/ObsReward_A_01_25_2025_17_07_processed_events.csv
+📂 Loaded PO processed file: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData_Flat_PO_orig/ObsReward_B_01_25_2025_17_07_processed_orig.csv
+✅ Aligned processed file saved to /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData_Flat/ObsReward_B_01_25_2025_17_07_processed.csv
+✅ Aligned processed file saved to /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData/pair_001/01_25_2025/Morning/MagicLeaps/ML2C/ObsReward_B_01_25_2025_17_07_processed.csv
+we have started the function backfill_event_AN_parsedTS
+📝 Updated mLTimestamp in: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/glia/Events_Flat_csv/ObsReward_B_01_25_2025_17_07_processed_events.csv
+📂 Loading AN events file: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/glia/Events_Flat_csv/ObsReward_A_02_17_2025_16_51_processed_events.csv
+📂 Loaded PO processed file: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData_Flat_PO_orig/ObsReward_B_02_17_2025_16_51_processed_orig.csv
+✅ Aligned processed file saved to /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData_Flat/ObsReward_B_02_17_2025_16_51_processed.csv
+✅ Aligned processed file saved to /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData/pair_008/02_17_2025/Morning/MagicLeaps/ML2C/ObsReward_B_02_17_2025_16_51_processed.csv
+we have started the function backfill_event_AN_parsedTS
+📝 Updated mLTimestamp in: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/glia/Events_Flat_csv/ObsReward_B_02_17_2025_16_51_processed_events.csv
+📂 Loading AN events file: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/glia/Events_Flat_csv/ObsReward_A_02_17_2025_16_26_processed_events.csv
+📂 Loaded PO processed file: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData_Flat_PO_orig/ObsReward_B_02_17_2025_16_26_processed_orig.csv
+✅ Aligned processed file saved to /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData_Flat/ObsReward_B_02_17_2025_16_26_processed.csv
+✅ Aligned processed file saved to /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData/pair_008/02_17_2025/Morning/MagicLeaps/ML2C/ObsReward_B_02_17_2025_16_26_processed.csv
+we have started the function backfill_event_AN_parsedTS
+📝 Updated mLTimestamp in: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/glia/Events_Flat_csv/ObsReward_B_02_17_2025_16_26_processed_events.csv
+📂 Loading AN events file: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/glia/Events_Flat_csv/ObsReward_A_01_26_2025_10_49_processed_events.csv
+📂 Loaded PO processed file: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData_Flat_PO_orig/ObsReward_B_01_26_2025_10_49_processed_orig.csv
+✅ Aligned processed file saved to /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData_Flat/ObsReward_B_01_26_2025_10_49_processed.csv
+✅ Aligned processed file saved to /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData/pair_002/01_26_2025/Morning/MagicLeaps/ML2D/ObsReward_B_01_26_2025_10_49_processed.csv
+we have started the function backfill_event_AN_parsedTS
+📝 Updated mLTimestamp in: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/glia/Events_Flat_csv/ObsReward_B_01_26_2025_10_49_processed_events.csv
+📂 Loading AN events file: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/glia/Events_Flat_csv/ObsReward_A_02_12_2025_14_21_processed_events.csv
+📂 Loaded PO processed file: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData_Flat_PO_orig/ObsReward_B_02_12_2025_14_21_processed_orig.csv
+✅ Aligned processed file saved to /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData_Flat/ObsReward_B_02_12_2025_14_21_processed.csv
+✅ Aligned processed file saved to /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData/pair_007/02_12_2025/Morning/MagicLeaps/ML2D/ObsReward_B_02_12_2025_14_21_processed.csv
+we have started the function backfill_event_AN_parsedTS
+📝 Updated mLTimestamp in: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/glia/Events_Flat_csv/ObsReward_B_02_12_2025_14_21_processed_events.csv
+📂 Loading AN events file: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/glia/Events_Flat_csv/ObsReward_A_03_17_2025_14_09_processed_events.csv
+📂 Loaded PO processed file: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData_Flat_PO_orig/ObsReward_B_03_17_2025_14_09_processed_orig.csv
+✅ Aligned processed file saved to /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData_Flat/ObsReward_B_03_17_2025_14_09_processed.csv
+✅ Aligned processed file saved to /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData/pair_200/03_17_2025/Afternoon/MagicLeaps/ML2C/ObsReward_B_03_17_2025_14_09_processed.csv
+we have started the function backfill_event_AN_parsedTS
+📝 Updated mLTimestamp in: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/glia/Events_Flat_csv/ObsReward_B_03_17_2025_14_09_processed_events.csv
+📂 Loading AN events file: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/glia/Events_Flat_csv/ObsReward_A_01_26_2025_15_51_processed_events.csv
+📂 Loaded PO processed file: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData_Flat_PO_orig/ObsReward_B_01_26_2025_15_51_processed_orig.csv
+✅ Aligned processed file saved to /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData_Flat/ObsReward_B_01_26_2025_15_51_processed.csv
+✅ Aligned processed file saved to /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData/pair_002/01_26_2025/Morning/MagicLeaps/ML2D/ObsReward_B_01_26_2025_15_51_processed.csv
+we have started the function backfill_event_AN_parsedTS
+📝 Updated mLTimestamp in: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/glia/Events_Flat_csv/ObsReward_B_01_26_2025_15_51_processed_events.csv
+📂 Loading AN events file: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/glia/Events_Flat_csv/ObsReward_A_02_08_2025_14_54_processed_events.csv
+📂 Loaded PO processed file: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData_Flat_PO_orig/ObsReward_B_02_08_2025_14_54_processed_orig.csv
+✅ Aligned processed file saved to /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData_Flat/ObsReward_B_02_08_2025_14_54_processed.csv
+✅ Aligned processed file saved to /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData/pair_006/02_08_2025/Morning/MagicLeaps/ML2C/ObsReward_B_02_08_2025_14_54_processed.csv
+we have started the function backfill_event_AN_parsedTS
+📝 Updated mLTimestamp in: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/glia/Events_Flat_csv/ObsReward_B_02_08_2025_14_54_processed_events.csv
+📂 Loading AN events file: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/glia/Events_Flat_csv/ObsReward_A_01_17_2025_14_06_processed_events.csv
+📂 Loaded PO processed file: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData_Flat_PO_orig/ObsReward_B_01_17_2025_14_06_processed_orig.csv
+✅ Aligned processed file saved to /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData_Flat/ObsReward_B_01_17_2025_14_06_processed.csv
+✅ Aligned processed file saved to /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData/pair_099/01_17_2025/Morning/MagicLeaps/ML2D/ObsReward_B_01_17_2025_14_06_processed.csv
+we have started the function backfill_event_AN_parsedTS
+📝 Updated mLTimestamp in: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/glia/Events_Flat_csv/ObsReward_B_01_17_2025_14_06_processed_events.csv
+📂 Loading AN events file: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/glia/Events_Flat_csv/ObsReward_A_02_09_2025_11_00_processed_events.csv
+📂 Loaded PO processed file: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData_Flat_PO_orig/ObsReward_B_02_09_2025_11_00_processed_orig.csv
+✅ Aligned processed file saved to /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData_Flat/ObsReward_B_02_09_2025_11_00_processed.csv
+✅ Aligned processed file saved to /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData/pair_006/02_09_2025/Morning/MagicLeaps/ML2D/ObsReward_B_02_09_2025_11_00_processed.csv
+we have started the function backfill_event_AN_parsedTS
+📝 Updated mLTimestamp in: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/glia/Events_Flat_csv/ObsReward_B_02_09_2025_11_00_processed_events.csv
+📂 Loading AN events file: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/glia/Events_Flat_csv/ObsReward_A_01_20_2025_15_12_processed_events.csv
+📂 Loaded PO processed file: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData_Flat_PO_orig/ObsReward_B_01_20_2025_15_12_processed_orig.csv
+✅ Aligned processed file saved to /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData_Flat/ObsReward_B_01_20_2025_15_12_processed.csv
+✅ Aligned processed file saved to /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData/pair_000/01_20_2025/Morning/MagicLeaps/ML2D/ObsReward_B_01_20_2025_15_12_processed.csv
+we have started the function backfill_event_AN_parsedTS
+📝 Updated mLTimestamp in: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/glia/Events_Flat_csv/ObsReward_B_01_20_2025_15_12_processed_events.csv
+📂 Loading AN events file: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/glia/Events_Flat_csv/ObsReward_A_01_20_2025_14_20_processed_events.csv
+📂 Loaded PO processed file: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData_Flat_PO_orig/ObsReward_B_01_20_2025_14_20_processed_orig.csv
+✅ Aligned processed file saved to /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData_Flat/ObsReward_B_01_20_2025_14_20_processed.csv
+✅ Aligned processed file saved to /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData/pair_000/01_20_2025/Morning/MagicLeaps/ML2D/ObsReward_B_01_20_2025_14_20_processed.csv
+we have started the function backfill_event_AN_parsedTS
+📝 Updated mLTimestamp in: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/glia/Events_Flat_csv/ObsReward_B_01_20_2025_14_20_processed_events.csv
+📂 Loading AN events file: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/glia/Events_Flat_csv/ObsReward_A_01_20_2025_16_51_processed_events.csv
+📂 Loaded PO processed file: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData_Flat_PO_orig/ObsReward_B_01_20_2025_16_51_processed_orig.csv
+/Users/mairahmac/Desktop/myra_code/Python/RewardCollectors_InputGenerate/preproc/baseline_pipeline/alignment/alignPO2AN.py:84: DtypeWarning: Columns (31) have mixed types. Specify dtype option on import or set low_memory=False.
+  df_po = pd.read_csv(po_processed_file)
+/Users/mairahmac/Desktop/myra_code/Python/RewardCollectors_InputGenerate/preproc/baseline_pipeline/alignment/alignPO2AN.py:84: DtypeWarning: Columns (31) have mixed types. Specify dtype option on import or set low_memory=False.
+  df_po = pd.read_csv(po_processed_file)
+✅ Aligned processed file saved to /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData_Flat/ObsReward_B_01_20_2025_16_51_processed.csv
+✅ Aligned processed file saved to /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData/pair_000/01_20_2025/Morning/MagicLeaps/ML2C/ObsReward_B_01_20_2025_16_51_processed.csv
+we have started the function backfill_event_AN_parsedTS
+📝 Updated mLTimestamp in: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/glia/Events_Flat_csv/ObsReward_B_01_20_2025_16_51_processed_events.csv
+📂 Loading AN events file: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/glia/Events_Flat_csv/ObsReward_A_02_01_2025_17_14_processed_events.csv
+📂 Loaded PO processed file: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData_Flat_PO_orig/ObsReward_B_02_01_2025_17_14_processed_orig.csv
+✅ Aligned processed file saved to /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData_Flat/ObsReward_B_02_01_2025_17_14_processed.csv
+✅ Aligned processed file saved to /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData/pair_003/02_01_2025/Morning/MagicLeaps/ML2D/ObsReward_B_02_01_2025_17_14_processed.csv
+we have started the function backfill_event_AN_parsedTS
+📝 Updated mLTimestamp in: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/glia/Events_Flat_csv/ObsReward_B_02_01_2025_17_14_processed_events.csv
+📂 Loading AN events file: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/glia/Events_Flat_csv/ObsReward_A_01_26_2025_12_37_processed_events.csv
+📂 Loaded PO processed file: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData_Flat_PO_orig/ObsReward_B_01_26_2025_12_37_processed_orig.csv
+✅ Aligned processed file saved to /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData_Flat/ObsReward_B_01_26_2025_12_37_processed.csv
+✅ Aligned processed file saved to /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData/pair_002/01_26_2025/Morning/MagicLeaps/ML2D/ObsReward_B_01_26_2025_12_37_processed.csv
+we have started the function backfill_event_AN_parsedTS
+📝 Updated mLTimestamp in: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/glia/Events_Flat_csv/ObsReward_B_01_26_2025_12_37_processed_events.csv
+📂 Loading AN events file: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/glia/Events_Flat_csv/ObsReward_A_02_17_2025_16_43_processed_events.csv
+📂 Loaded PO processed file: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData_Flat_PO_orig/ObsReward_B_02_17_2025_16_43_processed_orig.csv
+✅ Aligned processed file saved to /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData_Flat/ObsReward_B_02_17_2025_16_43_processed.csv
+✅ Aligned processed file saved to /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData/pair_008/02_17_2025/Morning/MagicLeaps/ML2C/ObsReward_B_02_17_2025_16_43_processed.csv
+we have started the function backfill_event_AN_parsedTS
+📝 Updated mLTimestamp in: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/glia/Events_Flat_csv/ObsReward_B_02_17_2025_16_43_processed_events.csv
+📂 Loading AN events file: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/glia/Events_Flat_csv/ObsReward_A_01_17_2025_14_34_processed_events.csv
+📂 Loaded PO processed file: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData_Flat_PO_orig/ObsReward_B_01_17_2025_14_34_processed_orig.csv
+✅ Aligned processed file saved to /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData_Flat/ObsReward_B_01_17_2025_14_34_processed.csv
+✅ Aligned processed file saved to /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData/pair_099/01_17_2025/Morning/MagicLeaps/ML2D/ObsReward_B_01_17_2025_14_34_processed.csv
+we have started the function backfill_event_AN_parsedTS
+📝 Updated mLTimestamp in: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/glia/Events_Flat_csv/ObsReward_B_01_17_2025_14_34_processed_events.csv
+📂 Loading AN events file: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/glia/Events_Flat_csv/ObsReward_A_01_26_2025_11_46_processed_events.csv
+📂 Loaded PO processed file: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData_Flat_PO_orig/ObsReward_B_01_26_2025_11_46_processed_orig.csv
+✅ Aligned processed file saved to /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData_Flat/ObsReward_B_01_26_2025_11_46_processed.csv
+✅ Aligned processed file saved to /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData/pair_002/01_26_2025/Morning/MagicLeaps/ML2C/ObsReward_B_01_26_2025_11_46_processed.csv
+we have started the function backfill_event_AN_parsedTS
+📝 Updated mLTimestamp in: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/glia/Events_Flat_csv/ObsReward_B_01_26_2025_11_46_processed_events.csv
+📂 Loading AN events file: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/glia/Events_Flat_csv/ObsReward_A_01_25_2025_17_27_processed_events.csv
+📂 Loaded PO processed file: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData_Flat_PO_orig/ObsReward_B_01_25_2025_17_27_processed_orig.csv
+✅ Aligned processed file saved to /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData_Flat/ObsReward_B_01_25_2025_17_27_processed.csv
+✅ Aligned processed file saved to /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData/pair_001/01_25_2025/Morning/MagicLeaps/ML2C/ObsReward_B_01_25_2025_17_27_processed.csv
+we have started the function backfill_event_AN_parsedTS
+📝 Updated mLTimestamp in: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/glia/Events_Flat_csv/ObsReward_B_01_25_2025_17_27_processed_events.csv
+📂 Loading AN events file: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/glia/Events_Flat_csv/ObsReward_A_02_19_2025_19_04_processed_events.csv
+📂 Loaded PO processed file: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData_Flat_PO_orig/ObsReward_B_02_19_2025_19_04_processed_orig.csv
+✅ Aligned processed file saved to /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData_Flat/ObsReward_B_02_19_2025_19_04_processed.csv
+✅ Aligned processed file saved to /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData/pair_008/02_19_2025/Morning/MagicLeaps/ML2D/ObsReward_B_02_19_2025_19_04_processed.csv
+we have started the function backfill_event_AN_parsedTS
+📝 Updated mLTimestamp in: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/glia/Events_Flat_csv/ObsReward_B_02_19_2025_19_04_processed_events.csv
+📂 Loading AN events file: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/glia/Events_Flat_csv/ObsReward_A_03_17_2025_15_50_processed_events.csv
+📂 Loaded PO processed file: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData_Flat_PO_orig/ObsReward_B_03_17_2025_15_50_processed_orig.csv
+✅ Aligned processed file saved to /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData_Flat/ObsReward_B_03_17_2025_15_50_processed.csv
+✅ Aligned processed file saved to /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData/pair_200/03_17_2025/Afternoon/MagicLeaps/ML2C/ObsReward_B_03_17_2025_15_50_processed.csv
+we have started the function backfill_event_AN_parsedTS
+📝 Updated mLTimestamp in: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/glia/Events_Flat_csv/ObsReward_B_03_17_2025_15_50_processed_events.csv
+📂 Loading AN events file: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/glia/Events_Flat_csv/ObsReward_A_03_17_2025_10_30_processed_events.csv
+📂 Loaded PO processed file: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData_Flat_PO_orig/ObsReward_B_03_17_2025_10_30_processed_orig.csv
+✅ Aligned processed file saved to /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData_Flat/ObsReward_B_03_17_2025_10_30_processed.csv
+✅ Aligned processed file saved to /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData/pair_200/03_17_2025/Morning/MagicLeaps/ML2D/ObsReward_B_03_17_2025_10_30_processed.csv
+we have started the function backfill_event_AN_parsedTS
+/Users/mairahmac/Desktop/myra_code/Python/RewardCollectors_InputGenerate/preproc/baseline_pipeline/alignment/alignPO2AN.py:84: DtypeWarning: Columns (31) have mixed types. Specify dtype option on import or set low_memory=False.
+  df_po = pd.read_csv(po_processed_file)
+/Users/mairahmac/Desktop/myra_code/Python/RewardCollectors_InputGenerate/preproc/baseline_pipeline/alignment/alignPO2AN.py:84: DtypeWarning: Columns (31) have mixed types. Specify dtype option on import or set low_memory=False.
+  df_po = pd.read_csv(po_processed_file)
+/Users/mairahmac/Desktop/myra_code/Python/RewardCollectors_InputGenerate/preproc/baseline_pipeline/alignment/alignPO2AN.py:84: DtypeWarning: Columns (31) have mixed types. Specify dtype option on import or set low_memory=False.
+  df_po = pd.read_csv(po_processed_file)
+📝 Updated mLTimestamp in: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/glia/Events_Flat_csv/ObsReward_B_03_17_2025_10_30_processed_events.csv
+📂 Loading AN events file: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/glia/Events_Flat_csv/ObsReward_A_03_17_2025_13_48_processed_events.csv
+📂 Loaded PO processed file: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData_Flat_PO_orig/ObsReward_B_03_17_2025_13_48_processed_orig.csv
+✅ Aligned processed file saved to /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData_Flat/ObsReward_B_03_17_2025_13_48_processed.csv
+✅ Aligned processed file saved to /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData/pair_200/03_17_2025/Afternoon/MagicLeaps/ML2C/ObsReward_B_03_17_2025_13_48_processed.csv
+we have started the function backfill_event_AN_parsedTS
+📝 Updated mLTimestamp in: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/glia/Events_Flat_csv/ObsReward_B_03_17_2025_13_48_processed_events.csv
+📂 Loading AN events file: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/glia/Events_Flat_csv/ObsReward_A_02_08_2025_13_33_processed_events.csv
+📂 Loaded PO processed file: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData_Flat_PO_orig/ObsReward_B_02_08_2025_13_33_processed_orig.csv
+✅ Aligned processed file saved to /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData_Flat/ObsReward_B_02_08_2025_13_33_processed.csv
+✅ Aligned processed file saved to /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData/pair_006/02_08_2025/Morning/MagicLeaps/ML2D/ObsReward_B_02_08_2025_13_33_processed.csv
+we have started the function backfill_event_AN_parsedTS
+📝 Updated mLTimestamp in: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/glia/Events_Flat_csv/ObsReward_B_02_08_2025_13_33_processed_events.csv
+📂 Loading AN events file: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/glia/Events_Flat_csv/ObsReward_A_01_25_2025_17_58_processed_events.csv
+📂 Loaded PO processed file: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData_Flat_PO_orig/ObsReward_B_01_25_2025_17_58_processed_orig.csv
+✅ Aligned processed file saved to /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData_Flat/ObsReward_B_01_25_2025_17_58_processed.csv
+✅ Aligned processed file saved to /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData/pair_001/01_25_2025/Morning/MagicLeaps/ML2C/ObsReward_B_01_25_2025_17_58_processed.csv
+we have started the function backfill_event_AN_parsedTS
+📝 Updated mLTimestamp in: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/glia/Events_Flat_csv/ObsReward_B_01_25_2025_17_58_processed_events.csv
+📂 Loading AN events file: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/glia/Events_Flat_csv/ObsReward_A_01_26_2025_16_28_processed_events.csv
+📂 Loaded PO processed file: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData_Flat_PO_orig/ObsReward_B_01_26_2025_16_28_processed_orig.csv
+✅ Aligned processed file saved to /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData_Flat/ObsReward_B_01_26_2025_16_28_processed.csv
+✅ Aligned processed file saved to /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData/pair_002/01_26_2025/Morning/MagicLeaps/ML2D/ObsReward_B_01_26_2025_16_28_processed.csv
+we have started the function backfill_event_AN_parsedTS
+📝 Updated mLTimestamp in: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/glia/Events_Flat_csv/ObsReward_B_01_26_2025_16_28_processed_events.csv
+📂 Loading AN events file: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/glia/Events_Flat_csv/ObsReward_A_03_17_2025_14_00_processed_events.csv
+📂 Loaded PO processed file: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData_Flat_PO_orig/ObsReward_B_03_17_2025_14_00_processed_orig.csv
+✅ Aligned processed file saved to /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData_Flat/ObsReward_B_03_17_2025_14_00_processed.csv
+✅ Aligned processed file saved to /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData/pair_200/03_17_2025/Afternoon/MagicLeaps/ML2C/ObsReward_B_03_17_2025_14_00_processed.csv
+we have started the function backfill_event_AN_parsedTS
+📝 Updated mLTimestamp in: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/glia/Events_Flat_csv/ObsReward_B_03_17_2025_14_00_processed_events.csv
+📂 Loading AN events file: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/glia/Events_Flat_csv/ObsReward_A_02_05_2025_11_38_processed_events.csv
+📂 Loaded PO processed file: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData_Flat_PO_orig/ObsReward_B_02_05_2025_11_38_processed_orig.csv
+✅ Aligned processed file saved to /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData_Flat/ObsReward_B_02_05_2025_11_38_processed.csv
+✅ Aligned processed file saved to /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData/pair_005/02_05_2025/Morning/MagicLeaps/ML2D/ObsReward_B_02_05_2025_11_38_processed.csv
+we have started the function backfill_event_AN_parsedTS
+📝 Updated mLTimestamp in: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/glia/Events_Flat_csv/ObsReward_B_02_05_2025_11_38_processed_events.csv
+📂 Loading AN events file: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/glia/Events_Flat_csv/ObsReward_A_02_08_2025_15_18_processed_events.csv
+📂 Loaded PO processed file: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData_Flat_PO_orig/ObsReward_B_02_08_2025_15_18_processed_orig.csv
+✅ Aligned processed file saved to /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData_Flat/ObsReward_B_02_08_2025_15_18_processed.csv
+✅ Aligned processed file saved to /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData/pair_006/02_08_2025/Morning/MagicLeaps/ML2C/ObsReward_B_02_08_2025_15_18_processed.csv
+we have started the function backfill_event_AN_parsedTS
+📝 Updated mLTimestamp in: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/glia/Events_Flat_csv/ObsReward_B_02_08_2025_15_18_processed_events.csv
+📂 Loading AN events file: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/glia/Events_Flat_csv/ObsReward_A_02_19_2025_16_24_processed_events.csv
+📂 Loaded PO processed file: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData_Flat_PO_orig/ObsReward_B_02_19_2025_16_24_processed_orig.csv
+✅ Aligned processed file saved to /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData_Flat/ObsReward_B_02_19_2025_16_24_processed.csv
+✅ Aligned processed file saved to /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData/pair_008/02_19_2025/Morning/MagicLeaps/ML2D/ObsReward_B_02_19_2025_16_24_processed.csv
+we have started the function backfill_event_AN_parsedTS
+📝 Updated mLTimestamp in: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/glia/Events_Flat_csv/ObsReward_B_02_19_2025_16_24_processed_events.csv
+📂 Loading AN events file: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/glia/Events_Flat_csv/ObsReward_A_01_20_2025_14_08_processed_events.csv
+📂 Loaded PO processed file: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData_Flat_PO_orig/ObsReward_B_01_20_2025_14_08_processed_orig.csv
+✅ Aligned processed file saved to /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData_Flat/ObsReward_B_01_20_2025_14_08_processed.csv
+✅ Aligned processed file saved to /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData/pair_000/01_20_2025/Morning/MagicLeaps/ML2D/ObsReward_B_01_20_2025_14_08_processed.csv
+we have started the function backfill_event_AN_parsedTS
+📝 Updated mLTimestamp in: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/glia/Events_Flat_csv/ObsReward_B_01_20_2025_14_08_processed_events.csv
+📂 Loading AN events file: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/glia/Events_Flat_csv/ObsReward_A_02_19_2025_17_47_processed_events.csv
+📂 Loaded PO processed file: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData_Flat_PO_orig/ObsReward_B_02_19_2025_17_47_processed_orig.csv
+✅ Aligned processed file saved to /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData_Flat/ObsReward_B_02_19_2025_17_47_processed.csv
+✅ Aligned processed file saved to /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData/pair_008/02_19_2025/Morning/MagicLeaps/ML2C/ObsReward_B_02_19_2025_17_47_processed.csv
+we have started the function backfill_event_AN_parsedTS
+📝 Updated mLTimestamp in: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/glia/Events_Flat_csv/ObsReward_B_02_19_2025_17_47_processed_events.csv
+📂 Loading AN events file: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/glia/Events_Flat_csv/ObsReward_A_02_09_2025_14_04_processed_events.csv
+📂 Loaded PO processed file: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData_Flat_PO_orig/ObsReward_B_02_09_2025_14_04_processed_orig.csv
+✅ Aligned processed file saved to /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData_Flat/ObsReward_B_02_09_2025_14_04_processed.csv
+✅ Aligned processed file saved to /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData/pair_006/02_09_2025/Morning/MagicLeaps/ML2C/ObsReward_B_02_09_2025_14_04_processed.csv
+we have started the function backfill_event_AN_parsedTS
+📝 Updated mLTimestamp in: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/glia/Events_Flat_csv/ObsReward_B_02_09_2025_14_04_processed_events.csv
+📂 Loading AN events file: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/glia/Events_Flat_csv/ObsReward_A_02_05_2025_11_55_processed_events.csv
+📂 Loaded PO processed file: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData_Flat_PO_orig/ObsReward_B_02_05_2025_11_55_processed_orig.csv
+✅ Aligned processed file saved to /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData_Flat/ObsReward_B_02_05_2025_11_55_processed.csv
+✅ Aligned processed file saved to /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData/pair_005/02_05_2025/Morning/MagicLeaps/ML2D/ObsReward_B_02_05_2025_11_55_processed.csv
+we have started the function backfill_event_AN_parsedTS
+📝 Updated mLTimestamp in: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/glia/Events_Flat_csv/ObsReward_B_02_05_2025_11_55_processed_events.csv
+📂 Loading AN events file: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/glia/Events_Flat_csv/ObsReward_A_02_05_2025_13_07_processed_events.csv
+📂 Loaded PO processed file: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData_Flat_PO_orig/ObsReward_B_02_05_2025_13_07_processed_orig.csv
+✅ Aligned processed file saved to /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData_Flat/ObsReward_B_02_05_2025_13_07_processed.csv
+✅ Aligned processed file saved to /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData/pair_005/02_05_2025/Morning/MagicLeaps/ML2D/ObsReward_B_02_05_2025_13_07_processed.csv
+we have started the function backfill_event_AN_parsedTS
+📝 Updated mLTimestamp in: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/glia/Events_Flat_csv/ObsReward_B_02_05_2025_13_07_processed_events.csv
+📂 Loading AN events file: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/glia/Events_Flat_csv/ObsReward_A_03_17_2025_11_15_processed_events.csv
+📂 Loaded PO processed file: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData_Flat_PO_orig/ObsReward_B_03_17_2025_11_15_processed_orig.csv
+✅ Aligned processed file saved to /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData_Flat/ObsReward_B_03_17_2025_11_15_processed.csv
+✅ Aligned processed file saved to /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData/pair_200/03_17_2025/Morning/MagicLeaps/ML2D/ObsReward_B_03_17_2025_11_15_processed.csv
+we have started the function backfill_event_AN_parsedTS
+📝 Updated mLTimestamp in: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/glia/Events_Flat_csv/ObsReward_B_03_17_2025_11_15_processed_events.csv
+📂 Loading AN events file: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/glia/Events_Flat_csv/ObsReward_A_02_09_2025_13_10_processed_events.csv
+📂 Loaded PO processed file: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData_Flat_PO_orig/ObsReward_B_02_09_2025_13_10_processed_orig.csv
+✅ Aligned processed file saved to /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData_Flat/ObsReward_B_02_09_2025_13_10_processed.csv
+✅ Aligned processed file saved to /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData/pair_006/02_09_2025/Morning/MagicLeaps/ML2C/ObsReward_B_02_09_2025_13_10_processed.csv
+we have started the function backfill_event_AN_parsedTS
+📝 Updated mLTimestamp in: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/glia/Events_Flat_csv/ObsReward_B_02_09_2025_13_10_processed_events.csv
+📂 Loading AN events file: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/glia/Events_Flat_csv/ObsReward_A_01_26_2025_11_56_processed_events.csv
+📂 Loaded PO processed file: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData_Flat_PO_orig/ObsReward_B_01_26_2025_11_56_processed_orig.csv
+✅ Aligned processed file saved to /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData_Flat/ObsReward_B_01_26_2025_11_56_processed.csv
+✅ Aligned processed file saved to /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData/pair_002/01_26_2025/Morning/MagicLeaps/ML2C/ObsReward_B_01_26_2025_11_56_processed.csv
+we have started the function backfill_event_AN_parsedTS
+📝 Updated mLTimestamp in: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/glia/Events_Flat_csv/ObsReward_B_01_26_2025_11_56_processed_events.csv
+📂 Loading AN events file: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/glia/Events_Flat_csv/ObsReward_A_02_05_2025_13_59_processed_events.csv
+📂 Loaded PO processed file: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData_Flat_PO_orig/ObsReward_B_02_05_2025_13_59_processed_orig.csv
+✅ Aligned processed file saved to /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData_Flat/ObsReward_B_02_05_2025_13_59_processed.csv
+✅ Aligned processed file saved to /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData/pair_005/02_05_2025/Morning/MagicLeaps/ML2C/ObsReward_B_02_05_2025_13_59_processed.csv
+we have started the function backfill_event_AN_parsedTS
+📝 Updated mLTimestamp in: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/glia/Events_Flat_csv/ObsReward_B_02_05_2025_13_59_processed_events.csv
+📂 Loading AN events file: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/glia/Events_Flat_csv/ObsReward_A_02_09_2025_10_41_processed_events.csv
+📂 Loaded PO processed file: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData_Flat_PO_orig/ObsReward_B_02_09_2025_10_41_processed_orig.csv
+✅ Aligned processed file saved to /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData_Flat/ObsReward_B_02_09_2025_10_41_processed.csv
+✅ Aligned processed file saved to /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData/pair_006/02_09_2025/Morning/MagicLeaps/ML2D/ObsReward_B_02_09_2025_10_41_processed.csv
+we have started the function backfill_event_AN_parsedTS
+📝 Updated mLTimestamp in: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/glia/Events_Flat_csv/ObsReward_B_02_09_2025_10_41_processed_events.csv
+📂 Loading AN events file: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/glia/Events_Flat_csv/ObsReward_A_02_19_2025_18_00_processed_events.csv
+📂 Loaded PO processed file: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData_Flat_PO_orig/ObsReward_B_02_19_2025_18_00_processed_orig.csv
+✅ Aligned processed file saved to /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData_Flat/ObsReward_B_02_19_2025_18_00_processed.csv
+✅ Aligned processed file saved to /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData/pair_008/02_19_2025/Morning/MagicLeaps/ML2C/ObsReward_B_02_19_2025_18_00_processed.csv
+we have started the function backfill_event_AN_parsedTS
+📝 Updated mLTimestamp in: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/glia/Events_Flat_csv/ObsReward_B_02_19_2025_18_00_processed_events.csv
+📂 Loading AN events file: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/glia/Events_Flat_csv/ObsReward_A_02_01_2025_16_40_processed_events.csv
+📂 Loaded PO processed file: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData_Flat_PO_orig/ObsReward_B_02_01_2025_16_40_processed_orig.csv
+✅ Aligned processed file saved to /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData_Flat/ObsReward_B_02_01_2025_16_40_processed.csv
+✅ Aligned processed file saved to /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData/pair_003/02_01_2025/Morning/MagicLeaps/ML2D/ObsReward_B_02_01_2025_16_40_processed.csv
+we have started the function backfill_event_AN_parsedTS
+📝 Updated mLTimestamp in: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/glia/Events_Flat_csv/ObsReward_B_02_01_2025_16_40_processed_events.csv
+📂 Loading AN events file: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/glia/Events_Flat_csv/ObsReward_A_01_20_2025_15_03_processed_events.csv
+📂 Loaded PO processed file: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData_Flat_PO_orig/ObsReward_B_01_20_2025_15_03_processed_orig.csv
+✅ Aligned processed file saved to /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData_Flat/ObsReward_B_01_20_2025_15_03_processed.csv
+✅ Aligned processed file saved to /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData/pair_000/01_20_2025/Morning/MagicLeaps/ML2D/ObsReward_B_01_20_2025_15_03_processed.csv
+we have started the function backfill_event_AN_parsedTS
+📝 Updated mLTimestamp in: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/glia/Events_Flat_csv/ObsReward_B_01_20_2025_15_03_processed_events.csv
+📂 Loading AN events file: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/glia/Events_Flat_csv/ObsReward_A_03_06_2025_10_01_processed_events.csv
+📂 Loaded PO processed file: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData_Flat_PO_orig/ObsReward_B_03_06_2025_10_01_processed_orig.csv
+✅ Aligned processed file saved to /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData_Flat/ObsReward_B_03_06_2025_10_01_processed.csv
+✅ Aligned processed file saved to /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData/pair_009/03_06_2025/Morning/MagicLeaps/ML2D/ObsReward_B_03_06_2025_10_01_processed.csv
+we have started the function backfill_event_AN_parsedTS
+📝 Updated mLTimestamp in: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/glia/Events_Flat_csv/ObsReward_B_03_06_2025_10_01_processed_events.csv
+📂 Loading AN events file: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/glia/Events_Flat_csv/ObsReward_A_02_09_2025_12_38_processed_events.csv
+📂 Loaded PO processed file: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData_Flat_PO_orig/ObsReward_B_02_09_2025_12_38_processed_orig.csv
+✅ Aligned processed file saved to /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData_Flat/ObsReward_B_02_09_2025_12_38_processed.csv
+✅ Aligned processed file saved to /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData/pair_006/02_09_2025/Morning/MagicLeaps/ML2C/ObsReward_B_02_09_2025_12_38_processed.csv
+we have started the function backfill_event_AN_parsedTS
+📝 Updated mLTimestamp in: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/glia/Events_Flat_csv/ObsReward_B_02_09_2025_12_38_processed_events.csv
+📂 Loading AN events file: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/glia/Events_Flat_csv/ObsReward_A_02_12_2025_12_01_processed_events.csv
+📂 Loaded PO processed file: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData_Flat_PO_orig/ObsReward_B_02_12_2025_12_01_processed_orig.csv
+✅ Aligned processed file saved to /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData_Flat/ObsReward_B_02_12_2025_12_01_processed.csv
+✅ Aligned processed file saved to /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData/pair_007/02_12_2025/Morning/MagicLeaps/ML2D/ObsReward_B_02_12_2025_12_01_processed.csv
+we have started the function backfill_event_AN_parsedTS
+📝 Updated mLTimestamp in: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/glia/Events_Flat_csv/ObsReward_B_02_12_2025_12_01_processed_events.csv
+📂 Loading AN events file: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/glia/Events_Flat_csv/ObsReward_A_02_08_2025_14_14_processed_events.csv
+📂 Loaded PO processed file: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData_Flat_PO_orig/ObsReward_B_02_08_2025_14_14_processed_orig.csv
+✅ Aligned processed file saved to /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData_Flat/ObsReward_B_02_08_2025_14_14_processed.csv
+✅ Aligned processed file saved to /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData/pair_006/02_08_2025/Morning/MagicLeaps/ML2D/ObsReward_B_02_08_2025_14_14_processed.csv
+we have started the function backfill_event_AN_parsedTS
+📝 Updated mLTimestamp in: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/glia/Events_Flat_csv/ObsReward_B_02_08_2025_14_14_processed_events.csv
+📂 Loading AN events file: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/glia/Events_Flat_csv/ObsReward_A_02_08_2025_15_08_processed_events.csv
+📂 Loaded PO processed file: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData_Flat_PO_orig/ObsReward_B_02_08_2025_15_08_processed_orig.csv
+✅ Aligned processed file saved to /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData_Flat/ObsReward_B_02_08_2025_15_08_processed.csv
+✅ Aligned processed file saved to /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData/pair_006/02_08_2025/Morning/MagicLeaps/ML2C/ObsReward_B_02_08_2025_15_08_processed.csv
+we have started the function backfill_event_AN_parsedTS
+📝 Updated mLTimestamp in: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/glia/Events_Flat_csv/ObsReward_B_02_08_2025_15_08_processed_events.csv
+📂 Loading AN events file: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/glia/Events_Flat_csv/ObsReward_A_02_17_2025_15_11_processed_events.csv
+📂 Loaded PO processed file: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData_Flat_PO_orig/ObsReward_B_02_17_2025_15_11_processed_orig.csv
+✅ Aligned processed file saved to /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData_Flat/ObsReward_B_02_17_2025_15_11_processed.csv
+✅ Aligned processed file saved to /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData/pair_008/02_17_2025/Morning/MagicLeaps/ML2D/ObsReward_B_02_17_2025_15_11_processed.csv
+we have started the function backfill_event_AN_parsedTS
+📝 Updated mLTimestamp in: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/glia/Events_Flat_csv/ObsReward_B_02_17_2025_15_11_processed_events.csv
+✅ alignPO2AN_part1.py  completed at Sun Sep  7 16:32:29 PDT 2025
+🦢🦢🦢🦢🦢🦢🦢🦢🦢🦢🦢🦢🦢🦢🦢🦢🦢🦢🦢🦢🦢🦢🦢
+
+🚀 alignPO2AN_part1.py  at Mon Sep  8 15:29:55 PDT 2025
+run_overnight_modular2.sh: line 247: unexpected EOF while looking for matching `"'
+🐞🐞🐞🐞🐞🐞🐞🐞🐞🐞🐞🐞🐞🐞🐞🐞🐞🐞🐞🐞🐞🐞🐞🐞🐞
+🚀 Starting preFrontalCortex_unifiedEventSeg.py for AN FULL setting at Mon Sep  8 18:32:07 PDT 2025
+✅ preFrontalCortex_unifiedEventSeg.py for AN FULL setting completed at Mon Sep  8 19:04:53 PDT 2025
+🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛
+🚀 Starting preFrontalCortex_unifiedEventSeg.py for PO FULL setting at Mon Sep  8 19:04:53 PDT 2025
+✅ preFrontalCortex_unifiedEventSeg.py for PO FULL setting completed at Mon Sep  8 19:33:53 PDT 2025
+🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭
+
+🚀 Starting justFlatten.py  at Mon Sep  8 19:33:53 PDT 2025
+✅ justFlatten.py completed at Mon Sep  8 19:33:53 PDT 2025
+✨ done ✨
+🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭
+
+🚀 Starting justFlatten.py  at Mon Sep  8 22:57:00 PDT 2025
+🚀 Starting batch flatten...
+/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/Events_Flat_csv
+{'ObsReward_A_01_26_2025_10_49': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/MetaData_Flat/ObsReward_A_01_26_2025_10_49_processed_meta.json'), 'ObsReward_B_02_05_2025_11_38': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/MetaData_Flat/ObsReward_B_02_05_2025_11_38_processed_meta.json'), 'ObsReward_B_02_12_2025_12_01': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/MetaData_Flat/ObsReward_B_02_12_2025_12_01_processed_meta.json'), 'ObsReward_A_01_20_2025_15_41': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/MetaData_Flat/ObsReward_A_01_20_2025_15_41_processed_meta.json'), 'ObsReward_A_02_12_2025_14_21': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/MetaData_Flat/ObsReward_A_02_12_2025_14_21_processed_meta.json'), 'ObsReward_A_02_09_2025_14_04': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/MetaData_Flat/ObsReward_A_02_09_2025_14_04_processed_meta.json'), 'ObsReward_A_02_17_2025_15_49': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/MetaData_Flat/ObsReward_A_02_17_2025_15_49_processed_meta.json'), 'ObsReward_B_02_19_2025_19_04': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/MetaData_Flat/ObsReward_B_02_19_2025_19_04_processed_meta.json'), 'ObsReward_A_02_12_2025_13_20': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/MetaData_Flat/ObsReward_A_02_12_2025_13_20_processed_meta.json'), 'ObsReward_A_02_05_2025_13_07': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/MetaData_Flat/ObsReward_A_02_05_2025_13_07_processed_meta.json'), 'ObsReward_A_01_26_2025_11_46': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/MetaData_Flat/ObsReward_A_01_26_2025_11_46_processed_meta.json'), 'ObsReward_A_02_08_2025_14_14': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/MetaData_Flat/ObsReward_A_02_08_2025_14_14_processed_meta.json'), 'ObsReward_A_03_17_2025_11_15': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/MetaData_Flat/ObsReward_A_03_17_2025_11_15_processed_meta.json'), 'ObsReward_B_01_17_2025_14_34': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/MetaData_Flat/ObsReward_B_01_17_2025_14_34_processed_meta.json'), 'ObsReward_A_02_08_2025_15_18': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/MetaData_Flat/ObsReward_A_02_08_2025_15_18_processed_meta.json'), 'ObsReward_A_02_12_2025_13_38': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/MetaData_Flat/ObsReward_A_02_12_2025_13_38_processed_meta.json'), 'ObsReward_A_01_20_2025_15_12': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/MetaData_Flat/ObsReward_A_01_20_2025_15_12_processed_meta.json'), 'ObsReward_B_02_09_2025_12_38': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/MetaData_Flat/ObsReward_B_02_09_2025_12_38_processed_meta.json'), 'ObsReward_B_02_19_2025_18_14': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/MetaData_Flat/ObsReward_B_02_19_2025_18_14_processed_meta.json'), 'ObsReward_A_03_17_2025_13_48': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/MetaData_Flat/ObsReward_A_03_17_2025_13_48_processed_meta.json'), 'ObsReward_B_03_17_2025_10_30': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/MetaData_Flat/ObsReward_B_03_17_2025_10_30_processed_meta.json'), 'ObsReward_B_02_01_2025_17_14': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/MetaData_Flat/ObsReward_B_02_01_2025_17_14_processed_meta.json'), 'ObsReward_A_03_06_2025_11_35': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/MetaData_Flat/ObsReward_A_03_06_2025_11_35_processed_meta.json'), 'ObsReward_A_02_17_2025_16_51': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/MetaData_Flat/ObsReward_A_02_17_2025_16_51_processed_meta.json'), 'ObsReward_B_02_05_2025_13_35': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/MetaData_Flat/ObsReward_B_02_05_2025_13_35_processed_meta.json'), 'ObsReward_A_02_19_2025_16_24': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/MetaData_Flat/ObsReward_A_02_19_2025_16_24_processed_meta.json'), 'ObsReward_A_01_17_2025_14_06': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/MetaData_Flat/ObsReward_A_01_17_2025_14_06_processed_meta.json'), 'ObsReward_A_03_17_2025_14_00': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/MetaData_Flat/ObsReward_A_03_17_2025_14_00_processed_meta.json'), 'ObsReward_B_01_25_2025_17_07': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/MetaData_Flat/ObsReward_B_01_25_2025_17_07_processed_meta.json'), 'ObsReward_A_02_12_2025_12_29': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/MetaData_Flat/ObsReward_A_02_12_2025_12_29_processed_meta.json'), 'ObsReward_A_01_26_2025_11_56': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/MetaData_Flat/ObsReward_A_01_26_2025_11_56_processed_meta.json'), 'ObsReward_B_01_26_2025_12_37': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/MetaData_Flat/ObsReward_B_01_26_2025_12_37_processed_meta.json'), 'ObsReward_A_01_20_2025_15_03': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/MetaData_Flat/ObsReward_A_01_20_2025_15_03_processed_meta.json'), 'ObsReward_B_01_20_2025_14_20': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/MetaData_Flat/ObsReward_B_01_20_2025_14_20_processed_meta.json'), 'ObsReward_A_02_05_2025_11_55': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/MetaData_Flat/ObsReward_A_02_05_2025_11_55_processed_meta.json'), 'ObsReward_A_02_08_2025_14_54': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/MetaData_Flat/ObsReward_A_02_08_2025_14_54_processed_meta.json'), 'ObsReward_A_02_08_2025_15_08': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/MetaData_Flat/ObsReward_A_02_08_2025_15_08_processed_meta.json'), 'ObsReward_A_03_17_2025_15_50': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/MetaData_Flat/ObsReward_A_03_17_2025_15_50_processed_meta.json'), 'ObsReward_B_03_06_2025_10_01': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/MetaData_Flat/ObsReward_B_03_06_2025_10_01_processed_meta.json'), 'ObsReward_A_03_17_2025_14_16': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/MetaData_Flat/ObsReward_A_03_17_2025_14_16_processed_meta.json'), 'ObsReward_B_02_01_2025_17_48': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/MetaData_Flat/ObsReward_B_02_01_2025_17_48_processed_meta.json'), 'ObsReward_B_02_08_2025_13_33': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/MetaData_Flat/ObsReward_B_02_08_2025_13_33_processed_meta.json'), 'ObsReward_A_01_26_2025_15_51': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/MetaData_Flat/ObsReward_A_01_26_2025_15_51_processed_meta.json'), 'ObsReward_A_02_09_2025_10_41': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/MetaData_Flat/ObsReward_A_02_09_2025_10_41_processed_meta.json'), 'ObsReward_B_01_26_2025_16_28': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/MetaData_Flat/ObsReward_B_01_26_2025_16_28_processed_meta.json'), 'ObsReward_A_01_20_2025_16_07': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/MetaData_Flat/ObsReward_A_01_20_2025_16_07_processed_meta.json'), 'ObsReward_A_02_17_2025_15_11': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/MetaData_Flat/ObsReward_A_02_17_2025_15_11_processed_meta.json'), 'ObsReward_A_01_25_2025_17_27': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/MetaData_Flat/ObsReward_A_01_25_2025_17_27_processed_meta.json'), 'ObsReward_B_01_25_2025_17_58': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/MetaData_Flat/ObsReward_B_01_25_2025_17_58_processed_meta.json'), 'ObsReward_B_02_19_2025_18_00': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/MetaData_Flat/ObsReward_B_02_19_2025_18_00_processed_meta.json'), 'ObsReward_A_02_09_2025_12_53': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/MetaData_Flat/ObsReward_A_02_09_2025_12_53_processed_meta.json'), 'ObsReward_A_02_09_2025_13_10': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/MetaData_Flat/ObsReward_A_02_09_2025_13_10_processed_meta.json'), 'ObsReward_A_01_20_2025_16_51': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/MetaData_Flat/ObsReward_A_01_20_2025_16_51_processed_meta.json'), 'ObsReward_B_02_17_2025_16_26': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/MetaData_Flat/ObsReward_B_02_17_2025_16_26_processed_meta.json'), 'ObsReward_A_03_17_2025_10_44': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/MetaData_Flat/ObsReward_A_03_17_2025_10_44_processed_meta.json'), 'ObsReward_A_03_17_2025_14_09': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/MetaData_Flat/ObsReward_A_03_17_2025_14_09_processed_meta.json'), 'ObsReward_B_02_19_2025_17_47': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/MetaData_Flat/ObsReward_B_02_19_2025_17_47_processed_meta.json'), 'ObsReward_A_02_17_2025_16_43': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/MetaData_Flat/ObsReward_A_02_17_2025_16_43_processed_meta.json'), 'ObsReward_B_02_01_2025_16_40': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/MetaData_Flat/ObsReward_B_02_01_2025_16_40_processed_meta.json'), 'ObsReward_A_01_26_2025_13_12': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/MetaData_Flat/ObsReward_A_01_26_2025_13_12_processed_meta.json'), 'ObsReward_A_02_05_2025_13_59': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/MetaData_Flat/ObsReward_A_02_05_2025_13_59_processed_meta.json'), 'ObsReward_A_01_20_2025_14_08': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/MetaData_Flat/ObsReward_A_01_20_2025_14_08_processed_meta.json'), 'ObsReward_B_02_01_2025_17_04': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/MetaData_Flat/ObsReward_B_02_01_2025_17_04_processed_meta.json'), 'ObsReward_A_02_17_2025_14_48': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/MetaData_Flat/ObsReward_A_02_17_2025_14_48_processed_meta.json'), 'ObsReward_A_02_09_2025_11_00': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/MetaData_Flat/ObsReward_A_02_09_2025_11_00_processed_meta.json'), 'ObsReward_A_03_06_2025_10_01': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/MetaData_Flat/ObsReward_A_03_06_2025_10_01_processed_meta.json'), 'ObsReward_B_03_17_2025_15_50': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/MetaData_Flat/ObsReward_B_03_17_2025_15_50_processed_meta.json'), 'ObsReward_B_02_08_2025_14_54': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/MetaData_Flat/ObsReward_B_02_08_2025_14_54_processed_meta.json'), 'ObsReward_B_02_08_2025_15_08': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/MetaData_Flat/ObsReward_B_02_08_2025_15_08_processed_meta.json'), 'ObsReward_B_02_05_2025_11_55': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/MetaData_Flat/ObsReward_B_02_05_2025_11_55_processed_meta.json'), 'ObsReward_A_01_20_2025_14_20': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/MetaData_Flat/ObsReward_A_01_20_2025_14_20_processed_meta.json'), 'ObsReward_B_01_26_2025_11_56': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/MetaData_Flat/ObsReward_B_01_26_2025_11_56_processed_meta.json'), 'ObsReward_A_01_26_2025_12_37': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/MetaData_Flat/ObsReward_A_01_26_2025_12_37_processed_meta.json'), 'ObsReward_B_01_20_2025_15_03': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/MetaData_Flat/ObsReward_B_01_20_2025_15_03_processed_meta.json'), 'ObsReward_B_02_09_2025_12_53': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/MetaData_Flat/ObsReward_B_02_09_2025_12_53_processed_meta.json'), 'ObsReward_A_02_19_2025_18_00': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/MetaData_Flat/ObsReward_A_02_19_2025_18_00_processed_meta.json'), 'ObsReward_A_01_25_2025_17_58': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/MetaData_Flat/ObsReward_A_01_25_2025_17_58_processed_meta.json'), 'ObsReward_B_01_25_2025_17_27': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/MetaData_Flat/ObsReward_B_01_25_2025_17_27_processed_meta.json'), 'ObsReward_B_02_17_2025_15_11': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/MetaData_Flat/ObsReward_B_02_17_2025_15_11_processed_meta.json'), 'ObsReward_B_01_20_2025_16_07': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/MetaData_Flat/ObsReward_B_01_20_2025_16_07_processed_meta.json'), 'ObsReward_A_01_26_2025_16_28': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/MetaData_Flat/ObsReward_A_01_26_2025_16_28_processed_meta.json'), 'ObsReward_B_02_09_2025_10_41': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/MetaData_Flat/ObsReward_B_02_09_2025_10_41_processed_meta.json'), 'ObsReward_A_02_08_2025_13_33': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/MetaData_Flat/ObsReward_A_02_08_2025_13_33_processed_meta.json'), 'ObsReward_B_01_26_2025_15_51': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/MetaData_Flat/ObsReward_B_01_26_2025_15_51_processed_meta.json'), 'ObsReward_A_02_01_2025_17_48': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/MetaData_Flat/ObsReward_A_02_01_2025_17_48_processed_meta.json'), 'ObsReward_B_03_17_2025_14_16': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/MetaData_Flat/ObsReward_B_03_17_2025_14_16_processed_meta.json'), 'ObsReward_A_02_19_2025_17_47': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/MetaData_Flat/ObsReward_A_02_19_2025_17_47_processed_meta.json'), 'ObsReward_B_03_17_2025_14_09': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/MetaData_Flat/ObsReward_B_03_17_2025_14_09_processed_meta.json'), 'ObsReward_A_02_17_2025_16_26': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/MetaData_Flat/ObsReward_A_02_17_2025_16_26_processed_meta.json'), 'ObsReward_B_03_17_2025_10_44': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/MetaData_Flat/ObsReward_B_03_17_2025_10_44_processed_meta.json'), 'ObsReward_B_01_20_2025_16_51': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/MetaData_Flat/ObsReward_B_01_20_2025_16_51_processed_meta.json'), 'ObsReward_B_02_09_2025_13_10': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/MetaData_Flat/ObsReward_B_02_09_2025_13_10_processed_meta.json'), 'ObsReward_B_02_09_2025_11_00': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/MetaData_Flat/ObsReward_B_02_09_2025_11_00_processed_meta.json'), 'ObsReward_B_02_17_2025_14_48': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/MetaData_Flat/ObsReward_B_02_17_2025_14_48_processed_meta.json'), 'ObsReward_A_02_01_2025_17_04': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/MetaData_Flat/ObsReward_A_02_01_2025_17_04_processed_meta.json'), 'ObsReward_B_02_05_2025_13_59': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/MetaData_Flat/ObsReward_B_02_05_2025_13_59_processed_meta.json'), 'ObsReward_B_01_20_2025_14_08': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/MetaData_Flat/ObsReward_B_01_20_2025_14_08_processed_meta.json'), 'ObsReward_B_01_26_2025_13_12': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/MetaData_Flat/ObsReward_B_01_26_2025_13_12_processed_meta.json'), 'ObsReward_A_02_01_2025_16_40': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/MetaData_Flat/ObsReward_A_02_01_2025_16_40_processed_meta.json'), 'ObsReward_B_02_17_2025_16_43': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/MetaData_Flat/ObsReward_B_02_17_2025_16_43_processed_meta.json'), 'ObsReward_A_02_19_2025_19_04': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/MetaData_Flat/ObsReward_A_02_19_2025_19_04_processed_meta.json'), 'ObsReward_B_02_17_2025_15_49': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/MetaData_Flat/ObsReward_B_02_17_2025_15_49_processed_meta.json'), 'ObsReward_B_02_12_2025_14_21': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/MetaData_Flat/ObsReward_B_02_12_2025_14_21_processed_meta.json'), 'ObsReward_B_02_09_2025_14_04': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/MetaData_Flat/ObsReward_B_02_09_2025_14_04_processed_meta.json'), 'ObsReward_B_01_20_2025_15_41': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/MetaData_Flat/ObsReward_B_01_20_2025_15_41_processed_meta.json'), 'ObsReward_A_02_12_2025_12_01': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/MetaData_Flat/ObsReward_A_02_12_2025_12_01_processed_meta.json'), 'ObsReward_A_02_05_2025_11_38': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/MetaData_Flat/ObsReward_A_02_05_2025_11_38_processed_meta.json'), 'ObsReward_B_01_26_2025_10_49': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/MetaData_Flat/ObsReward_B_01_26_2025_10_49_processed_meta.json'), 'ObsReward_B_02_08_2025_15_18': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/MetaData_Flat/ObsReward_B_02_08_2025_15_18_processed_meta.json'), 'ObsReward_B_02_12_2025_13_38': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/MetaData_Flat/ObsReward_B_02_12_2025_13_38_processed_meta.json'), 'ObsReward_B_01_20_2025_15_12': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/MetaData_Flat/ObsReward_B_01_20_2025_15_12_processed_meta.json'), 'ObsReward_A_01_17_2025_14_34': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/MetaData_Flat/ObsReward_A_01_17_2025_14_34_processed_meta.json'), 'ObsReward_B_03_17_2025_11_15': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/MetaData_Flat/ObsReward_B_03_17_2025_11_15_processed_meta.json'), 'ObsReward_B_01_26_2025_11_46': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/MetaData_Flat/ObsReward_B_01_26_2025_11_46_processed_meta.json'), 'ObsReward_B_02_08_2025_14_14': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/MetaData_Flat/ObsReward_B_02_08_2025_14_14_processed_meta.json'), 'ObsReward_B_02_12_2025_13_20': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/MetaData_Flat/ObsReward_B_02_12_2025_13_20_processed_meta.json'), 'ObsReward_B_02_05_2025_13_07': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/MetaData_Flat/ObsReward_B_02_05_2025_13_07_processed_meta.json'), 'ObsReward_B_03_06_2025_11_35': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/MetaData_Flat/ObsReward_B_03_06_2025_11_35_processed_meta.json'), 'ObsReward_A_03_17_2025_10_30': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/MetaData_Flat/ObsReward_A_03_17_2025_10_30_processed_meta.json'), 'ObsReward_A_02_01_2025_17_14': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/MetaData_Flat/ObsReward_A_02_01_2025_17_14_processed_meta.json'), 'ObsReward_B_03_17_2025_13_48': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/MetaData_Flat/ObsReward_B_03_17_2025_13_48_processed_meta.json'), 'ObsReward_A_02_09_2025_12_38': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/MetaData_Flat/ObsReward_A_02_09_2025_12_38_processed_meta.json'), 'ObsReward_A_02_19_2025_18_14': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/MetaData_Flat/ObsReward_A_02_19_2025_18_14_processed_meta.json'), 'ObsReward_B_02_12_2025_12_29': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/MetaData_Flat/ObsReward_B_02_12_2025_12_29_processed_meta.json'), 'ObsReward_A_01_25_2025_17_07': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/MetaData_Flat/ObsReward_A_01_25_2025_17_07_processed_meta.json'), 'ObsReward_B_03_17_2025_14_00': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/MetaData_Flat/ObsReward_B_03_17_2025_14_00_processed_meta.json'), 'ObsReward_B_01_17_2025_14_06': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/MetaData_Flat/ObsReward_B_01_17_2025_14_06_processed_meta.json'), 'ObsReward_A_02_05_2025_13_35': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/MetaData_Flat/ObsReward_A_02_05_2025_13_35_processed_meta.json'), 'ObsReward_B_02_19_2025_16_24': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/MetaData_Flat/ObsReward_B_02_19_2025_16_24_processed_meta.json'), 'ObsReward_B_02_17_2025_16_51': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/MetaData_Flat/ObsReward_B_02_17_2025_16_51_processed_meta.json')}
+{'ObsReward_A_03_17_2025_13_48_': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/Events_Flat_csv/ObsReward_A_03_17_2025_13_48_processed_events.csv'), 'ObsReward_A_02_05_2025_13_07_': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/Events_Flat_csv/ObsReward_A_02_05_2025_13_07_processed_events.csv'), 'ObsReward_A_02_08_2025_14_14_': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/Events_Flat_csv/ObsReward_A_02_08_2025_14_14_processed_events.csv'), 'ObsReward_B_02_08_2025_14_14_': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/Events_Flat_csv/ObsReward_B_02_08_2025_14_14_processed_events.csv'), 'ObsReward_B_02_05_2025_13_07_': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/Events_Flat_csv/ObsReward_B_02_05_2025_13_07_processed_events.csv'), 'ObsReward_B_03_17_2025_13_48_': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/Events_Flat_csv/ObsReward_B_03_17_2025_13_48_processed_events.csv'), 'ObsReward_A_01_25_2025_17_27_': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/Events_Flat_csv/ObsReward_A_01_25_2025_17_27_processed_events.csv'), 'ObsReward_A_02_05_2025_13_35_': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/Events_Flat_csv/ObsReward_A_02_05_2025_13_35_processed_events.csv'), 'ObsReward_B_02_19_2025_16_24_': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/Events_Flat_csv/ObsReward_B_02_19_2025_16_24_processed_events.csv'), 'ObsReward_B_02_01_2025_17_04_': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/Events_Flat_csv/ObsReward_B_02_01_2025_17_04_processed_events.csv'), 'ObsReward_B_01_26_2025_10_49_': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/Events_Flat_csv/ObsReward_B_01_26_2025_10_49_processed_events.csv'), 'ObsReward_B_02_17_2025_14_48_': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/Events_Flat_csv/ObsReward_B_02_17_2025_14_48_processed_events.csv'), 'ObsReward_A_02_19_2025_18_14_': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/Events_Flat_csv/ObsReward_A_02_19_2025_18_14_processed_events.csv'), 'ObsReward_B_02_19_2025_18_14_': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/Events_Flat_csv/ObsReward_B_02_19_2025_18_14_processed_events.csv'), 'ObsReward_A_01_26_2025_10_49_': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/Events_Flat_csv/ObsReward_A_01_26_2025_10_49_processed_events.csv'), 'ObsReward_A_02_01_2025_17_04_': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/Events_Flat_csv/ObsReward_A_02_01_2025_17_04_processed_events.csv'), 'ObsReward_A_02_19_2025_16_24_': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/Events_Flat_csv/ObsReward_A_02_19_2025_16_24_processed_events.csv'), 'ObsReward_A_02_17_2025_14_48_': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/Events_Flat_csv/ObsReward_A_02_17_2025_14_48_processed_events.csv'), 'ObsReward_B_01_25_2025_17_27_': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/Events_Flat_csv/ObsReward_B_01_25_2025_17_27_processed_events.csv'), 'ObsReward_B_02_05_2025_13_35_': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/Events_Flat_csv/ObsReward_B_02_05_2025_13_35_processed_events.csv'), 'ObsReward_B_01_26_2025_11_56_': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/Events_Flat_csv/ObsReward_B_01_26_2025_11_56_processed_events.csv'), 'ObsReward_A_03_17_2025_10_30_': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/Events_Flat_csv/ObsReward_A_03_17_2025_10_30_processed_events.csv'), 'ObsReward_A_02_19_2025_17_47_': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/Events_Flat_csv/ObsReward_A_02_19_2025_17_47_processed_events.csv'), 'ObsReward_B_02_19_2025_17_47_': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/Events_Flat_csv/ObsReward_B_02_19_2025_17_47_processed_events.csv'), 'ObsReward_B_03_17_2025_10_30_': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/Events_Flat_csv/ObsReward_B_03_17_2025_10_30_processed_events.csv'), 'ObsReward_A_01_26_2025_11_56_': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/Events_Flat_csv/ObsReward_A_01_26_2025_11_56_processed_events.csv'), 'ObsReward_B_02_09_2025_10_41_': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/Events_Flat_csv/ObsReward_B_02_09_2025_10_41_processed_events.csv'), 'ObsReward_B_02_19_2025_19_04_': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/Events_Flat_csv/ObsReward_B_02_19_2025_19_04_processed_events.csv'), 'ObsReward_B_01_25_2025_17_07_': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/Events_Flat_csv/ObsReward_B_01_25_2025_17_07_processed_events.csv'), 'ObsReward_A_01_25_2025_17_07_': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/Events_Flat_csv/ObsReward_A_01_25_2025_17_07_processed_events.csv'), 'ObsReward_A_02_19_2025_19_04_': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/Events_Flat_csv/ObsReward_A_02_19_2025_19_04_processed_events.csv'), 'ObsReward_A_02_09_2025_10_41_': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/Events_Flat_csv/ObsReward_A_02_09_2025_10_41_processed_events.csv'), 'ObsReward_A_01_20_2025_15_41_': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/Events_Flat_csv/ObsReward_A_01_20_2025_15_41_processed_events.csv'), 'ObsReward_A_01_20_2025_14_08_': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/Events_Flat_csv/ObsReward_A_01_20_2025_14_08_processed_events.csv'), 'ObsReward_B_02_09_2025_14_04_': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/Events_Flat_csv/ObsReward_B_02_09_2025_14_04_processed_events.csv'), 'ObsReward_B_01_20_2025_14_08_': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/Events_Flat_csv/ObsReward_B_01_20_2025_14_08_processed_events.csv'), 'ObsReward_A_02_09_2025_14_04_': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/Events_Flat_csv/ObsReward_A_02_09_2025_14_04_processed_events.csv'), 'ObsReward_B_01_20_2025_15_41_': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/Events_Flat_csv/ObsReward_B_01_20_2025_15_41_processed_events.csv'), 'ObsReward_B_02_08_2025_15_18_': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/Events_Flat_csv/ObsReward_B_02_08_2025_15_18_processed_events.csv'), 'ObsReward_B_03_17_2025_14_09_': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/Events_Flat_csv/ObsReward_B_03_17_2025_14_09_processed_events.csv'), 'ObsReward_A_02_08_2025_14_54_': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/Events_Flat_csv/ObsReward_A_02_08_2025_14_54_processed_events.csv'), 'ObsReward_A_02_12_2025_12_01_': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/Events_Flat_csv/ObsReward_A_02_12_2025_12_01_processed_events.csv'), 'ObsReward_B_02_12_2025_12_01_': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/Events_Flat_csv/ObsReward_B_02_12_2025_12_01_processed_events.csv'), 'ObsReward_B_02_08_2025_14_54_': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/Events_Flat_csv/ObsReward_B_02_08_2025_14_54_processed_events.csv'), 'ObsReward_A_02_08_2025_15_18_': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/Events_Flat_csv/ObsReward_A_02_08_2025_15_18_processed_events.csv'), 'ObsReward_A_03_17_2025_14_09_': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/Events_Flat_csv/ObsReward_A_03_17_2025_14_09_processed_events.csv'), 'ObsReward_B_02_05_2025_11_38_': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/Events_Flat_csv/ObsReward_B_02_05_2025_11_38_processed_events.csv'), 'ObsReward_A_02_05_2025_11_38_': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/Events_Flat_csv/ObsReward_A_02_05_2025_11_38_processed_events.csv'), 'ObsReward_B_01_20_2025_15_12_': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/Events_Flat_csv/ObsReward_B_01_20_2025_15_12_processed_events.csv'), 'ObsReward_A_01_26_2025_12_37_': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/Events_Flat_csv/ObsReward_A_01_26_2025_12_37_processed_events.csv'), 'ObsReward_B_01_26_2025_12_37_': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/Events_Flat_csv/ObsReward_B_01_26_2025_12_37_processed_events.csv'), 'ObsReward_A_01_20_2025_15_12_': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/Events_Flat_csv/ObsReward_A_01_20_2025_15_12_processed_events.csv'), 'ObsReward_B_02_05_2025_13_59_': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/Events_Flat_csv/ObsReward_B_02_05_2025_13_59_processed_events.csv'), 'ObsReward_B_02_01_2025_17_14_': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/Events_Flat_csv/ObsReward_B_02_01_2025_17_14_processed_events.csv'), 'ObsReward_B_02_17_2025_15_11_': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/Events_Flat_csv/ObsReward_B_02_17_2025_15_11_processed_events.csv'), 'ObsReward_A_02_09_2025_11_00_': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/Events_Flat_csv/ObsReward_A_02_09_2025_11_00_processed_events.csv'), 'ObsReward_B_02_09_2025_11_00_': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/Events_Flat_csv/ObsReward_B_02_09_2025_11_00_processed_events.csv'), 'ObsReward_A_02_17_2025_15_11_': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/Events_Flat_csv/ObsReward_A_02_17_2025_15_11_processed_events.csv'), 'ObsReward_A_02_01_2025_17_14_': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/Events_Flat_csv/ObsReward_A_02_01_2025_17_14_processed_events.csv'), 'ObsReward_A_02_05_2025_13_59_': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/Events_Flat_csv/ObsReward_A_02_05_2025_13_59_processed_events.csv'), 'ObsReward_A_01_20_2025_16_07_': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/Events_Flat_csv/ObsReward_A_01_20_2025_16_07_processed_events.csv'), 'ObsReward_A_02_12_2025_13_20_': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/Events_Flat_csv/ObsReward_A_02_12_2025_13_20_processed_events.csv'), 'ObsReward_B_02_12_2025_14_21_': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/Events_Flat_csv/ObsReward_B_02_12_2025_14_21_processed_events.csv'), 'ObsReward_A_02_17_2025_16_43_': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/Events_Flat_csv/ObsReward_A_02_17_2025_16_43_processed_events.csv'), 'ObsReward_A_03_17_2025_10_44_': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/Events_Flat_csv/ObsReward_A_03_17_2025_10_44_processed_events.csv'), 'ObsReward_B_02_17_2025_16_43_': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/Events_Flat_csv/ObsReward_B_02_17_2025_16_43_processed_events.csv'), 'ObsReward_B_03_17_2025_10_44_': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/Events_Flat_csv/ObsReward_B_03_17_2025_10_44_processed_events.csv'), 'ObsReward_B_02_12_2025_13_20_': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/Events_Flat_csv/ObsReward_B_02_12_2025_13_20_processed_events.csv'), 'ObsReward_A_02_12_2025_14_21_': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/Events_Flat_csv/ObsReward_A_02_12_2025_14_21_processed_events.csv'), 'ObsReward_B_01_20_2025_16_07_': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/Events_Flat_csv/ObsReward_B_01_20_2025_16_07_processed_events.csv'), 'ObsReward_B_02_17_2025_16_51_': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/Events_Flat_csv/ObsReward_B_02_17_2025_16_51_processed_events.csv'), 'ObsReward_A_01_26_2025_15_51_': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/Events_Flat_csv/ObsReward_A_01_26_2025_15_51_processed_events.csv'), 'ObsReward_A_03_06_2025_10_01_': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/Events_Flat_csv/ObsReward_A_03_06_2025_10_01_processed_events.csv'), 'ObsReward_B_02_01_2025_17_48_': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/Events_Flat_csv/ObsReward_B_02_01_2025_17_48_processed_events.csv'), 'ObsReward_B_02_01_2025_16_40_': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/Events_Flat_csv/ObsReward_B_02_01_2025_16_40_processed_events.csv'), 'ObsReward_A_01_20_2025_16_51_': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/Events_Flat_csv/ObsReward_A_01_20_2025_16_51_processed_events.csv'), 'ObsReward_A_02_05_2025_11_55_': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/Events_Flat_csv/ObsReward_A_02_05_2025_11_55_processed_events.csv'), 'ObsReward_B_02_05_2025_11_55_': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/Events_Flat_csv/ObsReward_B_02_05_2025_11_55_processed_events.csv'), 'ObsReward_B_01_20_2025_16_51_': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/Events_Flat_csv/ObsReward_B_01_20_2025_16_51_processed_events.csv'), 'ObsReward_A_02_01_2025_16_40_': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/Events_Flat_csv/ObsReward_A_02_01_2025_16_40_processed_events.csv'), 'ObsReward_A_02_01_2025_17_48_': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/Events_Flat_csv/ObsReward_A_02_01_2025_17_48_processed_events.csv'), 'ObsReward_B_03_06_2025_10_01_': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/Events_Flat_csv/ObsReward_B_03_06_2025_10_01_processed_events.csv'), 'ObsReward_B_01_26_2025_15_51_': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/Events_Flat_csv/ObsReward_B_01_26_2025_15_51_processed_events.csv'), 'ObsReward_A_02_17_2025_16_51_': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/Events_Flat_csv/ObsReward_A_02_17_2025_16_51_processed_events.csv'), 'ObsReward_B_01_20_2025_15_03_': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/Events_Flat_csv/ObsReward_B_01_20_2025_15_03_processed_events.csv'), 'ObsReward_A_03_17_2025_14_00_': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/Events_Flat_csv/ObsReward_A_03_17_2025_14_00_processed_events.csv'), 'ObsReward_B_01_26_2025_11_46_': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/Events_Flat_csv/ObsReward_B_01_26_2025_11_46_processed_events.csv'), 'ObsReward_B_03_17_2025_11_15_': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/Events_Flat_csv/ObsReward_B_03_17_2025_11_15_processed_events.csv'), 'ObsReward_B_02_12_2025_13_38_': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/Events_Flat_csv/ObsReward_B_02_12_2025_13_38_processed_events.csv'), 'ObsReward_A_01_26_2025_11_46_': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/Events_Flat_csv/ObsReward_A_01_26_2025_11_46_processed_events.csv'), 'ObsReward_A_02_12_2025_13_38_': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/Events_Flat_csv/ObsReward_A_02_12_2025_13_38_processed_events.csv'), 'ObsReward_A_03_17_2025_11_15_': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/Events_Flat_csv/ObsReward_A_03_17_2025_11_15_processed_events.csv'), 'ObsReward_A_01_20_2025_15_03_': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/Events_Flat_csv/ObsReward_A_01_20_2025_15_03_processed_events.csv'), 'ObsReward_B_03_17_2025_14_00_': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/Events_Flat_csv/ObsReward_B_03_17_2025_14_00_processed_events.csv'), 'ObsReward_B_03_17_2025_15_50_': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/Events_Flat_csv/ObsReward_B_03_17_2025_15_50_processed_events.csv'), 'ObsReward_A_02_12_2025_12_29_': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/Events_Flat_csv/ObsReward_A_02_12_2025_12_29_processed_events.csv'), 'ObsReward_A_01_17_2025_14_06_': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/Events_Flat_csv/ObsReward_A_01_17_2025_14_06_processed_events.csv'), 'ObsReward_B_02_08_2025_15_08_': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/Events_Flat_csv/ObsReward_B_02_08_2025_15_08_processed_events.csv'), 'ObsReward_B_02_09_2025_12_53_': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/Events_Flat_csv/ObsReward_B_02_09_2025_12_53_processed_events.csv'), 'ObsReward_A_02_08_2025_15_08_': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/Events_Flat_csv/ObsReward_A_02_08_2025_15_08_processed_events.csv'), 'ObsReward_A_02_09_2025_12_53_': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/Events_Flat_csv/ObsReward_A_02_09_2025_12_53_processed_events.csv'), 'ObsReward_B_02_12_2025_12_29_': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/Events_Flat_csv/ObsReward_B_02_12_2025_12_29_processed_events.csv'), 'ObsReward_A_03_17_2025_15_50_': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/Events_Flat_csv/ObsReward_A_03_17_2025_15_50_processed_events.csv'), 'ObsReward_B_01_17_2025_14_06_': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/Events_Flat_csv/ObsReward_B_01_17_2025_14_06_processed_events.csv'), 'ObsReward_B_02_19_2025_18_00_': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/Events_Flat_csv/ObsReward_B_02_19_2025_18_00_processed_events.csv'), 'ObsReward_A_01_26_2025_16_28_': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/Events_Flat_csv/ObsReward_A_01_26_2025_16_28_processed_events.csv'), 'ObsReward_A_01_20_2025_14_20_': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/Events_Flat_csv/ObsReward_A_01_20_2025_14_20_processed_events.csv'), 'ObsReward_B_02_09_2025_13_10_': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/Events_Flat_csv/ObsReward_B_02_09_2025_13_10_processed_events.csv'), 'ObsReward_A_02_08_2025_13_33_': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/Events_Flat_csv/ObsReward_A_02_08_2025_13_33_processed_events.csv'), 'ObsReward_A_03_17_2025_14_16_': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/Events_Flat_csv/ObsReward_A_03_17_2025_14_16_processed_events.csv'), 'ObsReward_A_01_17_2025_14_34_': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/Events_Flat_csv/ObsReward_A_01_17_2025_14_34_processed_events.csv'), 'ObsReward_B_01_17_2025_14_34_': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/Events_Flat_csv/ObsReward_B_01_17_2025_14_34_processed_events.csv'), 'ObsReward_B_03_17_2025_14_16_': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/Events_Flat_csv/ObsReward_B_03_17_2025_14_16_processed_events.csv'), 'ObsReward_B_01_20_2025_14_20_': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/Events_Flat_csv/ObsReward_B_01_20_2025_14_20_processed_events.csv'), 'ObsReward_B_02_08_2025_13_33_': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/Events_Flat_csv/ObsReward_B_02_08_2025_13_33_processed_events.csv'), 'ObsReward_A_02_09_2025_13_10_': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/Events_Flat_csv/ObsReward_A_02_09_2025_13_10_processed_events.csv'), 'ObsReward_A_02_19_2025_18_00_': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/Events_Flat_csv/ObsReward_A_02_19_2025_18_00_processed_events.csv'), 'ObsReward_B_01_26_2025_16_28_': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/Events_Flat_csv/ObsReward_B_01_26_2025_16_28_processed_events.csv'), 'ObsReward_B_01_26_2025_13_12_': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/Events_Flat_csv/ObsReward_B_01_26_2025_13_12_processed_events.csv'), 'ObsReward_A_01_25_2025_17_58_': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/Events_Flat_csv/ObsReward_A_01_25_2025_17_58_processed_events.csv'), 'ObsReward_A_02_17_2025_16_26_': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/Events_Flat_csv/ObsReward_A_02_17_2025_16_26_processed_events.csv'), 'ObsReward_B_02_17_2025_16_26_': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/Events_Flat_csv/ObsReward_B_02_17_2025_16_26_processed_events.csv'), 'ObsReward_B_01_25_2025_17_58_': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/Events_Flat_csv/ObsReward_B_01_25_2025_17_58_processed_events.csv'), 'ObsReward_A_01_26_2025_13_12_': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/Events_Flat_csv/ObsReward_A_01_26_2025_13_12_processed_events.csv'), 'ObsReward_A_02_17_2025_15_49_': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/Events_Flat_csv/ObsReward_A_02_17_2025_15_49_processed_events.csv'), 'ObsReward_A_02_09_2025_12_38_': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/Events_Flat_csv/ObsReward_A_02_09_2025_12_38_processed_events.csv'), 'ObsReward_B_03_06_2025_11_35_': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/Events_Flat_csv/ObsReward_B_03_06_2025_11_35_processed_events.csv'), 'ObsReward_B_02_17_2025_15_49_': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/Events_Flat_csv/ObsReward_B_02_17_2025_15_49_processed_events.csv'), 'ObsReward_A_03_06_2025_11_35_': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/Events_Flat_csv/ObsReward_A_03_06_2025_11_35_processed_events.csv'), 'ObsReward_B_02_09_2025_12_38_': PosixPath('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/Events_Flat_csv/ObsReward_B_02_09_2025_12_38_processed_events.csv')}
+🔍 Found 0 matched file pairs to process.
+✅ justFlatten.py completed at Mon Sep  8 22:57:01 PDT 2025
+✨ done ✨
+🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭
+
+🚀 Starting justFlatten.py  at Mon Sep  8 22:57:50 PDT 2025
+✅ justFlatten.py completed at Mon Sep  8 22:57:51 PDT 2025
+✨ done ✨
+🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭
+
+🚀 Starting justFlatten.py  at Mon Sep  8 23:02:11 PDT 2025
+✅ justFlatten.py completed at Mon Sep  8 23:02:29 PDT 2025
+✨ done ✨
+🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷
+
+🚀 Starting add_coin_labels_from_collated.py  at Mon Sep  8 23:46:06 PDT 2025
+🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷
+
+🚀 Starting add_coin_labels_from_collated.py  at Mon Sep  8 23:48:38 PDT 2025
+🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷
+
+🚀 Starting add_coin_labels_from_collated.py  at Mon Sep  8 23:49:16 PDT 2025
+🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷
+
+🚀 Starting add_coin_labels_from_collated.py  at Mon Sep  8 23:50:56 PDT 2025
+🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷
+
+🚀 Starting add_coin_labels_from_collated.py  at Mon Sep  8 23:52:48 PDT 2025
+✅ add_coin_labels_from_collated.py completed at Mon Sep  8 23:52:55 PDT 2025
+🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️
+
+🚀 Starting computeWalks.py  at Mon Sep  8 23:52:55 PDT 2025
+✅ computeWalks.py completed at Mon Sep  8 23:52:56 PDT 2025
+✨ done ✨
+🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷
+
+🚀 Starting add_coin_labels_from_collated.py  at Mon Sep  8 23:54:23 PDT 2025
+✅ add_coin_labels_from_collated.py completed at Mon Sep  8 23:54:30 PDT 2025
+🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️
+
+🚀 Starting computeWalks.py  at Mon Sep  8 23:54:30 PDT 2025
+✅ computeWalks.py completed at Mon Sep  8 23:54:30 PDT 2025
+✨ done ✨
+🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷
+
+🚀 Starting add_coin_labels_from_collated.py  at Mon Sep  8 23:58:45 PDT 2025
+✅ add_coin_labels_from_collated.py completed at Mon Sep  8 23:58:52 PDT 2025
+🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️
+
+🚀 Starting computeWalks.py  at Mon Sep  8 23:58:52 PDT 2025
+✅ computeWalks.py completed at Mon Sep  8 23:59:03 PDT 2025
+✨ done ✨
+🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆
+
+🚀 Starting mergeWalks.py  at Tue Sep  9 00:13:38 PDT 2025
+🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆
+
+🚀 Starting mergeWalks.py  at Tue Sep  9 00:14:09 PDT 2025
+🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆
+
+🚀 Starting mergeWalks.py  at Tue Sep  9 00:14:55 PDT 2025
+✅ mergeWalks.py completed at Tue Sep  9 00:14:55 PDT 2025
+✨ done ✨
+🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆
+
+🚀 Starting mergeWalks.py  at Tue Sep  9 00:17:34 PDT 2025
+✅ mergeWalks.py completed at Tue Sep  9 00:17:34 PDT 2025
+✨ done ✨
+🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆
+
+🚀 Starting mergeWalks.py  at Tue Sep  9 00:18:39 PDT 2025
+✅ mergeWalks.py completed at Tue Sep  9 00:18:40 PDT 2025
+✨ done ✨
+🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆
+
+🚀 Starting mergeWalks.py  at Tue Sep  9 00:20:13 PDT 2025
+✅ mergeWalks.py completed at Tue Sep  9 00:20:14 PDT 2025
+✨ done ✨
+🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆
+
+🚀 Starting mergeWalks.py  at Tue Sep  9 00:24:15 PDT 2025
+🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆
+
+🚀 Starting mergeWalks.py  at Tue Sep  9 00:24:56 PDT 2025
+✅ mergeWalks.py completed at Tue Sep  9 00:24:58 PDT 2025
+✨ done ✨
+🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆
+
+🚀 Starting mergeWalks.py  at Tue Sep  9 00:26:33 PDT 2025
+✅ mergeWalks.py completed at Tue Sep  9 00:26:34 PDT 2025
+✨ done ✨
+🦦🦦🦦🦦🦦🦦🦦🦦🦦🦦🦦🦦🦦🦦🦦🦦🦦🦦🦦🦦🦦🦦🦦🦦
+
+🚀 Starting getPositionsAndElapsedTime.py for NO WALKS at Tue Sep  9 00:30:30 PDT 2025
+✅ getPositionsAndElapsedTime.py for NO WALKS completed at Tue Sep  9 00:30:31 PDT 2025
+🐧🐧🐧🐧🐧🐧🐧🐧🐧🐧🐧🐧🐧🐧🐧🐧🐧🐧🐧🐧🐧🐧🐧🐧
+
+🚀 Starting getPositionsAndElapsedTime.py for WALKS at Tue Sep  9 00:30:31 PDT 2025
+✅ getPositionsAndElapsedTime.py for WALKS completed at Tue Sep  9 00:31:00 PDT 2025
+✨ done ✨
+🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷
+
+🚀 Starting add_coin_labels_from_collated.py  at Tue Sep  9 10:53:23 PDT 2025
+🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷
+
+🚀 Starting add_coin_labels_from_collated.py  at Tue Sep  9 10:54:22 PDT 2025
+✅ add_coin_labels_from_collated.py completed at Tue Sep  9 10:54:29 PDT 2025
+✨ done ✨
+🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷
+
+🚀 Starting add_coin_labels_from_collated.py  at Tue Sep  9 10:57:40 PDT 2025
+✅ add_coin_labels_from_collated.py completed at Tue Sep  9 10:57:48 PDT 2025
+✨ done ✨
+🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷
+
+🚀 Starting add_coin_labels_from_collated.py  at Tue Sep  9 11:00:33 PDT 2025
+✅ add_coin_labels_from_collated.py completed at Tue Sep  9 11:00:40 PDT 2025
+✨ done ✨
+🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷
+
+🚀 Starting add_coin_labels_from_collated.py  at Tue Sep  9 11:01:52 PDT 2025
+✅ add_coin_labels_from_collated.py completed at Tue Sep  9 11:02:03 PDT 2025
+✨ done ✨
+🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷
+
+🚀 Starting add_coin_labels_from_collated.py  at Tue Sep  9 11:04:05 PDT 2025
+✅ add_coin_labels_from_collated.py completed at Tue Sep  9 11:04:18 PDT 2025
+✨ done ✨
+🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷
+
+🚀 Starting add_coin_labels_from_collated.py  at Tue Sep  9 11:10:49 PDT 2025
+✅ add_coin_labels_from_collated.py completed at Tue Sep  9 11:10:59 PDT 2025
+✨ done ✨
+🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷
+
+🚀 Starting add_coin_labels_from_collated.py  at Tue Sep  9 11:15:03 PDT 2025
+✅ add_coin_labels_from_collated.py completed at Tue Sep  9 11:15:12 PDT 2025
+✨ done ✨
+🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷
+
+🚀 Starting add_coin_labels_from_collated.py  at Tue Sep  9 11:18:35 PDT 2025
+✅ add_coin_labels_from_collated.py completed at Tue Sep  9 11:18:43 PDT 2025
+✨ done ✨
+🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷
+
+🚀 Starting add_coin_labels_from_collated.py  at Tue Sep  9 11:21:40 PDT 2025
+✅ add_coin_labels_from_collated.py completed at Tue Sep  9 11:21:49 PDT 2025
+✨ done ✨
+🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷
+
+🚀 Starting add_coin_labels_from_collated.py  at Tue Sep  9 11:27:02 PDT 2025
+🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷
+
+🚀 Starting add_coin_labels_from_collated.py  at Tue Sep  9 11:27:36 PDT 2025
+🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷
+
+🚀 Starting add_coin_labels_from_collated.py  at Tue Sep  9 11:28:42 PDT 2025
+🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷
+
+🚀 Starting add_coin_labels_from_collated.py  at Tue Sep  9 11:29:33 PDT 2025
+✅ add_coin_labels_from_collated.py completed at Tue Sep  9 11:29:42 PDT 2025
+✨ done ✨
+🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷
+
+🚀 Starting add_coin_labels_from_collated.py  at Tue Sep  9 11:31:13 PDT 2025
+🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷
+
+🚀 Starting add_coin_labels_from_collated.py  at Tue Sep  9 11:32:03 PDT 2025
+✅ add_coin_labels_from_collated.py completed at Tue Sep  9 11:32:12 PDT 2025
+✨ done ✨
+🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷
+
+🚀 Starting add_coin_labels_from_collated.py  at Tue Sep  9 11:32:51 PDT 2025
+✅ add_coin_labels_from_collated.py completed at Tue Sep  9 11:32:59 PDT 2025
+✨ done ✨
+🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷
+
+🚀 Starting add_coin_labels_from_collated.py  at Tue Sep  9 11:33:42 PDT 2025
+✅ add_coin_labels_from_collated.py completed at Tue Sep  9 11:33:51 PDT 2025
+✨ done ✨
+🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷
+
+🚀 Starting add_coin_labels_from_collated.py  at Tue Sep  9 11:36:20 PDT 2025
+🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷
+
+🚀 Starting add_coin_labels_from_collated.py  at Tue Sep  9 11:37:12 PDT 2025
+✅ add_coin_labels_from_collated.py completed at Tue Sep  9 11:37:21 PDT 2025
+✨ done ✨
+🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷
+
+🚀 Starting add_coin_labels_from_collated.py  at Tue Sep  9 11:38:25 PDT 2025
+✅ add_coin_labels_from_collated.py completed at Tue Sep  9 11:38:34 PDT 2025
+✨ done ✨
+🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷
+
+🚀 Starting add_coin_labels_from_collated.py  at Tue Sep  9 11:47:01 PDT 2025
+✅ add_coin_labels_from_collated.py completed at Tue Sep  9 11:47:10 PDT 2025
+✨ done ✨
+🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷
+
+🚀 Starting add_coin_labels_from_collated.py  at Tue Sep  9 11:51:27 PDT 2025
+✅ add_coin_labels_from_collated.py completed at Tue Sep  9 11:51:36 PDT 2025
+✨ done ✨
+🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷
+
+🚀 Starting add_coin_labels_from_collated.py  at Tue Sep  9 11:52:06 PDT 2025
+✅ add_coin_labels_from_collated.py completed at Tue Sep  9 11:52:14 PDT 2025
+✨ done ✨
+🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷
+
+🚀 Starting add_coin_labels_from_collated.py  at Tue Sep  9 11:53:15 PDT 2025
+✅ add_coin_labels_from_collated.py completed at Tue Sep  9 11:53:24 PDT 2025
+✨ done ✨
+🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷
+
+🚀 Starting add_coin_labels_from_collated.py  at Tue Sep  9 11:54:23 PDT 2025
+🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷
+
+🚀 Starting add_coin_labels_from_collated.py  at Tue Sep  9 11:55:29 PDT 2025
+✅ add_coin_labels_from_collated.py completed at Tue Sep  9 11:55:37 PDT 2025
+✨ done ✨
+🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷
+
+🚀 Starting add_coin_labels_from_collated.py  at Tue Sep  9 11:58:55 PDT 2025
+🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷
+
+🚀 Starting add_coin_labels_from_collated.py  at Tue Sep  9 11:59:44 PDT 2025
+✅ add_coin_labels_from_collated.py completed at Tue Sep  9 11:59:52 PDT 2025
+✨ done ✨
+🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷
+
+🚀 Starting add_coin_labels_from_collated.py  at Tue Sep  9 12:00:47 PDT 2025
+✅ add_coin_labels_from_collated.py completed at Tue Sep  9 12:00:56 PDT 2025
+✨ done ✨
+🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷
+
+🚀 Starting add_coin_labels_from_collated.py  at Tue Sep  9 12:02:08 PDT 2025
+✅ add_coin_labels_from_collated.py completed at Tue Sep  9 12:02:38 PDT 2025
+✨ done ✨
+🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷
+
+🚀 Starting add_coin_labels_from_collated.py  at Tue Sep  9 12:07:27 PDT 2025
+✅ add_coin_labels_from_collated.py completed at Tue Sep  9 12:07:38 PDT 2025
+✨ done ✨
+🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷
+
+🚀 Starting add_coin_labels_from_collated.py  at Tue Sep  9 12:09:06 PDT 2025
+🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷
+
+🚀 Starting add_coin_labels_from_collated.py  at Tue Sep  9 12:09:31 PDT 2025
+✅ add_coin_labels_from_collated.py completed at Tue Sep  9 12:09:40 PDT 2025
+✨ done ✨
+🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️
+
+🚀 Starting computeWalks.py  at Tue Sep  9 12:10:48 PDT 2025
+✅ computeWalks.py completed at Tue Sep  9 12:10:59 PDT 2025
+🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆
+
+🚀 Starting mergeWalks.py  at Tue Sep  9 12:10:59 PDT 2025
+✅ mergeWalks.py completed at Tue Sep  9 12:11:00 PDT 2025
+🦦🦦🦦🦦🦦🦦🦦🦦🦦🦦🦦🦦🦦🦦🦦🦦🦦🦦🦦🦦🦦🦦🦦🦦
+
+🚀 Starting getPositionsAndElapsedTime.py for NO WALKS at Tue Sep  9 12:11:00 PDT 2025
+✅ getPositionsAndElapsedTime.py for NO WALKS completed at Tue Sep  9 12:12:22 PDT 2025
+🐧🐧🐧🐧🐧🐧🐧🐧🐧🐧🐧🐧🐧🐧🐧🐧🐧🐧🐧🐧🐧🐧🐧🐧
+
+🚀 Starting getPositionsAndElapsedTime.py for WALKS at Tue Sep  9 12:12:22 PDT 2025
+✅ getPositionsAndElapsedTime.py for WALKS completed at Tue Sep  9 12:12:48 PDT 2025
+✨ done ✨
+🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄
+
+🚀 Starting mergeEventsV3.py for PARTICIPANT-ROLE-COINSET at Tue Sep  9 13:29:33 PDT 2025
+🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄
+
+🚀 Starting mergeEventsV3.py for PARTICIPANT-ROLE-COINSET at Tue Sep  9 13:29:47 PDT 2025
+🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄
+
+🚀 Starting mergeEventsV3.py for PARTICIPANT-ROLE-COINSET at Tue Sep  9 13:30:21 PDT 2025
+✅ mergeEventsV3.py for PARTICIPANT-ROLE-COINSET completed at Tue Sep  9 13:30:36 PDT 2025
+✨ done ✨
+🐞🐞🐞🐞🐞🐞🐞🐞🐞🐞🐞🐞🐞🐞🐞🐞🐞🐞🐞🐞🐞🐞🐞🐞🐞
+🚀 Starting preFrontalCortex_unifiedEventSeg.py for AN FULL setting at Tue Sep  9 16:01:56 PDT 2025
+bash: run_overnightDrift.sh: No such file or directory
+✅ preFrontalCortex_unifiedEventSeg.py for AN FULL setting completed at Tue Sep  9 16:35:22 PDT 2025
+🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛
+🚀 Starting preFrontalCortex_unifiedEventSeg.py for PO FULL setting at Tue Sep  9 16:35:22 PDT 2025
+✅ preFrontalCortex_unifiedEventSeg.py for PO FULL setting completed at Tue Sep  9 17:05:36 PDT 2025
+🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭
+
+🚀 Starting justFlatten.py  at Tue Sep  9 17:05:36 PDT 2025
+✅ justFlatten.py completed at Tue Sep  9 17:05:55 PDT 2025
+🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷
+
+🚀 Starting add_coin_labels_from_collated.py  at Tue Sep  9 17:05:55 PDT 2025
+✅ add_coin_labels_from_collated.py completed at Tue Sep  9 17:06:05 PDT 2025
+🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄
+
+🚀 Starting mergeEventsV3.py for PARTICIPANT-ROLE-COINSET at Tue Sep  9 17:06:05 PDT 2025
+✅ mergeEventsV3.py for PARTICIPANT-ROLE-COINSET completed at Tue Sep  9 17:06:12 PDT 2025
+✨ done ✨
+
+CommandNotFoundError: Your shell has not been properly configured to use 'conda activate'.
+To initialize your shell, run
+
+    $ conda init <SHELL_NAME>
+
+Currently supported shells are:
+  - bash
+  - fish
+  - tcsh
+  - xonsh
+  - zsh
+  - powershell
+
+See 'conda init --help' for more information and options.
+
+IMPORTANT: You may need to close and restart your shell after running 'conda init'.
+
+
+🐞🐞🐞🐞🐞🐞🐞🐞🐞🐞🐞🐞🐞🐞🐞🐞🐞🐞🐞🐞🐞🐞🐞🐞🐞
+🚀 Starting preFrontalCortex_unifiedEventSeg.py for AN FULL setting at Fri Sep 12 03:06:18 PDT 2025
+🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝
+🚀 Starting preFrontalCortex_unifiedEventSeg.py for PO GLIA setting at Fri Sep 12 03:07:13 PDT 2025
+💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰
+
+🚀 Starting mergeEventsV3.py for COIN INTERACTIONS at Fri Sep 12 03:09:58 PDT 2025
+💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰
+
+🚀 Starting mergeEventsV3.py for COIN INTERACTIONS at Fri Sep 12 03:10:51 PDT 2025
+💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰
+
+🚀 Starting mergeEventsV3.py for COIN INTERACTIONS at Fri Sep 12 03:11:31 PDT 2025
+💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰
+
+🚀 Starting mergeEventsV3.py for COIN INTERACTIONS at Fri Sep 12 03:13:36 PDT 2025
+💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰
+
+🚀 Starting mergeEventsV3.py for COIN INTERACTIONS at Fri Sep 12 03:21:30 PDT 2025
+python: can't open file '/Users/mairahmac/Desktop/myra_code/Python/RewardCollectors_InputGenerate/preproc/baseline_pipeline/eventAugmentation/extract_pin_drops.py': [Errno 2] No such file or directory
+💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰
+
+🚀 Starting mergeEventsV3.py for COIN INTERACTIONS at Fri Sep 12 03:22:18 PDT 2025
+[ok] Wrote /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/PinDrops_All/PinDrops_ALL.csv
+[ok] Wrote /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/PinDrops_All/PinDrops_LV.csv
+[ok] Wrote /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/PinDrops_All/PinDrops_NV.csv
+[ok] Wrote /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/PinDrops_All/PinDrops_HV.csv
+✅ mergeEventsV3.py for PARTICIPANT ROLE COIN INTERACTIONS completed at Fri Sep 12 03:22:21 PDT 2025
+✨ done ✨
+✅ preFrontalCortex_unifiedEventSeg.py for PO GLIA setting completed at Fri Sep 12 03:22:51 PDT 2025
+🦢🦢🦢🦢🦢🦢🦢🦢🦢🦢🦢🦢🦢🦢🦢🦢🦢🦢🦢🦢🦢🦢🦢
+
+🚀 alignPO2AN_part1.py  at Fri Sep 12 03:22:51 PDT 2025
+✅ alignPO2AN_part1.py  completed at Fri Sep 12 03:25:08 PDT 2025
+🐞🐞🐞🐞🐞🐞🐞🐞🐞🐞🐞🐞🐞🐞🐞🐞🐞🐞🐞🐞🐞🐞🐞🐞🐞
+🚀 Starting preFrontalCortex_unifiedEventSeg.py for AN FULL setting at Fri Sep 12 03:25:08 PDT 2025
+💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰
+
+🚀 Starting mergeEventsV3.py for COIN INTERACTIONS at Fri Sep 12 03:33:09 PDT 2025
+[ok] Wrote /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/PinDrops_All/PinDrops_ALL.csv
+[ok] Wrote /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/PinDrops_All/PinDrops_LV.csv
+[ok] Wrote /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/PinDrops_All/PinDrops_NV.csv
+[ok] Wrote /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/PinDrops_All/PinDrops_HV.csv
+✅ mergeEventsV3.py for PARTICIPANT ROLE COIN INTERACTIONS completed at Fri Sep 12 03:33:12 PDT 2025
+✨ done ✨
+💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰
+
+🚀 Starting mergeEventsV3.py for COIN INTERACTIONS at Fri Sep 12 03:35:44 PDT 2025
+[ok] Wrote /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/PinDrops_All/PinDrops_ALL.csv
+[ok] Wrote /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/PinDrops_All/PinDrops_LV.csv
+[ok] Wrote /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/PinDrops_All/PinDrops_NV.csv
+[ok] Wrote /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/PinDrops_All/PinDrops_HV.csv
+✅ mergeEventsV3.py for PARTICIPANT ROLE COIN INTERACTIONS completed at Fri Sep 12 03:35:47 PDT 2025
+✨ done ✨
+💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰
+
+🚀 Starting mergeEventsV3.py for COIN INTERACTIONS at Fri Sep 12 03:38:01 PDT 2025
+[warn] No files matched /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/Events_Final_NoWalks/*_events_final.csv
+✅ mergeEventsV3.py for PARTICIPANT ROLE COIN INTERACTIONS completed at Fri Sep 12 03:38:02 PDT 2025
+✨ done ✨
+💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰
+
+🚀 Starting mergeEventsV3.py for COIN INTERACTIONS at Fri Sep 12 03:38:35 PDT 2025
+[warn] No files matched /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/Events_Final_NoWalks/*_events_final.csv
+✅ mergeEventsV3.py for PARTICIPANT ROLE COIN INTERACTIONS completed at Fri Sep 12 03:38:35 PDT 2025
+✨ done ✨
+💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰
+
+🚀 Starting mergeEventsV3.py for COIN INTERACTIONS at Fri Sep 12 03:42:29 PDT 2025
+[warn] No files matched /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/Events_Final_NoWalks/*_events_final.csv
+✅ mergeEventsV3.py for PARTICIPANT ROLE COIN INTERACTIONS completed at Fri Sep 12 03:42:29 PDT 2025
+✨ done ✨
+💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰
+
+🚀 Starting mergeEventsV3.py for COIN INTERACTIONS at Fri Sep 12 03:42:41 PDT 2025
+[warn] No files matched /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/Events_Final_NoWalks/*_events_final.csv
+✅ mergeEventsV3.py for PARTICIPANT ROLE COIN INTERACTIONS completed at Fri Sep 12 03:42:42 PDT 2025
+✨ done ✨
+💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰
+
+🚀 Starting mergeEventsV3.py for COIN INTERACTIONS at Fri Sep 12 03:45:53 PDT 2025
+[warn] No files matched /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/Events_Final_NoWalks/*_events_final.csv
+✅ mergeEventsV3.py for PARTICIPANT ROLE COIN INTERACTIONS completed at Fri Sep 12 03:45:54 PDT 2025
+✨ done ✨
+💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰
+
+🚀 Starting mergeEventsV3.py for COIN INTERACTIONS at Fri Sep 12 03:47:10 PDT 2025
+[warn] No files matched /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/Events_Final_NoWalks/*_events_final.csv
+✅ mergeEventsV3.py for PARTICIPANT ROLE COIN INTERACTIONS completed at Fri Sep 12 03:47:11 PDT 2025
+✨ done ✨
+💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰
+
+🚀 Starting mergeEventsV3.py for COIN INTERACTIONS at Fri Sep 12 03:49:27 PDT 2025
+[warn] No files matched /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/Events_Final_NoWalks/*_events_final.csv
+✅ mergeEventsV3.py for PARTICIPANT ROLE COIN INTERACTIONS completed at Fri Sep 12 03:49:27 PDT 2025
+✨ done ✨
+💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰
+
+🚀 Starting mergeEventsV3.py for COIN INTERACTIONS at Fri Sep 12 03:50:39 PDT 2025
+[warn] No files matched /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/augmented/Events_Final_NoWalks/*_events_final.csv
+✅ mergeEventsV3.py for PARTICIPANT ROLE COIN INTERACTIONS completed at Fri Sep 12 03:50:40 PDT 2025
+✨ done ✨
+💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰
+
+🚀 Starting mergeEventsV3.py for COIN INTERACTIONS at Fri Sep 12 03:51:43 PDT 2025
+[warn] No files matched /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/full/Events_Final_NoWalks/augmented/*_events_final.csv
+✅ mergeEventsV3.py for PARTICIPANT ROLE COIN INTERACTIONS completed at Fri Sep 12 03:51:44 PDT 2025
+✨ done ✨
+💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰
+
+🚀 Starting mergeEventsV3.py for COIN INTERACTIONS at Fri Sep 12 03:53:08 PDT 2025
+[warn] No files matched /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/full/Events_Final_NoWalks/augmented/*_events_final.csv
+✅ mergeEventsV3.py for PARTICIPANT ROLE COIN INTERACTIONS completed at Fri Sep 12 03:53:08 PDT 2025
+✨ done ✨
+💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰
+
+🚀 Starting mergeEventsV3.py for COIN INTERACTIONS at Fri Sep 12 03:53:30 PDT 2025
+/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/full/Events_Final_NoWalks/augmented
+[warn] No files matched /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/full/Events_Final_NoWalks/augmented/*_events_final.csv
+✅ mergeEventsV3.py for PARTICIPANT ROLE COIN INTERACTIONS completed at Fri Sep 12 03:53:30 PDT 2025
+✨ done ✨
+💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰
+
+🚀 Starting mergeEventsV3.py for COIN INTERACTIONS at Fri Sep 12 03:55:27 PDT 2025
+/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/Events_Final_NoWalks/augmented
+[ok] Wrote /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/PinDrops_All/PinDrops_ALL.csv
+[ok] Wrote /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/PinDrops_All/PinDrops_LV.csv
+[ok] Wrote /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/PinDrops_All/PinDrops_NV.csv
+[ok] Wrote /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/PinDrops_All/PinDrops_HV.csv
+✅ mergeEventsV3.py for PARTICIPANT ROLE COIN INTERACTIONS completed at Fri Sep 12 03:55:30 PDT 2025
+✨ done ✨
+💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰
+
+🚀 Starting mergeEventsV3.py for COIN INTERACTIONS at Fri Sep 12 03:55:48 PDT 2025
+/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/Events_Final_NoWalks/augmented
+[ok] Wrote /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/PinDrops_All/PinDrops_ALL.csv
+[ok] Wrote /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/PinDrops_All/PinDrops_LV.csv
+[ok] Wrote /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/PinDrops_All/PinDrops_NV.csv
+[ok] Wrote /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/PinDrops_All/PinDrops_HV.csv
+✅ mergeEventsV3.py for PARTICIPANT ROLE COIN INTERACTIONS completed at Fri Sep 12 03:55:51 PDT 2025
+✨ done ✨
+✅ preFrontalCortex_unifiedEventSeg.py for AN FULL setting completed at Fri Sep 12 04:02:17 PDT 2025
+🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛
+🚀 Starting preFrontalCortex_unifiedEventSeg.py for PO FULL setting at Fri Sep 12 04:02:17 PDT 2025
+💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰
+
+🚀 Starting mergeEventsV3.py for COIN INTERACTIONS at Fri Sep 12 04:14:44 PDT 2025
+  File "/Users/mairahmac/Desktop/myra_code/Python/RewardCollectors_InputGenerate/preproc/plotting/extract_pin_drops.py", line 186
+    for coinSet in ["Ax", "Bx", "A", "B", "C", "D"]:
+IndentationError: unexpected indent
+💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰
+
+🚀 Starting mergeEventsV3.py for COIN INTERACTIONS at Fri Sep 12 04:17:05 PDT 2025
+/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/Events_Final_NoWalks/augmented
+[ok] Wrote /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/PinDrops_All/PinDrops_ALL.csv
+[ok] Wrote /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/PinDrops_All/PinDrops_LV.csv
+[ok] Wrote /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/PinDrops_All/PinDrops_LV_A.csv
+[ok] Wrote /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/PinDrops_All/PinDrops_LV_Ax.csv
+[ok] Wrote /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/PinDrops_All/PinDrops_LV_B.csv
+[ok] Wrote /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/PinDrops_All/PinDrops_LV_Bx.csv
+[ok] Wrote /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/PinDrops_All/PinDrops_LV_C.csv
+[ok] Wrote /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/PinDrops_All/PinDrops_LV_D.csv
+[ok] Wrote /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/PinDrops_All/PinDrops_NV.csv
+[ok] Wrote /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/PinDrops_All/PinDrops_NV_A.csv
+[ok] Wrote /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/PinDrops_All/PinDrops_NV_Ax.csv
+[ok] Wrote /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/PinDrops_All/PinDrops_NV_B.csv
+[ok] Wrote /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/PinDrops_All/PinDrops_NV_Bx.csv
+[ok] Wrote /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/PinDrops_All/PinDrops_NV_C.csv
+[ok] Wrote /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/PinDrops_All/PinDrops_NV_D.csv
+[ok] Wrote /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/PinDrops_All/PinDrops_HV.csv
+[ok] Wrote /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/PinDrops_All/PinDrops_HV_A.csv
+[ok] Wrote /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/PinDrops_All/PinDrops_HV_Ax.csv
+[ok] Wrote /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/PinDrops_All/PinDrops_HV_B.csv
+[ok] Wrote /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/PinDrops_All/PinDrops_HV_Bx.csv
+[ok] Wrote /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/PinDrops_All/PinDrops_HV_C.csv
+[ok] Wrote /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/PinDrops_All/PinDrops_HV_D.csv
+✅ mergeEventsV3.py for PARTICIPANT ROLE COIN INTERACTIONS completed at Fri Sep 12 04:17:09 PDT 2025
+✨ done ✨
+✅ preFrontalCortex_unifiedEventSeg.py for PO FULL setting completed at Fri Sep 12 04:32:01 PDT 2025
+🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭
+
+🚀 Starting justFlatten.py  at Fri Sep 12 04:32:01 PDT 2025
+✅ justFlatten.py completed at Fri Sep 12 04:32:21 PDT 2025
+🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷
+
+🚀 Starting add_coin_labels_from_collated.py  at Fri Sep 12 04:32:21 PDT 2025
+✅ add_coin_labels_from_collated.py completed at Fri Sep 12 04:32:30 PDT 2025
+🦦🦦🦦🦦🦦🦦🦦🦦🦦🦦🦦🦦🦦🦦🦦🦦🦦🦦🦦🦦🦦🦦🦦🦦
+
+🚀 Starting getPositionsAndElapsedTime.py for NO WALKS at Fri Sep 12 04:32:30 PDT 2025
+✅ getPositionsAndElapsedTime.py for NO WALKS completed at Fri Sep 12 04:34:02 PDT 2025
+🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄
+
+🚀 Starting mergeEventsV3.py for PARTICIPANT-ROLE-COINSET at Fri Sep 12 04:34:02 PDT 2025
+✅ mergeEventsV3.py for PARTICIPANT-ROLE-COINSET completed at Fri Sep 12 04:34:09 PDT 2025
+💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰
+
+🚀 Starting mergeEventsV3.py for PARTICIPANT ROLE COIN INTERACTIONS at Fri Sep 12 04:34:09 PDT 2025
+💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰
+
+🚀 Starting flexiblePlotByCoinType2 for COIN INTERACTIONS at Fri Sep 12 09:19:44 PDT 2025
+python: can't open file '/Users/mairahmac/Desktop/myra_code/Python/RewardCollectors_InputGenerate/preproc/baseline_pipeline/plotting/flexiblePlotByCoinType2.py': [Errno 2] No such file or directory
+💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰
+
+🚀 Starting flexiblePlotByCoinType2 for COIN INTERACTIONS at Fri Sep 12 09:20:22 PDT 2025
+💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰
+
+🚀 Starting flexiblePlotByCoinType2 for COIN INTERACTIONS at Fri Sep 12 09:20:59 PDT 2025
+✅ flexiblePlotByCoinType2 for PARTICIPANT ROLE COIN INTERACTIONS completed at Fri Sep 12 09:21:20 PDT 2025
+✨ done ✨
+💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰
+
+🚀 Starting flexiblePlotByCoinType2 for COIN INTERACTIONS at Fri Sep 12 09:22:15 PDT 2025
+💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰
+
+🚀 Starting flexiblePlotByCoinType2 for COIN INTERACTIONS at Fri Sep 12 09:22:38 PDT 2025
+💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰
+
+🚀 Starting flexiblePlotByCoinType2 for COIN INTERACTIONS at Fri Sep 12 09:23:03 PDT 2025
+💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰
+
+🚀 Starting flexiblePlotByCoinType2 for COIN INTERACTIONS at Fri Sep 12 09:23:32 PDT 2025
+💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰
+
+🚀 Starting flexiblePlotByCoinType2 for COIN INTERACTIONS at Fri Sep 12 09:24:15 PDT 2025
+💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰
+
+🚀 Starting flexiblePlotByCoinType2 for COIN INTERACTIONS at Fri Sep 12 09:35:00 PDT 2025
+💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰
+
+🚀 Starting flexiblePlotByCoinType2 for COIN INTERACTIONS at Fri Sep 12 09:36:22 PDT 2025
+💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰
+
+🚀 Starting flexiblePlotByCoinType2 for COIN INTERACTIONS at Fri Sep 12 09:44:46 PDT 2025
+[run] /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/Merged_PtRoleCoinSet_Flat_csv/101_01_25_2025_AN_Bx_ML2G_main_101_AN_Bx_events.csv
+Traceback (most recent call last):
+  File "/Users/mairahmac/Desktop/myra_code/Python/RewardCollectors_InputGenerate/preproc/plotting/flexiblePlotByCoinType2.py", line 1025, in <module>
+    main()
+  File "/Users/mairahmac/Desktop/myra_code/Python/RewardCollectors_InputGenerate/preproc/plotting/flexiblePlotByCoinType2.py", line 1002, in main
+    results = run_suite_for_directory(
+  File "/Users/mairahmac/Desktop/myra_code/Python/RewardCollectors_InputGenerate/preproc/plotting/flexiblePlotByCoinType2.py", line 936, in run_suite_for_directory
+    results.append(run_suite_for_file(p, **kwargs))
+  File "/Users/mairahmac/Desktop/myra_code/Python/RewardCollectors_InputGenerate/preproc/plotting/flexiblePlotByCoinType2.py", line 860, in run_suite_for_file
+    figs = _run_and_collect_figs(
+  File "/Users/mairahmac/Desktop/myra_code/Python/RewardCollectors_InputGenerate/preproc/plotting/flexiblePlotByCoinType2.py", line 516, in _run_and_collect_figs
+    fn(*args, **kwargs)
+  File "/Users/mairahmac/Desktop/myra_code/Python/RewardCollectors_InputGenerate/preproc/plotting/flexiblePlotByCoinType2.py", line 201, in plot_hist_kde_by_coin
+    raise ValueError("No data left after filtering; cannot plot.")
+ValueError: No data left after filtering; cannot plot.
+💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰
+
+🚀 Starting flexiblePlotByCoinType2 for COIN INTERACTIONS at Fri Sep 12 09:46:12 PDT 2025
+  File "/Users/mairahmac/Desktop/myra_code/Python/RewardCollectors_InputGenerate/preproc/plotting/flexiblePlotByCoinType2.py", line 758
+    allowed_status: Iterable[str] | None = ("complete",),   # <-- add this
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+SyntaxError: duplicate argument 'allowed_status' in function definition
+💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰
+
+🚀 Starting flexiblePlotByCoinType2 for COIN INTERACTIONS at Fri Sep 12 09:55:01 PDT 2025
+💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰
+
+🚀 Starting flexiblePlotByCoinType2 for COIN INTERACTIONS at Fri Sep 12 10:17:15 PDT 2025
+💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰
+
+🚀 Starting flexiblePlotByCoinType2 for COIN INTERACTIONS at Fri Sep 12 10:18:26 PDT 2025
+✅ flexiblePlotByCoinType2 for PARTICIPANT ROLE COIN INTERACTIONS completed at Fri Sep 12 10:21:47 PDT 2025
+✨ done ✨
+💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰
+
+🚀 Starting flexiblePlotByCoinType2 for COIN INTERACTIONS at Fri Sep 12 10:31:48 PDT 2025
+💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰
+
+🚀 Starting flexiblePlotByCoinType2 for COIN INTERACTIONS at Fri Sep 12 10:32:36 PDT 2025
+💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰
+
+🚀 Starting flexiblePlotByCoinType2 for COIN INTERACTIONS at Fri Sep 12 11:33:01 PDT 2025
+💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰
+
+🚀 Starting flexiblePlotByCoinType2 for COIN INTERACTIONS at Fri Sep 12 11:34:23 PDT 2025
+✅ flexiblePlotByCoinType2 for PARTICIPANT ROLE COIN INTERACTIONS completed at Fri Sep 12 11:37:40 PDT 2025
+✨ done ✨
+🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝
+🚀 Starting preFrontalCortex_unifiedEventSeg.py for PO GLIA setting at Fri Sep 12 11:46:31 PDT 2025
+✅ preFrontalCortex_unifiedEventSeg.py for PO GLIA setting completed at Fri Sep 12 12:00:50 PDT 2025
+🦢🦢🦢🦢🦢🦢🦢🦢🦢🦢🦢🦢🦢🦢🦢🦢🦢🦢🦢🦢🦢🦢🦢
+
+🚀 alignPO2AN_part1.py  at Fri Sep 12 12:00:50 PDT 2025
+✅ alignPO2AN_part1.py  completed at Fri Sep 12 12:03:02 PDT 2025
+🐞🐞🐞🐞🐞🐞🐞🐞🐞🐞🐞🐞🐞🐞🐞🐞🐞🐞🐞🐞🐞🐞🐞🐞🐞
+🚀 Starting preFrontalCortex_unifiedEventSeg.py for AN FULL setting at Fri Sep 12 12:03:02 PDT 2025
+✅ preFrontalCortex_unifiedEventSeg.py for AN FULL setting completed at Fri Sep 12 12:37:46 PDT 2025
+🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛
+🚀 Starting preFrontalCortex_unifiedEventSeg.py for PO FULL setting at Fri Sep 12 12:37:46 PDT 2025
+✅ preFrontalCortex_unifiedEventSeg.py for PO FULL setting completed at Fri Sep 12 13:07:35 PDT 2025
+🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭
+
+🚀 Starting justFlatten.py  at Fri Sep 12 13:07:35 PDT 2025
+✅ justFlatten.py completed at Fri Sep 12 13:07:55 PDT 2025
+🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷
+
+🚀 Starting add_coin_labels_from_collated.py  at Fri Sep 12 13:07:55 PDT 2025
+✅ add_coin_labels_from_collated.py completed at Fri Sep 12 13:08:04 PDT 2025
+🦦🦦🦦🦦🦦🦦🦦🦦🦦🦦🦦🦦🦦🦦🦦🦦🦦🦦🦦🦦🦦🦦🦦🦦
+
+🚀 Starting getPositionsAndElapsedTime.py for NO WALKS at Fri Sep 12 13:08:04 PDT 2025
+✅ getPositionsAndElapsedTime.py for NO WALKS completed at Fri Sep 12 13:09:33 PDT 2025
+🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄
+
+🚀 Starting mergeEventsV3.py for PARTICIPANT-ROLE-COINSET at Fri Sep 12 13:09:33 PDT 2025
+✅ mergeEventsV3.py for PARTICIPANT-ROLE-COINSET completed at Fri Sep 12 13:09:39 PDT 2025
+💞💞💞💞💞💞💞💞💞💞💞💞💞💞💞💞💞💞💞💞💞💞💞💞
+
+🚀 Starting mergeEventsV3.py for PAIR-TEST_DATE-SESSION at Fri Sep 12 13:09:39 PDT 2025
+💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰
+
+🚀 Starting flexiblePlotByCoinType2 for COIN INTERACTIONS at Sat Sep 13 14:58:57 PDT 2025
+💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰
+
+🚀 Starting flexiblePlotByCoinType2 for COIN INTERACTIONS at Sat Sep 13 15:04:55 PDT 2025
+✅ flexiblePlotByCoinType2 for PARTICIPANT ROLE COIN INTERACTIONS completed at Sat Sep 13 15:08:02 PDT 2025
+✨ done ✨
+💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰
+
+🚀 Starting flexiblePlotByCoinType2 for COIN INTERACTIONS at Sat Sep 13 15:11:07 PDT 2025
+✅ flexiblePlotByCoinType2 for PARTICIPANT ROLE COIN INTERACTIONS completed at Sat Sep 13 15:14:12 PDT 2025
+✨ done ✨
+💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰
+
+🚀 Starting flexiblePlotByCoinType2 for COIN INTERACTIONS at Sat Sep 13 15:26:01 PDT 2025
+💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰
+
+🚀 Starting flexiblePlotByCoinType2 for COIN INTERACTIONS at Sat Sep 13 15:35:14 PDT 2025
+💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰
+
+🚀 Starting flexiblePlotByCoinType2 for COIN INTERACTIONS at Sat Sep 13 15:41:02 PDT 2025
+💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰
+
+🚀 Starting flexiblePlotByCoinType2 for COIN INTERACTIONS at Sat Sep 13 15:43:24 PDT 2025
+💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰
+
+🚀 Starting flexiblePlotByCoinType2 for COIN INTERACTIONS at Sat Sep 13 15:47:15 PDT 2025
+💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰
+
+🚀 Starting flexiblePlotByCoinType2 for COIN INTERACTIONS at Sat Sep 13 15:49:49 PDT 2025
+💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰
+
+🚀 Starting flexiblePlotByCoinType2 for COIN INTERACTIONS at Sat Sep 13 15:52:58 PDT 2025
+💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰
+
+🚀 Starting flexiblePlotByCoinType2 for COIN INTERACTIONS at Sat Sep 13 15:56:24 PDT 2025
+💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰
+
+🚀 Starting flexiblePlotByCoinType2 for COIN INTERACTIONS at Sat Sep 13 16:00:25 PDT 2025
+💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰
+
+🚀 Starting flexiblePlotByCoinType2 for COIN INTERACTIONS at Sat Sep 13 16:04:35 PDT 2025
+✅ flexiblePlotByCoinType2 for PARTICIPANT ROLE COIN INTERACTIONS completed at Sat Sep 13 16:07:54 PDT 2025
+✨ done ✨
+💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰
+
+🚀 Starting flexiblePlotByCoinType2 for COIN INTERACTIONS at Sat Sep 13 16:08:49 PDT 2025
+💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰
+
+🚀 Starting flexiblePlotByCoinType2 for COIN INTERACTIONS at Sat Sep 13 16:12:58 PDT 2025
+💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰
+
+🚀 Starting flexiblePlotByCoinType2 for COIN INTERACTIONS at Sat Sep 13 16:19:47 PDT 2025
+💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰
+
+🚀 Starting flexiblePlotByCoinType2 for COIN INTERACTIONS at Sat Sep 13 16:22:02 PDT 2025
+💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰
+
+🚀 Starting flexiblePlotByCoinType2 for COIN INTERACTIONS at Sat Sep 13 16:24:45 PDT 2025
+💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰
+
+🚀 Starting flexiblePlotByCoinType2 for COIN INTERACTIONS at Sat Sep 13 16:28:08 PDT 2025
+💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰
+
+🚀 Starting flexiblePlotByCoinType2 for COIN INTERACTIONS at Sat Sep 13 16:32:56 PDT 2025
+💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰
+
+🚀 Starting flexiblePlotByCoinType2 for COIN INTERACTIONS at Sat Sep 13 16:34:26 PDT 2025
+💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰
+
+🚀 Starting flexiblePlotByCoinType2 for COIN INTERACTIONS at Sat Sep 13 20:40:11 PDT 2025
+💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰
+
+🚀 Starting flexiblePlotByCoinType2 for COIN INTERACTIONS at Sat Sep 13 20:43:39 PDT 2025
+💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰
+
+🚀 Starting flexiblePlotByCoinType2 for COIN INTERACTIONS at Sat Sep 13 20:46:51 PDT 2025
+💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰
+
+🚀 Starting flexiblePlotByCoinType2 for COIN INTERACTIONS at Sat Sep 13 20:50:18 PDT 2025
+💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰
+
+🚀 Starting flexiblePlotByCoinType2 for COIN INTERACTIONS at Sat Sep 13 20:53:41 PDT 2025
+✅ flexiblePlotByCoinType2 for PARTICIPANT ROLE COIN INTERACTIONS completed at Sat Sep 13 20:53:56 PDT 2025
+✨ done ✨
+💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰
+
+🚀 Starting flexiblePlotByCoinType2 for COIN INTERACTIONS at Sat Sep 13 20:55:08 PDT 2025
+✅ flexiblePlotByCoinType2 for PARTICIPANT ROLE COIN INTERACTIONS completed at Sat Sep 13 20:55:23 PDT 2025
+✨ done ✨
+💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰
+
+🚀 Starting flexiblePlotByCoinType2 for COIN INTERACTIONS at Sat Sep 13 20:56:26 PDT 2025
+✅ flexiblePlotByCoinType2 for PARTICIPANT ROLE COIN INTERACTIONS completed at Sat Sep 13 20:56:40 PDT 2025
+✨ done ✨
+💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰
+
+🚀 Starting flexiblePlotByCoinType2 for COIN INTERACTIONS at Sat Sep 13 20:59:53 PDT 2025
+✅ flexiblePlotByCoinType2 for PARTICIPANT ROLE COIN INTERACTIONS completed at Sat Sep 13 21:00:08 PDT 2025
+✨ done ✨
+💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰
+
+🚀 Starting flexiblePlotByCoinType2 for COIN INTERACTIONS at Sat Sep 13 21:01:31 PDT 2025
+✅ flexiblePlotByCoinType2 for PARTICIPANT ROLE COIN INTERACTIONS completed at Sat Sep 13 21:01:46 PDT 2025
+✨ done ✨
+💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰
+
+🚀 Starting flexiblePlotByCoinType2 for COIN INTERACTIONS at Sat Sep 13 21:08:03 PDT 2025
+✅ flexiblePlotByCoinType2 for PARTICIPANT ROLE COIN INTERACTIONS completed at Sat Sep 13 21:08:18 PDT 2025
+✨ done ✨
+💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰
+
+🚀 Starting flexiblePlotByCoinType2 for COIN INTERACTIONS at Sat Sep 13 21:08:52 PDT 2025
+✅ flexiblePlotByCoinType2 for PARTICIPANT ROLE COIN INTERACTIONS completed at Sat Sep 13 21:09:06 PDT 2025
+✨ done ✨
+💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰
+
+🚀 Starting histoWrapper.py at Sat Sep 13 21:42:11 PDT 2025
+✅ histoWrapper.py completed at Sat Sep 13 21:42:45 PDT 2025
+✨ done ✨
+💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰
+
+🚀 Starting histoWrapper.py at Sat Sep 13 21:49:31 PDT 2025
+💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰
+
+🚀 Starting histoWrapper.py at Sat Sep 13 21:52:22 PDT 2025
+✅ histoWrapper.py completed at Sat Sep 13 21:52:56 PDT 2025
+✨ done ✨
+💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰
+
+🚀 Starting histoWrapper.py at Sat Sep 13 21:58:57 PDT 2025
+✅ histoWrapper.py completed at Sat Sep 13 21:59:31 PDT 2025
+✨ done ✨
+💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰
+
+🚀 Starting histoWrapper.py at Sat Sep 13 22:13:25 PDT 2025
+💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰
+
+🚀 Starting histoWrapper.py at Sat Sep 13 22:13:58 PDT 2025
+✅ histoWrapper.py completed at Sat Sep 13 22:14:27 PDT 2025
+✨ done ✨
+💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰
+
+🚀 Starting histoWrapper.py at Sat Sep 13 22:14:33 PDT 2025
+✅ histoWrapper.py completed at Sat Sep 13 22:15:02 PDT 2025
+✨ done ✨
+💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰
+
+🚀 Starting histoWrapper.py at Sat Sep 13 22:49:08 PDT 2025
+✅ histoWrapper.py completed at Sat Sep 13 22:49:34 PDT 2025
+✨ done ✨
+💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰
+
+🚀 Starting histoWrapper.py at Sat Sep 13 22:51:41 PDT 2025
+✅ histoWrapper.py completed at Sat Sep 13 22:52:06 PDT 2025
+✨ done ✨
+💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰
+
+🚀 Starting histoWrapper.py at Sat Sep 13 23:03:30 PDT 2025
+✅ histoWrapper.py completed at Sat Sep 13 23:03:56 PDT 2025
+✨ done ✨
+💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰
+
+🚀 Starting pinDropWrapper.py at Sat Sep 13 23:15:10 PDT 2025
+💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰
+
+🚀 Starting pinDropWrapper.py at Sat Sep 13 23:16:13 PDT 2025
+💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰
+
+🚀 Starting pinDropWrapper.py at Sat Sep 13 23:18:40 PDT 2025
+💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰
+
+🚀 Starting pinDropWrapper.py at Sat Sep 13 23:34:51 PDT 2025
+💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰
+
+🚀 Starting pinDropWrapper.py at Sat Sep 13 23:35:49 PDT 2025
+✅ pinDropWrapper.py completed at Sat Sep 13 23:35:55 PDT 2025
+✨ done ✨
+💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰
+
+🚀 Starting pinDropWrapper.py at Sat Sep 13 23:37:24 PDT 2025
+✅ pinDropWrapper.py completed at Sat Sep 13 23:37:31 PDT 2025
+✨ done ✨
+💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰
+
+🚀 Starting pinDropWrapper.py at Sat Sep 13 23:40:47 PDT 2025
+✅ pinDropWrapper.py completed at Sat Sep 13 23:40:52 PDT 2025
+✨ done ✨
+💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰
+
+🚀 Starting pinDropWrapper.py at Sun Sep 14 00:00:40 PDT 2025
+💰💰💰💰💰💰💰💰💰💰
+🚀 Starting pinDropWrapper.py at Sun Sep 14 00:01:09 PDT 2025
+💰💰💰💰💰💰💰💰💰💰
+🚀 Starting pinDropWrapper.py at Sun Sep 14 00:01:44 PDT 2025
+💰💰💰💰💰💰💰💰💰💰
+🚀 Starting pinDropWrapper.py at Sun Sep 14 00:10:30 PDT 2025
+✅ pinDropWrapper.py completed at Sun Sep 14 00:10:34 PDT 2025
+💰💰💰💰💰💰💰💰💰💰
+🚀 Starting pinDropWrapper.py at Sun Sep 14 00:13:42 PDT 2025
+✅ pinDropWrapper.py completed at Sun Sep 14 00:13:46 PDT 2025
+💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰
+
+🚀 Starting histoWrapper.py at Sun Sep 14 00:20:30 PDT 2025
+💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰
+
+🚀 Starting histoWrapper.py at Sun Sep 14 00:21:33 PDT 2025
+✅ histoWrapper.py completed at Sun Sep 14 00:28:05 PDT 2025
+✨ done ✨
+💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰
+
+🚀 Starting histoWrapper.py at Sun Sep 14 00:28:05 PDT 2025
+✅ histoWrapper.py completed at Sun Sep 14 00:35:01 PDT 2025
+✨ done ✨
+💰💰💰💰💰💰💰💰💰💰
+🚀 Starting pinDropWrapper.py at Sun Sep 14 00:35:01 PDT 2025
+✅ pinDropWrapper.py completed at Sun Sep 14 00:35:05 PDT 2025
+💰💰💰💰💰💰💰💰💰💰
+🚀 Starting pinDropWrapper.py at Sun Sep 14 00:35:05 PDT 2025
+✅ pinDropWrapper.py completed at Sun Sep 14 00:35:07 PDT 2025
+🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑
+
+🚀 Starting preprocRaw_AN.py at Mon Sep 15 12:49:25 PDT 2025
+✅ preprocRaw_AN.py  completed at Mon Sep 15 12:56:45 PDT 2025
+🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼
+
+🚀 Starting preprocRaw_PO.py  at Mon Sep 15 12:56:45 PDT 2025
+✅ preprocRaw_PO.py completed at Mon Sep 15 13:04:12 PDT 2025
+🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿
+🚀 Starting preFrontalCortex_unifiedEventSeg.py for AN GLIA setting at Mon Sep 15 13:04:12 PDT 2025
+✅ preFrontalCortex_unifiedEventSeg.py for AN GLIA setting completed at Mon Sep 15 13:06:40 PDT 2025
+🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝
+🚀 Starting preFrontalCortex_unifiedEventSeg.py for PO GLIA setting at Mon Sep 15 13:06:40 PDT 2025
+✅ preFrontalCortex_unifiedEventSeg.py for PO GLIA setting completed at Mon Sep 15 13:09:02 PDT 2025
+🦢🦢🦢🦢🦢🦢🦢🦢🦢🦢🦢🦢🦢🦢🦢🦢🦢🦢🦢🦢🦢🦢🦢
+
+🚀 alignPO2AN_part1.py  at Mon Sep 15 13:09:02 PDT 2025
+✅ alignPO2AN_part1.py  completed at Mon Sep 15 13:09:22 PDT 2025
+🐞🐞🐞🐞🐞🐞🐞🐞🐞🐞🐞🐞🐞🐞🐞🐞🐞🐞🐞🐞🐞🐞🐞🐞🐞
+🚀 Starting preFrontalCortex_unifiedEventSeg.py for AN FULL setting at Mon Sep 15 13:09:22 PDT 2025
+✅ preFrontalCortex_unifiedEventSeg.py for AN FULL setting completed at Mon Sep 15 13:15:32 PDT 2025
+🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛
+🚀 Starting preFrontalCortex_unifiedEventSeg.py for PO FULL setting at Mon Sep 15 13:15:32 PDT 2025
+✅ preFrontalCortex_unifiedEventSeg.py for PO FULL setting completed at Mon Sep 15 13:15:33 PDT 2025
+🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭
+
+🚀 Starting justFlatten.py  at Mon Sep 15 13:15:33 PDT 2025
+✅ justFlatten.py completed at Mon Sep 15 13:15:36 PDT 2025
+🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛
+🚀 Starting preFrontalCortex_unifiedEventSeg.py for PO FULL setting at Mon Sep 15 23:37:38 PDT 2025
+🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛
+🚀 Starting preFrontalCortex_unifiedEventSeg.py for PO FULL setting at Mon Sep 15 23:39:01 PDT 2025
+✅ preFrontalCortex_unifiedEventSeg.py for PO FULL setting completed at Mon Sep 15 23:39:02 PDT 2025
+🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭
+
+🚀 Starting justFlatten.py  at Mon Sep 15 23:39:02 PDT 2025
+✅ justFlatten.py completed at Mon Sep 15 23:39:04 PDT 2025
+🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷
+
+🚀 Starting add_coin_labels_from_collated.py  at Mon Sep 15 23:39:04 PDT 2025
+✅ add_coin_labels_from_collated.py completed at Mon Sep 15 23:39:06 PDT 2025
+🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛
+🚀 Starting preFrontalCortex_unifiedEventSeg.py for PO FULL setting at Mon Sep 15 23:42:35 PDT 2025
+✅ preFrontalCortex_unifiedEventSeg.py for PO FULL setting completed at Mon Sep 15 23:42:36 PDT 2025
+🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭
+
+🚀 Starting justFlatten.py  at Mon Sep 15 23:42:36 PDT 2025
+✅ justFlatten.py completed at Mon Sep 15 23:42:38 PDT 2025
+🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷
+
+🚀 Starting add_coin_labels_from_collated.py  at Mon Sep 15 23:42:38 PDT 2025
+✅ add_coin_labels_from_collated.py completed at Mon Sep 15 23:42:40 PDT 2025
+🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭
+
+🚀 Starting justFlatten.py  at Mon Sep 15 23:44:07 PDT 2025
+✅ justFlatten.py completed at Mon Sep 15 23:44:10 PDT 2025
+🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷
+
+🚀 Starting add_coin_labels_from_collated.py  at Mon Sep 15 23:44:10 PDT 2025
+✅ add_coin_labels_from_collated.py completed at Mon Sep 15 23:44:11 PDT 2025
+✅ preFrontalCortex_unifiedEventSeg.py for PO FULL setting completed at Tue Sep 16 00:07:49 PDT 2025
+🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭
+
+🚀 Starting justFlatten.py  at Tue Sep 16 00:07:50 PDT 2025
+✅ justFlatten.py completed at Tue Sep 16 00:08:10 PDT 2025
+🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷
+
+🚀 Starting add_coin_labels_from_collated.py  at Tue Sep 16 00:08:10 PDT 2025
+✅ add_coin_labels_from_collated.py completed at Tue Sep 16 00:08:20 PDT 2025

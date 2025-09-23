@@ -22,6 +22,7 @@ from io import StringIO
 from pathlib import Path
 import traceback
 import json
+import argparse
 
 from warning_logger import WarningLogger
 from extraMetaExtract import generate_meta_json
@@ -70,7 +71,7 @@ def process_all_obsreward_files(dataDir, metadata, role, segmentType, subDirs=No
         else:
             input_dataDir = os.path.join(dataDir, 'ProcessedData')
         nonNestedOutDirs = eventParserFolderCreatePart1(dataDir, segmentType)
-        print('if needed, non-nested out directories have been created')
+        #print('if needed, non-nested out directories have been created')
 
         logger = WarningLogger(output_dir=nonNestedOutDirs["logging_dir"])
 
@@ -115,9 +116,14 @@ def process_all_obsreward_files(dataDir, metadata, role, segmentType, subDirs=No
                     continue
 
                 source_file = fname.strip().lower()
-                flatOutCsvName = fname.strip() + "_events.csv"
-                flatOutJsonName = fname.strip() + "_events.json"
-                flatOutMetaName = fname.strip() + "_meta.json"
+                if role == "PO" and segmentType=='glia':
+                    flatOutCsvName = fname.replace("_processed_orig.csv", "_processed_events_orig.csv")
+                    flatOutJsonName = fname.replace("_processed_orig.csv", "_processed_events_orig.json")
+                    flatOutMetaName = fname.replace("_processed_orig.csv", "_processed_meta_orig.json")
+                else:
+                    flatOutCsvName = fname.replace("_processed.csv", "_processed_events.csv")
+                    flatOutJsonName = fname.replace("_processed.csv", "_processed_events.json")
+                    flatOutMetaName = fname.replace("_processed.csv", "_processed_meta.json")
                                 # Normalize to match metadata naming
                 if role == "PO" and segmentType == "glia":
                     source_file = source_file.replace("_orig", "")
@@ -158,7 +164,8 @@ def process_all_obsreward_files(dataDir, metadata, role, segmentType, subDirs=No
                             meta_json = generate_meta_json(df, full_metadata_df, source_file, role)
                         elif role == 'PO':
                             glia =  buildGliaEvents_PO_v2(df=df, allowed_statuses=allowed_statuses, role=role, segmentType=segmentType)
-                            all_events = buildEvents_PO(df, allowed_statuses, segmentType=segmentType)
+                            muscles = buildEvents_PO(df, allowed_statuses, segmentType=segmentType)
+                            all_events = muscles + glia 
                             meta_json = generate_meta_json(df, full_metadata_df, source_file, role)
                     elif segmentType == 'glia':
                         if role == 'AN': 
@@ -181,37 +188,26 @@ def process_all_obsreward_files(dataDir, metadata, role, segmentType, subDirs=No
                         enriched_events = all_events
 
                     enriched_events = pd.DataFrame(enriched_events).sort_values(by=[timestamp_col])
-                    #print("this is the nestedOutDir['events_csv_path']", nestedOutDirs["events_csv_path"])
+
                     enriched_events.to_csv(nestedOutDirs["events_csv_path"], index=False)
-                    #print('saving the nestedOutDir events csv worked')
+
                     enriched_events.to_json(nestedOutDirs["events_json_path"], orient='records', lines=True)
-                    #print('saving the nestedOutDir events json worked')
+
 
                     flatOutCsv = nonNestedOutDirs["flat_outputEvents_csv"] + "/" + flatOutCsvName
                     flatOutJson = nonNestedOutDirs["flat_outputEvents_json"] + "/" + flatOutJsonName
-                    #print("this is the flatOutCsv", flatOutCsv)
-                    enriched_events.to_csv(flatOutCsv, index=False)
-                    #print("saving the nonNestedOutDirs event flat csvs worked")
-                    enriched_events.to_json(flatOutJson, orient='records', lines=True)
-                    #print("saving the nonNestedOutDirs event flat jsons worked")
-                    # if segmentType == 'full':
-                    #     metaData_json_path = nestedOutDirs["metaData_json_path"]
-                    #     with open(nestedOutDirs["metaData_json_path"], "w") as f:
-                    #         json.dump(meta_json, f, indent=2)
-                    #     with open(nestedOutDirs["metaData_json_path"], "w") as f2:
-                    #         json.dump(meta_json, f2, indent=2)
-                    #     print(f"🧩 Meta JSON saved to: {metaData_json_path}")
 
+                    enriched_events.to_csv(flatOutCsv, index=False)
+
+                    enriched_events.to_json(flatOutJson, orient='records', lines=True)
 
                     metaData_json_path = nestedOutDirs["metaData_json_path"]
-                    #print(metaData_json_path)
+
                     flatOutMeta = nonNestedOutDirs["flat_outputMetaData"]  + '/' + flatOutMetaName
-                    #print("this is the metaData_json_path", metaData_json_path)
-                    #print("this is flatOutMeta", flatOutMeta)
+
                     with open(nestedOutDirs["metaData_json_path"], "w") as f:
                         json.dump(meta_json, f, indent=2)
-                    #print("saving the nested MetaData file worked")
-                    #print("this is the nonNested MetaData file", nestedOutDirs["metaDataFlat_json_path"])
+
                     with open(flatOutMeta, "w") as f2:
                         json.dump(meta_json, f2, indent=2)
                     print(f"🧩 Meta JSON saved to: {metaData_json_path} and {flatOutMeta}")
@@ -228,14 +224,13 @@ def process_all_obsreward_files(dataDir, metadata, role, segmentType, subDirs=No
                     print(f"🚫 Failed: {fname} with error {e}")
 
         if manifest_records:
-            #os.makedirs(nonNestedOutDirs.output_dataDir, exist_ok=True)
+
             save_manifest(manifest_records, nonNestedOutDirs["output_dataDir"])
         else:
             print("⚠️ No valid files processed — skipping manifest save.")
         logger.save()
 
-        # # Final reporting
-        # print("\nProcessing Complete")
+        # Final reporting
 
         if skipped_trash_files:
             trash_df = pd.DataFrame(skipped_trash_files, columns=["file", "relative_path"])
@@ -267,19 +262,49 @@ def process_all_obsreward_files(dataDir, metadata, role, segmentType, subDirs=No
 
 
 # --- For Running This as a Script By Itself (and debugging) ---
-def main():
-    allowed_statuses = ["complete", "truncated"]
-    trueRootDir = '/Users/mairahmac/Desktop/RC_TestingNotes'
-    metaDataFile = os.path.join(trueRootDir, 'collatedData.xlsx')
 
-    procDir = 'FreshStart'
-    dataDir = os.path.join(trueRootDir, procDir)
 
-    # process_all_obsreward_files(dataDir, metaDataFile, role='AN', segmentType='glia')
-    # process_all_obsreward_files(dataDir, metaDataFile, role='PO', segmentType='glia')
+def cli() -> None:
+    parser = argparse.ArgumentParser(
+        prog="preFrontalCortex_unifiedEventSeg",
+        description="Run the unified event-segmentation pipeline over processed ObsReward data."
+    )
+    parser.add_argument(
+        "--role", required=True, choices=["AN", "PO"],
+        help="Participant role to process."
+    )
+    parser.add_argument(
+        "--segment-type", default="glia", choices=["glia", "full", "barebones"],
+        help="Segmentation variant (default: glia)."
+    )
+    parser.add_argument(
+        "--trueRootDir", required=True, type=Path,
+        help="Base project directory (e.g., '/Users/you/RC_TestingNotes')."
+    )
+    parser.add_argument(
+        "--procDir", required=True, type=Path,
+        help="Dataset subdirectory under --trueRootDir that contains 'ProcessedData' (e.g., 'FreshStart')."
+    )
+    parser.add_argument(
+        "--allowed-status", dest="allowed_status", action="append",
+        choices=["complete", "truncated"], default=["complete", "truncated"],
+        help="Trial statuses to include. Provide multiple times to include more than one."
+    )
 
-    process_all_obsreward_files(dataDir, metaDataFile, role='AN', segmentType='full')
-    process_all_obsreward_files(dataDir, metaDataFile, role='PO', segmentType='full')
+    args = parser.parse_args()
+
+    root = args.trueRootDir.expanduser()
+    proc = args.procDir
+    data_dir_path = proc if proc.is_absolute() else (root / proc)
+    meta_path = root / "collatedData.xlsx"
+
+    process_all_obsreward_files(
+        dataDir=str(data_dir_path),
+        metadata=str(meta_path),
+        role=args.role,
+        segmentType=args.segment_type,
+        allowed_statuses=args.allowed_status,
+    )
 
 if __name__ == "__main__":
-    main()
+    cli()

@@ -17,15 +17,21 @@ participants_uneven = {
 # Define route categories and mappings
 order_map = {
     ('HV', 'LV', 'NV'): 'Type 1',
+    ('HV', 'NV', 'LV'): 'Type 2',
     ('LV', 'HV', 'NV'): 'Type 3',
     ('LV', 'NV', 'HV'): 'Type 4',
+    ('NV', 'LV', 'HV'): 'Type 5',
+    ('NV', 'LV', 'HV'): 'Type 6'
 }
 all_orders = list(permutations(['HV', 'LV', 'NV']))
 category_palette = {
     'Type 1': '#66c2a5',
+    'Type 2': '#e78ac3',
     'Type 3': '#fc8d62',
     'Type 4': '#8da0cb',
-    'Other': '#999999'
+    'Type 5': '#a6d854',
+    'Type 6': '#ffd92f'
+    #'Other': '#999999'
 }
 
 # Simulate data

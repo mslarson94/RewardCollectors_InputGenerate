@@ -1,0 +1,80 @@
+What you’re describing is a **state/learning effect within a round**:
+
+* Before the “swap/RPE” is revealed, the participant behaves as if the mapping is normal (CoinSetID==1).
+* After the swap is revealed, they may update beliefs, and that can influence **subsequent** dropDist(s) in the same round.
+
+Given that, your proposed plan is sensible — with one tweak: don’t throw away CoinSetID≠1 entirely unless you must. Use it in a way that respects the time structure.
+
+
+so CoinSetID is entangled with coinLabel -> CoinSetID will determine if a coinLabel = HV or NV is affected (when CoinSetID == 2, NV is worth 20 points instead of 0, when CoinSetID == 3, HV is worth 0 points instead of 20).
+
+So I wanted to keep CoinSetIDs as a separate grouping function because it affects an entire *round* in which you have to collect what was originally laid out as HV / LV / NV, so your behavior *before* finding out that a 'swap' event occurred should be the same as when CoinSetID == 1. However, your behavior *after* that swap event occurred might affect the next dropDist for the next coin you collect (if you didn't just collect the last of the 3 coins for that round). 
+
+I guess, should I just exclude CoinSetID != 1 to explore the main questions I'm after, and then run another exploration after including all the data but adding in another variable 'postRPE' that would tell if the coin collect was collect post swap? 
+
+
+## Recommended analysis plan
+
+### 1) Primary model: “clean baseline” analysis (CoinSetID == 1 only)
+
+Do this if your main question is about *intended HV/LV/NV behavior under the canonical mapping* (no surprise manipulation). This gives you a clean answer with minimal assumptions.
+
+* Dataset: `CoinSetID == 1`
+* Predictors: your main predictors (coinLabel, speedDeviation, RR, role, participant random effects, coinLayout if relevant)
+* This is your **core confirmatory** analysis.
+
+### 2) Secondary model: full dataset with a “postRPE” state variable (and interaction)
+
+Yes: include all CoinSetIDs, but you must let the effect of `coinLabel` differ **pre vs post swap** (and probably also differ by CoinSetID because the swap type differs).
+
+A good minimal fixed-effects structure is:
+
+* `coinLabel * postRPE`  (does label effect change after swap?)
+* `CoinSetID` as a factor (or “swapType” if you can encode swap vs none)
+* and optionally `coinLabel * CoinSetID` and/or `postRPE * CoinSetID`
+
+The key term, conceptually, is:
+
+* **`coinLabel:postRPE`** (learning/state update effect)
+  and if you expect different swap types to matter:
+* **`coinLabel:postRPE:CoinSetID`** (state update differs by swap type)
+
+Random effects: at least `(1|participantID)`; if you have enough data per person, consider random slopes for `postRPE` or `coinLabel`.
+
+### 3) Don’t just include CoinSetID as a grouping variable by itself
+
+Because the “swap” isn’t a between-round static difference in meaning; it’s a **within-round event** that changes behavior **mid-round**. So the modeling needs that post-event indicator (and the ordering).
+
+## A practical decision rule
+
+* If you want a clean, interpretable answer to the main questions: **report CoinSetID==1 model as primary**.
+* Then use the full model with `postRPE` as **mechanistic follow-up**: “does behavior change after the surprise, and does that propagate to the next drop?”
+
+That’s exactly aligned with your reasoning.
+
+## How to construct `postRPE` correctly
+
+You want `postRPE` to mean: **this coin collection happened after the swap was revealed within the same round**.
+
+So you need:
+
+* a timestamp ordering within round (you already use `mLTimestamp`)
+* an event that marks the swap reveal (whatever your log event type is)
+* for each (participantID, BlockNum, BlockInstance, RoundNum):
+
+  * find first swap timestamp
+  * label coin collection rows with `postRPE = (coin_timestamp > swap_timestamp)`
+
+Edge case you noted is real:
+
+* if swap occurs after the last coin, then `postRPE` coins don’t exist in that round.
+
+## Suggested workflow
+
+1. Run baseline (CoinSetID==1) mixed model → main claims.
+2. Build `postRPE` and run full model:
+
+   * check if `coinLabel:postRPE` is meaningful
+   * optionally focus analysis on **coins after the first coin in the round**, since only later coins can be influenced by learning within the same round.
+
+If you tell me the exact event name in `lo_eventType` that signals the swap/reveal (and whether it happens at most once per round), I can write the `postRPE` construction script so it drops right into your pipeline.

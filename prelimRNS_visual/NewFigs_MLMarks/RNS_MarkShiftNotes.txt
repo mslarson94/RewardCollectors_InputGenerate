@@ -1,0 +1,95 @@
+R037_AN_Marks_Afternoon
+Channel # 1 
+Number of .DAT files after filtering: 30
+Start time: 17-Mar-2025 13:51:37
+End time: 17-Mar-2025 15:47:23
+CSV filter: kept 103 marks spanning 6437.904 s (from 17-Mar-2025 13:56:32 to 17-Mar-2025 15:43:50)
+pattern detection: 1.851 seconds max shift
+
+
+
+
+R037_PO_Marks_Morning
+Channel # 1
+Number of .DAT files after filtering: 15
+Start time: 17-Mar-2025 10:52:03
+End time: 17-Mar-2025 11:48:04
+CSV filter: kept 25 marks spanning 3136.590 s (from 17-Mar-2025 10:55:20 to 17-Mar-2025 11:47:37)
+pattern detection: 0.63 seconds max shift
+
+Channel # 2
+Number of .DAT files after filtering: 15
+Start time: 17-Mar-2025 10:52:03
+End time: 17-Mar-2025 11:48:04
+CSV filter: kept 25 marks spanning 3136.590 s (from 17-Mar-2025 10:55:20 to 17-Mar-2025 11:47:37)
+pattern detection: 0.63 seconds max shift
+
+Channel # 3
+Number of .DAT files after filtering: 15
+Start time: 17-Mar-2025 10:52:03
+End time: 17-Mar-2025 11:48:04
+CSV filter: kept 25 marks spanning 3136.590 s (from 17-Mar-2025 10:55:20 to 17-Mar-2025 11:47:37)
+pattern detection: 0.63 seconds max shift
+
+Channel # 4
+Number of .DAT files after filtering: 15
+Start time: 17-Mar-2025 10:52:03
+End time: 17-Mar-2025 11:48:04
+CSV filter: kept 25 marks spanning 3136.590 s (from 17-Mar-2025 10:55:20 to 17-Mar-2025 11:47:37)
+pattern detection: 0.63 seconds max shift
+
+
+
+
+###############
+R019_AN_Marks_Morning
+
+Channel # 1 
+Number of .DAT files after filtering: 15
+Start time: 17-Mar-2025 10:52:03
+End time: 17-Mar-2025 11:48:04
+CSV filter: kept 28 marks spanning 3163.186 s (from 17-Mar-2025 10:54:20 to 17-Mar-2025 11:47:03)
+pattern detection: 36.789 seconds max shift
+Warning: 25 markers were not detected 
+> In MSL_RNS_identify_mrk (line 132)
+In MSL_importRNS (line 63) 
+predicting missing markers...
+prediction error std: 110947.417 ms
+
+
+Channel # 2
+Number of .DAT files after filtering: 15
+Start time: 17-Mar-2025 10:52:03
+End time: 17-Mar-2025 11:48:04
+CSV filter: kept 28 marks spanning 3163.186 s (from 17-Mar-2025 10:54:20 to 17-Mar-2025 11:47:03)
+pattern detection: 36.789 seconds max shift
+Warning: 25 markers were not detected 
+> In MSL_RNS_identify_mrk (line 132)
+In MSL_importRNS (line 63) 
+predicting missing markers...
+prediction error std: 110947.417 ms
+
+Channel # 3 
+Number of .DAT files after filtering: 15
+Start time: 17-Mar-2025 10:52:03
+End time: 17-Mar-2025 11:48:04
+CSV filter: kept 28 marks spanning 3163.186 s (from 17-Mar-2025 10:54:20 to 17-Mar-2025 11:47:03)
+pattern detection: 36.789 seconds max shift
+Warning: 25 markers were not detected 
+> In MSL_RNS_identify_mrk (line 132)
+In MSL_importRNS (line 63) 
+predicting missing markers...
+prediction error std: 110947.417 ms
+
+Channel #4 
+Number of .DAT files after filtering: 15
+Start time: 17-Mar-2025 10:52:03
+End time: 17-Mar-2025 11:48:04
+CSV filter: kept 28 marks spanning 3163.186 s (from 17-Mar-2025 10:54:20 to 17-Mar-2025 11:47:03)
+pattern detection: 36.789 seconds max shift
+Warning: 25 markers were not detected 
+> In MSL_RNS_identify_mrk (line 132)
+In MSL_importRNS (line 63) 
+predicting missing markers...
+prediction error std: 110947.417 ms
+

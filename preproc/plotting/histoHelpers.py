@@ -9,6 +9,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 from matplotlib.lines import Line2D
+from matplotlib.offsetbox import AnchoredText
 
 # ---------- visual config ----------
 MARKER_BY_COIN = {"HV": "*", "LV": "o", "NV": "o"}       # NV hollow
@@ -405,3 +406,146 @@ def _save_figs(
 def _slugify(x: Any, maxlen: int = 64) -> str:
     s = re.sub(r"\W+", "_", str(x)).strip("_")
     return (s[:maxlen] or "NA")
+
+
+def annotate_hist_bins(
+    ax: plt.Axes,
+    data: pd.DataFrame,
+    *,
+    x: str,
+    bins: int | str | Sequence = "auto",
+    hue: str | None = None,
+    stat: str = "count",
+    fmt: str = "{label}: n={n}, μ={mean:.2g}, σ={std:.2g}, bin≈{bw:.2g}",
+    loc: str = "upper left",
+    pad: float = 0.2,
+    framealpha: float = 0.2,
+    fontsize: int = 9,
+    ) -> None:
+    """
+    Annotate a histogram with bin edges/width and basic stats per hue level.
+    Why: reproducible annotation independent of seaborn internals.
+    bin: (Seaborn/NumPy arg): how to place the bin edges — can be an int, a rule ("auto"), or an explicit edge array.
+    """
+    if x not in data.columns:
+        return
+    # common bin edges across all data
+    x_all = pd.to_numeric(data[x], errors="coerce").dropna().to_numpy()
+    if x_all.size == 0:
+        return
+    edges = np.histogram_bin_edges(x_all, bins=bins)
+    bw = np.diff(edges)
+    # stable single width if uniform; else show median width
+    bw_val = (bw[0] if np.allclose(bw, bw[0]) else np.median(bw))
+
+    rows: list[str] = []
+    groups = [(None, data)] if not hue or hue not in data.columns else data.groupby(hue, sort=True)
+    for glabel, gdf in groups:
+        xg = pd.to_numeric(gdf[x], errors="coerce").dropna().to_numpy()
+        if xg.size == 0:
+            continue
+        counts, _ = np.histogram(xg, bins=edges)
+        if stat == "density":
+            # normalize by total area under histogram (sum count*width)
+            area = (counts * bw).sum()
+            # fall back to count if degenerate
+            sn = f"{area:.2g}" if area > 0 else f"{xg.size}"
+        else:
+            sn = f"{xg.size}"
+        label = str(glabel) if glabel is not None else "All"
+        row = fmt.format(
+            label=label,
+            n=xg.size,
+            mean=np.nanmean(xg),
+            median=np.nanmedian(xg),
+            std=np.nanstd(xg, ddof=1) if xg.size > 1 else 0.0,
+            bw=bw_val,
+        )
+        rows.append(row)
+
+    if not rows:
+        return
+
+    txt = "\n".join(rows)
+    box = AnchoredText(txt, loc=loc, prop=dict(size=fontsize), pad=pad, frameon=True)
+    box.patch.set_alpha(framealpha)
+    ax.add_artist(box)
+
+
+def _freedman_diaconis_width(x: np.ndarray) -> float:
+    """FD rule; falls back to Scott when IQR=0. Why: robust to outliers."""
+    x = np.asarray(x)
+    x = x[np.isfinite(x)]
+    if x.size < 2:
+        return 0.0
+    q75, q25 = np.percentile(x, [75, 25])
+    iqr = q75 - q25
+    if iqr <= 0:
+        # Scott's rule fallback
+        sd = np.nanstd(x, ddof=1) if x.size > 1 else 0.0
+        return 3.49 * sd / (x.size ** (1/3)) if sd > 0 else 0.0
+    return 2 * iqr / (x.size ** (1/3))
+
+def _collect_numeric(df: pd.DataFrame, col: str) -> np.ndarray:
+    """Numeric vector with NaNs/inf removed."""
+    v = pd.to_numeric(df[col], errors="coerce")
+    a = v.to_numpy()
+    return a[np.isfinite(a)]
+
+def compute_fixed_bin_edges(
+    dfs: list[pd.DataFrame] | pd.DataFrame,
+    *,
+    x: str,
+    bin_width: float | None = None,
+    min_bins: int = 8,
+    pad_frac: float = 0.02,
+) -> np.ndarray:
+    """
+    Build one global set of bin edges for variable `x` across all provided dataframes.
+    If `bin_width` None: use Freedman–Diaconis on the concatenated data.
+    bin_width: a single scalar width. We compute one global edge array using this width and feed it into bins = so all plots align (for apples to apples comparison)
+    """
+    if isinstance(dfs, pd.DataFrame):
+        dfs = [dfs]
+    chunks: list[np.ndarray] = []
+    for df in dfs:
+        if x in df.columns:
+            arr = _collect_numeric(df, x)
+            if arr.size:
+                chunks.append(arr)
+    if not chunks:
+        raise ValueError(f"No numeric data for '{x}' to compute bin edges.")
+    x_all = np.concatenate(chunks)
+    xmin, xmax = float(np.min(x_all)), float(np.max(x_all))
+    if not np.isfinite(xmin) or not np.isfinite(xmax) or xmin == xmax:
+        xmin, xmax = xmin - 0.5, xmax + 0.5
+
+    span = xmax - xmin
+    xmin -= pad_frac * span
+    xmax += pad_frac * span
+
+    width = float(bin_width) if (bin_width is not None and bin_width > 0) else _freedman_diaconis_width(x_all)
+    if not np.isfinite(width) or width <= 0:
+        width = span / max(min_bins, 1)
+
+    nbins = max(int(np.ceil((xmax - xmin) / width)), min_bins)
+    width = (xmax - xmin) / nbins
+    edges = np.arange(xmin, xmax + width * 1.0000001, width)
+    return edges
+
+def coerce_xlim(
+    xlim: tuple[float, float] | None,
+    edges: np.ndarray | None,
+) -> tuple[float, float] | None:
+    """
+    Prefer explicit xlim; else derive from edges; else None.
+    Why: consistent axes across plots for apples-to-apples viewing.
+    """
+    if xlim is not None and len(xlim) == 2 and all(np.isfinite(xlim)):
+        lo, hi = float(xlim[0]), float(xlim[1])
+        if lo == hi:
+            hi = lo + 1.0
+        return (min(lo, hi), max(lo, hi))
+    if edges is not None and len(edges) > 1:
+        return (float(edges[0]), float(edges[-1]))
+    return None

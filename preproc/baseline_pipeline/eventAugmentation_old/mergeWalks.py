@@ -1,0 +1,148 @@
+import pandas as pd
+from pathlib import Path
+import json
+import re
+import os
+
+def fix_time_str(ts, session_date):
+    if not isinstance(ts, str):
+        return pd.NaT
+    if ts.count(":") == 3:
+        ts = ".".join(ts.rsplit(":", 1))
+    try:
+        return pd.to_datetime(f"{session_date.strftime('%Y-%m-%d')} {ts}", format="%Y-%m-%d %H:%M:%S.%f")
+    except Exception:
+        return pd.NaT
+
+def merge_events_and_walks(events_path, walks_path, meta_path, out_path):
+    with open(meta_path, 'r') as f:
+        meta = json.load(f)
+    session_date = pd.to_datetime(meta.get("testingDate", "01_01_1970"), format="%m_%d_%Y")
+
+    # Load and fix timestamps
+    df_events = pd.read_csv(events_path)
+    df_walks = pd.read_csv(walks_path)
+    df_events['start_mLT'] = pd.to_datetime(df_events['start_mLT'], errors="coerce")
+    df_events['end_mLT'] = pd.to_datetime(df_events['end_mLT'], errors="coerce")
+
+    df_walks['start_mLT'] = pd.to_datetime(df_walks['start_mLT'], errors="coerce")
+    df_walks['end_mLT'] = pd.to_datetime(df_walks['end_mLT'], errors="coerce")
+    # Apply timestamp parsing using shared logic
+    # def fix_time_str(ts):
+    #     if not isinstance(ts, str):
+    #         return pd.NaT
+    #     if ts.count(":") == 3:
+    #         ts = ".".join(ts.rsplit(":", 1))
+    #     try:
+    #         return pd.to_datetime(f"{session_date.strftime('%Y-%m-%d')} {ts}", format="%Y-%m-%d %H:%M:%S.%f")
+    #     except Exception:
+    #         return pd.NaT
+
+    # df_events['start_mLT'] = df_events['start_mLT'].apply(fix_time_str)
+    # df_events['end_mLT'] = df_events['end_mLT'].apply(fix_time_str)
+
+    # df_walks['start_mLT'] = df_walks['start_mLT'].apply(fix_time_str)
+    # df_walks['end_mLT'] = df_walks['end_mLT'].apply(fix_time_str)
+
+    # No overwriting or manual manipulation — just concat and sort
+    df_combined = pd.concat([df_events, df_walks], ignore_index=True)
+    df_combined = df_combined.sort_values("start_mLT").reset_index(drop=True)
+    df_combined.to_csv(out_path, index=False)
+    print(f"✅ Final merged file written to {out_path}")
+
+def strip_suffix(filename, suffix):
+    return re.sub(f"{suffix}$", "", filename)
+
+
+def batch_merge_events(events_dir, meta_dir, walks_dir, output_dir, eventsEnding="events_flat"):
+    events_dir = Path(events_dir)
+    meta_dir =  Path(meta_dir)
+    walks_dir =  Path(walks_dir)
+    output_dir = Path(output_dir)
+    output_dir.mkdir(parents=True, exist_ok=True)
+
+
+    # events_files = {strip_suffix(f.stem, "_events_flat"): f for f in events_dir.glob("*_events_flat.csv")}
+    # walks_files = {strip_suffix(f.stem, "_walks"): f for f in walks_dir.glob("*_walks.csv")}
+    # meta_files = {strip_suffix(f.stem, "_meta"): f for f in meta_dir.glob("*_meta.json")}
+
+    # Find all meta and event files
+    meta_files = {f.stem.replace("_processed_meta", ""): f for f in meta_dir.glob("*_meta.json")}
+    events_files = {f.stem.replace(f"_{eventsEnding}", ""): f for f in events_dir.glob(f"*_{eventsEnding}.csv")}
+    walks_files = {f.stem.replace("_walks", ""): f for f in walks_dir.glob("*_walks.csv")}
+    #print('len meta files', meta_files)
+    #print('len events files', events_files)
+    #print('len walks files', walks_files)
+    print(meta_files)
+    print('METAAAAAAAAAA')
+    print(events_files)
+    print('EVENTSSSSSS')
+    print(walks_files)
+    print('WALKSSSSSS')
+    matched_keys = set(events_files) & set(walks_files) & set(meta_files)
+    print(f"🔍 Found {len(matched_keys)} complete file sets.")
+
+    for key in sorted(matched_keys):
+        events_path = events_files[key]
+        walks_path = walks_files[key]
+        meta_path = meta_files[key]
+        out_path = output_dir / f"{key}_events_with_walks.csv"
+        print(f"➡️ Merging: {events_path.name} + {walks_path.name}")
+        merge_events_and_walks(events_path, walks_path, meta_path, out_path)
+
+# # Example usage
+# morning = '/Users/mairahmac/Desktop/RC_TestingNotes/SmallBatchData/Ideals/ideal_day/pair_08/02_17_2025/Morning/MagicLeaps/ML2A'
+# afternoon = '/Users/mairahmac/Desktop/RC_TestingNotes/SmallBatchData/Ideals/ideal_day/pair_08/02_17_2025/Afternoon/MagicLeaps/ML2G'
+# output_dir = afternoon + "/flattened"
+
+# batch_merge_events(output_dir, output_dir)
+
+# if __name__ == "__main__":
+#     trueRootDir = "/Users/mairahmac/Desktop/RC_TestingNotes"
+
+
+#     base_dir = os.path.join(trueRootDir, "FreshStart", "full")
+    
+
+#     #base_dir = '/Users/mairahmac/Desktop/RC_TestingNotes/SmallBatchData/Ideals/ideal_day'
+#     events_dir = os.path.join(base_dir, "Events_AugPart1")
+#     meta_dir = os.path.join(base_dir, "MetaData_Flat")
+#     walks_dir = os.path.join(base_dir, "Events_ComputedWalks")
+#     output_dir = os.path.join(base_dir, "Events_MergedWalks")
+#     print("🚀 Starting batch flatten...")
+#     batch_merge_events(events_dir, meta_dir, walks_dir, output_dir)
+
+import argparse
+from pathlib import Path
+
+def cli():
+    p = argparse.ArgumentParser(description="merging regular events files with the computed walk files")
+    p.add_argument("--root-dir", required=True, type=Path)
+    p.add_argument("--proc-dir", required=True, type=Path)
+    p.add_argument("--events-dir", required=True, type=Path)
+    p.add_argument("--output-dir", required=True, type=Path)
+    p.add_argument("--eventsEnding", default="events_flat", type=str)
+
+    args = p.parse_args()
+
+    root = args.root_dir.expanduser()
+    proc = args.proc_dir
+    base_dir = proc if proc.is_absolute() else (root / proc)
+
+    # sanity checks
+    if not base_dir.exists():
+        p.error(f"Not found: {base_dir}")
+
+    events_dir = base_dir / "full" / args.events_dir
+    print(events_dir)
+    meta_dir = base_dir / "full" / "MetaData_Flat"
+    walks_dir = base_dir / "full" / "Events_ComputedWalks"
+    output_dir = base_dir / "full" / args.output_dir
+
+    # call your pipeline
+    batch_merge_events(str(events_dir), str(meta_dir), str(walks_dir), str(output_dir), args.eventsEnding)
+    # if args.fail_on_miss and code != 0:
+    #     sys.exit(code)
+
+if __name__ == "__main__":
+    cli()

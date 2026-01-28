@@ -1,0 +1,164 @@
+## Sticky pile (current)
+
+1. **BlockRepeatIndex patch**
+
+* Compute `BlockRepeatIndex` from `lo_eventType == "BlockStart"` rows (chronological by `start_AppTime` once event sorting is standardized)
+* Merge into `_events*.csv` and propagate across rows by `(BlockNum, BlockInstance)` (or your chosen block key)
+
+2. **Event ordering enforcement**
+
+* Canonicalize every `_events*.csv` by `start_AppTime`
+* Tie-breakers: `end_AppTime`, `origRow_start`
+* Do this after *every* event augmentation/manipulation, right before saving
+
+3. **Lightweight monotonic AppTime sanity checks**
+
+* Add warning-only `check_monotonic_apptime()`:
+
+  * in **preprocRaw** before writing `_processed.csv`
+  * in **reprocessing** before writing `_reprocessed.csv`
+
+4. **Alignment refactor**
+
+* Replace `alignPO2AN.py` with a general `alignML2RPi.py`
+* Audit downstream folder nesting + filename suffix expectations
+* BIG path sticky: legacy RPi pipelines assume `ml_root = <base>/<proc>/full/<events_dir>/augmented`
+
+5. **canonicalize_event_order() signature consistency**
+
+* Ensure all call sites use the new signature:
+
+  * `canonicalize_event_order(df, start_col="start_AppTime", end_col="end_AppTime", group_first=False)`
+* Remove any extra `sort_values(timestamp_col)` after canonicalization
+
+6. **AN segmentType-aware timestamp handling**
+
+* Mirror PO’s “segmentType-aware” threading in AN helpers (especially glia + schwann)
+* Goal: avoid `_orig/_RPi/_raw` column mismatch crashes
+
+7. **Timestamp suffix naming standard**
+
+* For glia/full segmentation: treat ML raw/enhanced timestamps as “orig/raw”
+* After RPi alignment: use `_RPi` suffixes consistently
+
+8. **score_ANPO binary**
+
+* Add `score_ANPO` early during eventSegmentation
+* Keep raw scoring columns as-is (`dropQual`, `pinDropVote`, `pinDropScore`)
+
+9. **Prune legacy code**
+
+* Move commented “old versions” to `_oldnotes.py` or rename `_OLD_DO_NOT_USE`
+
+10. **Turn-key flag: `read_rpi_logs_to_csv.py` recursion**
+
+* Script is non-recursive; confirm RawData layout won’t require recursion if more data arrives
+
+11. **Audit `batch_split_pipeline3.py` outputs**
+
+* Document what it writes (per-label merged events, combined BioPacRNS events, drift outputs)
+
+12. **Audit plotting scripts**
+
+* Confirm these are plotting-only vs alignment-changing:
+
+  * `marks_elapsed_compare.py`, `marks_elapsed_timeline.py`, `marks_timeline_lfp.py`, `marks_timeline_mlts.py`, `multi_stream_drift.py`, `visualMarks.py`
+
+13. **If no pipeline produces fully RPi-aligned `_processed.csv`, write it**
+
+* Needed if your “alignment truth” must be in processed time-series before later steps
+
+14. **Package/paths cleanup**
+
+* Consolidate shared helpers (WarningLogger, common merges, canonical ordering, etc.) into an importable module/package
+
+15. **Logging folders**
+
+* Split `PreProcLogging` into stage-specific subfolders:
+
+  * `preProcRaw_AN`, `preProcRaw_PO`, `eventSegGlia_AN`, `eventSegFull_AN`, etc.
+
+16. **Finalize PO “orig” nesting removal**
+
+* Ensure no downstream scripts assume the older directory layout
+
+17. **Verify `eMLTimestamp_orig` exists for PO**
+
+* Confirm PO preprocRaw generates it (you said PO processed has eMLT, but verify naming + presence)
+
+18. **Update muscles parsers to `_RPi` timestamps**
+
+* (If you still want that later) ensure consistent naming + compatibility
+
+19. **AN glia error likely `_orig` mismatch**
+
+* AN glia fails while PO works → likely column naming/selection mismatch (timestamp handling in helpers)
+
+20. **Fallback rule for RPi-aligned enhanced timestamps**
+
+* Prefer `eMLT_RPi` when populated; if mostly NaN, fall back to `eMLT_orig`
+
+21. **Helpers import stability**
+
+* You already fixed helper imports for preproc + segmentation; later need to do same for alignment/augmentation/reproc directories
+
+---
+
+## Changes needed to “bring everything up to date” (based on your latest decision)
+
+You said you want to **stop fighting eMLTimestamp for synthetic events** and **recommit to reprocessing**. So here’s the minimal “update plan” consistent with that.
+
+### A) Freeze event segmentation timing model (now)
+
+* **Keep** generating synthetic event start/end in:
+
+  * `start_AppTime` / `end_AppTime`
+  * `start_mLT` / `end_mLT` (or `*_orig` for PO)
+* Do **not** attempt to retrofit `start_eMLT/end_eMLT` for synthetic events right now.
+
+### B) Standardize event ordering everywhere (must-do)
+
+* In `preFrontalCortex_unifiedEventSeg.py`:
+
+  * call `canonicalize_event_order(enriched_events, start_col="start_AppTime", end_col="end_AppTime", group_first=False)`
+  * remove any extra `.sort_values([timestamp_col])` after that
+
+### C) Avoid `_RPi` inside segmentation phases (your new direction)
+
+* Do **not** require `_RPi` columns during glia/full parsing.
+* Allow `_RPi` columns to be absent or NA during segmentation.
+
+### D) Make RPi alignment a *post-segmentation augmentation*
+
+After you have:
+
+* last viable `_events*.csv`
+* and your reprocessed `_processed.csv` (with stepDist, currSpeed, elapsed times)
+
+…then:
+
+1. Run your RPi pipelines to produce unified marks.
+2. Run merge/alignment to attach RPi-aligned timestamps to:
+
+   * events (`*_events*_RPi.csv` or appended columns)
+   * processed (`*_processed*_RPi.csv` or appended columns)
+
+### E) If you still want “enhanced timestamps” usable later
+
+* Ensure `_processed` contains:
+
+  * AN: `eMLTimestamp`
+  * PO: `eMLTimestamp_orig`
+* Don’t force events to use eMLT; treat it as optional downstream analysis.
+
+### F) Logging cleanup (quality-of-life)
+
+* Update WarningLogger output paths so each stage writes to its own subfolder under `PreProcLogging/`.
+
+---
+
+## The “documentation blurb” you can save (one-paragraph)
+
+Your segmentation pipeline is **AppTime-first** and produces synthetic events with start/end times in both **AppTime** and **mLTimestamp** domains. Because synthetic events do not correspond to a single `origRow`, retrofitting `eMLTimestamp` start/end is deferred. RPi alignment is treated as a downstream augmentation step applied after the last viable events file and reprocessed time-series outputs exist; aligned timestamps are added as additional columns rather than driving segmentation.
+
+If you want, I can also turn that into a short `PIPELINE_NOTES.md` section you can paste into your repo.

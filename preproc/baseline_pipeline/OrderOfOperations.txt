@@ -1,7 +1,13 @@
 preprocRaw_AN.py
 preprocRaw_PO.py
 prefrontalCortex_unifiedEvents.py (comment *out* the 'full' option)
-alignPO2AN.py
+
+# alignPO2AN.py ## We are not going to use this one anymore in favor of new RPi alignment steps. 
+read_rpi_logs_to_csv.py 
+rpi_preproc_pipeline3.py
+batch_split_pipeline3.py
+
+
 
 prefrontalCortex_unifiedEvents.py (swap commenting for the 'glia' & 'full' options)
 

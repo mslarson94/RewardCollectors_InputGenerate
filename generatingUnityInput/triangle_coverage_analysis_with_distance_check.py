@@ -31,7 +31,7 @@ def vertex_distance_check(combo, min_distance):
 
 def top_triangle_combinations(triangles, arena_polygon, top_n=10, min_vertex_distance=1.0):
     results = []
-    for combo in itertools.combinations(triangles, 3):
+    for combo in itertools.combinations(triangles, 2):
         if not vertex_distance_check(combo, min_vertex_distance):
             continue
         combined = unary_union([t['polygon'] for t in combo])
@@ -56,7 +56,7 @@ def visualize_combinations(triangle_data, combinations, arena_polygon, filename_
         ax.set_title(f"Combination {entry['versions']} | Covered Area: {entry['covered_area']:.2f}")
         ax.axis('equal')
         ax.legend()
-        plt.savefig(f"/Users/mairahmac/Desktop/TriangleSets/newIteration2/combination_{i+1}.png")
+        plt.savefig(f"/Users/mairahmac/Desktop/TriangleSets/combination_{i+1}.png")
         plt.close()
 
 def triangle_similarity_matrix(df):
@@ -70,9 +70,9 @@ def main(csv_path):
     top_combos = top_triangle_combinations(triangles, arena, min_vertex_distance=1.0)
     visualize_combinations(df, top_combos, arena)
     sim_matrix = triangle_similarity_matrix(df)
-    pd.DataFrame(top_combos).to_csv("/Users/mairahmac/Desktop/TriangleSets/newIteration2/thirdCombo/top_triangle_combinations.csv", index=False)
-    sim_matrix.to_csv("/Users/mairahmac/Desktop/TriangleSets/newIteration2/thirdCombo/triangle_similarity_matrix.csv")
+    pd.DataFrame(top_combos).to_csv("/Users/mairahmac/Desktop/TriangleSets/A2D_combinations.csv", index=False)
+    sim_matrix.to_csv("/Users/mairahmac/Desktop/TriangleSets/A2D_triangle_similarity_matrix.csv")
     print("Output written: top_triangle_combinations.csv, triangle_similarity_matrix.csv, combination_*.png")
 
 # Example use:
-main("/Users/mairahmac/Desktop/TriangleSets/newIteration2/thirdCombo/mega_triangle_positions.csv")
+main("/Users/mairahmac/Desktop/TriangleSets/triangle_positions-formatted__A_D_.csv")

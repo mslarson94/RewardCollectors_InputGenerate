@@ -1,0 +1,54 @@
+all the files 
+
+Things that havbe a kernel but will probably need to be reworked 
+	autoDetectDetailsDicts.m
+	combine_raspi_logs_with_labels.m
+	parseEventsFiles.m
+	parseEventsFilesDetails.m
+	sliceEpoch.m
+
+Things that are necessary for what I generated last time
+	concat_RNS.m
+		- stitches all the .dat files together 
+	interp_IED_TF.m
+		- interpolates new time
+	MSL_importRNS.m
+		- imports the actual data
+	MSL_RNS_identify_mrk.m
+		- id's the marks 
+	read_logfile.m
+		- reads the raspi file 
+
+Martin Samples
+	RNS_identify_mrk.m
+		- identifies marks 
+	RNS_import.m
+		- imports the actual data
+	synch_demo.m
+		- Martin's new share
+
+
+Drift Analysis
+	plot_drift_from_logs.m
+	plot_drift_with_metadata.m
+	run_driftAnalysis.m
+
+
+Short version:
+
+* **Script 2 (`interp_IED_TF.m`)**
+
+  * It’s a *driver* stub for **IED** work (interictal epileptiform discharges) + time–frequency analysis.
+  * What it actually does right now: sets Fs, line freq, frequency axis, scaling to µV, then (intended to) loads iEEG via `concat_RNS`. There’s **no mark/template detection**, no CSV alignment, and no completed IED detector yet—it’s just the scaffold for an IED/TF pipeline.
+
+* **Script 4 (`MSL_RNS_identify_mrk.m`)**
+
+  * It’s a full **hardware “mark” detector/aligner**, not IED-related.
+  * Cross-correlates the iEEG with two fixed **mark templates**, thresholds peaks, aligns them to **CSV timestamps**, predicts missing marks, builds absolute **daytime**, and **artifact-corrects** around marks via spline inpainting. It trims markers to the requested time window and returns an updated `Ephys` struct.
+
+So, they’re different tasks:
+
+* **Script 2 ≈ planned IED/TF analysis entry point** (currently incomplete).
+* **Script 4 = finished mark detection & alignment function**.
+
+Does Script 4 look “based on” Script 2? **No**—they’re orthogonal. Script 4 isn’t a refactor of Script 2; it solves a different problem (mark alignment), with different inputs/outputs and concrete logic (templates, CSV alignment, artifact interpolation). If you want Script 2 to actually detect IEDs, it’d need its own detector (e.g., bandpass + energy/z-score threshold or wavelet-based spikes), optional TF around detections, and output of IED onsets/segments—none of which exist in the current Script 2.

@@ -6,7 +6,7 @@ import seaborn as sns
 
 from histoHelpers import (
     scatter_point, add_legends, _subtitle_from,
-    make_axes_with_dots, draw_dots_strip, style_x_for_main_and_dots,
+    make_axes_with_dots, draw_dots_strip, style_x_for_main_and_dots, annotate_hist_bins, compute_fixed_bin_edges, coerce_xlim,
 )
 
 def plot_block3_roundNum(
@@ -220,6 +220,7 @@ def plot_hist_kde_by_coin(
     voi_UnitStr: str = "(s)",
     blocks_min: int = 3,
     bins: int | str = "auto",
+    bin_width: float | None = None,
     stat: str = "density",
     common_norm: bool = False,
     palette: str | dict = "tab10",
@@ -232,6 +233,9 @@ def plot_hist_kde_by_coin(
     height_ratios: tuple[int, int] = (6, 1),
     main_labelpad: float = 6.0,
     dots_top_pad: float = 4.0,
+    show_bin_stats: bool = True,
+    fix_xlim: bool = False,                
+    xlim: tuple[float, float] | None = None,
 ):
     req = ["BlockNum", "BlockStatus", variableOfInterest, "coinLabel", "dropQual"]
     missing = [c for c in req if c not in df.columns]
@@ -253,6 +257,13 @@ def plot_hist_kde_by_coin(
     if dat.empty:
         raise ValueError("No data left after filtering; cannot plot.")
 
+    edges = None
+    if bin_width is not None or fix_xlim or xlim is not None:
+        edges = compute_fixed_bin_edges(dat, x=variableOfInterest, bin_width=bin_width)
+        bins_arg = edges
+    else:
+        bins_arg = bins
+
     hue_order = sorted(dat["coinLabel"].unique().tolist())
     if isinstance(palette, dict):
         color_map = {k: palette.get(k, "#333333") for k in hue_order}
@@ -272,10 +283,19 @@ def plot_hist_kde_by_coin(
         bins=bins, stat=stat, common_norm=common_norm, element="step",
         alpha=0.35, multiple="layer", ax=ax, palette=color_map, legend=True,
     )
+
+    # --- NEW: annotate bins & stats ---
+    if show_bin_stats:
+        annotate_hist_bins(ax, dat, x=variableOfInterest, bins=bins_arg, hue="coinLabel", stat=stat)
+    
     sns.kdeplot(
         data=dat, x=variableOfInterest, hue="coinLabel", hue_order=hue_order,
         common_norm=common_norm, ax=ax, palette=color_map, lw=2, legend=False,
     )
+
+    xl = coerce_xlim(xlim, edges) if fix_xlim or xlim is not None else None
+    if xl:
+        ax.set_xlim(xl)
 
     if dot_mode == "panel" and ax_dots is not None:
         draw_dots_strip(

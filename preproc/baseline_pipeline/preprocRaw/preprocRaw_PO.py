@@ -4,16 +4,21 @@ import numpy as np
 import re
 import argparse
 from pathlib import Path
-from preprocRawHelpers import (
+
+# preprocRawHelpers functions
+from RC_utilities.preprocHelpers.preprocRawHelpers import (
     detect_and_tag_blocks,
     forward_fill_block_info,
     detect_block_completeness,
     fix_collecting_block_coinsetids,
     robust_parse_timestamp,
-    final_column_order_PO,
+    final_column_order,
     enhance_timestamp_with_apptime,
-    process_obsreward_file)
-
+    process_obsreward_file,
+    check_monotonic_apptime,
+)
+## warning_logger
+from RC_utilities.segHelpers.warning_logger import WarningLogger
 
 def correct_extraColumns(file_path, output_dir, save_large_files, max_memory_mb):
     """
@@ -132,10 +137,13 @@ def clean_and_process_files(root_directory, magic_leap_data, save_large_files=Tr
     pattern = re.compile(r"^ObsReward_B_\d{2}_\d{2}_\d{4}_\d{2}_\d{2}.csv$")
     print('Started PO-specific processing!')
     baseDir = os.path.join(root_directory, "RawData")
-    output_dir = os.path.join(root_directory, "ProcessedData_PO_orig")
-    flatPath = os.path.join(root_directory, "ProcessedData_Flat_PO_orig")
+    output_dir = os.path.join(root_directory, "ProcessedData")
+    flatPath = os.path.join(root_directory, "ProcessedData_Flat")
     os.makedirs(output_dir, exist_ok=True)
     os.makedirs(flatPath, exist_ok=True)
+    loggerDir = os.path.join(output_dir, "PreProcLogging_PO")
+    os.makedirs(loggerDir, exist_ok=True)
+    logger = WarningLogger(output_dir=loggerDir)
     for dirpath, _, filenames in os.walk(baseDir):
         for filename in filenames:
 
@@ -150,9 +158,10 @@ def clean_and_process_files(root_directory, magic_leap_data, save_large_files=Tr
                 nestedPath = os.path.join(output_dir, relative_path)
                 os.makedirs(nestedPath, exist_ok=True)
 
-                nestedFile = os.path.join(nestedPath, f"{filename.replace('.csv', '_processed_orig.csv')}")
-                flatFile = os.path.join(flatPath, f"{filename.replace('.csv', '_processed_orig.csv')}")
+                nestedFile = os.path.join(nestedPath, f"{filename.replace('.csv', '_processed.csv')}")
+                flatFile = os.path.join(flatPath, f"{filename.replace('.csv', '_processed.csv')}")
                 print(f"Processing file: {file_path}")
+                logger.log(f"Processing file: {file_path}")
 
                 data = correct_extraColumns(file_path, nestedPath, save_large_files, max_memory_mb)
                 # ✅ Track original row index before any manipulation
@@ -164,16 +173,19 @@ def clean_and_process_files(root_directory, magic_leap_data, save_large_files=Tr
                 data["RoundNum"] = data["RoundNum"].fillna(method="ffill")  # 🔧 Ensures all rows within block are tagged
                 data = augment_with_chestpin_and_totalrounds_PO(data)
                 
-                data['mLTimestamp_orig'] = data['Timestamp'].apply(lambda ts: robust_parse_timestamp(ts, session_date))
+                data['mLT_orig'] = data['Timestamp'].apply(lambda ts: robust_parse_timestamp(ts, session_date))
 
-                data = enhance_timestamp_with_apptime(data, "PO")
-                data["mLTimestamp_raw"] = data.pop("Timestamp")
+                data = enhance_timestamp_with_apptime(data)
+                data["mLT_raw"] = data.pop("Timestamp")
 
                 # Reorder columns
-                data = data[final_column_order_PO]
+                data = data[final_column_order]
+                check_monotonic_apptime(data, col="AppTime", context="preprocRaw_PO.py", logger=logger)
                 data.to_csv(nestedFile, index=False)
                 data.to_csv(flatFile, index=False)
                 print(f"Processed and saved: {nestedFile}")
+                logger.log(f"Processed and saved: {nestedFile}")
+                logger.save()
 
 ########### Execution Block #############
 # Execution block

@@ -162,7 +162,7 @@ myStartOctagon = [(5,0), (3.5, 3.5), (0, 5), (-3.5,3.5), (-5,0), (-3.5, -3.5), (
 myOutDir = '/Users/mairahmac/Desktop/TriangleSets'
 
 # Run multiple iterations and save outputs
-iterateTriangles(myStartOctagon, myArenaOctagon, myOutDir, 10)
+iterateTriangles(myStartOctagon, myArenaOctagon, myOutDir, 50)
 
 #csv_file = os.path.join(myOutDir, 'triangle_positions_Selected.csv')
 #plot_selected_triangles(myStartOctagon, myArenaOctagon, csv_file, version_list=[2, 3, 8], outFile='selected_triangles_1a.png')

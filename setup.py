@@ -1,4 +1,4 @@
-from setuptools import setup, find_packages
+sfrom setuptools import setup, find_packages
 
 setup(
     name="RC_utilities",  # Give your package a unique name

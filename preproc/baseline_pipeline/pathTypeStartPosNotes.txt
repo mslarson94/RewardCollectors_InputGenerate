@@ -1,0 +1,58 @@
+## Path Type Assignment
+
+python pathTypeAssignment.py \
+--input "/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/Events_Final_NoWalks/augmented/ObsReward_A_02_17_2025_15_11_events_final.csv" \
+--output "/Users/mairahmac/Desktop/test/pathTest.csv"
+
+---> generates csv that has the cummulative and final path categories already set in columns pathCategory and pathCategory_final --> its very simplified output so re-integrating it is a little messy
+---> use this call in an iterative application please. 
+
+
+
+
+## Start Position Assignment 
+
+# ---------------------------
+# Example usage:
+# ---------------------------
+eventsOfInterest = {
+    "RoundStart": "start",
+    "InterRoundCylinderWalk_segment": "end",
+    "TrueContentStart": "start",
+    "PreBlock_CylinderWalk_segment": "end",
+    "InterRound_PostCylinderWalk_segment": "start",
+
+}
+# df_labeled = compute_startpos_for_events_flexible(df_events, eventsOfInterest)
+
+
+from pathlib import Path
+csv_in = Path("/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/Events_Final_NoWalks/augmented/ObsReward_A_02_17_2025_15_11_events_final.csv")  # replace with your path
+#csv_in = "/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/MergedEvents_noWalks/Merged_ParticipantDayRoleCoinSet/MergedEvents/R037_AN_B_main_events.csv"
+df = pd.read_csv(csv_in)
+
+startPos_df = compute_startpos_for_events_flexible(df, eventsOfInterest)
+
+csv_out = Path("/Users/mairahmac/Desktop/test/out.csv")
+startPos_df.to_csv(csv_out)
+
+
+
+---> you are going to need to operationalize this script (or make a new one entirely to keep this one as that beta version) so that you can run something like this: 
+
+python startPosAssignment.py \ 
+--input df \
+--output newdf \ 
+--collect (or --pinDrop) \
+
+with that last flag specifying that we are looking exclusively for collecting rounds (and to use "TrueContentStart": "start") or for pindropping rounds (use "InterRound_PostCylinderWalk_segment" :"start")
+
+
+
+
+Then you need to weld this information back together somehow. Either in a new dataframe that just has this information, or reintegrate it into the full version of the dataframe. Unsure what's the best call here. 
+
+
+
+However you handle that, then you need to propagate the startpos information throughout each given round and save, then you can feed that new data into the run_plot_uneven_trials.py
+

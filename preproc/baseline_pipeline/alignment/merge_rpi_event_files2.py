@@ -27,24 +27,7 @@ from typing import Optional, Tuple
 import pandas as pd
 import re
 
-
-def _parse_base_and_device(stem: str) -> Tuple[str, str, Optional[str]]:
-    # Expecting: <base>_<device>_<Label>_events
-    parts = stem.split("_")
-    if len(parts) < 4 or parts[-1] != "events":
-        # Fallback: try to find last 3 tokens device/label/events
-        m = re.search(r"(.+)_([^_]+)_([^_]+)_events$", stem)
-        if not m:
-            raise ValueError(f"cannot parse base/device/label from stem '{stem}'")
-        return m.group(1), m.group(2), m.group(3)
-    base = "_".join(parts[:-3])
-    device = parts[-3]
-    label = parts[-2]
-    return base, device, label
-
-
-def _is_label_col(col: str) -> bool:
-    return col.endswith("_RPi_Timestamp") or col.endswith("_RPi_Timestamp_drift") or col.endswith("_RPi_Matched") or col.endswith("_RPi_MatchReason")
+from batchAlignHelpers import _is_label_col, _parse_base_and_device
 
 
 def main() -> None:
@@ -73,6 +56,7 @@ def main() -> None:
 
     # Choose out_dir
     out_dir = Path(args.out_dir) if args.out_dir else src_path.parent
+    out_dir = out_dir / "BioPacRNS"
     out_dir.mkdir(parents=True, exist_ok=True)
     out_csv = out_dir / f"{base}_{device}_BioPacRNS_events.csv"
 

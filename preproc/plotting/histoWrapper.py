@@ -125,6 +125,11 @@ def run_suite_for_file(
     voi_UnitStr: str = "(s)",
     yLabel_map: dict[str, str] | None = None,
     allowed_status: Iterable[str] | None = ("complete",),
+    # ---------- NEW/Fixed ----------
+    bin_width: Optional[float] = None,
+    fix_xlim: bool = False,
+    xlim: Optional[tuple[float, float]] = None,
+    fd_source: Optional[str] = None,
 ) -> dict:
 
     """
@@ -155,6 +160,27 @@ def run_suite_for_file(
         outlier_ddof=outlier_ddof,
         outlier_keep_na=outlier_keep_na,
     )
+    # Compute bin_width from giant file if requested and not explicitly set
+    if fd_source and bin_width is None:
+        big_path = Path(fd_source)
+        big = pd.read_parquet(big_path) if big_path.suffix.lower() in {".parquet", ".pq"} else pd.read_csv(big_path)
+        vec = _collect_numeric(big, variableOfInterest) if variableOfInterest in big.columns else np.array([])
+        width = _freedman_diaconis_width(vec) if vec.size else 0.0
+        if np.isfinite(width) and width > 0:
+            bin_width = float(width)
+
+    # Validate xlim
+    if xlim is not None:
+        if not (isinstance(xlim, tuple) and len(xlim) == 2 and all(isinstance(v, (int, float)) for v in xlim)):
+            raise ValueError("xlim must be a tuple of two numbers, e.g., (0.0, 10.0)")
+        lo, hi = float(xlim[0]), float(xlim[1])
+        if not np.isfinite(lo) or not np.isfinite(hi):
+            raise ValueError("xlim values must be finite numbers")
+        if lo == hi:
+            hi = lo + 1.0
+        # enforce ordered tuple
+        xlim = (min(lo, hi), max(lo, hi))
+        fix_xlim = True  # explicit xlim implies fixed axes
 
     # grouping
     groups: list[tuple[Any, pd.DataFrame]]
@@ -262,6 +288,9 @@ def run_suite_for_file(
             variableOfInterest=variableOfInterest,
             voi_str= voi_str,
             voi_UnitStr=voi_UnitStr,
+            bin_width=bin_width,
+            fix_xlim=bool(fix_xlim or xlim),
+            xlim=tuple(xlim) if xlim else None,
         )
         _save_figs(figs, common_dir=common_dir / "HistKDE", per_file_dir=target_dir,
                    stem=csv_path.stem, tag=_tag(f"hist_kde_{variableOfInterest}"),
@@ -367,12 +396,23 @@ def main():
     ap.add_argument("--outlier-keep-na", action="store_true", help="Keep NaNs in outlier column(s)")
     ap.add_argument("--filter-columns", nargs="*", default=["truecontent_elapsed_s", "dropDist"],
                     help="Columns to apply outlier filtering to")
+    ap.add_argument("--bin-width", type=float, default=None)
+    ap.add_argument("--fix-xlim", action="store_true")
+    ap.add_argument("--xlim", type=float, nargs=2, metavar=("MIN","MAX"))
+    ap.add_argument("--fd-source", type=str, default=None)
+    args = ap.parse_args()
 
     args = ap.parse_args()
 
     formats = tuple(s.strip() for s in args.formats.split(",") if s.strip())
     gby = args.groupby if args.groupby else None
     ogby = args.outlier_groupby if args.outlier_groupby else None
+    if args.fd_source and args.bin_width is None:
+        big = pd.read_parquet(args.fd_source) if args.fd_source.endswith((".parquet",".pq")) else pd.read_csv(args.fd_source)
+        from histoHelpers import _freedman_diaconis_width, _collect_numeric
+        width = _freedman_diaconis_width(_collect_numeric(big, args.variableOfInterest))
+        if np.isfinite(width) and width > 0:
+            args.bin_width = width
 
     p = Path(args.input)
     if p.is_file():
@@ -380,6 +420,9 @@ def main():
             p,
             out_root=args.out_root,
             variableOfInterest=args.voi,
+            bin_width=args.bin_width,
+            fix_xlim=bool(args.fix_xlim or args.xlim),
+            xlim=tuple(args.xlim) if args.xlim else None,
             voi_str=args.voi_str,
             voi_UnitStr=args.voi_UnitStr,
             blocks_per_facet=args.blocks_per_facet,
@@ -402,6 +445,9 @@ def main():
             recursive=args.recursive,
             out_root=args.out_root,
             variableOfInterest=args.voi,
+            bin_width=args.bin_width,
+            fix_xlim=bool(args.fix_xlim or args.xlim),
+            xlim=tuple(args.xlim) if args.xlim else None,
             voi_str=args.voi_str,
             voi_UnitStr=args.voi_UnitStr,
             blocks_per_facet=args.blocks_per_facet,

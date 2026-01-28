@@ -29,57 +29,9 @@ from typing import List
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
-
-
-def _available_labels(df: pd.DataFrame) -> List[str]:
-    labels = []
-    for prefix in ("BioPac", "RNS"):
-        if f"{prefix}_RPi_Timestamp_drift" in df.columns:
-            labels.append(prefix)
-    # allow any other prefixes that follow the pattern *_RPi_Timestamp_drift
-    for col in df.columns:
-        if col.endswith("_RPi_Timestamp_drift"):
-            prefix = col[:-len("_RPi_Timestamp_drift")]
-            if prefix not in labels:
-                labels.append(prefix)
-    return labels
-
+from batchAlignHelpers import _summarize, _series_for_label, _plot_single, _available_labels
 
 essential_cols = ["mLTimestamp"]
-
-def _series_for_label(df: pd.DataFrame, label: str):
-    drift_col = f"{label}_RPi_Timestamp_drift"
-    ts_col = f"{label}_RPi_Timestamp"
-    if drift_col not in df.columns or ts_col not in df.columns:
-        return None
-    ml_ts = pd.to_datetime(df.get("mLTimestamp", pd.Series([pd.NaT]*len(df))), errors="coerce")
-    mask = (~df[drift_col].isna()) & (~ml_ts.isna()) & (~df[ts_col].isna())
-    if not mask.any():
-        return None
-    x = (np.arange(len(df)) + 1)[mask.to_numpy()]  # event index positions of this label's matched rows
-    y = df.loc[mask, drift_col].astype(float).to_numpy()
-    return x, y, ml_ts.loc[mask].reset_index(drop=True)
-
-
-def _plot_single(label: str, x: np.ndarray, y: np.ndarray, title: str, out_png: Path) -> None:
-    fig, ax = plt.subplots(figsize=(12, 4))
-    ax.scatter(x, y)
-    ax.set_title(title)
-    ax.set_xlabel("Event Index")
-    ax.set_ylabel("Drift (s)")
-    ax.grid(True, alpha=0.4)
-    fig.savefig(out_png, dpi=150)
-    plt.close(fig)
-
-
-def _summarize(y: np.ndarray) -> dict:
-    return {
-        "n_matched": int(len(y)),
-        "mean_drift_s": float(np.nanmean(y)) if len(y) else float("nan"),
-        "median_drift_s": float(np.nanmedian(y)) if len(y) else float("nan"),
-        "max_abs_drift_s": float(np.nanmax(np.abs(y))) if len(y) else float("nan"),
-    }
-
 
 def main() -> None:
     ap = argparse.ArgumentParser(description="Plot and summarize drift from merged ML CSV (supports multiple labels and combined overlay)")
@@ -91,6 +43,9 @@ def main() -> None:
     df = pd.read_csv(args.merged_ml_csv)
     ml_base = Path(args.merged_ml_csv).stem
     out_dir = Path(args.merged_ml_csv).parent
+    out_dir = out_dir / f"{label}"/ "Drift"
+    out_dir.mkdir(parents=True, exist_ok=True)
+
 
     requested = [s.strip() for s in args.labels.split(",") if s.strip()] if args.labels else ([] if not args.label else [args.label.strip()])
     present = _available_labels(df)

@@ -80,9 +80,9 @@ def flatten_events(events_path, meta_path, out_path, distance_threshold=None):
 
 def batch_flatten_events(base_dir, distance_threshold=None, events_dir='Events_Flat_csv', meta_dir = 'MetaData_Flat',out_dir='Events_Flattened', eventEnding='processed_events', metaEnding = 'processed_meta', outEnding='eventsFlat'):
     base_dir   = Path(base_dir)
-    events_dir = base_dir / "full" / events_dir
-    meta_dir   = base_dir / "full" / meta_dir
-    output_dir = base_dir / "full" / out_dir
+    events_dir = base_dir / "EventSegmentation" / events_dir
+    meta_dir   = base_dir / "EventSegmentation" / meta_dir
+    output_dir = base_dir / "EventSegmentation" / out_dir
 
     # make sure directories exist
     for d in (events_dir, meta_dir, output_dir):

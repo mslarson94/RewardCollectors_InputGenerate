@@ -16,40 +16,6 @@ sys.path.append(base_dir)
 #sys.path.append(os.path.join(os.path.dirname(__file__), 'baseline_pipeline'))
 #from eventCascade_VariablePathHelpers import generate_nestedDir
 
-def align_po_to_an_events_v1(an_events_file, po_events_file, po_processed_file, output_file):
-    df_an_events = pd.read_csv(an_events_file)
-    # if 'ParsedTimestamp' not in df_an_events.columns:
-    #     df_an_events['ParsedTimestamp'] = df_an_events['Timestamp'].apply(safe_parse_timestamp)
-    print("we have started the function align_po_to_an_events")
-    df_an_starts = df_an_events[df_an_events['lo_eventType'] == 'BlockStart']
-    df_an_starts = df_an_starts.sort_values(['BlockNum', 'BlockInstance', 'origRow_start'])
-    df_an_starts = df_an_starts.groupby(['BlockNum', 'BlockInstance'], as_index=False).first()
-
-    df_po = pd.read_csv(po_processed_file)
-    # if 'ParsedTimestamp' in df_po.columns:
-    #     df_po['ParsedTimestamp'] = pd.to_datetime(df_po['ParsedTimestamp'])
-
-    df_po['mLTimestamp'] = pd.NaT
-
-    for _, an_row in df_an_starts.iterrows():
-        bn = an_row['BlockNum']
-        bi = an_row['BlockInstance']
-        an_start_ts = an_row['mLTimestamp']
-        
-        if isinstance(an_start_ts, str):
-            an_start_ts = pd.to_datetime(an_start_ts, errors="coerce")
-
-        mask = (df_po['BlockNum'] == bn) & (df_po['BlockInstance'] == bi)
-        if mask.sum() > 0:
-            df_po.loc[mask, 'mLTimestamp'] = an_start_ts
-        else:
-            print(f"⚠️ BlockNum={bn}, BlockInstance={bi} found in AN but not in PO.")
-
-
-    df_po.to_csv(output_file, index=False)
-    print(f"✅ Aligned processed file saved to {output_file}")
-    return df_po  # Return for use in updating the events file
-
 
 def align_po_to_an_events(an_events_file, po_events_file, po_processed_file, output_file, nestedOutFile):
     import pandas as pd
@@ -124,33 +90,6 @@ def backfill_event_AN_parsedTS(events_file, aligned_proc_df, output_file, nested
     #df_events.to_csv(nestedOutFile, index=False)
     print(f"📝 Updated mLTimestamp in: {output_file}")
 
-
-def generate_nestedDir_v1(proc_dir, metadataFile, target_file):
-
-    meta_df = pd.read_excel(metadataFile, sheet_name="MagicLeapFiles")
-    meta_df = meta_df.dropna(subset=["cleanedFile"])
-    
-    meta_df["cleanedFile"] = meta_df["cleanedFile"].astype(str).str.strip().str.lower()
-    matched_meta = meta_df[meta_df["cleanedFile"] == target_file.lower()] 
-    nested_json = {
-        "target_file": target_file,
-        "proc_dir": proc_dir, 
-        "pairID": meta_df.get("pairID_py", "unknown"),
-        "testingDate": str(meta_df.get("testingDate", "unknown")),
-        "sessionType": meta_df.get("sessionType", "Morning"),
-        "MagicLeaps": "MagicLeaps",
-        "device": meta_df.get("device", "unknown")
-    }
-    pairID= meta_df.get("pairID_py", "unknown")
-    testingDate = str(meta_df.get("testingDate", "unknown"))
-    sessionType = meta_df.get("sessionType", "Morning")
-    device = meta_df.get("device", "unknown")
-    
-    almostNested = f"ProcessedData/{pairID}/{testingDate}/{sessionType}/MagicLeaps/{device}"
-    nestedDirName = os.path.join(proc_dir, almostNested)
-
-    return nestedDirName
-
 def generate_nestedDir(proc_dir, metadataFile, target_file):
     meta_df = pd.read_excel(metadataFile, sheet_name="MagicLeapFiles")
     meta_df = meta_df.dropna(subset=["cleanedFile"])
@@ -175,18 +114,18 @@ def generate_nestedDir(proc_dir, metadataFile, target_file):
 
     # Construct path
     almostNested = f"ProcessedData/{pairID}/{testingDate}/{sessionType}/MagicLeaps/{device}"
-    nestedDirName = os.path.join(base_dir, almostNested)
+    nestedDirName = os.path.join(proc_dir, almostNested)
     
     # ✅ Ensure directory exists
     os.makedirs(nestedDirName, exist_ok=True)
 
     # Return full path to CSV file (not just folder)
     nested_csv_file = os.path.join(nestedDirName, target_file)
-
+    print("nested_csv_file", nested_csv_file)
     return nested_csv_file
 
 
-def batch_align_all(events_dir, proc_dir, finalproc_dir, metadataFile, base_dir):
+def batch_align_all(events_dir, proc_dir, finalproc_dir, metadataFile, base_dir,):
     print("we have started the function batch_align_all")
     for filename in os.listdir(events_dir):
         if not filename.startswith("ObsReward_B_") or not filename.endswith("_events_orig.csv"):
@@ -202,8 +141,9 @@ def batch_align_all(events_dir, proc_dir, finalproc_dir, metadataFile, base_dir)
         po_proc_file = os.path.join(proc_dir, f"{file_base_B}_processed_orig.csv")
         aligned_proc_outfile = os.path.join(finalproc_dir, f"{file_base_B}_processed.csv")
         updated_events_outfile = os.path.join(events_dir, f"{file_base_B}_processed_events.csv")
+        print("base_dir: ",base_dir)
 
-        nestedDirName = generate_nestedDir(finalproc_dir, metadataFile, f"{file_base_B}_processed.csv")
+        nestedDirName = generate_nestedDir(base_dir, metadataFile, f"{file_base_B}_processed.csv")
         
         if not (os.path.exists(an_events_file) and os.path.exists(po_events_file) and os.path.exists(po_proc_file)):
             print("os.path.exists(an_events_file)", os.path.exists(an_events_file))
@@ -217,26 +157,6 @@ def batch_align_all(events_dir, proc_dir, finalproc_dir, metadataFile, base_dir)
 
         # Use the aligned info to backfill AN_ParsedTS into PO's events file
         backfill_event_AN_parsedTS(po_events_file, aligned_df, updated_events_outfile, nestedDirName)
-
-
-# if __name__ == "__main__":
-#     #base_dir = "/Users/mairahmac/Desktop/RC_TestingNotes/ResurrectedData"
-#     #base_dir = '/Users/mairahmac/Desktop/RC_TestingNotes/SmallBatchData/Ideals/ideal_day'
-
-
-#     allowed_statuses = ["complete", "truncated"]
-#     trueRootDir = '/Users/mairahmac/Desktop/RC_TestingNotes'
-#     #procDir = 'SmallSelectedData/RNS/alignedPO'
-#     base_dir = os.path.join(trueRootDir, 'FreshStart')
-#     metadataFile = os.path.join(trueRootDir, "collatedData.xlsx")
-
-#     events_dir = os.path.join(base_dir, "glia/Events_Flat_csv")
-#     print(events_dir)
-#     proc_dir = os.path.join(base_dir, "ProcessedData_Flat_PO_orig")
-#     finalproc_dir = os.path.join(base_dir, "ProcessedData_Flat")
-
-#     print("🚀 Starting batch alignment and backfill...")
-#     batch_align_all(events_dir, proc_dir, finalproc_dir, metadataFile, base_dir)
 
 
 def cli() -> None:
@@ -259,7 +179,7 @@ def cli() -> None:
 
     root = args.root_dir.expanduser()
     base = args.base_dir
-    base_dir = base if base.is_absolute() else (root / base)
+    base_dir = root / base
     metadata_path = root / "collatedData.xlsx"
 
     if not base_dir.exists():

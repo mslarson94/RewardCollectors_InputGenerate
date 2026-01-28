@@ -37,7 +37,7 @@ def _fmt(ts):
 def compute_collecting_walks(group):
     """Collecting phase (initial encoding): block-start→first chest, then chest→chest segments."""
     rows = []
-    g = group.sort_values("start_mLT")
+    g = group.sort_values("start_eMLT_orig")
 
     chests = g[g['lo_eventType'] == 'ChestOpen_Moment']
     coins  = g[g['lo_eventType'] == 'CoinVis_end']      # optional anchor
@@ -47,7 +47,7 @@ def compute_collecting_walks(group):
     if not start_event.empty and not chests.empty:
         start = start_event.iloc[0]
         end   = chests.iloc[0]
-        walk_time = (end['start_mLT'] - start['start_mLT']).total_seconds()
+        walk_time = (end['start_eMLT_orig'] - start['start_eMLT_orig']).total_seconds()
 
         row = start.to_dict()
         row.update({
@@ -57,8 +57,8 @@ def compute_collecting_walks(group):
             "hiMeta_eventType": "PreBlockActivity",
             "source": "synthetic",
             # NOTE: mLTs already parsed in compute_walk_rows; just format:
-            "start_mLT": _fmt(start['start_mLT']),
-            "end_mLT":   _fmt(end['start_mLT']),
+            "start_eMLT_orig": _fmt(start['start_eMLT_orig']),
+            "end_eMLT_orig":   _fmt(end['start_eMLT_orig']),
             "start_AppTime": start.get("start_AppTime", pd.NA),
             "end_AppTime":   end.get("start_AppTime", pd.NA),
             "AppTime": start.get("AppTime", pd.NA),
@@ -71,10 +71,10 @@ def compute_collecting_walks(group):
     # chest → chest (via last coin visibility end as anchor)
     for i in range(1, len(chests)):
         chest = chests.iloc[i]
-        prev_coins = coins[coins['end_mLT'] < chest['start_mLT']]
+        prev_coins = coins[coins['end_eMLT_orig'] < chest['start_eMLT_orig']]
         if not prev_coins.empty:
             last_coin = prev_coins.iloc[-1]
-            walk_time = (chest['start_mLT'] - last_coin['end_mLT']).total_seconds()
+            walk_time = (chest['start_eMLT_orig'] - last_coin['end_eMLT_orig']).total_seconds()
 
             row = last_coin.to_dict()
             row.update({
@@ -83,8 +83,8 @@ def compute_collecting_walks(group):
                 "hi_eventType": "WalkingPeriod",
                 "hiMeta_eventType": "PreBlockActivity",
                 "source": "synthetic",
-                "start_mLT": _fmt(last_coin['end_mLT']),
-                "end_mLT":   _fmt(chest['start_mLT']),
+                "start_eMLT_orig": _fmt(last_coin['end_eMLT_orig']),
+                "end_eMLT_orig":   _fmt(chest['start_eMLT_orig']),
                 "start_AppTime": last_coin.get("end_AppTime", pd.NA),
                 "end_AppTime":   chest.get("start_AppTime", pd.NA),
                 "AppTime": chest.get("AppTime", pd.NA),
@@ -100,7 +100,7 @@ def compute_collecting_walks(group):
 def compute_pindrop_walks(group, phase_label):
     # Pindropping phase: walks from block start to first Pin, and pin-to-pin via last coin visibility end
     rows = []
-    g = group.sort_values("start_mLT")
+    g = group.sort_values("start_eMLT_orig")
 
     pins = g[g['lo_eventType'] == 'PinDrop_Moment']
     coins = g[g['lo_eventType'] == 'CoinVis_end']
@@ -109,7 +109,7 @@ def compute_pindrop_walks(group, phase_label):
     if not start_event.empty and not pins.empty:
         start = start_event.iloc[0]
         end = pins.iloc[0]
-        walk_time = (end['start_mLT'] - start['start_mLT']).total_seconds()
+        walk_time = (end['start_eMLT_orig'] - start['start_eMLT_orig']).total_seconds()
         row = start.to_dict()
         row.update({
             "lo_eventType": "Walk_PinDrop",
@@ -117,8 +117,8 @@ def compute_pindrop_walks(group, phase_label):
             "hi_eventType": "WalkingPeriod",
             "hiMeta_eventType": "InBlock",
             "source": "synthetic",
-            "start_mLT": _fmt(start['start_mLT']),
-            "end_mLT": _fmt(end['start_mLT']),
+            "start_eMLT_orig": _fmt(start['start_eMLT_orig']),
+            "end_eMLT_orig": _fmt(end['start_eMLT_orig']),
             "start_AppTime": start.get("start_AppTime", pd.NA),
             "end_AppTime": end.get("start_AppTime", pd.NA),
             "AppTime": start.get("AppTime", pd.NA),
@@ -130,10 +130,10 @@ def compute_pindrop_walks(group, phase_label):
 
     for i in range(1, len(pins)):
         pin = pins.iloc[i]
-        prev_coins = coins[coins['end_mLT'] < pin['start_mLT']]
+        prev_coins = coins[coins['end_eMLT_orig'] < pin['start_eMLT_orig']]
         if not prev_coins.empty:
             last_coin = prev_coins.iloc[-1]
-            walk_time = (pin['start_mLT'] - last_coin['end_mLT']).total_seconds()
+            walk_time = (pin['start_eMLT_orig'] - last_coin['end_eMLT_orig']).total_seconds()
             row = last_coin.to_dict()
             row.update({
                 "lo_eventType": "Walk_PinDrop",
@@ -141,8 +141,8 @@ def compute_pindrop_walks(group, phase_label):
                 "hi_eventType": "WalkingPeriod",
                 "hiMeta_eventType": "InBlock",
                 "source": "synthetic",
-                "start_mLT": _fmt(last_coin['end_mLT']),
-                "end_mLT": _fmt(pin['start_mLT']),
+                "start_eMLT_orig": _fmt(last_coin['end_eMLT_orig']),
+                "end_eMLT_orig": _fmt(pin['start_eMLT_orig']),
                 "start_AppTime": last_coin.get("end_AppTime", pd.NA),
                 "end_AppTime": pin.get("start_AppTime", pd.NA),
                 "AppTime": pin.get("AppTime", pd.NA),
@@ -162,8 +162,8 @@ def compute_walk_rows(flat_path, meta_path, out_path):
 
     df = pd.read_csv(flat_path)
     # Parse mLTs once
-    df['start_mLT'] = df['start_mLT'].apply(lambda ts: fix_time_str(ts, session_date))
-    df['end_mLT'] = df['end_mLT'].apply(lambda ts: fix_time_str(ts, session_date))
+    df['start_eMLT_orig'] = df['start_eMLT_orig'].apply(lambda ts: fix_time_str(ts, session_date))
+    df['end_eMLT_orig'] = df['end_eMLT_orig'].apply(lambda ts: fix_time_str(ts, session_date))
 
     all_rows = []
 
@@ -197,8 +197,8 @@ def compute_walk_rows(flat_path, meta_path, out_path):
         print(f"⚠️ No walks detected — skipping creation of {Path(out_path).name}")
     else:
         # Ensure chronological order
-        if 'start_mLT' in walk_df.columns:
-            walk_df = walk_df.sort_values("start_mLT").reset_index(drop=True)
+        if 'start_eMLT_orig' in walk_df.columns:
+            walk_df = walk_df.sort_values("start_eMLT_orig").reset_index(drop=True)
         walk_df.to_csv(out_path, index=False)
         print(f"✅ Walk rows written to {out_path}")
 
@@ -274,7 +274,7 @@ def cli() -> None:
 
     root = args.root_dir.expanduser()
     proc = args.proc_dir
-    base_dir = (proc if proc.is_absolute() else (root / proc)) / "full"
+    base_dir = (proc if proc.is_absolute() else (root / proc)) / "EventSegmentation"
 
     events_dir = base_dir / args.events_dir_name
     meta_dir = base_dir / args.meta_dir_name

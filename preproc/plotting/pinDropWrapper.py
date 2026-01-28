@@ -12,6 +12,9 @@ from histoStats import test_coin_distributions, _enough_for_stats  # uses same V
 from pinDropPlots import (
     plot_histkde_allsubjects,
     plot_tp2_scatter_allsubjects,
+    plot_pinDrop_block3_lines_by_round,
+    plot_pinDrop_blocks_lines_by_block,
+    plot_violin_allsubjects,
 )
 
 # def read_csv_loose(path: Path) -> pd.DataFrame:
@@ -59,6 +62,17 @@ def main():
     ap.set_defaults(use_outliers=False)
     ap.add_argument("--filter-columns", nargs="*", default=None,
                     help="Columns to apply outlier filtering to (default: [voi])")
+    ap.add_argument("--bin-width", type=float, default=None,
+                    help="Fixed histogram bin width (in VOI units). If omitted, FD width is used when --fix-xlim or --fd-source present.")
+    ap.add_argument("--fix-xlim", action="store_true",
+                    help="Lock x-axis limits so all plots share the same range.")
+    ap.add_argument("--xlim", type=float, nargs=2, metavar=("MIN", "MAX"),
+                    help="Explicit x-axis limits. Implies --fix-xlim.")
+    ap.add_argument("--fd-source", type=str, default=None,
+                    help="CSV/Parquet to compute global FD bin width/edges from (giant all-data file).")
+    ap.add_argument("--ylim", type=float, default=None)
+    ap.add_argument("--blockmin", type=int, default=4)
+    ap.add_argument("--blockmax", type=int, default=24)
     args = ap.parse_args()
 
     in_path = Path(args.input)
@@ -71,6 +85,20 @@ def main():
     dot_mode = args.dot_mode
 
     df = read_csv_loose(in_path)
+
+    # If fd-source provided, compute edges/width from the giant file
+    if args.fd_source:
+        src = args.fd_source
+        big = pd.read_parquet(src) if src.lower().endswith((".parquet",".pq")) else pd.read_csv(src)
+        # We only need width if user didn’t specify one; edges get recomputed in plotters
+        if args.bin_width is None:
+            # Compute a robust global width; edges will be derived per plot using this width
+            from histoHelpers import compute_fixed_bin_edges, _freedman_diaconis_width, _collect_numeric
+            # Use FD on all values of the VOI column
+            voi = args.variableOfInterest  # adjust if VOI comes from your args
+            width = _freedman_diaconis_width(_collect_numeric(big, voi))
+            if np.isfinite(width) and width > 0:
+                args.bin_width = width
 
     # choose columns to filter
     filter_cols = args.filter_columns if args.filter_columns else [voi]
@@ -106,6 +134,9 @@ def main():
             voi_unit=voi_unit,
             dot_mode=("panel" if dot_mode == "panel" else "baseline" if dot_mode == "baseline" else "none"),
             title_prefix=(f"{facet_by}: {gkey}" if gkey is not None else ""),
+            bin_width=args.bin_width,
+            fix_xlim=bool(args.fix_xlim or args.xlim),
+            xlim=tuple(args.xlim) if args.xlim else None,
         )
         _save_figs(
             figs,
@@ -114,6 +145,23 @@ def main():
             formats=formats, dpi=220, write_common=True
         )
         manifest["outputs"].append({"type": "plot", "tag": f"histkde_{voi}{tag_suffix}", "count": len(figs)})
+
+         # 1b) VIOLIN BY COIN
+        figs_violin = _run_and_collect_figs(
+            plot_violin_allsubjects,
+            gdf,
+            variableOfInterest=voi,
+            voi_str=voi_str,
+            voi_unit=voi_unit,
+            title_prefix=(f"{facet_by}: {gkey}" if gkey is not None else ""),
+        )
+        _save_figs(
+            figs_violin,
+            common_dir=common_dir, per_file_dir=target_dir,
+            stem=in_path.stem, tag=f"violin_{voi}{tag_suffix}",
+            formats=formats, dpi=220, write_common=True
+        )
+        manifest["outputs"].append({"type": "plot", "tag": f"violin_{voi}{tag_suffix}", "count": len(figs_violin)})
 
         # 2) TP2 SCATTER (only if time column exists)
         if "trueSession_elapsed_s" in gdf.columns:
@@ -166,6 +214,45 @@ def main():
             manifest["outputs"].append({"type": "stats_report", "tag": report_name, "bytes": len(report_txt)})
         else:
             manifest["outputs"].append({"type": "stats", "tag": f"stats_pairwise__{voi}{tag_suffix}", "skipped": True, "reason": why_not})
+
+        figs1 = _run_and_collect_figs(
+            plot_pinDrop_block3_lines_by_round,
+            gdf,
+            variableOfInterest="dropDist",
+            yLabel="Pin Drop Distance to Closest Coin (m)",
+            ylim=args.ylim,
+            exclude_outliers=True,
+            outlier_z=2.0
+            )
+
+        _save_figs(
+            figs1,
+            common_dir=common_dir, per_file_dir=target_dir,
+            stem=in_path.stem, tag=f"tp1_line_{voi}{tag_suffix}",
+            formats=formats, dpi=220, write_common=True
+        )
+        manifest["outputs"].append({"type": "plot", "tag": f"tp1_line_{voi}{tag_suffix}", "count": len(figs)})
+
+        figs2 = _run_and_collect_figs(
+            plot_pinDrop_blocks_lines_by_block,
+            gdf,
+            variableOfInterest="dropDist",
+            yLabel="Pin Drop Distance to Closest Coin (m)",
+            block_min=args.blockmin,
+            block_max=args.blockmax,
+            ylim=args.ylim,
+            exclude_outliers=True,
+            outlier_z=2.0
+            )
+
+        _save_figs(
+            figs2,
+            common_dir=common_dir, per_file_dir=target_dir,
+            stem=in_path.stem, tag=f"tp2_line_{voi}{tag_suffix}",
+            formats=formats, dpi=220, write_common=True
+        )
+        manifest["outputs"].append({"type": "plot", "tag": f"tp2_line_{voi}{tag_suffix}", "count": len(figs)})
+
 
     print(json.dumps(manifest, indent=2))
 

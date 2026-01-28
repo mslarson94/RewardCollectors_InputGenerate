@@ -1,5 +1,5 @@
 % Suthana Lab, UCLA
-% adapted by Martin Seeber, 2022
+    % adapted by Martin Seeber, 2022
 
 function Ephys = RNS_identify_mrk(Ephys, txtFile)
 
@@ -47,9 +47,9 @@ RNS_stamp = seconds( date_time - date_time(1) );
 RNS_stamp = RNS_stamp - RNS_stamp(1);
 N_stamp = size(RNS_stamp,1);
 
-mrk_det = (idx-1).'/Ephys.Fs;
-n_shift = (mrk_det + RNS_stamp(end)) < N/Ephys.Fs;
-
+mrk_det = (idx-1).'/Ephys.Fs; % the times when these marks happened in seconds 
+n_shift = (mrk_det + RNS_stamp(end)) < N/Ephys.Fs; %this was to be flexible with the mark pattern detection for ex: if there were only 8 marks detected but the rasp pi log file says there were 9 marks, this is handling that. 
+% Martin: I would not do after line 68. 
 for cnt = 1:sum(n_shift)
     
     ptrn_det(:,cnt) =  mrk_det(cnt) + RNS_stamp; 
@@ -66,6 +66,7 @@ Tsh_delay = 5;
 valid_mrk = err(:,id) < Tsh_delay ; 
 Mrk = (mrk_det(ix_det(valid_mrk,id)));
 
+%% If a marker is missing - refine the Mrk variable
 if any(err(:,id) >= Tsh_delay )
 
     warning([ num2str(sum(valid_mrk ==0)) ' markers were not detected'])
@@ -76,12 +77,14 @@ if any(err(:,id) >= Tsh_delay )
     Mrk(~valid_mrk,1) = Mrk_mdl(~valid_mrk,1);
 end
 
-
+%% Resuming Normal Processing
 Ephys.mrk = round(Mrk*Ephys.Fs) + 1;
 
 time = ([1:N]-1)/Ephys.Fs;
 Ephys.daytime = date_time(1) + seconds(time-ptrn_det(1,id));
-
+% plots! Checking whether the RNS times match the detected markers 
+% red dots => predicted times baed on rasp pi timestamps 
+% blue dots => detected RNS marks 
 figure;
 plot(Ephys.daytime, single_chan, 'r')
 hold on
@@ -117,7 +120,7 @@ end
 valid_samples = find(J == 0);
 lfp_valid = Ephys.raw(:,valid_samples);
 all_samples = 1:N;
-lfp_new = spline(valid_samples, lfp_valid, all_samples);
+lfp_new = spline(valid_samples, lfp_valid, all_samples); % spline interpolation of marks 
 
 %%
 % plot(time,lfp_new(1,:),'m')

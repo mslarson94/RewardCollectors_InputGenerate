@@ -1,0 +1,42 @@
+🔧 Main Goal: Finish reprocessing pipeline
+
+This is your anchor task.
+
+Steps:
+
+Add function for calculating start position in event files
+
+Add functions for propagating:
+
+moment-by-moment current speed
+
+moment-by-moment elapsed time
+across both reprocessed files & event files
+
+Run across all files
+
+→ Once that’s in place, pause and celebrate — that’s a full system-level upgrade.
+
+🧠 Next-Level Analyses (in this order):
+
+Average speed deviation per round
+
+Path efficiency
+
+Mixed model (start the modeling pipeline)
+
+⏱️ Second Reprocessing (timing alignment):
+
+Align to Raspberry Pi time
+
+Propagate through reprocessed & event files
+
+⚡ iEEG Feature Extraction:
+
+Extract epochs:
+
+walk to chest
+
+walk to cylinder
+
+coin collection

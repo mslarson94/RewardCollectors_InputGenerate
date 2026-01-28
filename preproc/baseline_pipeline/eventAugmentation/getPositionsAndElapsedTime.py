@@ -15,11 +15,11 @@ import pandas as pd
 #     "start_AppTime",
 #     "end_AppTime",
 # ]
-DROP_OPTIONAL_COLS = [
-    "mLTs_AN"
-]
-def _drop_optional_columns(df: pd.DataFrame, names: list[str] = DROP_OPTIONAL_COLS) -> pd.DataFrame:
-    return df.drop(columns=[c for c in names if c in df.columns], errors="ignore")
+# DROP_OPTIONAL_COLS = [
+#     "mLTs_AN"
+# ]
+# def _drop_optional_columns(df: pd.DataFrame, names: list[str] = DROP_OPTIONAL_COLS) -> pd.DataFrame:
+#     return df.drop(columns=[c for c in names if c in df.columns], errors="ignore")
 
 # ----------------------------
 # calcElapsedTime -> function
@@ -236,7 +236,7 @@ def get_positions(
 
     return ev_out
 
-def get_positions(
+def get_positions_minimal(
     events_csv: Path | str,
     processed_csv: Path | str,
     out_csv: Path | str | None = None,
@@ -286,7 +286,7 @@ def _iter_event_files(events_dir: Path, pattern: str) -> Iterable[Path]:
     return sorted(Path(events_dir).glob(pattern))
 
 
-def augment_events(
+def augment_events_old(
     events_csv: Path | str,
     processed_csv: Path | str,
     out_csv: Path | str | None = None,
@@ -333,8 +333,27 @@ def augment_events(
 
     return merged_clean.drop(columns=["__rowid__"], errors="ignore")
 
+def augment_events(
+    events_csv: Path | str,
+    processed_csv: Path | str,
+    out_csv: Path | str | None = None,
+    write_output: bool = True,
+) -> pd.DataFrame:
+    """
+    Augment events with anchored positions only.
+    Preserves original row order and columns, adds:
+      - HeadPosAnchored_*_at_start / _at_end
+      - HeadForthAnchored_*_at_start / _at_end
+    """
+    pos = get_positions(events_csv, processed_csv, write_output=False).copy()
 
-def process_directory(
+    if write_output and out_csv is not None:
+        Path(out_csv).parent.mkdir(parents=True, exist_ok=True)
+        pos.drop(columns=["__rowid__"], errors="ignore").to_csv(out_csv, index=False)
+
+    return pos.drop(columns=["__rowid__"], errors="ignore")
+
+def process_directory_old(
     events_dir: Path | str,
     processed_dir: Path | str,
     out_root: Path | str,
@@ -385,6 +404,39 @@ def process_directory(
                 out_csv=combined_out / f"{base}_events_final.csv",
                 write_output=True,
             )
+
+def process_directory(
+    events_dir: Path | str,
+    processed_dir: Path | str,
+    out_root: Path | str,
+    pattern: str = "*_events_flat.csv",
+    write_outputs: bool = True,
+) -> None:
+    events_dir = Path(events_dir)
+    processed_dir = Path(processed_dir)
+    out_root = Path(out_root)
+    out_root.mkdir(parents=True, exist_ok=True)
+
+    for ev_path in _iter_event_files(events_dir, pattern):
+        name = ev_path.stem  # filename without .csv
+        base = name.rsplit("_events", 1)[0]  # drop only trailing "_events*"
+
+        proc_candidate = processed_dir / f"{base}_processed.csv"
+        if not proc_candidate.exists():
+            print(f"[SKIP] Missing processed CSV for {ev_path.name}: {proc_candidate}")
+            continue
+
+        print(f"[RUN] {base}")
+
+        out_csv = (out_root / f"{base}_events_pos.csv") if write_outputs else None
+
+        get_positions(
+            events_csv=ev_path,
+            processed_csv=proc_candidate,
+            out_csv=out_csv,
+            write_output=write_outputs,
+        )
+
 
 
 # -------------------------

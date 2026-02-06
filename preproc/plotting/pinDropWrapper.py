@@ -85,6 +85,7 @@ def main():
     dot_mode = args.dot_mode
 
     df = read_csv_loose(in_path)
+    #df = df[df["currentRole"] != "PO"].copy()
 
     # If fd-source provided, compute edges/width from the giant file
     if args.fd_source:
@@ -114,6 +115,7 @@ def main():
 
     # group by facet (or not)
     if facet_by and facet_by in df.columns:
+        df[facet_by] = df[facet_by].astype("category")
         groups = list(df.groupby(facet_by, dropna=False, sort=True))
     else:
         groups = [(None, df)]

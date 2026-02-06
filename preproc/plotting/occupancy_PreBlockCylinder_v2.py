@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 import argparse
 from pathlib import Path
-from typing import Optional, Tuple
 
 import numpy as np
 import pandas as pd
@@ -145,6 +144,42 @@ def _save_tidy_csv(out_csv: Path, H: np.ndarray, x_edges: np.ndarray, z_edges: n
     })
     tidy.to_csv(out_csv, index=False)
 
+def _gaussian_kernel1d(sigma_bins: float, radius: Optional[int] = None) -> np.ndarray:
+    if sigma_bins <= 0:
+        return np.array([1.0], dtype=float)
+    if radius is None:
+        radius = int(np.ceil(3.0 * sigma_bins))
+    x = np.arange(-radius, radius + 1, dtype=float)
+    k = np.exp(-0.5 * (x / sigma_bins) ** 2)
+    k /= k.sum()
+    return k
+
+
+def _gaussian_blur2d(H: np.ndarray, sigma_bins: float) -> np.ndarray:
+    """
+    Separable Gaussian blur using 1D convolution along each axis.
+    sigma_bins is in units of bins (not meters).
+    """
+    if sigma_bins <= 0:
+        return H
+
+    k = _gaussian_kernel1d(sigma_bins)
+    r = (len(k) - 1) // 2
+
+    # Convolve along x (axis 0)
+    pad0 = np.pad(H, ((r, r), (0, 0)), mode="edge")
+    tmp = np.empty_like(H, dtype=float)
+    for i in range(H.shape[0]):
+        tmp[i, :] = np.sum(pad0[i:i + 2 * r + 1, :] * k[:, None], axis=0)
+
+    # Convolve along z (axis 1)
+    pad1 = np.pad(tmp, ((0, 0), (r, r)), mode="edge")
+    out = np.empty_like(H, dtype=float)
+    for j in range(H.shape[1]):
+        out[:, j] = np.sum(pad1[:, j:j + 2 * r + 1] * k[None, :], axis=1)
+
+    return out
+
 
 def main():
     ap = argparse.ArgumentParser()
@@ -164,6 +199,10 @@ def main():
     ap.add_argument("--ymax", type=float, default=10.0)   # z-max
     ap.add_argument("--out-prefix", dest="out_prefix", default=None)
     ap.add_argument("--outDir", required=True)
+    ap.add_argument("--normalize", default="none",help="Normalization: none | frac | density | frac,density (comma-separated). frac makes heatmap sum to 1. density divides by bin area (m^2).")
+    ap.add_argument("--log-scale", action="store_true", help="Apply log1p scaling to the heatmap values for visualization (and saved heatmap CSV).")
+    ap.add_argument("--smooth-sigma", type=float, default=0.0, help="Gaussian smoothing sigma in BINS (0 disables). Example: 1.0 or 1.5")
+
     args = ap.parse_args()
 
     outdir = Path(args.outDir)
@@ -262,9 +301,54 @@ def main():
 
             H += _make_histogram_time(x, z, t, x_edges, y_edges, max_gap_sec=args.max_gap_sec)
         units_label = "seconds / bin"
+    
+    # --- Optional normalization ---
+    norm_spec = (args.normalize or "none").strip().lower()
+    norms = [n.strip() for n in norm_spec.split(",") if n.strip()] if norm_spec else ["none"]
+    if norms == ["none"]:
+        norms = []
+
+    bin_area = float(args.bin_size) * float(args.bin_size)  # m^2
+
+    for n in norms:
+        if n == "frac":
+            total = float(np.nansum(H))
+            if total > 0:
+                H = H / total
+            # update label
+            if args.mode == "counts":
+                units_label = "fraction of samples"
+            else:
+                units_label = "fraction of time"
+        elif n == "density":
+            if bin_area > 0:
+                H = H / bin_area
+            # update label (keep frac vs raw distinction)
+            if "fraction" in units_label:
+                units_label = units_label + " per m²"
+            else:
+                units_label = units_label.replace("samples / bin", "samples / m²").replace("seconds / bin", "seconds / m²")
+        else:
+            raise SystemExit(f"Unknown --normalize option: {n} (use none|frac|density|frac,density)")
+
+    # --- Optional smoothing (after normalization) ---
+    if args.smooth_sigma and args.smooth_sigma > 0:
+        H = _gaussian_blur2d(H, sigma_bins=float(args.smooth_sigma))
+
+    # --- Optional log scaling (typically for visualization) ---
+    if args.log_scale:
+        # log1p is safe for zeros and small values
+        H = np.log1p(H)
+
 
     # Save tidy heatmap CSV
-    heat_csv = outdir / f"{out_prefix}__heatmap_{args.mode}.csv"
+    norm_tag = _safe_stem((args.normalize or "none").replace(",", "_"))
+    smooth_tag = f"s{args.smooth_sigma:g}" if args.smooth_sigma and args.smooth_sigma > 0 else "s0"
+    log_tag = "log1p" if args.log_scale else "nolog"
+
+    heat_csv = outdir / f"{out_prefix}__heatmap_{args.mode}__norm_{norm_tag}__{smooth_tag}__{log_tag}.csv"
+    heat_png = outdir / f"{out_prefix}__heatmap_{args.mode}__norm_{norm_tag}__{smooth_tag}__{log_tag}.png"
+
     _save_tidy_csv(heat_csv, H, x_edges, y_edges)
 
     # Plot heatmap
@@ -286,7 +370,6 @@ def main():
     cbar.set_label(units_label)
     plt.tight_layout()
 
-    heat_png = outdir / f"{out_prefix}__heatmap_{args.mode}.png"
     plt.savefig(heat_png, dpi=200)
     plt.close()
 
@@ -299,3 +382,6 @@ def main():
 
 if __name__ == "__main__":
     main()
+'''
+whether theta power contains a spatial signal that is better explained by proximity to reward locations than proximity to equally “salient” but neutral locations, controlling for movement.
+'''

@@ -138,21 +138,22 @@ def quickieSplitie(
 
 
 splitDict_1 = {
-    "CoinSetID": [1, 2, 3],
-    "coinSet": ['A', 'Ax', 'B', 'Bx', 'C', 'D']
+    "main_RR": ['main', 'RR'],
+    "CoinSetID": [4, 5, 6],
+    "coinSet": ['A']
     #"dropQual": ["bad", "good"],
 }
 
-inpath = Path('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/PinDrops_All')
-in_csv = inpath / 'PinDrops_ALL_main.csv'
-outDir = '/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/PinDrops_Main'
+inpath = Path('/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/PinDrops_All')
+in_csv = inpath / 'PinDrops_ALL.csv'
+outDir = '/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/PinDrops_Sorted3'
 
 df = pd.read_csv(in_csv, low_memory=False)
 manifest = quickieSplitie(
     df=df,
     splitDict=splitDict_1,
     outDir=outDir,
-    childNestDir=["CoinSetID"],
+    childNestDir=["main_RR"],
     write_manifest=True,
 )
 

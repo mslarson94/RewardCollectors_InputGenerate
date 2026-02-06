@@ -284,13 +284,13 @@ def plot_single_triangle_no_background(
     plt.close(fig)
 if __name__ == "__main__":
     infile = '/Users/mairahmac/Desktop/TriangleSets/triangle_positions-formatted__A_D_.csv'
-    outfileCombo = '/Users/mairahmac/Desktop/TriangleSets/coinSetAandB_big2.png'
+    outfileCombo = '/Users/mairahmac/Desktop/TriangleSets/coinSetAxandBx.png'
 
     outPath = '/Users/mairahmac/Desktop/TriangleSets'
-    pairlist = ['C', 'D']
+    pairlist = ['Ax', 'Bx']
     xlim_real = (-9.8, 9.8)
     ylim_real = (-15, 10)
     plot_triangles_A_B_with_arena(infile, outPath, pairlist)
     #plot_single_triangle_with_arena('A', infile, outPath, xlim_real, ylim_real)
-    plot_single_triangle_with_arena('B', infile, outPath, xlim_real, ylim_real)
-    plot_single_triangle_no_background('A', infile, outPath, xlim_real, ylim_real)
+    plot_single_triangle_with_arena('Bx', infile, outPath, xlim_real, ylim_real)
+    #plot_single_triangle_no_background('A', infile, outPath, xlim_real, ylim_real)

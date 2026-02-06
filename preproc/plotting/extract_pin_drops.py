@@ -24,7 +24,7 @@ import pandas as pd
 
 PIN_EVENT_DEFAULT = "PinDrop_Moment"
 EVENT_COL_CANDIDATES = [
-    "EventName", "eventName", "Event", "event", "EventType", "eventType", "Event_Label"
+    "lo_eventType"
 ]
 
 
@@ -71,16 +71,16 @@ def main() -> None:
     ap.add_argument("--proc-dir", required=True, type=Path, help="Dataset subdir under --root-dir (e.g., 'FreshStart').")
     ap.add_argument("--input-dir-name", default="Events_CoinsLabeled",
                     help="Folder under <root/proc/full> that contains source CSVs.")
-    ap.add_argument("--pattern", default="*_events_coinLabel.csv",
+    ap.add_argument("--pattern", default="*_startPosPropagated.csv",
                     help="Glob for source CSVs inside input-dir-name.")
     ap.add_argument("--pin-event", default=PIN_EVENT_DEFAULT, help="Event name to filter (default: PinDrop_Moment).")
     ap.add_argument("--out-dir-name", default="PinDrops_All", help="Output folder under <root/proc/full>.")
-    ap.add_argument("--split-on", choices=["coinLabel", "actualClosestCoinLabel"], default="coinLabel",
+    ap.add_argument("--split-on", choices=["coinLabel", "actualClosestCoinLabel", "CoinSetID"], default="coinLabel",
                     help="Which label column defines coin type for splits.")
     args = ap.parse_args()
 
-    proc_dir = (args.proc_dir if args.proc_dir.is_absolute() else (args.root_dir / args.proc_dir)) / "full"
-    in_dir = proc_dir / args.input_dir_name / "augmented"
+    proc_dir = (args.proc_dir if args.proc_dir.is_absolute() else (args.root_dir / args.proc_dir)) 
+    in_dir = proc_dir / args.input_dir_name 
     print(in_dir)
     out_dir = proc_dir / args.out_dir_name
     out_dir.mkdir(parents=True, exist_ok=True)
@@ -101,18 +101,18 @@ def main() -> None:
     #     "mLTimestamp", "AppTime"
     # ]
 
-    keep_cols = [
-      "mLTimestamp","AppTime","mLTimestamp_raw","start_AppTime","end_AppTime","start_mLT","end_mLT","lo_eventType",
-      "med_eventType","hi_eventType","hiMeta_eventType","source","BlockInstance","BlockNum","RoundNum","CoinSetID",
-      "BlockStatus","BlockType","chestPin_num","origRow_start","origRow_end","participantID","pairID","testingDate",
-      "sessionType","ptIsAorB","coinSet","device","main_RR","currentRole","source_file","relative_path",
-      "pinLocal_x","pinLocal_y","pinLocal_z","coinPos_x","coinPos_y","coinPos_z",
-      "dropDist","dropQual","coinValue","currRoundNum","curmLerfRoundNum","runningBlockTotal","currGrandTotal","SwapVote",
-      "SwapVoteScore","mark","coinLabel","actualClosestCoinLabel","actualClosestCoinDist","distToPin_LV","distToPin_NV","distToPin_HV",
-      "distFromCoinPos_LV","distFromCoinPos_NV","distFromCoinPos_HV","coinStemUsed","coinSetUsed","begOfFile","block_elapsed_s","round_elapsed_s",
-      "truecontent_elapsed_s","HeadPosAnchored_x_at_start","HeadPosAnchored_y_at_start","HeadPosAnchored_z_at_start","HeadForthAnchored_yaw_at_start","HeadForthAnchored_pitch_at_start","HeadForthAnchored_roll_at_start",
-      "HeadPosAnchored_x_at_end","HeadPosAnchored_y_at_end","HeadPosAnchored_z_at_end","HeadForthAnchored_yaw_at_end","HeadForthAnchored_pitch_at_end","HeadForthAnchored_roll_at_end"
-    ]
+    keep_cols = ["eMLT_orig","AppTime","mLT_raw","mLT_orig","lo_eventType","BlockNum","RoundNum","CoinSetID","BlockStatus",
+    "BlockInstance","BlockType","chestPin_num","origRow_start","participantID","pairID","testingDate","sessionType","coinSet",
+    "device","main_RR","currentRole","taskNaive","source_file","pinLocal_x","pinLocal_y","pinLocal_z","coinPos_x","coinPos_y",
+    "coinPos_z","dropDist","dropQual","coinValue","runningBlockTotal","currGrandTotal","coinLabel","actualClosestCoinLabel",
+    "actualClosestCoinDist","distToPin_LV","distToPin_NV","distToPin_HV","distFromCoinPos_LV","distFromCoinPos_NV","distFromCoinPos_HV",
+    "coinStemUsed","coinSetUsed","HeadPosAnchored_x_at_start","HeadPosAnchored_y_at_start","HeadPosAnchored_z_at_start",
+    "HeadForthAnchored_yaw_at_start","HeadForthAnchored_pitch_at_start","HeadForthAnchored_roll_at_start","totDistRound_start",
+    "totDistBlock_start","currSpeed_start","roundElapsed_s_start","blockElapsed_s_start","totalSessionElapsed_s_start","roundFrac_start",
+    "blockFrac_start","dt_start","stepDist_start","totDistBlock_current_start","totDistRound_current_start","round_start_AppTime",
+    "round_end_AppTime","round_dur_s","round_index_in_block","block_start_AppTime","block_end_AppTime","block_dur_s","path_order_round",
+    "path_step_in_round","startPos"]
+
 
 
 
@@ -137,8 +137,8 @@ def main() -> None:
 
         # Ensure expected columns exist & numeric
         _ensure_cols(pin_df, ["coinLabel", "actualClosestCoinLabel",
-                              "actualClosestCoinDist", "distToPin_LV", "distToPin_NV", "distToPin_HV"])
-        for c in ["actualClosestCoinDist", "distToPin_LV", "distToPin_NV", "distToPin_HV", "truecontent_elapsed_s"]:
+                              "actualClosestCoinDist", "distToPin_LV", "distToPin_NV", "distToPin_HV", "CoinSetID"])
+        for c in ["actualClosestCoinDist", "distToPin_LV", "distToPin_NV", "distToPin_HV", "roundElapsed_s_start"]:
             pin_df[c] = _coerce_float_series(pin_df[c])
 
         # Compute per-row chosen distances

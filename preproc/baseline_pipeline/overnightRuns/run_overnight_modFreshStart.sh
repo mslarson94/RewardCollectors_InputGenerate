@@ -19,97 +19,110 @@ fi
 # Segment barebones
 CODE_DIR="/Users/mairahmac/Desktop/myra_code/Python/RewardCollectors_InputGenerate/preproc/baseline_pipeline"
 TRUE_BASE_DIR="/Users/mairahmac/Desktop/RC_TestingNotes"
-PROC_DIR="FreshStart_redoMissing"
+PROC_DIR="FreshStart_redo"
 #PROC_DIR="FreshStart_multi"
 META_FILE="collatedData.xlsx"
 EVENTS_DIR="Events_Final_NoWalks"
 
-###################
-# Raw Preprocessing
-###################
+# ###################
+# # Raw Preprocessing
+# ###################
 
-echo "🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑" | tee -a "$LOG_FILE"
-echo "🚀 Starting preprocRaw_AN.py at $(date)" | tee -a "$LOG_FILE"
-python "${CODE_DIR}/preprocRaw/preprocRaw_AN.py" \
+# echo "🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑" | tee -a "$LOG_FILE"
+# echo "🚀 Starting preprocRaw_AN.py at $(date)" | tee -a "$LOG_FILE"
+# python "${CODE_DIR}/preprocRaw/preprocRaw_AN.py" \
+#   --root-dir "$TRUE_BASE_DIR" \
+#   --proc-dir "$PROC_DIR" \
+#   >> "$LOG_FILE" 2>&1
+# echo "✅ preprocRaw_AN.py  completed at $(date)" | tee -a "$LOG_FILE"
+
+
+# echo "🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼" | tee -a "$LOG_FILE"
+# echo "" | tee -a "$LOG_FILE"
+# echo "🚀 Starting preprocRaw_PO.py  at $(date)" | tee -a "$LOG_FILE"
+# python "${CODE_DIR}/preprocRaw/preprocRaw_PO.py" \
+#   --root-dir "$TRUE_BASE_DIR" \
+#   --proc-dir "$PROC_DIR" \
+#   >> "$LOG_FILE" 2>&1
+# echo "✅ preprocRaw_PO.py completed at $(date)" | tee -a "$LOG_FILE"
+
+# # #################################################################################################################
+# # Initial Event Segmentation (Glia Setting) Used for PO Alignment to AN data & All data to Raspberry Pi .log files 
+# # #################################################################################################################
+
+# echo "🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿" | tee -a "$LOG_FILE"
+# echo "Look Right Here Myra" | tee -a "$LOG_FILE"
+# echo "🚀 Starting preFrontalCortex_unifiedEventSeg.py for AN at $(date)" | tee -a "$LOG_FILE"
+# python "${CODE_DIR}/eventSeg/preFrontalCortex_unifiedEventSeg.py" \
+#   --trueRootDir "$TRUE_BASE_DIR" \
+#   --procDir "$PROC_DIR" \
+#   --role AN \
+#   --allowed-status complete \
+#   --allowed-status truncated \
+#   >> "$LOG_FILE" 2>&1
+# echo "✅ preFrontalCortex_unifiedEventSeg.py for AN completed at $(date)" | tee -a "$LOG_FILE"
+
+# echo "🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝" | tee -a "$LOG_FILE"
+# echo "🚀 Starting preFrontalCortex_unifiedEventSeg.py for PO  setting at $(date)" | tee -a "$LOG_FILE"
+# python "${CODE_DIR}/eventSeg/preFrontalCortex_unifiedEventSeg.py" \
+#   --trueRootDir "$TRUE_BASE_DIR" \
+#   --procDir "$PROC_DIR" \
+#   --role PO \
+#   --allowed-status complete \
+#   --allowed-status truncated \
+#   >> "$LOG_FILE" 2>&1
+# echo "✅ preFrontalCortex_unifiedEventSeg.py for PO completed at $(date)" | tee -a "$LOG_FILE" 
+
+
+# #######################################################################################################################
+# # Event Augmentation Pipeline (Flattening, Adding Positions, Elapsed Times, Walk Duration, Coin Labels, & Route Types)
+# #######################################################################################################################
+# echo "🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭" | tee -a "$LOG_FILE"
+# echo "" | tee -a "$LOG_FILE"
+# echo "🚀 Starting justFlatten.py  at $(date)" | tee -a "$LOG_FILE"
+# python "${CODE_DIR}/eventAugmentation/justFlatten.py" \
+#   --root-dir "$TRUE_BASE_DIR" \
+#   --proc-dir "$PROC_DIR" \
+#   >> "$LOG_FILE" 2>&1
+# echo "✅ justFlatten.py completed at $(date)" | tee -a "$LOG_FILE"
+
+# echo "🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷" | tee -a "$LOG_FILE"
+# echo "" | tee -a "$LOG_FILE"
+# echo "🚀 Starting add_coin_labels_from_collated.py  at $(date)" | tee -a "$LOG_FILE"
+# python "${CODE_DIR}/eventAugmentation/add_coin_labels_from_collated.py" \
+#   --collated "${TRUE_BASE_DIR}/collatedData.xlsx" \
+#   --coin-sets "${TRUE_BASE_DIR}/CoinSets.csv" \
+#   --events-dir "${TRUE_BASE_DIR}/${PROC_DIR}/EventSegmentation/Events_Flattened" \
+#   --out-dir "${TRUE_BASE_DIR}/${PROC_DIR}/EventSegmentation/Events_CoinsLabeled" \
+#   --pattern "eventsFlat" \
+#   --sheet "MagicLeapFiles" \
+#   >> "$LOG_FILE" 2>&1
+# echo "✅ add_coin_labels_from_collated.py completed at $(date)" | tee -a "$LOG_FILE"
+
+# echo "🦦🦦🦦🦦🦦🦦🦦🦦🦦🦦🦦🦦🦦🦦🦦🦦🦦🦦🦦🦦🦦🦦🦦🦦" | tee -a "$LOG_FILE"
+# echo "" | tee -a "$LOG_FILE"
+# echo "🚀 Starting getPositionsAndElapsedTime.py for NO WALKS at $(date)" | tee -a "$LOG_FILE"
+# python "${CODE_DIR}/eventAugmentation/getPositionsAndElapsedTime.py" \
+#   --events-dir "$TRUE_BASE_DIR/$PROC_DIR/EventSegmentation/Events_CoinsLabeled" \
+#   --processed-dir "$TRUE_BASE_DIR/$PROC_DIR/ProcessedData_Flat" \
+#   --out-dir "$TRUE_BASE_DIR/$PROC_DIR/EventSegmentation/Events_Pos" \
+#   --pattern '*_events_coinLabel.csv' \
+#   >> "$LOG_FILE" 2>&1
+# echo "✅ getPositionsAndElapsedTime.py for NO WALKS completed at $(date)" | tee -a "$LOG_FILE"
+
+
+echo "🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️" | tee -a "$LOG_FILE"
+echo "" | tee -a "$LOG_FILE"
+echo "🚀 Starting computeWalks.py  at $(date)" | tee -a "$LOG_FILE"
+python "${CODE_DIR}/eventAugmentation/computeWalks.py" \
   --root-dir "$TRUE_BASE_DIR" \
   --proc-dir "$PROC_DIR" \
+  --events-dir-name "EventsStartPos" \
+  --meta-dir-name "MetaData_Flat" \
+  --output-dir-name "Events_ComputedWalks" \
+  --eventsEnding "startPosPropagated" \
   >> "$LOG_FILE" 2>&1
-echo "✅ preprocRaw_AN.py  completed at $(date)" | tee -a "$LOG_FILE"
-
-
-echo "🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼" | tee -a "$LOG_FILE"
-echo "" | tee -a "$LOG_FILE"
-echo "🚀 Starting preprocRaw_PO.py  at $(date)" | tee -a "$LOG_FILE"
-python "${CODE_DIR}/preprocRaw/preprocRaw_PO.py" \
-  --root-dir "$TRUE_BASE_DIR" \
-  --proc-dir "$PROC_DIR" \
-  >> "$LOG_FILE" 2>&1
-echo "✅ preprocRaw_PO.py completed at $(date)" | tee -a "$LOG_FILE"
-
-# #################################################################################################################
-# Initial Event Segmentation (Glia Setting) Used for PO Alignment to AN data & All data to Raspberry Pi .log files 
-# #################################################################################################################
-
-echo "🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿" | tee -a "$LOG_FILE"
-echo "Look Right Here Myra" | tee -a "$LOG_FILE"
-echo "🚀 Starting preFrontalCortex_unifiedEventSeg.py for AN at $(date)" | tee -a "$LOG_FILE"
-python "${CODE_DIR}/eventSeg/preFrontalCortex_unifiedEventSeg.py" \
-  --trueRootDir "$TRUE_BASE_DIR" \
-  --procDir "$PROC_DIR" \
-  --role AN \
-  --allowed-status complete \
-  --allowed-status truncated \
-  >> "$LOG_FILE" 2>&1
-echo "✅ preFrontalCortex_unifiedEventSeg.py for AN completed at $(date)" | tee -a "$LOG_FILE"
-
-echo "🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝" | tee -a "$LOG_FILE"
-echo "🚀 Starting preFrontalCortex_unifiedEventSeg.py for PO  setting at $(date)" | tee -a "$LOG_FILE"
-python "${CODE_DIR}/eventSeg/preFrontalCortex_unifiedEventSeg.py" \
-  --trueRootDir "$TRUE_BASE_DIR" \
-  --procDir "$PROC_DIR" \
-  --role PO \
-  --allowed-status complete \
-  --allowed-status truncated \
-  >> "$LOG_FILE" 2>&1
-echo "✅ preFrontalCortex_unifiedEventSeg.py for PO completed at $(date)" | tee -a "$LOG_FILE" 
-
-
-#######################################################################################################################
-# Event Augmentation Pipeline (Flattening, Adding Positions, Elapsed Times, Walk Duration, Coin Labels, & Route Types)
-#######################################################################################################################
-echo "🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭" | tee -a "$LOG_FILE"
-echo "" | tee -a "$LOG_FILE"
-echo "🚀 Starting justFlatten.py  at $(date)" | tee -a "$LOG_FILE"
-python "${CODE_DIR}/eventAugmentation/justFlatten.py" \
-  --root-dir "$TRUE_BASE_DIR" \
-  --proc-dir "$PROC_DIR" \
-  >> "$LOG_FILE" 2>&1
-echo "✅ justFlatten.py completed at $(date)" | tee -a "$LOG_FILE"
-
-echo "🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷" | tee -a "$LOG_FILE"
-echo "" | tee -a "$LOG_FILE"
-echo "🚀 Starting add_coin_labels_from_collated.py  at $(date)" | tee -a "$LOG_FILE"
-python "${CODE_DIR}/eventAugmentation/add_coin_labels_from_collated.py" \
-  --collated "${TRUE_BASE_DIR}/collatedData.xlsx" \
-  --coin-sets "${TRUE_BASE_DIR}/CoinSets.csv" \
-  --events-dir "${TRUE_BASE_DIR}/${PROC_DIR}/EventSegmentation/Events_Flattened" \
-  --out-dir "${TRUE_BASE_DIR}/${PROC_DIR}/EventSegmentation/Events_CoinsLabeled" \
-  --pattern "eventsFlat" \
-  --sheet "MagicLeapFiles" \
-  >> "$LOG_FILE" 2>&1
-echo "✅ add_coin_labels_from_collated.py completed at $(date)" | tee -a "$LOG_FILE"
-
-echo "🦦🦦🦦🦦🦦🦦🦦🦦🦦🦦🦦🦦🦦🦦🦦🦦🦦🦦🦦🦦🦦🦦🦦🦦" | tee -a "$LOG_FILE"
-echo "" | tee -a "$LOG_FILE"
-echo "🚀 Starting getPositionsAndElapsedTime.py for NO WALKS at $(date)" | tee -a "$LOG_FILE"
-python "${CODE_DIR}/eventAugmentation/getPositionsAndElapsedTime.py" \
-  --events-dir "$TRUE_BASE_DIR/$PROC_DIR/EventSegmentation/Events_CoinsLabeled" \
-  --processed-dir "$TRUE_BASE_DIR/$PROC_DIR/ProcessedData_Flat" \
-  --out-dir "$TRUE_BASE_DIR/$PROC_DIR/EventSegmentation/Events_Pos" \
-  --pattern '*_events_coinLabel.csv' \
-  >> "$LOG_FILE" 2>&1
-echo "✅ getPositionsAndElapsedTime.py for NO WALKS completed at $(date)" | tee -a "$LOG_FILE"
-
+echo "✅ computeWalks.py completed at $(date)" | tee -a "$LOG_FILE"
 
 ## add in stacking paths by chestPinNum per Round
 ## add in match position to start positions 

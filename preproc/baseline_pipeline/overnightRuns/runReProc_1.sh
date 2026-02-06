@@ -19,7 +19,7 @@ fi
 # Segment barebones
 CODE_DIR="/Users/mairahmac/Desktop/myra_code/Python/RewardCollectors_InputGenerate/preproc/baseline_pipeline/reproc"
 TRUE_BASE_DIR="/Users/mairahmac/Desktop/RC_TestingNotes"
-PROC_DIR="FreshStart_redoMissing"
+PROC_DIR="FreshStart_redo"
 #PROC_DIR="FreshStart_multi"
 META_FILE="collatedData.xlsx"
 EVENTS_DIR="Events_Pos"
@@ -84,7 +84,7 @@ echo "🚀 Starting 06b_propagate_pindrop_startpos.py at $(date)" | tee -a "$LOG
 python "${CODE_DIR}/06b_propagate_pindrop_startpos.py" \
   --root "${TRUE_BASE_DIR}/${PROC_DIR}/EventSegmentation/EventsAlmostFinal_06a" \
   --pattern "*_withEffectiveRound.csv"  \
-  --out-root "${TRUE_BASE_DIR}/${PROC_DIR}/EventSegmentation/EventsFinal" \
+  --out-root "${TRUE_BASE_DIR}/${PROC_DIR}/EventSegmentation/EventsStartPos" \
   --interval-root "${TRUE_BASE_DIR}/${PROC_DIR}/EventSegmentation/EventIntervals" \
   --also-update-intervals
   >> "$LOG_FILE" 2>&1

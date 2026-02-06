@@ -5,8 +5,8 @@ from shapely.geometry import Polygon
 from shapely.ops import unary_union
 
 # Load your data
-indir = "/Users/mairahmac/Desktop/TriangleSets/newIteration2/firstCombo/"
-comboChoiceFile = indir + 'comboChoices2.csv'
+indir = "/Users/mairahmac/Desktop/TriangleSets/"
+comboChoiceFile = indir + 'triangle_positions-formatted__A_D_.csv'
 combo_choices = pd.read_csv(comboChoiceFile)
 grouped = combo_choices.groupby('triangleCombos')
 outFile =  indir + 'comboOverlap.png'

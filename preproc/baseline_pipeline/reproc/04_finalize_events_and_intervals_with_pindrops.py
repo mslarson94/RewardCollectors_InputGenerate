@@ -53,10 +53,10 @@ def _add_startpos_and_merge_into_intervals(
 
     # Required columns produced by augment_events_from_reprocessed (pos_cols -> *_start/*_end)
     role_col = "currentRole"
-    x_start_col = "HeadPosAnchored_x_start"
-    z_start_col = "HeadPosAnchored_z_start"
-    x_end_col   = "HeadPosAnchored_x_end"
-    z_end_col   = "HeadPosAnchored_z_end"
+    x_start_col = "HeadPosAnchored_x_at_start"
+    z_start_col = "HeadPosAnchored_z_at_start"
+    x_end_col   = "HeadPosAnchored_x_at_end"
+    z_end_col   = "HeadPosAnchored_z_at_end"
 
     missing = [c for c in [role_col, x_start_col, z_start_col, x_end_col, z_end_col, "lo_eventType", "BlockType"] if c not in df.columns]
     if missing:
@@ -247,7 +247,23 @@ def main():
         ev_final = events_pre
 
     ev_final = _try_canonicalize(ev_final)
-    ev_final      = cleanup_merge_suffixes(ev_final, suffixes=("_int","_r"))
+    ev_final = cleanup_merge_suffixes(ev_final, suffixes=("_int","_r"))
+    dropCols = [
+    "HeadPosAnchored_x_start",
+    "HeadPosAnchored_x_end",
+    "HeadPosAnchored_y_start",
+    "HeadPosAnchored_y_end",
+    "HeadPosAnchored_z_start",
+    "HeadPosAnchored_z_end",
+    "totDistRound_end",
+    "totDistBlock_end",
+    "__rowid",
+    ]
+    ev_final = ev_final.drop(columns=dropCols, errors="ignore")
+    ev_final = ev_final.rename(columns={
+    "totDistRound_start": "totDistRound",
+    "totDistBlock_start": "totDistBlock",
+    })
     ev_final.to_csv(args.out_events_final, index=False)
 
 if __name__ == "__main__":

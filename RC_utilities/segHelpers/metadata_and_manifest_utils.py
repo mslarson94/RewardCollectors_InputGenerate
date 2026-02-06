@@ -18,7 +18,14 @@ def attach_metadata_to_events(events, metadata_row, source_file, relative_path):
         "currentRole": metadata_row.get("currentRole", "unknown"),
         "taskNaive": metadata_row.get("taskNaive", "unknown"),
         "source_file": source_file,
+        "testingOrder": metadata_row.get("testingOrder", "unknown"),
         "relative_path": relative_path
+    }
+    return [event | metadata_fields for event in events]
+
+def attach_testingOrder(events, metadata_row):
+    metadata_fields = {
+        "testingOrder": metadata_row.get("testingOrder", "unknown"),
     }
     return [event | metadata_fields for event in events]
 
@@ -35,6 +42,7 @@ def record_to_manifest(metadata_row, source_file, relative_path, processed_path,
         "currentRole": metadata_row.get("currentRole", "unknown"),
         "taskNaive": metadata_row.get("taskNaive", "unknown"),
         "source_file": source_file,
+        "testingOrder": metadata_row.get("testingOrder", "unknown"),
         "relative_path": relative_path,
         "processed_path": processed_path,
         "events_csv": events_csv_path,

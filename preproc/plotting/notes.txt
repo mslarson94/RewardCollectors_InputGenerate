@@ -1,0 +1,9 @@
+HV: (2.5, 1.49), LV: (-1.51, 2.71), NV: (-1.4, -2.67),
+
+
+HV: (1.36, -3.04), LV: (-3.76, -0.1), NV: (-0.57, 2.4)
+
+
+(0.0, 5.0), (3.5, 3.5), (5.0, 0.0), (3.5, -3.5), (0.0, -5.0), (-3.5, -3.5), (-5.0, 0.0), (-3.5, 3.5),
+
+potential to push for my stuff to be rebuilt as a foundation for Yino's stuff (multimodal collaboration)

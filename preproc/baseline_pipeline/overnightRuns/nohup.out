@@ -4037,3 +4037,910 @@ Look Right Here Myra
 
 🚀 Starting getPositionsAndElapsedTime.py for NO WALKS at Wed Jan 28 13:09:33 PST 2026
 ✅ getPositionsAndElapsedTime.py for NO WALKS completed at Wed Jan 28 13:09:34 PST 2026
+Wrote: /Users/mairahmac/Desktop/TriangleSets/RoutePlanWeightUtility/CoinSetB/utility_by_order_faceted.png
+Wrote: /Users/mairahmac/Desktop/TriangleSets/RoutePlanWeightUtility/CoinSetB/utility_by_order_faceted_horizontal.png
+Wrote: /Users/mairahmac/Desktop/TriangleSets/RoutePlanWeightUtility/CoinSetB/utility_by_order_faceted_horizontal_colorblind.png
+Wrote: /Users/mairahmac/Desktop/TriangleSets/RoutePlanWeightUtility/CoinSetB/utility_by_order_faceted_horizontal_colorblind_legend.png
+Traceback (most recent call last):
+  File "/Users/mairahmac/Desktop/myra_code/Python/RewardCollectors_InputGenerate/preproc/plotting/plot_orders.py", line 133, in <module>
+    main()
+  File "/Users/mairahmac/Desktop/myra_code/Python/RewardCollectors_InputGenerate/preproc/plotting/plot_orders.py", line 128, in main
+    plot_faceted_utility_horizontal(df, outpath=outpath, col_wrap=args.col_wrap)
+  File "/Users/mairahmac/Desktop/myra_code/Python/RewardCollectors_InputGenerate/preproc/plotting/plot_orders.py", line 106, in plot_faceted_utility_horizontal
+    _move_legend_below(g, title="Order")
+  File "/Users/mairahmac/Desktop/myra_code/Python/RewardCollectors_InputGenerate/preproc/plotting/plot_orders.py", line 60, in _move_legend_below
+    g.legend.set_ncol(ncol)
+AttributeError: 'Legend' object has no attribute 'set_ncol'. Did you mean: 'set_ncols'?
+Traceback (most recent call last):
+  File "/Users/mairahmac/Desktop/myra_code/Python/RewardCollectors_InputGenerate/preproc/plotting/plot_orders.py", line 133, in <module>
+    main()
+  File "/Users/mairahmac/Desktop/myra_code/Python/RewardCollectors_InputGenerate/preproc/plotting/plot_orders.py", line 128, in main
+    plot_faceted_utility_horizontal(df, outpath=outpath, col_wrap=args.col_wrap)
+  File "/Users/mairahmac/Desktop/myra_code/Python/RewardCollectors_InputGenerate/preproc/plotting/plot_orders.py", line 106, in plot_faceted_utility_horizontal
+    _move_legend_below(g, title="Order")
+  File "/Users/mairahmac/Desktop/myra_code/Python/RewardCollectors_InputGenerate/preproc/plotting/plot_orders.py", line 60, in _move_legend_below
+    g.legend.set_ncol(ncol)
+AttributeError: 'Legend' object has no attribute 'set_ncol'. Did you mean: 'set_ncols'?
+Traceback (most recent call last):
+  File "/Users/mairahmac/Desktop/myra_code/Python/RewardCollectors_InputGenerate/preproc/plotting/plot_orders.py", line 133, in <module>
+    main()
+  File "/Users/mairahmac/Desktop/myra_code/Python/RewardCollectors_InputGenerate/preproc/plotting/plot_orders.py", line 128, in main
+    plot_faceted_utility_horizontal(df, outpath=outpath, col_wrap=args.col_wrap)
+  File "/Users/mairahmac/Desktop/myra_code/Python/RewardCollectors_InputGenerate/preproc/plotting/plot_orders.py", line 106, in plot_faceted_utility_horizontal
+    _move_legend_below(g, title="Order")
+  File "/Users/mairahmac/Desktop/myra_code/Python/RewardCollectors_InputGenerate/preproc/plotting/plot_orders.py", line 60, in _move_legend_below
+    g.legend.set_ncol(ncol)
+AttributeError: 'Legend' object has no attribute 'set_ncol'. Did you mean: 'set_ncols'?
+Traceback (most recent call last):
+  File "/Users/mairahmac/Desktop/myra_code/Python/RewardCollectors_InputGenerate/preproc/plotting/plot_orders.py", line 133, in <module>
+    main()
+  File "/Users/mairahmac/Desktop/myra_code/Python/RewardCollectors_InputGenerate/preproc/plotting/plot_orders.py", line 128, in main
+    plot_faceted_utility_horizontal(df, outpath=outpath, col_wrap=args.col_wrap)
+  File "/Users/mairahmac/Desktop/myra_code/Python/RewardCollectors_InputGenerate/preproc/plotting/plot_orders.py", line 106, in plot_faceted_utility_horizontal
+    _move_legend_below(g, title="Order")
+  File "/Users/mairahmac/Desktop/myra_code/Python/RewardCollectors_InputGenerate/preproc/plotting/plot_orders.py", line 60, in _move_legend_below
+    g.legend.set_ncol(ncol)
+AttributeError: 'Legend' object has no attribute 'set_ncol'. Did you mean: 'set_ncols'?
+Wrote: /Users/mairahmac/Desktop/TriangleSets/RoutePlanWeightUtility/CoinSetB/utility_by_order_faceted_horizontal_colorblind_legend_below.png
+Wrote: /Users/mairahmac/Desktop/TriangleSets/RoutePlanWeightUtility/CoinSetB/utility_by_order_faceted_horizontal_colorblind_legend_below.png
+Wrote: /Users/mairahmac/Desktop/TriangleSets/RoutePlanWeightUtility/CoinSetB/utility_by_order_faceted_horizontal_colorblind_legend_below.png
+Wrote: /Users/mairahmac/Desktop/TriangleSets/RoutePlanWeightUtility/CoinSetB/utility_by_order_faceted_horizontal_colorblind_legend_below.png
+Wrote: /Users/mairahmac/Desktop/TriangleSets/RoutePlanWeightUtility/CoinSetB/utility_by_order_faceted_horizontal_colorblind_legend_below.png
+Wrote: /Users/mairahmac/Desktop/TriangleSets/RoutePlanWeightUtility/CoinSetB/utility_by_order_faceted_horizontal_colorblind_legend_below.png
+Wrote: /Users/mairahmac/Desktop/TriangleSets/RoutePlanWeightUtility/CoinSetB/utility_by_order_faceted_horizontal_colorblind_legend_below.png
+Wrote: /Users/mairahmac/Desktop/TriangleSets/RoutePlanWeightUtility/CoinSetB/utility_by_order_faceted_horizontal_colorblind_legend_below.png
+Wrote: /Users/mairahmac/Desktop/TriangleSets/RoutePlanWeightUtility/CoinSetB/utility_by_order_faceted_horizontal_colorblind_legend_below.png
+run_occupancy.sh: line 84: 10168 Segmentation fault: 11  python "${CODE_DIR}/preproc/plotting/plot_orders.py" "/Users/mairahmac/Desktop/TriangleSets/RoutePlanWeightUtility/all_orders__layout_B.csv" --outdir "/Users/mairahmac/Desktop/TriangleSets/RoutePlanWeightUtility/CoinSetB"
+Wrote: /Users/mairahmac/Desktop/TriangleSets/RoutePlanWeightUtility/CoinSetB/utility_by_order_faceted_horizontal_colorblind_legend_below.png
+Wrote: /Users/mairahmac/Desktop/TriangleSets/RoutePlanWeightUtility/CoinSetB/utility_by_order_faceted_horizontal_colorblind_legend_below.png
+Wrote: /Users/mairahmac/Desktop/TriangleSets/RoutePlanWeightUtility/CoinSetB/utility_by_order_faceted_horizontal_colorblind_legend_below.png
+Wrote: /Users/mairahmac/Desktop/TriangleSets/RoutePlanWeightUtility/CoinSetB/utility_by_order_faceted_horizontal_colorblind_legend_below.png
+Wrote: /Users/mairahmac/Desktop/TriangleSets/RoutePlanWeightUtility/CoinSetB/utility_by_order_faceted_horizontal_colorblind_legend_below.png
+run_occupancy.sh: line 84: 10387 Segmentation fault: 11  python "${CODE_DIR}/preproc/plotting/plot_orders.py" "/Users/mairahmac/Desktop/TriangleSets/RoutePlanWeightUtility/all_orders__layout_B.csv" --outdir "/Users/mairahmac/Desktop/TriangleSets/RoutePlanWeightUtility/CoinSetB"
+Wrote: /Users/mairahmac/Desktop/TriangleSets/RoutePlanWeightUtility/CoinSetB/utility_by_order_faceted_horizontal_colorblind_legend_below.png
+Wrote: /Users/mairahmac/Desktop/TriangleSets/RoutePlanWeightUtility/CoinSetB/utility_by_order_faceted_horizontal_colorblind_legend_below.png
+Wrote: /Users/mairahmac/Desktop/TriangleSets/RoutePlanWeightUtility/CoinSetB/utility_by_order_faceted_horizontal_colorblind_legend_below.png
+Wrote: /Users/mairahmac/Desktop/TriangleSets/RoutePlanWeightUtility/CoinSetB/utility_by_order_faceted_horizontal_colorblind_legend_below.png
+Wrote: /Users/mairahmac/Desktop/TriangleSets/RoutePlanWeightUtility/CoinSetB/utility_by_order_faceted_horizontal_colorblind_legend_below.png
+Wrote: /Users/mairahmac/Desktop/TriangleSets/RoutePlanWeightUtility/CoinSetB/utility_by_order_faceted_horizontal_colorblind_legend_below.png
+Wrote: /Users/mairahmac/Desktop/TriangleSets/RoutePlanWeightUtility/CoinSetB/utility_by_order_faceted_horizontal_colorblind_legend_below.png
+Wrote: /Users/mairahmac/Desktop/TriangleSets/RoutePlanWeightUtility/CoinSetB/utility_by_order_faceted_horizontal_colorblind_legend_below.png
+Wrote: /Users/mairahmac/Desktop/TriangleSets/RoutePlanWeightUtility/CoinSetB/utility_by_order_faceted_horizontal_colorblind_legend_below.png
+Wrote: /Users/mairahmac/Desktop/TriangleSets/RoutePlanWeightUtility/CoinSetA/utility_by_order_faceted_horizontal_colorblind_legend_below.png
+Wrote: /Users/mairahmac/Desktop/TriangleSets/RoutePlanWeightUtility/CoinSetC/utility_by_order_faceted_horizontal_colorblind_legend_below.png
+Wrote: /Users/mairahmac/Desktop/TriangleSets/RoutePlanWeightUtility/CoinSetD/utility_by_order_faceted_horizontal_colorblind_legend_below.png
+python: can't open file '/Users/mairahmac/Desktop/myra_code/Python/RewardCollectors_InputGenerate/preproc/plotting/plot_coinsets.py': [Errno 2] No such file or directory
+python: can't open file '/Users/mairahmac/Desktop/myra_code/Python/RewardCollectors_InputGenerate/preproc/plotting/plot_coinsetsPaths': [Errno 2] No such file or directory
+🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝
+🚀 Starting instantDistCalc.py at Thu Jan 29 12:15:23 PST 2026
+🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝
+🚀 Starting instantDistCalc.py at Thu Jan 29 12:15:42 PST 2026
+🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝
+✅ instantDistCalc.py completed at Thu Jan 29 12:25:04 PST 2026
+🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝
+Wrote: /Users/mairahmac/Desktop/TriangleSets/RoutePlanWeightUtility/CoinSetAx/utility_by_order_faceted_horizontal_colorblind_legend_below.png
+Wrote: /Users/mairahmac/Desktop/TriangleSets/RoutePlanWeightUtility/CoinSetBx/utility_by_order_faceted_horizontal_colorblind_legend_below.png
+✅ instantDistCalc.py completed at Thu Jan 29 13:14:32 PST 2026
+🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝
+🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝
+✅ instantDistCalc.py completed at Thu Jan 29 13:15:36 PST 2026
+🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝
+✅ instantDistCalc.py completed at Thu Jan 29 13:15:47 PST 2026
+🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝
+✅ instantDistCalc.py completed at Thu Jan 29 13:16:15 PST 2026
+🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝
+✅ instantDistCalc.py completed at Thu Jan 29 13:17:31 PST 2026
+🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝
+🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝
+✅ instantDistCalc.py completed at Thu Jan 29 13:20:42 PST 2026
+🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝
+🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝
+✅ instantDistCalc.py completed at Thu Jan 29 13:21:14 PST 2026
+🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝
+🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝
+✅ instantDistCalc.py completed at Thu Jan 29 13:22:50 PST 2026
+🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝
+🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝
+✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
+🚀 Starting pinDropWrapper.py at Thu Jan 29 13:50:28 PST 2026
+✅ pinDropWrapper.py completed at Thu Jan 29 13:50:31 PST 2026
+✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
+🚀 Starting pinDropWrapper.py at Thu Jan 29 13:50:31 PST 2026
+✅ pinDropWrapper.py completed at Thu Jan 29 13:50:34 PST 2026
+✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
+🚀 Starting pinDropWrapper.py at Thu Jan 29 13:50:34 PST 2026
+✅ pinDropWrapper.py completed at Thu Jan 29 13:50:36 PST 2026
+✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
+🚀 Starting pinDropWrapper.py at Thu Jan 29 13:50:36 PST 2026
+✅ pinDropWrapper.py completed at Thu Jan 29 13:50:39 PST 2026
+runRedoHisto.sh: line 88: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/PinDrops_Sorted/Main/df_CoinSetID_1_coinSet_A.csv: Permission denied
+✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
+🚀 Starting pinDropWrapper.py at Thu Jan 29 13:52:16 PST 2026
+✅ pinDropWrapper.py completed at Thu Jan 29 13:52:19 PST 2026
+✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
+🚀 Starting pinDropWrapper.py at Thu Jan 29 13:52:19 PST 2026
+✅ pinDropWrapper.py completed at Thu Jan 29 13:52:21 PST 2026
+✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
+🚀 Starting pinDropWrapper.py at Thu Jan 29 13:52:21 PST 2026
+✅ pinDropWrapper.py completed at Thu Jan 29 13:52:24 PST 2026
+✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
+🚀 Starting pinDropWrapper.py at Thu Jan 29 13:52:24 PST 2026
+✅ pinDropWrapper.py completed at Thu Jan 29 13:52:26 PST 2026
+runRedoHisto.sh: line 88: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/PinDrops_Sorted/Main/df_CoinSetID_1_coinSet_A.csv: Permission denied
+✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
+🚀 Starting pinDropWrapper.py at Thu Jan 29 13:54:08 PST 2026
+✅ pinDropWrapper.py completed at Thu Jan 29 13:54:10 PST 2026
+✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
+🚀 Starting pinDropWrapper.py at Thu Jan 29 13:54:10 PST 2026
+✅ pinDropWrapper.py completed at Thu Jan 29 13:54:13 PST 2026
+✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
+🚀 Starting pinDropWrapper.py at Thu Jan 29 13:54:13 PST 2026
+✅ pinDropWrapper.py completed at Thu Jan 29 13:54:15 PST 2026
+✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
+🚀 Starting pinDropWrapper.py at Thu Jan 29 13:54:15 PST 2026
+✅ pinDropWrapper.py completed at Thu Jan 29 13:54:18 PST 2026
+runRedoHisto.sh: line 88: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/PinDrops_Sorted/Main/df_CoinSetID_1_coinSet_A.csv: Permission denied
+✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
+🚀 Starting pinDropWrapper.py at Thu Jan 29 13:58:20 PST 2026
+✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
+🚀 Starting pinDropWrapper.py at Thu Jan 29 14:02:59 PST 2026
+✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
+🚀 Starting pinDropWrapper.py at Thu Jan 29 14:08:46 PST 2026
+✅ pinDropWrapper.py completed at Thu Jan 29 14:08:54 PST 2026
+✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
+🚀 Starting pinDropWrapper.py at Thu Jan 29 14:08:54 PST 2026
+✅ pinDropWrapper.py completed at Thu Jan 29 14:09:02 PST 2026
+✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
+🚀 Starting pinDropWrapper.py at Thu Jan 29 14:14:09 PST 2026
+✅ pinDropWrapper.py completed at Thu Jan 29 14:14:17 PST 2026
+✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
+🚀 Starting pinDropWrapper.py at Thu Jan 29 14:14:17 PST 2026
+✅ pinDropWrapper.py completed at Thu Jan 29 14:14:25 PST 2026
+✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
+🚀 Starting pinDropWrapper.py at Thu Jan 29 14:19:47 PST 2026
+✅ pinDropWrapper.py completed at Thu Jan 29 14:19:49 PST 2026
+✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
+🚀 Starting pinDropWrapper.py at Thu Jan 29 14:19:49 PST 2026
+✅ pinDropWrapper.py completed at Thu Jan 29 14:19:52 PST 2026
+✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
+🚀 Starting pinDropWrapper.py at Thu Jan 29 14:19:52 PST 2026
+✅ pinDropWrapper.py completed at Thu Jan 29 14:19:54 PST 2026
+✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
+🚀 Starting pinDropWrapper.py at Thu Jan 29 14:19:54 PST 2026
+✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
+🚀 Starting pinDropWrapper.py at Thu Jan 29 14:19:57 PST 2026
+✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
+🚀 Starting pinDropWrapper.py at Thu Jan 29 14:21:40 PST 2026
+✅ pinDropWrapper.py completed at Thu Jan 29 14:21:42 PST 2026
+✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
+🚀 Starting pinDropWrapper.py at Thu Jan 29 14:21:42 PST 2026
+✅ pinDropWrapper.py completed at Thu Jan 29 14:21:45 PST 2026
+✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
+🚀 Starting pinDropWrapper.py at Thu Jan 29 14:21:45 PST 2026
+✅ pinDropWrapper.py completed at Thu Jan 29 14:21:47 PST 2026
+✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
+🚀 Starting pinDropWrapper.py at Thu Jan 29 14:21:47 PST 2026
+✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
+🚀 Starting pinDropWrapper.py at Thu Jan 29 14:21:50 PST 2026
+✅ pinDropWrapper.py completed at Thu Jan 29 14:21:58 PST 2026
+✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
+🚀 Starting pinDropWrapper.py at Thu Jan 29 14:21:58 PST 2026
+✅ pinDropWrapper.py completed at Thu Jan 29 14:22:06 PST 2026
+✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
+🚀 Starting pinDropWrapper.py at Thu Jan 29 14:38:34 PST 2026
+✅ pinDropWrapper.py completed at Thu Jan 29 14:38:37 PST 2026
+✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
+🚀 Starting pinDropWrapper.py at Thu Jan 29 14:38:37 PST 2026
+✅ pinDropWrapper.py completed at Thu Jan 29 14:38:39 PST 2026
+✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
+🚀 Starting pinDropWrapper.py at Thu Jan 29 14:38:39 PST 2026
+✅ pinDropWrapper.py completed at Thu Jan 29 14:38:41 PST 2026
+✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
+🚀 Starting pinDropWrapper.py at Thu Jan 29 14:38:41 PST 2026
+✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
+🚀 Starting pinDropWrapper.py at Thu Jan 29 14:38:44 PST 2026
+✅ pinDropWrapper.py completed at Thu Jan 29 14:38:52 PST 2026
+✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
+🚀 Starting pinDropWrapper.py at Thu Jan 29 14:38:52 PST 2026
+✅ pinDropWrapper.py completed at Thu Jan 29 14:39:00 PST 2026
+✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
+🚀 Starting pinDropWrapper.py at Thu Jan 29 14:45:30 PST 2026
+✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
+🚀 Starting pinDropWrapper.py at Thu Jan 29 14:46:35 PST 2026
+✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
+🚀 Starting pinDropWrapper.py at Thu Jan 29 14:47:21 PST 2026
+✅ pinDropWrapper.py completed at Thu Jan 29 14:47:24 PST 2026
+✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
+🚀 Starting pinDropWrapper.py at Thu Jan 29 14:47:24 PST 2026
+✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
+🚀 Starting pinDropWrapper.py at Thu Jan 29 14:49:31 PST 2026
+✅ pinDropWrapper.py completed at Thu Jan 29 14:49:33 PST 2026
+✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
+🚀 Starting pinDropWrapper.py at Thu Jan 29 14:49:33 PST 2026
+✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
+🚀 Starting pinDropWrapper.py at Thu Jan 29 14:50:40 PST 2026
+✅ pinDropWrapper.py completed at Thu Jan 29 14:50:43 PST 2026
+✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
+🚀 Starting pinDropWrapper.py at Thu Jan 29 14:50:43 PST 2026
+✅ pinDropWrapper.py completed at Thu Jan 29 14:50:45 PST 2026
+✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
+🚀 Starting pinDropWrapper.py at Thu Jan 29 14:50:45 PST 2026
+✅ pinDropWrapper.py completed at Thu Jan 29 14:50:47 PST 2026
+✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
+🚀 Starting pinDropWrapper.py at Thu Jan 29 14:50:47 PST 2026
+✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
+🚀 Starting pinDropWrapper.py at Thu Jan 29 14:50:50 PST 2026
+✅ pinDropWrapper.py completed at Thu Jan 29 14:50:58 PST 2026
+✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
+🚀 Starting pinDropWrapper.py at Thu Jan 29 14:50:58 PST 2026
+✅ pinDropWrapper.py completed at Thu Jan 29 14:51:06 PST 2026
+✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
+🚀 Starting pinDropWrapper.py at Thu Jan 29 15:01:49 PST 2026
+✅ pinDropWrapper.py completed at Thu Jan 29 15:01:52 PST 2026
+✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
+🚀 Starting pinDropWrapper.py at Thu Jan 29 15:01:52 PST 2026
+✅ pinDropWrapper.py completed at Thu Jan 29 15:01:54 PST 2026
+✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
+🚀 Starting pinDropWrapper.py at Thu Jan 29 15:01:54 PST 2026
+✅ pinDropWrapper.py completed at Thu Jan 29 15:01:56 PST 2026
+✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
+🚀 Starting pinDropWrapper.py at Thu Jan 29 15:01:56 PST 2026
+✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
+🚀 Starting pinDropWrapper.py at Thu Jan 29 15:01:59 PST 2026
+✅ pinDropWrapper.py completed at Thu Jan 29 15:02:07 PST 2026
+✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
+🚀 Starting pinDropWrapper.py at Thu Jan 29 15:02:07 PST 2026
+✅ pinDropWrapper.py completed at Thu Jan 29 15:02:15 PST 2026
+✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
+🚀 Starting pinDropWrapper.py at Thu Jan 29 15:13:42 PST 2026
+✅ pinDropWrapper.py completed at Thu Jan 29 15:13:45 PST 2026
+✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
+🚀 Starting pinDropWrapper.py at Thu Jan 29 15:13:45 PST 2026
+✅ pinDropWrapper.py completed at Thu Jan 29 15:13:47 PST 2026
+✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
+🚀 Starting pinDropWrapper.py at Thu Jan 29 15:13:47 PST 2026
+✅ pinDropWrapper.py completed at Thu Jan 29 15:13:50 PST 2026
+✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
+🚀 Starting pinDropWrapper.py at Thu Jan 29 15:13:50 PST 2026
+✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
+🚀 Starting pinDropWrapper.py at Thu Jan 29 15:13:53 PST 2026
+✅ pinDropWrapper.py completed at Thu Jan 29 15:14:01 PST 2026
+✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
+🚀 Starting pinDropWrapper.py at Thu Jan 29 15:14:01 PST 2026
+✅ pinDropWrapper.py completed at Thu Jan 29 15:14:09 PST 2026
+✅ extract_pin_drops.py completed at Thu Jan 29 23:14:48 PST 2026
+🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝
+✅ extract_pin_drops.py completed at Thu Jan 29 23:15:33 PST 2026
+🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝
+✅ extract_pin_drops.py completed at Thu Jan 29 23:16:06 PST 2026
+🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝
+✅ extract_pin_drops.py completed at Thu Jan 29 23:16:47 PST 2026
+🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝
+✅ extract_pin_drops.py completed at Thu Jan 29 23:17:12 PST 2026
+🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝
+✅ extract_pin_drops.py completed at Thu Jan 29 23:17:56 PST 2026
+🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝
+✅ extract_pin_drops.py completed at Thu Jan 29 23:18:19 PST 2026
+🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝
+✅ extract_pin_drops.py completed at Thu Jan 29 23:21:10 PST 2026
+🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝
+🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝
+✅ extract_pin_drops.py completed at Thu Jan 29 23:21:11 PST 2026
+🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝
+🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝
+✅ extract_pin_drops.py completed at Thu Jan 29 23:22:55 PST 2026
+🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝
+✅ extract_pin_drops.py completed at Thu Jan 29 23:25:41 PST 2026
+🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝
+🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝
+✅ extract_pin_drops.py completed at Thu Jan 29 23:25:42 PST 2026
+🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝
+🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝
+✅ extract_pin_drops.py completed at Thu Jan 29 23:26:14 PST 2026
+🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝
+✅ extract_pin_drops.py completed at Thu Jan 29 23:26:59 PST 2026
+🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝
+✅ extract_pin_drops.py completed at Thu Jan 29 23:27:32 PST 2026
+🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝
+✅ extract_pin_drops.py completed at Thu Jan 29 23:28:02 PST 2026
+🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝
+✅ extract_pin_drops.py completed at Thu Jan 29 23:29:47 PST 2026
+🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝
+✅ extract_pin_drops.py completed at Thu Jan 29 23:30:30 PST 2026
+🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝
+✅ extract_pin_drops.py completed at Thu Jan 29 23:32:02 PST 2026
+🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝
+✅ extract_pin_drops.py completed at Thu Jan 29 23:32:48 PST 2026
+🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝
+✅ extract_pin_drops.py completed at Thu Jan 29 23:34:09 PST 2026
+🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝
+✅ extract_pin_drops.py completed at Thu Jan 29 23:34:37 PST 2026
+🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝
+✅ extract_pin_drops.py completed at Thu Jan 29 23:35:20 PST 2026
+🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝
+✅ extract_pin_drops.py completed at Thu Jan 29 23:37:06 PST 2026
+🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝
+✅ extract_pin_drops.py completed at Thu Jan 29 23:37:30 PST 2026
+🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝
+✅ extract_pin_drops.py completed at Thu Jan 29 23:40:51 PST 2026
+🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝
+✅ extract_pin_drops.py completed at Thu Jan 29 23:41:32 PST 2026
+🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝
+✅ extract_pin_drops.py completed at Thu Jan 29 23:41:49 PST 2026
+🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝
+🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝
+✅ extract_pin_drops.py completed at Thu Jan 29 23:41:56 PST 2026
+🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝
+🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝
+✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
+🚀 Starting pinDropWrapper.py at Sun Feb  1 21:23:09 PST 2026
+✅ pinDropWrapper.py completed at Sun Feb  1 21:23:12 PST 2026
+✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
+🚀 Starting pinDropWrapper.py at Sun Feb  1 21:23:12 PST 2026
+✅ pinDropWrapper.py completed at Sun Feb  1 21:23:15 PST 2026
+✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
+🚀 Starting pinDropWrapper.py at Sun Feb  1 21:23:15 PST 2026
+✅ pinDropWrapper.py completed at Sun Feb  1 21:23:18 PST 2026
+✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
+🚀 Starting pinDropWrapper.py at Sun Feb  1 21:23:18 PST 2026
+✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
+🚀 Starting pinDropWrapper.py at Sun Feb  1 21:23:20 PST 2026
+✅ pinDropWrapper.py completed at Sun Feb  1 21:23:28 PST 2026
+✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
+🚀 Starting pinDropWrapper.py at Sun Feb  1 21:23:28 PST 2026
+✅ pinDropWrapper.py completed at Sun Feb  1 21:23:36 PST 2026
+✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
+🚀 Starting pinDropWrapper.py at Sun Feb  1 21:24:15 PST 2026
+✅ pinDropWrapper.py completed at Sun Feb  1 21:24:18 PST 2026
+✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
+🚀 Starting pinDropWrapper.py at Sun Feb  1 21:24:18 PST 2026
+✅ pinDropWrapper.py completed at Sun Feb  1 21:24:20 PST 2026
+✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
+🚀 Starting pinDropWrapper.py at Sun Feb  1 21:24:20 PST 2026
+✅ pinDropWrapper.py completed at Sun Feb  1 21:24:23 PST 2026
+✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
+🚀 Starting pinDropWrapper.py at Sun Feb  1 21:24:23 PST 2026
+✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
+🚀 Starting pinDropWrapper.py at Sun Feb  1 21:24:25 PST 2026
+✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
+🚀 Starting pinDropWrapper.py at Sun Feb  1 21:24:53 PST 2026
+✅ pinDropWrapper.py completed at Sun Feb  1 21:24:56 PST 2026
+✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
+🚀 Starting pinDropWrapper.py at Sun Feb  1 21:24:56 PST 2026
+✅ pinDropWrapper.py completed at Sun Feb  1 21:24:58 PST 2026
+✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
+🚀 Starting pinDropWrapper.py at Sun Feb  1 21:24:58 PST 2026
+✅ pinDropWrapper.py completed at Sun Feb  1 21:25:01 PST 2026
+✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
+🚀 Starting pinDropWrapper.py at Sun Feb  1 21:25:01 PST 2026
+✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
+🚀 Starting pinDropWrapper.py at Sun Feb  1 21:25:03 PST 2026
+✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
+🚀 Starting pinDropWrapper.py at Sun Feb  1 21:30:27 PST 2026
+✅ pinDropWrapper.py completed at Sun Feb  1 21:30:29 PST 2026
+✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
+🚀 Starting pinDropWrapper.py at Sun Feb  1 21:30:29 PST 2026
+✅ pinDropWrapper.py completed at Sun Feb  1 21:30:31 PST 2026
+✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
+🚀 Starting pinDropWrapper.py at Sun Feb  1 21:30:31 PST 2026
+✅ pinDropWrapper.py completed at Sun Feb  1 21:30:34 PST 2026
+✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
+🚀 Starting pinDropWrapper.py at Sun Feb  1 21:30:34 PST 2026
+✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
+🚀 Starting pinDropWrapper.py at Sun Feb  1 21:30:36 PST 2026
+✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
+🚀 Starting pinDropWrapper.py at Sun Feb  1 21:32:49 PST 2026
+✅ pinDropWrapper.py completed at Sun Feb  1 21:32:51 PST 2026
+✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
+🚀 Starting pinDropWrapper.py at Sun Feb  1 21:32:51 PST 2026
+✅ pinDropWrapper.py completed at Sun Feb  1 21:32:54 PST 2026
+✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
+🚀 Starting pinDropWrapper.py at Sun Feb  1 21:32:54 PST 2026
+✅ pinDropWrapper.py completed at Sun Feb  1 21:32:56 PST 2026
+✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
+🚀 Starting pinDropWrapper.py at Sun Feb  1 21:32:56 PST 2026
+✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
+🚀 Starting pinDropWrapper.py at Sun Feb  1 21:32:59 PST 2026
+🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️
+
+🚀 Starting computeWalks.py  at Wed Feb  4 10:50:36 PST 2026
+✅ computeWalks.py completed at Wed Feb  4 10:50:44 PST 2026
+🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️
+
+🚀 Starting computeWalks.py  at Wed Feb  4 11:12:12 PST 2026
+✅ computeWalks.py completed at Wed Feb  4 11:12:16 PST 2026
+🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️
+
+🚀 Starting computeWalks.py  at Wed Feb  4 12:52:43 PST 2026
+✅ computeWalks.py completed at Wed Feb  4 12:52:48 PST 2026
+🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️
+
+🚀 Starting computeWalks.py  at Wed Feb  4 15:07:47 PST 2026
+🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️
+
+🚀 Starting computeWalks.py  at Wed Feb  4 15:08:34 PST 2026
+🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️
+
+🚀 Starting computeWalks.py  at Wed Feb  4 15:09:13 PST 2026
+🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️
+
+🚀 Starting computeWalks.py  at Wed Feb  4 15:11:44 PST 2026
+✅ computeWalks.py completed at Wed Feb  4 15:11:53 PST 2026
+🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️
+
+🚀 Starting computeWalks.py  at Wed Feb  4 15:13:26 PST 2026
+✅ computeWalks.py completed at Wed Feb  4 15:13:36 PST 2026
+🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️
+
+🚀 Starting computeWalks.py  at Wed Feb  4 15:15:42 PST 2026
+✅ computeWalks.py completed at Wed Feb  4 15:15:52 PST 2026
+🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️
+
+🚀 Starting computeWalks.py  at Wed Feb  4 15:16:28 PST 2026
+✅ computeWalks.py completed at Wed Feb  4 15:16:37 PST 2026
+🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️
+
+🚀 Starting computeWalks.py  at Wed Feb  4 15:18:34 PST 2026
+✅ computeWalks.py completed at Wed Feb  4 15:18:44 PST 2026
+🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️
+
+🚀 Starting computeWalks.py  at Wed Feb  4 15:20:50 PST 2026
+✅ computeWalks.py completed at Wed Feb  4 15:21:00 PST 2026
+🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️
+
+🚀 Starting computeWalks.py  at Wed Feb  4 15:24:04 PST 2026
+✅ computeWalks.py completed at Wed Feb  4 15:24:14 PST 2026
+🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️
+
+🚀 Starting computeWalks.py  at Wed Feb  4 15:24:22 PST 2026
+✅ computeWalks.py completed at Wed Feb  4 15:24:31 PST 2026
+🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️
+
+🚀 Starting computeWalks.py  at Wed Feb  4 22:03:23 PST 2026
+🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️
+
+🚀 Starting computeWalks.py  at Wed Feb  4 22:03:52 PST 2026
+🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️
+
+🚀 Starting computeWalks.py  at Wed Feb  4 22:05:21 PST 2026
+✅ computeWalks.py completed at Wed Feb  4 22:05:32 PST 2026
+🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️
+
+🚀 Starting computeWalks.py  at Wed Feb  4 22:14:51 PST 2026
+✅ computeWalks.py completed at Wed Feb  4 22:15:01 PST 2026
+🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️
+
+🚀 Starting computeWalks.py  at Wed Feb  4 22:17:57 PST 2026
+✅ computeWalks.py completed at Wed Feb  4 22:18:08 PST 2026
+🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️
+
+🚀 Starting computeWalks.py  at Wed Feb  4 22:30:39 PST 2026
+✅ computeWalks.py completed at Wed Feb  4 22:30:50 PST 2026
+🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️
+
+🚀 Starting computeWalks.py  at Wed Feb  4 22:37:14 PST 2026
+✅ computeWalks.py completed at Wed Feb  4 22:37:27 PST 2026
+✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
+🚀 Starting 00_batch_reproc_steps_01_04.py at Thu Feb  5 17:14:59 PST 2026
+✅ 00_batch_reproc_steps_01_04.py completed at Thu Feb  5 17:15:43 PST 2026
+✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
+✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
+✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
+✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
+✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
+🚀 Starting 05_batch_add_startpos.py at Thu Feb  5 17:15:43 PST 2026
+✅ 05_batch_add_startpos.py completed at Thu Feb  5 17:15:51 PST 2026
+🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿
+🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿
+🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿
+🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿
+🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿
+🚀 Starting 06a_make_effective_roundnum.py at Thu Feb  5 17:15:51 PST 2026
+✅ 06a_make_effective_roundnum.py completed at Thu Feb  5 17:15:57 PST 2026
+🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷
+🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷
+🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷
+🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷
+🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷
+🚀 Starting 06b_propagate_pindrop_startpos.py at Thu Feb  5 17:15:57 PST 2026
+[scan] found 130 files under /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsAlmostFinal_06a matching *_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_01_17_2025_14_06_startPosPropagated.csv
+[ok] wrote interval vert: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_A_01_17_2025_14_06_finalInterval_vert_startPosPropagated.csv
+[ok] wrote interval horz: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_A_01_17_2025_14_06_finalInterval_horz_startPosPropagated.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_01_17_2025_14_34_startPosPropagated.csv
+[ok] wrote interval vert: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_A_01_17_2025_14_34_finalInterval_vert_startPosPropagated.csv
+[ok] wrote interval horz: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_A_01_17_2025_14_34_finalInterval_horz_startPosPropagated.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_01_20_2025_14_08_startPosPropagated.csv
+[ok] wrote interval vert: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_A_01_20_2025_14_08_finalInterval_vert_startPosPropagated.csv
+[ok] wrote interval horz: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_A_01_20_2025_14_08_finalInterval_horz_startPosPropagated.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_01_20_2025_14_20_startPosPropagated.csv
+[ok] wrote interval vert: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_A_01_20_2025_14_20_finalInterval_vert_startPosPropagated.csv
+[ok] wrote interval horz: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_A_01_20_2025_14_20_finalInterval_horz_startPosPropagated.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_01_20_2025_15_03_startPosPropagated.csv
+[ok] wrote interval vert: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_A_01_20_2025_15_03_finalInterval_vert_startPosPropagated.csv
+[ok] wrote interval horz: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_A_01_20_2025_15_03_finalInterval_horz_startPosPropagated.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_01_20_2025_15_12_startPosPropagated.csv
+[ok] wrote interval vert: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_A_01_20_2025_15_12_finalInterval_vert_startPosPropagated.csv
+[ok] wrote interval horz: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_A_01_20_2025_15_12_finalInterval_horz_startPosPropagated.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_01_20_2025_15_41_startPosPropagated.csv
+[ok] wrote interval vert: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_A_01_20_2025_15_41_finalInterval_vert_startPosPropagated.csv
+[ok] wrote interval horz: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_A_01_20_2025_15_41_finalInterval_horz_startPosPropagated.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_01_20_2025_16_07_startPosPropagated.csv
+[ok] wrote interval vert: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_A_01_20_2025_16_07_finalInterval_vert_startPosPropagated.csv
+[ok] wrote interval horz: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_A_01_20_2025_16_07_finalInterval_horz_startPosPropagated.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_01_20_2025_16_51_startPosPropagated.csv
+[ok] wrote interval vert: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_A_01_20_2025_16_51_finalInterval_vert_startPosPropagated.csv
+[ok] wrote interval horz: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_A_01_20_2025_16_51_finalInterval_horz_startPosPropagated.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_01_25_2025_17_07_startPosPropagated.csv
+[ok] wrote interval vert: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_A_01_25_2025_17_07_finalInterval_vert_startPosPropagated.csv
+[ok] wrote interval horz: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_A_01_25_2025_17_07_finalInterval_horz_startPosPropagated.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_01_25_2025_17_27_startPosPropagated.csv
+[ok] wrote interval vert: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_A_01_25_2025_17_27_finalInterval_vert_startPosPropagated.csv
+[ok] wrote interval horz: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_A_01_25_2025_17_27_finalInterval_horz_startPosPropagated.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_01_25_2025_17_58_startPosPropagated.csv
+[ok] wrote interval vert: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_A_01_25_2025_17_58_finalInterval_vert_startPosPropagated.csv
+[ok] wrote interval horz: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_A_01_25_2025_17_58_finalInterval_horz_startPosPropagated.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_01_26_2025_10_49_startPosPropagated.csv
+[ok] wrote interval vert: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_A_01_26_2025_10_49_finalInterval_vert_startPosPropagated.csv
+[ok] wrote interval horz: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_A_01_26_2025_10_49_finalInterval_horz_startPosPropagated.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_01_26_2025_11_46_startPosPropagated.csv
+[ok] wrote interval vert: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_A_01_26_2025_11_46_finalInterval_vert_startPosPropagated.csv
+[ok] wrote interval horz: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_A_01_26_2025_11_46_finalInterval_horz_startPosPropagated.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_01_26_2025_11_56_startPosPropagated.csv
+[ok] wrote interval vert: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_A_01_26_2025_11_56_finalInterval_vert_startPosPropagated.csv
+[ok] wrote interval horz: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_A_01_26_2025_11_56_finalInterval_horz_startPosPropagated.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_01_26_2025_12_37_startPosPropagated.csv
+[ok] wrote interval vert: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_A_01_26_2025_12_37_finalInterval_vert_startPosPropagated.csv
+[ok] wrote interval horz: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_A_01_26_2025_12_37_finalInterval_horz_startPosPropagated.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_01_26_2025_13_12_startPosPropagated.csv
+[ok] wrote interval vert: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_A_01_26_2025_13_12_finalInterval_vert_startPosPropagated.csv
+[ok] wrote interval horz: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_A_01_26_2025_13_12_finalInterval_horz_startPosPropagated.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_01_26_2025_15_51_startPosPropagated.csv
+[ok] wrote interval vert: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_A_01_26_2025_15_51_finalInterval_vert_startPosPropagated.csv
+[ok] wrote interval horz: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_A_01_26_2025_15_51_finalInterval_horz_startPosPropagated.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_01_26_2025_16_28_startPosPropagated.csv
+[ok] wrote interval vert: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_A_01_26_2025_16_28_finalInterval_vert_startPosPropagated.csv
+[ok] wrote interval horz: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_A_01_26_2025_16_28_finalInterval_horz_startPosPropagated.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_01_2025_16_40_startPosPropagated.csv
+[ok] wrote interval vert: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_A_02_01_2025_16_40_finalInterval_vert_startPosPropagated.csv
+[ok] wrote interval horz: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_A_02_01_2025_16_40_finalInterval_horz_startPosPropagated.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_01_2025_17_04_startPosPropagated.csv
+[ok] wrote interval vert: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_A_02_01_2025_17_04_finalInterval_vert_startPosPropagated.csv
+[ok] wrote interval horz: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_A_02_01_2025_17_04_finalInterval_horz_startPosPropagated.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_01_2025_17_14_startPosPropagated.csv
+[ok] wrote interval vert: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_A_02_01_2025_17_14_finalInterval_vert_startPosPropagated.csv
+[ok] wrote interval horz: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_A_02_01_2025_17_14_finalInterval_horz_startPosPropagated.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_01_2025_17_48_startPosPropagated.csv
+[ok] wrote interval vert: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_A_02_01_2025_17_48_finalInterval_vert_startPosPropagated.csv
+[ok] wrote interval horz: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_A_02_01_2025_17_48_finalInterval_horz_startPosPropagated.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_05_2025_11_38_startPosPropagated.csv
+[ok] wrote interval vert: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_A_02_05_2025_11_38_finalInterval_vert_startPosPropagated.csv
+[ok] wrote interval horz: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_A_02_05_2025_11_38_finalInterval_horz_startPosPropagated.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_05_2025_11_55_startPosPropagated.csv
+[ok] wrote interval vert: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_A_02_05_2025_11_55_finalInterval_vert_startPosPropagated.csv
+[ok] wrote interval horz: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_A_02_05_2025_11_55_finalInterval_horz_startPosPropagated.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_05_2025_13_07_startPosPropagated.csv
+[ok] wrote interval vert: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_A_02_05_2025_13_07_finalInterval_vert_startPosPropagated.csv
+[ok] wrote interval horz: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_A_02_05_2025_13_07_finalInterval_horz_startPosPropagated.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_05_2025_13_35_startPosPropagated.csv
+[ok] wrote interval vert: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_A_02_05_2025_13_35_finalInterval_vert_startPosPropagated.csv
+[ok] wrote interval horz: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_A_02_05_2025_13_35_finalInterval_horz_startPosPropagated.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_05_2025_13_59_startPosPropagated.csv
+[ok] wrote interval vert: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_A_02_05_2025_13_59_finalInterval_vert_startPosPropagated.csv
+[ok] wrote interval horz: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_A_02_05_2025_13_59_finalInterval_horz_startPosPropagated.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_08_2025_13_33_startPosPropagated.csv
+[ok] wrote interval vert: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_A_02_08_2025_13_33_finalInterval_vert_startPosPropagated.csv
+[ok] wrote interval horz: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_A_02_08_2025_13_33_finalInterval_horz_startPosPropagated.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_08_2025_14_14_startPosPropagated.csv
+[ok] wrote interval vert: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_A_02_08_2025_14_14_finalInterval_vert_startPosPropagated.csv
+[ok] wrote interval horz: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_A_02_08_2025_14_14_finalInterval_horz_startPosPropagated.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_08_2025_14_54_startPosPropagated.csv
+[ok] wrote interval vert: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_A_02_08_2025_14_54_finalInterval_vert_startPosPropagated.csv
+[ok] wrote interval horz: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_A_02_08_2025_14_54_finalInterval_horz_startPosPropagated.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_08_2025_15_08_startPosPropagated.csv
+[ok] wrote interval vert: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_A_02_08_2025_15_08_finalInterval_vert_startPosPropagated.csv
+[ok] wrote interval horz: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_A_02_08_2025_15_08_finalInterval_horz_startPosPropagated.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_08_2025_15_18_startPosPropagated.csv
+[ok] wrote interval vert: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_A_02_08_2025_15_18_finalInterval_vert_startPosPropagated.csv
+[ok] wrote interval horz: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_A_02_08_2025_15_18_finalInterval_horz_startPosPropagated.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_09_2025_10_41_startPosPropagated.csv
+[ok] wrote interval vert: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_A_02_09_2025_10_41_finalInterval_vert_startPosPropagated.csv
+[ok] wrote interval horz: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_A_02_09_2025_10_41_finalInterval_horz_startPosPropagated.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_09_2025_11_00_startPosPropagated.csv
+[ok] wrote interval vert: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_A_02_09_2025_11_00_finalInterval_vert_startPosPropagated.csv
+[ok] wrote interval horz: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_A_02_09_2025_11_00_finalInterval_horz_startPosPropagated.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_09_2025_12_38_startPosPropagated.csv
+[ok] wrote interval vert: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_A_02_09_2025_12_38_finalInterval_vert_startPosPropagated.csv
+[ok] wrote interval horz: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_A_02_09_2025_12_38_finalInterval_horz_startPosPropagated.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_09_2025_12_53_startPosPropagated.csv
+[ok] wrote interval vert: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_A_02_09_2025_12_53_finalInterval_vert_startPosPropagated.csv
+[ok] wrote interval horz: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_A_02_09_2025_12_53_finalInterval_horz_startPosPropagated.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_09_2025_13_10_startPosPropagated.csv
+[ok] wrote interval vert: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_A_02_09_2025_13_10_finalInterval_vert_startPosPropagated.csv
+[ok] wrote interval horz: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_A_02_09_2025_13_10_finalInterval_horz_startPosPropagated.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_09_2025_14_04_startPosPropagated.csv
+[ok] wrote interval vert: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_A_02_09_2025_14_04_finalInterval_vert_startPosPropagated.csv
+[ok] wrote interval horz: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_A_02_09_2025_14_04_finalInterval_horz_startPosPropagated.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_12_2025_12_01_startPosPropagated.csv
+[ok] wrote interval vert: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_A_02_12_2025_12_01_finalInterval_vert_startPosPropagated.csv
+[ok] wrote interval horz: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_A_02_12_2025_12_01_finalInterval_horz_startPosPropagated.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_12_2025_12_29_startPosPropagated.csv
+[ok] wrote interval vert: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_A_02_12_2025_12_29_finalInterval_vert_startPosPropagated.csv
+[ok] wrote interval horz: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_A_02_12_2025_12_29_finalInterval_horz_startPosPropagated.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_12_2025_13_20_startPosPropagated.csv
+[ok] wrote interval vert: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_A_02_12_2025_13_20_finalInterval_vert_startPosPropagated.csv
+[ok] wrote interval horz: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_A_02_12_2025_13_20_finalInterval_horz_startPosPropagated.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_12_2025_13_38_startPosPropagated.csv
+[ok] wrote interval vert: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_A_02_12_2025_13_38_finalInterval_vert_startPosPropagated.csv
+[ok] wrote interval horz: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_A_02_12_2025_13_38_finalInterval_horz_startPosPropagated.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_12_2025_14_21_startPosPropagated.csv
+[ok] wrote interval vert: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_A_02_12_2025_14_21_finalInterval_vert_startPosPropagated.csv
+[ok] wrote interval horz: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_A_02_12_2025_14_21_finalInterval_horz_startPosPropagated.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_17_2025_14_48_startPosPropagated.csv
+[ok] wrote interval vert: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_A_02_17_2025_14_48_finalInterval_vert_startPosPropagated.csv
+[ok] wrote interval horz: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_A_02_17_2025_14_48_finalInterval_horz_startPosPropagated.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_17_2025_15_11_startPosPropagated.csv
+[ok] wrote interval vert: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_A_02_17_2025_15_11_finalInterval_vert_startPosPropagated.csv
+[ok] wrote interval horz: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_A_02_17_2025_15_11_finalInterval_horz_startPosPropagated.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_17_2025_15_49_startPosPropagated.csv
+[ok] wrote interval vert: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_A_02_17_2025_15_49_finalInterval_vert_startPosPropagated.csv
+[ok] wrote interval horz: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_A_02_17_2025_15_49_finalInterval_horz_startPosPropagated.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_17_2025_16_26_startPosPropagated.csv
+[ok] wrote interval vert: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_A_02_17_2025_16_26_finalInterval_vert_startPosPropagated.csv
+[ok] wrote interval horz: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_A_02_17_2025_16_26_finalInterval_horz_startPosPropagated.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_17_2025_16_43_startPosPropagated.csv
+[ok] wrote interval vert: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_A_02_17_2025_16_43_finalInterval_vert_startPosPropagated.csv
+[ok] wrote interval horz: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_A_02_17_2025_16_43_finalInterval_horz_startPosPropagated.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_17_2025_16_51_startPosPropagated.csv
+[ok] wrote interval vert: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_A_02_17_2025_16_51_finalInterval_vert_startPosPropagated.csv
+[ok] wrote interval horz: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_A_02_17_2025_16_51_finalInterval_horz_startPosPropagated.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_19_2025_16_24_startPosPropagated.csv
+[ok] wrote interval vert: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_A_02_19_2025_16_24_finalInterval_vert_startPosPropagated.csv
+[ok] wrote interval horz: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_A_02_19_2025_16_24_finalInterval_horz_startPosPropagated.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_19_2025_17_47_startPosPropagated.csv
+[ok] wrote interval vert: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_A_02_19_2025_17_47_finalInterval_vert_startPosPropagated.csv
+[ok] wrote interval horz: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_A_02_19_2025_17_47_finalInterval_horz_startPosPropagated.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_19_2025_18_00_startPosPropagated.csv
+[ok] wrote interval vert: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_A_02_19_2025_18_00_finalInterval_vert_startPosPropagated.csv
+[ok] wrote interval horz: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_A_02_19_2025_18_00_finalInterval_horz_startPosPropagated.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_19_2025_18_14_startPosPropagated.csv
+[ok] wrote interval vert: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_A_02_19_2025_18_14_finalInterval_vert_startPosPropagated.csv
+[ok] wrote interval horz: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_A_02_19_2025_18_14_finalInterval_horz_startPosPropagated.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_19_2025_19_04_startPosPropagated.csv
+[ok] wrote interval vert: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_A_02_19_2025_19_04_finalInterval_vert_startPosPropagated.csv
+[ok] wrote interval horz: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_A_02_19_2025_19_04_finalInterval_horz_startPosPropagated.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_03_06_2025_10_01_startPosPropagated.csv
+[ok] wrote interval vert: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_A_03_06_2025_10_01_finalInterval_vert_startPosPropagated.csv
+[ok] wrote interval horz: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_A_03_06_2025_10_01_finalInterval_horz_startPosPropagated.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_03_06_2025_11_35_startPosPropagated.csv
+[ok] wrote interval vert: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_A_03_06_2025_11_35_finalInterval_vert_startPosPropagated.csv
+[ok] wrote interval horz: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_A_03_06_2025_11_35_finalInterval_horz_startPosPropagated.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_03_17_2025_10_30_startPosPropagated.csv
+[ok] wrote interval vert: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_A_03_17_2025_10_30_finalInterval_vert_startPosPropagated.csv
+[ok] wrote interval horz: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_A_03_17_2025_10_30_finalInterval_horz_startPosPropagated.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_03_17_2025_10_44_startPosPropagated.csv
+[ok] wrote interval vert: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_A_03_17_2025_10_44_finalInterval_vert_startPosPropagated.csv
+[ok] wrote interval horz: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_A_03_17_2025_10_44_finalInterval_horz_startPosPropagated.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_03_17_2025_11_15_startPosPropagated.csv
+[ok] wrote interval vert: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_A_03_17_2025_11_15_finalInterval_vert_startPosPropagated.csv
+[ok] wrote interval horz: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_A_03_17_2025_11_15_finalInterval_horz_startPosPropagated.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_03_17_2025_13_48_startPosPropagated.csv
+[ok] wrote interval vert: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_A_03_17_2025_13_48_finalInterval_vert_startPosPropagated.csv
+[ok] wrote interval horz: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_A_03_17_2025_13_48_finalInterval_horz_startPosPropagated.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_03_17_2025_14_00_startPosPropagated.csv
+[ok] wrote interval vert: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_A_03_17_2025_14_00_finalInterval_vert_startPosPropagated.csv
+[ok] wrote interval horz: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_A_03_17_2025_14_00_finalInterval_horz_startPosPropagated.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_03_17_2025_14_09_startPosPropagated.csv
+[ok] wrote interval vert: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_A_03_17_2025_14_09_finalInterval_vert_startPosPropagated.csv
+[ok] wrote interval horz: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_A_03_17_2025_14_09_finalInterval_horz_startPosPropagated.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_03_17_2025_14_16_startPosPropagated.csv
+[ok] wrote interval vert: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_A_03_17_2025_14_16_finalInterval_vert_startPosPropagated.csv
+[ok] wrote interval horz: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_A_03_17_2025_14_16_finalInterval_horz_startPosPropagated.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_03_17_2025_15_50_startPosPropagated.csv
+[ok] wrote interval vert: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_A_03_17_2025_15_50_finalInterval_vert_startPosPropagated.csv
+[ok] wrote interval horz: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_A_03_17_2025_15_50_finalInterval_horz_startPosPropagated.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_01_17_2025_14_06_startPosPropagated.csv
+[ok] wrote interval vert: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_B_01_17_2025_14_06_finalInterval_vert_startPosPropagated.csv
+[ok] wrote interval horz: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_B_01_17_2025_14_06_finalInterval_horz_startPosPropagated.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_01_17_2025_14_34_startPosPropagated.csv
+[ok] wrote interval vert: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_B_01_17_2025_14_34_finalInterval_vert_startPosPropagated.csv
+[ok] wrote interval horz: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_B_01_17_2025_14_34_finalInterval_horz_startPosPropagated.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_01_20_2025_14_08_startPosPropagated.csv
+[ok] wrote interval vert: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_B_01_20_2025_14_08_finalInterval_vert_startPosPropagated.csv
+[ok] wrote interval horz: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_B_01_20_2025_14_08_finalInterval_horz_startPosPropagated.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_01_20_2025_14_20_startPosPropagated.csv
+[ok] wrote interval vert: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_B_01_20_2025_14_20_finalInterval_vert_startPosPropagated.csv
+[ok] wrote interval horz: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_B_01_20_2025_14_20_finalInterval_horz_startPosPropagated.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_01_20_2025_15_03_startPosPropagated.csv
+[ok] wrote interval vert: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_B_01_20_2025_15_03_finalInterval_vert_startPosPropagated.csv
+[ok] wrote interval horz: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_B_01_20_2025_15_03_finalInterval_horz_startPosPropagated.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_01_20_2025_15_12_startPosPropagated.csv
+[ok] wrote interval vert: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_B_01_20_2025_15_12_finalInterval_vert_startPosPropagated.csv
+[ok] wrote interval horz: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_B_01_20_2025_15_12_finalInterval_horz_startPosPropagated.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_01_20_2025_15_41_startPosPropagated.csv
+[ok] wrote interval vert: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_B_01_20_2025_15_41_finalInterval_vert_startPosPropagated.csv
+[ok] wrote interval horz: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_B_01_20_2025_15_41_finalInterval_horz_startPosPropagated.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_01_20_2025_16_07_startPosPropagated.csv
+[ok] wrote interval vert: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_B_01_20_2025_16_07_finalInterval_vert_startPosPropagated.csv
+[ok] wrote interval horz: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_B_01_20_2025_16_07_finalInterval_horz_startPosPropagated.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_01_20_2025_16_51_startPosPropagated.csv
+[ok] wrote interval vert: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_B_01_20_2025_16_51_finalInterval_vert_startPosPropagated.csv
+[ok] wrote interval horz: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_B_01_20_2025_16_51_finalInterval_horz_startPosPropagated.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_01_25_2025_17_07_startPosPropagated.csv
+[ok] wrote interval vert: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_B_01_25_2025_17_07_finalInterval_vert_startPosPropagated.csv
+[ok] wrote interval horz: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_B_01_25_2025_17_07_finalInterval_horz_startPosPropagated.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_01_25_2025_17_27_startPosPropagated.csv
+[ok] wrote interval vert: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_B_01_25_2025_17_27_finalInterval_vert_startPosPropagated.csv
+[ok] wrote interval horz: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_B_01_25_2025_17_27_finalInterval_horz_startPosPropagated.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_01_25_2025_17_58_startPosPropagated.csv
+[ok] wrote interval vert: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_B_01_25_2025_17_58_finalInterval_vert_startPosPropagated.csv
+[ok] wrote interval horz: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_B_01_25_2025_17_58_finalInterval_horz_startPosPropagated.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_01_26_2025_10_49_startPosPropagated.csv
+[ok] wrote interval vert: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_B_01_26_2025_10_49_finalInterval_vert_startPosPropagated.csv
+[ok] wrote interval horz: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_B_01_26_2025_10_49_finalInterval_horz_startPosPropagated.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_01_26_2025_11_46_startPosPropagated.csv
+[ok] wrote interval vert: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_B_01_26_2025_11_46_finalInterval_vert_startPosPropagated.csv
+[ok] wrote interval horz: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_B_01_26_2025_11_46_finalInterval_horz_startPosPropagated.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_01_26_2025_11_56_startPosPropagated.csv
+[ok] wrote interval vert: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_B_01_26_2025_11_56_finalInterval_vert_startPosPropagated.csv
+[ok] wrote interval horz: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_B_01_26_2025_11_56_finalInterval_horz_startPosPropagated.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_01_26_2025_12_37_startPosPropagated.csv
+[ok] wrote interval vert: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_B_01_26_2025_12_37_finalInterval_vert_startPosPropagated.csv
+[ok] wrote interval horz: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_B_01_26_2025_12_37_finalInterval_horz_startPosPropagated.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_01_26_2025_13_12_startPosPropagated.csv
+[ok] wrote interval vert: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_B_01_26_2025_13_12_finalInterval_vert_startPosPropagated.csv
+[ok] wrote interval horz: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_B_01_26_2025_13_12_finalInterval_horz_startPosPropagated.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_01_26_2025_15_51_startPosPropagated.csv
+[ok] wrote interval vert: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_B_01_26_2025_15_51_finalInterval_vert_startPosPropagated.csv
+[ok] wrote interval horz: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_B_01_26_2025_15_51_finalInterval_horz_startPosPropagated.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_01_26_2025_16_28_startPosPropagated.csv
+[ok] wrote interval vert: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_B_01_26_2025_16_28_finalInterval_vert_startPosPropagated.csv
+[ok] wrote interval horz: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_B_01_26_2025_16_28_finalInterval_horz_startPosPropagated.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_01_2025_16_40_startPosPropagated.csv
+[ok] wrote interval vert: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_B_02_01_2025_16_40_finalInterval_vert_startPosPropagated.csv
+[ok] wrote interval horz: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_B_02_01_2025_16_40_finalInterval_horz_startPosPropagated.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_01_2025_17_04_startPosPropagated.csv
+[ok] wrote interval vert: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_B_02_01_2025_17_04_finalInterval_vert_startPosPropagated.csv
+[ok] wrote interval horz: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_B_02_01_2025_17_04_finalInterval_horz_startPosPropagated.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_01_2025_17_14_startPosPropagated.csv
+[ok] wrote interval vert: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_B_02_01_2025_17_14_finalInterval_vert_startPosPropagated.csv
+[ok] wrote interval horz: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_B_02_01_2025_17_14_finalInterval_horz_startPosPropagated.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_01_2025_17_48_startPosPropagated.csv
+[ok] wrote interval vert: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_B_02_01_2025_17_48_finalInterval_vert_startPosPropagated.csv
+[ok] wrote interval horz: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_B_02_01_2025_17_48_finalInterval_horz_startPosPropagated.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_05_2025_11_38_startPosPropagated.csv
+[ok] wrote interval vert: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_B_02_05_2025_11_38_finalInterval_vert_startPosPropagated.csv
+[ok] wrote interval horz: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_B_02_05_2025_11_38_finalInterval_horz_startPosPropagated.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_05_2025_11_55_startPosPropagated.csv
+[ok] wrote interval vert: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_B_02_05_2025_11_55_finalInterval_vert_startPosPropagated.csv
+[ok] wrote interval horz: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_B_02_05_2025_11_55_finalInterval_horz_startPosPropagated.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_05_2025_13_07_startPosPropagated.csv
+[ok] wrote interval vert: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_B_02_05_2025_13_07_finalInterval_vert_startPosPropagated.csv
+[ok] wrote interval horz: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_B_02_05_2025_13_07_finalInterval_horz_startPosPropagated.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_05_2025_13_35_startPosPropagated.csv
+[ok] wrote interval vert: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_B_02_05_2025_13_35_finalInterval_vert_startPosPropagated.csv
+[ok] wrote interval horz: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_B_02_05_2025_13_35_finalInterval_horz_startPosPropagated.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_05_2025_13_59_startPosPropagated.csv
+[ok] wrote interval vert: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_B_02_05_2025_13_59_finalInterval_vert_startPosPropagated.csv
+[ok] wrote interval horz: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_B_02_05_2025_13_59_finalInterval_horz_startPosPropagated.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_08_2025_13_33_startPosPropagated.csv
+[ok] wrote interval vert: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_B_02_08_2025_13_33_finalInterval_vert_startPosPropagated.csv
+[ok] wrote interval horz: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_B_02_08_2025_13_33_finalInterval_horz_startPosPropagated.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_08_2025_14_14_startPosPropagated.csv
+[ok] wrote interval vert: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_B_02_08_2025_14_14_finalInterval_vert_startPosPropagated.csv
+[ok] wrote interval horz: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_B_02_08_2025_14_14_finalInterval_horz_startPosPropagated.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_08_2025_14_54_startPosPropagated.csv
+[ok] wrote interval vert: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_B_02_08_2025_14_54_finalInterval_vert_startPosPropagated.csv
+[ok] wrote interval horz: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_B_02_08_2025_14_54_finalInterval_horz_startPosPropagated.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_08_2025_15_08_startPosPropagated.csv
+[ok] wrote interval vert: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_B_02_08_2025_15_08_finalInterval_vert_startPosPropagated.csv
+[ok] wrote interval horz: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_B_02_08_2025_15_08_finalInterval_horz_startPosPropagated.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_08_2025_15_18_startPosPropagated.csv
+[ok] wrote interval vert: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_B_02_08_2025_15_18_finalInterval_vert_startPosPropagated.csv
+[ok] wrote interval horz: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_B_02_08_2025_15_18_finalInterval_horz_startPosPropagated.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_09_2025_10_41_startPosPropagated.csv
+[ok] wrote interval vert: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_B_02_09_2025_10_41_finalInterval_vert_startPosPropagated.csv
+[ok] wrote interval horz: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_B_02_09_2025_10_41_finalInterval_horz_startPosPropagated.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_09_2025_11_00_startPosPropagated.csv
+[ok] wrote interval vert: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_B_02_09_2025_11_00_finalInterval_vert_startPosPropagated.csv
+[ok] wrote interval horz: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_B_02_09_2025_11_00_finalInterval_horz_startPosPropagated.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_09_2025_12_38_startPosPropagated.csv
+[ok] wrote interval vert: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_B_02_09_2025_12_38_finalInterval_vert_startPosPropagated.csv
+[ok] wrote interval horz: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_B_02_09_2025_12_38_finalInterval_horz_startPosPropagated.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_09_2025_12_53_startPosPropagated.csv
+[ok] wrote interval vert: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_B_02_09_2025_12_53_finalInterval_vert_startPosPropagated.csv
+[ok] wrote interval horz: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_B_02_09_2025_12_53_finalInterval_horz_startPosPropagated.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_09_2025_13_10_startPosPropagated.csv
+[ok] wrote interval vert: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_B_02_09_2025_13_10_finalInterval_vert_startPosPropagated.csv
+[ok] wrote interval horz: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_B_02_09_2025_13_10_finalInterval_horz_startPosPropagated.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_09_2025_14_04_startPosPropagated.csv
+[ok] wrote interval vert: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_B_02_09_2025_14_04_finalInterval_vert_startPosPropagated.csv
+[ok] wrote interval horz: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_B_02_09_2025_14_04_finalInterval_horz_startPosPropagated.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_12_2025_12_01_startPosPropagated.csv
+[ok] wrote interval vert: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_B_02_12_2025_12_01_finalInterval_vert_startPosPropagated.csv
+[ok] wrote interval horz: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_B_02_12_2025_12_01_finalInterval_horz_startPosPropagated.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_12_2025_12_29_startPosPropagated.csv
+[ok] wrote interval vert: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_B_02_12_2025_12_29_finalInterval_vert_startPosPropagated.csv
+[ok] wrote interval horz: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_B_02_12_2025_12_29_finalInterval_horz_startPosPropagated.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_12_2025_13_20_startPosPropagated.csv
+[ok] wrote interval vert: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_B_02_12_2025_13_20_finalInterval_vert_startPosPropagated.csv
+[ok] wrote interval horz: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_B_02_12_2025_13_20_finalInterval_horz_startPosPropagated.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_12_2025_13_38_startPosPropagated.csv
+[ok] wrote interval vert: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_B_02_12_2025_13_38_finalInterval_vert_startPosPropagated.csv
+[ok] wrote interval horz: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_B_02_12_2025_13_38_finalInterval_horz_startPosPropagated.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_12_2025_14_21_startPosPropagated.csv
+[ok] wrote interval vert: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_B_02_12_2025_14_21_finalInterval_vert_startPosPropagated.csv
+[ok] wrote interval horz: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_B_02_12_2025_14_21_finalInterval_horz_startPosPropagated.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_17_2025_14_48_startPosPropagated.csv
+[ok] wrote interval vert: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_B_02_17_2025_14_48_finalInterval_vert_startPosPropagated.csv
+[ok] wrote interval horz: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_B_02_17_2025_14_48_finalInterval_horz_startPosPropagated.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_17_2025_15_11_startPosPropagated.csv
+[ok] wrote interval vert: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_B_02_17_2025_15_11_finalInterval_vert_startPosPropagated.csv
+[ok] wrote interval horz: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_B_02_17_2025_15_11_finalInterval_horz_startPosPropagated.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_17_2025_15_49_startPosPropagated.csv
+[ok] wrote interval vert: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_B_02_17_2025_15_49_finalInterval_vert_startPosPropagated.csv
+[ok] wrote interval horz: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_B_02_17_2025_15_49_finalInterval_horz_startPosPropagated.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_17_2025_16_26_startPosPropagated.csv
+[ok] wrote interval vert: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_B_02_17_2025_16_26_finalInterval_vert_startPosPropagated.csv
+[ok] wrote interval horz: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_B_02_17_2025_16_26_finalInterval_horz_startPosPropagated.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_17_2025_16_43_startPosPropagated.csv
+[ok] wrote interval vert: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_B_02_17_2025_16_43_finalInterval_vert_startPosPropagated.csv
+[ok] wrote interval horz: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_B_02_17_2025_16_43_finalInterval_horz_startPosPropagated.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_17_2025_16_51_startPosPropagated.csv
+[ok] wrote interval vert: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_B_02_17_2025_16_51_finalInterval_vert_startPosPropagated.csv
+[ok] wrote interval horz: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_B_02_17_2025_16_51_finalInterval_horz_startPosPropagated.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_19_2025_16_24_startPosPropagated.csv
+[ok] wrote interval vert: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_B_02_19_2025_16_24_finalInterval_vert_startPosPropagated.csv
+[ok] wrote interval horz: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_B_02_19_2025_16_24_finalInterval_horz_startPosPropagated.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_19_2025_17_47_startPosPropagated.csv
+[ok] wrote interval vert: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_B_02_19_2025_17_47_finalInterval_vert_startPosPropagated.csv
+[ok] wrote interval horz: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_B_02_19_2025_17_47_finalInterval_horz_startPosPropagated.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_19_2025_18_00_startPosPropagated.csv
+[ok] wrote interval vert: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_B_02_19_2025_18_00_finalInterval_vert_startPosPropagated.csv
+[ok] wrote interval horz: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_B_02_19_2025_18_00_finalInterval_horz_startPosPropagated.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_19_2025_18_14_startPosPropagated.csv
+[ok] wrote interval vert: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_B_02_19_2025_18_14_finalInterval_vert_startPosPropagated.csv
+[ok] wrote interval horz: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_B_02_19_2025_18_14_finalInterval_horz_startPosPropagated.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_19_2025_19_04_startPosPropagated.csv
+[ok] wrote interval vert: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_B_02_19_2025_19_04_finalInterval_vert_startPosPropagated.csv
+[ok] wrote interval horz: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_B_02_19_2025_19_04_finalInterval_horz_startPosPropagated.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_03_06_2025_10_01_startPosPropagated.csv
+[ok] wrote interval vert: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_B_03_06_2025_10_01_finalInterval_vert_startPosPropagated.csv
+[ok] wrote interval horz: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_B_03_06_2025_10_01_finalInterval_horz_startPosPropagated.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_03_06_2025_11_35_startPosPropagated.csv
+[ok] wrote interval vert: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_B_03_06_2025_11_35_finalInterval_vert_startPosPropagated.csv
+[ok] wrote interval horz: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_B_03_06_2025_11_35_finalInterval_horz_startPosPropagated.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_03_17_2025_10_30_startPosPropagated.csv
+[ok] wrote interval vert: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_B_03_17_2025_10_30_finalInterval_vert_startPosPropagated.csv
+[ok] wrote interval horz: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_B_03_17_2025_10_30_finalInterval_horz_startPosPropagated.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_03_17_2025_10_44_startPosPropagated.csv
+[ok] wrote interval vert: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_B_03_17_2025_10_44_finalInterval_vert_startPosPropagated.csv
+[ok] wrote interval horz: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_B_03_17_2025_10_44_finalInterval_horz_startPosPropagated.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_03_17_2025_11_15_startPosPropagated.csv
+[ok] wrote interval vert: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_B_03_17_2025_11_15_finalInterval_vert_startPosPropagated.csv
+[ok] wrote interval horz: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_B_03_17_2025_11_15_finalInterval_horz_startPosPropagated.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_03_17_2025_13_48_startPosPropagated.csv
+[ok] wrote interval vert: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_B_03_17_2025_13_48_finalInterval_vert_startPosPropagated.csv
+[ok] wrote interval horz: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_B_03_17_2025_13_48_finalInterval_horz_startPosPropagated.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_03_17_2025_14_00_startPosPropagated.csv
+[ok] wrote interval vert: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_B_03_17_2025_14_00_finalInterval_vert_startPosPropagated.csv
+[ok] wrote interval horz: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_B_03_17_2025_14_00_finalInterval_horz_startPosPropagated.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_03_17_2025_14_09_startPosPropagated.csv
+[ok] wrote interval vert: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_B_03_17_2025_14_09_finalInterval_vert_startPosPropagated.csv
+[ok] wrote interval horz: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_B_03_17_2025_14_09_finalInterval_horz_startPosPropagated.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_03_17_2025_14_16_startPosPropagated.csv
+[ok] wrote interval vert: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_B_03_17_2025_14_16_finalInterval_vert_startPosPropagated.csv
+[ok] wrote interval horz: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_B_03_17_2025_14_16_finalInterval_horz_startPosPropagated.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_03_17_2025_15_50_startPosPropagated.csv
+[ok] wrote interval vert: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_B_03_17_2025_15_50_finalInterval_vert_startPosPropagated.csv
+[ok] wrote interval horz: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventIntervals/ObsReward_B_03_17_2025_15_50_finalInterval_horz_startPosPropagated.csv
+[done]
+✅ 06b_propagate_pindrop_startpos.py completed at Thu Feb  5 17:16:04 PST 2026
+🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️
+
+🚀 Starting computeWalks.py  at Thu Feb  5 17:16:28 PST 2026
+✅ computeWalks.py completed at Thu Feb  5 17:16:41 PST 2026
+🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️
+
+🚀 Starting computeWalks.py  at Thu Feb  5 17:21:26 PST 2026
+✅ computeWalks.py completed at Thu Feb  5 17:21:39 PST 2026

@@ -387,10 +387,10 @@ def main() -> None:
     ap.add_argument("--interval-root", default="")
 
     ap.add_argument("--role-col", default="currentRole")
-    ap.add_argument("--x-start-col", default="HeadPosAnchored_x_start")
-    ap.add_argument("--z-start-col", default="HeadPosAnchored_z_start")
-    ap.add_argument("--x-end-col", default="HeadPosAnchored_x_end")
-    ap.add_argument("--z-end-col", default="HeadPosAnchored_z_end")
+    ap.add_argument("--x-start-col", default="HeadPosAnchored_x_at_start")
+    ap.add_argument("--z-start-col", default="HeadPosAnchored_z_at_start")
+    ap.add_argument("--x-end-col", default="HeadPosAnchored_x_at_end")
+    ap.add_argument("--z-end-col", default="HeadPosAnchored_z_at_end")
 
     ap.add_argument("--add-used-xy-cols", action="store_true")
     ap.add_argument("--no-strict", action="store_true")

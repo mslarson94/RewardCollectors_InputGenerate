@@ -293,7 +293,7 @@ if __name__ == "__main__":
     }
 
     triangle_csv = "/Users/mairahmac/Desktop/TriangleSets/triangle_positions-formatted__A_D_.csv"
-    chosen_version = "D"
+    chosen_version = "Bx"
     coin_xy = load_coin_xy_from_triangle_csv(triangle_csv, version=chosen_version)
 
     coin_points = {"HV": 10.0, "LV": 5.0, "NV": 0.0}

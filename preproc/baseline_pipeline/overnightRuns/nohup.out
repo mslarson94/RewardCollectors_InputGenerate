@@ -4944,3 +4944,1458 @@ runRedoHisto.sh: line 88: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_re
 
 🚀 Starting computeWalks.py  at Thu Feb  5 17:21:26 PST 2026
 ✅ computeWalks.py completed at Thu Feb  5 17:21:39 PST 2026
+✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
+🚀 Starting 00_batch_reproc_steps_01_04.py at Mon Feb  9 10:10:41 PST 2026
+✅ 00_batch_reproc_steps_01_04.py completed at Mon Feb  9 10:11:23 PST 2026
+✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
+✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
+✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
+✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
+✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
+🚀 Starting 05_batch_add_startpos.py at Mon Feb  9 10:11:23 PST 2026
+✅ 05_batch_add_startpos.py completed at Mon Feb  9 10:11:31 PST 2026
+🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿
+🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿
+🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿
+🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿
+🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿
+🚀 Starting 06a_make_effective_roundnum.py at Mon Feb  9 10:11:31 PST 2026
+✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
+🚀 Starting 00_batch_reproc_steps_01_04.py at Mon Feb  9 10:13:58 PST 2026
+✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
+🚀 Starting 00_batch_reproc_steps_01_04.py at Mon Feb  9 10:16:07 PST 2026
+✅ 00_batch_reproc_steps_01_04.py completed at Mon Feb  9 10:16:28 PST 2026
+✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
+✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
+✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
+✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
+✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
+🚀 Starting 05_batch_add_startpos.py at Mon Feb  9 10:16:28 PST 2026
+✅ 05_batch_add_startpos.py completed at Mon Feb  9 10:16:28 PST 2026
+🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿
+🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿
+🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿
+🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿
+🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿
+🚀 Starting 06a_make_effective_roundnum.py at Mon Feb  9 10:16:28 PST 2026
+✅ 06a_make_effective_roundnum.py completed at Mon Feb  9 10:16:34 PST 2026
+🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷
+🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷
+🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷
+🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷
+🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷
+🚀 Starting 06b_propagate_pindrop_startpos.py at Mon Feb  9 10:16:34 PST 2026
+[scan] found 130 files under /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsAlmostFinal_06a matching *_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_01_17_2025_14_06_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_01_17_2025_14_06_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_01_17_2025_14_34_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_01_17_2025_14_34_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_01_20_2025_14_08_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_01_20_2025_14_08_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_01_20_2025_14_20_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_01_20_2025_14_20_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_01_20_2025_15_03_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_01_20_2025_15_03_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_01_20_2025_15_12_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_01_20_2025_15_12_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_01_20_2025_15_41_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_01_20_2025_15_41_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_01_20_2025_16_07_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_01_20_2025_16_07_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_01_20_2025_16_51_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_01_20_2025_16_51_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_01_25_2025_17_07_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_01_25_2025_17_07_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_01_25_2025_17_27_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_01_25_2025_17_27_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_01_25_2025_17_58_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_01_25_2025_17_58_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_01_26_2025_10_49_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_01_26_2025_10_49_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_01_26_2025_11_46_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_01_26_2025_11_46_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_01_26_2025_11_56_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_01_26_2025_11_56_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_01_26_2025_12_37_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_01_26_2025_12_37_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_01_26_2025_13_12_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_01_26_2025_13_12_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_01_26_2025_15_51_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_01_26_2025_15_51_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_01_26_2025_16_28_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_01_26_2025_16_28_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_01_2025_16_40_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_02_01_2025_16_40_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_01_2025_17_04_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_02_01_2025_17_04_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_01_2025_17_14_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_02_01_2025_17_14_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_01_2025_17_48_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_02_01_2025_17_48_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_05_2025_11_38_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_02_05_2025_11_38_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_05_2025_11_55_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_02_05_2025_11_55_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_05_2025_13_07_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_02_05_2025_13_07_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_05_2025_13_35_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_02_05_2025_13_35_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_05_2025_13_59_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_02_05_2025_13_59_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_08_2025_13_33_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_02_08_2025_13_33_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_08_2025_14_14_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_02_08_2025_14_14_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_08_2025_14_54_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_02_08_2025_14_54_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_08_2025_15_08_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_02_08_2025_15_08_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_08_2025_15_18_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_02_08_2025_15_18_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_09_2025_10_41_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_02_09_2025_10_41_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_09_2025_11_00_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_02_09_2025_11_00_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_09_2025_12_38_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_02_09_2025_12_38_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_09_2025_12_53_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_02_09_2025_12_53_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_09_2025_13_10_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_02_09_2025_13_10_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_09_2025_14_04_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_02_09_2025_14_04_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_12_2025_12_01_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_02_12_2025_12_01_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_12_2025_12_29_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_02_12_2025_12_29_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_12_2025_13_20_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_02_12_2025_13_20_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_12_2025_13_38_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_02_12_2025_13_38_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_12_2025_14_21_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_02_12_2025_14_21_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_17_2025_14_48_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_02_17_2025_14_48_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_17_2025_15_11_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_02_17_2025_15_11_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_17_2025_15_49_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_02_17_2025_15_49_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_17_2025_16_26_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_02_17_2025_16_26_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_17_2025_16_43_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_02_17_2025_16_43_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_17_2025_16_51_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_02_17_2025_16_51_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_19_2025_16_24_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_02_19_2025_16_24_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_19_2025_17_47_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_02_19_2025_17_47_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_19_2025_18_00_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_02_19_2025_18_00_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_19_2025_18_14_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_02_19_2025_18_14_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_19_2025_19_04_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_02_19_2025_19_04_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_03_06_2025_10_01_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_03_06_2025_10_01_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_03_06_2025_11_35_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_03_06_2025_11_35_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_03_17_2025_10_30_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_03_17_2025_10_30_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_03_17_2025_10_44_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_03_17_2025_10_44_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_03_17_2025_11_15_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_03_17_2025_11_15_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_03_17_2025_13_48_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_03_17_2025_13_48_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_03_17_2025_14_00_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_03_17_2025_14_00_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_03_17_2025_14_09_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_03_17_2025_14_09_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_03_17_2025_14_16_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_03_17_2025_14_16_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_03_17_2025_15_50_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_03_17_2025_15_50_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_01_17_2025_14_06_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_01_17_2025_14_06_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_01_17_2025_14_34_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_01_17_2025_14_34_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_01_20_2025_14_08_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_01_20_2025_14_08_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_01_20_2025_14_20_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_01_20_2025_14_20_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_01_20_2025_15_03_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_01_20_2025_15_03_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_01_20_2025_15_12_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_01_20_2025_15_12_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_01_20_2025_15_41_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_01_20_2025_15_41_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_01_20_2025_16_07_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_01_20_2025_16_07_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_01_20_2025_16_51_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_01_20_2025_16_51_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_01_25_2025_17_07_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_01_25_2025_17_07_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_01_25_2025_17_27_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_01_25_2025_17_27_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_01_25_2025_17_58_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_01_25_2025_17_58_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_01_26_2025_10_49_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_01_26_2025_10_49_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_01_26_2025_11_46_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_01_26_2025_11_46_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_01_26_2025_11_56_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_01_26_2025_11_56_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_01_26_2025_12_37_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_01_26_2025_12_37_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_01_26_2025_13_12_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_01_26_2025_13_12_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_01_26_2025_15_51_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_01_26_2025_15_51_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_01_26_2025_16_28_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_01_26_2025_16_28_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_01_2025_16_40_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_02_01_2025_16_40_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_01_2025_17_04_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_02_01_2025_17_04_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_01_2025_17_14_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_02_01_2025_17_14_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_01_2025_17_48_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_02_01_2025_17_48_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_05_2025_11_38_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_02_05_2025_11_38_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_05_2025_11_55_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_02_05_2025_11_55_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_05_2025_13_07_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_02_05_2025_13_07_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_05_2025_13_35_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_02_05_2025_13_35_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_05_2025_13_59_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_02_05_2025_13_59_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_08_2025_13_33_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_02_08_2025_13_33_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_08_2025_14_14_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_02_08_2025_14_14_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_08_2025_14_54_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_02_08_2025_14_54_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_08_2025_15_08_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_02_08_2025_15_08_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_08_2025_15_18_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_02_08_2025_15_18_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_09_2025_10_41_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_02_09_2025_10_41_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_09_2025_11_00_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_02_09_2025_11_00_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_09_2025_12_38_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_02_09_2025_12_38_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_09_2025_12_53_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_02_09_2025_12_53_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_09_2025_13_10_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_02_09_2025_13_10_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_09_2025_14_04_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_02_09_2025_14_04_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_12_2025_12_01_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_02_12_2025_12_01_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_12_2025_12_29_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_02_12_2025_12_29_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_12_2025_13_20_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_02_12_2025_13_20_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_12_2025_13_38_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_02_12_2025_13_38_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_12_2025_14_21_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_02_12_2025_14_21_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_17_2025_14_48_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_02_17_2025_14_48_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_17_2025_15_11_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_02_17_2025_15_11_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_17_2025_15_49_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_02_17_2025_15_49_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_17_2025_16_26_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_02_17_2025_16_26_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_17_2025_16_43_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_02_17_2025_16_43_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_17_2025_16_51_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_02_17_2025_16_51_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_19_2025_16_24_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_02_19_2025_16_24_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_19_2025_17_47_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_02_19_2025_17_47_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_19_2025_18_00_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_02_19_2025_18_00_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_19_2025_18_14_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_02_19_2025_18_14_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_19_2025_19_04_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_02_19_2025_19_04_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_03_06_2025_10_01_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_03_06_2025_10_01_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_03_06_2025_11_35_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_03_06_2025_11_35_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_03_17_2025_10_30_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_03_17_2025_10_30_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_03_17_2025_10_44_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_03_17_2025_10_44_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_03_17_2025_11_15_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_03_17_2025_11_15_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_03_17_2025_13_48_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_03_17_2025_13_48_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_03_17_2025_14_00_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_03_17_2025_14_00_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_03_17_2025_14_09_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_03_17_2025_14_09_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_03_17_2025_14_16_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_03_17_2025_14_16_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_03_17_2025_15_50_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_03_17_2025_15_50_withEffectiveRound.csv
+[done]
+✅ 06b_propagate_pindrop_startpos.py completed at Mon Feb  9 10:16:40 PST 2026
+✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
+🚀 Starting 00_batch_reproc_steps_01_04.py at Mon Feb  9 10:20:42 PST 2026
+✅ 00_batch_reproc_steps_01_04.py completed at Mon Feb  9 10:21:03 PST 2026
+✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
+✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
+✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
+✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
+✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
+🚀 Starting 05_batch_add_startpos.py at Mon Feb  9 10:21:03 PST 2026
+✅ 05_batch_add_startpos.py completed at Mon Feb  9 10:21:03 PST 2026
+🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿
+🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿
+🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿
+🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿
+🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿
+🚀 Starting 06a_make_effective_roundnum.py at Mon Feb  9 10:21:03 PST 2026
+✅ 06a_make_effective_roundnum.py completed at Mon Feb  9 10:21:09 PST 2026
+🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷
+🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷
+🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷
+🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷
+🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷
+🚀 Starting 06b_propagate_pindrop_startpos.py at Mon Feb  9 10:21:09 PST 2026
+[scan] found 130 files under /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsAlmostFinal_06a matching *_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_01_17_2025_14_06_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_01_17_2025_14_06_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_01_17_2025_14_34_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_01_17_2025_14_34_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_01_20_2025_14_08_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_01_20_2025_14_08_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_01_20_2025_14_20_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_01_20_2025_14_20_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_01_20_2025_15_03_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_01_20_2025_15_03_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_01_20_2025_15_12_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_01_20_2025_15_12_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_01_20_2025_15_41_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_01_20_2025_15_41_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_01_20_2025_16_07_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_01_20_2025_16_07_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_01_20_2025_16_51_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_01_20_2025_16_51_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_01_25_2025_17_07_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_01_25_2025_17_07_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_01_25_2025_17_27_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_01_25_2025_17_27_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_01_25_2025_17_58_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_01_25_2025_17_58_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_01_26_2025_10_49_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_01_26_2025_10_49_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_01_26_2025_11_46_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_01_26_2025_11_46_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_01_26_2025_11_56_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_01_26_2025_11_56_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_01_26_2025_12_37_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_01_26_2025_12_37_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_01_26_2025_13_12_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_01_26_2025_13_12_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_01_26_2025_15_51_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_01_26_2025_15_51_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_01_26_2025_16_28_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_01_26_2025_16_28_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_01_2025_16_40_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_02_01_2025_16_40_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_01_2025_17_04_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_02_01_2025_17_04_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_01_2025_17_14_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_02_01_2025_17_14_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_01_2025_17_48_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_02_01_2025_17_48_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_05_2025_11_38_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_02_05_2025_11_38_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_05_2025_11_55_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_02_05_2025_11_55_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_05_2025_13_07_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_02_05_2025_13_07_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_05_2025_13_35_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_02_05_2025_13_35_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_05_2025_13_59_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_02_05_2025_13_59_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_08_2025_13_33_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_02_08_2025_13_33_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_08_2025_14_14_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_02_08_2025_14_14_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_08_2025_14_54_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_02_08_2025_14_54_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_08_2025_15_08_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_02_08_2025_15_08_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_08_2025_15_18_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_02_08_2025_15_18_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_09_2025_10_41_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_02_09_2025_10_41_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_09_2025_11_00_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_02_09_2025_11_00_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_09_2025_12_38_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_02_09_2025_12_38_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_09_2025_12_53_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_02_09_2025_12_53_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_09_2025_13_10_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_02_09_2025_13_10_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_09_2025_14_04_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_02_09_2025_14_04_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_12_2025_12_01_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_02_12_2025_12_01_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_12_2025_12_29_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_02_12_2025_12_29_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_12_2025_13_20_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_02_12_2025_13_20_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_12_2025_13_38_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_02_12_2025_13_38_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_12_2025_14_21_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_02_12_2025_14_21_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_17_2025_14_48_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_02_17_2025_14_48_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_17_2025_15_11_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_02_17_2025_15_11_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_17_2025_15_49_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_02_17_2025_15_49_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_17_2025_16_26_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_02_17_2025_16_26_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_17_2025_16_43_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_02_17_2025_16_43_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_17_2025_16_51_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_02_17_2025_16_51_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_19_2025_16_24_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_02_19_2025_16_24_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_19_2025_17_47_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_02_19_2025_17_47_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_19_2025_18_00_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_02_19_2025_18_00_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_19_2025_18_14_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_02_19_2025_18_14_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_19_2025_19_04_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_02_19_2025_19_04_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_03_06_2025_10_01_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_03_06_2025_10_01_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_03_06_2025_11_35_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_03_06_2025_11_35_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_03_17_2025_10_30_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_03_17_2025_10_30_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_03_17_2025_10_44_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_03_17_2025_10_44_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_03_17_2025_11_15_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_03_17_2025_11_15_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_03_17_2025_13_48_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_03_17_2025_13_48_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_03_17_2025_14_00_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_03_17_2025_14_00_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_03_17_2025_14_09_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_03_17_2025_14_09_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_03_17_2025_14_16_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_03_17_2025_14_16_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_03_17_2025_15_50_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_03_17_2025_15_50_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_01_17_2025_14_06_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_01_17_2025_14_06_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_01_17_2025_14_34_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_01_17_2025_14_34_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_01_20_2025_14_08_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_01_20_2025_14_08_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_01_20_2025_14_20_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_01_20_2025_14_20_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_01_20_2025_15_03_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_01_20_2025_15_03_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_01_20_2025_15_12_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_01_20_2025_15_12_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_01_20_2025_15_41_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_01_20_2025_15_41_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_01_20_2025_16_07_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_01_20_2025_16_07_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_01_20_2025_16_51_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_01_20_2025_16_51_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_01_25_2025_17_07_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_01_25_2025_17_07_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_01_25_2025_17_27_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_01_25_2025_17_27_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_01_25_2025_17_58_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_01_25_2025_17_58_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_01_26_2025_10_49_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_01_26_2025_10_49_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_01_26_2025_11_46_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_01_26_2025_11_46_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_01_26_2025_11_56_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_01_26_2025_11_56_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_01_26_2025_12_37_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_01_26_2025_12_37_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_01_26_2025_13_12_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_01_26_2025_13_12_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_01_26_2025_15_51_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_01_26_2025_15_51_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_01_26_2025_16_28_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_01_26_2025_16_28_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_01_2025_16_40_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_02_01_2025_16_40_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_01_2025_17_04_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_02_01_2025_17_04_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_01_2025_17_14_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_02_01_2025_17_14_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_01_2025_17_48_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_02_01_2025_17_48_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_05_2025_11_38_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_02_05_2025_11_38_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_05_2025_11_55_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_02_05_2025_11_55_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_05_2025_13_07_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_02_05_2025_13_07_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_05_2025_13_35_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_02_05_2025_13_35_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_05_2025_13_59_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_02_05_2025_13_59_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_08_2025_13_33_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_02_08_2025_13_33_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_08_2025_14_14_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_02_08_2025_14_14_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_08_2025_14_54_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_02_08_2025_14_54_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_08_2025_15_08_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_02_08_2025_15_08_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_08_2025_15_18_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_02_08_2025_15_18_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_09_2025_10_41_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_02_09_2025_10_41_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_09_2025_11_00_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_02_09_2025_11_00_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_09_2025_12_38_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_02_09_2025_12_38_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_09_2025_12_53_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_02_09_2025_12_53_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_09_2025_13_10_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_02_09_2025_13_10_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_09_2025_14_04_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_02_09_2025_14_04_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_12_2025_12_01_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_02_12_2025_12_01_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_12_2025_12_29_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_02_12_2025_12_29_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_12_2025_13_20_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_02_12_2025_13_20_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_12_2025_13_38_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_02_12_2025_13_38_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_12_2025_14_21_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_02_12_2025_14_21_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_17_2025_14_48_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_02_17_2025_14_48_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_17_2025_15_11_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_02_17_2025_15_11_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_17_2025_15_49_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_02_17_2025_15_49_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_17_2025_16_26_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_02_17_2025_16_26_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_17_2025_16_43_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_02_17_2025_16_43_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_17_2025_16_51_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_02_17_2025_16_51_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_19_2025_16_24_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_02_19_2025_16_24_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_19_2025_17_47_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_02_19_2025_17_47_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_19_2025_18_00_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_02_19_2025_18_00_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_19_2025_18_14_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_02_19_2025_18_14_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_19_2025_19_04_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_02_19_2025_19_04_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_03_06_2025_10_01_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_03_06_2025_10_01_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_03_06_2025_11_35_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_03_06_2025_11_35_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_03_17_2025_10_30_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_03_17_2025_10_30_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_03_17_2025_10_44_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_03_17_2025_10_44_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_03_17_2025_11_15_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_03_17_2025_11_15_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_03_17_2025_13_48_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_03_17_2025_13_48_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_03_17_2025_14_00_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_03_17_2025_14_00_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_03_17_2025_14_09_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_03_17_2025_14_09_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_03_17_2025_14_16_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_03_17_2025_14_16_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_03_17_2025_15_50_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_03_17_2025_15_50_withEffectiveRound.csv
+[done]
+✅ 06b_propagate_pindrop_startpos.py completed at Mon Feb  9 10:21:15 PST 2026
+✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
+🚀 Starting 00_batch_reproc_steps_01_04.py at Mon Feb  9 10:22:20 PST 2026
+✅ 00_batch_reproc_steps_01_04.py completed at Mon Feb  9 10:22:41 PST 2026
+✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
+✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
+✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
+✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
+✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
+🚀 Starting 05_batch_add_startpos.py at Mon Feb  9 10:22:41 PST 2026
+✅ 05_batch_add_startpos.py completed at Mon Feb  9 10:22:41 PST 2026
+🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿
+🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿
+🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿
+🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿
+🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿
+🚀 Starting 06a_make_effective_roundnum.py at Mon Feb  9 10:22:41 PST 2026
+✅ 06a_make_effective_roundnum.py completed at Mon Feb  9 10:22:47 PST 2026
+🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷
+🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷
+🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷
+🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷
+🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷
+🚀 Starting 06b_propagate_pindrop_startpos.py at Mon Feb  9 10:22:47 PST 2026
+[scan] found 130 files under /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsAlmostFinal_06a matching *_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_01_17_2025_14_06_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_01_17_2025_14_06_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_01_17_2025_14_34_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_01_17_2025_14_34_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_01_20_2025_14_08_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_01_20_2025_14_08_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_01_20_2025_14_20_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_01_20_2025_14_20_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_01_20_2025_15_03_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_01_20_2025_15_03_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_01_20_2025_15_12_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_01_20_2025_15_12_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_01_20_2025_15_41_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_01_20_2025_15_41_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_01_20_2025_16_07_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_01_20_2025_16_07_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_01_20_2025_16_51_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_01_20_2025_16_51_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_01_25_2025_17_07_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_01_25_2025_17_07_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_01_25_2025_17_27_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_01_25_2025_17_27_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_01_25_2025_17_58_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_01_25_2025_17_58_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_01_26_2025_10_49_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_01_26_2025_10_49_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_01_26_2025_11_46_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_01_26_2025_11_46_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_01_26_2025_11_56_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_01_26_2025_11_56_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_01_26_2025_12_37_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_01_26_2025_12_37_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_01_26_2025_13_12_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_01_26_2025_13_12_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_01_26_2025_15_51_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_01_26_2025_15_51_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_01_26_2025_16_28_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_01_26_2025_16_28_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_01_2025_16_40_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_02_01_2025_16_40_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_01_2025_17_04_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_02_01_2025_17_04_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_01_2025_17_14_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_02_01_2025_17_14_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_01_2025_17_48_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_02_01_2025_17_48_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_05_2025_11_38_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_02_05_2025_11_38_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_05_2025_11_55_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_02_05_2025_11_55_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_05_2025_13_07_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_02_05_2025_13_07_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_05_2025_13_35_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_02_05_2025_13_35_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_05_2025_13_59_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_02_05_2025_13_59_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_08_2025_13_33_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_02_08_2025_13_33_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_08_2025_14_14_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_02_08_2025_14_14_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_08_2025_14_54_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_02_08_2025_14_54_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_08_2025_15_08_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_02_08_2025_15_08_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_08_2025_15_18_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_02_08_2025_15_18_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_09_2025_10_41_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_02_09_2025_10_41_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_09_2025_11_00_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_02_09_2025_11_00_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_09_2025_12_38_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_02_09_2025_12_38_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_09_2025_12_53_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_02_09_2025_12_53_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_09_2025_13_10_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_02_09_2025_13_10_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_09_2025_14_04_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_02_09_2025_14_04_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_12_2025_12_01_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_02_12_2025_12_01_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_12_2025_12_29_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_02_12_2025_12_29_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_12_2025_13_20_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_02_12_2025_13_20_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_12_2025_13_38_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_02_12_2025_13_38_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_12_2025_14_21_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_02_12_2025_14_21_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_17_2025_14_48_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_02_17_2025_14_48_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_17_2025_15_11_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_02_17_2025_15_11_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_17_2025_15_49_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_02_17_2025_15_49_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_17_2025_16_26_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_02_17_2025_16_26_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_17_2025_16_43_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_02_17_2025_16_43_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_17_2025_16_51_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_02_17_2025_16_51_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_19_2025_16_24_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_02_19_2025_16_24_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_19_2025_17_47_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_02_19_2025_17_47_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_19_2025_18_00_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_02_19_2025_18_00_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_19_2025_18_14_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_02_19_2025_18_14_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_19_2025_19_04_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_02_19_2025_19_04_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_03_06_2025_10_01_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_03_06_2025_10_01_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_03_06_2025_11_35_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_03_06_2025_11_35_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_03_17_2025_10_30_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_03_17_2025_10_30_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_03_17_2025_10_44_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_03_17_2025_10_44_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_03_17_2025_11_15_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_03_17_2025_11_15_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_03_17_2025_13_48_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_03_17_2025_13_48_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_03_17_2025_14_00_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_03_17_2025_14_00_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_03_17_2025_14_09_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_03_17_2025_14_09_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_03_17_2025_14_16_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_03_17_2025_14_16_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_03_17_2025_15_50_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_03_17_2025_15_50_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_01_17_2025_14_06_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_01_17_2025_14_06_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_01_17_2025_14_34_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_01_17_2025_14_34_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_01_20_2025_14_08_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_01_20_2025_14_08_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_01_20_2025_14_20_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_01_20_2025_14_20_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_01_20_2025_15_03_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_01_20_2025_15_03_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_01_20_2025_15_12_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_01_20_2025_15_12_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_01_20_2025_15_41_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_01_20_2025_15_41_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_01_20_2025_16_07_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_01_20_2025_16_07_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_01_20_2025_16_51_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_01_20_2025_16_51_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_01_25_2025_17_07_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_01_25_2025_17_07_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_01_25_2025_17_27_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_01_25_2025_17_27_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_01_25_2025_17_58_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_01_25_2025_17_58_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_01_26_2025_10_49_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_01_26_2025_10_49_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_01_26_2025_11_46_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_01_26_2025_11_46_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_01_26_2025_11_56_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_01_26_2025_11_56_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_01_26_2025_12_37_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_01_26_2025_12_37_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_01_26_2025_13_12_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_01_26_2025_13_12_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_01_26_2025_15_51_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_01_26_2025_15_51_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_01_26_2025_16_28_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_01_26_2025_16_28_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_01_2025_16_40_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_02_01_2025_16_40_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_01_2025_17_04_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_02_01_2025_17_04_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_01_2025_17_14_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_02_01_2025_17_14_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_01_2025_17_48_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_02_01_2025_17_48_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_05_2025_11_38_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_02_05_2025_11_38_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_05_2025_11_55_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_02_05_2025_11_55_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_05_2025_13_07_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_02_05_2025_13_07_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_05_2025_13_35_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_02_05_2025_13_35_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_05_2025_13_59_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_02_05_2025_13_59_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_08_2025_13_33_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_02_08_2025_13_33_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_08_2025_14_14_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_02_08_2025_14_14_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_08_2025_14_54_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_02_08_2025_14_54_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_08_2025_15_08_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_02_08_2025_15_08_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_08_2025_15_18_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_02_08_2025_15_18_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_09_2025_10_41_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_02_09_2025_10_41_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_09_2025_11_00_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_02_09_2025_11_00_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_09_2025_12_38_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_02_09_2025_12_38_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_09_2025_12_53_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_02_09_2025_12_53_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_09_2025_13_10_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_02_09_2025_13_10_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_09_2025_14_04_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_02_09_2025_14_04_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_12_2025_12_01_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_02_12_2025_12_01_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_12_2025_12_29_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_02_12_2025_12_29_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_12_2025_13_20_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_02_12_2025_13_20_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_12_2025_13_38_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_02_12_2025_13_38_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_12_2025_14_21_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_02_12_2025_14_21_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_17_2025_14_48_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_02_17_2025_14_48_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_17_2025_15_11_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_02_17_2025_15_11_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_17_2025_15_49_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_02_17_2025_15_49_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_17_2025_16_26_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_02_17_2025_16_26_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_17_2025_16_43_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_02_17_2025_16_43_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_17_2025_16_51_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_02_17_2025_16_51_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_19_2025_16_24_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_02_19_2025_16_24_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_19_2025_17_47_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_02_19_2025_17_47_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_19_2025_18_00_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_02_19_2025_18_00_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_19_2025_18_14_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_02_19_2025_18_14_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_19_2025_19_04_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_02_19_2025_19_04_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_03_06_2025_10_01_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_03_06_2025_10_01_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_03_06_2025_11_35_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_03_06_2025_11_35_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_03_17_2025_10_30_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_03_17_2025_10_30_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_03_17_2025_10_44_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_03_17_2025_10_44_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_03_17_2025_11_15_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_03_17_2025_11_15_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_03_17_2025_13_48_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_03_17_2025_13_48_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_03_17_2025_14_00_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_03_17_2025_14_00_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_03_17_2025_14_09_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_03_17_2025_14_09_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_03_17_2025_14_16_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_03_17_2025_14_16_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_03_17_2025_15_50_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_03_17_2025_15_50_withEffectiveRound.csv
+[done]
+✅ 06b_propagate_pindrop_startpos.py completed at Mon Feb  9 10:22:53 PST 2026
+✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
+🚀 Starting 00_batch_reproc_steps_01_04.py at Mon Feb  9 10:23:54 PST 2026
+✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
+🚀 Starting 00_batch_reproc_steps_01_04.py at Mon Feb  9 10:36:03 PST 2026
+✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
+🚀 Starting 00_batch_reproc_steps_01_04.py at Mon Feb  9 10:37:08 PST 2026
+✅ 00_batch_reproc_steps_01_04.py completed at Mon Feb  9 10:37:46 PST 2026
+✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
+✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
+✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
+✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
+✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
+🚀 Starting 05_batch_add_startpos.py at Mon Feb  9 10:37:46 PST 2026
+✅ 05_batch_add_startpos.py completed at Mon Feb  9 10:37:46 PST 2026
+🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿
+🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿
+🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿
+🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿
+🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿
+🚀 Starting 06a_make_effective_roundnum.py at Mon Feb  9 10:37:47 PST 2026
+✅ 06a_make_effective_roundnum.py completed at Mon Feb  9 10:37:52 PST 2026
+🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷
+🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷
+🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷
+🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷
+🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷
+🚀 Starting 06b_propagate_pindrop_startpos.py at Mon Feb  9 10:37:52 PST 2026
+[scan] found 130 files under /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsAlmostFinal_06a matching *_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_01_17_2025_14_06_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_01_17_2025_14_06_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_01_17_2025_14_34_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_01_17_2025_14_34_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_01_20_2025_14_08_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_01_20_2025_14_08_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_01_20_2025_14_20_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_01_20_2025_14_20_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_01_20_2025_15_03_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_01_20_2025_15_03_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_01_20_2025_15_12_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_01_20_2025_15_12_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_01_20_2025_15_41_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_01_20_2025_15_41_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_01_20_2025_16_07_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_01_20_2025_16_07_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_01_20_2025_16_51_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_01_20_2025_16_51_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_01_25_2025_17_07_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_01_25_2025_17_07_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_01_25_2025_17_27_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_01_25_2025_17_27_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_01_25_2025_17_58_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_01_25_2025_17_58_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_01_26_2025_10_49_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_01_26_2025_10_49_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_01_26_2025_11_46_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_01_26_2025_11_46_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_01_26_2025_11_56_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_01_26_2025_11_56_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_01_26_2025_12_37_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_01_26_2025_12_37_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_01_26_2025_13_12_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_01_26_2025_13_12_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_01_26_2025_15_51_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_01_26_2025_15_51_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_01_26_2025_16_28_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_01_26_2025_16_28_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_01_2025_16_40_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_02_01_2025_16_40_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_01_2025_17_04_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_02_01_2025_17_04_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_01_2025_17_14_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_02_01_2025_17_14_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_01_2025_17_48_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_02_01_2025_17_48_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_05_2025_11_38_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_02_05_2025_11_38_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_05_2025_11_55_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_02_05_2025_11_55_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_05_2025_13_07_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_02_05_2025_13_07_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_05_2025_13_35_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_02_05_2025_13_35_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_05_2025_13_59_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_02_05_2025_13_59_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_08_2025_13_33_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_02_08_2025_13_33_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_08_2025_14_14_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_02_08_2025_14_14_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_08_2025_14_54_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_02_08_2025_14_54_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_08_2025_15_08_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_02_08_2025_15_08_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_08_2025_15_18_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_02_08_2025_15_18_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_09_2025_10_41_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_02_09_2025_10_41_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_09_2025_11_00_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_02_09_2025_11_00_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_09_2025_12_38_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_02_09_2025_12_38_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_09_2025_12_53_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_02_09_2025_12_53_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_09_2025_13_10_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_02_09_2025_13_10_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_09_2025_14_04_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_02_09_2025_14_04_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_12_2025_12_01_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_02_12_2025_12_01_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_12_2025_12_29_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_02_12_2025_12_29_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_12_2025_13_20_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_02_12_2025_13_20_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_12_2025_13_38_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_02_12_2025_13_38_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_12_2025_14_21_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_02_12_2025_14_21_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_17_2025_14_48_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_02_17_2025_14_48_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_17_2025_15_11_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_02_17_2025_15_11_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_17_2025_15_49_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_02_17_2025_15_49_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_17_2025_16_26_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_02_17_2025_16_26_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_17_2025_16_43_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_02_17_2025_16_43_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_17_2025_16_51_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_02_17_2025_16_51_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_19_2025_16_24_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_02_19_2025_16_24_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_19_2025_17_47_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_02_19_2025_17_47_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_19_2025_18_00_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_02_19_2025_18_00_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_19_2025_18_14_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_02_19_2025_18_14_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_19_2025_19_04_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_02_19_2025_19_04_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_03_06_2025_10_01_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_03_06_2025_10_01_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_03_06_2025_11_35_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_03_06_2025_11_35_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_03_17_2025_10_30_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_03_17_2025_10_30_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_03_17_2025_10_44_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_03_17_2025_10_44_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_03_17_2025_11_15_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_03_17_2025_11_15_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_03_17_2025_13_48_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_03_17_2025_13_48_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_03_17_2025_14_00_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_03_17_2025_14_00_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_03_17_2025_14_09_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_03_17_2025_14_09_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_03_17_2025_14_16_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_03_17_2025_14_16_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_03_17_2025_15_50_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_03_17_2025_15_50_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_01_17_2025_14_06_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_01_17_2025_14_06_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_01_17_2025_14_34_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_01_17_2025_14_34_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_01_20_2025_14_08_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_01_20_2025_14_08_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_01_20_2025_14_20_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_01_20_2025_14_20_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_01_20_2025_15_03_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_01_20_2025_15_03_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_01_20_2025_15_12_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_01_20_2025_15_12_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_01_20_2025_15_41_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_01_20_2025_15_41_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_01_20_2025_16_07_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_01_20_2025_16_07_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_01_20_2025_16_51_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_01_20_2025_16_51_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_01_25_2025_17_07_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_01_25_2025_17_07_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_01_25_2025_17_27_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_01_25_2025_17_27_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_01_25_2025_17_58_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_01_25_2025_17_58_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_01_26_2025_10_49_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_01_26_2025_10_49_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_01_26_2025_11_46_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_01_26_2025_11_46_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_01_26_2025_11_56_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_01_26_2025_11_56_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_01_26_2025_12_37_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_01_26_2025_12_37_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_01_26_2025_13_12_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_01_26_2025_13_12_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_01_26_2025_15_51_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_01_26_2025_15_51_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_01_26_2025_16_28_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_01_26_2025_16_28_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_01_2025_16_40_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_02_01_2025_16_40_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_01_2025_17_04_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_02_01_2025_17_04_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_01_2025_17_14_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_02_01_2025_17_14_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_01_2025_17_48_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_02_01_2025_17_48_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_05_2025_11_38_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_02_05_2025_11_38_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_05_2025_11_55_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_02_05_2025_11_55_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_05_2025_13_07_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_02_05_2025_13_07_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_05_2025_13_35_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_02_05_2025_13_35_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_05_2025_13_59_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_02_05_2025_13_59_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_08_2025_13_33_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_02_08_2025_13_33_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_08_2025_14_14_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_02_08_2025_14_14_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_08_2025_14_54_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_02_08_2025_14_54_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_08_2025_15_08_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_02_08_2025_15_08_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_08_2025_15_18_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_02_08_2025_15_18_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_09_2025_10_41_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_02_09_2025_10_41_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_09_2025_11_00_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_02_09_2025_11_00_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_09_2025_12_38_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_02_09_2025_12_38_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_09_2025_12_53_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_02_09_2025_12_53_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_09_2025_13_10_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_02_09_2025_13_10_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_09_2025_14_04_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_02_09_2025_14_04_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_12_2025_12_01_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_02_12_2025_12_01_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_12_2025_12_29_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_02_12_2025_12_29_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_12_2025_13_20_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_02_12_2025_13_20_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_12_2025_13_38_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_02_12_2025_13_38_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_12_2025_14_21_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_02_12_2025_14_21_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_17_2025_14_48_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_02_17_2025_14_48_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_17_2025_15_11_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_02_17_2025_15_11_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_17_2025_15_49_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_02_17_2025_15_49_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_17_2025_16_26_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_02_17_2025_16_26_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_17_2025_16_43_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_02_17_2025_16_43_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_17_2025_16_51_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_02_17_2025_16_51_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_19_2025_16_24_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_02_19_2025_16_24_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_19_2025_17_47_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_02_19_2025_17_47_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_19_2025_18_00_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_02_19_2025_18_00_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_19_2025_18_14_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_02_19_2025_18_14_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_19_2025_19_04_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_02_19_2025_19_04_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_03_06_2025_10_01_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_03_06_2025_10_01_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_03_06_2025_11_35_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_03_06_2025_11_35_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_03_17_2025_10_30_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_03_17_2025_10_30_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_03_17_2025_10_44_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_03_17_2025_10_44_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_03_17_2025_11_15_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_03_17_2025_11_15_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_03_17_2025_13_48_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_03_17_2025_13_48_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_03_17_2025_14_00_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_03_17_2025_14_00_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_03_17_2025_14_09_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_03_17_2025_14_09_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_03_17_2025_14_16_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_03_17_2025_14_16_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_03_17_2025_15_50_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_03_17_2025_15_50_withEffectiveRound.csv
+[done]
+✅ 06b_propagate_pindrop_startpos.py completed at Mon Feb  9 10:37:59 PST 2026
+✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
+🚀 Starting 00_batch_reproc_steps_01_04.py at Mon Feb  9 10:49:38 PST 2026
+✅ 00_batch_reproc_steps_01_04.py completed at Mon Feb  9 10:50:19 PST 2026
+✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
+✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
+✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
+✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
+✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
+🚀 Starting 05_batch_add_startpos.py at Mon Feb  9 10:50:19 PST 2026
+✅ 05_batch_add_startpos.py completed at Mon Feb  9 10:50:19 PST 2026
+🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿
+🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿
+🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿
+🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿
+🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿
+🚀 Starting 06a_make_effective_roundnum.py at Mon Feb  9 10:50:19 PST 2026
+✅ 06a_make_effective_roundnum.py completed at Mon Feb  9 10:50:26 PST 2026
+🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷
+🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷
+🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷
+🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷
+🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷
+🚀 Starting 06b_propagate_pindrop_startpos.py at Mon Feb  9 10:50:26 PST 2026
+[scan] found 130 files under /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsAlmostFinal_06a matching *_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_01_17_2025_14_06_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_01_17_2025_14_06_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_01_17_2025_14_34_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_01_17_2025_14_34_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_01_20_2025_14_08_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_01_20_2025_14_08_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_01_20_2025_14_20_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_01_20_2025_14_20_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_01_20_2025_15_03_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_01_20_2025_15_03_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_01_20_2025_15_12_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_01_20_2025_15_12_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_01_20_2025_15_41_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_01_20_2025_15_41_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_01_20_2025_16_07_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_01_20_2025_16_07_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_01_20_2025_16_51_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_01_20_2025_16_51_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_01_25_2025_17_07_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_01_25_2025_17_07_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_01_25_2025_17_27_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_01_25_2025_17_27_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_01_25_2025_17_58_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_01_25_2025_17_58_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_01_26_2025_10_49_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_01_26_2025_10_49_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_01_26_2025_11_46_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_01_26_2025_11_46_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_01_26_2025_11_56_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_01_26_2025_11_56_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_01_26_2025_12_37_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_01_26_2025_12_37_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_01_26_2025_13_12_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_01_26_2025_13_12_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_01_26_2025_15_51_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_01_26_2025_15_51_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_01_26_2025_16_28_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_01_26_2025_16_28_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_01_2025_16_40_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_02_01_2025_16_40_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_01_2025_17_04_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_02_01_2025_17_04_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_01_2025_17_14_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_02_01_2025_17_14_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_01_2025_17_48_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_02_01_2025_17_48_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_05_2025_11_38_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_02_05_2025_11_38_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_05_2025_11_55_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_02_05_2025_11_55_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_05_2025_13_07_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_02_05_2025_13_07_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_05_2025_13_35_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_02_05_2025_13_35_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_05_2025_13_59_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_02_05_2025_13_59_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_08_2025_13_33_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_02_08_2025_13_33_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_08_2025_14_14_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_02_08_2025_14_14_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_08_2025_14_54_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_02_08_2025_14_54_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_08_2025_15_08_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_02_08_2025_15_08_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_08_2025_15_18_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_02_08_2025_15_18_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_09_2025_10_41_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_02_09_2025_10_41_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_09_2025_11_00_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_02_09_2025_11_00_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_09_2025_12_38_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_02_09_2025_12_38_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_09_2025_12_53_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_02_09_2025_12_53_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_09_2025_13_10_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_02_09_2025_13_10_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_09_2025_14_04_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_02_09_2025_14_04_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_12_2025_12_01_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_02_12_2025_12_01_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_12_2025_12_29_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_02_12_2025_12_29_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_12_2025_13_20_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_02_12_2025_13_20_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_12_2025_13_38_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_02_12_2025_13_38_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_12_2025_14_21_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_02_12_2025_14_21_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_17_2025_14_48_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_02_17_2025_14_48_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_17_2025_15_11_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_02_17_2025_15_11_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_17_2025_15_49_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_02_17_2025_15_49_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_17_2025_16_26_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_02_17_2025_16_26_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_17_2025_16_43_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_02_17_2025_16_43_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_17_2025_16_51_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_02_17_2025_16_51_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_19_2025_16_24_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_02_19_2025_16_24_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_19_2025_17_47_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_02_19_2025_17_47_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_19_2025_18_00_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_02_19_2025_18_00_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_19_2025_18_14_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_02_19_2025_18_14_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_02_19_2025_19_04_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_02_19_2025_19_04_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_03_06_2025_10_01_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_03_06_2025_10_01_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_03_06_2025_11_35_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_03_06_2025_11_35_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_03_17_2025_10_30_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_03_17_2025_10_30_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_03_17_2025_10_44_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_03_17_2025_10_44_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_03_17_2025_11_15_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_03_17_2025_11_15_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_03_17_2025_13_48_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_03_17_2025_13_48_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_03_17_2025_14_00_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_03_17_2025_14_00_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_03_17_2025_14_09_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_03_17_2025_14_09_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_03_17_2025_14_16_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_03_17_2025_14_16_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_A_03_17_2025_15_50_startPosPropagated.csv
+[skip] intervals not found for ObsReward_A_03_17_2025_15_50_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_01_17_2025_14_06_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_01_17_2025_14_06_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_01_17_2025_14_34_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_01_17_2025_14_34_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_01_20_2025_14_08_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_01_20_2025_14_08_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_01_20_2025_14_20_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_01_20_2025_14_20_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_01_20_2025_15_03_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_01_20_2025_15_03_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_01_20_2025_15_12_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_01_20_2025_15_12_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_01_20_2025_15_41_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_01_20_2025_15_41_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_01_20_2025_16_07_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_01_20_2025_16_07_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_01_20_2025_16_51_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_01_20_2025_16_51_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_01_25_2025_17_07_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_01_25_2025_17_07_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_01_25_2025_17_27_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_01_25_2025_17_27_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_01_25_2025_17_58_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_01_25_2025_17_58_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_01_26_2025_10_49_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_01_26_2025_10_49_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_01_26_2025_11_46_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_01_26_2025_11_46_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_01_26_2025_11_56_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_01_26_2025_11_56_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_01_26_2025_12_37_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_01_26_2025_12_37_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_01_26_2025_13_12_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_01_26_2025_13_12_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_01_26_2025_15_51_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_01_26_2025_15_51_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_01_26_2025_16_28_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_01_26_2025_16_28_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_01_2025_16_40_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_02_01_2025_16_40_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_01_2025_17_04_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_02_01_2025_17_04_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_01_2025_17_14_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_02_01_2025_17_14_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_01_2025_17_48_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_02_01_2025_17_48_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_05_2025_11_38_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_02_05_2025_11_38_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_05_2025_11_55_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_02_05_2025_11_55_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_05_2025_13_07_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_02_05_2025_13_07_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_05_2025_13_35_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_02_05_2025_13_35_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_05_2025_13_59_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_02_05_2025_13_59_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_08_2025_13_33_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_02_08_2025_13_33_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_08_2025_14_14_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_02_08_2025_14_14_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_08_2025_14_54_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_02_08_2025_14_54_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_08_2025_15_08_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_02_08_2025_15_08_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_08_2025_15_18_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_02_08_2025_15_18_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_09_2025_10_41_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_02_09_2025_10_41_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_09_2025_11_00_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_02_09_2025_11_00_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_09_2025_12_38_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_02_09_2025_12_38_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_09_2025_12_53_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_02_09_2025_12_53_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_09_2025_13_10_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_02_09_2025_13_10_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_09_2025_14_04_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_02_09_2025_14_04_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_12_2025_12_01_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_02_12_2025_12_01_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_12_2025_12_29_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_02_12_2025_12_29_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_12_2025_13_20_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_02_12_2025_13_20_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_12_2025_13_38_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_02_12_2025_13_38_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_12_2025_14_21_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_02_12_2025_14_21_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_17_2025_14_48_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_02_17_2025_14_48_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_17_2025_15_11_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_02_17_2025_15_11_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_17_2025_15_49_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_02_17_2025_15_49_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_17_2025_16_26_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_02_17_2025_16_26_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_17_2025_16_43_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_02_17_2025_16_43_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_17_2025_16_51_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_02_17_2025_16_51_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_19_2025_16_24_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_02_19_2025_16_24_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_19_2025_17_47_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_02_19_2025_17_47_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_19_2025_18_00_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_02_19_2025_18_00_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_19_2025_18_14_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_02_19_2025_18_14_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_02_19_2025_19_04_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_02_19_2025_19_04_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_03_06_2025_10_01_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_03_06_2025_10_01_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_03_06_2025_11_35_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_03_06_2025_11_35_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_03_17_2025_10_30_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_03_17_2025_10_30_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_03_17_2025_10_44_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_03_17_2025_10_44_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_03_17_2025_11_15_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_03_17_2025_11_15_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_03_17_2025_13_48_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_03_17_2025_13_48_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_03_17_2025_14_00_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_03_17_2025_14_00_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_03_17_2025_14_09_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_03_17_2025_14_09_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_03_17_2025_14_16_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_03_17_2025_14_16_withEffectiveRound.csv
+[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redo/EventSegmentation/EventsStartPos/ObsReward_B_03_17_2025_15_50_startPosPropagated.csv
+[skip] intervals not found for ObsReward_B_03_17_2025_15_50_withEffectiveRound.csv
+[done]
+✅ 06b_propagate_pindrop_startpos.py completed at Mon Feb  9 10:50:32 PST 2026
+✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
+🚀 Starting 00_batch_reproc_steps_01_04.py at Mon Feb  9 11:03:46 PST 2026
+✅ 00_batch_reproc_steps_01_04.py completed at Mon Feb  9 11:04:15 PST 2026

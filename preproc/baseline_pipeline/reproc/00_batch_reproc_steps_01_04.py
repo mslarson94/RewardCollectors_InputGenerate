@@ -133,7 +133,11 @@ def run_steps_01_to_04_for_file(
         combined = pd.read_csv(outs["combined"])
     else:
         events = pd.read_csv(events_csv)
+        if "origRow_start" not in events.columns:
+            raise ValueError(f"{events_csv.name} is missing origRow_start; cannot build origRow-anchored intervals")
+
         processed = pd.read_csv(processed_csv)
+
 
         blocks = build_block_intervals(events, processed_df=processed)
         rounds = build_round_intervals(events, blocks, mode=round_mode, max_round=max_round)
@@ -158,14 +162,14 @@ def run_steps_01_to_04_for_file(
         prelim = pd.read_csv(outs["prelim_reproc"])
     else:
         proc = pd.read_csv(processed_csv)
-
+        proc = ensure_or_validate_origRow(proc, strict_sequential=True)
         df = augment_processed_with_intervals(proc, blocks, rounds, max_round=max_round)
 
         df = compute_step_distance(
             df,
             pos_cols=list(pos_cols),
             time_col="AppTime",
-            group_keys=list(group_for_diff),
+            group_cols=list(group_for_diff),
             out_dt="dt",
             out_step="stepDist",
         )

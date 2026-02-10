@@ -188,6 +188,7 @@ class IntervalBuildConfig:
     block_num_col: str = "BlockNum"
     round_num_col: str = "RoundNum"
     start_time_col: str = "start_AppTime"
+    origRow_col: str = "origRow_start"
 
 
 def _coerce_numeric(df: pd.DataFrame, cols: Sequence[str]) -> pd.DataFrame:
@@ -198,7 +199,7 @@ def _coerce_numeric(df: pd.DataFrame, cols: Sequence[str]) -> pd.DataFrame:
     return out
 
 
-def build_block_intervals(
+def build_block_intervals_v0(
     events_df: pd.DataFrame,
     processed_df: Optional[pd.DataFrame] = None,
     *,
@@ -212,18 +213,21 @@ def build_block_intervals(
     """
     ev = _coerce_numeric(events_df, [cfg.block_instance_col, cfg.block_num_col, cfg.start_time_col])
     ev = normalize_keys(ev, [cfg.block_instance_col, cfg.block_num_col], inplace=True)
+    if cfg.origRow_col not in events_df.columns:
+        raise ValueError(f"events_df missing required {cfg.origRow_col} needed for interval origRow anchors")
 
     hi = cfg.hi_event_col
     lo = cfg.lo_event_col
     t = cfg.start_time_col
 
     bs = ev[(ev[hi] == cfg.block_start_hi) & (ev[lo] == cfg.block_start_lo)][
-        [cfg.block_instance_col, cfg.block_num_col, t]
-    ].rename(columns={t: "block_start_AppTime"})
+        [cfg.block_instance_col, cfg.block_num_col, t, cfg.origRow_col]
+    ].rename(columns={t: "block_start_AppTime", cfg.origRow_col: "block_start_origRow"})
 
     be = ev[(ev[hi] == cfg.block_end_hi) & (ev[lo] == cfg.block_end_lo)][
-        [cfg.block_instance_col, cfg.block_num_col, t]
-    ].rename(columns={t: "block_end_AppTime"})
+        [cfg.block_instance_col, cfg.block_num_col, t, cfg.origRow_col]
+    ].rename(columns={t: "block_end_AppTime", cfg.origRow_col: "block_end_origRow"})
+
 
     blocks = safe_merge(
         bs, be, [cfg.block_instance_col, cfg.block_num_col],
@@ -259,7 +263,7 @@ def build_block_intervals(
     return blocks
 
 
-def build_round_intervals(
+def build_round_intervals_v0(
     events_df: pd.DataFrame,
     blocks_df: pd.DataFrame,
     *,
@@ -292,8 +296,9 @@ def build_round_intervals(
 
     if mode == "truecontent":
         rs = ev[ev[lo] == cfg.truecontent_start_lo][
-            [cfg.block_instance_col, cfg.block_num_col, cfg.round_num_col, t]
-        ].rename(columns={t: "round_start_AppTime"})
+            [cfg.block_instance_col, cfg.block_num_col, cfg.round_num_col, t, cfg.origRow_col]
+        ].rename(columns={t: "round_start_AppTime", cfg.origRow_col: "round_start_origRow"})
+
         rs = rs[rs[cfg.round_num_col].apply(lambda x: is_true_roundnum(x, max_round=max_round))].copy()
         rs = rs.sort_values([cfg.block_instance_col, "round_start_AppTime"]).reset_index(drop=True)
         rs["next_round_start"] = rs.groupby(cfg.block_instance_col)["round_start_AppTime"].shift(-1)
@@ -317,16 +322,25 @@ def build_round_intervals(
 
         rs = rs[rs[cfg.round_num_col].apply(lambda x: is_true_roundnum(x, max_round=max_round))].copy()
         re = re[re[cfg.round_num_col].apply(lambda x: is_true_roundnum(x, max_round=max_round))].copy()
+        rs = rs.sort_values([cfg.block_instance_col, "round_start_AppTime"]).reset_index(drop=True)
+        rs["next_round_start"] = rs.groupby(cfg.block_instance_col)["round_start_AppTime"].shift(-1)
+        rs["next_round_start_origRow"] = rs.groupby(cfg.block_instance_col)["round_start_origRow"].shift(-1)
 
         rounds = safe_merge(
             rs, re, [cfg.block_instance_col, cfg.block_num_col, cfg.round_num_col],
             how="left", validate="1:1", logger=logger, label="rounds start/end"
         )
         rounds = safe_merge(
-            rounds, blocks[[cfg.block_instance_col, cfg.block_num_col, "block_end_AppTime"]],
+            rs,
+            blocks[[cfg.block_instance_col, cfg.block_num_col, "block_end_AppTime", "block_end_origRow"]],
             [cfg.block_instance_col, cfg.block_num_col],
             how="left", validate="m:1", logger=logger, label="rounds add block_end"
         )
+
+        rounds["round_end_AppTime"] = rounds["next_round_start"].fillna(rounds["block_end_AppTime"])
+        rounds["round_end_origRow"] = (rounds["next_round_start_origRow"] - 1).fillna(rounds["block_end_origRow"])
+        rounds = rounds.drop(columns=["next_round_start", "next_round_start_origRow", "block_end_AppTime", "block_end_origRow"], errors="ignore")
+
         missing = rounds["round_end_AppTime"].isna() & rounds["block_end_AppTime"].notna()
         if missing.any():
             _log(logger, f"Filled {int(missing.sum())} missing round_end_AppTime values with block_end_AppTime.")
@@ -340,6 +354,291 @@ def build_round_intervals(
     rounds["RoundNum"] = rounds["RoundNum"].astype("Int64")
     rounds = rounds.drop(columns=["block_end_AppTime"], errors="ignore")
     return rounds
+
+def build_block_intervals(
+    events_df: pd.DataFrame,
+    processed_df: Optional[pd.DataFrame] = None,
+    *,
+    cfg: IntervalBuildConfig = IntervalBuildConfig(),
+    logger: Optional[Any] = None,
+) -> pd.DataFrame:
+    """
+    Build one row per block:
+      (BlockInstance, BlockNum, block_start_AppTime, block_end_AppTime, block_dur_s,
+       block_start_origRow, block_end_origRow)
+
+    STRICT:
+      - requires cfg.origRow_col (typically "origRow_start") to exist in events_df
+      - if block_end is missing in events, optionally fill block_end_AppTime AND block_end_origRow
+        from processed_df max AppTime (and corresponding max origRow by file order).
+    """
+    if cfg.origRow_col not in events_df.columns:
+        raise ValueError(
+            f"events_df missing required '{cfg.origRow_col}' needed to anchor intervals by origRow"
+        )
+
+    ev = _coerce_numeric(
+        events_df,
+        [cfg.block_instance_col, cfg.block_num_col, cfg.start_time_col, cfg.origRow_col],
+    )
+    ev = normalize_keys(ev, [cfg.block_instance_col, cfg.block_num_col], inplace=True)
+
+    hi = cfg.hi_event_col
+    lo = cfg.lo_event_col
+    t = cfg.start_time_col
+    o = cfg.origRow_col
+
+    bs = ev[(ev[hi] == cfg.block_start_hi) & (ev[lo] == cfg.block_start_lo)][
+        [cfg.block_instance_col, cfg.block_num_col, t, o]
+    ].rename(columns={t: "block_start_AppTime", o: "block_start_origRow"})
+
+    be = ev[(ev[hi] == cfg.block_end_hi) & (ev[lo] == cfg.block_end_lo)][
+        [cfg.block_instance_col, cfg.block_num_col, t, o]
+    ].rename(columns={t: "block_end_AppTime", o: "block_end_origRow"})
+
+    blocks = safe_merge(
+        bs,
+        be,
+        [cfg.block_instance_col, cfg.block_num_col],
+        how="left",
+        validate="1:1",
+        logger=logger,
+        label="blocks start/end (AppTime+origRow)",
+    )
+
+    # fallback: if BlockEnd missing, use processed max AppTime (+ max origRow)
+    if processed_df is not None and "block_end_AppTime" in blocks.columns:
+        if "AppTime" in processed_df.columns:
+            proc = processed_df.copy()
+            proc = _coerce_numeric(proc, ["AppTime", cfg.block_instance_col, cfg.block_num_col])
+            proc = normalize_keys(proc, [cfg.block_instance_col, cfg.block_num_col], inplace=True)
+
+            # define a canonical processed origRow if not present (row number in raw processed file)
+            if "origRow" not in proc.columns:
+                proc["origRow"] = np.arange(len(proc), dtype=np.int64)
+            else:
+                proc["origRow"] = pd.to_numeric(proc["origRow"], errors="raise").astype(np.int64)
+
+            # max AppTime per block for filling missing block_end_AppTime
+            pmax_t = (
+                proc.groupby([cfg.block_instance_col, cfg.block_num_col], dropna=False)["AppTime"]
+                .max()
+                .reset_index()
+                .rename(columns={"AppTime": "proc_max_AppTime"})
+            )
+            # max origRow per block for filling missing block_end_origRow
+            pmax_o = (
+                proc.groupby([cfg.block_instance_col, cfg.block_num_col], dropna=False)["origRow"]
+                .max()
+                .reset_index()
+                .rename(columns={"origRow": "proc_max_origRow"})
+            )
+
+            blocks = safe_merge(
+                blocks,
+                pmax_t,
+                [cfg.block_instance_col, cfg.block_num_col],
+                how="left",
+                validate="1:1",
+                logger=logger,
+                label="blocks add proc_max_AppTime",
+            )
+            blocks = safe_merge(
+                blocks,
+                pmax_o,
+                [cfg.block_instance_col, cfg.block_num_col],
+                how="left",
+                validate="1:1",
+                logger=logger,
+                label="blocks add proc_max_origRow",
+            )
+
+            missing_end_t = blocks["block_end_AppTime"].isna() & blocks["proc_max_AppTime"].notna()
+            if missing_end_t.any():
+                _log(
+                    logger,
+                    f"Filled {int(missing_end_t.sum())} missing block_end_AppTime values from processed max AppTime.",
+                )
+                blocks.loc[missing_end_t, "block_end_AppTime"] = blocks.loc[missing_end_t, "proc_max_AppTime"]
+
+            missing_end_o = blocks.get("block_end_origRow", pd.Series([np.nan] * len(blocks))).isna() & blocks[
+                "proc_max_origRow"
+            ].notna()
+            if missing_end_o.any():
+                _log(
+                    logger,
+                    f"Filled {int(missing_end_o.sum())} missing block_end_origRow values from processed max origRow.",
+                )
+                blocks.loc[missing_end_o, "block_end_origRow"] = blocks.loc[missing_end_o, "proc_max_origRow"]
+
+            blocks = blocks.drop(columns=["proc_max_AppTime", "proc_max_origRow"], errors="ignore")
+        else:
+            _log(logger, "processed_df missing AppTime; cannot fallback-fill block_end_AppTime/block_end_origRow")
+
+    blocks["block_dur_s"] = blocks["block_end_AppTime"] - blocks["block_start_AppTime"]
+    blocks = blocks.sort_values([cfg.block_instance_col, "block_start_AppTime"], kind="mergesort").reset_index(drop=True)
+
+    # strict integrity checks
+    for c in ("block_start_origRow", "block_end_origRow"):
+        if c not in blocks.columns:
+            raise ValueError(f"BUG: expected '{c}' in blocks output")
+        if blocks[c].isna().any():
+            raise ValueError(f"Block interval output has missing '{c}' values; cannot anchor blocks by origRow")
+
+    return blocks
+
+
+def build_round_intervals(
+    events_df: pd.DataFrame,
+    blocks_df: pd.DataFrame,
+    *,
+    mode: str = "truecontent",
+    max_round: int = DEFAULT_MAX_TRUE_ROUNDNUM,
+    cfg: IntervalBuildConfig = IntervalBuildConfig(),
+    logger: Optional[Any] = None,
+) -> pd.DataFrame:
+    """
+    Build one row per TRUE round:
+      (BlockInstance, BlockNum, RoundNum,
+       round_start_AppTime, round_end_AppTime, round_dur_s, round_index_in_block,
+       round_start_origRow, round_end_origRow)
+
+    STRICT:
+      - requires cfg.origRow_col (typically "origRow_start") to exist in events_df
+      - requires blocks_df to include block_end_origRow (from build_block_intervals above)
+      - True rounds are only RoundNum in [1..max_round]
+    """
+    if mode not in {"truecontent", "roundstartend"}:
+        raise ValueError(f"mode must be 'truecontent' or 'roundstartend', got {mode}")
+
+    if cfg.origRow_col not in events_df.columns:
+        raise ValueError(
+            f"events_df missing required '{cfg.origRow_col}' needed to anchor round intervals by origRow"
+        )
+
+    if "block_end_origRow" not in blocks_df.columns:
+        raise ValueError(
+            "blocks_df missing required 'block_end_origRow'. "
+            "Run build_block_intervals() patched version that includes origRow anchors."
+        )
+
+    ev = _coerce_numeric(
+        events_df,
+        [cfg.block_instance_col, cfg.block_num_col, cfg.round_num_col, cfg.start_time_col, cfg.origRow_col],
+    )
+    ev = normalize_keys(ev, [cfg.block_instance_col, cfg.block_num_col, cfg.round_num_col], inplace=True)
+
+    blocks = blocks_df.copy()
+    blocks = normalize_keys(blocks, [cfg.block_instance_col, cfg.block_num_col], inplace=True)
+
+    lo = cfg.lo_event_col
+    t = cfg.start_time_col
+    o = cfg.origRow_col
+
+    if mode == "truecontent":
+        rs = ev[ev[lo] == cfg.truecontent_start_lo][
+            [cfg.block_instance_col, cfg.block_num_col, cfg.round_num_col, t, o]
+        ].rename(columns={t: "round_start_AppTime", o: "round_start_origRow"})
+
+        rs = rs[rs[cfg.round_num_col].apply(lambda x: is_true_roundnum(x, max_round=max_round))].copy()
+        rs = rs.sort_values([cfg.block_instance_col, "round_start_AppTime"], kind="mergesort").reset_index(drop=True)
+
+        rs["next_round_start"] = rs.groupby(cfg.block_instance_col)["round_start_AppTime"].shift(-1)
+        rs["next_round_start_origRow"] = rs.groupby(cfg.block_instance_col)["round_start_origRow"].shift(-1)
+
+        rounds = safe_merge(
+            rs,
+            blocks[[cfg.block_instance_col, cfg.block_num_col, "block_end_AppTime", "block_end_origRow"]],
+            [cfg.block_instance_col, cfg.block_num_col],
+            how="left",
+            validate="m:1",
+            logger=logger,
+            label="rounds add block_end (AppTime+origRow)",
+        )
+
+        rounds["round_end_AppTime"] = rounds["next_round_start"].fillna(rounds["block_end_AppTime"])
+        # end origRow: the row just before next round start, else block end
+        rounds["round_end_origRow"] = (rounds["next_round_start_origRow"] - 1).fillna(rounds["block_end_origRow"])
+
+        rounds = rounds.drop(
+            columns=["next_round_start", "next_round_start_origRow", "block_end_AppTime", "block_end_origRow"],
+            errors="ignore",
+        )
+
+    else:
+        rs = ev[ev[lo] == cfg.round_start_lo][
+            [cfg.block_instance_col, cfg.block_num_col, cfg.round_num_col, t, o]
+        ].rename(columns={t: "round_start_AppTime", o: "round_start_origRow"})
+
+        re = ev[ev[lo] == cfg.round_end_lo][
+            [cfg.block_instance_col, cfg.block_num_col, cfg.round_num_col, t, o]
+        ].rename(columns={t: "round_end_AppTime", o: "round_end_origRow"})
+
+        rs = rs[rs[cfg.round_num_col].apply(lambda x: is_true_roundnum(x, max_round=max_round))].copy()
+        re = re[re[cfg.round_num_col].apply(lambda x: is_true_roundnum(x, max_round=max_round))].copy()
+
+        rounds = safe_merge(
+            rs,
+            re,
+            [cfg.block_instance_col, cfg.block_num_col, cfg.round_num_col],
+            how="left",
+            validate="1:1",
+            logger=logger,
+            label="rounds start/end (AppTime+origRow)",
+        )
+
+        rounds = safe_merge(
+            rounds,
+            blocks[[cfg.block_instance_col, cfg.block_num_col, "block_end_AppTime", "block_end_origRow"]],
+            [cfg.block_instance_col, cfg.block_num_col],
+            how="left",
+            validate="m:1",
+            logger=logger,
+            label="rounds add block_end (AppTime+origRow)",
+        )
+
+        # fill missing round end from block end (both AppTime and origRow)
+        missing_t = rounds["round_end_AppTime"].isna() & rounds["block_end_AppTime"].notna()
+        if missing_t.any():
+            _log(
+                logger,
+                f"Filled {int(missing_t.sum())} missing round_end_AppTime values with block_end_AppTime.",
+            )
+            rounds.loc[missing_t, "round_end_AppTime"] = rounds.loc[missing_t, "block_end_AppTime"]
+
+        missing_o = rounds["round_end_origRow"].isna() & rounds["block_end_origRow"].notna()
+        if missing_o.any():
+            _log(
+                logger,
+                f"Filled {int(missing_o.sum())} missing round_end_origRow values with block_end_origRow.",
+            )
+            rounds.loc[missing_o, "round_end_origRow"] = rounds.loc[missing_o, "block_end_origRow"]
+
+        rounds = rounds.drop(columns=["block_end_AppTime", "block_end_origRow"], errors="ignore")
+
+    rounds["round_dur_s"] = rounds["round_end_AppTime"] - rounds["round_start_AppTime"]
+    rounds = rounds.sort_values([cfg.block_instance_col, "round_start_AppTime"], kind="mergesort").reset_index(drop=True)
+    rounds["round_index_in_block"] = rounds.groupby(cfg.block_instance_col).cumcount() + 1
+
+    rounds = rounds.rename(columns={cfg.round_num_col: "RoundNum"})
+    rounds["RoundNum"] = rounds["RoundNum"].astype("Int64")
+
+    # strict integrity checks
+    for c in ("round_start_origRow", "round_end_origRow"):
+        if c not in rounds.columns:
+            raise ValueError(f"BUG: expected '{c}' in rounds output")
+        if rounds[c].isna().any():
+            raise ValueError(f"Round interval output has missing '{c}' values; cannot anchor rounds by origRow")
+
+    # round_end_origRow should be >= round_start_origRow (sanity)
+    bad = (rounds["round_end_origRow"] < rounds["round_start_origRow"]) & rounds["round_end_origRow"].notna()
+    if bad.any():
+        raise ValueError(
+            f"Found {int(bad.sum())} rounds where round_end_origRow < round_start_origRow (origRow anchoring is inconsistent)."
+        )
+
+    return rounds
+
 
 
 def merge_block_and_round_intervals(
@@ -495,7 +794,7 @@ def cleanup_merge_suffixes(
     return out
 
 
-def augment_processed_with_intervals(
+def augment_processed_with_intervals_v1(
     processed_df: pd.DataFrame,
     blocks_df: pd.DataFrame,
     rounds_df: pd.DataFrame,
@@ -580,12 +879,145 @@ def augment_processed_with_intervals(
 
     return df
 
+def augment_processed_with_intervals(
+    processed_df: pd.DataFrame,
+    blocks_df: pd.DataFrame,
+    rounds_df: pd.DataFrame,
+    *,
+    max_round: int = DEFAULT_MAX_TRUE_ROUNDNUM,
+    time_col: str = "AppTime",
+    cfg: IntervalBuildConfig = IntervalBuildConfig(),
+    logger: Optional[Any] = None,
+) -> pd.DataFrame:
+    """
+    Adds interval metadata + elapsed time + fractions to processed rows.
+
+    STRICT:
+      - requires processed_df to contain 'origRow' (canonical processed row id)
+      - preserves and restores canonical output order: sorted by origRow
+      - all interval assignment is done without ever relying on positional row order
+
+    Adds:
+      block_start_AppTime, block_end_AppTime, block_dur_s
+      round_start_AppTime, round_end_AppTime, round_dur_s
+      RoundNum_interval_assigned
+      inBlockInterval, inRoundInterval
+      blockElapsed_s, roundElapsed_s
+      blockFrac, roundFrac
+      session_start_AppTime, totalSessionElapsed_s
+    """
+    df = processed_df.copy()
+
+    if "origRow" not in df.columns:
+        raise ValueError("processed_df missing required 'origRow' (canonical processed row id).")
+
+    if time_col not in df.columns:
+        raise ValueError(f"processed_df missing {time_col}")
+
+    # Enforce origRow integrity early
+    df["origRow"] = pd.to_numeric(df["origRow"], errors="raise")
+    bad_or = df["origRow"].isna() | (df["origRow"] % 1 != 0)
+    if bad_or.any():
+        raise ValueError(f"processed_df has {int(bad_or.sum())} invalid origRow values (NaN or non-integer).")
+    df["origRow"] = df["origRow"].astype("int64")
+
+    if df["origRow"].duplicated().any():
+        raise ValueError(f"processed_df origRow must be unique; found {int(df['origRow'].duplicated().sum())} duplicates.")
+
+    # Coerce and normalize keys
+    df = _coerce_numeric(df, [time_col, cfg.block_instance_col, cfg.block_num_col])
+    df = normalize_keys(df, [cfg.block_instance_col, cfg.block_num_col], inplace=True)
+
+    blocks = blocks_df.copy()
+    blocks = _coerce_numeric(
+        blocks,
+        ["block_start_AppTime", "block_end_AppTime", "block_dur_s", cfg.block_instance_col, cfg.block_num_col],
+    )
+    blocks = normalize_keys(blocks, [cfg.block_instance_col, cfg.block_num_col], inplace=True)
+
+    # Attach blocks via (BlockInstance, BlockNum)
+    df = safe_merge(
+        df,
+        blocks[[cfg.block_instance_col, cfg.block_num_col, "block_start_AppTime", "block_end_AppTime", "block_dur_s"]],
+        [cfg.block_instance_col, cfg.block_num_col],
+        how="left",
+        validate="m:1",
+        logger=logger,
+        label="processed add blocks",
+    )
+
+    # Prepare rounds for asof attach (per BlockInstance)
+    rounds = rounds_df.copy().rename(columns={"RoundNum": "RoundNum_interval_assigned"})
+    rounds = rounds[rounds["RoundNum_interval_assigned"].apply(lambda x: is_true_roundnum(x, max_round=max_round))].copy()
+    rounds = _coerce_numeric(
+        rounds,
+        ["round_start_AppTime", "round_end_AppTime", "round_dur_s", cfg.block_instance_col],
+    )
+    rounds = normalize_keys(rounds, [cfg.block_instance_col], inplace=True)
+
+    # IMPORTANT:
+    # - For asof merge, df must be sorted by (group, time, origRow) deterministically.
+    # - Do NOT leave the dataframe in that order. Restore origRow order afterwards.
+    df_for_asof = df.sort_values([cfg.block_instance_col, time_col, "origRow"], kind="mergesort")
+
+    df = merge_asof_by_group(
+        df_for_asof,
+        rounds[
+            [
+                cfg.block_instance_col,
+                "RoundNum_interval_assigned",
+                "round_start_AppTime",
+                "round_end_AppTime",
+                "round_dur_s",
+                "round_index_in_block",
+            ]
+        ].copy(),
+        group_col=cfg.block_instance_col,
+        left_on=time_col,
+        right_on="round_start_AppTime",
+        direction="backward",
+        allow_exact_matches=True,
+    )
+
+    # STRICT: restore canonical processed order immediately
+    if "origRow" not in df.columns:
+        raise ValueError("BUG: origRow was lost during merge_asof_by_group(). This must never happen.")
+    df = df.sort_values("origRow", kind="mergesort").reset_index(drop=True)
+
+    # Membership flags
+    df["inBlockInterval"] = (
+        df[time_col].notna()
+        & df["block_start_AppTime"].notna()
+        & df["block_end_AppTime"].notna()
+        & (df[time_col] >= df["block_start_AppTime"])
+        & (df[time_col] <= df["block_end_AppTime"])
+    )
+    df["inRoundInterval"] = (
+        df[time_col].notna()
+        & df["round_start_AppTime"].notna()
+        & df["round_end_AppTime"].notna()
+        & (df[time_col] >= df["round_start_AppTime"])
+        & (df[time_col] < df["round_end_AppTime"])
+    )
+
+    # Elapsed + fraction
+    df["blockElapsed_s"] = df[time_col] - df["block_start_AppTime"]
+    df["roundElapsed_s"] = df[time_col] - df["round_start_AppTime"]
+    df["blockFrac"] = df["blockElapsed_s"] / df["block_dur_s"]
+    df["roundFrac"] = df["roundElapsed_s"] / df["round_dur_s"]
+
+    # Total session elapsed (AppTime anchored to first valid AppTime)
+    session_start = pd.to_numeric(df[time_col], errors="coerce").min()
+    df["session_start_AppTime"] = session_start
+    df["totalSessionElapsed_s"] = df[time_col] - session_start
+
+    return df
 
 # -----------------------------------------------------------------------------
 # Kinematics: step distance, total distance, speed
 # -----------------------------------------------------------------------------
 
-def compute_step_distance(
+def compute_step_distance_v1(
     df: pd.DataFrame,
     pos_cols: Sequence[str],
     *,
@@ -638,6 +1070,42 @@ def compute_step_distance(
     out.loc[bad_dt, out_step] = np.nan
     return out
 
+def compute_step_distance(
+    df: pd.DataFrame,
+    *,
+    pos_cols=("HeadPosAnchored_x", "HeadPosAnchored_y", "HeadPosAnchored_z"),
+    time_col="AppTime",
+    group_cols=("BlockInstance", "BlockNum"),
+    out_dt="dt",
+    out_step="stepDist",
+    min_dt: float = 1e-9,
+) -> pd.DataFrame:
+    if "origRow" not in df.columns:
+        raise ValueError("origRow is required before computing stepDist")
+
+    for c in (*pos_cols, time_col, *group_cols):
+        if c not in df.columns:
+            raise ValueError(f"Missing required column for stepDist: {c}")
+
+    out = df.copy()
+    out["origRow"] = pd.to_numeric(out["origRow"], errors="raise").astype("int64")
+
+    # canonical neighbor pairing: per-group origRow order
+    out = out.sort_values(list(group_cols) + ["origRow"], kind="mergesort")
+
+    out[out_dt] = out.groupby(list(group_cols), sort=False)[time_col].diff()
+
+    dx = out.groupby(list(group_cols), sort=False)[pos_cols[0]].diff()
+    dy = out.groupby(list(group_cols), sort=False)[pos_cols[1]].diff()
+    dz = out.groupby(list(group_cols), sort=False)[pos_cols[2]].diff()
+    out[out_step] = (dx * dx + dy * dy + dz * dz) ** 0.5
+
+    bad_dt = out[out_dt].isna() | (out[out_dt] <= float(min_dt))
+    out.loc[bad_dt, out_step] = np.nan
+
+    # restore canonical processed order
+    out = out.sort_values("origRow", kind="mergesort").reset_index(drop=True)
+    return out
 
 def aggregate_total_distance(
     df: pd.DataFrame,
@@ -660,7 +1128,6 @@ def aggregate_total_distance(
     )
     out = safe_merge(out, agg, list(group_keys), how="left", validate="m:1", indicator=False)
     return out
-
 
 def compute_speed(
     df: pd.DataFrame,
@@ -687,7 +1154,7 @@ def compute_speed(
 # Augment events with per-row metrics using origRow ranges
 # -----------------------------------------------------------------------------
 
-def augment_events_from_reprocessed(
+def augment_events_from_reprocessed_v1(
     events_df: pd.DataFrame,
     reproc_df: pd.DataFrame,
     cols: Sequence[str],
@@ -758,6 +1225,85 @@ def augment_events_with_positions_from_reprocessed(
         out_suffix_end=out_suffix_end,
         logger=logger,
     )
+
+
+def augment_events_from_reprocessed(
+    events_df: pd.DataFrame,
+    reproc_df: pd.DataFrame,
+    cols: Sequence[str],
+    *,
+    start_col: str = "origRow_start",
+    end_col: str = "origRow_end",
+    out_suffix_start: str = "_start",
+    out_suffix_end: str = "_end",
+    logger: Optional[Any] = None,
+) -> pd.DataFrame:
+    """
+    STRICT:
+      - events_df[start_col/end_col] are foreign keys into reproc_df['origRow']
+      - reproc_df must contain unique integer 'origRow'
+      - no positional iloc-based lookup; always keyed reindex
+      - hard fail on any missing keys
+    """
+    out = events_df.copy()
+
+    # Require event pointer cols
+    for c in (start_col, end_col):
+        if c not in out.columns:
+            raise ValueError(f"events_df missing required column: {c}")
+
+    # Require reproc key
+    if "origRow" not in reproc_df.columns:
+        raise ValueError("reproc_df missing required column: origRow")
+
+    # Coerce event pointers (must be integer-like)
+    out[start_col] = pd.to_numeric(out[start_col], errors="raise")
+    out[end_col] = pd.to_numeric(out[end_col], errors="raise")
+
+    for c in (start_col, end_col):
+        bad = out[c].notna() & (out[c] % 1 != 0)
+        if bad.any():
+            raise ValueError(f"{int(bad.sum())} events have non-integer {c} values.")
+
+    # Prepare reproc index
+    reproc = reproc_df.copy()
+    reproc["origRow"] = pd.to_numeric(reproc["origRow"], errors="raise")
+    bad = reproc["origRow"].isna() | (reproc["origRow"] % 1 != 0)
+    if bad.any():
+        raise ValueError(f"reproc_df has {int(bad.sum())} invalid origRow values (NaN or non-integer).")
+    reproc["origRow"] = reproc["origRow"].astype("int64")
+
+    if reproc["origRow"].duplicated().any():
+        raise ValueError(f"reproc_df origRow must be unique; found {int(reproc['origRow'].duplicated().sum())} duplicates.")
+
+    reproc = reproc.set_index("origRow", drop=False)
+
+    def _pull(series_idx: pd.Series, col: str) -> pd.Series:
+        if col not in reproc.columns:
+            raise ValueError(f"reproc_df missing required column for pull: {col}")
+
+        idx = series_idx.dropna().astype("int64")
+        pulled = pd.to_numeric(reproc[col], errors="coerce").reindex(idx)
+
+        # hard fail on missing keys
+        missing_mask = pulled.isna()
+        if missing_mask.any():
+            missing_keys = idx.to_numpy()[missing_mask.to_numpy()]
+            raise ValueError(
+                f"Missing {len(missing_keys)} origRow keys in reproc for column '{col}'. "
+                f"Examples: {missing_keys[:10].tolist()}"
+            )
+
+        result = pd.Series(np.nan, index=series_idx.index, dtype="float64")
+        result.loc[idx.index] = pulled.to_numpy(dtype="float64")
+        return result
+
+    for c in cols:
+        out[f"{c}{out_suffix_start}"] = _pull(out[start_col], c)
+        out[f"{c}{out_suffix_end}"] = _pull(out[end_col], c)
+
+    return out
+
 # -----------------------------------------------------------------------------
 # Pin drop helpers
 # -----------------------------------------------------------------------------

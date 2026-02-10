@@ -1,0 +1,45 @@
+python normalize_path_utility.py \
+  --root "/Users/mairahmac/Desktop/TriangleSets/RoutePlanWeightUtility/pathUtility" \
+  --pattern "all_orders__layout_*.csv" \
+  --output "/Users/mairahmac/Desktop/TriangleSets/RoutePlanWeightUtility/pathUtility_norm" \
+  --require-order-col \
+  --write-summary \
+  --overwrite
+
+"/Users/mairahmac/Desktop/TriangleSets/RoutePlanWeightUtility/pathUtility_norm/all_orders__layout_*_normUtil.csv"
+['distance', 'normalized_utility']
+
+
+python assign_norm_util_and_efficiency.py \
+  --main /path/to/main.csv \
+  --ref-dir /path/to/norm_refs \
+  --ref-pattern "*_normUtil.csv" \
+  --output /path/to/out_dir \
+  --out-mode dir \
+  --suffix "_withNormUtilAndEff" \
+  --overwrite
+
+
+  From your upstream “main file generation” script (inputs to Script #2)
+
+You said you will pipe these into Script #2:
+
+Eligibility filter
+
+  - BlockType
+
+  - CoinSetID
+
+Join keys
+
+  - coinSet
+
+  - startPos
+
+  - path_order_round
+
+Precomputed actual distances (you’ll generate upstream now)
+
+  - totalDistRound
+
+  - adj_totalDistRound

@@ -19,7 +19,7 @@ fi
 # Segment barebones
 CODE_DIR="/Users/mairahmac/Desktop/myra_code/Python/RewardCollectors_InputGenerate"
 TRUE_BASE_DIR="/Users/mairahmac/Desktop/RC_TestingNotes"
-PROC_DIR="FreshStart_redo"
+PROC_DIR="FreshStart_redoAgain"
 #PROC_DIR="FreshStart_multi"
 META_FILE="collatedData.xlsx"
 EVENTS_DIR="EventSegmentation/EventsFinal"
@@ -51,31 +51,31 @@ EVENTS_DIR="EventSegmentation/EventsFinal"
 # echo "✅ instantDistCalc.py completed at $(date)" | tee -a "$LOG_FILE" 
 # echo "🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝" | tee -a "$LOG_FILE"
 
-# echo "🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝" | tee -a "$LOG_FILE"
-# echo "🚀 Starting instantDistCalc.py at $(date)" | tee -a "$LOG_FILE"
+echo "🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝" | tee -a "$LOG_FILE"
+echo "🚀 Starting instantDistCalc.py at $(date)" | tee -a "$LOG_FILE"
 
-# IN_DIR="${TRUE_BASE_DIR}/${PROC_DIR}/ReProcessedData_Flat"
-# OUT_DIR="${TRUE_BASE_DIR}/${PROC_DIR}/ReProc_withDist"
+IN_DIR="${TRUE_BASE_DIR}/${PROC_DIR}/ReProcessedData_Flat"
+OUT_DIR="${TRUE_BASE_DIR}/${PROC_DIR}/ReProc_withDist"
 
-# mkdir -p "$OUT_DIR"
+mkdir -p "$OUT_DIR"
 
-# shopt -s nullglob
-# for in_file in "$IN_DIR"/*.csv; do
-#   echo "➡️  Processing: $in_file" | tee -a "$LOG_FILE"
-#   python "${CODE_DIR}/preproc/baseline_pipeline/reproc/instantDistCalc.py" \
-#     --input "$in_file" \
-#     --output "$OUT_DIR" \
-#     --overwrite \
-#     >> "$LOG_FILE" 2>&1
+shopt -s nullglob
+for in_file in "$IN_DIR"/*.csv; do
+  echo "➡️  Processing: $in_file" | tee -a "$LOG_FILE"
+  python "${CODE_DIR}/preproc/baseline_pipeline/reproc/instantDistCalc.py" \
+    --input "$in_file" \
+    --output "$OUT_DIR" \
+    --overwrite \
+    >> "$LOG_FILE" 2>&1
 
-#   rc=$?
-#   if [[ $rc -ne 0 ]]; then
-#     echo "❌ Failed (exit $rc): $in_file" | tee -a "$LOG_FILE"
-#     exit $rc
-#   fi
-#   echo "✅ Done: $in_file" | tee -a "$LOG_FILE"
-# done
-# shopt -u nullglob
+  rc=$?
+  if [[ $rc -ne 0 ]]; then
+    echo "❌ Failed (exit $rc): $in_file" | tee -a "$LOG_FILE"
+    exit $rc
+  fi
+  echo "✅ Done: $in_file" | tee -a "$LOG_FILE"
+done
+shopt -u nullglob
 
 # echo "✅ plot_orders.py completed at $(date)" | tee -a "$LOG_FILE"
 # echo "🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝" | tee -a "$LOG_FILE"
@@ -103,22 +103,22 @@ EVENTS_DIR="EventSegmentation/EventsFinal"
 #   >> "$LOG_FILE" 2>&1
 # echo "🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝" | tee -a "$LOG_FILE"
 
-echo "✅ extract_pin_drops.py completed at $(date)" | tee -a "$LOG_FILE"
-echo "🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝" | tee -a "$LOG_FILE"
-python "${CODE_DIR}/preproc/baseline_pipeline/eventSeg/justAddTestingOrder.py" \
-  --trueRootDir "${TRUE_BASE_DIR}" \
-  --procDir "${TRUE_BASE_DIR}/${PROC_DIR}/${EVENTS_DIR}" \
-  --role "AN" \
-  --outDir "${TRUE_BASE_DIR}/${PROC_DIR}/EventsFinal_TestingOrder" \
-  >> "$LOG_FILE" 2>&1
-echo "🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝" | tee -a "$LOG_FILE"
+# echo "✅ extract_pin_drops.py completed at $(date)" | tee -a "$LOG_FILE"
+# echo "🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝" | tee -a "$LOG_FILE"
+# python "${CODE_DIR}/preproc/baseline_pipeline/eventSeg/justAddTestingOrder.py" \
+#   --trueRootDir "${TRUE_BASE_DIR}" \
+#   --procDir "${TRUE_BASE_DIR}/${PROC_DIR}/${EVENTS_DIR}" \
+#   --role "AN" \
+#   --outDir "${TRUE_BASE_DIR}/${PROC_DIR}/EventsFinal_TestingOrder" \
+#   >> "$LOG_FILE" 2>&1
+# echo "🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝" | tee -a "$LOG_FILE"
 
-echo "✅ extract_pin_drops.py completed at $(date)" | tee -a "$LOG_FILE"
-echo "🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝" | tee -a "$LOG_FILE"
-python "${CODE_DIR}/preproc/baseline_pipeline/eventSeg/justAddTestingOrder.py" \
-  --trueRootDir "${TRUE_BASE_DIR}" \
-  --procDir "${TRUE_BASE_DIR}/${PROC_DIR}/${EVENTS_DIR}" \
-  --role "PO" \
-  --outDir "${TRUE_BASE_DIR}/${PROC_DIR}/EventsFinal_TestingOrder" \
-  >> "$LOG_FILE" 2>&1
-echo "🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝" | tee -a "$LOG_FILE"
+# echo "✅ extract_pin_drops.py completed at $(date)" | tee -a "$LOG_FILE"
+# echo "🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝" | tee -a "$LOG_FILE"
+# python "${CODE_DIR}/preproc/baseline_pipeline/eventSeg/justAddTestingOrder.py" \
+#   --trueRootDir "${TRUE_BASE_DIR}" \
+#   --procDir "${TRUE_BASE_DIR}/${PROC_DIR}/${EVENTS_DIR}" \
+#   --role "PO" \
+#   --outDir "${TRUE_BASE_DIR}/${PROC_DIR}/EventsFinal_TestingOrder" \
+#   >> "$LOG_FILE" 2>&1
+# echo "🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝" | tee -a "$LOG_FILE"

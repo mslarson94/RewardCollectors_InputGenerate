@@ -67,7 +67,7 @@ def process_marks(df, allowed_statuses, role):
     #print('ending process marks')
     return events
 
-def process_true_round_segments(df, allowed_statuses):
+def process_true_round_segments_v1(df, allowed_statuses):
     #print('starting process true round segments')
     events = []
     df = df.reset_index(drop=True)
@@ -111,6 +111,69 @@ def process_true_round_segments(df, allowed_statuses):
     #print('ending process true round segments')
     print("curr_round", curr_round)
     print(events)
+    return events
+def process_true_round_segments(df, allowed_statuses):
+    events = []
+    df = df.reset_index(drop=True)
+
+    excluded_rounds = {0, 7777, 8888, 9999}
+
+    prev_round = None
+    round_start_idx = None
+    last_true_idx = None  # last row index that was part of a TRUE round (non-excluded, allowed status)
+
+    for idx, row in df.iterrows():
+        block_status = row.get("BlockStatus", "unknown")
+        if block_status not in allowed_statuses:
+            continue
+
+        curr_round = row.get("RoundNum")
+
+        # If we enter an excluded round, close any open true round immediately.
+        if curr_round in excluded_rounds:
+            if prev_round is not None and round_start_idx is not None and last_true_idx is not None:
+                start_row = df.iloc[round_start_idx]
+                end_row = df.iloc[last_true_idx]
+
+                events.append(build_segment_event(start_row, start_row, "RoundStart"))
+                round_end_evt = build_segment_event(end_row, end_row, "RoundEnd")
+                round_end_evt["RoundNum"] = prev_round
+                events.append(round_end_evt)
+
+            # Reset (we are no longer in a true round)
+            prev_round = None
+            round_start_idx = None
+            last_true_idx = None
+            continue
+
+        # curr_round is a true round row
+        last_true_idx = idx
+
+        # On round change, emit RoundStart/RoundEnd for the previous round
+        if curr_round != prev_round:
+            if prev_round is not None and round_start_idx is not None and last_true_idx is not None:
+                # Close previous round at the previous true row (which is idx-1, but safer to use last_true_idx_prev)
+                end_row = df.iloc[idx - 1]
+                start_row = df.iloc[round_start_idx]
+
+                events.append(build_segment_event(start_row, start_row, "RoundStart"))
+                round_end_evt = build_segment_event(end_row, end_row, "RoundEnd")
+                round_end_evt["RoundNum"] = prev_round
+                events.append(round_end_evt)
+
+            round_start_idx = idx
+            prev_round = curr_round
+
+    # Final flush: close last open true round using last_true_idx (NOT df.iloc[-1])
+    if prev_round is not None and round_start_idx is not None and last_true_idx is not None:
+        start_row = df.iloc[round_start_idx]
+        end_row = df.iloc[last_true_idx]
+
+        events.append(build_segment_event(start_row, start_row, "RoundStart"))
+        round_end_evt = build_segment_event(end_row, end_row, "RoundEnd")
+        round_end_evt["RoundNum"] = prev_round
+        events.append(round_end_evt)
+
     return events
 
 def process_special_round_segments(df, allowed_statuses):

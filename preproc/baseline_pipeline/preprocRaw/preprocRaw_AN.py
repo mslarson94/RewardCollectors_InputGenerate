@@ -17,6 +17,7 @@ from RC_utilities.preprocHelpers.preprocRawHelpers import (
     enhance_timestamp_with_apptime,
     process_obsreward_file,
     check_monotonic_apptime,
+    drop_malformed_trailing_rows,
     )
 ## warning_logger
 from RC_utilities.segHelpers.warning_logger import WarningLogger
@@ -29,7 +30,7 @@ def correct_malformed_string(raw_string):
 
 # Updated assign_temporal_intervals with new phase definitions (7777, 8888, 9999)
 
-def assign_temporal_intervals_AN(data):
+def assign_temporal_intervals_AN_v1(data):
     data["RoundNum"] = np.nan  # Reset RoundNum for clean assignment
 
     block_starts = data[data["Message"] == "Mark should happen if checked on terminal."].index
@@ -86,6 +87,164 @@ def assign_temporal_intervals_AN(data):
                     break  # Exit block parsing
 
     return data
+
+MARK = "Mark should happen if checked on terminal."
+
+def qc_roundnum_AN_origrow(df, subject_col="Subject", origrow_col="origRow", message_col="Message",
+                          allow_nans=True):
+    issues = []
+
+    if subject_col in df.columns:
+        groups = df.groupby(subject_col, sort=False)
+    else:
+        groups = [("ALL", df)]
+
+    for subj, g in groups:
+        # sort by true time
+        g = g.sort_values(origrow_col, kind="mergesort").copy()
+
+        mark_mask = (g[message_col] == MARK)
+        mark_pos = np.flatnonzero(mark_mask.values)
+
+        if len(mark_pos) == 0:
+            issues.append((subj, None, None, None, "NO_BLOCK_STARTS", "No Mark rows found"))
+            continue
+
+        msg_lower = g[message_col].astype(str).str.lower().str.strip()
+
+        for bi, start_p in enumerate(mark_pos):
+            end_p = mark_pos[bi + 1] if bi + 1 < len(mark_pos) else len(g)
+            block = g.iloc[start_p:end_p]
+
+            start_idx_label = block.index[0]
+            start_origrow = block[origrow_col].iloc[0]
+
+            # Mark row should be RoundNum 0
+            rn0 = block["RoundNum"].iloc[0]
+            if rn0 != 0:
+                issues.append((subj, bi, start_origrow, start_idx_label,
+                               "BLOCK_START_NOT_ZERO", f"RoundNum at Mark is {rn0}"))
+
+            # Optional: NaNs in block
+            if not allow_nans:
+                nan_mask = block["RoundNum"].isna().values
+                if nan_mask.any():
+                    first_nan_p = int(np.argmax(nan_mask))
+                    issues.append((subj, bi,
+                                   block[origrow_col].iloc[first_nan_p],
+                                   block.index[first_nan_p],
+                                   "NAN_IN_BLOCK", f"NaN count={nan_mask.sum()}"))
+
+            # Identify finish marker inside this block
+            block_msg_lower = msg_lower.iloc[start_p:end_p]
+            finish_pos = np.flatnonzero(block_msg_lower.values == "finished current task")
+
+            if len(finish_pos) > 0:
+                f_p = int(finish_pos[0])
+                post = block.iloc[f_p:]
+
+                # After finish: no normal rounds should appear
+                def is_normal(x):
+                    return pd.notna(x) and (x not in [0, 7777, 8888, 9999]) and (x > 0)
+
+                normal_after = post.index[post["RoundNum"].apply(is_normal)].to_list()
+                if normal_after:
+                    bad_idx = normal_after[0]
+                    bad_row = block.loc[bad_idx]
+                    issues.append((subj, bi, bad_row[origrow_col], bad_idx,
+                                   "NORMAL_ROUND_AFTER_FINISH",
+                                   f"Normal RoundNum after finish; first offending RoundNum={bad_row['RoundNum']}"))
+
+                # 9999 should not appear before finish
+                pre = block.iloc[:f_p]
+                pre_9999 = pre.index[pre["RoundNum"] == 9999].to_list()
+                if pre_9999:
+                    bad_idx = pre_9999[0]
+                    bad_row = block.loc[bad_idx]
+                    issues.append((subj, bi, bad_row[origrow_col], bad_idx,
+                                   "9999_BEFORE_FINISH",
+                                   "9999 appears before 'finished current task'"))
+
+            # First started should be 1 (if any started exists)
+            started_mask = block_msg_lower.str.match(r"started (collecting|pindropping)\. block:\d+")
+            if started_mask.any():
+                first_started_p = int(np.argmax(started_mask.values))
+                started_rn = block["RoundNum"].iloc[first_started_p]
+                if started_rn != 1:
+                    issues.append((subj, bi,
+                                   block[origrow_col].iloc[first_started_p],
+                                   block.index[first_started_p],
+                                   "FIRST_STARTED_NOT_ONE",
+                                   f"RoundNum at first started is {started_rn}"))
+
+    issues_df = pd.DataFrame(
+        issues,
+        columns=["Subject", "BlockIndex", "origRow", "dfIndex", "Issue", "Context"]
+    )
+    summary_df = (issues_df.groupby("Issue").size()
+                  .sort_values(ascending=False)
+                  .reset_index(name="Count")) if not issues_df.empty else \
+                 pd.DataFrame(columns=["Issue", "Count"])
+    return issues_df, summary_df
+
+
+
+def assign_temporal_intervals_AN(data):
+    data["RoundNum"] = np.nan  # Reset RoundNum for clean assignment
+
+    block_starts = data[data["Message"] == "Mark should happen if checked on terminal."].index
+    idx_limit = len(data)
+
+    for i, block_start in enumerate(block_starts):
+        next_block_start = block_starts[i + 1] if i + 1 < len(block_starts) else idx_limit
+        block_idxs = list(range(block_start, next_block_start))
+
+        round_num = 0  # Initialize round numbering at start of block
+        data.at[block_start, "RoundNum"] = round_num  # Mark block start
+
+        last_finished_round = None
+        last_reposition = None
+
+        for idx in block_idxs:
+            message = data.at[idx, "Message"]
+
+            if isinstance(message, str):
+                message_lower = message.lower().strip()
+
+                # Detect "Started collecting" or "Started pindropping" — round start
+                if re.match(r"started (collecting|pindropping)\. block:\d+", message_lower):
+                    round_num += 1
+                    data.at[idx, "RoundNum"] = round_num
+
+                    # Tag 8888 for pre-round idle from last reposition
+                    if last_reposition is not None:
+                        for j in range(last_reposition, idx):
+                            data.at[j, "RoundNum"] = 8888
+                        last_reposition = None
+
+                # Detect "Finished pindrop round" — round end
+                elif message_lower.startswith("finished pindrop round:"):
+                    last_finished_round = idx
+
+                # Detect "Repositioned and ready to start block or round"
+                elif message_lower.startswith("repositioned and ready to start block or round"):
+                    # Tag 7777 between finished round and next reposition
+                    if last_finished_round is not None:
+                        for j in range(last_finished_round, idx):
+                            data.at[j, "RoundNum"] = 7777
+                        last_finished_round = None
+                    last_reposition = idx
+
+                # Detect "finished current task" — block end marker
+                elif message_lower == "finished current task":
+                    # IMPORTANT: only tag within the current block window
+                    for j in range(idx, next_block_start):
+                        if data.at[j, "RoundNum"] not in [7777, 8888]:
+                            data.at[j, "RoundNum"] = 9999
+                    break  # Exit block parsing
+
+    return data
+
 
 # Define a separate function to compute chestPin_num and totalRounds after detect_and_tag_blocks is run
 def augment_with_chestpin_and_totalrounds_AN(data):
@@ -175,6 +334,11 @@ def clean_and_process_files(root_directory, magic_leap_data, save_large_files=Tr
 
                 # ✅ Continue processing
                 process_obsreward_file(data, role = 'AN')
+                tagged = assign_temporal_intervals_AN(data)
+                issues_df, summary_df = qc_roundnum_AN_origrow(tagged, subject_col="Subject")  # adjust subject col name if needed
+
+                print(summary_df)
+                print(issues_df.head(50))
                 assign_temporal_intervals_AN(data)
                 data["RoundNum"] = data["RoundNum"].fillna(method="ffill")  # 🔧 Ensures all rows within block are tagged
                 data = augment_with_chestpin_and_totalrounds_AN(data)
@@ -189,6 +353,7 @@ def clean_and_process_files(root_directory, magic_leap_data, save_large_files=Tr
                 # Reorder columns
                 data = data[final_column_order]
                 check_monotonic_apptime(data, col="AppTime", context="preprocRaw_AN.py", logger=logger)
+                data = drop_malformed_trailing_rows(data)
                 data.to_csv(nestedFile, index=False)
                 data.to_csv(flatFile, index=False)
                 print(f"Processed and saved: {nestedFile}")

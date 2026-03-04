@@ -114,6 +114,8 @@ def plot_triangles_from_list(
     present = set(df["Version"].astype(str).tolist())
 
     colors = assign_colors(df["Version"].astype(str).tolist())
+    print('colors', colors, type(colors))
+    #colors["A"] = (1.0, 0.0, 0.0, 1.0)
 
     fig, ax = plt.subplots(figsize=(8, 8))
     if transparent:
@@ -150,6 +152,31 @@ def plot_triangles_from_list(
         for (x, y), val in zip(verts, VERTEX_VALUES):
             ax.scatter([x], [y], color=color, s=50, zorder=3, marker="x")
             ax.text(x + 0.1, y + 0.1, str(val), fontsize=10, fontweight="bold", color=color)
+        # --- Centroid marker (average of vertices) ---
+        cx = sum(p[0] for p in verts) / 3.0
+        cy = sum(p[1] for p in verts) / 3.0
+
+        # Draw centroid as a distinct marker with outline
+        ax.scatter(
+            [cx], [cy],
+            s=90,
+            marker="*",
+            facecolors="white",
+            edgecolors=color,
+            linewidths=2,
+            zorder=4,
+        )
+
+        # # Optional: label the centroid with the version
+        # ax.text(
+        #     cx + 0.12, cy + 0.12,
+        #     f"C{v}",
+        #     fontsize=9,
+        #     fontweight="bold",
+        #     color=color,
+        #     zorder=5,
+        # )
+
 
     ax.set_title(f"Selected Coin Sets ({len(df)} plotted)")
     ax.legend(loc="upper right")

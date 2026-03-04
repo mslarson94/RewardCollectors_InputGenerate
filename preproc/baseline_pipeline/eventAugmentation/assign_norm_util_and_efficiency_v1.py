@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-assign_norm_util_and_efficiency.py
+assign_norm_util_and_efficiency.py (patched)
 
 Goal:
   For interval rows (one row per round), assign:
@@ -29,6 +29,7 @@ from __future__ import annotations
 import argparse
 from pathlib import Path
 import sys
+import re
 import numpy as np
 import pandas as pd
 
@@ -49,35 +50,19 @@ REF_REQUIRED = [
 def parse_args() -> argparse.Namespace:
     p = argparse.ArgumentParser()
 
-    main_grp = p.add_mutually_exclusive_group(required=True)
-    main_grp.add_argument("--main", type=Path, help="Single main interval CSV to update.")
-    main_grp.add_argument("--main-dir", type=Path, help="Directory of main interval CSVs to update.")
-
-    p.add_argument(
-        "--main-pattern",
-        type=str,
-        default="*.csv",
-        help="Glob for main CSVs when using --main-dir (default: *.csv).",
-    )
-
+    p.add_argument("--main", type=Path, required=True, help="Main interval CSV to update.")
     p.add_argument("--ref-dir", type=Path, required=True, help="Directory containing normalized reference CSVs.")
     p.add_argument("--ref-pattern", type=str, default="*.csv", help="Glob for ref CSVs (default: *.csv).")
 
-    p.add_argument(
-        "--output",
-        type=Path,
-        required=True,
-        help="Output CSV path OR output directory (see --out-mode).",
-    )
+    p.add_argument("--output", type=Path, required=True, help="Output CSV path OR output directory (see --out-mode).")
     p.add_argument(
         "--out-mode",
         choices=["file", "dir"],
         default="file",
-        help="If 'file', --output is a single output CSV path (only valid with --main). "
-             "If 'dir', writes one output per main file into --output directory.",
+        help="If 'file', --output is full output CSV path. If 'dir', writes into dir with suffix.",
     )
     p.add_argument("--suffix", type=str, default="_withNormUtilAndEff", help="Used when --out-mode=dir.")
-    p.add_argument("--overwrite", action="store_true", help="Overwrite existing output file(s) if present.")
+    p.add_argument("--overwrite", action="store_true", help="Overwrite existing output file if present.")
 
     p.add_argument(
         "--ref-dedup",
@@ -86,7 +71,6 @@ def parse_args() -> argparse.Namespace:
     )
 
     p.add_argument("--quiet", action="store_true", help="Reduce logging.")
-    p.add_argument("--fail-fast", action="store_true", help="Stop immediately if any main file fails.")
 
     return p.parse_args()
 
@@ -155,30 +139,23 @@ def resolve_output_path(main_path: Path, output: Path, out_mode: str, suffix: st
     return output / f"{main_path.stem}{suffix}{main_path.suffix}"
 
 
-def process_one_main(
-    main_path: Path,
-    *,
-    ref: pd.DataFrame,
-    output: Path,
-    out_mode: str,
-    suffix: str,
-    overwrite: bool,
-    quiet: bool,
-) -> Path:
-    if not main_path.exists():
-        raise FileNotFoundError(f"Main file not found: {main_path}")
+def main() -> int:
+    args = parse_args()
+    print('start')
+    if not args.main.exists():
+        print(f"Main file not found: {args.main}", file=sys.stderr)
+        return 2
 
-    df = pd.read_csv(main_path)
-    require_cols(df, MAIN_REQUIRED, label=f"MAIN {main_path.name}")
+    df = pd.read_csv(args.main)
+    require_cols(df, MAIN_REQUIRED, label=f"MAIN {args.main.name}")
 
+    ref = load_refs(args.ref_dir, args.ref_pattern, args.ref_dedup, args.quiet)
+    print('ref')
     # Eligibility mask (interval-level)
-    # eligible = (df["BlockType"].astype("string").str.strip().str.lower() == "pindropping") & (
-    #     pd.to_numeric(df["CoinSetID"], errors="coerce") != 4
-    # )
-    eligible = (
+    eligible = (df["BlockType"].astype("string").str.strip().str.lower() == "pindropping") & (
         pd.to_numeric(df["CoinSetID"], errors="coerce") != 4
     )
-
+    print('eligible', eligible)
     # --- Normalize merge keys on BOTH sides ---
     df_keys = df.copy()
     df_keys["_coinSet"] = _norm_str(df_keys["coinSet"])
@@ -232,8 +209,9 @@ def process_one_main(
     merged.loc[ok, "ref_ceiling_utility"] = merged.loc[ok, "ceiling_utility"]
     merged.loc[ok, "path_eff_raw"] = eff_raw[ok.to_numpy()]
 
-    if not quiet:
-        print(f"\n=== {main_path.name} DEBUG ===")
+    # Optional debug summary
+    if not args.quiet:
+        print("\n=== assign_norm_util_and_efficiency DEBUG ===")
         print(f"rows: {len(merged):,}")
         print(f"eligible rows: {int(eligible.sum()):,}")
         print(f"eligible matched: {int((eligible & has_match).sum()):,}")
@@ -247,74 +225,14 @@ def process_one_main(
     ]
     merged = merged.drop(columns=[c for c in drop_cols if c in merged.columns])
 
-    out_path = resolve_output_path(main_path, output, out_mode, suffix)
-    if out_path.exists() and not overwrite:
-        raise FileExistsError(f"Output exists (use --overwrite): {out_path}")
+    out_path = resolve_output_path(args.main, args.output, args.out_mode, args.suffix)
+    if out_path.exists() and not args.overwrite:
+        print(f"Output exists (use --overwrite): {out_path}", file=sys.stderr)
+        return 3
 
     out_path.parent.mkdir(parents=True, exist_ok=True)
     merged.to_csv(out_path, index=False)
-    return out_path
-
-
-def iter_main_files(main: Path | None, main_dir: Path | None, pattern: str) -> list[Path]:
-    if main is not None:
-        return [main]
-
-    assert main_dir is not None
-    if not main_dir.exists():
-        raise FileNotFoundError(f"--main-dir does not exist: {main_dir}")
-
-    paths = sorted([p for p in main_dir.glob(pattern) if p.is_file()])
-    if not paths:
-        raise FileNotFoundError(f"No main files found in {main_dir} with pattern '{pattern}'")
-    return paths
-
-
-def main() -> int:
-    args = parse_args()
-
-    # Guard: out-mode=file only makes sense for a single input
-    if args.out_mode == "file" and args.main_dir is not None:
-        print("Error: --out-mode=file cannot be used with --main-dir. Use --out-mode=dir.", file=sys.stderr)
-        return 2
-
-    ref = load_refs(args.ref_dir, args.ref_pattern, args.ref_dedup, args.quiet)
-
-    mains = iter_main_files(args.main, args.main_dir, args.main_pattern)
-
-    failures: list[tuple[Path, str]] = []
-    wrote: list[Path] = []
-
-    for mp in mains:
-        try:
-            if not args.quiet:
-                print(f"[main] {mp}")
-            out_path = process_one_main(
-                mp,
-                ref=ref,
-                output=args.output,
-                out_mode=args.out_mode,
-                suffix=args.suffix,
-                overwrite=args.overwrite,
-                quiet=args.quiet,
-            )
-            wrote.append(out_path)
-            print(f"✅ Wrote: {out_path}")
-        except Exception as e:
-            msg = f"{type(e).__name__}: {e}"
-            failures.append((mp, msg))
-            print(f"❌ Failed: {mp} :: {msg}", file=sys.stderr)
-            if args.fail_fast:
-                return 1
-
-    if failures:
-        print("\nSome files failed:", file=sys.stderr)
-        for mp, msg in failures:
-            print(f" - {mp.name}: {msg}", file=sys.stderr)
-        return 1
-
-    if not args.quiet:
-        print(f"\nDone. Wrote {len(wrote)} file(s).")
+    print(f"✅ Wrote: {out_path}")
     return 0
 
 

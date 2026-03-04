@@ -11,7 +11,6 @@ import numpy as np
 import pandas as pd
 
 from RC_utilities.reProcHelpers.startPosAssignment import compute_startpos_for_events_flexible
-# put near the top of each script (below imports)
 
 _TRAILING_TOKENS = [
     "_event_reproc_withStartPos_withEffectiveRound_startPosPropagated",
@@ -22,6 +21,9 @@ _TRAILING_TOKENS = [
     "_withEffectiveRound",
     "_startPosPropagated",
 ]
+
+POS_DIST_COLS = [f"dist_pos{i}" for i in range(1, 9)]
+
 
 def _strip_known_trailing_tokens(stem: str) -> str:
     base = stem
@@ -38,6 +40,7 @@ def _strip_known_trailing_tokens(stem: str) -> str:
 
 def _ensure_parent(path: Path) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
+
 
 def _infer_out_path(in_path: Path, out_root: Optional[Path], suffix: str) -> Path:
     base = _strip_known_trailing_tokens(in_path.stem)
@@ -71,7 +74,7 @@ def _infer_interval_paths(events_path: Path, interval_root: Optional[Path]) -> T
 
     candidates = [
         (base + "_finalInterval_vert.csv", base + "_finalInterval_horz.csv"),
-        #(base + "_finalInterval_vert_withStartPos.csv", base + "_finalInterval_horz_withStartPos.csv"),
+        # (base + "_finalInterval_vert_withStartPos.csv", base + "_finalInterval_horz_withStartPos.csv"),
     ]
 
     for vname, hname in candidates:
@@ -86,6 +89,26 @@ def _infer_interval_paths(events_path: Path, interval_root: Optional[Path]) -> T
             return vert, horz
 
     return None, None
+
+
+def _infer_reproc_with_dist_path(events_csv: Path) -> Optional[Path]:
+    """
+    Best-effort inference of the matching *_reprocessed_with_dist.csv for this events file.
+
+    Tries common naming schemes by stripping known tokens, then checking a few candidates
+    in the same directory as the events file.
+    """
+    base = _strip_known_trailing_tokens(events_csv.stem)
+
+    candidates = [
+        events_csv.with_name(base + "_reprocessed_with_dist.csv"),
+        events_csv.with_name(base + "_reproc_with_dist.csv"),
+        events_csv.with_name(base + "_reproc_withDist.csv"),
+    ]
+    for p in candidates:
+        if p.exists():
+            return p
+    return None
 
 
 def _label_subset(
@@ -124,73 +147,6 @@ def _label_subset(
     return labeled[["__rowid", "startPos", "startPos_dist"]]
 
 
-def _compute_effective_roundnum_for_pindrop_rows_old(
-    df: pd.DataFrame,
-    *,
-    block_keys: Tuple[str, str] = ("BlockNum", "BlockInstance"),
-    round_col: str = "RoundNum",
-    sort_time_cols: Tuple[str, ...] = ("start_AppTime", "AppTime"),
-) -> pd.Series:
-    d = df.copy()
-
-    sort_col = None
-    for c in sort_time_cols:
-        if c in d.columns:
-            sort_col = c
-            d[c] = pd.to_numeric(d[c], errors="coerce")
-            break
-
-    d[round_col] = pd.to_numeric(d[round_col], errors="coerce")
-
-    sort_by = list(block_keys) + ([sort_col] if sort_col else [])
-    d = d.sort_values(sort_by, kind="mergesort", na_position="last").reset_index(drop=False)
-
-    def _future_nonnull_round(g: pd.DataFrame) -> pd.Series:
-        return g[round_col].shift(-1).bfill()
-
-    future = d.groupby(list(block_keys), dropna=False, sort=False, group_keys=False).apply(_future_nonnull_round)
-    future.index = d["index"].values
-    return future.reindex(df.index)
-
-
-def _compute_effective_roundnum_for_pindrop_rows(
-    df: pd.DataFrame,
-    *,
-    block_keys: Tuple[str, str] = ("BlockNum", "BlockInstance"),
-    round_col: str = "RoundNum",
-    sort_time_cols: Tuple[str, ...] = ("start_AppTime", "AppTime"),
-) -> pd.Series:
-    d = df.copy()
-
-    # pick sort col if present
-    sort_col = None
-    for c in sort_time_cols:
-        if c in d.columns:
-            sort_col = c
-            d[c] = pd.to_numeric(d[c], errors="coerce")
-            break
-
-    for k in block_keys:
-        if k in d.columns:
-            d[k] = pd.to_numeric(d[k], errors="coerce")
-    d[round_col] = pd.to_numeric(d[round_col], errors="coerce")
-
-    # keep original index so we can restore exact row alignment
-    d = d.reset_index(drop=False).rename(columns={"index": "__orig_index"})
-
-    sort_by = list(block_keys) + ([sort_col] if sort_col else [])
-    d = d.sort_values(sort_by, kind="mergesort", na_position="last")
-
-    # transform returns SAME LENGTH as d (never wide like apply can)
-    future = d.groupby(list(block_keys), dropna=False)[round_col].transform(
-        lambda s: s.shift(-1).bfill()
-    )
-
-    # put back onto original df index order
-    future.index = d["__orig_index"].values
-    return future.reindex(df.index)
-
-
 def _build_per_round_from_definers(
     df_out: pd.DataFrame,
     *,
@@ -209,27 +165,60 @@ def _build_per_round_from_definers(
     d["lo_eventType"] = d["lo_eventType"].astype("string").str.strip()
     d["BlockType"] = d["BlockType"].astype("string").str.strip().str.lower()
 
-    # Only those two definers
     definers = (
         ((d["BlockType"] == "collecting") & (d["lo_eventType"] == "TrueContentStart")) |
         ((d["BlockType"] == "pindropping") & (d["lo_eventType"] == "InterRound_PostCylinderWalk_segment"))
     )
 
-    per_round = d.loc[definers & d["startPos"].notna(), ["BlockNum", "BlockInstance", "RoundNum", "startPos", "startPos_dist"]].copy()
+    per_round = d.loc[
+        definers & d["startPos"].notna(),
+        ["BlockNum", "BlockInstance", "RoundNum", "startPos", "startPos_dist"]
+    ].copy()
     per_round = per_round[per_round["RoundNum"].notna() & (per_round["RoundNum"] <= max_round)].copy()
 
-    # pick earliest by time if available
     sort_col = "start_AppTime" if "start_AppTime" in d.columns else ("AppTime" if "AppTime" in d.columns else None)
     if sort_col:
-        tmp = d.loc[definers & d["startPos"].notna(), ["BlockNum", "BlockInstance", "RoundNum", sort_col, "startPos", "startPos_dist"]].copy()
+        tmp = d.loc[
+            definers & d["startPos"].notna(),
+            ["BlockNum", "BlockInstance", "RoundNum", sort_col, "startPos", "startPos_dist"]
+        ].copy()
         tmp[sort_col] = pd.to_numeric(tmp[sort_col], errors="coerce")
         tmp = tmp.sort_values(["BlockNum", "BlockInstance", "RoundNum", sort_col], kind="mergesort", na_position="last")
-        per_round = tmp.drop_duplicates(["BlockNum", "BlockInstance", "RoundNum"], keep="first")[["BlockNum", "BlockInstance", "RoundNum", "startPos", "startPos_dist"]].copy()
+        per_round = tmp.drop_duplicates(["BlockNum", "BlockInstance", "RoundNum"], keep="first")[
+            ["BlockNum", "BlockInstance", "RoundNum", "startPos", "startPos_dist"]
+        ].copy()
     else:
         per_round = per_round.drop_duplicates(["BlockNum", "BlockInstance", "RoundNum"], keep="first")
 
     return per_round
 
+def assign_path_step_in_round(df: pd.DataFrame) -> pd.DataFrame:
+    """
+    Policy:
+      - baseline: if chestPin_num is present, path_step_in_round := chestPin_num
+      - invariant: Adjusted_1st_Walk_PinDrop always has chestPin_num=1 and path_step_in_round=1
+    """
+    df = df.copy()
+
+    if "path_step_in_round" not in df.columns:
+        df["path_step_in_round"] = pd.NA
+
+    if "chestPin_num" in df.columns:
+        pin = pd.to_numeric(df["chestPin_num"], errors="coerce")
+        mask_pin = pin.notna()
+        df.loc[mask_pin, "path_step_in_round"] = pin.loc[mask_pin].astype("Int64")
+
+    # Force Adjusted_1st_Walk_PinDrop invariant
+    if "lo_eventType" in df.columns:
+        mask_adj = df["lo_eventType"].astype("string").str.strip().eq("Adjusted_1st_Walk_PinDrop")
+        if mask_adj.any():
+            # ensure chestPin_num exists if you want it explicitly present
+            if "chestPin_num" not in df.columns:
+                df["chestPin_num"] = pd.NA
+            df.loc[mask_adj, "chestPin_num"] = 1
+            df.loc[mask_adj, "path_step_in_round"] = 1
+
+    return df
 
 def _propagate_startpos_within_round(df_out: pd.DataFrame, per_round: pd.DataFrame) -> pd.DataFrame:
     df = df_out.copy()
@@ -240,10 +229,101 @@ def _propagate_startpos_within_round(df_out: pd.DataFrame, per_round: pd.DataFra
     return df.drop(columns=["startPos__perround", "startPos_dist__perround"], errors="ignore")
 
 
+def _fill_definer_startpos_from_reproc_dists(
+    df_out: pd.DataFrame,
+    reproc_df: pd.DataFrame,
+    *,
+    max_round: int,
+) -> pd.DataFrame:
+    """
+    For definers where startPos is still missing, infer startPos via argmin(dist_pos1..dist_pos8)
+    at origRow_start in reprocessed_with_dist.
+
+    Only touches:
+      - collecting TrueContentStart rows
+      - pindropping InterRound_PostCylinderWalk_segment rows
+    and only where startPos is NA.
+    """
+    df = df_out.copy()
+
+    if reproc_df is None or reproc_df.empty:
+        return df
+    if "origRow" not in reproc_df.columns:
+        return df
+    if any(c not in reproc_df.columns for c in POS_DIST_COLS):
+        return df
+    if "origRow_start" not in df.columns:
+        return df
+
+    # definers mask
+    d = df
+    d["BlockType"] = d["BlockType"].astype("string").str.strip().str.lower()
+    d["lo_eventType"] = d["lo_eventType"].astype("string").str.strip()
+    d["RoundNum"] = pd.to_numeric(d["RoundNum"], errors="coerce")
+
+    definers = (
+        ((d["BlockType"] == "collecting") & (d["lo_eventType"] == "TrueContentStart")) |
+        ((d["BlockType"] == "pindropping") & (d["lo_eventType"] == "InterRound_PostCylinderWalk_segment"))
+    )
+    definers = definers & d["RoundNum"].notna() & (d["RoundNum"] <= max_round)
+
+    needs = definers & d.get("startPos", pd.Series([pd.NA] * len(d))).isna()
+    if not needs.any():
+        return df
+
+    # index reproc by origRow
+    r = reproc_df.copy()
+    r["origRow"] = pd.to_numeric(r["origRow"], errors="coerce")
+    r = r.dropna(subset=["origRow"])
+    if r.empty:
+        return df
+    r["origRow"] = r["origRow"].astype(int)
+    r_idx = r.set_index("origRow", drop=False)
+
+    # map events origRow_start -> reproc rows
+    or_start = pd.to_numeric(d.loc[needs, "origRow_start"], errors="coerce").dropna().astype(int)
+    if or_start.empty:
+        return df
+
+    # keep only keys that exist
+    or_start = or_start[or_start.isin(r_idx.index)]
+    if or_start.empty:
+        return df
+
+    dist_mat = r_idx.loc[or_start.values, POS_DIST_COLS].apply(pd.to_numeric, errors="coerce").to_numpy()
+
+    # argmin across 8 positions
+    argmin = np.nanargmin(dist_mat, axis=1)  # 0..7
+    minval = np.nanmin(dist_mat, axis=1)
+
+    inferred_pos = pd.Series([f"pos{i+1}" for i in argmin], index=or_start.index)
+    inferred_dist = pd.Series(minval, index=or_start.index)
+
+    if "startPos" not in df.columns:
+        df["startPos"] = pd.NA
+    if "startPos_dist" not in df.columns:
+        df["startPos_dist"] = pd.NA
+
+    df.loc[inferred_pos.index, "startPos"] = inferred_pos.values
+    df.loc[inferred_dist.index, "startPos_dist"] = inferred_dist.values
+    return df
+
+def enforce_collecting_path_order(df: pd.DataFrame, *, col="path_order_round") -> pd.DataFrame:
+    df = df.copy()
+    if "BlockType" not in df.columns:
+        raise KeyError("Missing BlockType")
+    if col not in df.columns:
+        df[col] = pd.NA
+
+    bt = df["BlockType"].astype("string").str.strip().str.lower()
+    df.loc[bt.eq("collecting"), col] = "LV -> NV -> HV"
+    return df
+
 def process_one_events_file(
     events_csv: Path,
     *,
     out_root: Optional[Path],
+    interval_root: Optional[Path],
     role_col: str,
     x_start_col: str,
     z_start_col: str,
@@ -253,7 +333,6 @@ def process_one_events_file(
     strict: bool,
     strict_roles: bool,
     also_update_intervals: bool,
-    interval_root: Optional[Path],
     max_round: int,
     dry_run: bool,
 ) -> None:
@@ -304,19 +383,24 @@ def process_one_events_file(
     # attach sparse labels
     df_out = df.merge(labeled_subset[["__rowid", "startPos", "startPos_dist"]], on="__rowid", how="left")
 
-    # LOOKAHEAD only for InterRound rows
-    is_inter = df_out["lo_eventType"] == "InterRound_PostCylinderWalk_segment"
-    if is_inter.any():
-        future_round = _compute_effective_roundnum_for_pindrop_rows(df_out)
-        df_out["RoundNum"] = pd.to_numeric(df_out["RoundNum"], errors="coerce")
-        needs = is_inter & df_out["RoundNum"].isna()
-        df_out.loc[needs, "RoundNum"] = future_round.loc[needs]
+    # ===== PATCH: fill missing definer startPos from reprocessed_with_dist dist_pos* =====
+    reproc_path = _infer_reproc_with_dist_path(events_csv)
+    if reproc_path is not None:
+        try:
+            reproc_df = pd.read_csv(reproc_path)
+            df_out = _fill_definer_startpos_from_reproc_dists(df_out, reproc_df, max_round=max_round)
+        except Exception as e:
+            print(f"[warn] {events_csv.name}: failed to use reproc_with_dist ({reproc_path.name}): {e}")
+    else:
+        print(f"[warn] {events_csv.name}: could not find matching *_reprocessed_with_dist.csv; skipping dist_pos-based startPos fill")
 
     # Build per-round ONLY from defining rows, then propagate
     per_round = _build_per_round_from_definers(df_out, max_round=max_round)
     df_out = _propagate_startpos_within_round(df_out, per_round)
 
     df_out = df_out.drop(columns=["__rowid"], errors="ignore")
+    df_out = assign_path_step_in_round(df_out)
+    df_out = enforce_collecting_path_order(df_out)
 
     out_path = _infer_out_path(events_csv, out_root, suffix="_withStartPos")
     _ensure_parent(out_path)
@@ -346,7 +430,6 @@ def process_one_events_file(
 
     # merge per_round into intervals
     keys = ["BlockNum", "BlockInstance", "RoundNum"]
-
     vert_out = vert.merge(per_round, on=keys, how="left", validate="m:1")
     horz_out = horz.merge(per_round, on=keys, how="left", validate="1:1")
 
@@ -360,12 +443,16 @@ def process_one_events_file(
     if has_pin_long and "chestPin_num" not in vert_out.columns:
         raise RuntimeError(f"{events_csv.name}: interval_vert lost chestPin_num column")
     if has_pin_wide:
-        # just ensure we didn’t accidentally end up writing a minimal table
         if sum(("pin" in c.lower()) for c in horz_out.columns) < sum(("pin" in c.lower()) for c in horz.columns):
             raise RuntimeError(f"{events_csv.name}: interval_horz appears to have lost pin columns")
 
-    vert_out_path = _infer_out_path(events_csv, interval_root, suffix="_withStartPos")
-    horz_out_path = _infer_out_path(events_csv, interval_root, suffix="_withStartPos")
+    # write to interval_root (or same dir) using the interval filenames, not the events filename
+    vert_out_path = (interval_root / vert_path.name) if interval_root is not None else vert_path
+    horz_out_path = (interval_root / horz_path.name) if interval_root is not None else horz_path
+    # add suffix
+    vert_out_path = vert_out_path.with_name(_strip_known_trailing_tokens(vert_out_path.stem) + "_withStartPos" + vert_out_path.suffix)
+    horz_out_path = horz_out_path.with_name(_strip_known_trailing_tokens(horz_out_path.stem) + "_withStartPos" + horz_out_path.suffix)
+
     _ensure_parent(vert_out_path)
     _ensure_parent(horz_out_path)
 
@@ -416,6 +503,7 @@ def main() -> None:
             process_one_events_file(
                 f,
                 out_root=out_root,
+                interval_root=interval_root,
                 role_col=args.role_col,
                 x_start_col=args.x_start_col,
                 z_start_col=args.z_start_col,
@@ -425,7 +513,6 @@ def main() -> None:
                 strict=strict,
                 strict_roles=strict_roles,
                 also_update_intervals=args.also_update_intervals,
-                interval_root=interval_root,
                 max_round=args.max_round,
                 dry_run=args.dry_run,
             )

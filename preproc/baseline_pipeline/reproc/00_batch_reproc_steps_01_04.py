@@ -26,6 +26,8 @@ from RC_utilities.reProcHelpers.helpers_reproc import (
     safe_merge,
     normalize_keys,
     DEFAULT_MAX_TRUE_ROUNDNUM,
+    ensure_or_validate_origRow,
+    choose_round_mode,
 )
 
 # Optional canonicalizer (only used if import succeeds)
@@ -72,6 +74,7 @@ def _infer_base_from_events(events_path: Path) -> str:
         "_processed_events_pos",
         "_processed_events",
         "_events",
+        "_events_coinLabel",
     ):
         if stem.endswith(suf):
             return stem[: -len(suf)]
@@ -140,7 +143,13 @@ def run_steps_01_to_04_for_file(
 
 
         blocks = build_block_intervals(events, processed_df=processed)
+        #mode = args.round_mode
+        if round_mode == "auto":
+            round_mode = choose_round_mode(events, blocks, max_round=max_round)
         rounds = build_round_intervals(events, blocks, mode=round_mode, max_round=max_round)
+
+        #rounds = build_round_intervals(events, blocks, mode=auto_mode, max_round=max_round)
+        #rounds = build_round_intervals(events, blocks, mode=round_mode, max_round=max_round)
         combined = merge_block_and_round_intervals(blocks, rounds)
 
         combined = cleanup_merge_suffixes(combined, suffixes=("_r",), numeric_tol=0.0)
@@ -163,6 +172,10 @@ def run_steps_01_to_04_for_file(
     else:
         proc = pd.read_csv(processed_csv)
         proc = ensure_or_validate_origRow(proc, strict_sequential=True)
+        print("[debug] blocks cols:", [repr(c) for c in blocks.columns])
+        print("[debug] rounds cols:", [repr(c) for c in rounds.columns])
+        print("[debug] rounds shape:", rounds.shape)
+
         df = augment_processed_with_intervals(proc, blocks, rounds, max_round=max_round)
 
         df = compute_step_distance(
@@ -326,12 +339,14 @@ def main() -> None:
 
     ap.add_argument("--pattern", default="*_events_pos.csv", help="Glob under events-root (default: *_events_pos.csv)")
     ap.add_argument("--max-round", type=int, default=DEFAULT_MAX_TRUE_ROUNDNUM)
-    ap.add_argument("--round-mode", default="truecontent", choices=["truecontent", "roundstartend"])
+    #ap.add_argument("--round-mode", default="truecontent", choices=["truecontent", "roundstartend"])
 
     ap.add_argument("--pos-cols", nargs="+", default=["HeadPosAnchored_x", "HeadPosAnchored_y", "HeadPosAnchored_z"])
     ap.add_argument("--group-for-diff", nargs="+", default=["BlockInstance", "BlockNum"])
 
     ap.add_argument("--skip-existing", action="store_true", help="Skip files whose outputs already exist.")
+    ap.add_argument("--round-mode", default="auto", choices=["auto","truecontent","roundstartend"])
+
     args = ap.parse_args()
 
     events_root = Path(args.events_root).expanduser()

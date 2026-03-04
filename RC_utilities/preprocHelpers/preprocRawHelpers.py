@@ -65,6 +65,8 @@ def detect_and_tag_blocks(data, role):
                 block_start_idx = idx
                 round_num = 0  # round starts counting from this row forward
                 block_instance += 1  # Increment BlockInstance
+                # ✅ assign block instance on the Mark row itself
+                data.at[idx, "BlockInstance"] = block_instance
                 continue  # don't set RoundNum here
 
             if message.startswith("coinsetID:"):
@@ -395,3 +397,58 @@ def check_monotonic_apptime(
     _log("⚠️ Examples of violations:\n" + ex_str)
 
     return False
+
+def drop_malformed_trailing_rows(df: pd.DataFrame) -> pd.DataFrame:
+    """
+    Drop ONLY trailing malformed/truncated rows before saving *_processed.csv.
+
+    Assumptions (per your pipeline):
+      - columns 'Type', 'Message', 'EyeTarget' always exist.
+      - Event rows should have EyeTarget (often "none") AND a non-empty Message.
+      - RTdata rows should have EyeTarget AND (optionally) non-null HeadPosAnchored_*.
+    """
+    out = df.copy()
+
+    required = ["Type", "Message", "EyeRight_y"]
+    missing = [c for c in required if c not in out.columns]
+    if missing:
+        raise ValueError(f"drop_malformed_trailing_rows: missing required columns: {missing}")
+
+    pos_cols = ["HeadPosAnchored_x", "HeadPosAnchored_y", "HeadPosAnchored_z"]
+    has_pos = all(c in out.columns for c in pos_cols)
+
+    def _is_blank(v) -> bool:
+        return pd.isna(v) or str(v).strip() == ""
+
+    while len(out):
+        last = out.iloc[-1]
+
+        # missing/blank Type => definitely truncated
+        if _is_blank(last["Type"]):
+            out = out.iloc[:-1]
+            continue
+
+        # # EyeTarget must exist & be non-blank for ALL row types ("none" is OK)
+        # if _is_blank(last["EyeTarget"]):
+        #     out = out.iloc[:-1]
+        #     continue
+
+        t = str(last["Type"]).strip().lower()
+
+        if t == "event":
+            # Event rows must have Message
+            if _is_blank(last["Message"]):
+                out = out.iloc[:-1]
+                continue
+            break
+        elif t == 'rtdata':
+            # RT data rows must have EyeRight_y values
+            if _is_blank(last["EyeRight_y"]):
+                out = out.iloc[:-1]
+                continue
+            break
+
+        # Unknown Type: be conservative and stop (don’t drop)
+        break
+
+    return out

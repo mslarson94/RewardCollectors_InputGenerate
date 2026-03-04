@@ -11,42 +11,9 @@ from RC_utilities.reProcHelpers.helpers_reproc import (
     compute_step_distance, 
     aggregate_total_distance,
     DEFAULT_MAX_TRUE_ROUNDNUM,
+    ensure_or_validate_origRow,
 )
 
-
-def ensure_or_validate_origRow(proc: pd.DataFrame, *, strict_sequential: bool = True) -> pd.DataFrame:
-    """
-    Ensure processed has a canonical origRow key.
-    - If missing: create origRow from file row order (0..n-1)
-    - If present: validate integer-like + unique (+ optionally exactly 0..n-1)
-    """
-    out = proc.copy()
-
-    if "origRow" not in out.columns:
-        out["origRow"] = range(len(out))
-        return out
-
-    out["origRow"] = pd.to_numeric(out["origRow"], errors="raise")
-    bad = out["origRow"].isna() | (out["origRow"] % 1 != 0)
-    if bad.any():
-        raise ValueError(f"processed origRow has {int(bad.sum())} invalid values (NaN or non-integer).")
-
-    out["origRow"] = out["origRow"].astype("int64")
-
-    if out["origRow"].duplicated().any():
-        raise ValueError(f"processed origRow must be unique; found {int(out['origRow'].duplicated().sum())} duplicates.")
-
-    if strict_sequential:
-        n = len(out)
-        mn = int(out["origRow"].min())
-        mx = int(out["origRow"].max())
-        if mn != 0 or mx != n - 1:
-            raise ValueError(f"processed origRow must span 0..{n-1}; found min={mn}, max={mx}.")
-        # Optional stronger check: exact set equality
-        if out["origRow"].nunique() != n:
-            raise ValueError("processed origRow must contain all integers 0..n-1 exactly once.")
-
-    return out
 
 def main():
     ap = argparse.ArgumentParser(description="Augment processed with intervals + elapsed time + stepDist + totDistRound/Block.")

@@ -30,8 +30,8 @@ def parse_args() -> argparse.Namespace:
     p.add_argument("--overwrite", action="store_true", help="Overwrite existing outputs if present.")
 
     p.add_argument("--utility-col", type=str, default="utility", help="Utility column name (default: utility).")
-    p.add_argument("--startpos-col", type=str, default="start_pos", help="Start position column (default: start_pos).")
-    p.add_argument("--order-col", type=str, default="order", help="Path type column (default: order).")
+    p.add_argument("--startpos-col", type=str, default="startPos", help="Start position column (default: start_pos).")
+    p.add_argument("--order-col", type=str, default="path_order_round", help="Path type column (default: order).")
 
     p.add_argument(
         "--require-order-col",
@@ -158,6 +158,7 @@ def main() -> int:
             
             src_path = Path(src)
             coin_set_value = src_path.stem.split("all_orders__layout_", 1)[1]
+            coin_set_value = coin_set_value.split("_")[0]
             print('path:', src_path)
             print('coin_set_value:', coin_set_value)
             df["coinSet"] = coin_set_value

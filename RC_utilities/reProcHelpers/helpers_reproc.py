@@ -189,6 +189,7 @@ class IntervalBuildConfig:
     round_num_col: str = "RoundNum"
     start_time_col: str = "start_AppTime"
     origRow_col: str = "origRow_start"
+    #block_stat_col: str = "BlockStatus"
 
 
 def _coerce_numeric(df: pd.DataFrame, cols: Sequence[str]) -> pd.DataFrame:
@@ -415,9 +416,9 @@ def build_block_intervals(
 
             # define a canonical processed origRow if not present (row number in raw processed file)
             if "origRow" not in proc.columns:
-                proc["origRow"] = np.arange(len(proc), dtype=np.int64)
-            else:
-                proc["origRow"] = pd.to_numeric(proc["origRow"], errors="raise").astype(np.int64)
+                raise ValueError("processed_df missing required origRow (do not auto-create).")
+            proc["origRow"] = pd.to_numeric(proc["origRow"], errors="raise").astype(np.int64)
+
 
             # max AppTime per block for filling missing block_end_AppTime
             pmax_t = (
@@ -639,6 +640,81 @@ def build_round_intervals(
 
     return rounds
 
+import pandas as pd
+import numpy as np
+
+def choose_round_mode(
+    events_df: pd.DataFrame,
+    blocks_df: pd.DataFrame,
+    *,
+    cfg=IntervalBuildConfig(),
+    max_round: int = DEFAULT_MAX_TRUE_ROUNDNUM,
+    logger=None,
+) -> str:
+    """
+    Prefer 'truecontent' unless we detect that it cannot anchor round_end_origRow safely.
+    Falls back to 'roundstartend' when:
+      - TrueContentStart rows exist but blocks are missing block_end_origRow for those (BlockInstance, BlockNum)
+      - OR there are no TrueContentStart rows for true rounds but RoundStart/RoundEnd exist
+    """
+
+    def _log(msg: str) -> None:
+        if logger is None:
+            return
+        if hasattr(logger, "log"):
+            logger.log(msg)
+        elif hasattr(logger, "warning"):
+            logger.warning(msg)
+
+    required_ev_cols = [cfg.block_instance_col, cfg.block_num_col, cfg.round_num_col, cfg.lo_event_col, cfg.origRow_col]
+    for c in required_ev_cols:
+        if c not in events_df.columns:
+            _log(f"choose_round_mode: missing '{c}' in events; using roundstartend")
+            return "roundstartend"
+
+    if "block_end_origRow" not in blocks_df.columns:
+        _log("choose_round_mode: blocks_df missing block_end_origRow; using roundstartend")
+        return "roundstartend"
+
+    ev = events_df.copy()
+    ev[cfg.lo_event_col] = ev[cfg.lo_event_col].astype("string").str.strip()
+    ev[cfg.block_instance_col] = pd.to_numeric(ev[cfg.block_instance_col], errors="coerce")
+    ev[cfg.block_num_col] = pd.to_numeric(ev[cfg.block_num_col], errors="coerce")
+    ev[cfg.round_num_col] = pd.to_numeric(ev[cfg.round_num_col], errors="coerce")
+
+    # TrueContentStart candidates for "true rounds"
+    rs = ev[ev[cfg.lo_event_col] == cfg.truecontent_start_lo].copy()
+    rs = rs[rs[cfg.round_num_col].apply(lambda x: is_true_roundnum(x, max_round=max_round))].copy()
+
+    # If none, but RoundStart/RoundEnd exist, use roundstartend
+    if rs.empty:
+        has_rs = (ev[cfg.lo_event_col] == cfg.round_start_lo).any()
+        has_re = (ev[cfg.lo_event_col] == cfg.round_end_lo).any()
+        if has_rs and has_re:
+            _log("choose_round_mode: no TrueContentStart true rounds; RoundStart/RoundEnd present -> using roundstartend")
+            return "roundstartend"
+        # default: keep truecontent (will likely produce empty rounds, but consistent)
+        _log("choose_round_mode: no TrueContentStart true rounds and no RoundStart/End; defaulting to truecontent")
+        return "truecontent"
+
+    # Build lookup of available block end anchors
+    blocks = blocks_df[[cfg.block_instance_col, cfg.block_num_col, "block_end_origRow"]].copy()
+    blocks[cfg.block_instance_col] = pd.to_numeric(blocks[cfg.block_instance_col], errors="coerce")
+    blocks[cfg.block_num_col] = pd.to_numeric(blocks[cfg.block_num_col], errors="coerce")
+
+    # Check coverage: every (BlockInstance, BlockNum) that appears in TrueContentStart must have block_end_origRow
+    key_cols = [cfg.block_instance_col, cfg.block_num_col]
+    rs_keys = rs[key_cols].dropna().drop_duplicates()
+    merged = rs_keys.merge(blocks, on=key_cols, how="left")
+
+    missing_block_end = merged["block_end_origRow"].isna()
+    if missing_block_end.any():
+        ex = merged.loc[missing_block_end, key_cols].head(10).to_dict("records")
+        _log(f"choose_round_mode: missing block_end_origRow for {int(missing_block_end.sum())} TrueContent blocks; "
+             f"examples={ex}. Using roundstartend.")
+        return "roundstartend"
+
+    return "truecontent"
 
 
 def merge_block_and_round_intervals(
@@ -1177,15 +1253,27 @@ def augment_events_from_reprocessed_v1(
     n = len(reproc)
 
     def _pull(series_idx: pd.Series, col: str) -> pd.Series:
-        idx = series_idx.fillna(-1).astype(int)
-        ok = (idx >= 0) & (idx < n)
-        result = pd.Series(np.nan, index=series_idx.index, dtype="float64")
         if col not in reproc.columns:
-            _log(logger, f"reproc missing column {col}; cannot pull into events")
-            return result
-        vals = pd.to_numeric(reproc[col], errors="coerce")
-        result.loc[ok] = vals.iloc[idx[ok]].to_numpy()
+            raise ValueError(f"reproc_df missing required column for pull: {col}")
+
+        idx = series_idx.dropna().astype("int64")
+
+        # STRICT missing-key check (key absence), not "value is NaN"
+        missing_keys = idx[~idx.isin(reproc.index)]
+        if not missing_keys.empty:
+            mk = missing_keys.to_numpy()
+            raise ValueError(
+                f"Missing {len(mk)} origRow keys in reproc index for column '{col}'. "
+                f"Examples: {mk[:10].tolist()}"
+            )
+
+        # pull values (NaNs allowed)
+        pulled = pd.to_numeric(reproc[col], errors="coerce").reindex(idx)
+
+        result = pd.Series(np.nan, index=series_idx.index, dtype="float64")
+        result.loc[idx.index] = pulled.to_numpy(dtype="float64")
         return result
+
 
     for c in cols:
         out[f"{c}{out_suffix_start}"] = _pull(out[start_col], c)
@@ -1283,20 +1371,23 @@ def augment_events_from_reprocessed(
             raise ValueError(f"reproc_df missing required column for pull: {col}")
 
         idx = series_idx.dropna().astype("int64")
-        pulled = pd.to_numeric(reproc[col], errors="coerce").reindex(idx)
 
-        # hard fail on missing keys
-        missing_mask = pulled.isna()
-        if missing_mask.any():
-            missing_keys = idx.to_numpy()[missing_mask.to_numpy()]
+        # STRICT: key existence check (NOT value isna)
+        missing_keys = idx[~idx.isin(reproc.index)]
+        if not missing_keys.empty:
+            mk = missing_keys.to_numpy()
             raise ValueError(
-                f"Missing {len(missing_keys)} origRow keys in reproc for column '{col}'. "
-                f"Examples: {missing_keys[:10].tolist()}"
+                f"Missing {len(mk)} origRow keys in reproc INDEX for column '{col}'. "
+                f"Examples: {mk[:10].tolist()}"
             )
+
+        # Pull values; NaNs are allowed and expected for some metrics
+        pulled = pd.to_numeric(reproc[col], errors="coerce").reindex(idx)
 
         result = pd.Series(np.nan, index=series_idx.index, dtype="float64")
         result.loc[idx.index] = pulled.to_numpy(dtype="float64")
         return result
+
 
     for c in cols:
         out[f"{c}{out_suffix_start}"] = _pull(out[start_col], c)
@@ -1327,7 +1418,7 @@ def extract_pindrop_moments(
             "chestPin_num",
             "dropDist", "coinLabel", "actualClosestCoinLabel", "actualClosestCoinDist",
             "origRow_start", "origRow_end",
-            "start_AppTime", "end_AppTime",
+            "start_AppTime", "end_AppTime", "dropQual"
         ]
     cols = [c for c in keep_cols if c in pins.columns]
     return pins[cols].copy()
@@ -1387,3 +1478,38 @@ def compute_cumulative_path(
         .reset_index(name=out_path_col)
     )
     return df, paths
+
+
+def ensure_or_validate_origRow(proc: pd.DataFrame, *, strict_sequential: bool = True) -> pd.DataFrame:
+    """
+    Ensure processed has a canonical origRow key.
+    - If missing: create origRow from file row order (0..n-1)
+    - If present: validate integer-like + unique (+ optionally exactly 0..n-1)
+    """
+    out = proc.copy()
+
+    if "origRow" not in out.columns:
+        raise ValueError("processed file missing required origRow column (do not auto-create).")
+
+
+    out["origRow"] = pd.to_numeric(out["origRow"], errors="raise")
+    bad = out["origRow"].isna() | (out["origRow"] % 1 != 0)
+    if bad.any():
+        raise ValueError(f"processed origRow has {int(bad.sum())} invalid values (NaN or non-integer).")
+
+    out["origRow"] = out["origRow"].astype("int64")
+
+    if out["origRow"].duplicated().any():
+        raise ValueError(f"processed origRow must be unique; found {int(out['origRow'].duplicated().sum())} duplicates.")
+
+    if strict_sequential:
+        n = len(out)
+        mn = int(out["origRow"].min())
+        mx = int(out["origRow"].max())
+        if mx - mn != n - 1:
+            raise ValueError("origRow is not contiguous")
+        # Optional stronger check: exact set equality
+        if out["origRow"].nunique() != n:
+            raise ValueError("processed origRow must contain all integers 0..n-1 exactly once.")
+
+    return out

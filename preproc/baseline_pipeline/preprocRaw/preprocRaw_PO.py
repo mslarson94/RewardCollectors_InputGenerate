@@ -16,6 +16,7 @@ from RC_utilities.preprocHelpers.preprocRawHelpers import (
     enhance_timestamp_with_apptime,
     process_obsreward_file,
     check_monotonic_apptime,
+    drop_malformed_trailing_rows,
 )
 ## warning_logger
 from RC_utilities.segHelpers.warning_logger import WarningLogger
@@ -64,8 +65,8 @@ def assign_temporal_intervals_PO(data):
         round_num = 0
         data.at[block_start, "RoundNum"] = round_num  # Initialize block
 
-        current_block = data.at[block_start, "BlockNum"]
-        block_mask = (data.index > block_start) & (data["BlockNum"] == current_block)
+        current_block = data.at[block_start, "BlockInstance"]
+        block_mask = (data.index > block_start) & (data["BlockInstance"] == current_block)
         block_data = data[block_mask]
 
         phase = "waiting"  # start with waiting (looking for reposition)
@@ -77,7 +78,7 @@ def assign_temporal_intervals_PO(data):
                     data.at[idx, "RoundNum"] = 8888
                     phase = "ready"
 
-                elif phase in ["waiting", "ready"] and message.startswith("Started watching other participant's"):
+                elif phase in ["waiting", "ready"] and message.startswith("Started watching other participant"):
                     round_num = 1
                     data.at[idx, "RoundNum"] = round_num
                     phase = "rounds"
@@ -91,6 +92,69 @@ def assign_temporal_intervals_PO(data):
                     break  # end of this block
 
     return data
+
+
+def assign_temporal_intervals_PO_v1(data: pd.DataFrame) -> pd.DataFrame:
+    data = data.copy()
+    data["RoundNum"] = np.nan
+
+    block_starts = data.index[data["Message"] == "Mark should happen if checked on terminal."].tolist()
+
+    for block_start in block_starts:
+        # find the block number that this mark belongs to (first non-null BlockNum after mark)
+        after = data.loc[block_start + 1 :, "BlockNum"]
+        first_blocknum_idx = after.first_valid_index()
+        if first_blocknum_idx is None:
+            continue
+        current_block = data.at[first_blocknum_idx, "BlockNum"]
+
+        # define block rows as everything after mark with that BlockNum
+        block_mask = (data.index > block_start) & (data["BlockNum"] == current_block)
+        block_idx = data.index[block_mask]
+
+        # initialize
+        round_num = 0
+        data.at[block_start, "RoundNum"] = 0
+
+        phase = "waiting"
+        pending_after_reposition = False
+
+        for idx in block_idx:
+            msg = data.at[idx, "Message"]
+            if not isinstance(msg, str):
+                continue
+
+            if phase == "waiting" and "Repositioned and ready to start block or round" in msg:
+                data.at[idx, "RoundNum"] = 8888
+                phase = "ready"
+
+            elif phase in ("waiting", "ready") and msg.startswith("Started watching other participant"):
+                round_num = 1
+                data.at[idx, "RoundNum"] = round_num
+                phase = "rounds"
+                pending_after_reposition = False
+
+            elif phase == "rounds" and "Repositioned and ready to start block or round" in msg:
+                data.at[idx, "RoundNum"] = 8888
+                pending_after_reposition = True
+
+            elif phase == "rounds" and pending_after_reposition and msg.startswith("Other participant just dropped"):
+                round_num += 1
+                data.at[idx, "RoundNum"] = round_num
+                pending_after_reposition = False
+
+            elif "Finished watching other participant's" in msg:
+                data.at[idx, "RoundNum"] = 9999
+                break
+
+        # Fill within this block only, but don't smear 8888/9999
+        block_vals = data.loc[block_idx, "RoundNum"]
+        sent_mask = block_vals.isin([8888, 9999])
+        filled = block_vals.mask(sent_mask).ffill()
+        data.loc[block_idx, "RoundNum"] = filled.where(~sent_mask, block_vals)
+
+    return data
+
 
 def augment_with_chestpin_and_totalrounds_PO(data):
     data["chestPin_num"] = np.nan
@@ -165,6 +229,9 @@ def clean_and_process_files(root_directory, magic_leap_data, save_large_files=Tr
 
                 data = correct_extraColumns(file_path, nestedPath, save_large_files, max_memory_mb)
                 # ✅ Track original row index before any manipulation
+                # make index 0..n-1 so helper functions that use .at[idx] work correctly
+                data = data.reset_index(drop=True)
+
                 data["origRow"] = data.index
 
                 # ✅ Continue processing
@@ -181,6 +248,9 @@ def clean_and_process_files(root_directory, magic_leap_data, save_large_files=Tr
                 # Reorder columns
                 data = data[final_column_order]
                 check_monotonic_apptime(data, col="AppTime", context="preprocRaw_PO.py", logger=logger)
+
+                data = drop_malformed_trailing_rows(data)
+
                 data.to_csv(nestedFile, index=False)
                 data.to_csv(flatFile, index=False)
                 print(f"Processed and saved: {nestedFile}")

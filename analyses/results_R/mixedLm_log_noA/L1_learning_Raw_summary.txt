@@ -1,0 +1,41 @@
+Linear mixed model fit by maximum likelihood . t-tests use Satterthwaite's method ['lmerModLmerTest']
+Formula: log_roundElapsed_s ~ coinLabel + t_early_20 + t_late_20 + coinSet +      (1 | participantID)
+   Data: model_df2_noA
+
+     AIC      BIC   logLik deviance df.resid 
+  5617.8   5680.2  -2797.9   5595.8     2144 
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-4.4899 -0.2933  0.1196  0.5237  4.2407 
+
+Random effects:
+ Groups        Name        Variance Std.Dev.
+ participantID (Intercept) 0.1674   0.4091  
+ Residual                  0.7676   0.8761  
+Number of obs: 2155, groups:  participantID, 16
+
+Fixed effects:
+              Estimate Std. Error         df t value Pr(>|t|)    
+(Intercept)  2.116e+00  1.763e-01  2.281e+01  11.998 2.48e-11 ***
+coinLabelLV  6.087e-01  4.629e-02  2.138e+03  13.149  < 2e-16 ***
+coinLabelNV  1.173e+00  4.621e-02  2.138e+03  25.390  < 2e-16 ***
+t_early_20  -1.170e-02  3.503e-03  2.125e+03  -3.341 0.000849 ***
+t_late_20   -6.140e-04  1.442e-03  2.155e+03  -0.426 0.670411    
+coinSetB    -1.910e-01  2.278e-01  1.773e+01  -0.838 0.413062    
+coinSetBx    6.120e-02  1.925e-01  9.277e+01   0.318 0.751228    
+coinSetC    -1.644e-01  2.321e-01  1.898e+01  -0.708 0.487504    
+coinSetD    -5.013e-02  2.344e-01  1.960e+01  -0.214 0.832860    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Correlation of Fixed Effects:
+            (Intr) cnLbLV cnLbNV t_r_20 t_l_20 conStB cnStBx conStC
+coinLabelLV -0.129                                                 
+coinLabelNV -0.130  0.501                                          
+t_early_20  -0.289  0.001  0.005                                   
+t_late_20    0.014  0.001 -0.001 -0.405                            
+coinSetB    -0.712 -0.002 -0.002  0.080  0.026                     
+coinSetBx   -0.453 -0.005 -0.005  0.107  0.049  0.334              
+coinSetC    -0.688 -0.003 -0.003  0.044  0.030  0.929  0.323       
+coinSetD    -0.679 -0.002 -0.002  0.034  0.033  0.907  0.319  0.930

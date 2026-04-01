@@ -1,0 +1,37 @@
+
+Call:
+lm(formula = roundElapsed_s ~ coinLabel * TotSesh_runTot_RoundNum * 
+    recentSwapRate_all + main_RR + coinSet + isSwap, data = model_df)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-32.558  -8.793  -1.161   5.365 254.994 
+
+Coefficients:
+                                                        Estimate Std. Error t value Pr(>|t|)    
+(Intercept)                                             22.58452    1.32346  17.065  < 2e-16 ***
+coinLabelLV                                             -0.55890    1.63290  -0.342 0.732172    
+coinLabelNV                                             13.10874    1.62170   8.083 9.28e-16 ***
+TotSesh_runTot_RoundNum                                 -0.05311    0.03876  -1.370 0.170728    
+recentSwapRate_all                                     -34.44777   10.14213  -3.397 0.000692 ***
+main_RRRR                                               -2.91467    1.06541  -2.736 0.006264 ** 
+coinSetAx                                               -4.60018    0.99786  -4.610 4.21e-06 ***
+coinSetB                                                -5.54788    1.03972  -5.336 1.03e-07 ***
+coinSetBx                                               -1.23023    1.12873  -1.090 0.275841    
+coinSetC                                                -3.61926    1.20250  -3.010 0.002638 ** 
+coinSetD                                                -0.79404    1.19490  -0.665 0.506406    
+isSwap1                                                 -1.01169    1.08989  -0.928 0.353359    
+coinLabelLV:TotSesh_runTot_RoundNum                      0.01478    0.05278   0.280 0.779493    
+coinLabelNV:TotSesh_runTot_RoundNum                     -0.03637    0.05192  -0.700 0.483683    
+coinLabelLV:recentSwapRate_all                          21.29089   13.89094   1.533 0.125458    
+coinLabelNV:recentSwapRate_all                          30.23616   14.06548   2.150 0.031667 *  
+TotSesh_runTot_RoundNum:recentSwapRate_all               0.51002    0.26717   1.909 0.056372 .  
+coinLabelLV:TotSesh_runTot_RoundNum:recentSwapRate_all  -0.39097    0.36694  -1.065 0.286749    
+coinLabelNV:TotSesh_runTot_RoundNum:recentSwapRate_all  -0.52288    0.37370  -1.399 0.161864    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 17.07 on 2796 degrees of freedom
+Multiple R-squared:  0.1381,	Adjusted R-squared:  0.1325 
+F-statistic: 24.89 on 18 and 2796 DF,  p-value: < 2.2e-16
+

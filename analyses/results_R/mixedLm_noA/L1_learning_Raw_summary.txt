@@ -1,0 +1,41 @@
+Linear mixed model fit by maximum likelihood . t-tests use Satterthwaite's method ['lmerModLmerTest']
+Formula: roundElapsed_s ~ coinLabel + t_early_20 + t_late_20 + coinSet +      (1 | participantID)
+   Data: model_df_noA
+
+     AIC      BIC   logLik deviance df.resid 
+ 17457.1  17519.5  -8717.5  17435.1     2144 
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-2.5634 -0.4651  0.0065  0.3007 18.8369 
+
+Random effects:
+ Groups        Name        Variance Std.Dev.
+ participantID (Intercept)  22.59    4.753  
+ Residual                  187.42   13.690  
+Number of obs: 2155, groups:  participantID, 16
+
+Fixed effects:
+              Estimate Std. Error         df t value Pr(>|t|)    
+(Intercept)   17.03398    2.22666   24.52427   7.650 5.98e-08 ***
+coinLabelLV    4.25179    0.72333 2137.42100   5.878 4.80e-09 ***
+coinLabelNV   16.09488    0.72209 2137.41417  22.289  < 2e-16 ***
+t_early_20    -0.29522    0.05445 2089.36646  -5.421 6.60e-08 ***
+t_late_20     -0.01582    0.02247 2136.08791  -0.704    0.482    
+coinSetB      -3.54525    2.78662   18.09888  -1.272    0.219    
+coinSetBx      0.56856    2.65108   50.14876   0.214    0.831    
+coinSetC      -2.23966    2.86794   19.94967  -0.781    0.444    
+coinSetD       3.45715    2.90805   20.71652   1.189    0.248    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Correlation of Fixed Effects:
+            (Intr) cnLbLV cnLbNV t_r_20 t_l_20 conStB cnStBx conStC
+coinLabelLV -0.160                                                 
+coinLabelNV -0.162  0.501                                          
+t_early_20  -0.339  0.001  0.006                                   
+t_late_20    0.016  0.001 -0.001 -0.410                            
+coinSetB    -0.704 -0.002 -0.002  0.086  0.035                     
+coinSetBx   -0.495 -0.005 -0.005  0.083  0.057  0.377              
+coinSetC    -0.668 -0.003 -0.003  0.040  0.041  0.888  0.362       
+coinSetD    -0.655 -0.002 -0.002  0.028  0.044  0.856  0.356  0.890

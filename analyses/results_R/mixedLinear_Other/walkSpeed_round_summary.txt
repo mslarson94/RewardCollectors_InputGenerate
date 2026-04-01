@@ -1,0 +1,65 @@
+Linear mixed model fit by maximum likelihood . t-tests use Satterthwaite's method ['lmerModLmerTest']
+Formula: WalkAvgSpeed ~ coinLabel * TotSesh_runTot_RoundNum * path_order_round_num +      recentSwapRate_all + path_eff_raw + main_RR + coinSet + (1 |      participantID)
+   Data: model_df
+
+     AIC      BIC   logLik deviance df.resid 
+  -838.6   -565.4    465.3   -930.6     2758 
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-3.7577 -0.5967 -0.0489  0.6015  5.7807 
+
+Random effects:
+ Groups        Name        Variance Std.Dev.
+ participantID (Intercept) 0.02842  0.1686  
+ Residual                  0.04077  0.2019  
+Number of obs: 2804, groups:  participantID, 19
+
+Fixed effects:
+                                                            Estimate Std. Error         df t value Pr(>|t|)    
+(Intercept)                                                3.584e-01  6.570e-02  5.006e+01   5.455 1.52e-06 ***
+coinLabelHV                                                2.708e-01  5.120e-02  2.785e+03   5.288 1.33e-07 ***
+coinLabelNV                                                2.391e-01  5.120e-02  2.785e+03   4.669 3.17e-06 ***
+TotSesh_runTot_RoundNum                                    1.815e-03  1.068e-03  2.788e+03   1.699  0.08938 .  
+path_order_round_num1                                      2.274e-01  4.187e-02  2.798e+03   5.430 6.13e-08 ***
+path_order_round_num2                                      7.847e-02  4.692e-02  2.798e+03   1.673  0.09451 .  
+path_order_round_num3                                      3.340e-01  8.062e-02  2.788e+03   4.142 3.54e-05 ***
+path_order_round_num4                                     -7.036e-03  9.446e-02  2.788e+03  -0.074  0.94063    
+path_order_round_num5                                      1.754e-01  5.526e-02  2.793e+03   3.174  0.00152 ** 
+recentSwapRate_all                                         5.485e-02  4.513e-02  2.797e+03   1.215  0.22434    
+path_eff_raw                                               6.508e-02  3.652e-02  2.801e+03   1.782  0.07485 .  
+main_RRRR                                                  3.323e-03  1.509e-02  2.746e+03   0.220  0.82578    
+coinSetAx                                                 -3.206e-04  8.213e-02  2.133e+01  -0.004  0.99692    
+coinSetB                                                  -5.133e-02  1.920e-02  2.787e+03  -2.674  0.00755 ** 
+coinSetBx                                                  4.857e-02  8.566e-02  2.433e+01   0.567  0.57596    
+coinSetC                                                  -1.341e-01  2.013e-02  2.802e+03  -6.661 3.26e-11 ***
+coinSetD                                                  -1.767e-01  1.821e-02  2.804e+03  -9.700  < 2e-16 ***
+coinLabelHV:TotSesh_runTot_RoundNum                        4.279e-05  1.461e-03  2.785e+03   0.029  0.97663    
+coinLabelNV:TotSesh_runTot_RoundNum                       -1.393e-03  1.461e-03  2.785e+03  -0.954  0.34028    
+coinLabelHV:path_order_round_num1                         -4.533e-01  5.500e-02  2.785e+03  -8.242 2.57e-16 ***
+coinLabelNV:path_order_round_num1                         -1.387e-01  5.495e-02  2.785e+03  -2.525  0.01164 *  
+coinLabelHV:path_order_round_num2                         -1.276e-01  6.135e-02  2.785e+03  -2.079  0.03768 *  
+coinLabelNV:path_order_round_num2                         -5.134e-02  6.135e-02  2.785e+03  -0.837  0.40279    
+coinLabelHV:path_order_round_num3                         -3.430e-01  1.117e-01  2.785e+03  -3.071  0.00216 ** 
+coinLabelNV:path_order_round_num3                         -6.776e-01  1.117e-01  2.785e+03  -6.066 1.49e-09 ***
+coinLabelHV:path_order_round_num4                         -3.480e-01  1.312e-01  2.785e+03  -2.652  0.00805 ** 
+coinLabelNV:path_order_round_num4                         -7.867e-03  1.312e-01  2.785e+03  -0.060  0.95220    
+coinLabelHV:path_order_round_num5                         -1.340e-01  7.513e-02  2.785e+03  -1.784  0.07450 .  
+coinLabelNV:path_order_round_num5                         -5.640e-01  7.623e-02  2.785e+03  -7.399 1.80e-13 ***
+TotSesh_runTot_RoundNum:path_order_round_num1             -1.723e-03  1.129e-03  2.788e+03  -1.526  0.12701    
+TotSesh_runTot_RoundNum:path_order_round_num2              2.463e-04  1.258e-03  2.787e+03   0.196  0.84474    
+TotSesh_runTot_RoundNum:path_order_round_num3             -8.920e-04  1.599e-03  2.785e+03  -0.558  0.57700    
+TotSesh_runTot_RoundNum:path_order_round_num4              6.448e-03  4.670e-03  2.786e+03   1.381  0.16744    
+TotSesh_runTot_RoundNum:path_order_round_num5             -7.776e-04  1.682e-03  2.786e+03  -0.462  0.64399    
+coinLabelHV:TotSesh_runTot_RoundNum:path_order_round_num1  2.982e-03  1.568e-03  2.785e+03   1.902  0.05732 .  
+coinLabelNV:TotSesh_runTot_RoundNum:path_order_round_num1  2.528e-03  1.567e-03  2.785e+03   1.613  0.10680    
+coinLabelHV:TotSesh_runTot_RoundNum:path_order_round_num2 -1.492e-03  1.748e-03  2.785e+03  -0.853  0.39352    
+coinLabelNV:TotSesh_runTot_RoundNum:path_order_round_num2  1.216e-03  1.748e-03  2.785e+03   0.696  0.48676    
+coinLabelHV:TotSesh_runTot_RoundNum:path_order_round_num3 -3.288e-04  2.244e-03  2.785e+03  -0.147  0.88351    
+coinLabelNV:TotSesh_runTot_RoundNum:path_order_round_num3  3.190e-03  2.244e-03  2.785e+03   1.422  0.15516    
+coinLabelHV:TotSesh_runTot_RoundNum:path_order_round_num4 -1.257e-02  6.558e-03  2.785e+03  -1.916  0.05543 .  
+coinLabelNV:TotSesh_runTot_RoundNum:path_order_round_num4 -2.755e-03  6.558e-03  2.785e+03  -0.420  0.67448    
+coinLabelHV:TotSesh_runTot_RoundNum:path_order_round_num5 -3.935e-04  2.331e-03  2.785e+03  -0.169  0.86595    
+coinLabelNV:TotSesh_runTot_RoundNum:path_order_round_num5  2.723e-03  2.351e-03  2.785e+03   1.158  0.24706    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1

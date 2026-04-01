@@ -1,0 +1,46 @@
+Linear mixed model fit by maximum likelihood . t-tests use Satterthwaite's method ['lmerModLmerTest']
+Formula: path_eff_raw ~ path_order_round_num * (t_early_20 + t_late_20) +      recentSwapRate_all + main_RR + coinSet + (1 | participantID)
+   Data: df_pe
+
+     AIC      BIC   logLik deviance df.resid 
+ -3112.5  -2962.9   1583.2  -3166.5     1851 
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-4.9745 -0.5542 -0.0044  0.5549  3.6750 
+
+Random effects:
+ Groups        Name        Variance Std.Dev.
+ participantID (Intercept) 0.00972  0.09859 
+ Residual                  0.01038  0.10188 
+Number of obs: 1878, groups:  participantID, 19
+
+Fixed effects:
+                                   Estimate Std. Error         df t value Pr(>|t|)    
+(Intercept)                       3.438e-01  3.181e-02  2.365e+01  10.808 1.25e-10 ***
+path_order_round_num1             1.398e-02  1.731e-02  1.868e+03   0.808 0.419200    
+path_order_round_num2             7.201e-02  1.186e-02  1.870e+03   6.072 1.53e-09 ***
+path_order_round_num3             6.253e-02  1.472e-02  1.864e+03   4.248 2.26e-05 ***
+path_order_round_num4            -1.381e-02  3.461e-02  1.861e+03  -0.399 0.689901    
+path_order_round_num5            -1.139e-01  2.423e-02  1.863e+03  -4.701 2.78e-06 ***
+t_early_20                        7.498e-03  8.637e-04  1.862e+03   8.681  < 2e-16 ***
+t_late_20                        -2.678e-03  1.802e-03  1.862e+03  -1.486 0.137377    
+recentSwapRate_all                1.592e-01  2.825e-02  1.867e+03   5.635 2.02e-08 ***
+main_RRRR                         5.666e-02  9.854e-03  1.858e+03   5.750 1.04e-08 ***
+coinSetAx                         2.310e-03  4.822e-02  2.157e+01   0.048 0.962235    
+coinSetB                         -1.411e-02  1.183e-02  1.874e+03  -1.193 0.233207    
+coinSetBx                         1.704e-04  5.029e-02  2.457e+01   0.003 0.997325    
+coinSetC                          5.864e-02  1.227e-02  1.878e+03   4.777 1.92e-06 ***
+coinSetD                          4.107e-02  1.125e-02  1.876e+03   3.652 0.000267 ***
+path_order_round_num1:t_early_20 -1.147e-03  1.348e-03  1.861e+03  -0.850 0.395160    
+path_order_round_num2:t_early_20 -3.284e-03  9.611e-04  1.867e+03  -3.417 0.000647 ***
+path_order_round_num3:t_early_20 -1.632e-03  1.129e-03  1.863e+03  -1.445 0.148540    
+path_order_round_num4:t_early_20 -2.210e-03  2.287e-03  1.862e+03  -0.966 0.334176    
+path_order_round_num5:t_early_20  8.316e-03  3.036e-03  1.863e+03   2.739 0.006216 ** 
+path_order_round_num1:t_late_20   3.147e-03  1.851e-03  1.863e+03   1.700 0.089283 .  
+path_order_round_num2:t_late_20   2.585e-03  1.807e-03  1.862e+03   1.431 0.152717    
+path_order_round_num3:t_late_20   1.763e-03  1.814e-03  1.861e+03   0.972 0.331198    
+path_order_round_num4:t_late_20   3.559e-03  1.863e-03  1.862e+03   1.911 0.056176 .  
+path_order_round_num5:t_late_20  -1.346e-02  8.927e-03  1.862e+03  -1.508 0.131653    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1

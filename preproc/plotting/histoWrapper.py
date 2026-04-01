@@ -114,7 +114,7 @@ def run_suite_for_file(
     outlier_sigma: float = 2.0,
     outlier_ddof: int = 1,
     outlier_keep_na: bool = False,
-    filter_columns: Iterable[str] = ("truecontent_elapsed_s", "dropDist"),
+    filter_columns: Iterable[str] = ("truecontent_elapsed_s", "dropDist", "path_eff_raw", "roundElapsed_s", "roundFrac", "WalkAvgSpeed", "WalkAvgSpeed_Adj", ),
     groupby: str | list[str] | None = None,
     group_subdirs: bool = True,
     formats: Iterable[str] = ("png", "pdf"),

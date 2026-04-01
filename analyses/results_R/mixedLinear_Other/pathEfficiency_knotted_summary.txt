@@ -1,0 +1,36 @@
+Linear mixed model fit by maximum likelihood . t-tests use Satterthwaite's method ['lmerModLmerTest']
+Formula: path_eff_raw ~ path_order_round_num + t_early_20 + t_late_20 +      recentSwapRate_all + main_RR + coinSet + (1 | participantID)
+   Data: df_pe
+
+     AIC      BIC   logLik deviance df.resid 
+ -3104.8  -3010.7   1569.4  -3138.8     1861 
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-4.8595 -0.5358 -0.0019  0.5493  3.5950 
+
+Random effects:
+ Groups        Name        Variance Std.Dev.
+ participantID (Intercept) 0.009648 0.09823 
+ Residual                  0.010536 0.10264 
+Number of obs: 1878, groups:  participantID, 19
+
+Fixed effects:
+                        Estimate Std. Error         df t value Pr(>|t|)    
+(Intercept)            3.796e-01  3.203e-02  2.448e+01  11.851 1.24e-11 ***
+path_order_round_num1  2.328e-02  1.093e-02  1.878e+03   2.130 0.033264 *  
+path_order_round_num2  2.545e-02  1.220e-02  1.878e+03   2.086 0.037114 *  
+path_order_round_num3 -2.055e-02  1.692e-02  1.870e+03  -1.215 0.224557    
+path_order_round_num4 -8.782e-02  2.137e-02  1.870e+03  -4.110 4.12e-05 ***
+path_order_round_num5 -2.803e-02  1.322e-02  1.876e+03  -2.121 0.034091 *  
+t_early_20             5.360e-03  5.010e-04  1.868e+03  10.699  < 2e-16 ***
+t_late_20             -1.443e-04  2.025e-04  1.870e+03  -0.712 0.476267    
+recentSwapRate_all     1.543e-01  2.814e-02  1.867e+03   5.483 4.76e-08 ***
+main_RRRR              5.741e-02  9.749e-03  1.855e+03   5.890 4.59e-09 ***
+coinSetAx             -6.138e-03  4.802e-02  2.144e+01  -0.128 0.899484    
+coinSetB              -1.544e-02  1.177e-02  1.874e+03  -1.312 0.189808    
+coinSetBx              2.535e-03  5.014e-02  2.450e+01   0.051 0.960097    
+coinSetC               6.006e-02  1.231e-02  1.878e+03   4.879 1.16e-06 ***
+coinSetD               4.037e-02  1.121e-02  1.877e+03   3.600 0.000327 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1

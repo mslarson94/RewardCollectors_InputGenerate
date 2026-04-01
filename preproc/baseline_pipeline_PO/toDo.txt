@@ -1,0 +1,16 @@
+remove mLT_ANs 	- done
+eventSeg is miscalculating AppTime
+ 	- for AN it's because we are pulling AppTime in a weird way I think See line 264 in schwannCellsAN
+MergeWalks apparently deletes start_MLT & end_MLT - I think done 
+fix batch_fill_logged_event_positions - I think done. 
+eventSeg isn't saving metas to a flat dir - done 
+
+python preFrontalCortex_unifiedEventSeg.py
+python alignPO2AN_part1.py
+python preFrontalCortex_unifiedEventSeg.py
+
+python flattenAndLabel.py
+python computeWalks.py
+python mergeWalks.py
+
+what is happening with the extract_pin_drops script 

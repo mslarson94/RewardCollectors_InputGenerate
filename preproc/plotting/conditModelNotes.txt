@@ -1,0 +1,8 @@
+Across all layouts, models that allowed value and distance sensitivity to vary by coin layout fit much better than layout-agnostic models, indicating that decision policy differed across layouts. Follow-up analyses suggested that Coin Set A may be behaviorally distinct. Within Coin Set A, both the fixed-utility model and the separate value+distance model outperformed value-only and distance-only models and performed nearly equivalently, consistent with relatively coherent integration of reward and path cost. In contrast, after excluding Coin Set A, alternative identity remained the dominant predictor of choice, and attribute-based models were comparatively less successful, suggesting stronger route-specific preferences or additional layout-dependent structure not captured by the current predictors.
+
+
+
+Across spline knots at 15, 20, and 25 rounds, the same pattern emerged: value sensitivity increased during the early learning segment, whereas distance sensitivity strengthened during the later segment.
+
+conditional logistic regression -> compares alternatives w/i rounds rather than treating each round as an independent yes/no event
+

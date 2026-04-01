@@ -1,0 +1,38 @@
+Linear mixed model fit by maximum likelihood . t-tests use Satterthwaite's method ['lmerModLmerTest']
+Formula: roundFrac ~ coinLabel * t_early_20 * t_late_20 + recentSwapRate_all +      coinSet + (1 | participantID)
+   Data: model_df
+
+     AIC      BIC   logLik deviance df.resid 
+  -663.9   -562.9    349.0   -697.9     2798 
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-2.7232 -0.8315  0.2051  0.6593  3.5906 
+
+Random effects:
+ Groups        Name        Variance Std.Dev.
+ participantID (Intercept) 0.001626 0.04032 
+ Residual                  0.045168 0.21253 
+Number of obs: 2815, groups:  participantID, 19
+
+Fixed effects:
+                         Estimate Std. Error         df t value Pr(>|t|)    
+(Intercept)             2.780e-01  2.210e-02  1.100e+02  12.578  < 2e-16 ***
+coinLabelLV             1.989e-02  2.340e-02  2.795e+03   0.850  0.39548    
+coinLabelNV             2.269e-01  2.339e-02  2.795e+03   9.698  < 2e-16 ***
+t_early_20             -2.570e-03  1.240e-03  2.815e+03  -2.073  0.03829 *  
+t_late_20               3.437e-04  5.114e-04  2.753e+03   0.672  0.50155    
+recentSwapRate_all      1.374e-01  4.720e-02  2.725e+03   2.911  0.00363 ** 
+coinSetAx               5.275e-04  2.545e-02  2.404e+01   0.021  0.98363    
+coinSetB               -1.543e-03  1.774e-02  5.317e+02  -0.087  0.93074    
+coinSetBx               5.082e-02  2.860e-02  2.412e+01   1.777  0.08820 .  
+coinSetC                1.987e-02  1.898e-02  9.110e+02   1.047  0.29551    
+coinSetD                3.723e-02  1.734e-02  1.574e+03   2.147  0.03193 *  
+coinLabelLV:t_early_20  1.471e-03  1.681e-03  2.795e+03   0.875  0.38145    
+coinLabelNV:t_early_20  5.253e-03  1.680e-03  2.795e+03   3.127  0.00178 ** 
+coinLabelLV:t_late_20   5.237e-04  6.752e-04  2.794e+03   0.776  0.43804    
+coinLabelNV:t_late_20  -9.478e-04  6.741e-04  2.794e+03  -1.406  0.15985    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+fit warnings:
+fixed-effect model matrix is rank deficient so dropping 3 columns / coefficients

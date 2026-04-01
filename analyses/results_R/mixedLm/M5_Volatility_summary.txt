@@ -1,0 +1,41 @@
+Linear mixed model fit by maximum likelihood . t-tests use Satterthwaite's method ['lmerModLmerTest']
+Formula: roundElapsed_s ~ coinLabel + recentSwapRate_all + coinSet + (1 |      participantID)
+   Data: model_df
+
+     AIC      BIC   logLik deviance df.resid 
+ 23853.7  23919.0 -11915.8  23831.7     2804 
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-2.0959 -0.5469  0.0117  0.2746 15.3601 
+
+Random effects:
+ Groups        Name        Variance Std.Dev.
+ participantID (Intercept)  26.54    5.152  
+ Residual                  273.36   16.534  
+Number of obs: 2815, groups:  participantID, 19
+
+Fixed effects:
+                    Estimate Std. Error        df t value Pr(>|t|)    
+(Intercept)          19.3318     1.8079   26.0599  10.693 5.02e-11 ***
+coinLabelLV           0.7584     0.7638 2794.5830   0.993   0.3208    
+coinLabelNV          13.2569     0.7635 2794.5576  17.363  < 2e-16 ***
+recentSwapRate_all   -8.0375     3.3878 2769.5577  -2.372   0.0177 *  
+coinSetAx            -4.7271     2.8370   22.6263  -1.666   0.1095    
+coinSetB             -3.5845     1.4496 1563.7411  -2.473   0.0135 *  
+coinSetBx            -2.0183     3.1763   25.7374  -0.635   0.5308    
+coinSetC             -3.2741     1.5284 2084.7450  -2.142   0.0323 *  
+coinSetD              1.2493     1.3779 2516.7891   0.907   0.3646    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Correlation of Fixed Effects:
+            (Intr) cnLbLV cnLbNV rcnSR_ cnStAx conStB cnStBx conStC
+coinLabelLV -0.209                                                 
+coinLabelNV -0.210  0.501                                          
+rcntSwpRt_l -0.174 -0.019  0.000                                   
+coinSetAx   -0.584  0.002  0.001  0.019                            
+coinSetB    -0.292  0.000 -0.005  0.016  0.185                     
+coinSetBx   -0.526 -0.003 -0.003  0.050  0.503  0.166              
+coinSetC    -0.222  0.000 -0.006 -0.086  0.150  0.470  0.131       
+coinSetD    -0.196  0.001 -0.003 -0.026  0.127  0.334  0.113  0.425

@@ -1,9 +1,612 @@
-HV: (2.5, 1.49), LV: (-1.51, 2.71), NV: (-1.4, -2.67),
+/Users/mairahmac/opt/anaconda3/envs/RewardCollectors/lib/python3.10/site-packages/statsmodels/regression/mixed_linear_model.py:1634: UserWarning: Random effects covariance is singular
+  warnings.warn(msg)
+/Users/mairahmac/opt/anaconda3/envs/RewardCollectors/lib/python3.10/site-packages/statsmodels/regression/mixed_linear_model.py:2054: UserWarning: The random effects covariance matrix is singular.
+  warnings.warn(_warn_cov_sing)
+/Users/mairahmac/opt/anaconda3/envs/RewardCollectors/lib/python3.10/site-packages/statsmodels/regression/mixed_linear_model.py:2237: ConvergenceWarning: The MLE may be on the boundary of the parameter space.
+  warnings.warn(msg, ConvergenceWarning)
+/Users/mairahmac/opt/anaconda3/envs/RewardCollectors/lib/python3.10/site-packages/statsmodels/regression/mixed_linear_model.py:2245: UserWarning: The random effects covariance matrix is singular.
+  warnings.warn(_warn_cov_sing)
+/Users/mairahmac/opt/anaconda3/envs/RewardCollectors/lib/python3.10/site-packages/statsmodels/regression/mixed_linear_model.py:2261: ConvergenceWarning: The Hessian matrix at the estimated parameter values is not positive definite.
+  warnings.warn(msg, ConvergenceWarning)
+/Users/mairahmac/opt/anaconda3/envs/RewardCollectors/lib/python3.10/site-packages/statsmodels/base/model.py:1894: ValueWarning: covariance of constraints does not have full rank. The number of constraints is 18, but rank is 15
+  warnings.warn('covariance of constraints does not have full '
+coinSet
+Ax    723
+A     654
+B     485
+Bx    360
+D     298
+C     295
+Name: count, dtype: int64
+coinLabel
+NV    942
+LV    940
+HV    933
+Name: count, dtype: int64
+isSwap
+0    2515
+1     300
+Name: count, dtype: int64
+main_RR
+main    2474
+RR       341
+Name: count, dtype: int64
+2815
 
 
-HV: (1.36, -3.04), LV: (-3.76, -0.1), NV: (-0.57, 2.4)
 
 
-(0.0, 5.0), (3.5, 3.5), (5.0, 0.0), (3.5, -3.5), (0.0, -5.0), (-3.5, -3.5), (-5.0, 0.0), (-3.5, 3.5),
 
-potential to push for my stuff to be rebuilt as a foundation for Yino's stuff (multimodal collaboration)
+
+mixedlm: roundElapsed_s ~ coinLabel*TotSesh_runTot_RoundNum*recentSwapRate_all + main_RR +  coinSet + isSwap
+
+
+
+                                          Mixed Linear Model Regression Results
+==========================================================================================================================
+Model:                                  MixedLM                     Dependent Variable:                     roundElapsed_s
+No. Observations:                       2161                        Method:                                 ML            
+No. Groups:                             16                          Scale:                                  184.2642      
+Min. group size:                        12                          Log-Likelihood:                         inf           
+Max. group size:                        312                         Converged:                              Yes           
+Mean group size:                        135.1                                                                             
+--------------------------------------------------------------------------------------------------------------------------
+                                                            Coef.     Std.Err.     z    P>|z|     [0.025         0.975]   
+--------------------------------------------------------------------------------------------------------------------------
+Intercept                                                   -0.000 122758446.649 -0.000 1.000 -240602134.229 240602134.229
+coinLabel[T.LV]                                              3.023         1.444  2.094 0.036          0.193         5.853
+coinLabel[T.NV]                                             16.366         1.430 11.443 0.000         13.563        19.170
+main_RR[T.main]                                              0.522         1.282  0.407 0.684         -1.992         3.035
+coinSet[T.Ax]                                                1.284 103784438.683  0.000 1.000 -203413760.691 203413763.259
+coinSet[T.B]                                                -2.506  32330673.011 -0.000 1.000  -63366957.204  63366952.192
+coinSet[T.Bx]                                               -1.284 103784438.683 -0.000 1.000 -203413763.259 203413760.691
+coinSet[T.C]                                                -1.425  32330673.011 -0.000 1.000  -63366956.123  63366953.273
+coinSet[T.D]                                                 3.931  32330673.011  0.000 1.000  -63366950.767  63366958.629
+isSwap[T.1]                                                 -0.653         0.996 -0.656 0.512         -2.605         1.299
+TotSesh_runTot_RoundNum                                     -0.078         0.034 -2.263 0.024         -0.146        -0.010
+coinLabel[T.LV]:TotSesh_runTot_RoundNum                     -0.002         0.045 -0.049 0.961         -0.091         0.087
+coinLabel[T.NV]:TotSesh_runTot_RoundNum                     -0.057         0.045 -1.290 0.197         -0.145         0.030
+recentSwapRate_all                                         -39.708         9.235 -4.300 0.000        -57.809       -21.607
+coinLabel[T.LV]:recentSwapRate_all                          41.597        12.349  3.368 0.001         17.394        65.800
+coinLabel[T.NV]:recentSwapRate_all                          50.998        12.494  4.082 0.000         26.510        75.486
+TotSesh_runTot_RoundNum:recentSwapRate_all                   0.808         0.232  3.491 0.000          0.354         1.262
+coinLabel[T.LV]:TotSesh_runTot_RoundNum:recentSwapRate_all  -0.832         0.313 -2.660 0.008         -1.446        -0.219
+coinLabel[T.NV]:TotSesh_runTot_RoundNum:recentSwapRate_all  -1.076         0.319 -3.372 0.001         -1.702        -0.451
+Group Var                                                    0.000                                                        
+==========================================================================================================================
+
+
+
+
+
+
+
+ols: roundElapsed_s ~ coinLabel*TotSesh_runTot_RoundNum*recentSwapRate_all + main_RR +  coinSet + isSwap
+
+
+
+/Users/mairahmac/opt/anaconda3/envs/RewardCollectors/lib/python3.10/site-packages/statsmodels/base/model.py:1894: ValueWarning: covariance of constraints does not have full rank. The number of constraints is 18, but rank is 15
+  warnings.warn('covariance of constraints does not have full '
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:         roundElapsed_s   R-squared:                       0.216
+Model:                            OLS   Adj. R-squared:                  0.210
+Method:                 Least Squares   F-statistic:                     4011.
+Date:                Fri, 06 Mar 2026   Prob (F-statistic):           3.13e-24
+Time:                        09:47:42   Log-Likelihood:                -8806.7
+No. Observations:                2161   AIC:                         1.765e+04
+Df Residuals:                    2143   BIC:                         1.775e+04
+Df Model:                          17                                         
+Covariance Type:              cluster                                         
+==============================================================================================================================
+                                                                 coef    std err          z      P>|z|      [0.025      0.975]
+------------------------------------------------------------------------------------------------------------------------------
+Intercept                                                     12.4014      2.763      4.489      0.000       6.987      17.816
+coinLabel[T.LV]                                                2.9714      3.436      0.865      0.387      -3.762       9.705
+coinLabel[T.NV]                                               16.3889      3.115      5.260      0.000      10.283      22.495
+main_RR[T.main]                                                1.6091      2.053      0.784      0.433      -2.415       5.633
+coinSet[T.Ax]                                                  1.3794      1.767      0.781      0.435      -2.083       4.842
+coinSet[T.B]                                                   0.0530      1.295      0.041      0.967      -2.486       2.592
+coinSet[T.Bx]                                                  4.7410      3.217      1.474      0.140      -1.563      11.045
+coinSet[T.C]                                                   1.6083      1.003      1.603      0.109      -0.358       3.574
+coinSet[T.D]                                                   4.6197      4.405      1.049      0.294      -4.014      13.254
+isSwap[T.1]                                                   -0.6194      0.996     -0.622      0.534      -2.572       1.334
+TotSesh_runTot_RoundNum                                       -0.0557      0.051     -1.089      0.276      -0.156       0.045
+coinLabel[T.LV]:TotSesh_runTot_RoundNum                       -0.0011      0.053     -0.021      0.983      -0.105       0.103
+coinLabel[T.NV]:TotSesh_runTot_RoundNum                       -0.0580      0.064     -0.909      0.363      -0.183       0.067
+recentSwapRate_all                                           -38.6126     16.400     -2.354      0.019     -70.757      -6.469
+coinLabel[T.LV]:recentSwapRate_all                            42.5700     15.768      2.700      0.007      11.665      73.475
+coinLabel[T.NV]:recentSwapRate_all                            51.4781     21.142      2.435      0.015      10.040      92.916
+TotSesh_runTot_RoundNum:recentSwapRate_all                     0.7790      0.438      1.780      0.075      -0.079       1.637
+coinLabel[T.LV]:TotSesh_runTot_RoundNum:recentSwapRate_all    -0.8501      0.442     -1.922      0.055      -1.717       0.017
+coinLabel[T.NV]:TotSesh_runTot_RoundNum:recentSwapRate_all    -1.0835      0.666     -1.628      0.104      -2.388       0.221
+==============================================================================
+Omnibus:                     2553.540   Durbin-Watson:                   1.831
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):           573740.343
+Skew:                           5.825   Prob(JB):                         0.00
+Kurtosis:                      81.970   Cond. No.                     2.04e+16
+==============================================================================
+
+Notes:
+[1] Standard Errors are robust to cluster correlation (cluster)
+[2] The smallest eigenvalue is 8.6e-27. This might indicate that there are
+strong multicollinearity problems or that the design matrix is singular.
+
+
+
+
+
+
+ols log transform round elapsed time: log_roundElapsed_s ~ coinLabel*TotSesh_runTot_RoundNum*recentSwapRate_all + main_RR +  coinSet + isSwap
+
+
+
+/Users/mairahmac/opt/anaconda3/envs/RewardCollectors/lib/python3.10/site-packages/statsmodels/base/model.py:1894: ValueWarning: covariance of constraints does not have full rank. The number of constraints is 18, but rank is 15
+  warnings.warn('covariance of constraints does not have full '
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:     log_roundElapsed_s   R-squared:                       0.233
+Model:                            OLS   Adj. R-squared:                  0.227
+Method:                 Least Squares   F-statistic:                     600.3
+Date:                Fri, 06 Mar 2026   Prob (F-statistic):           4.72e-18
+Time:                        09:47:43   Log-Likelihood:                -2920.5
+No. Observations:                2161   AIC:                             5877.
+Df Residuals:                    2143   BIC:                             5979.
+Df Model:                          17                                         
+Covariance Type:              cluster                                         
+==============================================================================================================================
+                                                                 coef    std err          z      P>|z|      [0.025      0.975]
+------------------------------------------------------------------------------------------------------------------------------
+Intercept                                                      1.6417      0.221      7.421      0.000       1.208       2.075
+coinLabel[T.LV]                                                0.5907      0.251      2.355      0.019       0.099       1.082
+coinLabel[T.NV]                                                1.2643      0.209      6.037      0.000       0.854       1.675
+main_RR[T.main]                                                0.1622      0.140      1.156      0.248      -0.113       0.437
+coinSet[T.Ax]                                                  0.2354      0.182      1.293      0.196      -0.122       0.592
+coinSet[T.B]                                                   0.1933      0.114      1.703      0.089      -0.029       0.416
+coinSet[T.Bx]                                                  0.5219      0.146      3.577      0.000       0.236       0.808
+coinSet[T.C]                                                   0.3989      0.076      5.252      0.000       0.250       0.548
+coinSet[T.D]                                                   0.2921      0.334      0.875      0.382      -0.362       0.947
+isSwap[T.1]                                                   -0.0344      0.058     -0.594      0.552      -0.148       0.079
+TotSesh_runTot_RoundNum                                       -0.0009      0.004     -0.253      0.800      -0.008       0.006
+coinLabel[T.LV]:TotSesh_runTot_RoundNum                       -0.0020      0.004     -0.461      0.645      -0.010       0.006
+coinLabel[T.NV]:TotSesh_runTot_RoundNum                       -0.0055      0.005     -1.077      0.281      -0.016       0.005
+recentSwapRate_all                                            -2.3391      1.572     -1.488      0.137      -5.420       0.742
+coinLabel[T.LV]:recentSwapRate_all                             2.9476      1.758      1.677      0.094      -0.498       6.393
+coinLabel[T.NV]:recentSwapRate_all                             2.8889      1.761      1.640      0.101      -0.563       6.341
+TotSesh_runTot_RoundNum:recentSwapRate_all                     0.0535      0.033      1.600      0.110      -0.012       0.119
+coinLabel[T.LV]:TotSesh_runTot_RoundNum:recentSwapRate_all    -0.0638      0.036     -1.791      0.073      -0.134       0.006
+coinLabel[T.NV]:TotSesh_runTot_RoundNum:recentSwapRate_all    -0.0633      0.045     -1.417      0.157      -0.151       0.024
+==============================================================================
+Omnibus:                      499.958   Durbin-Watson:                   2.225
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):             1192.315
+Skew:                          -1.266   Prob(JB):                    1.24e-259
+Kurtosis:                       5.613   Cond. No.                     2.04e+16
+==============================================================================
+
+Notes:
+[1] Standard Errors are robust to cluster correlation (cluster)
+[2] The smallest eigenvalue is 8.6e-27. This might indicate that there are
+strong multicollinearity problems or that the design matrix is singular.
+
+
+
+
+
+
+roundFrac: roundFrac ~ coinLabel*TotSesh_runTot_RoundNum*recentSwapRate_all + main_RR +  coinSet + isSwap
+
+
+
+/Users/mairahmac/opt/anaconda3/envs/RewardCollectors/lib/python3.10/site-packages/statsmodels/base/model.py:1894: ValueWarning: covariance of constraints does not have full rank. The number of constraints is 12, but rank is 1
+  warnings.warn('covariance of constraints does not have full '
+/Users/mairahmac/opt/anaconda3/envs/RewardCollectors/lib/python3.10/site-packages/statsmodels/regression/linear_model.py:1884: RuntimeWarning: invalid value encountered in sqrt
+  return np.sqrt(np.diag(self.cov_params()))
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:              roundFrac   R-squared:                       0.370
+Model:                            OLS   Adj. R-squared:                  0.365
+Method:                 Least Squares   F-statistic:                     2037.
+Date:                Fri, 06 Mar 2026   Prob (F-statistic):           5.03e-22
+Time:                        09:47:43   Log-Likelihood:                 421.03
+No. Observations:                2161   AIC:                            -806.1
+Df Residuals:                    2143   BIC:                            -703.9
+Df Model:                          17                                         
+Covariance Type:              cluster                                         
+==============================================================================================================================
+                                                                 coef    std err          z      P>|z|      [0.025      0.975]
+------------------------------------------------------------------------------------------------------------------------------
+Intercept                                                      0.2174      0.033      6.542      0.000       0.152       0.283
+coinLabel[T.LV]                                                0.0833      0.057      1.463      0.143      -0.028       0.195
+coinLabel[T.NV]                                                0.3338      0.057      5.821      0.000       0.221       0.446
+main_RR[T.main]                                               -0.0203      0.017     -1.171      0.242      -0.054       0.014
+coinSet[T.Ax]                                                  0.0342      0.024      1.415      0.157      -0.013       0.082
+coinSet[T.B]                                                   0.0022      0.013      0.170      0.865      -0.023       0.028
+coinSet[T.Bx]                                                  0.0750      0.016      4.621      0.000       0.043       0.107
+coinSet[T.C]                                                   0.0524      0.013      4.033      0.000       0.027       0.078
+coinSet[T.D]                                                   0.0537      0.034      1.564      0.118      -0.014       0.121
+isSwap[T.1]                                                   -0.0111      0.010     -1.080      0.280      -0.031       0.009
+TotSesh_runTot_RoundNum                                        0.0001      0.001      0.143      0.886      -0.002       0.002
+coinLabel[T.LV]:TotSesh_runTot_RoundNum                        0.0005      0.001      0.472      0.637      -0.002       0.003
+coinLabel[T.NV]:TotSesh_runTot_RoundNum                       -0.0002      0.002     -0.124      0.901      -0.004       0.003
+recentSwapRate_all                                            -0.3706      0.228     -1.626      0.104      -0.817       0.076
+coinLabel[T.LV]:recentSwapRate_all                             0.6517      0.245      2.661      0.008       0.172       1.132
+coinLabel[T.NV]:recentSwapRate_all                             1.0051      0.368      2.730      0.006       0.284       1.727
+TotSesh_runTot_RoundNum:recentSwapRate_all                     0.0113      0.010      1.189      0.234      -0.007       0.030
+coinLabel[T.LV]:TotSesh_runTot_RoundNum:recentSwapRate_all    -0.0156      0.010     -1.636      0.102      -0.034       0.003
+coinLabel[T.NV]:TotSesh_runTot_RoundNum:recentSwapRate_all    -0.0220      0.015     -1.479      0.139      -0.051       0.007
+==============================================================================
+Omnibus:                       30.691   Durbin-Watson:                   2.313
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):               39.250
+Skew:                          -0.197   Prob(JB):                     3.00e-09
+Kurtosis:                       3.530   Cond. No.                     2.04e+16
+==============================================================================
+
+Notes:
+[1] Standard Errors are robust to cluster correlation (cluster)
+[2] The smallest eigenvalue is 8.6e-27. This might indicate that there are
+strong multicollinearity problems or that the design matrix is singular.
+
+
+
+
+
+
+collinearity checks
+running total round num vs. recentSwapRate_all                          TotSesh_runTot_RoundNum  recentSwapRate_all
+TotSesh_runTot_RoundNum                 1.000000            0.292054
+recentSwapRate_all                      0.292054            1.000000
+
+
+
+
+
+
+
+roundFrac: roundFrac ~ coinLabel*recentSwapRate_all + main_RR +  coinSet + isSwap
+
+
+
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:              roundFrac   R-squared:                       0.356
+Model:                            OLS   Adj. R-squared:                  0.353
+Method:                 Least Squares   F-statistic:                 9.948e-14
+Date:                Fri, 06 Mar 2026   Prob (F-statistic):               1.00
+Time:                        09:47:43   Log-Likelihood:                 397.37
+No. Observations:                2161   AIC:                            -770.7
+Df Residuals:                    2149   BIC:                            -702.6
+Df Model:                          11                                         
+Covariance Type:              cluster                                         
+======================================================================================================
+                                         coef    std err          z      P>|z|      [0.025      0.975]
+------------------------------------------------------------------------------------------------------
+Intercept                          -6.029e+11   5.15e+18  -1.17e-07      1.000   -1.01e+19    1.01e+19
+coinLabel[T.LV]                        0.0987        nan        nan        nan         nan         nan
+coinLabel[T.NV]                        0.3342   1.19e+04    2.8e-05      1.000   -2.34e+04    2.34e+04
+main_RR[T.main]                       -0.0195   2499.004  -7.82e-06      1.000   -4897.978    4897.939
+coinSet[T.Ax]                       6.029e+11   5.65e+18   1.07e-07      1.000   -1.11e+19    1.11e+19
+coinSet[T.B]                        6.029e+11   1.99e+18   3.03e-07      1.000    -3.9e+18     3.9e+18
+coinSet[T.Bx]                       6.029e+11   1.99e+18   3.03e-07      1.000    -3.9e+18     3.9e+18
+coinSet[T.C]                        6.029e+11   2.87e+18    2.1e-07      1.000   -5.63e+18    5.63e+18
+coinSet[T.D]                        6.029e+11   4.64e+18    1.3e-07      1.000    -9.1e+18     9.1e+18
+isSwap[T.1]                           -0.0146    471.806   -3.1e-05      1.000    -924.737     924.708
+recentSwapRate_all                     0.0800        nan        nan        nan         nan         nan
+coinLabel[T.LV]:recentSwapRate_all     0.0851   8576.907   9.93e-06      1.000   -1.68e+04    1.68e+04
+coinLabel[T.NV]:recentSwapRate_all     0.1662   1476.669      0.000      1.000   -2894.052    2894.385
+==============================================================================
+Omnibus:                       33.194   Durbin-Watson:                   2.310
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):               43.624
+Skew:                          -0.200   Prob(JB):                     3.37e-10
+Kurtosis:                       3.569   Cond. No.                     7.64e+14
+==============================================================================
+
+Notes:
+[1] Standard Errors are robust to cluster correlation (cluster)
+[2] The smallest eigenvalue is 8.55e-27. This might indicate that there are
+strong multicollinearity problems or that the design matrix is singular.
+
+
+
+
+
+
+Coin Set A: roundFrac: roundFrac ~ coinLabel*recentSwapRate_all + main_RR +  coinSet + isSwap
+
+
+
+/Users/mairahmac/opt/anaconda3/envs/RewardCollectors/lib/python3.10/site-packages/statsmodels/base/model.py:1894: ValueWarning: covariance of constraints does not have full rank. The number of constraints is 12, but rank is 1
+  warnings.warn('covariance of constraints does not have full '
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:              roundFrac   R-squared:                       0.171
+Model:                            OLS   Adj. R-squared:                  0.162
+Method:                 Least Squares   F-statistic:                     15.22
+Date:                Fri, 06 Mar 2026   Prob (F-statistic):           0.000252
+Time:                        09:47:43   Log-Likelihood:                 20.836
+No. Observations:                 654   AIC:                            -25.67
+Df Residuals:                     646   BIC:                             10.19
+Df Model:                           7                                         
+Covariance Type:              cluster                                         
+======================================================================================================
+                                         coef    std err          z      P>|z|      [0.025      0.975]
+------------------------------------------------------------------------------------------------------
+Intercept                              0.3840      0.058      6.643      0.000       0.271       0.497
+coinLabel[T.LV]                       -0.1543      0.071     -2.163      0.031      -0.294      -0.014
+coinLabel[T.NV]                        0.0779      0.097      0.804      0.421      -0.112       0.268
+main_RR[T.main]                        0.0068      0.031      0.221      0.825      -0.053       0.067
+isSwap[T.1]                            0.0395      0.027      1.489      0.136      -0.012       0.092
+recentSwapRate_all                     0.0584      0.172      0.340      0.734      -0.278       0.395
+coinLabel[T.LV]:recentSwapRate_all     0.0064      0.280      0.023      0.982      -0.542       0.555
+coinLabel[T.NV]:recentSwapRate_all     0.1531      0.410      0.373      0.709      -0.651       0.957
+==============================================================================
+Omnibus:                       80.620   Durbin-Watson:                   2.370
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):               21.819
+Skew:                          -0.013   Prob(JB):                     1.83e-05
+Kurtosis:                       2.106   Cond. No.                         47.0
+==============================================================================
+
+Notes:
+[1] Standard Errors are robust to cluster correlation (cluster)
+
+
+
+
+
+
+roundFrac: roundFrac ~ coinLabel*runningSwapRate + main_RR +  coinSet + isSwap
+
+
+
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:              roundFrac   R-squared:                       0.358
+Model:                            OLS   Adj. R-squared:                  0.354
+Method:                 Least Squares   F-statistic:                 3.913e-15
+Date:                Fri, 06 Mar 2026   Prob (F-statistic):               1.00
+Time:                        09:47:43   Log-Likelihood:                 399.41
+No. Observations:                2161   AIC:                            -774.8
+Df Residuals:                    2149   BIC:                            -706.7
+Df Model:                          11                                         
+Covariance Type:              cluster                                         
+===================================================================================================
+                                      coef    std err          z      P>|z|      [0.025      0.975]
+---------------------------------------------------------------------------------------------------
+Intercept                       -5.885e+11   8.88e+18  -6.62e-08      1.000   -1.74e+19    1.74e+19
+coinLabel[T.LV]                     0.0825   9327.218   8.84e-06      1.000   -1.83e+04    1.83e+04
+coinLabel[T.NV]                     0.3081   1.67e+04   1.84e-05      1.000   -3.27e+04    3.27e+04
+main_RR[T.main]                    -0.0184   9555.514  -1.92e-06      1.000   -1.87e+04    1.87e+04
+coinSet[T.Ax]                    5.885e+11   8.45e+18   6.97e-08      1.000   -1.66e+19    1.66e+19
+coinSet[T.B]                     5.885e+11   9.16e+18   6.42e-08      1.000    -1.8e+19     1.8e+19
+coinSet[T.Bx]                    5.885e+11   9.99e+18   5.89e-08      1.000   -1.96e+19    1.96e+19
+coinSet[T.C]                     5.885e+11   1.02e+19   5.79e-08      1.000   -1.99e+19    1.99e+19
+coinSet[T.D]                     5.885e+11   8.64e+18   6.81e-08      1.000   -1.69e+19    1.69e+19
+isSwap[T.1]                        -0.0189    778.380  -2.43e-05      1.000   -1525.616    1525.578
+runningSwapRate                    -0.0276   3238.008  -8.52e-06      1.000   -6346.407    6346.352
+coinLabel[T.LV]:runningSwapRate     0.3456   4.04e+04   8.55e-06      1.000   -7.92e+04    7.92e+04
+coinLabel[T.NV]:runningSwapRate     0.5935    589.590      0.001      0.999   -1154.981    1156.168
+==============================================================================
+Omnibus:                       32.550   Durbin-Watson:                   2.304
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):               43.311
+Skew:                          -0.193   Prob(JB):                     3.94e-10
+Kurtosis:                       3.576   Cond. No.                     7.62e+14
+==============================================================================
+
+Notes:
+[1] Standard Errors are robust to cluster correlation (cluster)
+[2] The smallest eigenvalue is 8.56e-27. This might indicate that there are
+strong multicollinearity problems or that the design matrix is singular.
+
+
+
+
+
+
+Coin Set A: roundFrac: roundFrac ~ coinLabel*runningSwapRate + main_RR +  coinSet + isSwap
+
+
+
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:              roundFrac   R-squared:                       0.192
+Model:                            OLS   Adj. R-squared:                  0.183
+Method:                 Least Squares   F-statistic:                     36.34
+Date:                Fri, 06 Mar 2026   Prob (F-statistic):           6.80e-06
+Time:                        09:47:43   Log-Likelihood:                 29.233
+No. Observations:                 654   AIC:                            -42.47
+Df Residuals:                     646   BIC:                            -6.602
+Df Model:                           7                                         
+Covariance Type:              cluster                                         
+===================================================================================================
+                                      coef    std err          z      P>|z|      [0.025      0.975]
+---------------------------------------------------------------------------------------------------
+Intercept                           0.4005      0.065      6.151      0.000       0.273       0.528
+coinLabel[T.LV]                    -0.1652      0.082     -2.006      0.045      -0.327      -0.004
+coinLabel[T.NV]                     0.0157      0.122      0.129      0.898      -0.223       0.254
+main_RR[T.main]                     0.0045      0.031      0.147      0.883      -0.056       0.065
+isSwap[T.1]                         0.0242      0.028      0.864      0.388      -0.031       0.079
+runningSwapRate                    -0.0859      0.259     -0.332      0.740      -0.593       0.421
+coinLabel[T.LV]:runningSwapRate     0.1268      0.394      0.322      0.747      -0.645       0.899
+coinLabel[T.NV]:runningSwapRate     1.0632      0.631      1.685      0.092      -0.173       2.300
+==============================================================================
+Omnibus:                       66.188   Durbin-Watson:                   2.376
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):               19.807
+Skew:                           0.004   Prob(JB):                     5.00e-05
+Kurtosis:                       2.147   Cond. No.                         67.4
+==============================================================================
+
+Notes:
+[1] Standard Errors are robust to cluster correlation (cluster)
+
+
+
+
+
+
+roundFrac: roundFrac ~ coinLabel*TotSesh_runTot_RoundNum + main_RR +  coinSet + isSwap
+
+
+
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:              roundFrac   R-squared:                       0.358
+Model:                            OLS   Adj. R-squared:                  0.354
+Method:                 Least Squares   F-statistic:                     3468.
+Date:                Fri, 06 Mar 2026   Prob (F-statistic):           1.52e-23
+Time:                        09:47:43   Log-Likelihood:                 399.71
+No. Observations:                2161   AIC:                            -775.4
+Df Residuals:                    2149   BIC:                            -707.3
+Df Model:                          11                                         
+Covariance Type:              cluster                                         
+===========================================================================================================
+                                              coef    std err          z      P>|z|      [0.025      0.975]
+-----------------------------------------------------------------------------------------------------------
+Intercept                                   0.1934      0.033      5.870      0.000       0.129       0.258
+coinLabel[T.LV]                             0.1306      0.055      2.359      0.018       0.022       0.239
+coinLabel[T.NV]                             0.4055      0.051      7.890      0.000       0.305       0.506
+main_RR[T.main]                            -0.0186      0.019     -0.989      0.323      -0.055       0.018
+coinSet[T.Ax]                               0.0234      0.024      0.958      0.338      -0.024       0.071
+coinSet[T.B]                               -0.0007      0.012     -0.058      0.953      -0.025       0.023
+coinSet[T.Bx]                               0.0667      0.014      4.809      0.000       0.040       0.094
+coinSet[T.C]                                0.0531      0.013      4.148      0.000       0.028       0.078
+coinSet[T.D]                                0.0508      0.033      1.558      0.119      -0.013       0.115
+isSwap[T.1]                                -0.0144      0.012     -1.185      0.236      -0.038       0.009
+TotSesh_runTot_RoundNum                     0.0013      0.001      2.096      0.036    8.25e-05       0.002
+coinLabel[T.LV]:TotSesh_runTot_RoundNum    -0.0008      0.001     -0.946      0.344      -0.002       0.001
+coinLabel[T.NV]:TotSesh_runTot_RoundNum    -0.0019      0.001     -2.083      0.037      -0.004      -0.000
+==============================================================================
+Omnibus:                       30.143   Durbin-Watson:                   2.310
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):               37.505
+Skew:                          -0.203   Prob(JB):                     7.18e-09
+Kurtosis:                       3.502   Cond. No.                     2.03e+16
+==============================================================================
+
+Notes:
+[1] Standard Errors are robust to cluster correlation (cluster)
+[2] The smallest eigenvalue is 8.56e-27. This might indicate that there are
+strong multicollinearity problems or that the design matrix is singular.
+
+
+
+
+
+
+Coin Set A: roundFrac: roundFrac ~ coinLabel*TotSesh_runTot_RoundNum + main_RR +  coinSet + isSwap
+
+
+
+/Users/mairahmac/opt/anaconda3/envs/RewardCollectors/lib/python3.10/site-packages/statsmodels/base/model.py:1894: ValueWarning: covariance of constraints does not have full rank. The number of constraints is 8, but rank is 2
+  warnings.warn('covariance of constraints does not have full '
+/Users/mairahmac/opt/anaconda3/envs/RewardCollectors/lib/python3.10/site-packages/statsmodels/regression/linear_model.py:1884: RuntimeWarning: invalid value encountered in sqrt
+  return np.sqrt(np.diag(self.cov_params()))
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:              roundFrac   R-squared:                       0.185
+Model:                            OLS   Adj. R-squared:                  0.176
+Method:                 Least Squares   F-statistic:                     10.73
+Date:                Fri, 06 Mar 2026   Prob (F-statistic):           0.000987
+Time:                        09:47:43   Log-Likelihood:                 26.394
+No. Observations:                 654   AIC:                            -36.79
+Df Residuals:                     646   BIC:                           -0.9239
+Df Model:                           7                                         
+Covariance Type:              cluster                                         
+===========================================================================================================
+                                              coef    std err          z      P>|z|      [0.025      0.975]
+-----------------------------------------------------------------------------------------------------------
+Intercept                                   0.3389      0.070      4.858      0.000       0.202       0.476
+coinLabel[T.LV]                            -0.0491      0.084     -0.584      0.560      -0.214       0.116
+coinLabel[T.NV]                             0.1010      0.119      0.852      0.394      -0.131       0.333
+main_RR[T.main]                            -0.0243      0.033     -0.729      0.466      -0.090       0.041
+isSwap[T.1]                                 0.0299      0.025      1.195      0.232      -0.019       0.079
+TotSesh_runTot_RoundNum                     0.0035      0.002      1.594      0.111      -0.001       0.008
+coinLabel[T.LV]:TotSesh_runTot_RoundNum    -0.0046      0.002     -2.101      0.036      -0.009      -0.000
+coinLabel[T.NV]:TotSesh_runTot_RoundNum    -0.0003      0.005     -0.071      0.944      -0.010       0.009
+==============================================================================
+Omnibus:                       52.776   Durbin-Watson:                   2.384
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):               17.632
+Skew:                           0.014   Prob(JB):                     0.000148
+Kurtosis:                       2.196   Cond. No.                         204.
+==============================================================================
+
+Notes:
+[1] Standard Errors are robust to cluster correlation (cluster)
+
+
+
+
+
+
+roundFrac: roundFrac ~ coinLabel + main_RR +  coinSet
+
+
+
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:              roundFrac   R-squared:                       0.351
+Model:                            OLS   Adj. R-squared:                  0.349
+Method:                 Least Squares   F-statistic:                 6.439e-15
+Date:                Fri, 06 Mar 2026   Prob (F-statistic):               1.00
+Time:                        09:47:43   Log-Likelihood:                 388.69
+No. Observations:                2161   AIC:                            -761.4
+Df Residuals:                    2153   BIC:                            -715.9
+Df Model:                           7                                         
+Covariance Type:              cluster                                         
+===================================================================================
+                      coef    std err          z      P>|z|      [0.025      0.975]
+-----------------------------------------------------------------------------------
+Intercept       -8.795e+11   5.89e+18  -1.49e-07      1.000   -1.15e+19    1.15e+19
+coinLabel[T.LV]     0.1096        nan        nan        nan         nan         nan
+coinLabel[T.NV]     0.3504        nan        nan        nan         nan         nan
+main_RR[T.main]    -0.0130   1113.413  -1.17e-05      1.000   -2182.262    2182.236
+coinSet[T.Ax]    8.795e+11   9.45e+18   9.31e-08      1.000   -1.85e+19    1.85e+19
+coinSet[T.B]     8.795e+11   7.78e+18   1.13e-07      1.000   -1.52e+19    1.52e+19
+coinSet[T.Bx]    8.795e+11   8.98e+18    9.8e-08      1.000   -1.76e+19    1.76e+19
+coinSet[T.C]     8.795e+11   8.33e+18   1.06e-07      1.000   -1.63e+19    1.63e+19
+coinSet[T.D]     8.795e+11   6.43e+18   1.37e-07      1.000   -1.26e+19    1.26e+19
+==============================================================================
+Omnibus:                       31.531   Durbin-Watson:                   2.302
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):               40.321
+Skew:                          -0.201   Prob(JB):                     1.76e-09
+Kurtosis:                       3.535   Cond. No.                     7.76e+14
+==============================================================================
+
+Notes:
+[1] Standard Errors are robust to cluster correlation (cluster)
+[2] The smallest eigenvalue is 8.21e-27. This might indicate that there are
+strong multicollinearity problems or that the design matrix is singular.
+
+
+
+
+
+
+Coin Set A: roundFrac: roundFrac ~ coinLabel + main_RR +  coinSet
+
+
+
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:              roundFrac   R-squared:                       0.166
+Model:                            OLS   Adj. R-squared:                  0.162
+Method:                 Least Squares   F-statistic:                     5.431
+Date:                Fri, 06 Mar 2026   Prob (F-statistic):             0.0208
+Time:                        09:47:43   Log-Likelihood:                 18.776
+No. Observations:                 654   AIC:                            -29.55
+Df Residuals:                     650   BIC:                            -11.62
+Df Model:                           3                                         
+Covariance Type:              cluster                                         
+===================================================================================
+                      coef    std err          z      P>|z|      [0.025      0.975]
+-----------------------------------------------------------------------------------
+Intercept           0.3952      0.055      7.205      0.000       0.288       0.503
+coinLabel[T.LV]    -0.1601      0.061     -2.615      0.009      -0.280      -0.040
+coinLabel[T.NV]     0.0930      0.103      0.900      0.368      -0.110       0.296
+main_RR[T.main]     0.0084      0.030      0.280      0.780      -0.050       0.067
+==============================================================================
+Omnibus:                       88.951   Durbin-Watson:                   2.369
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):               22.839
+Skew:                          -0.012   Prob(JB):                     1.10e-05
+Kurtosis:                       2.085   Cond. No.                         5.93
+==============================================================================
+
+Notes:
+[1] Standard Errors are robust to cluster correlation (cluster)

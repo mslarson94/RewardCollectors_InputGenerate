@@ -1,0 +1,93 @@
+
+
+### 🧠 **RewardCollectors Event Segmentation Pipeline Breakdown (v2 Design)**
+
+#### Updated: August 2025
+
+---
+
+## 📌 Overview
+
+This version of the preprocessing pipeline is **modularized** into distinct stages, each responsible for a specific class of data transformations:
+
+| Phase                 | Description                                                 | Execution Location                                              |
+| --------------------- | ----------------------------------------------------------- | --------------------------------------------------------------- |
+| **1. Glia Seg.**      | Extracts skeleton-level events (BlockStarts, Rounds, Marks) | `preFrontalCortex_unifiedEventSeg.py` (`segmentType=glia`) |
+| **2. Alignment**      | Aligns PO timestamps to AN, adjusts events chronologically  | `alignPO2AN.py`                                          |
+| **3. Full Seg.**      | Adds rich synthetic semantic events (PinDrops, Chest, etc)  | `preFrontalCortex_unifiedEventSeg.py` (`segmentType=full`)      |
+| **4. Postprocessing** | Computes Walks, augments with positions, flattens + labels  | `wrapper_postprocessing.py`                                     |
+
+---
+
+## 🧵 Script Details
+
+### 🧠 `preFrontalCortex_unifiedEventSeg.py`
+
+* Core segmentation driver (used for both **glia** and **full** runs).
+* This high level script is designed to be the brains of the operation - orchestrating all the little helper & parser scripts related to our event segmentation pipeline to weave our events together.
+* At the beginning of this script, we are feeding in _processed or _processed_orig files in heavily nested directories and by the end of the script we should have our _events & _events_orig files saved as well as _meta.json files also saved in those nested parent directories or in flattened directories.
+
+* Handles:
+  * `glia_eventsParserHelper_AN.py`
+  * `muscles_eventParser_AN.py`
+  * `glia_eventsParserHelper_PO.py`
+  * `muscles_eventParser_PO.py`
+* Employs:
+  * `warning_logger.py`
+  * `extraMetaExtract.py`
+  * `eventCascade_VariablePathHelpers.py`
+  * `metadata_and_manifest_utils.py`
+* CLI-args: `--role [AN|PO]`, `--segmentType [glia|full]`, `--dataDir`, `--metadata`
+* Outputs `_events`, `_meta.json`, and intermediate files.
+
+---
+
+### 🔁 `alignPO2AN.py`
+
+* Basic alignment of PO files to the AN timeline based on the reportings of Block & Round start & end times.
+* CLI-args: `--dataDir`, `--metadata`
+
+---
+
+### 🧼 `wrapper_postprocessing.py`
+
+* Handles:
+
+  * `computeWalks.py`
+  * `postCascadeAugment.py`
+  * `batch_fill_logged_event_positions.py`
+  * `flattenAndLabel.py`
+  * `mergeWalks.py`
+* CLI-args: `--dataDir`
+
+---
+
+## 🧪 Example `.sh` Usage (if this does work on cli, if not, I mean we're fine)
+
+```bash
+DATA_DIR="/path/to/FreshStart"
+META_FILE="/path/to/collatedData.xlsx"
+CODE_DIR="/path/to/baseline_pipeline"
+
+# Segment Barebones
+python "$CODE_DIR/eventSeg/preFrontalCortex_unifiedEventSeg.py" --role AN --segmentType barebones --dataDir "$DATA_DIR" --metadata "$META_FILE"
+python "$CODE_DIR/eventSeg/preFrontalCortex_unifiedEventSeg.py" --role PO --segmentType barebones --dataDir "$DATA_DIR" --metadata "$META_FILE"
+
+# Align PO to AN
+python "$CODE_DIR/alignment/wrapper_alignment.py" --dataDir "$DATA_DIR" --metadata "$META_FILE"
+
+# Segment Full (Muscles)
+python "$CODE_DIR/eventSeg/preFrontalCortex_unifiedEventSeg.py" --role AN --segmentType full --dataDir "$DATA_DIR" --metadata "$META_FILE"
+python "$CODE_DIR/eventSeg/preFrontalCortex_unifiedEventSeg.py" --role PO --segmentType full --dataDir "$DATA_DIR" --metadata "$META_FILE"
+
+# Postprocessing
+python "$CODE_DIR/eventAugmentation/wrapper_postprocessing.py" --dataDir "$DATA_DIR"
+```
+
+---
+
+## 🧾 What to Check
+
+* ✅ Output folders (especially Events, Augmented, Merged) are generated where expected.
+* ✅ Logs from `.sh` script are complete, error free, and timestamped.
+

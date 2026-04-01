@@ -1,0 +1,48 @@
+preprocRaw_AN.py
+preprocRaw_PO.py
+prefrontalCortex_unifiedEvents.py (comment *out* the 'full' option)
+
+# alignPO2AN.py ## We are not going to use this one anymore in favor of new RPi alignment steps. 
+read_rpi_logs_to_csv.py 
+rpi_preproc_pipeline3.py
+batch_split_pipeline3.py
+
+
+
+prefrontalCortex_unifiedEvents.py (swap commenting for the 'glia' & 'full' options)
+
+##flattenAndLabel.py
+justFlatten.py
+computeWalks.py
+mergeWalks.py
+
+## No Walks
+python getPositionsAndElapsedTime.py \
+  --events-dir /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/Events_AugPart1 \
+  --processed-dir /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData_Flat \
+  --out-dir /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/Events_AugFinal_noWalks \
+  --pattern '*_events_flat.csv'
+
+## With Walks
+python getPositionsAndElapsedTime.py \
+  --events-dir /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/Events_AugmentedPart2 \
+  --processed-dir /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/ProcessedData_Flat \
+  --out-dir /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/Events_AugFinal_withWalks \
+  --pattern '*_events_with_walks.csv'
+
+
+python add_coin_labels.py \
+    --compiled "/Users/mairahmac/Desktop/RC_TestingNotes/compiledCoinLocations.csv" \
+    --events-dir "/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/Events_Flattened" \
+    --out-dir "/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/Events_Labeled" \
+    --pattern "*_events_flat.csv" \
+    --fail-on-miss \
+    --debug
+
+  mergeEvents_V2.py 
+
+  You have to change manually the directory taht is pointed in the filePaths function for mergeEvents to be able to get the merges for the noWalks & withWalks options
+
+  rename as needed for the final directory structure as needed for clarity. 
+
+  

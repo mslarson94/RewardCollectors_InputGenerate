@@ -1,0 +1,200 @@
+✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
+🚀 Starting prelimConditLogit_onlyAx.py Only Coin Set Ax Subjects Lambda 1 at Sun Mar  8 14:36:08 PDT 2026
+*************************
+*************************
+
+Data in All Participants for CoinSet Ax
+
+*************************
+*************************
+
+
+
+
+*************************
+
+
+M0: alt only
+ChosenPath ~ PathType
+                  Conditional Logit Model Regression Results                  
+==============================================================================
+Dep. Variable:                 chosen   No. Observations:                 1452
+Model:               ConditionalLogit   No. groups:                        242
+Log-Likelihood:               -246.44   Min group size:                      6
+Method:                          BFGS   Max group size:                      6
+Date:                Sun, 08 Mar 2026   Mean group size:                   6.0
+Time:                        14:36:10                                         
+==============================================================================
+                 coef    std err          z      P>|z|      [0.025      0.975]
+------------------------------------------------------------------------------
+alt_2         -2.1787      0.242     -9.004      0.000      -2.653      -1.704
+alt_3         -1.9045      0.214     -8.886      0.000      -2.325      -1.484
+alt_4        -13.0037     51.415     -0.253      0.800    -113.776      87.768
+alt_5         -3.0454      0.362     -8.412      0.000      -3.755      -2.336
+alt_6         -2.0331      0.227     -8.966      0.000      -2.478      -1.589
+==============================================================================
+
+M0 params
+alt_2    -2.178679
+alt_3    -1.904514
+alt_4   -13.003748
+alt_5    -3.045443
+alt_6    -2.033077
+dtype: float64
+
+*************************
+
+
+
+
+
+
+
+
+*************************
+
+
+M1: value only
+ChosenPath ~ PathValue
+                  Conditional Logit Model Regression Results                  
+==============================================================================
+Dep. Variable:                 chosen   No. Observations:                 1452
+Model:               ConditionalLogit   No. groups:                        242
+Log-Likelihood:               -349.76   Min group size:                      6
+Method:                          BFGS   Max group size:                      6
+Date:                Sun, 08 Mar 2026   Mean group size:                   6.0
+Time:                        14:36:10                                         
+==============================================================================
+                 coef    std err          z      P>|z|      [0.025      0.975]
+------------------------------------------------------------------------------
+points         0.2375      0.021     11.098      0.000       0.196       0.279
+==============================================================================
+
+M1 params
+points    0.237492
+dtype: float64
+
+*************************
+
+
+
+
+
+
+
+
+*************************
+
+
+M2: distance only
+ChosenPath ~  Distance
+                  Conditional Logit Model Regression Results                  
+==============================================================================
+Dep. Variable:                 chosen   No. Observations:                 1452
+Model:               ConditionalLogit   No. groups:                        242
+Log-Likelihood:               -357.96   Min group size:                      6
+Method:                          BFGS   Max group size:                      6
+Date:                Sun, 08 Mar 2026   Mean group size:                   6.0
+Time:                        14:36:10                                         
+=================================================================================
+                    coef    std err          z      P>|z|      [0.025      0.975]
+---------------------------------------------------------------------------------
+idealDistance    -0.5383      0.049    -10.997      0.000      -0.634      -0.442
+=================================================================================
+
+M2 params
+idealDistance   -0.538258
+dtype: float64
+
+*************************
+
+
+
+
+
+
+
+
+*************************
+
+
+M3: value + distance
+ChosenPath ~ PathValue * Distance
+                  Conditional Logit Model Regression Results                  
+==============================================================================
+Dep. Variable:                 chosen   No. Observations:                 1452
+Model:               ConditionalLogit   No. groups:                        242
+Log-Likelihood:               -285.73   Min group size:                      6
+Method:                          BFGS   Max group size:                      6
+Date:                Sun, 08 Mar 2026   Mean group size:                   6.0
+Time:                        14:36:10                                         
+=================================================================================
+                    coef    std err          z      P>|z|      [0.025      0.975]
+---------------------------------------------------------------------------------
+points            0.2408      0.024     10.228      0.000       0.195       0.287
+idealDistance    -0.5564      0.054    -10.330      0.000      -0.662      -0.451
+=================================================================================
+
+M3 params
+points           0.240774
+idealDistance   -0.556383
+dtype: float64
+
+*************************
+
+
+
+
+
+
+
+
+*************************
+
+
+M4: utility only
+ChosenPath ~ Utility (lambda = 1)
+                  Conditional Logit Model Regression Results                  
+==============================================================================
+Dep. Variable:                 chosen   No. Observations:                 1452
+Model:               ConditionalLogit   No. groups:                        242
+Log-Likelihood:               -303.37   Min group size:                      6
+Method:                          BFGS   Max group size:                      6
+Date:                Sun, 08 Mar 2026   Mean group size:                   6.0
+Time:                        14:36:10                                         
+==============================================================================
+                 coef    std err          z      P>|z|      [0.025      0.975]
+------------------------------------------------------------------------------
+utility        0.2848      0.023     12.562      0.000       0.240       0.329
+==============================================================================
+
+M4 params
+utility    0.284845
+dtype: float64
+
+*************************
+
+
+
+
+
+
+
+
+*************************
+
+
+Model Comparisions
+            model  nobs  k      logLik        AIC        BIC
+           M0_alt  1452  5 -246.442671 502.885341 529.288827
+M3_value_distance  1452  2 -285.726678 575.453356 586.014750
+       M4_utility  1452  1 -303.366901 608.733801 614.014498
+        M1_points  1452  1 -349.758963 701.517926 706.798623
+      M2_distance  1452  1 -357.961526 717.923053 723.203750
+
+*************************
+
+
+
+
+✅ prelimConditLogit_onlyAx.py Only Coin Set Ax Subjects Lambda 1 completed at Sun Mar  8 14:36:10 PDT 2026

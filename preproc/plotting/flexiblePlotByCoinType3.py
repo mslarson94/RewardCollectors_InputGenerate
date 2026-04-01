@@ -1082,7 +1082,7 @@ def main():
     ap.add_argument("--outlier-sigma", type=float, default=2.0)
     ap.add_argument("--outlier-ddof", type=int, default=1)
     ap.add_argument("--outlier-keep-na", action="store_true", help="Keep NaNs in outlier column(s)")
-    ap.add_argument("--filter-columns", nargs="*", default=["truecontent_elapsed_s", "dropDist"],
+    ap.add_argument("--filter-columns", nargs="*", default=["roundElapsed_s",  "dropDist", "roundFrac", "WalkAvgSpeed"],
                     help="Columns to apply outlier filtering to")
 
     args = ap.parse_args()

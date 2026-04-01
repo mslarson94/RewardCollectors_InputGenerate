@@ -1,0 +1,192 @@
+
+==================================
+Conditional Logistic Regression Learning Model Output
+All Participants Over All Time In All Coin Layouts
+
+==================================
+
+Rows: 5634 
+Choice sets: 939 
+Participants: 19 
+
+Choice-set QC:
+
+  6 
+939 
+
+  1 
+939 
+
+
+=================================================
+L4: (points + distance * learning)*participantCluster
+=====================================================
+Call:
+coxph(formula = Surv(rep(1, 5634L), chosen) ~ points + idealDistance + 
+    strata(roundID) + points:t_early_20 + idealDistance:t_early_20 + 
+    points:t_late_20 + idealDistance:t_late_20, data = dat, method = "efron", 
+    cluster = participantID)
+
+  n= 5634, number of events= 939 
+
+                               coef  exp(coef)   se(coef)  robust se      z Pr(>|z|)    
+points                    1.457e-01  1.157e+00  2.312e-02  4.183e-02  3.482 0.000497 ***
+idealDistance            -3.487e-01  7.056e-01  5.567e-02  8.196e-02 -4.255 2.09e-05 ***
+points:t_early_20         6.279e-03  1.006e+00  1.810e-03  2.869e-03  2.189 0.028628 *  
+idealDistance:t_early_20  2.881e-03  1.003e+00  4.138e-03  3.852e-03  0.748 0.454595    
+points:t_late_20          3.137e-05  1.000e+00  8.822e-04  2.037e-03  0.015 0.987713    
+idealDistance:t_late_20  -7.702e-03  9.923e-01  2.016e-03  2.820e-03 -2.731 0.006319 ** 
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+                         exp(coef) exp(-coef) lower .95 upper .95
+points                      1.1568     0.8645    1.0657    1.2556
+idealDistance               0.7056     1.4173    0.6009    0.8285
+points:t_early_20           1.0063     0.9937    1.0007    1.0120
+idealDistance:t_early_20    1.0029     0.9971    0.9953    1.0105
+points:t_late_20            1.0000     1.0000    0.9960    1.0040
+idealDistance:t_late_20     0.9923     1.0077    0.9869    0.9978
+
+Concordance= 0.796  (se = 0.053 )
+Likelihood ratio test= 868.1  on 6 df,   p=<2e-16
+Wald test            = 141  on 6 df,   p=<2e-16
+Score (logrank) test = 785.8  on 6 df,   p=<2e-16,   Robust = 14.21  p=0.03
+
+  (Note: the likelihood ratio and score tests assume independence of
+     observations within a cluster, the Wald and robust score tests do not).
+
+
+==============================
+Model Comparisons
+==============================
+# A tibble: 1 × 4
+  model                 logLik   AIC   BIC
+  <chr>                  <dbl> <dbl> <dbl>
+1 L4_learning_clustered -1248. 2509. 2538.
+
+
+==============================
+Implied lambda from L4
+==================================
+lambda = 2.394217 
+
+Reached plotting block
+vcov dims: 6 6 
+Built coef_df
+# A tibble: 6 × 3
+  term                       estimate      se
+  <chr>                         <dbl>   <dbl>
+1 points                    0.146     0.0418 
+2 idealDistance            -0.349     0.0820 
+3 points:t_early_20         0.00628   0.00287
+4 idealDistance:t_early_20  0.00288   0.00385
+5 points:t_late_20          0.0000314 0.00204
+6 idealDistance:t_late_20  -0.00770   0.00282
+Finished mutate
+Built p1
+Saved plot to L4_coef_plot.png
+
+
+--- Diagnostics: L4_learning_clustered ---
+# A tibble: 1 × 3
+  logLik   AIC   BIC
+   <dbl> <dbl> <dbl>
+1 -1248. 2509. 2538.
+[1mwrote[0m [32m1.00TB[0m in [36m 0s[0m, [32m167.77PB/s[0m                                                                                                                                                                                                                                  
+
+Done. Outputs saved in:
+ /Users/mairahmac/Desktop/myra_code/Python/RewardCollectors_InputGenerate/analyses/results_R/cLogit_L4 
+============
+Conditional Logistic Regression Learning Model Output
+All Participants Over All Time In All Coin Layouts
+
+==================================
+
+Rows: 5634 
+Choice sets: 939 
+Participants: 19 
+
+Choice-set QC:
+
+  6 
+939 
+
+  1 
+939 
+
+
+=================================================
+L4: (points + distance * learning)*participantCluster
+=====================================================
+Call:
+
+  n= 5634, number of events= 939 
+
+                               coef  exp(coef)   se(coef)  robust se      z Pr(>|z|)    
+points                    1.457e-01  1.157e+00  2.312e-02  4.183e-02  3.482 0.000497 ***
+idealDistance            -3.487e-01  7.056e-01  5.567e-02  8.196e-02 -4.255 2.09e-05 ***
+points:t_early_20         6.279e-03  1.006e+00  1.810e-03  2.869e-03  2.189 0.028628 *  
+idealDistance:t_early_20  2.881e-03  1.003e+00  4.138e-03  3.852e-03  0.748 0.454595    
+points:t_late_20          3.137e-05  1.000e+00  8.822e-04  2.037e-03  0.015 0.987713    
+idealDistance:t_late_20  -7.702e-03  9.923e-01  2.016e-03  2.820e-03 -2.731 0.006319 ** 
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+                         exp(coef) exp(-coef) lower .95 upper .95
+points                      1.1568     0.8645    1.0657    1.2556
+idealDistance               0.7056     1.4173    0.6009    0.8285
+points:t_early_20           1.0063     0.9937    1.0007    1.0120
+idealDistance:t_early_20    1.0029     0.9971    0.9953    1.0105
+points:t_late_20            1.0000     1.0000    0.9960    1.0040
+idealDistance:t_late_20     0.9923     1.0077    0.9869    0.9978
+
+Concordance= 0.796  (se = 0.053 )
+Likelihood ratio test= 868.1  on 6 df,   p=<2e-16
+Wald test            = 141  on 6 df,   p=<2e-16
+Score (logrank) test = 785.8  on 6 df,   p=<2e-16,   Robust = 14.21  p=0.03
+
+  (Note: the likelihood ratio and score tests assume independence of
+     observations within a cluster, the Wald and robust score tests do not).
+
+
+==============================
+Model Comparisons
+==============================
+# A tibble: 1 × 4
+  model                 logLik   AIC   BIC
+  <chr>                  <dbl> <dbl> <dbl>
+1 L4_learning_clustered -1248. 2509. 2538.
+
+
+==============================
+Implied lambda from L4
+==================================
+lambda = 2.394217 
+
+Reached plotting block
+vcov dims: 6 6 
+Built coef_df
+# A tibble: 6 × 3
+  term                       estimate      se
+  <chr>                         <dbl>   <dbl>
+1 points                    0.146     0.0418 
+2 idealDistance            -0.349     0.0820 
+3 points:t_early_20         0.00628   0.00287
+4 idealDistance:t_early_20  0.00288   0.00385
+5 points:t_late_20          0.0000314 0.00204
+6 idealDistance:t_late_20  -0.00770   0.00282
+Finished mutate
+Built p1
+Saved plot to L4_coef_plot.png
+
+
+--- Diagnostics: L4_learning_clustered ---
+# A tibble: 1 × 3
+  logLik   AIC   BIC
+   <dbl> <dbl> <dbl>
+1 -1248. 2509. 2538.
+[1mwrote[0m [32m1.00TB[0m in [36m 0s[0m, [32m167.77PB/s[0m                                                                                                                                                                                                                                  
+
+Done. Outputs saved in:
+ /Users/mairahmac/Desktop/myra_code/Python/RewardCollectors_InputGenerate/analyses/results_R/cLogit_L4 
+[1mindexing[0m [34mdecisionExpandedKnotted_L1.csv[0m [=====================================================================================================================================================================] [32m356.65GB/s[0m, eta: [36m 0s[0m                                                                                                                                                                                                                                                                       

@@ -1,0 +1,49 @@
+Linear mixed model fit by maximum likelihood . t-tests use Satterthwaite's method ['lmerModLmerTest']
+Formula: WalkAvgSpeed ~ path_order_round_num * coinLabel + t_early_20 +      t_late_20 + recentSwapRate_all + path_eff_raw + main_RR +      coinSet + (1 | participantID)
+   Data: model_df
+
+     AIC      BIC   logLik deviance df.resid 
+  -852.9   -674.7    456.5   -912.9     2774 
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-3.7866 -0.5910 -0.0496  0.6169  5.7302 
+
+Random effects:
+ Groups        Name        Variance Std.Dev.
+ participantID (Intercept) 0.02806  0.1675  
+ Residual                  0.04103  0.2026  
+Number of obs: 2804, groups:  participantID, 19
+
+Fixed effects:
+                                    Estimate Std. Error         df t value Pr(>|t|)    
+(Intercept)                        3.572e-01  5.909e-02  3.364e+01   6.045 7.85e-07 ***
+path_order_round_num1              1.748e-01  2.681e-02  2.801e+03   6.519 8.35e-11 ***
+path_order_round_num2              8.430e-02  2.975e-02  2.802e+03   2.834  0.00463 ** 
+path_order_round_num3              2.941e-01  4.452e-02  2.791e+03   6.605 4.73e-11 ***
+path_order_round_num4              9.507e-02  5.711e-02  2.791e+03   1.665  0.09608 .  
+path_order_round_num5              1.554e-01  3.421e-02  2.796e+03   4.542 5.81e-06 ***
+coinLabelHV                        2.724e-01  3.203e-02  2.785e+03   8.502  < 2e-16 ***
+coinLabelNV                        2.012e-01  3.204e-02  2.785e+03   6.281 3.88e-10 ***
+t_early_20                         4.979e-03  8.349e-04  2.796e+03   5.964 2.77e-09 ***
+t_late_20                          6.700e-04  3.266e-04  2.799e+03   2.051  0.04032 *  
+recentSwapRate_all                 1.177e-03  4.645e-02  2.797e+03   0.025  0.97979    
+path_eff_raw                       2.855e-02  3.730e-02  2.802e+03   0.765  0.44414    
+main_RRRR                          2.804e-02  1.602e-02  2.752e+03   1.751  0.08008 .  
+coinSetAx                         -1.185e-03  8.165e-02  2.133e+01  -0.015  0.98855    
+coinSetB                          -5.030e-02  1.915e-02  2.786e+03  -2.627  0.00866 ** 
+coinSetBx                          4.580e-02  8.517e-02  2.434e+01   0.538  0.59564    
+coinSetC                          -1.356e-01  2.013e-02  2.801e+03  -6.735 1.98e-11 ***
+coinSetD                          -1.820e-01  1.820e-02  2.804e+03  -9.999  < 2e-16 ***
+path_order_round_num1:coinLabelHV -3.712e-01  3.435e-02  2.785e+03 -10.805  < 2e-16 ***
+path_order_round_num2:coinLabelHV -1.702e-01  3.797e-02  2.785e+03  -4.481 7.73e-06 ***
+path_order_round_num3:coinLabelHV -3.595e-01  6.061e-02  2.785e+03  -5.931 3.38e-09 ***
+path_order_round_num4:coinLabelHV -5.413e-01  7.846e-02  2.785e+03  -6.900 6.42e-12 ***
+path_order_round_num5:coinLabelHV -1.448e-01  4.590e-02  2.785e+03  -3.154  0.00163 ** 
+path_order_round_num1:coinLabelNV -6.966e-02  3.434e-02  2.785e+03  -2.029  0.04257 *  
+path_order_round_num2:coinLabelNV -1.860e-02  3.797e-02  2.785e+03  -0.490  0.62435    
+path_order_round_num3:coinLabelNV -5.518e-01  6.062e-02  2.785e+03  -9.102  < 2e-16 ***
+path_order_round_num4:coinLabelNV -3.441e-02  7.846e-02  2.785e+03  -0.439  0.66101    
+path_order_round_num5:coinLabelNV -4.936e-01  4.622e-02  2.785e+03 -10.678  < 2e-16 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1

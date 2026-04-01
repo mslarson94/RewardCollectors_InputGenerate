@@ -1,0 +1,45 @@
+Linear mixed model fit by maximum likelihood . t-tests use Satterthwaite's method ['lmerModLmerTest']
+Formula: roundFrac ~ coinLabel * TotSesh_runTot_RoundNum + recentSwapRate_all +      coinSet + (1 | participantID)
+   Data: model_df_noA
+
+     AIC      BIC   logLik deviance df.resid 
+  -830.0   -756.2    428.0   -856.0     2142 
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-3.1121 -0.6796  0.1580  0.6324  4.0118 
+
+Random effects:
+ Groups        Name        Variance Std.Dev.
+ participantID (Intercept) 0.001709 0.04134 
+ Residual                  0.038849 0.19710 
+Number of obs: 2155, groups:  participantID, 16
+
+Fixed effects:
+                                      Estimate Std. Error         df t value Pr(>|t|)    
+(Intercept)                          1.879e-01  2.347e-02  3.316e+01   8.006 2.98e-09 ***
+coinLabelLV                          1.157e-01  1.663e-02  2.139e+03   6.957 4.59e-12 ***
+coinLabelNV                          3.902e-01  1.657e-02  2.139e+03  23.547  < 2e-16 ***
+TotSesh_runTot_RoundNum              5.371e-04  3.516e-04  1.992e+03   1.528  0.12676    
+recentSwapRate_all                   1.455e-01  4.775e-02  2.154e+03   3.048  0.00233 ** 
+coinSetB                            -9.699e-03  2.764e-02  2.047e+01  -0.351  0.72926    
+coinSetBx                            4.788e-02  2.900e-02  2.749e+01   1.651  0.11010    
+coinSetC                             1.397e-02  2.929e-02  2.427e+01   0.477  0.63760    
+coinSetD                             2.942e-02  2.973e-02  2.415e+01   0.990  0.33205    
+coinLabelLV:TotSesh_runTot_RoundNum -2.098e-04  4.364e-04  2.139e+03  -0.481  0.63079    
+coinLabelNV:TotSesh_runTot_RoundNum -1.269e-03  4.351e-04  2.139e+03  -2.917  0.00357 ** 
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Correlation of Fixed Effects:
+            (Intr) cnLbLV cnLbNV TS_T_R rcnSR_ conStB cnStBx conStC conStD cLLV:T
+coinLabelLV -0.351                                                               
+coinLabelNV -0.353  0.503                                                        
+TtSsh_rT_RN -0.451  0.486  0.489                                                 
+rcntSwpRt_l -0.032 -0.008 -0.008 -0.217                                          
+coinSetB    -0.653 -0.003 -0.003  0.114 -0.082                                   
+coinSetBx   -0.515 -0.006 -0.006  0.078 -0.017  0.424                            
+coinSetC    -0.606 -0.005 -0.004  0.104 -0.133  0.788  0.399                     
+coinSetD    -0.600 -0.002 -0.002  0.096 -0.089  0.740  0.392  0.789              
+cLLV:TS_T_R  0.274 -0.779 -0.392 -0.618 -0.008  0.004  0.005  0.006  0.003       
+cLNV:TS_T_R  0.275 -0.392 -0.779 -0.625  0.010  0.002  0.004  0.002  0.001  0.501

@@ -1,0 +1,51 @@
+Linear mixed model fit by maximum likelihood . t-tests use Satterthwaite's method ['lmerModLmerTest']
+Formula: path_eff_raw ~ path_order_round_num * (t_early_20 + t_late_20) +      recentSwapRate_all + main_RR + coinSet + (1 + t_early_20 +      t_late_20 | participantID)
+   Data: df_pe
+
+     AIC      BIC   logLik deviance df.resid 
+ -3255.5  -3078.3   1659.8  -3319.5     1846 
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-4.4620 -0.5671  0.0226  0.5750  3.9999 
+
+Random effects:
+ Groups        Name        Variance  Std.Dev. Corr       
+ participantID (Intercept) 1.626e-02 0.127534            
+               t_early_20  3.725e-05 0.006104 -0.57      
+               t_late_20   7.732e-06 0.002781 -0.94  0.52
+ Residual                  9.259e-03 0.096224            
+Number of obs: 1878, groups:  participantID, 19
+
+Fixed effects:
+                                   Estimate Std. Error         df t value Pr(>|t|)    
+(Intercept)                       3.254e-01  3.779e-02  3.567e+01   8.611 3.11e-10 ***
+path_order_round_num1             5.838e-02  2.143e-02  1.464e+03   2.724 0.006535 ** 
+path_order_round_num2             4.574e-02  2.408e-02  1.617e+03   1.899 0.057703 .  
+path_order_round_num3            -3.529e-02  4.379e-02  1.721e+03  -0.806 0.420374    
+path_order_round_num4            -9.456e-02  3.280e-02  1.733e+03  -2.882 0.003995 ** 
+path_order_round_num5            -1.017e-02  2.704e-02  1.741e+03  -0.376 0.706943    
+t_early_20                        7.581e-03  2.051e-03  5.507e+01   3.696 0.000505 ***
+t_late_20                        -1.826e-03  9.485e-04  7.975e+00  -1.925 0.090582 .  
+recentSwapRate_all                1.298e-01  2.756e-02  1.818e+03   4.709 2.68e-06 ***
+main_RRRR                         6.124e-02  9.854e-03  1.686e+03   6.215 6.46e-10 ***
+coinSetAx                         7.302e-02  3.748e-02  1.217e+01   1.948 0.074832 .  
+coinSetB                          1.426e-03  1.189e-02  1.694e+03   0.120 0.904521    
+coinSetBx                         6.105e-02  3.947e-02  1.747e+01   1.547 0.139783    
+coinSetC                          8.978e-02  1.298e-02  1.732e+03   6.918 6.44e-12 ***
+coinSetD                          3.820e-02  1.088e-02  1.787e+03   3.510 0.000459 ***
+path_order_round_num1:t_early_20 -3.724e-03  1.654e-03  1.280e+03  -2.252 0.024507 *  
+path_order_round_num2:t_early_20 -1.357e-03  1.920e-03  1.424e+03  -0.707 0.479786    
+path_order_round_num3:t_early_20 -4.537e-04  2.916e-03  1.697e+03  -0.156 0.876388    
+path_order_round_num4:t_early_20  4.359e-03  3.851e-03  1.785e+03   1.132 0.257774    
+path_order_round_num5:t_early_20 -2.709e-03  2.122e-03  1.736e+03  -1.277 0.201810    
+path_order_round_num1:t_late_20   1.765e-04  5.998e-04  1.797e+03   0.294 0.768557    
+path_order_round_num2:t_late_20  -6.042e-04  6.805e-04  1.776e+03  -0.888 0.374716    
+path_order_round_num3:t_late_20   4.511e-04  7.827e-04  1.841e+03   0.576 0.564470    
+path_order_round_num4:t_late_20  -1.447e-02  1.047e-02  1.833e+03  -1.382 0.167268    
+path_order_round_num5:t_late_20   3.037e-04  9.498e-04  1.708e+03   0.320 0.749163    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+optimizer (nloptwrap) convergence code: 0 (OK)
+Model failed to converge with max|grad| = 0.0439788 (tol = 0.002, component 1)
+

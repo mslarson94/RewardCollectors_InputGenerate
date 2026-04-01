@@ -1,0 +1,45 @@
+Linear mixed model fit by maximum likelihood . t-tests use Satterthwaite's method ['lmerModLmerTest']
+Formula: log_roundElapsed_s ~ coinLabel * t_early_20 * t_late_20 + recentSwapRate_all +      (1 | participantID)
+   Data: model_df2_A
+
+     AIC      BIC   logLik deviance df.resid 
+  1901.1   1955.0   -938.6   1877.1      648 
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-2.9963 -0.4111  0.1768  0.6832  2.8163 
+
+Random effects:
+ Groups        Name        Variance Std.Dev.
+ participantID (Intercept) 0.1035   0.3217  
+ Residual                  0.9776   0.9887  
+Number of obs: 660, groups:  participantID, 10
+
+Fixed effects:
+                         Estimate Std. Error         df t value Pr(>|t|)    
+(Intercept)              2.596822   0.177026  57.148269  14.669  < 2e-16 ***
+coinLabelLV             -0.131775   0.203316 649.569183  -0.648 0.517130    
+coinLabelNV              0.751347   0.206364 650.021948   3.641 0.000293 ***
+t_early_20               0.012696   0.012250 649.337510   1.036 0.300367    
+t_late_20               -0.005078   0.010902 659.999048  -0.466 0.641560    
+recentSwapRate_all      -0.104447   0.505425 556.610160  -0.207 0.836357    
+coinLabelLV:t_early_20  -0.039164   0.015935 649.541246  -2.458 0.014246 *  
+coinLabelNV:t_early_20  -0.039035   0.016068 649.877377  -2.429 0.015397 *  
+coinLabelLV:t_late_20    0.003352   0.014580 649.477452   0.230 0.818241    
+coinLabelNV:t_late_20    0.022157   0.014592 649.508884   1.518 0.129383    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Correlation of Fixed Effects:
+               (Intr) cnLbLV cnLbNV t_r_20 t_l_20 rcnSR_ cnLblLV:t_r_20 cnLblNV:t_r_20 cnLblLV:t_l_20
+coinLabelLV    -0.580                                                                                
+coinLabelNV    -0.572  0.498                                                                         
+t_early_20     -0.647  0.565  0.563                                                                  
+t_late_20       0.191 -0.168 -0.167 -0.479                                                           
+rcntSwpRt_l    -0.026 -0.007 -0.013 -0.314  0.090                                                    
+cnLblLV:t_r_20  0.498 -0.859 -0.428 -0.653  0.341 -0.001                                             
+cnLblNV:t_r_20  0.494 -0.430 -0.862 -0.656  0.340  0.013  0.499                                      
+cnLblLV:t_l_20 -0.144  0.249  0.124  0.332 -0.669  0.000 -0.509         -0.253                       
+cnLblNV:t_l_20 -0.144  0.125  0.249  0.330 -0.667  0.008 -0.255         -0.505          0.500        
+fit warnings:
+fixed-effect model matrix is rank deficient so dropping 3 columns / coefficients

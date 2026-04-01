@@ -1,0 +1,39 @@
+Linear mixed model fit by maximum likelihood . t-tests use Satterthwaite's method ['lmerModLmerTest']
+Formula: WalkAvgSpeed ~ path_order_round_num + coinLabel + (1 | participantID)
+   Data: model_df
+
+     AIC      BIC   logLik deviance df.resid 
+  -210.8   -151.4    115.4   -230.8     2794 
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-3.3656 -0.5291  0.0509  0.6453  5.2526 
+
+Random effects:
+ Groups        Name        Variance Std.Dev.
+ participantID (Intercept) 0.02690  0.164   
+ Residual                  0.05243  0.229   
+Number of obs: 2804, groups:  participantID, 19
+
+Fixed effects:
+                        Estimate Std. Error         df t value Pr(>|t|)    
+(Intercept)            5.469e-01  4.198e-02  2.797e+01  13.026 2.14e-13 ***
+path_order_round_num1  2.597e-02  1.976e-02  2.784e+03   1.314   0.1889    
+path_order_round_num2  2.695e-02  2.204e-02  2.793e+03   1.223   0.2215    
+path_order_round_num3 -8.813e-03  3.073e-02  2.802e+03  -0.287   0.7743    
+path_order_round_num4 -7.376e-02  3.844e-02  2.800e+03  -1.919   0.0551 .  
+path_order_round_num5 -1.700e-02  2.388e-02  2.804e+03  -0.712   0.4765    
+coinLabelHV           -8.388e-03  1.059e-02  2.785e+03  -0.792   0.4286    
+coinLabelNV            9.948e-02  1.059e-02  2.785e+03   9.396  < 2e-16 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Correlation of Fixed Effects:
+            (Intr) pt___1 pt___2 pt___3 pt___4 pt___5 cnLbHV
+pth_rdr_r_1 -0.391                                          
+pth_rdr_r_2 -0.344  0.776                                   
+pth_rdr_r_3 -0.228  0.528  0.466                            
+pth_rdr_r_4 -0.196  0.442  0.378  0.243                     
+pth_rdr_r_5 -0.304  0.688  0.601  0.396  0.365              
+coinLabelHV -0.128  0.005  0.002  0.002  0.001  0.003       
+coinLabelNV -0.127  0.003  0.002  0.002  0.002  0.007  0.499

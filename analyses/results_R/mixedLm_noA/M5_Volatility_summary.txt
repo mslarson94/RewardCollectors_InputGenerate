@@ -1,0 +1,39 @@
+Linear mixed model fit by maximum likelihood . t-tests use Satterthwaite's method ['lmerModLmerTest']
+Formula: roundElapsed_s ~ coinLabel + recentSwapRate_all + coinSet + (1 |      participantID)
+   Data: model_df_noA
+
+     AIC      BIC   logLik deviance df.resid 
+ 17490.1  17546.8  -8735.0  17470.1     2145 
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-2.3618 -0.4903 -0.0115  0.2746 18.5560 
+
+Random effects:
+ Groups        Name        Variance Std.Dev.
+ participantID (Intercept)  18.18    4.264  
+ Residual                  190.78   13.812  
+Number of obs: 2155, groups:  participantID, 16
+
+Fixed effects:
+                    Estimate Std. Error        df t value Pr(>|t|)    
+(Intercept)          12.3647     1.9289   22.9748   6.410 1.54e-06 ***
+coinLabelLV           4.2874     0.7299 2139.6713   5.874 4.93e-09 ***
+coinLabelNV          16.1200     0.7285 2139.6329  22.127  < 2e-16 ***
+recentSwapRate_all   -6.3678     3.1993 2141.8182  -1.990   0.0467 *  
+coinSetB             -1.3798     2.5443   20.6209  -0.542   0.5934    
+coinSetBx             2.7161     2.5050   47.7805   1.084   0.2837    
+coinSetC             -0.5560     2.6470   23.4157  -0.210   0.8354    
+coinSetD              4.7444     2.6858   24.1028   1.766   0.0900 .  
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Correlation of Fixed Effects:
+            (Intr) cnLbLV cnLbNV rcnSR_ conStB cnStBx conStC
+coinLabelLV -0.184                                          
+coinLabelNV -0.186  0.501                                   
+rcntSwpRt_l -0.128 -0.020  0.000                            
+coinSetB    -0.708 -0.002 -0.003 -0.013                     
+coinSetBx   -0.508 -0.006 -0.005  0.040  0.382              
+coinSetC    -0.674 -0.002 -0.004 -0.062  0.867  0.365       
+coinSetD    -0.669 -0.001 -0.003 -0.030  0.832  0.361  0.870

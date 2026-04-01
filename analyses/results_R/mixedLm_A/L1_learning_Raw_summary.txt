@@ -1,0 +1,33 @@
+Linear mixed model fit by maximum likelihood . t-tests use Satterthwaite's method ['lmerModLmerTest']
+Formula: roundElapsed_s ~ coinLabel + t_early_20 + t_late_20 + (1 | participantID)
+   Data: model_df_A
+
+     AIC      BIC   logLik deviance df.resid 
+  6007.6   6039.0  -2996.8   5993.6      653 
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-1.4617 -0.4960 -0.1048  0.2839  8.2478 
+
+Random effects:
+ Groups        Name        Variance Std.Dev.
+ participantID (Intercept)  39.33    6.271  
+ Residual                  501.71   22.399  
+Number of obs: 660, groups:  participantID, 10
+
+Fixed effects:
+             Estimate Std. Error        df t value Pr(>|t|)    
+(Intercept)  27.84894    3.01214  33.17174   9.246 1.06e-10 ***
+coinLabelLV -10.71914    2.13095 650.45417  -5.030 6.35e-07 ***
+coinLabelNV   3.86645    2.14091 650.54962   1.806   0.0714 .  
+t_early_20   -0.20515    0.15914 598.99354  -1.289   0.1979    
+t_late_20     0.03561    0.15485 638.37952   0.230   0.8182    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Correlation of Fixed Effects:
+            (Intr) cnLbLV cnLbNV t_r_20
+coinLabelLV -0.357                     
+coinLabelNV -0.349  0.500              
+t_early_20  -0.518  0.001 -0.006       
+t_late_20    0.137  0.000  0.005 -0.427

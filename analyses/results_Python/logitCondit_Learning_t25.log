@@ -1,0 +1,55 @@
+✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
+🚀 Starting prelimConditLogit_learningAll.py All Subjects t = 25 Lambda 1 at Sun Mar  8 15:01:25 PDT 2026
+/Users/mairahmac/opt/anaconda3/envs/RewardCollectors/lib/python3.10/site-packages/statsmodels/discrete/conditional_models.py:266: RuntimeWarning: overflow encountered in exp
+  exb = np.exp(np.dot(self._exog_grp[grp], params) + ofs)
+/Users/mairahmac/opt/anaconda3/envs/RewardCollectors/lib/python3.10/site-packages/statsmodels/discrete/conditional_models.py:296: RuntimeWarning: overflow encountered in exp
+  exb = np.exp(np.dot(ex, params) + ofs)
+/Users/mairahmac/opt/anaconda3/envs/RewardCollectors/lib/python3.10/site-packages/statsmodels/discrete/conditional_models.py:319: RuntimeWarning: invalid value encountered in scalar multiply
+  u, v = a + c * h, b + d + e * h
+/Users/mairahmac/opt/anaconda3/envs/RewardCollectors/lib/python3.10/site-packages/statsmodels/discrete/conditional_models.py:317: RuntimeWarning: overflow encountered in multiply
+  d = c * h * ex[t - 1, :]
+/Users/mairahmac/opt/anaconda3/envs/RewardCollectors/lib/python3.10/site-packages/statsmodels/discrete/conditional_models.py:266: RuntimeWarning: overflow encountered in exp
+  exb = np.exp(np.dot(self._exog_grp[grp], params) + ofs)
+
+
+
+
+*************************
+
+
+L3: Value + Distance * Learning
+ChosenPath ~ PathValue + Distance + PathValue*EarlyLearning + PathValue*LateLearning + Distance*EarlyLearning + Distance*LateLearning
+                  Conditional Logit Model Regression Results                  
+==============================================================================
+Dep. Variable:                 chosen   No. Observations:                 5634
+Model:               ConditionalLogit   No. groups:                        939
+Log-Likelihood:               -1243.6   Min group size:                      6
+Method:                          BFGS   Max group size:                      6
+Date:                Sun, 08 Mar 2026   Mean group size:                   6.0
+Time:                        15:01:27                                         
+==================================================================================
+                     coef    std err          z      P>|z|      [0.025      0.975]
+----------------------------------------------------------------------------------
+points             0.1407      0.021      6.610      0.000       0.099       0.182
+idealDistance     -0.3623      0.051     -7.036      0.000      -0.463      -0.261
+points_x_early     0.0063      0.001      4.337      0.000       0.003       0.009
+dist_x_early       0.0032      0.003      0.984      0.325      -0.003       0.010
+points_x_late     -0.0009      0.001     -0.945      0.344      -0.003       0.001
+dist_x_late       -0.0096      0.002     -4.114      0.000      -0.014      -0.005
+==================================================================================
+
+L3 params
+points            0.140703
+idealDistance    -0.362262
+points_x_early    0.006312
+dist_x_early      0.003238
+points_x_late    -0.000915
+dist_x_late      -0.009579
+dtype: float64
+
+*************************
+
+
+
+
+✅ prelimConditLogit_learningAll.py All Subjects t = 25 Lambda 1 completed at Sun Mar  8 15:01:27 PDT 2026

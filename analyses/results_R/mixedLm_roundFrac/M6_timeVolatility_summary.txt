@@ -1,0 +1,47 @@
+Linear mixed model fit by maximum likelihood . t-tests use Satterthwaite's method ['lmerModLmerTest']
+Formula: roundFrac ~ coinLabel * TotSesh_runTot_RoundNum + recentSwapRate_all +      coinSet + (1 | participantID)
+   Data: model_df
+
+     AIC      BIC   logLik deviance df.resid 
+  -659.3   -576.1    343.7   -687.3     2801 
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-2.7524 -0.8304  0.2114  0.6576  3.5295 
+
+Random effects:
+ Groups        Name        Variance Std.Dev.
+ participantID (Intercept) 0.001599 0.03999 
+ Residual                  0.045344 0.21294 
+Number of obs: 2815, groups:  participantID, 19
+
+Fixed effects:
+                                      Estimate Std. Error         df t value Pr(>|t|)    
+(Intercept)                          2.400e-01  1.880e-02  5.852e+01  12.768  < 2e-16 ***
+coinLabelLV                          4.205e-02  1.595e-02  2.795e+03   2.636  0.00843 ** 
+coinLabelNV                          3.063e-01  1.594e-02  2.795e+03  19.210  < 2e-16 ***
+TotSesh_runTot_RoundNum              2.199e-04  3.588e-04  2.517e+03   0.613  0.53989    
+recentSwapRate_all                   1.279e-01  4.526e-02  2.712e+03   2.827  0.00474 ** 
+coinSetAx                            1.775e-04  2.526e-02  2.396e+01   0.007  0.99445    
+coinSetB                            -1.573e-03  1.774e-02  5.084e+02  -0.089  0.92940    
+coinSetBx                            5.001e-02  2.844e-02  2.414e+01   1.758  0.09138 .  
+coinSetC                             1.944e-02  1.900e-02  9.036e+02   1.023  0.30652    
+coinSetD                             3.722e-02  1.736e-02  1.567e+03   2.143  0.03223 *  
+coinLabelLV:TotSesh_runTot_RoundNum  1.393e-04  4.476e-04  2.795e+03   0.311  0.75569    
+coinLabelNV:TotSesh_runTot_RoundNum -5.108e-04  4.471e-04  2.795e+03  -1.143  0.25328    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Correlation of Fixed Effects:
+            (Intr) cnLbLV cnLbNV TS_T_R rcnSR_ cnStAx conStB cnStBx conStC conStD cLLV:T
+coinLabelLV -0.426                                                                      
+coinLabelNV -0.422  0.502                                                               
+TtSsh_rT_RN -0.435  0.494  0.495                                                        
+rcntSwpRt_l -0.135 -0.008 -0.009 -0.210                                                 
+coinSetAx   -0.472  0.003  0.000 -0.094  0.077                                          
+coinSetB    -0.353  0.001 -0.007  0.022 -0.006  0.253                                   
+coinSetBx   -0.445 -0.002 -0.005 -0.007  0.048  0.408  0.229                            
+coinSetC    -0.271 -0.002 -0.007  0.020 -0.094  0.204  0.452  0.184                     
+coinSetD    -0.249  0.001 -0.004  0.031 -0.040  0.175  0.327  0.160  0.405              
+cLLV:TS_T_R  0.336 -0.787 -0.395 -0.623 -0.006 -0.003  0.000  0.001  0.003  0.000       
+cLNV:TS_T_R  0.332 -0.395 -0.787 -0.627  0.011  0.001  0.005  0.004  0.005  0.003  0.501

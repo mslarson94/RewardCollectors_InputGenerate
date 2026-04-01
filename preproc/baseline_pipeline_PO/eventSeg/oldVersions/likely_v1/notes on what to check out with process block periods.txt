@@ -1,0 +1,52 @@
+
+---
+
+### 🧾 **Expected Columns from `process_block_periods_v4()`**
+
+These will all be part of each dictionary (`event`) it yields:
+
+#### 🔹 **Time & Segment Info**
+
+* `AppTime` – start time of the synthetic segment
+* `end_AppTime` – end time of the segment
+* `RPTimestamp` – full datetime for start
+* `end_RPT` – full datetime for end
+
+#### 🔹 **Structure & Segment Type**
+
+* `lo_eventType` – one of:
+
+  * `"PreBlock_CylinderWalk_segment"`
+  * `"InterRound_CylinderWalk_segment"`
+  * `"InterBlock_Idle_segment"`
+  * etc.
+* `source` – always `"synthetic"`
+
+#### 🔹 **Row Tracking**
+
+* `original_row_start` – best-matched start index
+* `original_row_end` – best-matched end index
+
+#### 🔹 **Extras (if present in context)**
+
+* `BlockNum`, `BlockInstance`, `RoundNum`, etc.
+* Possibly inherited `BlockType` or session metadata
+
+---
+
+### 🧪 Example Event Output:
+
+```python
+{
+  "AppTime": 93.37,
+  "end_AppTime": 97.89,
+  "RPTimestamp": "2025-02-17 16:45:54.822000",
+  "end_RPT": "2025-02-17 16:45:58.882000",
+  "lo_eventType": "InterRound_CylinderWalk_segment",
+  "source": "synthetic",
+  "original_row_start": 432,
+  "original_row_end": 439
+}
+```
+
+Let me know if you'd like a script to scan a DataFrame for all `lo_eventType`s and isolate just these synthetic segments.

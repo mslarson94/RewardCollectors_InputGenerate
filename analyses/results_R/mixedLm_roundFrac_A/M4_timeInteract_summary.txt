@@ -1,0 +1,35 @@
+Linear mixed model fit by maximum likelihood . t-tests use Satterthwaite's method ['lmerModLmerTest']
+Formula: roundFrac ~ coinLabel * TotSesh_runTot_RoundNum + (1 | participantID)
+   Data: model_df_A
+
+     AIC      BIC   logLik deviance df.resid 
+   -40.1     -4.2     28.1    -56.1      652 
+
+Scaled residuals: 
+     Min       1Q   Median       3Q      Max 
+-2.27424 -0.76540 -0.07299  0.82109  2.62304 
+
+Random effects:
+ Groups        Name        Variance  Std.Dev.
+ participantID (Intercept) 0.0009437 0.03072 
+ Residual                  0.0531939 0.23064 
+Number of obs: 660, groups:  participantID, 10
+
+Fixed effects:
+                                      Estimate Std. Error         df t value Pr(>|t|)    
+(Intercept)                          3.413e-01  3.348e-02  2.327e+02  10.195  < 2e-16 ***
+coinLabelLV                         -5.443e-02  4.461e-02  6.512e+02  -1.220  0.22283    
+coinLabelNV                          9.811e-02  4.524e-02  6.516e+02   2.169  0.03046 *  
+TotSesh_runTot_RoundNum              2.576e-03  1.265e-03  5.001e+02   2.036  0.04231 *  
+coinLabelLV:TotSesh_runTot_RoundNum -4.657e-03  1.710e-03  6.511e+02  -2.723  0.00665 ** 
+coinLabelNV:TotSesh_runTot_RoundNum -2.424e-04  1.729e-03  6.514e+02  -0.140  0.88851    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Correlation of Fixed Effects:
+            (Intr) cnLbLV cnLbNV TS_T_R cLLV:T
+coinLabelLV -0.674                            
+coinLabelNV -0.665  0.499                     
+TtSsh_rT_RN -0.825  0.594  0.588              
+cLLV:TS_T_R  0.587 -0.871 -0.434 -0.681       
+cLNV:TS_T_R  0.581 -0.436 -0.873 -0.675  0.499

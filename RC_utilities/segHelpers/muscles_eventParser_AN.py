@@ -323,7 +323,7 @@ def process_feedback_collect_v5(df, allowed_statuses):
                 offsets_events = [
                     ("CoinVis_end", 0.000, 0.000),
                     ("CoinValueTextVis", 0.000, 2.000),
-                    ("CoinCollectSound_start", 0.000, 0.654)
+                    ("CoinCollectSound", 0.000, 0.654)
                     ]
                 
                 event_meta = {

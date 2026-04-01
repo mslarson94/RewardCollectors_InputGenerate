@@ -77,7 +77,8 @@ def build_common_event_fields_noTime(row, index=None):
         "origRow_start": row.get("origRow", idx),
         "origRow_end": row.get("origRow", idx),
         "mLT_raw": row.get("mLT_raw", None),
-        "mLT_orig": row.get("mLT_orig", None)
+        "mLT_orig": row.get("mLT_orig", None),
+        "totalRounds": row.get("totalRounds", None),
     }
 
 
@@ -100,7 +101,8 @@ def build_common_event_fields_full(row, index=None):
         "BlockType": row.get("BlockType", "unknown"),
         "chestPin_num": row.get("chestPin_num", None),
         "origRow_start": row.get("origRow", idx),
-        "origRow_end": row.get("origRow", idx)
+        "origRow_end": row.get("origRow", idx),
+        "totalRounds": row.get("totalRounds", None),
     }
 
 def build_segment_event(start_row, end_row, event_type):
@@ -131,7 +133,8 @@ def build_segment_event(start_row, end_row, event_type):
         "BlockType": start_row.get("BlockType"),
         "chestPin_num": start_row.get("chestPin_num"),
         "origRow_start": start_row.get("origRow", start_row.name), ## More robust to pitfalls associated with using start_row.name 1/25/2026
-        "origRow_end": end_row.get("origRow", end_row.name), ## More robust to pitfalls associated with using end_row.name 1/25/2026
+        "origRow_end": end_row.get("origRow", end_row.name), ## More robust to pitfalls associated with using end_row.name 1/25/2026,
+        "totalRounds": start_row.get("totalRounds", None),
     }
 
 def generate_synthetic_events_v3(base_time, appTime, timed_events, base_info, event_meta):

@@ -1,0 +1,38 @@
+Linear mixed model fit by maximum likelihood . t-tests use Satterthwaite's method ['lmerModLmerTest']
+Formula: roundElapsed_s ~ coinLabel * t_early_20 * t_late_20 + recentSwapRate_all +      coinSet + (1 | participantID)
+   Data: model_df
+
+     AIC      BIC   logLik deviance df.resid 
+ 23837.7  23938.7 -11901.8  23803.7     2798 
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-2.0714 -0.5277  0.0123  0.2842 15.5363 
+
+Random effects:
+ Groups        Name        Variance Std.Dev.
+ participantID (Intercept)  31.6     5.621  
+ Residual                  270.3    16.442  
+Number of obs: 2815, groups:  participantID, 19
+
+Fixed effects:
+                         Estimate Std. Error         df t value Pr(>|t|)    
+(Intercept)             2.237e+01  2.223e+00  4.136e+01  10.065 1.10e-12 ***
+coinLabelLV             6.332e-02  1.810e+00  2.794e+03   0.035  0.97210    
+coinLabelNV             1.224e+01  1.810e+00  2.794e+03   6.765 1.62e-11 ***
+t_early_20             -3.071e-01  9.622e-02  2.813e+03  -3.191  0.00143 ** 
+t_late_20              -8.234e-03  3.980e-02  2.815e+03  -0.207  0.83612    
+recentSwapRate_all     -7.428e-01  3.677e+00  2.814e+03  -0.202  0.83994    
+coinSetAx              -3.178e+00  3.058e+00  2.172e+01  -1.039  0.31013    
+coinSetB               -3.613e+00  1.451e+00  1.783e+03  -2.490  0.01288 *  
+coinSetBx              -2.301e+00  3.388e+00  2.470e+01  -0.679  0.50332    
+coinSetC               -2.993e+00  1.527e+00  2.250e+03  -1.960  0.05014 .  
+coinSetD                1.551e+00  1.375e+00  2.603e+03   1.128  0.25944    
+coinLabelLV:t_early_20  2.720e-02  1.300e-01  2.794e+03   0.209  0.83437    
+coinLabelNV:t_early_20  1.127e-01  1.300e-01  2.794e+03   0.868  0.38571    
+coinLabelLV:t_late_20   2.770e-02  5.224e-02  2.793e+03   0.530  0.59593    
+coinLabelNV:t_late_20  -6.077e-02  5.215e-02  2.793e+03  -1.165  0.24404    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+fit warnings:
+fixed-effect model matrix is rank deficient so dropping 3 columns / coefficients

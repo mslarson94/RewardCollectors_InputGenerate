@@ -1,0 +1,41 @@
+Linear mixed model fit by maximum likelihood . t-tests use Satterthwaite's method ['lmerModLmerTest']
+Formula: roundFrac ~ coinLabel + t_early_20 + t_late_20 + coinSet + (1 |      participantID)
+   Data: model_df_noA
+
+     AIC      BIC   logLik deviance df.resid 
+  -814.9   -752.5    418.5   -836.9     2144 
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-3.0446 -0.7033  0.1683  0.6344  3.9807 
+
+Random effects:
+ Groups        Name        Variance Std.Dev.
+ participantID (Intercept) 0.00171  0.04135 
+ Residual                  0.03920  0.19798 
+Number of obs: 2155, groups:  participantID, 16
+
+Fixed effects:
+              Estimate Std. Error         df t value Pr(>|t|)    
+(Intercept)  2.026e-01  2.344e-02  3.079e+01   8.643 9.79e-10 ***
+coinLabelLV  1.101e-01  1.046e-02  2.138e+03  10.524  < 2e-16 ***
+coinLabelNV  3.527e-01  1.044e-02  2.138e+03  33.771  < 2e-16 ***
+t_early_20   5.907e-04  7.788e-04  2.010e+03   0.758   0.4482    
+t_late_20    1.871e-04  3.215e-04  1.903e+03   0.582   0.5608    
+coinSetB    -2.845e-03  2.753e-02  1.957e+01  -0.103   0.9187    
+coinSetBx    4.957e-02  2.904e-02  2.699e+01   1.707   0.0993 .  
+coinSetC     2.497e-02  2.899e-02  2.276e+01   0.861   0.3980    
+coinSetD     3.618e-02  2.956e-02  2.312e+01   1.224   0.2333    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Correlation of Fixed Effects:
+            (Intr) cnLbLV cnLbNV t_r_20 t_l_20 conStB cnStBx conStC
+coinLabelLV -0.222                                                 
+coinLabelNV -0.223  0.501                                          
+t_early_20  -0.431  0.001  0.006                                   
+t_late_20    0.019  0.001 -0.001 -0.422                            
+coinSetB    -0.666 -0.002 -0.003  0.088  0.055                     
+coinSetBx   -0.513 -0.004 -0.004  0.037  0.081  0.422              
+coinSetC    -0.604 -0.004 -0.004  0.023  0.069  0.783  0.398       
+coinSetD    -0.587 -0.002 -0.002  0.007  0.073  0.733  0.390  0.785

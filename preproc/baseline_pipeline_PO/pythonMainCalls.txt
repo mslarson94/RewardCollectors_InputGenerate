@@ -1,0 +1,78 @@
+python compile_coin_locations.py \
+--input-dir "/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/MergedEvents_noWalks/Merged_ParticipantDayRoleCoinSet/MergedEvents_meta" \
+--output "/Users/mairahmac/Desktop/RC_TestingNotes/compiledCoinLocations.csv"
+
+python add_coin_labels.py \
+    --compiled "/Users/mairahmac/Desktop/RC_TestingNotes/compiledCoinLocations.csv" \
+    --events-dir "/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/Events_Flattened" \
+    --out-dir "/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/Events_Labeled" \
+    [--pattern "*_events_flat.csv"]
+
+python add_coin_labels.py \
+    --compiled "/Users/mairahmac/Desktop/RC_TestingNotes/compiledCoinLocations.csv" \
+    --events-dir "/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/Events_Flattened" \
+    --out-dir "/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/Events_Labeled" \
+    --pattern "*_events_flat.csv" \
+    --fail-on-miss \
+    --debug
+
+
+python3 list_rpi_files.py \
+     --pair_id pair_008 \
+     --root "/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/RawData" \
+     --output "/Users/mairahmac/Desktop/RC_TestingNotes/CollatedRPi/pair_008.csv"
+
+
+     pair_200/03_17_2025/Afternoon/RPi/RNS_RPi where it would translate like this: {pairID}/{testingDate}/{sessionType}/RPi/{RPi_Type}
+
+pair 1 - 8 -> ML2G is off on time
+
+
+
+python preFrontalCortex_unifiedEventSeg.py \
+  --trueRootDir "/Users/mairahmac/Desktop/RC_TestingNotes" \
+  --procDir "FreshStart" \
+  --role AN \
+  --segment-type glia \
+  --allowed-status complete \
+  --allowed-status truncated
+
+python "${CODE_DIR}/preprocRaw/preprocRaw_AN.py" \
+  --root-dir "$TRUE_BASE_DIR" \
+  --proc-dir "$PROC_DIR" \
+  --max-memory-mb 600 \
+  --no-save-large-files
+
+python "${CODE_DIR}/alignment/alignPO2AN.py" \
+    --root-dir "$TRUE_BASE_DIR" \
+    --base-dir "PROC_DIR" \
+
+
+python "${CODE_DIR}/eventAugmentation/computeWalks.py" \
+  --root-dir "$TRUE_BASE_DIR" \
+  --proc-dir "$PROC_DIR" \
+  --events-dir-name "Events_AugPart1" \
+  --meta-dir-name "MetaData_Flat" \
+  --output-dir-name "Events_ComputedWalks"
+
+python "${CODE_DIR}/eventAugmentation/mergeEventsV3.py" \
+  --root-dir "$TRUE_BASE_DIR" \
+  --proc-dir "$PROC_DIR" \
+  --event-dir "Events_AugFinal_withWalks" \
+  --eventEnding "_events_final.csv" \
+  --outEnding "_events.csv" \
+  --output-dir "MergedEvents" \
+  --group-key-fields participantID \
+  --group-key-fields pairID \
+  --group-key-fields testingDate \
+  --group-key-fields currentRole \
+  --group-key-fields ptIsAorB \
+  --group-key-fields coinSet \
+  --group-key-fields sessionType \
+  --group-key-fields device \
+  --group-key-fields main_RR \
+  --group-key-fields BlockNum \
+  --group-key-fields BlockType \
+  --group-key-fields coinLabel \
+  --group-key-fields actualClosestCoinLabel
+

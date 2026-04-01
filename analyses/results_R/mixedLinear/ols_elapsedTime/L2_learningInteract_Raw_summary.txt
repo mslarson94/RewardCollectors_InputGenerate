@@ -1,0 +1,30 @@
+
+Call:
+lm(formula = roundElapsed_s ~ coinLabel * t_early_20 * t_late_20, 
+    data = model_df_A, cluster = model_df$participantID)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-31.240 -12.365  -2.091   4.737 194.092 
+
+Coefficients: (3 not defined because of singularities)
+                                 Estimate Std. Error t value Pr(>|t|)    
+(Intercept)                       23.0641     3.3825   6.819  2.1e-11 ***
+coinLabelLV                       -4.8573     4.7579  -1.021  0.30768    
+coinLabelNV                       11.2851     4.8269   2.338  0.01969 *  
+t_early_20                         0.3818     0.2646   1.443  0.14954    
+t_late_20                         -0.5386     0.2414  -2.231  0.02600 *  
+coinLabelLV:t_early_20            -0.5384     0.3729  -1.444  0.14928    
+coinLabelNV:t_early_20            -0.8430     0.3759  -2.243  0.02525 *  
+coinLabelLV:t_late_20              0.2516     0.3412   0.737  0.46120    
+coinLabelNV:t_late_20              0.9286     0.3415   2.719  0.00672 ** 
+t_early_20:t_late_20                   NA         NA      NA       NA    
+coinLabelLV:t_early_20:t_late_20       NA         NA      NA       NA    
+coinLabelNV:t_early_20:t_late_20       NA         NA      NA       NA    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 23.14 on 651 degrees of freedom
+Multiple R-squared:  0.08368,	Adjusted R-squared:  0.07242 
+F-statistic: 7.431 on 8 and 651 DF,  p-value: 1.683e-09
+

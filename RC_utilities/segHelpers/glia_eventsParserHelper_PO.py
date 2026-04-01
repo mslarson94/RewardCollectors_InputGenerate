@@ -24,7 +24,7 @@ from io import StringIO
 import traceback
 import pandas as pd
 
-## schwannCells_eventsParserHelper_PO
+## schwannCells_eventsParserHelper_AN
 from RC_utilities.segHelpers.schwannCells_eventParserHelper import (
     build_common_event_fields_noTime, 
     build_segment_event, 
@@ -33,32 +33,29 @@ from RC_utilities.segHelpers.schwannCells_eventParserHelper import (
 # Bare Bones Events Handling 
 
 def process_marks(df, allowed_statuses, role):
+    #print('starting process marks')
     if role not in ("AN", "PO"):
         raise ValueError(f"Invalid role '{role}'. Expected 'AN' or 'PO'.")
-    timestamp_col = "eMLT_orig"
-    start_time = "start_eMLT_orig"
-    end_time = "end_eMLT_orig"
-    events = []
-    # if isinstance(df[timestamp_col], str):
-    #     df[timestamp_col] = pd.to_datetime(df[timestamp_col], errors="coerce")
 
+    events = []
     for idx, row in df.iterrows():
         if isinstance(row.Message, str) and "Sending Headset mark" in row.Message:
             common_info = build_common_event_fields_noTime(row, idx) ### Fix Me
-            appTime = row["AppTime"]
-            start_ts = row[timestamp_col]
+
+            start_time = row["AppTime"]
+            start_ts = row["eMLT_orig"]
 
             details = {"mark": "A"} if role == "AN" else {"mark": "B"}
 
             events.append({
-                "AppTime": appTime,
-                timestamp_col: start_ts,
-                "start_AppTime": appTime,
-                "end_AppTime": appTime,
-                start_time: start_ts,
-                end_time: start_ts,
-                "mLT_raw": row["mLT_raw"],
+                "AppTime": start_time,
+                "eMLT_orig": start_ts,
                 "mLT_orig": row["mLT_orig"],
+                "start_AppTime": start_time,
+                "end_AppTime": start_time,
+                "start_eMLT_orig": start_ts,
+                "end_eMLT_orig": start_ts,
+                "mLT_raw": row["mLT_raw"],
                 "lo_eventType": "Mark",
                 "med_eventType": "ReferencePoint",
                 "hi_eventType": "SystemEvent",
@@ -67,9 +64,11 @@ def process_marks(df, allowed_statuses, role):
                 "source": "logged",
                 **common_info
             })
+    #print('ending process marks')
     return events
 
-def process_true_round_segments(df, allowed_statuses, role):
+def process_true_round_segments_v1(df, allowed_statuses):
+    #print('starting process true round segments')
     events = []
     df = df.reset_index(drop=True)
     
@@ -83,29 +82,20 @@ def process_true_round_segments(df, allowed_statuses, role):
             continue
 
         curr_round = row.get("RoundNum")
-        #print("current round type", type(curr_round))
-        #print(pre)
         if curr_round in excluded_rounds:
             continue
 
         # On round change, emit RoundEnd for previous and RoundStart for current
-        #print("if curr_round != prev_round:", curr_round != prev_round)
         if curr_round != prev_round:
-            #print("if curr_round != prev_round:", curr_round != prev_round)
             if prev_round is not None and round_start_idx is not None:
-                #print("if prev_round is not None and round_start_idx is not None")
                 end_row = df.iloc[idx - 1]
-                #print("end_row = df.iloc[idx - 1]", end_row)
                 start_row = df.iloc[round_start_idx]
-                #print('process_true_round_segments pre build_segment_event on RoundStart ')
                 events.append(build_segment_event(start_row, start_row, "RoundStart"))
-                #print('process_true_round_segments pre build_segment_event on RoundEnd ')
                 round_end_evt = build_segment_event(end_row, end_row, "RoundEnd")
                 round_end_evt["RoundNum"] = prev_round  # <-- overwrite safely
                 events.append(round_end_evt)
                 #events.append(build_segment_event(end_row, end_row, "RoundEnd")) 
-                #print("build_segment_event", build_segment_event(start_row, start_row, "RoundStart"))
-            #print(events)
+
             round_start_idx = idx
             prev_round = curr_round
 
@@ -118,20 +108,80 @@ def process_true_round_segments(df, allowed_statuses, role):
         round_end_evt = build_segment_event(end_row, end_row, "RoundEnd")
         round_end_evt["RoundNum"] = prev_round  # <-- overwrite safely
         events.append(round_end_evt)
+    #print('ending process true round segments')
+    print("curr_round", curr_round)
+    print(events)
+    return events
+def process_true_round_segments(df, allowed_statuses):
+    events = []
+    df = df.reset_index(drop=True)
+
+    excluded_rounds = {0, 7777, 8888, 9999}
+
+    prev_round = None
+    round_start_idx = None
+    last_true_idx = None  # last row index that was part of a TRUE round (non-excluded, allowed status)
+
+    for idx, row in df.iterrows():
+        block_status = row.get("BlockStatus", "unknown")
+        if block_status not in allowed_statuses:
+            continue
+
+        curr_round = row.get("RoundNum")
+
+        # If we enter an excluded round, close any open true round immediately.
+        if curr_round in excluded_rounds:
+            if prev_round is not None and round_start_idx is not None and last_true_idx is not None:
+                start_row = df.iloc[round_start_idx]
+                end_row = df.iloc[last_true_idx]
+
+                events.append(build_segment_event(start_row, start_row, "RoundStart"))
+                round_end_evt = build_segment_event(end_row, end_row, "RoundEnd")
+                round_end_evt["RoundNum"] = prev_round
+                events.append(round_end_evt)
+
+            # Reset (we are no longer in a true round)
+            prev_round = None
+            round_start_idx = None
+            last_true_idx = None
+            continue
+
+        # curr_round is a true round row
+        last_true_idx = idx
+
+        # On round change, emit RoundStart/RoundEnd for the previous round
+        if curr_round != prev_round:
+            if prev_round is not None and round_start_idx is not None and last_true_idx is not None:
+                # Close previous round at the previous true row (which is idx-1, but safer to use last_true_idx_prev)
+                end_row = df.iloc[idx - 1]
+                start_row = df.iloc[round_start_idx]
+
+                events.append(build_segment_event(start_row, start_row, "RoundStart"))
+                round_end_evt = build_segment_event(end_row, end_row, "RoundEnd")
+                round_end_evt["RoundNum"] = prev_round
+                events.append(round_end_evt)
+
+            round_start_idx = idx
+            prev_round = curr_round
+
+    # Final flush: close last open true round using last_true_idx (NOT df.iloc[-1])
+    if prev_round is not None and round_start_idx is not None and last_true_idx is not None:
+        start_row = df.iloc[round_start_idx]
+        end_row = df.iloc[last_true_idx]
+
+        events.append(build_segment_event(start_row, start_row, "RoundStart"))
+        round_end_evt = build_segment_event(end_row, end_row, "RoundEnd")
+        round_end_evt["RoundNum"] = prev_round
+        events.append(round_end_evt)
 
     return events
 
-def process_special_round_segments(df, allowed_statuses, role):
+def process_special_round_segments(df, allowed_statuses):
     """
     Scans the DataFrame row-by-row to find uninterrupted spans of special RoundNums
     [0, 7777, 8888, 9999] and emits a single synthetic event for each span.
     """
-    timestamp_col = "eMLT_orig"
-    start_time = "start_eMLT_orig"
-    end_time = "end_eMLT_orig"
-
-    # if isinstance(df[timestamp_col], str):
-    #     df[timestamp_col] = pd.to_datetime(df[timestamp_col], errors="coerce")
+    #print('starting process special round segments')
     special_round_map = {
         0: ("PreBlock_CylinderWalk", "PreBlockActivity"),
         7777: ("InterRound_CylinderWalk", "BlockActivity"),
@@ -159,13 +209,13 @@ def process_special_round_segments(df, allowed_statuses, role):
                 lo_event, hi_meta = special_round_map[first_row["RoundNum"]]
                 events.append({
                     "AppTime": first_row["AppTime"],
-                    timestamp_col: first_row[timestamp_col],
+                    "eMLT_orig": first_row["eMLT_orig"],
+                    "mLT_orig": first_row["mLT_orig"],
                     "start_AppTime": first_row["AppTime"],
                     "end_AppTime": last_row["AppTime"],
-                    start_time: first_row[timestamp_col],
-                    end_time: last_row[timestamp_col],
+                    "start_eMLT_orig": first_row["eMLT_orig"],
+                    "end_eMLT_orig": last_row["eMLT_orig"],
                     "mLT_raw": first_row["mLT_raw"],
-                    "mLT_orig": first_row["mLT_orig"],
                     "lo_eventType": f"{lo_event}_segment",
                     "med_eventType": "NonRewardDrivenNavigation",
                     "hi_eventType": "WalkingPeriod",
@@ -180,6 +230,7 @@ def process_special_round_segments(df, allowed_statuses, role):
                     "chestPin_num": first_row.get("chestPin_num"),
                     "origRow_start": first_row.get("origRow", start_i), ## More robust to pitfalls associated with using start_i 1/25/2026
                     "origRow_end": last_row.get("origRow", end_i), ## More robust to pitfalls associated with using start_i 1/25/2026
+
                 })
                 current_segment = [(idx, row)]
         else:
@@ -192,22 +243,22 @@ def process_special_round_segments(df, allowed_statuses, role):
                 lo_event, hi_meta = special_round_map[first_row["RoundNum"]]
                 events.append({
                     "AppTime": first_row["AppTime"],
-                    timestamp_col: first_row[timestamp_col],
+                    "eMLT_orig": first_row["eMLT_orig"],
+                    "mLT_orig": first_row["mLT_orig"],
                     "start_AppTime": first_row["AppTime"],
                     "end_AppTime": last_row["AppTime"],
-                    start_time: first_row[timestamp_col],
-                    end_time: last_row[timestamp_col],
+                    "start_eMLT_orig": first_row["eMLT_orig"],
+                    "end_eMLT_orig": last_row["eMLT_orig"],
                     "mLT_raw": first_row["mLT_raw"],
-                    "mLT_orig": first_row["mLT_orig"],
                     "lo_eventType": f"{lo_event}_segment",
                     "med_eventType": "NonRewardDrivenNavigation",
                     "hi_eventType": "WalkingPeriod",
                     "hiMeta_eventType": hi_meta,
                     "source": "synthetic",
                     "BlockNum": first_row.get("BlockNum"),
+                    "BlockInstance": first_row.get("BlockInstance"),
                     "RoundNum": first_row.get("RoundNum"),
                     "CoinSetID": first_row.get("CoinSetID"),
-                    "BlockInstance": first_row.get("BlockInstance"),
                     "BlockStatus": first_row.get("BlockStatus"),
                     "BlockType": first_row.get("BlockType"),
                     "chestPin_num": first_row.get("chestPin_num"),
@@ -225,32 +276,33 @@ def process_special_round_segments(df, allowed_statuses, role):
         lo_event, hi_meta = special_round_map[first_row["RoundNum"]]
         events.append({
             "AppTime": first_row["AppTime"],
-            timestamp_col: first_row[timestamp_col],
+            "eMLT_orig": first_row["eMLT_orig"],
+            "mLT_orig": first_row["mLT_orig"],
             "start_AppTime": first_row["AppTime"],
             "end_AppTime": last_row["AppTime"],
-            start_time: first_row[timestamp_col],
-            end_time: last_row[timestamp_col],
+            "start_eMLT_orig": first_row["eMLT_orig"],
+            "end_eMLT_orig": last_row["eMLT_orig"],
             "mLT_raw": first_row["mLT_raw"],
-            "mLT_orig": first_row["mLT_orig"],
             "lo_eventType": f"{lo_event}_segment",
             "med_eventType": "NonRewardDrivenNavigation",
             "hi_eventType": "WalkingPeriod",
             "hiMeta_eventType": hi_meta,
             "source": "synthetic",
             "BlockNum": first_row.get("BlockNum"),
-            "BlockInstance": first_row.get("BlockInstance"),
             "RoundNum": first_row.get("RoundNum"),
             "CoinSetID": first_row.get("CoinSetID"),
             "BlockStatus": first_row.get("BlockStatus"),
+            "BlockInstance": first_row.get("BlockInstance"),
             "BlockType": first_row.get("BlockType"),
             "chestPin_num": first_row.get("chestPin_num"),
             "origRow_start": first_row.get("origRow", start_i), ## More robust to pitfalls associated with using start_i 1/25/2026
             "origRow_end": last_row.get("origRow", end_i), ## More robust to pitfalls associated with using start_i 1/25/2026
         })
-
+    #print('ending process special round segments')
     return events
 
-def process_block_segments(df, allowed_statuses, role):
+def process_block_segments(df, allowed_statuses):
+    #print('starting process block segments')
     events = []
     df = df.reset_index(drop=True)
     
@@ -281,17 +333,14 @@ def process_block_segments(df, allowed_statuses, role):
         end_row = df.iloc[-1]
         events.append(build_segment_event(start_row, start_row, "BlockStart"))
         events.append(build_segment_event(end_row, end_row, "BlockEnd"))
-
+    #print('ending process block segments')
     return events
 
-def process_block_periods_v4(df, allowed_statuses, role):
+def process_block_periods_v4(df, allowed_statuses):
+    #print('starting block periods v4')
     events = []
     df = df.reset_index(drop=True)
-    timestamp_col = "eMLT_orig"
-    start_time = "start_eMLT_orig"
-    end_time = "end_eMLT_orig"
-    # if isinstance(df[timestamp_col], str):
-    #     df[timestamp_col] = pd.to_datetime(df[timestamp_col], errors="coerce")
+
     round_event_map = {
         0: ("PreBlock_CylinderWalk", "PreBlockActivity"),
         7777: ("InterRound_CylinderWalk", "BlockActivity"),
@@ -309,29 +358,27 @@ def process_block_periods_v4(df, allowed_statuses, role):
         start_row = rows.iloc[0]
         end_row = rows.iloc[-1]
 
-        appTime = start_row.AppTime
-        appTime_end = end_row.AppTime
-        start_ts = start_row[timestamp_col]
-        end_ts = end_row[timestamp_col]
-        duration = end_ts - start_ts
+        start_time = start_row.AppTime
+        end_time = end_row.AppTime
+        start_ts = start_row.eMLT_orig
+        end_ts = end_row.eMLT_orig
+        duration = end_time - start_time
 
         common_info = build_common_event_fields_noTime(start_row, start_row.name) ### Fix Me
         common_info.update({
-            "start_AppTime": appTime,
-            "end_AppTime": appTime_end,
-            start_time: start_ts,
-            end_time: end_ts,
-
-            "mLT_raw": start_row.mLT_raw,
-            "mLT_orig": start_row.mLT_orig
+            "start_AppTime": start_time,
+            "end_AppTime": end_time,
+            "start_eMLT_orig": start_ts,
+            "end_eMLT_orig": end_ts,
+            "mLT_raw": start_row.mLT_raw
         })
 
         synthetic = generate_synthetic_events_v3(
             start_ts,
-            appTime, 
+            start_time,
             [
-                (f"{lo_event}_start", 0.0, 0.0),
-                (f"{lo_event}_end", duration, 0.0)
+                (f"{lo_event}_start", 0.0, 0),
+                (f"{lo_event}_end", duration, 0)
             ],
             common_info,
             {
@@ -341,14 +388,11 @@ def process_block_periods_v4(df, allowed_statuses, role):
             }
         )
         events.extend(synthetic)
-
+    #print('ending block periods v4')
     return events
 
-def process_TrueContent(df, allowed_statuses, role):
-    timestamp_col = "eMLT_orig"
-    start_time = "start_eMLT_orig"
-    end_time = "end_eMLT_orig"
-
+def process_TrueContent(df, allowed_statuses):
+    #print('starting TrueContent')
     events = []
     for idx, row in df.iterrows():
         if isinstance(row.Message, str) and (
@@ -359,19 +403,21 @@ def process_TrueContent(df, allowed_statuses, role):
         ):
             common_info = build_common_event_fields_noTime(row, idx) ### Fix Me
 
-            appTime = row["AppTime"]
-            start_ts = row[timestamp_col]
+            start_time = row["AppTime"]
+            start_ts = row["eMLT_orig"]
 
             round_start_event = {
                 **common_info,
-                timestamp_col: start_ts,
-                "AppTime": appTime,
-                "start_AppTime": appTime,
-                "end_AppTime": appTime,
-                start_time: start_ts,
-                end_time: start_ts,
-                "mLT_raw": row["mLT_raw"],
+                "eMLT_orig": start_ts,
+                "AppTime": start_time,
+                
+                "start_AppTime": start_time,
+                "end_AppTime": start_time,
+                "start_eMLT_orig": start_ts,
+                "end_eMLT_orig": start_ts,
+
                 "mLT_orig": row["mLT_orig"],
+                "mLT_raw": row["mLT_raw"],
 
                 "lo_eventType": "TrueContentStart",
                 "med_eventType": "ReferencePoint",
@@ -379,26 +425,25 @@ def process_TrueContent(df, allowed_statuses, role):
                 "hiMeta_eventType": "Infrastructure",
                 "source": "logged",
             }
-            #print("round_start_event",round_start_event)
             events.append(round_start_event)
 
 
-        elif isinstance(row.Message, str) and "finished current task" in row.Message:
+        elif isinstance(row.Message, str) and "Finished watching other participant" in row.Message:
             common_info = build_common_event_fields_noTime(row, idx) ### Fix Me
 
-            appTime = row["AppTime"]
-            start_ts = row[timestamp_col]
+            start_time = row["AppTime"]
+            start_ts = row["eMLT_orig"]
 
             #details = {"mark": "A"} if role == "AN" else {"mark": "B"}
 
             events.append({
-                "AppTime": appTime,
-                timestamp_col: start_ts,
+                "AppTime": start_time,
+                "eMLT_orig": start_ts,
 
-                "start_AppTime": appTime,
-                "end_AppTime": appTime,
-                start_time: start_ts,
-                end_time: start_ts,
+                "start_AppTime": start_time,
+                "end_AppTime": start_time,
+                "start_eMLT_orig": start_ts,
+                "end_eMLT_orig": start_ts,
                 "mLT_raw": row["mLT_raw"],
                 "mLT_orig": row["mLT_orig"],
 
@@ -409,17 +454,16 @@ def process_TrueContent(df, allowed_statuses, role):
                 "source": "logged",
                 **common_info
             })
-            #print("events", events)
-
+    #print('end True Content')
     return events
 
 
-def buildGliaEvents_PO_v2(df, role, allowed_statuses):
+def buildGliaEvents_PO(df, role, allowed_statuses):
+    #print('buildGliaEvents_AN')
     return (
         process_marks(df, allowed_statuses, role) +
-        process_true_round_segments(df, allowed_statuses, role) +
-        process_special_round_segments(df, allowed_statuses, role) +
-        process_block_segments(df, allowed_statuses, role) +
-        #process_block_periods_v4(df, allowed_statuses, role) +
-        process_TrueContent(df, allowed_statuses, role)
-    )
+        process_true_round_segments(df, allowed_statuses) +
+        process_special_round_segments(df, allowed_statuses) +
+        process_block_segments(df, allowed_statuses) +
+        process_TrueContent(df, allowed_statuses)
+        )

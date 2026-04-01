@@ -1,0 +1,41 @@
+Linear mixed model fit by maximum likelihood . t-tests use Satterthwaite's method ['lmerModLmerTest']
+Formula: roundFrac ~ coinLabel + TotSesh_runTot_RoundNum + coinSet + (1 |      participantID)
+   Data: model_df
+
+     AIC      BIC   logLik deviance df.resid 
+  -654.8   -589.5    338.4   -676.8     2804 
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-2.7385 -0.8249  0.2112  0.6570  3.4829 
+
+Random effects:
+ Groups        Name        Variance Std.Dev.
+ participantID (Intercept) 0.001579 0.03973 
+ Residual                  0.045517 0.21335 
+Number of obs: 2815, groups:  participantID, 19
+
+Fixed effects:
+                          Estimate Std. Error         df t value Pr(>|t|)    
+(Intercept)              2.507e-01  1.711e-02  4.141e+01  14.647  < 2e-16 ***
+coinLabelLV              4.650e-02  9.854e-03  2.795e+03   4.718 2.49e-06 ***
+coinLabelNV              2.920e-01  9.852e-03  2.795e+03  29.634  < 2e-16 ***
+TotSesh_runTot_RoundNum  3.076e-04  2.372e-04  1.417e+03   1.296   0.1950    
+coinSetAx               -5.269e-03  2.509e-02  2.375e+01  -0.210   0.8354    
+coinSetB                -1.162e-03  1.775e-02  4.998e+02  -0.065   0.9478    
+coinSetBx                4.635e-02  2.831e-02  2.424e+01   1.638   0.1144    
+coinSetC                 2.470e-02  1.894e-02  8.838e+02   1.304   0.1925    
+coinSetD                 3.928e-02  1.737e-02  1.549e+03   2.261   0.0239 *  
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Correlation of Fixed Effects:
+            (Intr) cnLbLV cnLbNV TS_T_R cnStAx conStB cnStBx conStC
+coinLabelLV -0.290                                                 
+coinLabelNV -0.287  0.501                                          
+TtSsh_rT_RN -0.308  0.002  0.003                                   
+coinSetAx   -0.505  0.002  0.000 -0.121                            
+coinSetB    -0.391  0.001 -0.005  0.033  0.256                     
+coinSetBx   -0.482 -0.001 -0.003  0.008  0.406  0.231              
+coinSetC    -0.316 -0.001 -0.006  0.006  0.214  0.453  0.191       
+coinSetD    -0.280  0.001 -0.003  0.036  0.179  0.327  0.163  0.403

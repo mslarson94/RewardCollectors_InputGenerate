@@ -87,7 +87,8 @@ def detect_and_tag_blocks(data, role):
                 coinset_id = last_seen_coinset
                 block_type = 'collecting' if 'collecting' in block_type_raw else 'pindropping'
                 if role.upper() == "PO":
-                    start = block_start_idx + 1 if block_start_idx is not None else idx
+                    # start = block_start_idx + 1 if block_start_idx is not None else idx
+                    start = block_start_idx if block_start_idx is not None else idx
                 else:
                     start = block_start_idx if block_start_idx is not None else idx
 
@@ -317,6 +318,34 @@ def process_obsreward_file(data, role):
     data = parse_rotation(data, cols_rotation)
     return data
 
+## Tying Nearly Everything Together
+def process_obsreward_file_PO_pt1(data, role):
+    data["Messages_filled"] = data["Message"].fillna(method='ffill')
+
+    data = drop_dead_cols(data, cols2Drop)
+    data = parse_2D_coords(data, cols_2D)
+    data = parse_3D_coords(data, cols_3D)
+    data = parse_rotation(data, cols_rotation)
+    return data
+
+def process_obsreward_file_PO_pt2(data, role):
+    data["BlockNum"] = None
+    data["RoundNum"] = None
+    data["BlockType"] = None
+    data["CoinSetID"] = None
+    data["BlockStatus"] = None
+
+    detect_and_tag_blocks(data, role)
+    forward_fill_block_info(data)
+    fix_collecting_block_coinsetids(data)
+
+    for block_instance in data["BlockInstance"].dropna().unique():
+        block_mask = data["BlockInstance"] == block_instance
+        block_rows = data[block_mask]
+        status = detect_block_completeness(block_rows)
+        data.loc[block_mask, "BlockStatus"] = status
+
+    return data
 
 def check_monotonic_apptime(
     df: pd.DataFrame,

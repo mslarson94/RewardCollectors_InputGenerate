@@ -1,0 +1,384 @@
+--- preproc/baseline_pipeline_AN/overnightRuns/run_overnight_modFreshStart.sh
++++ preproc/baseline_pipeline_PO/overnightRuns/run_overnight_modFreshStart.sh
+@@ -2,7 +2,7 @@
+ set -Eeuo pipefail
+ 
+ # Set up log file
+-LOG_FILE="/Users/mairahmac/Desktop/modFreshStart_processing_log_$(date +'%Y-%m-%d_%H-%M-%S').log"
++LOG_FILE="/Users/mairahmac/Desktop/singleModFreshStart_$(date +'%Y-%m-%d_%H-%M-%S').log"
+ 
+ # Activate virtual environment (fail hard if missing)
+ if ! command -v conda >/dev/null 2>&1; then
+@@ -17,9 +17,9 @@
+ fi
+ 
+ # Segment barebones
+-CODE_DIR="/Users/mairahmac/Desktop/myra_code/Python/RewardCollectors_InputGenerate/preproc/baseline_pipeline_AN"
++CODE_DIR="/Users/mairahmac/Desktop/myra_code/Python/RewardCollectors_InputGenerate/preproc/baseline_pipeline_PO"
+ TRUE_BASE_DIR="/Users/mairahmac/Desktop/RC_TestingNotes"
+-PROC_DIR="FreshStart_redoAgainAgainAgain"
++PROC_DIR="FreshStart_redoAgainAgainAgain_PO_single"
+ #PROC_DIR="FreshStart_redoAgainSingle"
+ META_FILE="collatedData.xlsx"
+ EVENTS_DIR="Events_Pos"
+@@ -28,31 +28,46 @@
+ # # Raw Preprocessing
+ # ###################
+ 
+-# echo "🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑" | tee -a "$LOG_FILE"
+-# echo "🚀 Starting preprocRaw_AN.py at $(date)" | tee -a "$LOG_FILE"
+-# python "${CODE_DIR}/preprocRaw/preprocRaw_AN.py" \
++# echo "🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼" | tee -a "$LOG_FILE"
++# echo "" | tee -a "$LOG_FILE"
++# echo "🚀 Starting preprocRaw_PO_part1.py  at $(date)" | tee -a "$LOG_FILE"
++# python "${CODE_DIR}/preprocRaw/preprocRaw_PO_part1.py" \
+ #   --root-dir "$TRUE_BASE_DIR" \
+ #   --proc-dir "$PROC_DIR" \
+ #   >> "$LOG_FILE" 2>&1
+-# echo "✅ preprocRaw_AN.py  completed at $(date)" | tee -a "$LOG_FILE"
+-
++# echo "✅ preprocRaw_PO_part1.py completed at $(date)" | tee -a "$LOG_FILE"
+ 
+ # echo "🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼" | tee -a "$LOG_FILE"
+ # echo "" | tee -a "$LOG_FILE"
+-# echo "🚀 Starting preprocRaw_PO.py  at $(date)" | tee -a "$LOG_FILE"
+-# python "${CODE_DIR}/preprocRaw/preprocRaw_PO.py" \
++# echo "🚀 Starting preprocRaw_PO_part2.py  at $(date)" | tee -a "$LOG_FILE"
++# python "${CODE_DIR}/preprocRaw/preprocRaw_PO_part2.py" \
+ #   --root-dir "$TRUE_BASE_DIR" \
+ #   --proc-dir "$PROC_DIR" \
+ #   >> "$LOG_FILE" 2>&1
+-# echo "✅ preprocRaw_PO.py completed at $(date)" | tee -a "$LOG_FILE"
+-
+-# # #################################################################################################################
+-# # Initial Event Segmentation (Glia Setting) Used for PO Alignment to AN data & All data to Raspberry Pi .log files 
+-# # #################################################################################################################
+-
+-# echo "🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿" | tee -a "$LOG_FILE"
+-# echo "Look Right Here Myra" | tee -a "$LOG_FILE"
+-# echo "🚀 Starting preFrontalCortex_unifiedEventSeg.py for AN at $(date)" | tee -a "$LOG_FILE"
++# echo "✅ preprocRaw_PO_part2.py completed at $(date)" | tee -a "$LOG_FILE"
++
++# # # ####################################
++# # # Initial Event Segmentation for PO
++# # # ####################################
++
++# echo "🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝" | tee -a "$LOG_FILE"
++# echo "🚀 Starting preFrontalCortex_unifiedEventSeg.py for PO  setting at $(date)" | tee -a "$LOG_FILE"
++# python "${CODE_DIR}/eventSeg/preFrontalCortex_unifiedEventSeg.py" \
++#   --trueRootDir "$TRUE_BASE_DIR" \
++#   --procDir "$PROC_DIR" \
++#   --role PO \
++#   --allowed-status complete \
++#   --allowed-status truncated \
++#   >> "$LOG_FILE" 2>&1
++# echo "✅ preFrontalCortex_unifiedEventSeg.py for PO completed at $(date)" | tee -a "$LOG_FILE" 
++
++
++# ####################################
++# # Initial Event Segmentation for AN
++# ####################################
++
++# echo "🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝" | tee -a "$LOG_FILE"
++# echo "🚀 Starting preFrontalCortex_unifiedEventSeg.py for AN  setting at $(date)" | tee -a "$LOG_FILE"
+ # python "${CODE_DIR}/eventSeg/preFrontalCortex_unifiedEventSeg.py" \
+ #   --trueRootDir "$TRUE_BASE_DIR" \
+ #   --procDir "$PROC_DIR" \
+@@ -60,19 +75,7 @@
+ #   --allowed-status complete \
+ #   --allowed-status truncated \
+ #   >> "$LOG_FILE" 2>&1
+-# echo "✅ preFrontalCortex_unifiedEventSeg.py for AN completed at $(date)" | tee -a "$LOG_FILE"
+-
+-# # echo "🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝" | tee -a "$LOG_FILE"
+-# # echo "🚀 Starting preFrontalCortex_unifiedEventSeg.py for PO  setting at $(date)" | tee -a "$LOG_FILE"
+-# # python "${CODE_DIR}/eventSeg/preFrontalCortex_unifiedEventSeg.py" \
+-# #   --trueRootDir "$TRUE_BASE_DIR" \
+-# #   --procDir "$PROC_DIR" \
+-# #   --role PO \
+-# #   --allowed-status complete \
+-# #   --allowed-status truncated \
+-# #   >> "$LOG_FILE" 2>&1
+-# # echo "✅ preFrontalCortex_unifiedEventSeg.py for PO completed at $(date)" | tee -a "$LOG_FILE" 
+-
++# echo "✅ preFrontalCortex_unifiedEventSeg.py for AN completed at $(date)" | tee -a "$LOG_FILE" 
+ 
+ # ###########################################################################
+ # # Event Augmentation Pipeline | Flattening Events' Details Column of Dict's 
+@@ -162,7 +165,28 @@
+ #   --reproc-dir "${TRUE_BASE_DIR}/${PROC_DIR}/ReProcessedData_Flat" \
+ #   --events-pre-dir "${TRUE_BASE_DIR}/${PROC_DIR}/EventSegmentation/EventsPreReproc" \
+ #   --events-reproc-dir "${TRUE_BASE_DIR}/${PROC_DIR}/EventSegmentation/EventsReproc" \
+-#   --pattern "*_events_pos.csv" \
++#   --pattern "ObsReward_B_*_events_pos.csv" \
++#   --max-round 100 \
++#   --round-mode roundstartend \
++#   >> "$LOG_FILE" 2>&1
++# echo "✅ 00_batch_reproc_steps_01_04.py completed at $(date)" | tee -a "$LOG_FILE"
++
++
++# echo "✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨" | tee -a "$LOG_FILE"
++# echo "🚀 Starting 00_batch_reproc_steps_01_04.py at $(date)" | tee -a "$LOG_FILE"
++# echo "            01_build_intervals : Build Block/Round Interval Tables - Single Row for Every True Round"
++# echo "            02_reproc_processed_add_elapsed_and_distance : Add Elapsed Time & Distance to _processed.csv to make _PreLimReprocessed.csv files"
++# echo "            03_compute_speed : Compute Speed to Make Final _reprocessed.csv files"
++# echo "            04_finalize_events_and_intervals_with_pindrops (no startPos here): Fleshing out Block/Round Interval Tables & Events Files with More Dist & Time Info"
++# python "${CODE_DIR}/reproc/00_batch_reproc_steps_01_04.py" \
++#   --events-root "${TRUE_BASE_DIR}/${PROC_DIR}/EventSegmentation/Events_Pos" \
++#   --processed-root "${TRUE_BASE_DIR}/${PROC_DIR}/ProcessedData_Flat" \
++#   --intervals-dir "${TRUE_BASE_DIR}/${PROC_DIR}/EventSegmentation/Events_Intervals" \
++#   --prelim-reproc-dir "${TRUE_BASE_DIR}/${PROC_DIR}/PreLimReProcessedData_Flat" \
++#   --reproc-dir "${TRUE_BASE_DIR}/${PROC_DIR}/ReProcessedData_Flat" \
++#   --events-pre-dir "${TRUE_BASE_DIR}/${PROC_DIR}/EventSegmentation/EventsPreReproc" \
++#   --events-reproc-dir "${TRUE_BASE_DIR}/${PROC_DIR}/EventSegmentation/EventsReproc" \
++#   --pattern "ObsReward_A_*_events_pos.csv" \
+ #   --max-round 100 \
+ #   --round-mode auto \
+ #   >> "$LOG_FILE" 2>&1
+@@ -238,6 +262,23 @@
+ #   >> "$LOG_FILE" 2>&1
+ # echo "✅ computeWalks.py completed at $(date)" | tee -a "$LOG_FILE"
+ 
++
++# #############################################################################################################################################################
++# # Event/Interval Augmentation Pipeline | Pin Drop Vote Scoring
++# #############################################################################################################################################################
++
++# echo "✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨" | tee -a "$LOG_FILE"
++# echo "🚀 Starting add_pin_drop_vote_score.py at $(date)" | tee -a "$LOG_FILE"
++# python "${CODE_DIR}/eventAugmentation/add_pin_drop_vote_score.py" \
++#   "${TRUE_BASE_DIR}/${PROC_DIR}/EventSegmentation/EventsMergedWalks" \
++#   -o "${TRUE_BASE_DIR}/${PROC_DIR}/EventSegmentation/EventsMergedWalks_POVote" \
++#   --summary-csv "${TRUE_BASE_DIR}/${PROC_DIR}/EventSegmentation/PreprocLogging/qa_summary_POVote.csv" \
++#   --pattern "ObsReward_B_*_eventsWalks.csv" \
++#   >> "$LOG_FILE" 2>&1
++# echo "🚀 Starting add_pin_drop_vote_score.py at $(date)" | tee -a "$LOG_FILE"
++
++
++
+ # ######################################################################################################################################
+ # # Event/Interval Augmentation Pipeline | Adding Missing pos/time/dist cols for _start/_end events in *_eventsWalks using *_reprocessed
+ # ######################################################################################################################################
+@@ -247,13 +288,26 @@
+ #   --events-walks-dir "${TRUE_BASE_DIR}/${PROC_DIR}/EventSegmentation/EventsMergedWalks" \
+ #   --reprocessed-dir "${TRUE_BASE_DIR}/${PROC_DIR}/ReProc_withDist" \
+ #   --out-dir "${TRUE_BASE_DIR}/${PROC_DIR}/EventSegmentation/EventWalksFilled" \
+-#   --pattern "*_eventsWalks.csv" \
++#   --pattern "ObsReward_A_*_eventsWalks.csv" \
++#   --role AN \
+ #   --debug \
+ #   --overwrite \
+ #   >> "$LOG_FILE" 2>&1
+ # echo "✅ fillEventsPosWalks.py completed at $(date)" | tee -a "$LOG_FILE"
+ 
+ 
++# echo "✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨" | tee -a "$LOG_FILE"
++# echo "🚀 Starting fillEventsPosWalks.py at $(date)" | tee -a "$LOG_FILE"
++# python "${CODE_DIR}/eventAugmentation/fillEventsPosWalks.py" \
++#   --events-walks-dir "${TRUE_BASE_DIR}/${PROC_DIR}/EventSegmentation/EventsMergedWalks_POVote" \
++#   --reprocessed-dir "${TRUE_BASE_DIR}/${PROC_DIR}/ReProc_withDist" \
++#   --out-dir "${TRUE_BASE_DIR}/${PROC_DIR}/EventSegmentation/EventWalksFilled" \
++#   --pattern "*_with_pinDropVoteScore.csv" \
++#   --role PO \
++#   --debug \
++#   --overwrite \
++#   >> "$LOG_FILE" 2>&1
++# echo "✅ fillEventsPosWalks.py completed at $(date)" | tee -a "$LOG_FILE"
+ # ###################################################################################################################################################
+ # # Event/Interval Augmentation Pipeline | Augmenting Intervals with more Static Block/Round Info from Events Files (i.e. CoinSetID, coinSet, etc...)
+ # ###################################################################################################################################################
+@@ -268,6 +322,7 @@
+ #   >> "$LOG_FILE" 2>&1
+ # echo "✅ buildIntervalsFromEvents.py completed at $(date)" | tee -a "$LOG_FILE"
+ 
++
+ # #############################################################################################################################################################
+ # # Event/Interval Augmentation Pipeline | Propagate Interval-level columns into *_filled.csv Event Files (i.e. round_start_origRow, round_end_AppTime, etc...)
+ # #############################################################################################################################################################
+@@ -282,6 +337,7 @@
+ #   --overwrite \
+ #  >> "$LOG_FILE" 2>&1
+ # echo "✅ propagateIntervalCols.py completed at $(date)" | tee -a "$LOG_FILE"
++
+ 
+ # ###################################################################################################################
+ # # Event/Interval Augmentation Pipeline | Attach Pin Drop Walk, Chest Walk, and Swap Vote Data to the Interval Files
+@@ -327,115 +383,109 @@
+ # echo "✅ attach_swapVote_metrics.py completed at $(date)" | tee -a "$LOG_FILE"
+ 
+ echo "✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨" | tee -a "$LOG_FILE"
+-echo "🚀 Starting attach_round_earnings_raw.py at $(date)" | tee -a "$LOG_FILE"
+-python "${CODE_DIR}/eventAugmentation/attach_round_earnings_raw.py" \
++echo "🚀 Starting attach_pinDropVote_metrics.py at $(date)" | tee -a "$LOG_FILE"
++python "${CODE_DIR}/eventAugmentation/attach_pinDropVote_metrics.py" \
+   --events-dir "${TRUE_BASE_DIR}/${PROC_DIR}/EventSegmentation/MostlyFilledEvents" \
+-  --events-pattern "*_filled_intervalProps.csv" \
++  --events-pattern "ObsReward_B_*_filled_intervalProps.csv" \
+   --interval-dir "${TRUE_BASE_DIR}/${PROC_DIR}/EventSegmentation/FilledEventsIntervals_SwapVotes" \
+-  --interval-pattern "*_intervalsSwapVotes.csv" \
+-  --outdir "${TRUE_BASE_DIR}/${PROC_DIR}/EventSegmentation/FilledEventsIntervals_PinDropRawValues" \
+-  --out-suffix "_intervalsPinDropRawValues.csv" \
++  --interval-pattern "ObsReward_B_*_intervalsSwapVotes.csv" \
++  --outdir "${TRUE_BASE_DIR}/${PROC_DIR}/EventSegmentation/FilledEventsIntervals_PinDropVotes_" \
++  --out-suffix "_intervalsPinDropVotes_.csv" \
+   --overwrite \
+-  --debug-keys \
+->> "$LOG_FILE" 2>&1
+-echo "✅ attach_round_earnings_raw.py completed at $(date)" | tee -a "$LOG_FILE"
+-
+-echo "✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨" | tee -a "$LOG_FILE"
+-echo "🚀 Starting derive_round_earnings_from_intervals.py at $(date)" | tee -a "$LOG_FILE"
+-python "${CODE_DIR}/eventAugmentation/derive_round_earnings_from_intervals.py" \
+-  --interval-dir "${TRUE_BASE_DIR}/${PROC_DIR}/EventSegmentation/FilledEventsIntervals_PinDropRawValues" \
+-  --interval-pattern "*_intervalsPinDropRawValues.csv" \
+-  --outdir "${TRUE_BASE_DIR}/${PROC_DIR}/EventSegmentation/FilledEventsIntervals_RoundEarnings" \
+-  --out-suffix "_intervalsRoundEarnings.csv" \
+-  --overwrite \
+-  --debug-keys \
+->> "$LOG_FILE" 2>&1
+-echo "✅ derive_round_earnings_from_intervals.py completed at $(date)" | tee -a "$LOG_FILE"
+-
+-##########################################################################################
+-# Event/Interval Augmentation Pipeline | Assigning Path Utility & Path Efficiency to Walks
+-##########################################################################################
+-echo "✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨" | tee -a "$LOG_FILE"
+-echo "🚀 Starting assign_norm_util_and_efficiency.py Lambda 1 at $(date)" | tee -a "$LOG_FILE"
+-python "${CODE_DIR}/eventAugmentation/assign_norm_util_and_efficiency.py" \
+-  --main-dir "${TRUE_BASE_DIR}/${PROC_DIR}/EventSegmentation/FilledEventsIntervals_RoundEarnings" \
+-  --main-pattern "*_intervalsRoundEarnings.csv" \
+-  --ref-dir "/Users/mairahmac/Desktop/TriangleSets/RoutePlanWeightUtility/pathUtility_norm_L1" \
+-  --ref-pattern "all_orders__layout_*_L1_normUtil.csv" \
+-  --output "${TRUE_BASE_DIR}/${PROC_DIR}/EventSegmentation/EventsUtil_L1_Swap" \
+-  --out-mode dir \
+-  --suffix "_normUtil_L1" \
++ >> "$LOG_FILE" 2>&1
++echo "✅ attach_pinDropVote_metrics.py completed at $(date)" | tee -a "$LOG_FILE"
++
++# ###########################################################################################
++# ###########################################################################################
++# #                                     ¡¡ Note !!                                          #
++# # I'm skipping the following scripts for PO at the moment because it isn't immediately    #
++# # useful for my broad pass:                                                               #
++# #         - attach_round_earnings_raw.py --> This one will need to be adjusted            #
++# #         - derive_round_earnings_from_intervals.py --> This one *might* not be needed    #
++# #         - assign_norm_util_and_efficiency.py --> This one is an AN exclusive            #
++# # See AN's version of 'run_overnight_modFreshStart' for all the correct inputs if/when    #
++# # these scripts might need to be used.                                                    #
++# ###########################################################################################
++# ###########################################################################################
++
++echo "✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨" | tee -a "$LOG_FILE"
++echo "🚀 Starting add_swapvote_registered_only.py at $(date)" | tee -a "$LOG_FILE"
++python "${CODE_DIR}/eventAugmentation/add_swapvote_registered_only.py" \
++  --interval-dir "${TRUE_BASE_DIR}/${PROC_DIR}/EventSegmentation/FilledEventsIntervals_PinDropVotes_" \
++  --outdir "${TRUE_BASE_DIR}/${PROC_DIR}/EventSegmentation/FilledEventsIntervals_PinDropVotes" \
++  --interval-pattern "*_intervalsPinDropVotes_.csv" \
++  --out-suffix "_intervalsPinDropVotes.csv" \
+   --overwrite \
+   >> "$LOG_FILE" 2>&1
+-echo "✅ assign_norm_util_and_efficiency.py completed at $(date)" | tee -a "$LOG_FILE"
++echo "✅ add_swapvote_registered_only.py completed at $(date)" | tee -a "$LOG_FILE"
+ 
+ 
+ #########################################################################################
+-# Event/Interval Augmentation Pipeline | Assigning Path Utility & Path Efficiency to Walks
++# Event/Interval Augmentation Pipeline | Adding Session Running Totals to Interval Files
+ #########################################################################################
+ echo "✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨" | tee -a "$LOG_FILE"
+-echo "🚀 Starting group_and_append_sessionID.py Lambda 1 at $(date)" | tee -a "$LOG_FILE"
++echo "🚀 Starting group_and_append_sessionID.py at $(date)" | tee -a "$LOG_FILE"
+ python "${CODE_DIR}/eventAugmentation/group_and_append_sessionID.py" \
+     --meta "${TRUE_BASE_DIR}/collatedData.xlsx" \
+-    --input-dir "${TRUE_BASE_DIR}/${PROC_DIR}/EventSegmentation/EventsUtil_L1_Swap" \
+-    --suffix "_intervalsRoundEarnings_normUtil_L1.csv" \
+-    --out-dir "${TRUE_BASE_DIR}/${PROC_DIR}/EventSegmentation/FullIntervals_L1_Swap" \
+-    --out-meta-dir "${TRUE_BASE_DIR}/${PROC_DIR}/EventSegmentation/mainfests/groupAndAppendSessionID" \
++    --input-dir "${TRUE_BASE_DIR}/${PROC_DIR}/EventSegmentation/FilledEventsIntervals_PinDropVotes" \
++    --suffix "_intervalsPinDropVotes.csv" \
++    --out-dir "${TRUE_BASE_DIR}/${PROC_DIR}/EventSegmentation/FullIntervals_PinDropVotes" \
++    --out-meta-dir "${TRUE_BASE_DIR}/${PROC_DIR}/EventSegmentation/PreprocLogging/groupAndAppendSessionID" \
+     --manifest --group-json --check-columns --check-order --check-empty \
+     >> "$LOG_FILE" 2>&1
+-echo "✅ group_and_append_sessionID.py Lambda 1 completed at $(date)" | tee -a "$LOG_FILE"
+-
+-echo "✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨" | tee -a "$LOG_FILE"
+-echo "🚀 Starting add_session_running_totals.py Lambda 1 at $(date)" | tee -a "$LOG_FILE"
++echo "✅ group_and_append_sessionID.py completed at $(date)" | tee -a "$LOG_FILE"
++
++echo "✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨" | tee -a "$LOG_FILE"
++echo "🚀 Starting add_session_running_totals.py at $(date)" | tee -a "$LOG_FILE"
+ python "${CODE_DIR}/eventAugmentation/add_session_running_totals.py" \
+-  --input_dir "${TRUE_BASE_DIR}/${PROC_DIR}/EventSegmentation/FullIntervals_L1_Swap" \
+-  --output_dir "${TRUE_BASE_DIR}/${PROC_DIR}/EventSegmentation/totBlockRounds_L1" \
+-  --manifest_dir "${TRUE_BASE_DIR}/${PROC_DIR}/EventSegmentation/mainfests/addSessionRunningTotals" \
++  --input_dir "${TRUE_BASE_DIR}/${PROC_DIR}/EventSegmentation/FullIntervals_PinDropVotes" \
++  --output_dir "${TRUE_BASE_DIR}/${PROC_DIR}/EventSegmentation/totBlockRounds" \
++  --manifest_dir "${TRUE_BASE_DIR}/${PROC_DIR}/EventSegmentation/PreprocLogging/addSessionRunningTotals" \
+   >> "$LOG_FILE" 2>&1
+-echo "✅ add_session_running_totals.py Lambda 1 completed at $(date)" | tee -a "$LOG_FILE"
+-
+-
+-# # # ### python "${CODE_DIR}/eventAugmentation/scan_missing_keys.py" --input_dir "${TRUE_BASE_DIR}/${PROC_DIR}/EventSegmentation/totBlockRounds_L1" --output_dir "${TRUE_BASE_DIR}/${PROC_DIR}"
+-
+-
+-echo "✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨" | tee -a "$LOG_FILE"
+-echo "🚀 Starting add_swap_rates.py Lambda 1 at $(date)" | tee -a "$LOG_FILE"
++echo "✅ add_session_running_totals.py completed at $(date)" | tee -a "$LOG_FILE"
++
++
++# # # # ### python "${CODE_DIR}/eventAugmentation/scan_missing_keys.py" --input_dir "${TRUE_BASE_DIR}/${PROC_DIR}/EventSegmentation/totBlockRounds_L1" --output_dir "${TRUE_BASE_DIR}/${PROC_DIR}"
++
++
++echo "✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨" | tee -a "$LOG_FILE"
++echo "🚀 Starting add_swap_rates.py at $(date)" | tee -a "$LOG_FILE"
+ python "${CODE_DIR}/eventAugmentation/add_swap_rates.py" \
+-  --input_dir "${TRUE_BASE_DIR}/${PROC_DIR}/EventSegmentation/totBlockRounds_L1" \
+-  --output_dir "${TRUE_BASE_DIR}/${PROC_DIR}/EventSegmentation/swapRate_L1" \
++  --input_dir "${TRUE_BASE_DIR}/${PROC_DIR}/EventSegmentation/totBlockRounds" \
++  --output_dir "${TRUE_BASE_DIR}/${PROC_DIR}/EventSegmentation/swapRate" \
+   --recent_trials 9 \
+ >> "$LOG_FILE" 2>&1
+-echo "✅ add_swap_rates.py Lambda 1 completed at $(date)" | tee -a "$LOG_FILE"
++echo "✅ add_swap_rates.py completed at $(date)" | tee -a "$LOG_FILE"
+ 
+ 
+ 
+ ### Adding in Demo stuff
+ echo "✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨" | tee -a "$LOG_FILE"
+-echo "🚀 Starting attach_demo_pvss_to_session_csvs.py Lambda 1 at $(date)" | tee -a "$LOG_FILE"
++echo "🚀 Starting attach_demo_pvss_to_session_csvs.py at $(date)" | tee -a "$LOG_FILE"
+ python "${CODE_DIR}/eventAugmentation/attach_demo_pvss_to_session_csvs.py" \
+-  --input-dir "${TRUE_BASE_DIR}/${PROC_DIR}/EventSegmentation/swapRate_L1" \
+-  --outdir "${TRUE_BASE_DIR}/${PROC_DIR}/EventSegmentation/intervalsFinal_L1" \
++  --input-dir "${TRUE_BASE_DIR}/${PROC_DIR}/EventSegmentation/swapRate" \
++  --outdir "${TRUE_BASE_DIR}/${PROC_DIR}/EventSegmentation/intervalsFinal" \
+   --workbook "${TRUE_BASE_DIR}/${META_FILE}" \
+   --overwrite \
+   >> "$LOG_FILE" 2>&1
+-echo "✅ attach_demo_pvss_to_session_csvs.py Lambda 1 completed at $(date)" | tee -a "$LOG_FILE"
++echo "✅ attach_demo_pvss_to_session_csvs.py completed at $(date)" | tee -a "$LOG_FILE"
+ 
+ 
+ ### Concat'ing all the output interval files into my mega file
+ echo "✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨" | tee -a "$LOG_FILE"
+-echo "🚀 Starting concat_csvs.py Lambda 1 at $(date)" | tee -a "$LOG_FILE"
++echo "🚀 Starting concat_csvs.py at $(date)" | tee -a "$LOG_FILE"
+ python "/Users/mairahmac/Desktop/myra_code/Python/RewardCollectors_InputGenerate/preproc/extraction/concat_csvs.py" \
+-  --indir "${TRUE_BASE_DIR}/${PROC_DIR}/EventSegmentation/intervalsFinal_L1" \
+-  --out "${TRUE_BASE_DIR}/${PROC_DIR}/EventSegmentation/megaFiles/allIntervalData_L1.csv" \
++  --indir "${TRUE_BASE_DIR}/${PROC_DIR}/EventSegmentation/intervalsFinal" \
++  --out "${TRUE_BASE_DIR}/${PROC_DIR}/EventSegmentation/megaFiles/allIntervalData.csv" \
+   --recursive \
+   --add-source-file \
+   >> "$LOG_FILE" 2>&1
+-echo "✅ concat_csvs.py Lambda 1 completed at $(date)" | tee -a "$LOG_FILE"
++echo "✅ concat_csvs.py completed at $(date)" | tee -a "$LOG_FILE"
+ 
+ echo "✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨" | tee -a "$LOG_FILE"
+ echo "🚀 Starting summarize_pindrops.py at $(date)" | tee -a "$LOG_FILE"
+ python "/Users/mairahmac/Desktop/myra_code/Python/RewardCollectors_InputGenerate/preproc/extraction/summarize_pindrops.py" \
+-  "${TRUE_BASE_DIR}/${PROC_DIR}/EventSegmentation/intervalsFinal_L1" \
++  "${TRUE_BASE_DIR}/${PROC_DIR}/EventSegmentation/intervalsFinal" \
+   --out "${TRUE_BASE_DIR}/${PROC_DIR}/EventSegmentation/megaFiles/participantSummaryData.csv" \
+   --pattern "*__withDemo.csv" \
+ >> "$LOG_FILE" 2>&1

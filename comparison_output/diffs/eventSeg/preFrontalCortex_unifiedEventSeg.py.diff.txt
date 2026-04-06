@@ -1,0 +1,20 @@
+--- preproc/baseline_pipeline_AN/eventSeg/preFrontalCortex_unifiedEventSeg.py
++++ preproc/baseline_pipeline_PO/eventSeg/preFrontalCortex_unifiedEventSeg.py
+@@ -54,7 +54,7 @@
+ from RC_utilities.segHelpers.muscles_eventParser_AN import buildEvents_AN_v4
+ 
+ ## glia_eventsParserHelper_PO
+-from RC_utilities.segHelpers.glia_eventsParserHelper_PO import buildGliaEvents_PO_v2
++from RC_utilities.segHelpers.glia_eventsParserHelper_PO import buildGliaEvents_PO
+ 
+ ## muscles_eventParser_PO
+ from RC_utilities.segHelpers.muscles_eventParser_PO import buildEvents_PO
+@@ -169,7 +169,7 @@
+                         all_events = muscles + glia 
+                         meta_json = generate_meta_json(df, full_metadata_df, source_file, role)
+                     elif role == 'PO':
+-                        glia =  buildGliaEvents_PO_v2(df=df, allowed_statuses=allowed_statuses, role=role)
++                        glia =  buildGliaEvents_PO(df=df, allowed_statuses=allowed_statuses, role=role)
+                         muscles = buildEvents_PO(df, allowed_statuses)
+                         all_events = muscles + glia 
+                         meta_json = generate_meta_json(df, full_metadata_df, source_file, role)

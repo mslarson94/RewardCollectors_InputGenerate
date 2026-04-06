@@ -1,0 +1,1566 @@
+--- preproc/baseline_pipeline_AN/overnightRuns/nohup.out
++++ preproc/baseline_pipeline_PO/overnightRuns/nohup.out
+@@ -15076,3 +15076,1563 @@
+ ✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
+ 🚀 Starting summarize_pindrops.py at Fri Mar 27 12:43:22 PDT 2026
+ ✅ summarize_pindrops.py completed at Fri Mar 27 12:43:23 PDT 2026
++🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼
++
++🚀 Starting preprocRaw_PO.py  at Mon Mar 30 11:37:30 PDT 2026
++🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝
++🚀 Starting preFrontalCortex_unifiedEventSeg.py for PO  setting at Mon Mar 30 11:55:40 PDT 2026
++run_overnight_modFreshStart.sh: line 136: syntax error near unexpected token `('
++✅ preFrontalCortex_unifiedEventSeg.py for PO completed at Mon Mar 30 12:05:47 PDT 2026
++🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝
++🚀 Starting preFrontalCortex_unifiedEventSeg.py for PO  setting at Mon Mar 30 12:21:43 PDT 2026
++✅ preFrontalCortex_unifiedEventSeg.py for PO completed at Mon Mar 30 12:34:50 PDT 2026
++🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝
++🚀 Starting preFrontalCortex_unifiedEventSeg.py for PO  setting at Mon Mar 30 12:49:58 PDT 2026
++✅ preFrontalCortex_unifiedEventSeg.py for PO completed at Mon Mar 30 13:04:11 PDT 2026
++🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝
++🚀 Starting preFrontalCortex_unifiedEventSeg.py for PO  setting at Mon Mar 30 17:27:30 PDT 2026
++✅ preFrontalCortex_unifiedEventSeg.py for PO completed at Mon Mar 30 17:41:36 PDT 2026
++🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝
++🚀 Starting preFrontalCortex_unifiedEventSeg.py for PO  setting at Mon Mar 30 18:11:12 PDT 2026
++🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝
++🚀 Starting preFrontalCortex_unifiedEventSeg.py for PO  setting at Mon Mar 30 18:12:23 PDT 2026
++✅ preFrontalCortex_unifiedEventSeg.py for PO completed at Mon Mar 30 18:26:40 PDT 2026
++🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝
++🚀 Starting preFrontalCortex_unifiedEventSeg.py for PO  setting at Mon Mar 30 18:37:46 PDT 2026
++🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝
++🚀 Starting preFrontalCortex_unifiedEventSeg.py for PO  setting at Mon Mar 30 18:39:06 PDT 2026
++✅ preFrontalCortex_unifiedEventSeg.py for PO completed at Mon Mar 30 18:55:04 PDT 2026
++🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝
++🚀 Starting preFrontalCortex_unifiedEventSeg.py for PO  setting at Mon Mar 30 18:55:12 PDT 2026
++✅ preFrontalCortex_unifiedEventSeg.py for PO completed at Mon Mar 30 19:11:25 PDT 2026
++🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝
++🚀 Starting preFrontalCortex_unifiedEventSeg.py for PO  setting at Mon Mar 30 19:13:50 PDT 2026
++✅ preFrontalCortex_unifiedEventSeg.py for PO completed at Mon Mar 30 19:29:49 PDT 2026
++🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝
++🚀 Starting preFrontalCortex_unifiedEventSeg.py for PO  setting at Mon Mar 30 22:53:31 PDT 2026
++✅ preFrontalCortex_unifiedEventSeg.py for PO completed at Mon Mar 30 23:09:27 PDT 2026
++🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝
++🚀 Starting preFrontalCortex_unifiedEventSeg.py for PO  setting at Tue Mar 31 08:35:21 PDT 2026
++run_overnight_modFreshStart.sh: line 136: syntax error near unexpected token `('
++🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝
++🚀 Starting preFrontalCortex_unifiedEventSeg.py for PO  setting at Tue Mar 31 09:01:25 PDT 2026
++✅ preFrontalCortex_unifiedEventSeg.py for PO completed at Tue Mar 31 09:01:49 PDT 2026
++🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝
++🚀 Starting preFrontalCortex_unifiedEventSeg.py for PO  setting at Tue Mar 31 09:06:22 PDT 2026
++✅ preFrontalCortex_unifiedEventSeg.py for PO completed at Tue Mar 31 09:06:47 PDT 2026
++🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝
++🚀 Starting preFrontalCortex_unifiedEventSeg.py for PO  setting at Tue Mar 31 10:37:34 PDT 2026
++✅ preFrontalCortex_unifiedEventSeg.py for PO completed at Tue Mar 31 10:37:58 PDT 2026
++🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝
++🚀 Starting preFrontalCortex_unifiedEventSeg.py for PO  setting at Tue Mar 31 10:40:20 PDT 2026
++✅ preFrontalCortex_unifiedEventSeg.py for PO completed at Tue Mar 31 10:40:45 PDT 2026
++🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝
++🚀 Starting preFrontalCortex_unifiedEventSeg.py for AN  setting at Tue Mar 31 10:40:45 PDT 2026
++✅ preFrontalCortex_unifiedEventSeg.py for AN completed at Tue Mar 31 10:41:08 PDT 2026
++🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭
++
++🚀 Starting justFlatten.py  at Tue Mar 31 10:43:34 PDT 2026
++✅ justFlatten.py completed at Tue Mar 31 10:43:35 PDT 2026
++🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝
++🚀 Starting preFrontalCortex_unifiedEventSeg.py for PO  setting at Tue Mar 31 10:46:28 PDT 2026
++✅ preFrontalCortex_unifiedEventSeg.py for PO completed at Tue Mar 31 10:46:52 PDT 2026
++🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭
++
++🚀 Starting justFlatten.py  at Tue Mar 31 10:46:52 PDT 2026
++✅ justFlatten.py completed at Tue Mar 31 10:46:53 PDT 2026
++🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝
++🚀 Starting preFrontalCortex_unifiedEventSeg.py for PO  setting at Tue Mar 31 10:47:11 PDT 2026
++✅ preFrontalCortex_unifiedEventSeg.py for PO completed at Tue Mar 31 10:47:35 PDT 2026
++🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭
++
++🚀 Starting justFlatten.py  at Tue Mar 31 10:47:35 PDT 2026
++✅ justFlatten.py completed at Tue Mar 31 10:47:35 PDT 2026
++🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝
++🚀 Starting preFrontalCortex_unifiedEventSeg.py for PO  setting at Tue Mar 31 10:48:48 PDT 2026
++✅ preFrontalCortex_unifiedEventSeg.py for PO completed at Tue Mar 31 10:49:13 PDT 2026
++🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷
++
++🚀 Starting add_coin_labels_from_collated.py  at Tue Mar 31 10:49:13 PDT 2026
++✅ add_coin_labels_from_collated.py completed at Tue Mar 31 10:49:13 PDT 2026
++🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝
++🚀 Starting preFrontalCortex_unifiedEventSeg.py for PO  setting at Tue Mar 31 10:58:51 PDT 2026
++✅ preFrontalCortex_unifiedEventSeg.py for PO completed at Tue Mar 31 10:59:15 PDT 2026
++🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭
++
++🚀 Starting justFlatten.py  at Tue Mar 31 10:59:15 PDT 2026
++✅ justFlatten.py completed at Tue Mar 31 10:59:16 PDT 2026
++🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷
++
++🚀 Starting add_coin_labels_from_collated.py  at Tue Mar 31 10:59:16 PDT 2026
++✅ add_coin_labels_from_collated.py completed at Tue Mar 31 10:59:16 PDT 2026
++🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝
++🚀 Starting preFrontalCortex_unifiedEventSeg.py for PO  setting at Tue Mar 31 11:02:44 PDT 2026
++🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝
++🚀 Starting preFrontalCortex_unifiedEventSeg.py for PO  setting at Tue Mar 31 11:04:15 PDT 2026
++✅ preFrontalCortex_unifiedEventSeg.py for PO completed at Tue Mar 31 11:04:39 PDT 2026
++🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭
++
++🚀 Starting justFlatten.py  at Tue Mar 31 11:04:39 PDT 2026
++✅ justFlatten.py completed at Tue Mar 31 11:04:39 PDT 2026
++🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷
++
++🚀 Starting add_coin_labels_from_collated.py  at Tue Mar 31 11:04:39 PDT 2026
++✅ add_coin_labels_from_collated.py completed at Tue Mar 31 11:04:40 PDT 2026
++🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝
++🚀 Starting preFrontalCortex_unifiedEventSeg.py for PO  setting at Tue Mar 31 11:06:00 PDT 2026
++✅ preFrontalCortex_unifiedEventSeg.py for PO completed at Tue Mar 31 11:06:25 PDT 2026
++🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭
++
++🚀 Starting justFlatten.py  at Tue Mar 31 11:06:25 PDT 2026
++✅ justFlatten.py completed at Tue Mar 31 11:06:25 PDT 2026
++🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷
++
++🚀 Starting add_coin_labels_from_collated.py  at Tue Mar 31 11:06:25 PDT 2026
++✅ add_coin_labels_from_collated.py completed at Tue Mar 31 11:06:26 PDT 2026
++🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝
++🚀 Starting preFrontalCortex_unifiedEventSeg.py for PO  setting at Tue Mar 31 11:08:10 PDT 2026
++✅ preFrontalCortex_unifiedEventSeg.py for PO completed at Tue Mar 31 11:08:35 PDT 2026
++🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭
++
++🚀 Starting justFlatten.py  at Tue Mar 31 11:08:35 PDT 2026
++✅ justFlatten.py completed at Tue Mar 31 11:08:35 PDT 2026
++🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷
++
++🚀 Starting add_coin_labels_from_collated.py  at Tue Mar 31 11:08:35 PDT 2026
++✅ add_coin_labels_from_collated.py completed at Tue Mar 31 11:08:36 PDT 2026
++🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝
++🚀 Starting preFrontalCortex_unifiedEventSeg.py for PO  setting at Tue Mar 31 11:11:44 PDT 2026
++✅ preFrontalCortex_unifiedEventSeg.py for PO completed at Tue Mar 31 11:12:08 PDT 2026
++🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭
++
++🚀 Starting justFlatten.py  at Tue Mar 31 11:12:08 PDT 2026
++✅ justFlatten.py completed at Tue Mar 31 11:12:09 PDT 2026
++🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷
++
++🚀 Starting add_coin_labels_from_collated.py  at Tue Mar 31 11:12:09 PDT 2026
++✅ add_coin_labels_from_collated.py completed at Tue Mar 31 11:12:09 PDT 2026
++🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝
++🚀 Starting preFrontalCortex_unifiedEventSeg.py for PO  setting at Tue Mar 31 11:14:52 PDT 2026
++✅ preFrontalCortex_unifiedEventSeg.py for PO completed at Tue Mar 31 11:15:16 PDT 2026
++🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭
++
++🚀 Starting justFlatten.py  at Tue Mar 31 11:15:16 PDT 2026
++✅ justFlatten.py completed at Tue Mar 31 11:15:17 PDT 2026
++🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷
++
++🚀 Starting add_coin_labels_from_collated.py  at Tue Mar 31 11:15:17 PDT 2026
++✅ add_coin_labels_from_collated.py completed at Tue Mar 31 11:15:18 PDT 2026
++🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝
++🚀 Starting preFrontalCortex_unifiedEventSeg.py for PO  setting at Tue Mar 31 11:18:13 PDT 2026
++✅ preFrontalCortex_unifiedEventSeg.py for PO completed at Tue Mar 31 11:18:37 PDT 2026
++🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭
++
++🚀 Starting justFlatten.py  at Tue Mar 31 11:18:37 PDT 2026
++✅ justFlatten.py completed at Tue Mar 31 11:18:37 PDT 2026
++🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷
++
++🚀 Starting add_coin_labels_from_collated.py  at Tue Mar 31 11:18:37 PDT 2026
++✅ add_coin_labels_from_collated.py completed at Tue Mar 31 11:18:38 PDT 2026
++🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝
++🚀 Starting preFrontalCortex_unifiedEventSeg.py for PO  setting at Tue Mar 31 11:19:50 PDT 2026
++✅ preFrontalCortex_unifiedEventSeg.py for PO completed at Tue Mar 31 11:20:15 PDT 2026
++🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭
++
++🚀 Starting justFlatten.py  at Tue Mar 31 11:20:15 PDT 2026
++✅ justFlatten.py completed at Tue Mar 31 11:20:16 PDT 2026
++🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷
++
++🚀 Starting add_coin_labels_from_collated.py  at Tue Mar 31 11:20:16 PDT 2026
++✅ add_coin_labels_from_collated.py completed at Tue Mar 31 11:20:16 PDT 2026
++🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝
++🚀 Starting preFrontalCortex_unifiedEventSeg.py for PO  setting at Tue Mar 31 11:26:30 PDT 2026
++✅ preFrontalCortex_unifiedEventSeg.py for PO completed at Tue Mar 31 11:26:55 PDT 2026
++🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭
++
++🚀 Starting justFlatten.py  at Tue Mar 31 11:26:55 PDT 2026
++✅ justFlatten.py completed at Tue Mar 31 11:26:55 PDT 2026
++🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷
++
++🚀 Starting add_coin_labels_from_collated.py  at Tue Mar 31 11:26:55 PDT 2026
++✅ add_coin_labels_from_collated.py completed at Tue Mar 31 11:26:56 PDT 2026
++🚀 add_effective_roundnum.py at Tue Mar 31 11:29:26 PDT 2026
++✅ add_effective_roundnum.py completed at Tue Mar 31 11:29:26 PDT 2026
++🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼
++
++🚀 Starting preprocRaw_PO.py  at Wed Apr  1 11:49:06 PDT 2026
++🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼
++
++🚀 Starting preprocRaw_PO_part1.py  at Wed Apr  1 11:50:18 PDT 2026
++✅ preprocRaw_PO_part1.py completed at Wed Apr  1 11:50:46 PDT 2026
++🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼
++
++🚀 Starting preprocRaw_PO_part2.py  at Wed Apr  1 11:50:46 PDT 2026
++🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼
++
++🚀 Starting preprocRaw_PO_part2.py  at Wed Apr  1 11:52:07 PDT 2026
++🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼
++
++🚀 Starting preprocRaw_PO_part2.py  at Wed Apr  1 11:54:08 PDT 2026
++🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼
++
++🚀 Starting preprocRaw_PO_part2.py  at Wed Apr  1 11:55:49 PDT 2026
++✅ preprocRaw_PO_part2.py completed at Wed Apr  1 11:55:59 PDT 2026
++🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝
++🚀 Starting preFrontalCortex_unifiedEventSeg.py for PO  setting at Wed Apr  1 11:55:59 PDT 2026
++✅ preFrontalCortex_unifiedEventSeg.py for PO completed at Wed Apr  1 11:56:23 PDT 2026
++🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭
++
++🚀 Starting justFlatten.py  at Wed Apr  1 11:56:23 PDT 2026
++✅ justFlatten.py completed at Wed Apr  1 11:56:24 PDT 2026
++🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷
++
++🚀 Starting add_coin_labels_from_collated.py  at Wed Apr  1 11:56:24 PDT 2026
++✅ add_coin_labels_from_collated.py completed at Wed Apr  1 11:56:24 PDT 2026
++🚀 add_effective_roundnum.py at Wed Apr  1 11:56:24 PDT 2026
++✅ add_effective_roundnum.py completed at Wed Apr  1 11:56:25 PDT 2026
++🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼
++
++🚀 Starting preprocRaw_PO_part2.py  at Wed Apr  1 12:01:13 PDT 2026
++✅ preprocRaw_PO_part2.py completed at Wed Apr  1 12:01:23 PDT 2026
++🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝
++🚀 Starting preFrontalCortex_unifiedEventSeg.py for PO  setting at Wed Apr  1 12:01:23 PDT 2026
++✅ preFrontalCortex_unifiedEventSeg.py for PO completed at Wed Apr  1 12:01:48 PDT 2026
++🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭
++
++🚀 Starting justFlatten.py  at Wed Apr  1 12:01:48 PDT 2026
++✅ justFlatten.py completed at Wed Apr  1 12:01:49 PDT 2026
++🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷
++
++🚀 Starting add_coin_labels_from_collated.py  at Wed Apr  1 12:01:49 PDT 2026
++✅ add_coin_labels_from_collated.py completed at Wed Apr  1 12:01:50 PDT 2026
++🚀 add_effective_roundnum.py at Wed Apr  1 12:01:50 PDT 2026
++✅ add_effective_roundnum.py completed at Wed Apr  1 12:01:50 PDT 2026
++🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼
++
++🚀 Starting preprocRaw_PO_part2.py  at Wed Apr  1 12:03:04 PDT 2026
++✅ preprocRaw_PO_part2.py completed at Wed Apr  1 12:03:14 PDT 2026
++🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝
++🚀 Starting preFrontalCortex_unifiedEventSeg.py for PO  setting at Wed Apr  1 12:03:14 PDT 2026
++✅ preFrontalCortex_unifiedEventSeg.py for PO completed at Wed Apr  1 12:03:38 PDT 2026
++🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭
++
++🚀 Starting justFlatten.py  at Wed Apr  1 12:03:38 PDT 2026
++✅ justFlatten.py completed at Wed Apr  1 12:03:39 PDT 2026
++🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷
++
++🚀 Starting add_coin_labels_from_collated.py  at Wed Apr  1 12:03:39 PDT 2026
++✅ add_coin_labels_from_collated.py completed at Wed Apr  1 12:03:39 PDT 2026
++🚀 add_effective_roundnum.py at Wed Apr  1 12:03:39 PDT 2026
++✅ add_effective_roundnum.py completed at Wed Apr  1 12:03:40 PDT 2026
++🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼
++
++🚀 Starting preprocRaw_PO_part2.py  at Thu Apr  2 17:56:43 PDT 2026
++✅ preprocRaw_PO_part2.py completed at Thu Apr  2 17:56:44 PDT 2026
++🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝
++🚀 Starting preFrontalCortex_unifiedEventSeg.py for PO  setting at Thu Apr  2 17:56:44 PDT 2026
++🚀 combine_event_pairs.py at Thu Apr  2 17:58:55 PDT 2026
++✅ combine_event_pairs.py completed at Thu Apr  2 17:58:55 PDT 2026
++✅ preFrontalCortex_unifiedEventSeg.py for PO completed at Thu Apr  2 18:13:13 PDT 2026
++🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭
++
++🚀 Starting justFlatten.py  at Thu Apr  2 18:13:13 PDT 2026
++✅ justFlatten.py completed at Thu Apr  2 18:13:25 PDT 2026
++🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷
++
++🚀 Starting add_coin_labels_from_collated.py  at Thu Apr  2 18:13:25 PDT 2026
++✅ add_coin_labels_from_collated.py completed at Thu Apr  2 18:13:32 PDT 2026
++🚀 add_effective_roundnum.py at Thu Apr  2 18:13:32 PDT 2026
++✅ add_effective_roundnum.py completed at Thu Apr  2 18:13:35 PDT 2026
++🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝
++🚀 Starting preFrontalCortex_unifiedEventSeg.py for PO  setting at Thu Apr  2 18:35:06 PDT 2026
++🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝
++🚀 Starting preFrontalCortex_unifiedEventSeg.py for PO  setting at Thu Apr  2 18:35:54 PDT 2026
++✅ preFrontalCortex_unifiedEventSeg.py for PO completed at Thu Apr  2 18:36:15 PDT 2026
++🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭
++
++🚀 Starting justFlatten.py  at Thu Apr  2 18:36:15 PDT 2026
++✅ justFlatten.py completed at Thu Apr  2 18:36:16 PDT 2026
++🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷
++
++🚀 Starting add_coin_labels_from_collated.py  at Thu Apr  2 18:36:16 PDT 2026
++✅ add_coin_labels_from_collated.py completed at Thu Apr  2 18:36:16 PDT 2026
++🚀 add_effective_roundnum.py at Thu Apr  2 18:36:16 PDT 2026
++✅ add_effective_roundnum.py completed at Thu Apr  2 18:36:17 PDT 2026
++🚀 combine_event_pairs.py at Thu Apr  2 18:36:17 PDT 2026
++✅ combine_event_pairs.py completed at Thu Apr  2 18:36:17 PDT 2026
++🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝
++🚀 Starting preFrontalCortex_unifiedEventSeg.py for PO  setting at Thu Apr  2 18:38:31 PDT 2026
++✅ preFrontalCortex_unifiedEventSeg.py for PO completed at Thu Apr  2 18:38:58 PDT 2026
++🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭
++
++🚀 Starting justFlatten.py  at Thu Apr  2 18:38:58 PDT 2026
++✅ justFlatten.py completed at Thu Apr  2 18:38:59 PDT 2026
++🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷
++
++🚀 Starting add_coin_labels_from_collated.py  at Thu Apr  2 18:38:59 PDT 2026
++✅ add_coin_labels_from_collated.py completed at Thu Apr  2 18:38:59 PDT 2026
++🚀 add_effective_roundnum.py at Thu Apr  2 18:38:59 PDT 2026
++✅ add_effective_roundnum.py completed at Thu Apr  2 18:39:00 PDT 2026
++🚀 combine_event_pairs.py at Thu Apr  2 18:39:00 PDT 2026
++✅ combine_event_pairs.py completed at Thu Apr  2 18:39:00 PDT 2026
++🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝
++🚀 Starting preFrontalCortex_unifiedEventSeg.py for PO  setting at Thu Apr  2 18:40:07 PDT 2026
++✅ preFrontalCortex_unifiedEventSeg.py for PO completed at Thu Apr  2 18:40:34 PDT 2026
++🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭
++
++🚀 Starting justFlatten.py  at Thu Apr  2 18:40:34 PDT 2026
++✅ justFlatten.py completed at Thu Apr  2 18:40:34 PDT 2026
++🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷
++
++🚀 Starting add_coin_labels_from_collated.py  at Thu Apr  2 18:40:34 PDT 2026
++✅ add_coin_labels_from_collated.py completed at Thu Apr  2 18:40:35 PDT 2026
++🚀 add_effective_roundnum.py at Thu Apr  2 18:40:35 PDT 2026
++✅ add_effective_roundnum.py completed at Thu Apr  2 18:40:35 PDT 2026
++🚀 combine_event_pairs.py at Thu Apr  2 18:40:35 PDT 2026
++✅ combine_event_pairs.py completed at Thu Apr  2 18:40:36 PDT 2026
++🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝
++🚀 Starting preFrontalCortex_unifiedEventSeg.py for PO  setting at Thu Apr  2 18:42:35 PDT 2026
++✅ preFrontalCortex_unifiedEventSeg.py for PO completed at Thu Apr  2 18:43:01 PDT 2026
++🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭
++
++🚀 Starting justFlatten.py  at Thu Apr  2 18:43:01 PDT 2026
++✅ justFlatten.py completed at Thu Apr  2 18:43:02 PDT 2026
++🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷
++
++🚀 Starting add_coin_labels_from_collated.py  at Thu Apr  2 18:43:02 PDT 2026
++✅ add_coin_labels_from_collated.py completed at Thu Apr  2 18:43:03 PDT 2026
++🚀 add_effective_roundnum.py at Thu Apr  2 18:43:03 PDT 2026
++✅ add_effective_roundnum.py completed at Thu Apr  2 18:43:03 PDT 2026
++🚀 combine_event_pairs.py at Thu Apr  2 18:43:03 PDT 2026
++✅ combine_event_pairs.py completed at Thu Apr  2 18:43:04 PDT 2026
++🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝
++🚀 Starting preFrontalCortex_unifiedEventSeg.py for PO  setting at Thu Apr  2 18:43:40 PDT 2026
++✅ preFrontalCortex_unifiedEventSeg.py for PO completed at Thu Apr  2 18:44:07 PDT 2026
++🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭
++
++🚀 Starting justFlatten.py  at Thu Apr  2 18:44:07 PDT 2026
++✅ justFlatten.py completed at Thu Apr  2 18:44:08 PDT 2026
++🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷
++
++🚀 Starting add_coin_labels_from_collated.py  at Thu Apr  2 18:44:08 PDT 2026
++✅ add_coin_labels_from_collated.py completed at Thu Apr  2 18:44:08 PDT 2026
++🚀 add_effective_roundnum.py at Thu Apr  2 18:44:08 PDT 2026
++✅ add_effective_roundnum.py completed at Thu Apr  2 18:44:09 PDT 2026
++🚀 combine_event_pairs.py at Thu Apr  2 18:44:09 PDT 2026
++✅ combine_event_pairs.py completed at Thu Apr  2 18:44:09 PDT 2026
++🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝
++🚀 Starting preFrontalCortex_unifiedEventSeg.py for PO  setting at Thu Apr  2 18:47:02 PDT 2026
++✅ preFrontalCortex_unifiedEventSeg.py for PO completed at Thu Apr  2 18:47:29 PDT 2026
++🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭
++
++🚀 Starting justFlatten.py  at Thu Apr  2 18:47:29 PDT 2026
++✅ justFlatten.py completed at Thu Apr  2 18:47:30 PDT 2026
++🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷
++
++🚀 Starting add_coin_labels_from_collated.py  at Thu Apr  2 18:47:30 PDT 2026
++✅ add_coin_labels_from_collated.py completed at Thu Apr  2 18:47:31 PDT 2026
++🚀 add_effective_roundnum.py at Thu Apr  2 18:47:31 PDT 2026
++✅ add_effective_roundnum.py completed at Thu Apr  2 18:47:31 PDT 2026
++🚀 combine_event_pairs.py at Thu Apr  2 18:47:31 PDT 2026
++✅ combine_event_pairs.py completed at Thu Apr  2 18:47:31 PDT 2026
++🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝
++🚀 Starting preFrontalCortex_unifiedEventSeg.py for PO  setting at Thu Apr  2 18:49:55 PDT 2026
++✅ preFrontalCortex_unifiedEventSeg.py for PO completed at Thu Apr  2 18:50:22 PDT 2026
++🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭
++
++🚀 Starting justFlatten.py  at Thu Apr  2 18:50:22 PDT 2026
++✅ justFlatten.py completed at Thu Apr  2 18:50:23 PDT 2026
++🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷
++
++🚀 Starting add_coin_labels_from_collated.py  at Thu Apr  2 18:50:23 PDT 2026
++✅ add_coin_labels_from_collated.py completed at Thu Apr  2 18:50:23 PDT 2026
++🚀 add_effective_roundnum.py at Thu Apr  2 18:50:23 PDT 2026
++✅ add_effective_roundnum.py completed at Thu Apr  2 18:50:24 PDT 2026
++🚀 combine_event_pairs.py at Thu Apr  2 18:50:24 PDT 2026
++✅ combine_event_pairs.py completed at Thu Apr  2 18:50:24 PDT 2026
++🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝
++🚀 Starting preFrontalCortex_unifiedEventSeg.py for PO  setting at Thu Apr  2 18:52:18 PDT 2026
++✅ preFrontalCortex_unifiedEventSeg.py for PO completed at Thu Apr  2 18:52:45 PDT 2026
++🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭
++
++🚀 Starting justFlatten.py  at Thu Apr  2 18:52:45 PDT 2026
++✅ justFlatten.py completed at Thu Apr  2 18:52:46 PDT 2026
++🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷
++
++🚀 Starting add_coin_labels_from_collated.py  at Thu Apr  2 18:52:46 PDT 2026
++✅ add_coin_labels_from_collated.py completed at Thu Apr  2 18:52:47 PDT 2026
++🚀 add_effective_roundnum.py at Thu Apr  2 18:52:47 PDT 2026
++✅ add_effective_roundnum.py completed at Thu Apr  2 18:52:47 PDT 2026
++🚀 combine_event_pairs.py at Thu Apr  2 18:52:47 PDT 2026
++✅ combine_event_pairs.py completed at Thu Apr  2 18:52:48 PDT 2026
++🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝
++🚀 Starting preFrontalCortex_unifiedEventSeg.py for PO  setting at Thu Apr  2 18:57:18 PDT 2026
++✅ preFrontalCortex_unifiedEventSeg.py for PO completed at Thu Apr  2 18:57:45 PDT 2026
++🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭
++
++🚀 Starting justFlatten.py  at Thu Apr  2 18:57:45 PDT 2026
++✅ justFlatten.py completed at Thu Apr  2 18:57:46 PDT 2026
++🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷
++
++🚀 Starting add_coin_labels_from_collated.py  at Thu Apr  2 18:57:46 PDT 2026
++✅ add_coin_labels_from_collated.py completed at Thu Apr  2 18:57:47 PDT 2026
++🚀 add_effective_roundnum.py at Thu Apr  2 18:57:47 PDT 2026
++✅ add_effective_roundnum.py completed at Thu Apr  2 18:57:47 PDT 2026
++🚀 combine_event_pairs.py at Thu Apr  2 18:57:47 PDT 2026
++✅ combine_event_pairs.py completed at Thu Apr  2 18:57:47 PDT 2026
++🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝
++🚀 Starting preFrontalCortex_unifiedEventSeg.py for PO  setting at Thu Apr  2 19:00:21 PDT 2026
++✅ preFrontalCortex_unifiedEventSeg.py for PO completed at Thu Apr  2 19:00:48 PDT 2026
++🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭
++
++🚀 Starting justFlatten.py  at Thu Apr  2 19:00:48 PDT 2026
++✅ justFlatten.py completed at Thu Apr  2 19:00:49 PDT 2026
++🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷
++
++🚀 Starting add_coin_labels_from_collated.py  at Thu Apr  2 19:00:49 PDT 2026
++✅ add_coin_labels_from_collated.py completed at Thu Apr  2 19:00:49 PDT 2026
++🚀 add_effective_roundnum.py at Thu Apr  2 19:00:49 PDT 2026
++✅ add_effective_roundnum.py completed at Thu Apr  2 19:00:50 PDT 2026
++🚀 combine_event_pairs.py at Thu Apr  2 19:00:50 PDT 2026
++✅ combine_event_pairs.py completed at Thu Apr  2 19:00:50 PDT 2026
++🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝
++🚀 Starting preFrontalCortex_unifiedEventSeg.py for PO  setting at Thu Apr  2 19:03:44 PDT 2026
++✅ preFrontalCortex_unifiedEventSeg.py for PO completed at Thu Apr  2 19:04:12 PDT 2026
++🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭
++
++🚀 Starting justFlatten.py  at Thu Apr  2 19:04:12 PDT 2026
++✅ justFlatten.py completed at Thu Apr  2 19:04:12 PDT 2026
++🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷
++
++🚀 Starting add_coin_labels_from_collated.py  at Thu Apr  2 19:04:12 PDT 2026
++✅ add_coin_labels_from_collated.py completed at Thu Apr  2 19:04:13 PDT 2026
++🚀 add_effective_roundnum.py at Thu Apr  2 19:04:13 PDT 2026
++✅ add_effective_roundnum.py completed at Thu Apr  2 19:04:13 PDT 2026
++🚀 combine_event_pairs.py at Thu Apr  2 19:04:13 PDT 2026
++✅ combine_event_pairs.py completed at Thu Apr  2 19:04:14 PDT 2026
++🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝
++🚀 Starting preFrontalCortex_unifiedEventSeg.py for PO  setting at Thu Apr  2 19:08:18 PDT 2026
++✅ preFrontalCortex_unifiedEventSeg.py for PO completed at Thu Apr  2 19:08:45 PDT 2026
++🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭
++
++🚀 Starting justFlatten.py  at Thu Apr  2 19:08:45 PDT 2026
++✅ justFlatten.py completed at Thu Apr  2 19:08:46 PDT 2026
++🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷
++
++🚀 Starting add_coin_labels_from_collated.py  at Thu Apr  2 19:08:46 PDT 2026
++✅ add_coin_labels_from_collated.py completed at Thu Apr  2 19:08:47 PDT 2026
++🚀 add_effective_roundnum.py at Thu Apr  2 19:08:47 PDT 2026
++✅ add_effective_roundnum.py completed at Thu Apr  2 19:08:47 PDT 2026
++🚀 combine_event_pairs.py at Thu Apr  2 19:08:47 PDT 2026
++✅ combine_event_pairs.py completed at Thu Apr  2 19:08:48 PDT 2026
++🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝
++🚀 Starting preFrontalCortex_unifiedEventSeg.py for PO  setting at Thu Apr  2 19:09:45 PDT 2026
++🦦🦦🦦🦦🦦🦦🦦🦦🦦🦦🦦🦦🦦🦦🦦🦦🦦🦦🦦🦦🦦🦦🦦🦦
++
++🚀 Starting getPositions.py at Thu Apr  2 19:10:26 PDT 2026
++✅ getPositions.py completed at Thu Apr  2 19:10:27 PDT 2026
++✅ preFrontalCortex_unifiedEventSeg.py for PO completed at Thu Apr  2 19:28:17 PDT 2026
++🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭
++
++🚀 Starting justFlatten.py  at Thu Apr  2 19:28:17 PDT 2026
++✅ justFlatten.py completed at Thu Apr  2 19:28:30 PDT 2026
++🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷
++
++🚀 Starting add_coin_labels_from_collated.py  at Thu Apr  2 19:28:30 PDT 2026
++✅ add_coin_labels_from_collated.py completed at Thu Apr  2 19:28:37 PDT 2026
++🚀 add_effective_roundnum.py at Thu Apr  2 19:28:37 PDT 2026
++✅ add_effective_roundnum.py completed at Thu Apr  2 19:28:40 PDT 2026
++🚀 combine_event_pairs.py at Thu Apr  2 19:28:40 PDT 2026
++✅ combine_event_pairs.py completed at Thu Apr  2 19:28:48 PDT 2026
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++🚀 Starting 00_batch_reproc_steps_01_04.py at Thu Apr  2 19:41:42 PDT 2026
++            01_build_intervals : Build Block/Round Interval Tables - Single Row for Every True Round
++            02_reproc_processed_add_elapsed_and_distance : Add Elapsed Time & Distance to _processed.csv to make _PreLimReprocessed.csv files
++            03_compute_speed : Compute Speed to Make Final _reprocessed.csv files
++            04_finalize_events_and_intervals_with_pindrops (no startPos here): Fleshing out Block/Round Interval Tables & Events Files with More Dist & Time Info
++✅ 00_batch_reproc_steps_01_04.py completed at Thu Apr  2 19:41:46 PDT 2026
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++🚀 Starting 00_batch_reproc_steps_01_04.py at Thu Apr  2 19:43:41 PDT 2026
++            01_build_intervals : Build Block/Round Interval Tables - Single Row for Every True Round
++            02_reproc_processed_add_elapsed_and_distance : Add Elapsed Time & Distance to _processed.csv to make _PreLimReprocessed.csv files
++            03_compute_speed : Compute Speed to Make Final _reprocessed.csv files
++            04_finalize_events_and_intervals_with_pindrops (no startPos here): Fleshing out Block/Round Interval Tables & Events Files with More Dist & Time Info
++✅ 00_batch_reproc_steps_01_04.py completed at Thu Apr  2 19:43:45 PDT 2026
++🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝
++🚀 Starting preFrontalCortex_unifiedEventSeg.py for PO  setting at Thu Apr  2 19:46:06 PDT 2026
++✅ preFrontalCortex_unifiedEventSeg.py for PO completed at Thu Apr  2 20:04:04 PDT 2026
++🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭
++
++🚀 Starting justFlatten.py  at Thu Apr  2 20:04:04 PDT 2026
++✅ justFlatten.py completed at Thu Apr  2 20:04:17 PDT 2026
++🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷
++
++🚀 Starting add_coin_labels_from_collated.py  at Thu Apr  2 20:04:17 PDT 2026
++✅ add_coin_labels_from_collated.py completed at Thu Apr  2 20:04:23 PDT 2026
++🚀 add_effective_roundnum.py at Thu Apr  2 20:04:23 PDT 2026
++✅ add_effective_roundnum.py completed at Thu Apr  2 20:04:26 PDT 2026
++🚀 combine_event_pairs.py at Thu Apr  2 20:04:26 PDT 2026
++✅ combine_event_pairs.py completed at Thu Apr  2 20:04:33 PDT 2026
++🦦🦦🦦🦦🦦🦦🦦🦦🦦🦦🦦🦦🦦🦦🦦🦦🦦🦦🦦🦦🦦🦦🦦🦦
++
++🚀 Starting getPositions.py at Thu Apr  2 20:04:33 PDT 2026
++✅ getPositions.py completed at Thu Apr  2 20:04:52 PDT 2026
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++🚀 Starting 00_batch_reproc_steps_01_04.py at Thu Apr  2 20:04:52 PDT 2026
++            01_build_intervals : Build Block/Round Interval Tables - Single Row for Every True Round
++            02_reproc_processed_add_elapsed_and_distance : Add Elapsed Time & Distance to _processed.csv to make _PreLimReprocessed.csv files
++            03_compute_speed : Compute Speed to Make Final _reprocessed.csv files
++            04_finalize_events_and_intervals_with_pindrops (no startPos here): Fleshing out Block/Round Interval Tables & Events Files with More Dist & Time Info
++✅ 00_batch_reproc_steps_01_04.py completed at Thu Apr  2 20:07:26 PDT 2026
++🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝
++🚀 Starting instantDistCalc.py at Fri Apr  3 07:11:27 PDT 2026
++✅ instantDistCalc.py completed at Fri Apr  3 07:11:34 PDT 2026
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++🚀 Starting 05_batch_add_startpos.py at Fri Apr  3 07:11:34 PDT 2026
++✅ 05_batch_add_startpos.py completed at Fri Apr  3 07:11:34 PDT 2026
++🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷
++🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷
++🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷
++🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷
++🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷
++🚀 Starting 06b_propagate_pindrop_startpos.py at Fri Apr  3 07:13:22 PDT 2026
++[scan] found 1 files under /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redoAgainAgainAgain_PO_single/EventSegmentation/EventsAlmostFinal matching *_withStartPos.csv
++[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redoAgainAgainAgain_PO_single/EventSegmentation/EventsStartPos/ObsReward_B_02_17_2025_15_11_startPosPropagated.csv
++[skip] intervals not found for ObsReward_B_02_17_2025_15_11_withStartPos.csv
++[done]
++✅ 06b_propagate_pindrop_startpos.py completed at Fri Apr  3 07:13:23 PDT 2026
++🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️
++
++🚀 Starting computeWalks.py  at Fri Apr  3 07:14:02 PDT 2026
++✅ computeWalks.py completed at Fri Apr  3 07:14:02 PDT 2026
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++🚀 Starting fillEventsPosWalks.py at Fri Apr  3 07:15:18 PDT 2026
++✅ fillEventsPosWalks.py completed at Fri Apr  3 07:15:19 PDT 2026
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++🚀 Starting buildIntervalsFromEvents.py at Fri Apr  3 07:18:09 PDT 2026
++✅ buildIntervalsFromEvents.py completed at Fri Apr  3 07:18:09 PDT 2026
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++🚀 Starting propagateIntervalCols.py at Fri Apr  3 07:18:09 PDT 2026
++✅ propagateIntervalCols.py completed at Fri Apr  3 07:18:10 PDT 2026
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++🚀 Starting attach_walk_pindrop_metrics.py at Fri Apr  3 07:18:10 PDT 2026
++✅ attach_walk_pindrop_metrics.py completed at Fri Apr  3 07:18:10 PDT 2026
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++🚀 Starting attach_walk_chest_metrics.py at Fri Apr  3 07:18:10 PDT 2026
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++🚀 Starting buildIntervalsFromEvents.py at Fri Apr  3 07:20:08 PDT 2026
++✅ buildIntervalsFromEvents.py completed at Fri Apr  3 07:20:08 PDT 2026
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++🚀 Starting propagateIntervalCols.py at Fri Apr  3 07:20:08 PDT 2026
++✅ propagateIntervalCols.py completed at Fri Apr  3 07:20:09 PDT 2026
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++🚀 Starting attach_walk_pindrop_metrics.py at Fri Apr  3 07:20:09 PDT 2026
++✅ attach_walk_pindrop_metrics.py completed at Fri Apr  3 07:20:09 PDT 2026
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++🚀 Starting attach_walk_chest_metrics.py at Fri Apr  3 07:20:09 PDT 2026
++✅ attach_walk_chest_metrics.py completed at Fri Apr  3 07:20:09 PDT 2026
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++🚀 Starting attach_swapVote_metrics.py at Fri Apr  3 07:20:09 PDT 2026
++✅ attach_swapVote_metrics.py completed at Fri Apr  3 07:20:10 PDT 2026
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++🚀 Starting 00_batch_reproc_steps_01_04.py at Fri Apr  3 12:22:56 PDT 2026
++            01_build_intervals : Build Block/Round Interval Tables - Single Row for Every True Round
++            02_reproc_processed_add_elapsed_and_distance : Add Elapsed Time & Distance to _processed.csv to make _PreLimReprocessed.csv files
++            03_compute_speed : Compute Speed to Make Final _reprocessed.csv files
++            04_finalize_events_and_intervals_with_pindrops (no startPos here): Fleshing out Block/Round Interval Tables & Events Files with More Dist & Time Info
++✅ 00_batch_reproc_steps_01_04.py completed at Fri Apr  3 12:23:01 PDT 2026
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++🚀 Starting 00_batch_reproc_steps_01_04.py at Fri Apr  3 12:23:01 PDT 2026
++            01_build_intervals : Build Block/Round Interval Tables - Single Row for Every True Round
++            02_reproc_processed_add_elapsed_and_distance : Add Elapsed Time & Distance to _processed.csv to make _PreLimReprocessed.csv files
++            03_compute_speed : Compute Speed to Make Final _reprocessed.csv files
++            04_finalize_events_and_intervals_with_pindrops (no startPos here): Fleshing out Block/Round Interval Tables & Events Files with More Dist & Time Info
++✅ 00_batch_reproc_steps_01_04.py completed at Fri Apr  3 12:23:05 PDT 2026
++🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝
++🚀 Starting instantDistCalc.py at Fri Apr  3 12:23:05 PDT 2026
++✅ instantDistCalc.py completed at Fri Apr  3 12:23:10 PDT 2026
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++🚀 Starting 05_batch_add_startpos.py at Fri Apr  3 12:23:10 PDT 2026
++✅ 05_batch_add_startpos.py completed at Fri Apr  3 12:23:10 PDT 2026
++🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷
++🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷
++🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷
++🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷
++🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷
++🚀 Starting 06b_propagate_pindrop_startpos.py at Fri Apr  3 12:23:10 PDT 2026
++[scan] found 2 files under /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redoAgainAgainAgain_PO_single/EventSegmentation/EventsAlmostFinal matching *_withStartPos.csv
++[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redoAgainAgainAgain_PO_single/EventSegmentation/EventsStartPos/ObsReward_A_02_17_2025_15_11_startPosPropagated.csv
++[skip] intervals not found for ObsReward_A_02_17_2025_15_11_withStartPos.csv
++[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redoAgainAgainAgain_PO_single/EventSegmentation/EventsStartPos/ObsReward_B_02_17_2025_15_11_startPosPropagated.csv
++[skip] intervals not found for ObsReward_B_02_17_2025_15_11_withStartPos.csv
++[done]
++✅ 06b_propagate_pindrop_startpos.py completed at Fri Apr  3 12:23:11 PDT 2026
++🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️
++
++🚀 Starting computeWalks.py  at Fri Apr  3 12:23:11 PDT 2026
++✅ computeWalks.py completed at Fri Apr  3 12:23:12 PDT 2026
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++🚀 Starting fillEventsPosWalks.py at Fri Apr  3 12:23:12 PDT 2026
++✅ fillEventsPosWalks.py completed at Fri Apr  3 12:23:14 PDT 2026
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++🚀 Starting propagateIntervalCols.py at Fri Apr  3 12:23:14 PDT 2026
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++🚀 Starting 00_batch_reproc_steps_01_04.py at Fri Apr  3 12:23:41 PDT 2026
++            01_build_intervals : Build Block/Round Interval Tables - Single Row for Every True Round
++            02_reproc_processed_add_elapsed_and_distance : Add Elapsed Time & Distance to _processed.csv to make _PreLimReprocessed.csv files
++            03_compute_speed : Compute Speed to Make Final _reprocessed.csv files
++            04_finalize_events_and_intervals_with_pindrops (no startPos here): Fleshing out Block/Round Interval Tables & Events Files with More Dist & Time Info
++✅ 00_batch_reproc_steps_01_04.py completed at Fri Apr  3 12:23:46 PDT 2026
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++🚀 Starting 00_batch_reproc_steps_01_04.py at Fri Apr  3 12:23:46 PDT 2026
++            01_build_intervals : Build Block/Round Interval Tables - Single Row for Every True Round
++            02_reproc_processed_add_elapsed_and_distance : Add Elapsed Time & Distance to _processed.csv to make _PreLimReprocessed.csv files
++            03_compute_speed : Compute Speed to Make Final _reprocessed.csv files
++            04_finalize_events_and_intervals_with_pindrops (no startPos here): Fleshing out Block/Round Interval Tables & Events Files with More Dist & Time Info
++✅ 00_batch_reproc_steps_01_04.py completed at Fri Apr  3 12:23:50 PDT 2026
++🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝
++🚀 Starting instantDistCalc.py at Fri Apr  3 12:23:50 PDT 2026
++✅ instantDistCalc.py completed at Fri Apr  3 12:23:55 PDT 2026
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++🚀 Starting 05_batch_add_startpos.py at Fri Apr  3 12:23:55 PDT 2026
++✅ 05_batch_add_startpos.py completed at Fri Apr  3 12:23:55 PDT 2026
++🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷
++🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷
++🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷
++🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷
++🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷
++🚀 Starting 06b_propagate_pindrop_startpos.py at Fri Apr  3 12:23:55 PDT 2026
++[scan] found 2 files under /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redoAgainAgainAgain_PO_single/EventSegmentation/EventsAlmostFinal matching *_withStartPos.csv
++[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redoAgainAgainAgain_PO_single/EventSegmentation/EventsStartPos/ObsReward_A_02_17_2025_15_11_startPosPropagated.csv
++[skip] intervals not found for ObsReward_A_02_17_2025_15_11_withStartPos.csv
++[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redoAgainAgainAgain_PO_single/EventSegmentation/EventsStartPos/ObsReward_B_02_17_2025_15_11_startPosPropagated.csv
++[skip] intervals not found for ObsReward_B_02_17_2025_15_11_withStartPos.csv
++[done]
++✅ 06b_propagate_pindrop_startpos.py completed at Fri Apr  3 12:23:56 PDT 2026
++🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️
++
++🚀 Starting computeWalks.py  at Fri Apr  3 12:23:56 PDT 2026
++✅ computeWalks.py completed at Fri Apr  3 12:23:57 PDT 2026
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++🚀 Starting fillEventsPosWalks.py at Fri Apr  3 12:23:57 PDT 2026
++✅ fillEventsPosWalks.py completed at Fri Apr  3 12:23:58 PDT 2026
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++🚀 Starting propagateIntervalCols.py at Fri Apr  3 12:23:58 PDT 2026
++🚀 Starting propagateIntervalCols.py at Fri Apr  3 12:23:59 PDT 2026
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++🚀 Starting buildIntervalsFromEvents.py at Fri Apr  3 12:23:59 PDT 2026
++✅ buildIntervalsFromEvents.py completed at Fri Apr  3 12:23:59 PDT 2026
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++🚀 Starting buildIntervalsFromEvents.py at Fri Apr  3 12:23:59 PDT 2026
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++🚀 Starting 00_batch_reproc_steps_01_04.py at Fri Apr  3 12:42:47 PDT 2026
++            01_build_intervals : Build Block/Round Interval Tables - Single Row for Every True Round
++            02_reproc_processed_add_elapsed_and_distance : Add Elapsed Time & Distance to _processed.csv to make _PreLimReprocessed.csv files
++            03_compute_speed : Compute Speed to Make Final _reprocessed.csv files
++            04_finalize_events_and_intervals_with_pindrops (no startPos here): Fleshing out Block/Round Interval Tables & Events Files with More Dist & Time Info
++✅ 00_batch_reproc_steps_01_04.py completed at Fri Apr  3 12:42:52 PDT 2026
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++🚀 Starting 00_batch_reproc_steps_01_04.py at Fri Apr  3 12:42:52 PDT 2026
++            01_build_intervals : Build Block/Round Interval Tables - Single Row for Every True Round
++            02_reproc_processed_add_elapsed_and_distance : Add Elapsed Time & Distance to _processed.csv to make _PreLimReprocessed.csv files
++            03_compute_speed : Compute Speed to Make Final _reprocessed.csv files
++            04_finalize_events_and_intervals_with_pindrops (no startPos here): Fleshing out Block/Round Interval Tables & Events Files with More Dist & Time Info
++✅ 00_batch_reproc_steps_01_04.py completed at Fri Apr  3 12:42:56 PDT 2026
++🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝
++🚀 Starting instantDistCalc.py at Fri Apr  3 12:42:56 PDT 2026
++✅ instantDistCalc.py completed at Fri Apr  3 12:43:01 PDT 2026
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++🚀 Starting 05_batch_add_startpos.py at Fri Apr  3 12:43:01 PDT 2026
++✅ 05_batch_add_startpos.py completed at Fri Apr  3 12:43:01 PDT 2026
++🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷
++🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷
++🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷
++🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷
++🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷
++🚀 Starting 06b_propagate_pindrop_startpos.py at Fri Apr  3 12:43:01 PDT 2026
++[scan] found 2 files under /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redoAgainAgainAgain_PO_single/EventSegmentation/EventsAlmostFinal matching *_withStartPos.csv
++[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redoAgainAgainAgain_PO_single/EventSegmentation/EventsStartPos/ObsReward_A_02_17_2025_15_11_startPosPropagated.csv
++[skip] intervals not found for ObsReward_A_02_17_2025_15_11_withStartPos.csv
++[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redoAgainAgainAgain_PO_single/EventSegmentation/EventsStartPos/ObsReward_B_02_17_2025_15_11_startPosPropagated.csv
++[skip] intervals not found for ObsReward_B_02_17_2025_15_11_withStartPos.csv
++[done]
++✅ 06b_propagate_pindrop_startpos.py completed at Fri Apr  3 12:43:02 PDT 2026
++🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️
++
++🚀 Starting computeWalks.py  at Fri Apr  3 12:43:02 PDT 2026
++✅ computeWalks.py completed at Fri Apr  3 12:43:03 PDT 2026
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++🚀 Starting add_pin_drop_vote_score.py at Fri Apr  3 12:43:03 PDT 2026
++🚀 Starting add_pin_drop_vote_score.py at Fri Apr  3 12:43:03 PDT 2026
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++🚀 Starting fillEventsPosWalks.py at Fri Apr  3 12:43:03 PDT 2026
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++🚀 Starting 00_batch_reproc_steps_01_04.py at Sat Apr  4 09:45:21 PDT 2026
++            01_build_intervals : Build Block/Round Interval Tables - Single Row for Every True Round
++            02_reproc_processed_add_elapsed_and_distance : Add Elapsed Time & Distance to _processed.csv to make _PreLimReprocessed.csv files
++            03_compute_speed : Compute Speed to Make Final _reprocessed.csv files
++            04_finalize_events_and_intervals_with_pindrops (no startPos here): Fleshing out Block/Round Interval Tables & Events Files with More Dist & Time Info
++✅ 00_batch_reproc_steps_01_04.py completed at Sat Apr  4 09:45:26 PDT 2026
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++🚀 Starting 00_batch_reproc_steps_01_04.py at Sat Apr  4 09:45:26 PDT 2026
++            01_build_intervals : Build Block/Round Interval Tables - Single Row for Every True Round
++            02_reproc_processed_add_elapsed_and_distance : Add Elapsed Time & Distance to _processed.csv to make _PreLimReprocessed.csv files
++            03_compute_speed : Compute Speed to Make Final _reprocessed.csv files
++            04_finalize_events_and_intervals_with_pindrops (no startPos here): Fleshing out Block/Round Interval Tables & Events Files with More Dist & Time Info
++✅ 00_batch_reproc_steps_01_04.py completed at Sat Apr  4 09:45:30 PDT 2026
++🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝
++🚀 Starting instantDistCalc.py at Sat Apr  4 09:45:30 PDT 2026
++✅ instantDistCalc.py completed at Sat Apr  4 09:45:35 PDT 2026
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++🚀 Starting 05_batch_add_startpos.py at Sat Apr  4 09:45:35 PDT 2026
++✅ 05_batch_add_startpos.py completed at Sat Apr  4 09:45:36 PDT 2026
++🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷
++🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷
++🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷
++🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷
++🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷
++🚀 Starting 06b_propagate_pindrop_startpos.py at Sat Apr  4 09:45:36 PDT 2026
++[scan] found 2 files under /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redoAgainAgainAgain_PO_single/EventSegmentation/EventsAlmostFinal matching *_withStartPos.csv
++[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redoAgainAgainAgain_PO_single/EventSegmentation/EventsStartPos/ObsReward_A_02_17_2025_15_11_startPosPropagated.csv
++[skip] intervals not found for ObsReward_A_02_17_2025_15_11_withStartPos.csv
++[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redoAgainAgainAgain_PO_single/EventSegmentation/EventsStartPos/ObsReward_B_02_17_2025_15_11_startPosPropagated.csv
++[skip] intervals not found for ObsReward_B_02_17_2025_15_11_withStartPos.csv
++[done]
++✅ 06b_propagate_pindrop_startpos.py completed at Sat Apr  4 09:45:36 PDT 2026
++🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️
++
++🚀 Starting computeWalks.py  at Sat Apr  4 09:45:36 PDT 2026
++✅ computeWalks.py completed at Sat Apr  4 09:45:37 PDT 2026
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++🚀 Starting add_pin_drop_vote_score.py at Sat Apr  4 09:45:37 PDT 2026
++🚀 Starting add_pin_drop_vote_score.py at Sat Apr  4 09:45:38 PDT 2026
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++🚀 Starting fillEventsPosWalks.py at Sat Apr  4 09:45:38 PDT 2026
++✅ fillEventsPosWalks.py completed at Sat Apr  4 09:45:39 PDT 2026
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++🚀 Starting fillEventsPosWalks.py at Sat Apr  4 09:45:39 PDT 2026
++✅ fillEventsPosWalks.py completed at Sat Apr  4 09:45:40 PDT 2026
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++🚀 Starting buildIntervalsFromEvents.py at Sat Apr  4 09:45:40 PDT 2026
++✅ buildIntervalsFromEvents.py completed at Sat Apr  4 09:45:40 PDT 2026
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++🚀 Starting propagateIntervalCols.py at Sat Apr  4 09:45:40 PDT 2026
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++🚀 Starting 00_batch_reproc_steps_01_04.py at Sat Apr  4 09:49:47 PDT 2026
++            01_build_intervals : Build Block/Round Interval Tables - Single Row for Every True Round
++            02_reproc_processed_add_elapsed_and_distance : Add Elapsed Time & Distance to _processed.csv to make _PreLimReprocessed.csv files
++            03_compute_speed : Compute Speed to Make Final _reprocessed.csv files
++            04_finalize_events_and_intervals_with_pindrops (no startPos here): Fleshing out Block/Round Interval Tables & Events Files with More Dist & Time Info
++✅ 00_batch_reproc_steps_01_04.py completed at Sat Apr  4 09:49:51 PDT 2026
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++🚀 Starting 00_batch_reproc_steps_01_04.py at Sat Apr  4 09:49:51 PDT 2026
++            01_build_intervals : Build Block/Round Interval Tables - Single Row for Every True Round
++            02_reproc_processed_add_elapsed_and_distance : Add Elapsed Time & Distance to _processed.csv to make _PreLimReprocessed.csv files
++            03_compute_speed : Compute Speed to Make Final _reprocessed.csv files
++            04_finalize_events_and_intervals_with_pindrops (no startPos here): Fleshing out Block/Round Interval Tables & Events Files with More Dist & Time Info
++✅ 00_batch_reproc_steps_01_04.py completed at Sat Apr  4 09:49:55 PDT 2026
++🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝
++🚀 Starting instantDistCalc.py at Sat Apr  4 09:49:55 PDT 2026
++✅ instantDistCalc.py completed at Sat Apr  4 09:50:00 PDT 2026
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++🚀 Starting 05_batch_add_startpos.py at Sat Apr  4 09:50:00 PDT 2026
++✅ 05_batch_add_startpos.py completed at Sat Apr  4 09:50:01 PDT 2026
++🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷
++🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷
++🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷
++🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷
++🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷
++🚀 Starting 06b_propagate_pindrop_startpos.py at Sat Apr  4 09:50:01 PDT 2026
++[scan] found 2 files under /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redoAgainAgainAgain_PO_single/EventSegmentation/EventsAlmostFinal matching *_withStartPos.csv
++[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redoAgainAgainAgain_PO_single/EventSegmentation/EventsStartPos/ObsReward_A_02_17_2025_15_11_startPosPropagated.csv
++[skip] intervals not found for ObsReward_A_02_17_2025_15_11_withStartPos.csv
++[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redoAgainAgainAgain_PO_single/EventSegmentation/EventsStartPos/ObsReward_B_02_17_2025_15_11_startPosPropagated.csv
++[skip] intervals not found for ObsReward_B_02_17_2025_15_11_withStartPos.csv
++[done]
++✅ 06b_propagate_pindrop_startpos.py completed at Sat Apr  4 09:50:01 PDT 2026
++🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️
++
++🚀 Starting computeWalks.py  at Sat Apr  4 09:50:02 PDT 2026
++✅ computeWalks.py completed at Sat Apr  4 09:50:02 PDT 2026
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++🚀 Starting add_pin_drop_vote_score.py at Sat Apr  4 09:50:02 PDT 2026
++🚀 Starting add_pin_drop_vote_score.py at Sat Apr  4 09:50:03 PDT 2026
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++🚀 Starting fillEventsPosWalks.py at Sat Apr  4 09:50:03 PDT 2026
++✅ fillEventsPosWalks.py completed at Sat Apr  4 09:50:04 PDT 2026
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++🚀 Starting fillEventsPosWalks.py at Sat Apr  4 09:50:04 PDT 2026
++✅ fillEventsPosWalks.py completed at Sat Apr  4 09:50:05 PDT 2026
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++🚀 Starting buildIntervalsFromEvents.py at Sat Apr  4 09:50:05 PDT 2026
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++🚀 Starting 00_batch_reproc_steps_01_04.py at Sat Apr  4 09:51:57 PDT 2026
++            01_build_intervals : Build Block/Round Interval Tables - Single Row for Every True Round
++            02_reproc_processed_add_elapsed_and_distance : Add Elapsed Time & Distance to _processed.csv to make _PreLimReprocessed.csv files
++            03_compute_speed : Compute Speed to Make Final _reprocessed.csv files
++            04_finalize_events_and_intervals_with_pindrops (no startPos here): Fleshing out Block/Round Interval Tables & Events Files with More Dist & Time Info
++✅ 00_batch_reproc_steps_01_04.py completed at Sat Apr  4 09:52:01 PDT 2026
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++🚀 Starting 00_batch_reproc_steps_01_04.py at Sat Apr  4 09:52:01 PDT 2026
++            01_build_intervals : Build Block/Round Interval Tables - Single Row for Every True Round
++            02_reproc_processed_add_elapsed_and_distance : Add Elapsed Time & Distance to _processed.csv to make _PreLimReprocessed.csv files
++            03_compute_speed : Compute Speed to Make Final _reprocessed.csv files
++            04_finalize_events_and_intervals_with_pindrops (no startPos here): Fleshing out Block/Round Interval Tables & Events Files with More Dist & Time Info
++✅ 00_batch_reproc_steps_01_04.py completed at Sat Apr  4 09:52:06 PDT 2026
++🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝
++🚀 Starting instantDistCalc.py at Sat Apr  4 09:52:06 PDT 2026
++✅ instantDistCalc.py completed at Sat Apr  4 09:52:11 PDT 2026
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++🚀 Starting 05_batch_add_startpos.py at Sat Apr  4 09:52:11 PDT 2026
++✅ 05_batch_add_startpos.py completed at Sat Apr  4 09:52:11 PDT 2026
++🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷
++🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷
++🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷
++🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷
++🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷
++🚀 Starting 06b_propagate_pindrop_startpos.py at Sat Apr  4 09:52:11 PDT 2026
++[scan] found 2 files under /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redoAgainAgainAgain_PO_single/EventSegmentation/EventsAlmostFinal matching *_withStartPos.csv
++[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redoAgainAgainAgain_PO_single/EventSegmentation/EventsStartPos/ObsReward_A_02_17_2025_15_11_startPosPropagated.csv
++[skip] intervals not found for ObsReward_A_02_17_2025_15_11_withStartPos.csv
++[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redoAgainAgainAgain_PO_single/EventSegmentation/EventsStartPos/ObsReward_B_02_17_2025_15_11_startPosPropagated.csv
++[skip] intervals not found for ObsReward_B_02_17_2025_15_11_withStartPos.csv
++[done]
++✅ 06b_propagate_pindrop_startpos.py completed at Sat Apr  4 09:52:12 PDT 2026
++🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️
++
++🚀 Starting computeWalks.py  at Sat Apr  4 09:52:12 PDT 2026
++✅ computeWalks.py completed at Sat Apr  4 09:52:12 PDT 2026
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++🚀 Starting add_pin_drop_vote_score.py at Sat Apr  4 09:52:12 PDT 2026
++🚀 Starting add_pin_drop_vote_score.py at Sat Apr  4 09:52:13 PDT 2026
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++🚀 Starting fillEventsPosWalks.py at Sat Apr  4 09:52:13 PDT 2026
++✅ fillEventsPosWalks.py completed at Sat Apr  4 09:52:14 PDT 2026
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++🚀 Starting fillEventsPosWalks.py at Sat Apr  4 09:52:14 PDT 2026
++✅ fillEventsPosWalks.py completed at Sat Apr  4 09:52:15 PDT 2026
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++🚀 Starting buildIntervalsFromEvents.py at Sat Apr  4 09:52:15 PDT 2026
++✅ buildIntervalsFromEvents.py completed at Sat Apr  4 09:52:15 PDT 2026
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++🚀 Starting propagateIntervalCols.py at Sat Apr  4 09:52:15 PDT 2026
++✅ propagateIntervalCols.py completed at Sat Apr  4 09:52:16 PDT 2026
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++🚀 Starting attach_walk_pindrop_metrics.py at Sat Apr  4 09:52:16 PDT 2026
++✅ attach_walk_pindrop_metrics.py completed at Sat Apr  4 09:52:16 PDT 2026
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++🚀 Starting attach_walk_chest_metrics.py at Sat Apr  4 09:52:16 PDT 2026
++✅ attach_walk_chest_metrics.py completed at Sat Apr  4 09:52:17 PDT 2026
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++🚀 Starting attach_swapVote_metrics.py at Sat Apr  4 09:52:17 PDT 2026
++✅ attach_swapVote_metrics.py completed at Sat Apr  4 09:52:17 PDT 2026
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++🚀 Starting attach_pinDropVote_metrics.py at Sat Apr  4 09:52:17 PDT 2026
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++🚀 Starting 00_batch_reproc_steps_01_04.py at Sat Apr  4 16:20:28 PDT 2026
++            01_build_intervals : Build Block/Round Interval Tables - Single Row for Every True Round
++            02_reproc_processed_add_elapsed_and_distance : Add Elapsed Time & Distance to _processed.csv to make _PreLimReprocessed.csv files
++            03_compute_speed : Compute Speed to Make Final _reprocessed.csv files
++            04_finalize_events_and_intervals_with_pindrops (no startPos here): Fleshing out Block/Round Interval Tables & Events Files with More Dist & Time Info
++✅ 00_batch_reproc_steps_01_04.py completed at Sat Apr  4 16:20:32 PDT 2026
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++🚀 Starting 00_batch_reproc_steps_01_04.py at Sat Apr  4 16:20:32 PDT 2026
++            01_build_intervals : Build Block/Round Interval Tables - Single Row for Every True Round
++            02_reproc_processed_add_elapsed_and_distance : Add Elapsed Time & Distance to _processed.csv to make _PreLimReprocessed.csv files
++            03_compute_speed : Compute Speed to Make Final _reprocessed.csv files
++            04_finalize_events_and_intervals_with_pindrops (no startPos here): Fleshing out Block/Round Interval Tables & Events Files with More Dist & Time Info
++✅ 00_batch_reproc_steps_01_04.py completed at Sat Apr  4 16:20:36 PDT 2026
++🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝
++🚀 Starting instantDistCalc.py at Sat Apr  4 16:20:36 PDT 2026
++✅ instantDistCalc.py completed at Sat Apr  4 16:20:41 PDT 2026
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++🚀 Starting 05_batch_add_startpos.py at Sat Apr  4 16:20:41 PDT 2026
++✅ 05_batch_add_startpos.py completed at Sat Apr  4 16:20:42 PDT 2026
++🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷
++🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷
++🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷
++🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷
++🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷
++🚀 Starting 06b_propagate_pindrop_startpos.py at Sat Apr  4 16:20:42 PDT 2026
++[scan] found 2 files under /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redoAgainAgainAgain_PO_single/EventSegmentation/EventsAlmostFinal matching *_withStartPos.csv
++[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redoAgainAgainAgain_PO_single/EventSegmentation/EventsStartPos/ObsReward_A_02_17_2025_15_11_startPosPropagated.csv
++[skip] intervals not found for ObsReward_A_02_17_2025_15_11_withStartPos.csv
++[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redoAgainAgainAgain_PO_single/EventSegmentation/EventsStartPos/ObsReward_B_02_17_2025_15_11_startPosPropagated.csv
++[skip] intervals not found for ObsReward_B_02_17_2025_15_11_withStartPos.csv
++[done]
++✅ 06b_propagate_pindrop_startpos.py completed at Sat Apr  4 16:20:42 PDT 2026
++🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️
++
++🚀 Starting computeWalks.py  at Sat Apr  4 16:20:42 PDT 2026
++✅ computeWalks.py completed at Sat Apr  4 16:20:43 PDT 2026
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++🚀 Starting add_pin_drop_vote_score.py at Sat Apr  4 16:20:43 PDT 2026
++🚀 Starting add_pin_drop_vote_score.py at Sat Apr  4 16:20:44 PDT 2026
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++🚀 Starting fillEventsPosWalks.py at Sat Apr  4 16:20:44 PDT 2026
++✅ fillEventsPosWalks.py completed at Sat Apr  4 16:20:45 PDT 2026
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++🚀 Starting fillEventsPosWalks.py at Sat Apr  4 16:20:45 PDT 2026
++✅ fillEventsPosWalks.py completed at Sat Apr  4 16:20:46 PDT 2026
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++🚀 Starting buildIntervalsFromEvents.py at Sat Apr  4 16:20:46 PDT 2026
++✅ buildIntervalsFromEvents.py completed at Sat Apr  4 16:20:46 PDT 2026
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++🚀 Starting propagateIntervalCols.py at Sat Apr  4 16:20:46 PDT 2026
++✅ propagateIntervalCols.py completed at Sat Apr  4 16:20:47 PDT 2026
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++🚀 Starting attach_walk_pindrop_metrics.py at Sat Apr  4 16:20:47 PDT 2026
++✅ attach_walk_pindrop_metrics.py completed at Sat Apr  4 16:20:47 PDT 2026
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++🚀 Starting attach_walk_chest_metrics.py at Sat Apr  4 16:20:47 PDT 2026
++✅ attach_walk_chest_metrics.py completed at Sat Apr  4 16:20:48 PDT 2026
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++🚀 Starting attach_swapVote_metrics.py at Sat Apr  4 16:20:48 PDT 2026
++✅ attach_swapVote_metrics.py completed at Sat Apr  4 16:20:48 PDT 2026
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++🚀 Starting attach_pinDropVote_metrics.py at Sat Apr  4 16:20:48 PDT 2026
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++🚀 Starting 00_batch_reproc_steps_01_04.py at Sat Apr  4 16:26:20 PDT 2026
++            01_build_intervals : Build Block/Round Interval Tables - Single Row for Every True Round
++            02_reproc_processed_add_elapsed_and_distance : Add Elapsed Time & Distance to _processed.csv to make _PreLimReprocessed.csv files
++            03_compute_speed : Compute Speed to Make Final _reprocessed.csv files
++            04_finalize_events_and_intervals_with_pindrops (no startPos here): Fleshing out Block/Round Interval Tables & Events Files with More Dist & Time Info
++✅ 00_batch_reproc_steps_01_04.py completed at Sat Apr  4 16:26:24 PDT 2026
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++🚀 Starting 00_batch_reproc_steps_01_04.py at Sat Apr  4 16:26:24 PDT 2026
++            01_build_intervals : Build Block/Round Interval Tables - Single Row for Every True Round
++            02_reproc_processed_add_elapsed_and_distance : Add Elapsed Time & Distance to _processed.csv to make _PreLimReprocessed.csv files
++            03_compute_speed : Compute Speed to Make Final _reprocessed.csv files
++            04_finalize_events_and_intervals_with_pindrops (no startPos here): Fleshing out Block/Round Interval Tables & Events Files with More Dist & Time Info
++✅ 00_batch_reproc_steps_01_04.py completed at Sat Apr  4 16:26:28 PDT 2026
++🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝
++🚀 Starting instantDistCalc.py at Sat Apr  4 16:26:28 PDT 2026
++✅ instantDistCalc.py completed at Sat Apr  4 16:26:33 PDT 2026
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++🚀 Starting 05_batch_add_startpos.py at Sat Apr  4 16:26:33 PDT 2026
++✅ 05_batch_add_startpos.py completed at Sat Apr  4 16:26:34 PDT 2026
++🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷
++🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷
++🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷
++🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷
++🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷
++🚀 Starting 06b_propagate_pindrop_startpos.py at Sat Apr  4 16:26:34 PDT 2026
++[scan] found 2 files under /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redoAgainAgainAgain_PO_single/EventSegmentation/EventsAlmostFinal matching *_withStartPos.csv
++[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redoAgainAgainAgain_PO_single/EventSegmentation/EventsStartPos/ObsReward_A_02_17_2025_15_11_startPosPropagated.csv
++[skip] intervals not found for ObsReward_A_02_17_2025_15_11_withStartPos.csv
++[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redoAgainAgainAgain_PO_single/EventSegmentation/EventsStartPos/ObsReward_B_02_17_2025_15_11_startPosPropagated.csv
++[skip] intervals not found for ObsReward_B_02_17_2025_15_11_withStartPos.csv
++[done]
++✅ 06b_propagate_pindrop_startpos.py completed at Sat Apr  4 16:26:34 PDT 2026
++🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️
++
++🚀 Starting computeWalks.py  at Sat Apr  4 16:26:34 PDT 2026
++✅ computeWalks.py completed at Sat Apr  4 16:26:35 PDT 2026
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++🚀 Starting add_pin_drop_vote_score.py at Sat Apr  4 16:26:35 PDT 2026
++🚀 Starting add_pin_drop_vote_score.py at Sat Apr  4 16:26:36 PDT 2026
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++🚀 Starting fillEventsPosWalks.py at Sat Apr  4 16:26:36 PDT 2026
++✅ fillEventsPosWalks.py completed at Sat Apr  4 16:26:37 PDT 2026
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++🚀 Starting fillEventsPosWalks.py at Sat Apr  4 16:26:37 PDT 2026
++✅ fillEventsPosWalks.py completed at Sat Apr  4 16:26:38 PDT 2026
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++🚀 Starting buildIntervalsFromEvents.py at Sat Apr  4 16:26:38 PDT 2026
++✅ buildIntervalsFromEvents.py completed at Sat Apr  4 16:26:38 PDT 2026
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++🚀 Starting propagateIntervalCols.py at Sat Apr  4 16:26:38 PDT 2026
++✅ propagateIntervalCols.py completed at Sat Apr  4 16:26:39 PDT 2026
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++🚀 Starting attach_walk_pindrop_metrics.py at Sat Apr  4 16:26:39 PDT 2026
++✅ attach_walk_pindrop_metrics.py completed at Sat Apr  4 16:26:39 PDT 2026
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++🚀 Starting attach_walk_chest_metrics.py at Sat Apr  4 16:26:39 PDT 2026
++✅ attach_walk_chest_metrics.py completed at Sat Apr  4 16:26:39 PDT 2026
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++🚀 Starting attach_swapVote_metrics.py at Sat Apr  4 16:26:39 PDT 2026
++✅ attach_swapVote_metrics.py completed at Sat Apr  4 16:26:40 PDT 2026
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++🚀 Starting attach_pinDropVote_metrics.py at Sat Apr  4 16:26:40 PDT 2026
++✅ attach_pinDropVote_metrics.py completed at Sat Apr  4 16:26:40 PDT 2026
++🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼
++
++🚀 Starting preprocRaw_PO_part1.py  at Mon Apr  6 11:04:47 PDT 2026
++✅ preprocRaw_PO_part1.py completed at Mon Apr  6 11:05:29 PDT 2026
++🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼
++
++🚀 Starting preprocRaw_PO_part2.py  at Mon Apr  6 11:05:29 PDT 2026
++✅ preprocRaw_PO_part2.py completed at Mon Apr  6 11:05:47 PDT 2026
++🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝
++🚀 Starting preFrontalCortex_unifiedEventSeg.py for PO  setting at Mon Apr  6 11:05:47 PDT 2026
++✅ preFrontalCortex_unifiedEventSeg.py for PO completed at Mon Apr  6 11:06:35 PDT 2026
++🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝
++🚀 Starting preFrontalCortex_unifiedEventSeg.py for AN  setting at Mon Apr  6 11:06:35 PDT 2026
++✅ preFrontalCortex_unifiedEventSeg.py for AN completed at Mon Apr  6 11:06:58 PDT 2026
++🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭
++
++🚀 Starting justFlatten.py  at Mon Apr  6 11:06:58 PDT 2026
++✅ justFlatten.py completed at Mon Apr  6 11:06:59 PDT 2026
++🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷
++
++🚀 Starting add_coin_labels_from_collated.py  at Mon Apr  6 11:06:59 PDT 2026
++✅ add_coin_labels_from_collated.py completed at Mon Apr  6 11:07:00 PDT 2026
++🚀 add_effective_roundnum.py at Mon Apr  6 11:07:00 PDT 2026
++✅ add_effective_roundnum.py completed at Mon Apr  6 11:07:00 PDT 2026
++🚀 combine_event_pairs.py at Mon Apr  6 11:07:00 PDT 2026
++✅ combine_event_pairs.py completed at Mon Apr  6 11:07:01 PDT 2026
++🦦🦦🦦🦦🦦🦦🦦🦦🦦🦦🦦🦦🦦🦦🦦🦦🦦🦦🦦🦦🦦🦦🦦🦦
++
++🚀 Starting getPositions.py at Mon Apr  6 11:07:01 PDT 2026
++✅ getPositions.py completed at Mon Apr  6 11:07:02 PDT 2026
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++🚀 Starting 00_batch_reproc_steps_01_04.py at Mon Apr  6 11:07:02 PDT 2026
++            01_build_intervals : Build Block/Round Interval Tables - Single Row for Every True Round
++            02_reproc_processed_add_elapsed_and_distance : Add Elapsed Time & Distance to _processed.csv to make _PreLimReprocessed.csv files
++            03_compute_speed : Compute Speed to Make Final _reprocessed.csv files
++            04_finalize_events_and_intervals_with_pindrops (no startPos here): Fleshing out Block/Round Interval Tables & Events Files with More Dist & Time Info
++✅ 00_batch_reproc_steps_01_04.py completed at Mon Apr  6 11:07:09 PDT 2026
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++🚀 Starting 00_batch_reproc_steps_01_04.py at Mon Apr  6 11:07:09 PDT 2026
++            01_build_intervals : Build Block/Round Interval Tables - Single Row for Every True Round
++            02_reproc_processed_add_elapsed_and_distance : Add Elapsed Time & Distance to _processed.csv to make _PreLimReprocessed.csv files
++            03_compute_speed : Compute Speed to Make Final _reprocessed.csv files
++            04_finalize_events_and_intervals_with_pindrops (no startPos here): Fleshing out Block/Round Interval Tables & Events Files with More Dist & Time Info
++✅ 00_batch_reproc_steps_01_04.py completed at Mon Apr  6 11:07:14 PDT 2026
++🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝
++🚀 Starting instantDistCalc.py at Mon Apr  6 11:07:14 PDT 2026
++✅ instantDistCalc.py completed at Mon Apr  6 11:07:20 PDT 2026
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++🚀 Starting 05_batch_add_startpos.py at Mon Apr  6 11:07:20 PDT 2026
++✅ 05_batch_add_startpos.py completed at Mon Apr  6 11:07:21 PDT 2026
++🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷
++🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷
++🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷
++🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷
++🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷
++🚀 Starting 06b_propagate_pindrop_startpos.py at Mon Apr  6 11:07:21 PDT 2026
++[scan] found 4 files under /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redoAgainAgainAgain_PO_single/EventSegmentation/EventsAlmostFinal matching *_withStartPos.csv
++[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redoAgainAgainAgain_PO_single/EventSegmentation/EventsStartPos/ObsReward_A_02_17_2025_15_11_startPosPropagated.csv
++[skip] intervals not found for ObsReward_A_02_17_2025_15_11_withStartPos.csv
++[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redoAgainAgainAgain_PO_single/EventSegmentation/EventsStartPos/ObsReward_B_02_17_2025_14_48_startPosPropagated.csv
++[skip] intervals not found for ObsReward_B_02_17_2025_14_48_withStartPos.csv
++[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redoAgainAgainAgain_PO_single/EventSegmentation/EventsStartPos/ObsReward_B_02_17_2025_15_11_startPosPropagated.csv
++[skip] intervals not found for ObsReward_B_02_17_2025_15_11_withStartPos.csv
++[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redoAgainAgainAgain_PO_single/EventSegmentation/EventsStartPos/ObsReward_B_02_17_2025_15_49_startPosPropagated.csv
++[skip] intervals not found for ObsReward_B_02_17_2025_15_49_withStartPos.csv
++[done]
++✅ 06b_propagate_pindrop_startpos.py completed at Mon Apr  6 11:07:21 PDT 2026
++🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️
++
++🚀 Starting computeWalks.py  at Mon Apr  6 11:07:21 PDT 2026
++✅ computeWalks.py completed at Mon Apr  6 11:07:23 PDT 2026
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++🚀 Starting add_pin_drop_vote_score.py at Mon Apr  6 11:07:23 PDT 2026
++🚀 Starting add_pin_drop_vote_score.py at Mon Apr  6 11:07:23 PDT 2026
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++🚀 Starting fillEventsPosWalks.py at Mon Apr  6 11:07:23 PDT 2026
++✅ fillEventsPosWalks.py completed at Mon Apr  6 11:07:24 PDT 2026
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++🚀 Starting fillEventsPosWalks.py at Mon Apr  6 11:07:24 PDT 2026
++✅ fillEventsPosWalks.py completed at Mon Apr  6 11:07:26 PDT 2026
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++🚀 Starting buildIntervalsFromEvents.py at Mon Apr  6 11:07:26 PDT 2026
++✅ buildIntervalsFromEvents.py completed at Mon Apr  6 11:07:26 PDT 2026
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++🚀 Starting propagateIntervalCols.py at Mon Apr  6 11:07:26 PDT 2026
++✅ propagateIntervalCols.py completed at Mon Apr  6 11:07:27 PDT 2026
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++🚀 Starting attach_walk_pindrop_metrics.py at Mon Apr  6 11:07:27 PDT 2026
++✅ attach_walk_pindrop_metrics.py completed at Mon Apr  6 11:07:27 PDT 2026
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++🚀 Starting attach_walk_chest_metrics.py at Mon Apr  6 11:07:27 PDT 2026
++✅ attach_walk_chest_metrics.py completed at Mon Apr  6 11:07:28 PDT 2026
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++🚀 Starting attach_swapVote_metrics.py at Mon Apr  6 11:07:28 PDT 2026
++✅ attach_swapVote_metrics.py completed at Mon Apr  6 11:07:28 PDT 2026
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++🚀 Starting attach_pinDropVote_metrics.py at Mon Apr  6 11:07:28 PDT 2026
++✅ attach_pinDropVote_metrics.py completed at Mon Apr  6 11:07:29 PDT 2026
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++🚀 Starting group_and_append_sessionID.py at Mon Apr  6 11:07:29 PDT 2026
++✅ group_and_append_sessionID.py completed at Mon Apr  6 11:07:29 PDT 2026
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++🚀 Starting add_session_running_totals.py at Mon Apr  6 11:07:29 PDT 2026
++🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼
++
++🚀 Starting preprocRaw_PO_part1.py  at Mon Apr  6 11:09:59 PDT 2026
++✅ preprocRaw_PO_part1.py completed at Mon Apr  6 11:10:42 PDT 2026
++🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼
++
++🚀 Starting preprocRaw_PO_part2.py  at Mon Apr  6 11:10:42 PDT 2026
++✅ preprocRaw_PO_part2.py completed at Mon Apr  6 11:11:01 PDT 2026
++🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝
++🚀 Starting preFrontalCortex_unifiedEventSeg.py for PO  setting at Mon Apr  6 11:11:01 PDT 2026
++✅ preFrontalCortex_unifiedEventSeg.py for PO completed at Mon Apr  6 11:11:50 PDT 2026
++🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝
++🚀 Starting preFrontalCortex_unifiedEventSeg.py for AN  setting at Mon Apr  6 11:11:50 PDT 2026
++✅ preFrontalCortex_unifiedEventSeg.py for AN completed at Mon Apr  6 11:12:32 PDT 2026
++🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭
++
++🚀 Starting justFlatten.py  at Mon Apr  6 11:12:32 PDT 2026
++✅ justFlatten.py completed at Mon Apr  6 11:12:33 PDT 2026
++🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷
++
++🚀 Starting add_coin_labels_from_collated.py  at Mon Apr  6 11:12:33 PDT 2026
++✅ add_coin_labels_from_collated.py completed at Mon Apr  6 11:12:34 PDT 2026
++🚀 add_effective_roundnum.py at Mon Apr  6 11:12:34 PDT 2026
++✅ add_effective_roundnum.py completed at Mon Apr  6 11:12:34 PDT 2026
++🚀 combine_event_pairs.py at Mon Apr  6 11:12:34 PDT 2026
++✅ combine_event_pairs.py completed at Mon Apr  6 11:12:35 PDT 2026
++🦦🦦🦦🦦🦦🦦🦦🦦🦦🦦🦦🦦🦦🦦🦦🦦🦦🦦🦦🦦🦦🦦🦦🦦
++
++🚀 Starting getPositions.py at Mon Apr  6 11:12:35 PDT 2026
++✅ getPositions.py completed at Mon Apr  6 11:12:36 PDT 2026
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++🚀 Starting 00_batch_reproc_steps_01_04.py at Mon Apr  6 11:12:36 PDT 2026
++            01_build_intervals : Build Block/Round Interval Tables - Single Row for Every True Round
++            02_reproc_processed_add_elapsed_and_distance : Add Elapsed Time & Distance to _processed.csv to make _PreLimReprocessed.csv files
++            03_compute_speed : Compute Speed to Make Final _reprocessed.csv files
++            04_finalize_events_and_intervals_with_pindrops (no startPos here): Fleshing out Block/Round Interval Tables & Events Files with More Dist & Time Info
++✅ 00_batch_reproc_steps_01_04.py completed at Mon Apr  6 11:12:43 PDT 2026
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++🚀 Starting 00_batch_reproc_steps_01_04.py at Mon Apr  6 11:12:43 PDT 2026
++            01_build_intervals : Build Block/Round Interval Tables - Single Row for Every True Round
++            02_reproc_processed_add_elapsed_and_distance : Add Elapsed Time & Distance to _processed.csv to make _PreLimReprocessed.csv files
++            03_compute_speed : Compute Speed to Make Final _reprocessed.csv files
++            04_finalize_events_and_intervals_with_pindrops (no startPos here): Fleshing out Block/Round Interval Tables & Events Files with More Dist & Time Info
++✅ 00_batch_reproc_steps_01_04.py completed at Mon Apr  6 11:12:50 PDT 2026
++🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝
++🚀 Starting instantDistCalc.py at Mon Apr  6 11:12:50 PDT 2026
++✅ instantDistCalc.py completed at Mon Apr  6 11:12:59 PDT 2026
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++🚀 Starting 05_batch_add_startpos.py at Mon Apr  6 11:12:59 PDT 2026
++✅ 05_batch_add_startpos.py completed at Mon Apr  6 11:13:00 PDT 2026
++🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷
++🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷
++🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷
++🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷
++🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷
++🚀 Starting 06b_propagate_pindrop_startpos.py at Mon Apr  6 11:13:00 PDT 2026
++[scan] found 6 files under /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redoAgainAgainAgain_PO_single/EventSegmentation/EventsAlmostFinal matching *_withStartPos.csv
++[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redoAgainAgainAgain_PO_single/EventSegmentation/EventsStartPos/ObsReward_A_02_17_2025_14_48_startPosPropagated.csv
++[skip] intervals not found for ObsReward_A_02_17_2025_14_48_withStartPos.csv
++[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redoAgainAgainAgain_PO_single/EventSegmentation/EventsStartPos/ObsReward_A_02_17_2025_15_11_startPosPropagated.csv
++[skip] intervals not found for ObsReward_A_02_17_2025_15_11_withStartPos.csv
++[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redoAgainAgainAgain_PO_single/EventSegmentation/EventsStartPos/ObsReward_A_02_17_2025_15_49_startPosPropagated.csv
++[skip] intervals not found for ObsReward_A_02_17_2025_15_49_withStartPos.csv
++[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redoAgainAgainAgain_PO_single/EventSegmentation/EventsStartPos/ObsReward_B_02_17_2025_14_48_startPosPropagated.csv
++[skip] intervals not found for ObsReward_B_02_17_2025_14_48_withStartPos.csv
++[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redoAgainAgainAgain_PO_single/EventSegmentation/EventsStartPos/ObsReward_B_02_17_2025_15_11_startPosPropagated.csv
++[skip] intervals not found for ObsReward_B_02_17_2025_15_11_withStartPos.csv
++[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redoAgainAgainAgain_PO_single/EventSegmentation/EventsStartPos/ObsReward_B_02_17_2025_15_49_startPosPropagated.csv
++[skip] intervals not found for ObsReward_B_02_17_2025_15_49_withStartPos.csv
++[done]
++✅ 06b_propagate_pindrop_startpos.py completed at Mon Apr  6 11:13:01 PDT 2026
++🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️
++
++🚀 Starting computeWalks.py  at Mon Apr  6 11:13:01 PDT 2026
++✅ computeWalks.py completed at Mon Apr  6 11:13:02 PDT 2026
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++🚀 Starting add_pin_drop_vote_score.py at Mon Apr  6 11:13:02 PDT 2026
++🚀 Starting add_pin_drop_vote_score.py at Mon Apr  6 11:13:02 PDT 2026
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++🚀 Starting fillEventsPosWalks.py at Mon Apr  6 11:13:03 PDT 2026
++✅ fillEventsPosWalks.py completed at Mon Apr  6 11:13:04 PDT 2026
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++🚀 Starting fillEventsPosWalks.py at Mon Apr  6 11:13:04 PDT 2026
++✅ fillEventsPosWalks.py completed at Mon Apr  6 11:13:06 PDT 2026
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++🚀 Starting buildIntervalsFromEvents.py at Mon Apr  6 11:13:06 PDT 2026
++✅ buildIntervalsFromEvents.py completed at Mon Apr  6 11:13:06 PDT 2026
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++🚀 Starting propagateIntervalCols.py at Mon Apr  6 11:13:06 PDT 2026
++✅ propagateIntervalCols.py completed at Mon Apr  6 11:13:07 PDT 2026
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++🚀 Starting attach_walk_pindrop_metrics.py at Mon Apr  6 11:13:07 PDT 2026
++✅ attach_walk_pindrop_metrics.py completed at Mon Apr  6 11:13:07 PDT 2026
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++🚀 Starting attach_walk_chest_metrics.py at Mon Apr  6 11:13:07 PDT 2026
++✅ attach_walk_chest_metrics.py completed at Mon Apr  6 11:13:08 PDT 2026
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++🚀 Starting attach_swapVote_metrics.py at Mon Apr  6 11:13:08 PDT 2026
++✅ attach_swapVote_metrics.py completed at Mon Apr  6 11:13:09 PDT 2026
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++🚀 Starting attach_pinDropVote_metrics.py at Mon Apr  6 11:13:09 PDT 2026
++✅ attach_pinDropVote_metrics.py completed at Mon Apr  6 11:13:09 PDT 2026
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++🚀 Starting group_and_append_sessionID.py at Mon Apr  6 11:13:09 PDT 2026
++✅ group_and_append_sessionID.py completed at Mon Apr  6 11:13:10 PDT 2026
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++🚀 Starting add_session_running_totals.py at Mon Apr  6 11:13:10 PDT 2026
++✅ add_session_running_totals.py completed at Mon Apr  6 11:13:10 PDT 2026
++🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼
++
++🚀 Starting preprocRaw_PO_part1.py  at Mon Apr  6 11:14:57 PDT 2026
++✅ preprocRaw_PO_part1.py completed at Mon Apr  6 11:15:38 PDT 2026
++🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼
++
++🚀 Starting preprocRaw_PO_part2.py  at Mon Apr  6 11:15:38 PDT 2026
++✅ preprocRaw_PO_part2.py completed at Mon Apr  6 11:15:56 PDT 2026
++🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝
++🚀 Starting preFrontalCortex_unifiedEventSeg.py for PO  setting at Mon Apr  6 11:15:56 PDT 2026
++✅ preFrontalCortex_unifiedEventSeg.py for PO completed at Mon Apr  6 11:16:44 PDT 2026
++🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝
++🚀 Starting preFrontalCortex_unifiedEventSeg.py for AN  setting at Mon Apr  6 11:16:44 PDT 2026
++✅ preFrontalCortex_unifiedEventSeg.py for AN completed at Mon Apr  6 11:17:25 PDT 2026
++🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭
++
++🚀 Starting justFlatten.py  at Mon Apr  6 11:17:25 PDT 2026
++✅ justFlatten.py completed at Mon Apr  6 11:17:26 PDT 2026
++🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷
++
++🚀 Starting add_coin_labels_from_collated.py  at Mon Apr  6 11:17:26 PDT 2026
++✅ add_coin_labels_from_collated.py completed at Mon Apr  6 11:17:27 PDT 2026
++🚀 add_effective_roundnum.py at Mon Apr  6 11:17:27 PDT 2026
++✅ add_effective_roundnum.py completed at Mon Apr  6 11:17:27 PDT 2026
++🚀 combine_event_pairs.py at Mon Apr  6 11:17:27 PDT 2026
++✅ combine_event_pairs.py completed at Mon Apr  6 11:17:28 PDT 2026
++🦦🦦🦦🦦🦦🦦🦦🦦🦦🦦🦦🦦🦦🦦🦦🦦🦦🦦🦦🦦🦦🦦🦦🦦
++
++🚀 Starting getPositions.py at Mon Apr  6 11:17:28 PDT 2026
++✅ getPositions.py completed at Mon Apr  6 11:17:29 PDT 2026
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++🚀 Starting 00_batch_reproc_steps_01_04.py at Mon Apr  6 11:17:29 PDT 2026
++            01_build_intervals : Build Block/Round Interval Tables - Single Row for Every True Round
++            02_reproc_processed_add_elapsed_and_distance : Add Elapsed Time & Distance to _processed.csv to make _PreLimReprocessed.csv files
++            03_compute_speed : Compute Speed to Make Final _reprocessed.csv files
++            04_finalize_events_and_intervals_with_pindrops (no startPos here): Fleshing out Block/Round Interval Tables & Events Files with More Dist & Time Info
++✅ 00_batch_reproc_steps_01_04.py completed at Mon Apr  6 11:17:36 PDT 2026
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++🚀 Starting 00_batch_reproc_steps_01_04.py at Mon Apr  6 11:17:36 PDT 2026
++            01_build_intervals : Build Block/Round Interval Tables - Single Row for Every True Round
++            02_reproc_processed_add_elapsed_and_distance : Add Elapsed Time & Distance to _processed.csv to make _PreLimReprocessed.csv files
++            03_compute_speed : Compute Speed to Make Final _reprocessed.csv files
++            04_finalize_events_and_intervals_with_pindrops (no startPos here): Fleshing out Block/Round Interval Tables & Events Files with More Dist & Time Info
++✅ 00_batch_reproc_steps_01_04.py completed at Mon Apr  6 11:17:43 PDT 2026
++🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝
++🚀 Starting instantDistCalc.py at Mon Apr  6 11:17:43 PDT 2026
++✅ instantDistCalc.py completed at Mon Apr  6 11:17:52 PDT 2026
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++🚀 Starting 05_batch_add_startpos.py at Mon Apr  6 11:17:52 PDT 2026
++✅ 05_batch_add_startpos.py completed at Mon Apr  6 11:17:53 PDT 2026
++🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷
++🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷
++🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷
++🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷
++🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷
++🚀 Starting 06b_propagate_pindrop_startpos.py at Mon Apr  6 11:17:53 PDT 2026
++[scan] found 6 files under /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redoAgainAgainAgain_PO_single/EventSegmentation/EventsAlmostFinal matching *_withStartPos.csv
++[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redoAgainAgainAgain_PO_single/EventSegmentation/EventsStartPos/ObsReward_A_02_17_2025_14_48_startPosPropagated.csv
++[skip] intervals not found for ObsReward_A_02_17_2025_14_48_withStartPos.csv
++[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redoAgainAgainAgain_PO_single/EventSegmentation/EventsStartPos/ObsReward_A_02_17_2025_15_11_startPosPropagated.csv
++[skip] intervals not found for ObsReward_A_02_17_2025_15_11_withStartPos.csv
++[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redoAgainAgainAgain_PO_single/EventSegmentation/EventsStartPos/ObsReward_A_02_17_2025_15_49_startPosPropagated.csv
++[skip] intervals not found for ObsReward_A_02_17_2025_15_49_withStartPos.csv
++[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redoAgainAgainAgain_PO_single/EventSegmentation/EventsStartPos/ObsReward_B_02_17_2025_14_48_startPosPropagated.csv
++[skip] intervals not found for ObsReward_B_02_17_2025_14_48_withStartPos.csv
++[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redoAgainAgainAgain_PO_single/EventSegmentation/EventsStartPos/ObsReward_B_02_17_2025_15_11_startPosPropagated.csv
++[skip] intervals not found for ObsReward_B_02_17_2025_15_11_withStartPos.csv
++[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redoAgainAgainAgain_PO_single/EventSegmentation/EventsStartPos/ObsReward_B_02_17_2025_15_49_startPosPropagated.csv
++[skip] intervals not found for ObsReward_B_02_17_2025_15_49_withStartPos.csv
++[done]
++✅ 06b_propagate_pindrop_startpos.py completed at Mon Apr  6 11:17:53 PDT 2026
++🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️
++
++🚀 Starting computeWalks.py  at Mon Apr  6 11:17:53 PDT 2026
++✅ computeWalks.py completed at Mon Apr  6 11:17:55 PDT 2026
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++🚀 Starting add_pin_drop_vote_score.py at Mon Apr  6 11:17:55 PDT 2026
++🚀 Starting add_pin_drop_vote_score.py at Mon Apr  6 11:17:55 PDT 2026
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++🚀 Starting fillEventsPosWalks.py at Mon Apr  6 11:17:55 PDT 2026
++✅ fillEventsPosWalks.py completed at Mon Apr  6 11:17:57 PDT 2026
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++🚀 Starting fillEventsPosWalks.py at Mon Apr  6 11:17:57 PDT 2026
++✅ fillEventsPosWalks.py completed at Mon Apr  6 11:17:58 PDT 2026
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++🚀 Starting buildIntervalsFromEvents.py at Mon Apr  6 11:17:58 PDT 2026
++✅ buildIntervalsFromEvents.py completed at Mon Apr  6 11:17:59 PDT 2026
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++🚀 Starting propagateIntervalCols.py at Mon Apr  6 11:17:59 PDT 2026
++✅ propagateIntervalCols.py completed at Mon Apr  6 11:17:59 PDT 2026
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++🚀 Starting attach_walk_pindrop_metrics.py at Mon Apr  6 11:17:59 PDT 2026
++✅ attach_walk_pindrop_metrics.py completed at Mon Apr  6 11:18:00 PDT 2026
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++🚀 Starting attach_walk_chest_metrics.py at Mon Apr  6 11:18:00 PDT 2026
++✅ attach_walk_chest_metrics.py completed at Mon Apr  6 11:18:01 PDT 2026
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++🚀 Starting attach_swapVote_metrics.py at Mon Apr  6 11:18:01 PDT 2026
++✅ attach_swapVote_metrics.py completed at Mon Apr  6 11:18:01 PDT 2026
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++🚀 Starting attach_pinDropVote_metrics.py at Mon Apr  6 11:18:01 PDT 2026
++✅ attach_pinDropVote_metrics.py completed at Mon Apr  6 11:18:02 PDT 2026
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++🚀 Starting group_and_append_sessionID.py at Mon Apr  6 11:18:02 PDT 2026
++✅ group_and_append_sessionID.py completed at Mon Apr  6 11:18:02 PDT 2026
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++🚀 Starting add_session_running_totals.py at Mon Apr  6 11:18:02 PDT 2026
++✅ add_session_running_totals.py completed at Mon Apr  6 11:18:02 PDT 2026
++🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼
++
++🚀 Starting preprocRaw_PO_part1.py  at Mon Apr  6 11:32:58 PDT 2026
++✅ preprocRaw_PO_part1.py completed at Mon Apr  6 11:33:40 PDT 2026
++🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼
++
++🚀 Starting preprocRaw_PO_part2.py  at Mon Apr  6 11:33:40 PDT 2026
++✅ preprocRaw_PO_part2.py completed at Mon Apr  6 11:33:58 PDT 2026
++🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝
++🚀 Starting preFrontalCortex_unifiedEventSeg.py for PO  setting at Mon Apr  6 11:33:58 PDT 2026
++✅ preFrontalCortex_unifiedEventSeg.py for PO completed at Mon Apr  6 11:34:46 PDT 2026
++🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝
++🚀 Starting preFrontalCortex_unifiedEventSeg.py for AN  setting at Mon Apr  6 11:34:46 PDT 2026
++✅ preFrontalCortex_unifiedEventSeg.py for AN completed at Mon Apr  6 11:35:28 PDT 2026
++🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭
++
++🚀 Starting justFlatten.py  at Mon Apr  6 11:35:28 PDT 2026
++✅ justFlatten.py completed at Mon Apr  6 11:35:29 PDT 2026
++🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷
++
++🚀 Starting add_coin_labels_from_collated.py  at Mon Apr  6 11:35:29 PDT 2026
++✅ add_coin_labels_from_collated.py completed at Mon Apr  6 11:35:30 PDT 2026
++🚀 add_effective_roundnum.py at Mon Apr  6 11:35:30 PDT 2026
++✅ add_effective_roundnum.py completed at Mon Apr  6 11:35:30 PDT 2026
++🚀 combine_event_pairs.py at Mon Apr  6 11:35:30 PDT 2026
++✅ combine_event_pairs.py completed at Mon Apr  6 11:35:31 PDT 2026
++🦦🦦🦦🦦🦦🦦🦦🦦🦦🦦🦦🦦🦦🦦🦦🦦🦦🦦🦦🦦🦦🦦🦦🦦
++
++🚀 Starting getPositions.py at Mon Apr  6 11:35:31 PDT 2026
++✅ getPositions.py completed at Mon Apr  6 11:35:32 PDT 2026
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++🚀 Starting 00_batch_reproc_steps_01_04.py at Mon Apr  6 11:35:32 PDT 2026
++            01_build_intervals : Build Block/Round Interval Tables - Single Row for Every True Round
++            02_reproc_processed_add_elapsed_and_distance : Add Elapsed Time & Distance to _processed.csv to make _PreLimReprocessed.csv files
++            03_compute_speed : Compute Speed to Make Final _reprocessed.csv files
++            04_finalize_events_and_intervals_with_pindrops (no startPos here): Fleshing out Block/Round Interval Tables & Events Files with More Dist & Time Info
++✅ 00_batch_reproc_steps_01_04.py completed at Mon Apr  6 11:35:40 PDT 2026
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++🚀 Starting 00_batch_reproc_steps_01_04.py at Mon Apr  6 11:35:40 PDT 2026
++            01_build_intervals : Build Block/Round Interval Tables - Single Row for Every True Round
++            02_reproc_processed_add_elapsed_and_distance : Add Elapsed Time & Distance to _processed.csv to make _PreLimReprocessed.csv files
++            03_compute_speed : Compute Speed to Make Final _reprocessed.csv files
++            04_finalize_events_and_intervals_with_pindrops (no startPos here): Fleshing out Block/Round Interval Tables & Events Files with More Dist & Time Info
++✅ 00_batch_reproc_steps_01_04.py completed at Mon Apr  6 11:35:47 PDT 2026
++🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝
++🚀 Starting instantDistCalc.py at Mon Apr  6 11:35:47 PDT 2026
++✅ instantDistCalc.py completed at Mon Apr  6 11:35:56 PDT 2026
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++🚀 Starting 05_batch_add_startpos.py at Mon Apr  6 11:35:56 PDT 2026
++✅ 05_batch_add_startpos.py completed at Mon Apr  6 11:35:56 PDT 2026
++🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷
++🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷
++🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷
++🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷
++🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷
++🚀 Starting 06b_propagate_pindrop_startpos.py at Mon Apr  6 11:35:56 PDT 2026
++[scan] found 6 files under /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redoAgainAgainAgain_PO_single/EventSegmentation/EventsAlmostFinal matching *_withStartPos.csv
++[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redoAgainAgainAgain_PO_single/EventSegmentation/EventsStartPos/ObsReward_A_02_17_2025_14_48_startPosPropagated.csv
++[skip] intervals not found for ObsReward_A_02_17_2025_14_48_withStartPos.csv
++[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redoAgainAgainAgain_PO_single/EventSegmentation/EventsStartPos/ObsReward_A_02_17_2025_15_11_startPosPropagated.csv
++[skip] intervals not found for ObsReward_A_02_17_2025_15_11_withStartPos.csv
++[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redoAgainAgainAgain_PO_single/EventSegmentation/EventsStartPos/ObsReward_A_02_17_2025_15_49_startPosPropagated.csv
++[skip] intervals not found for ObsReward_A_02_17_2025_15_49_withStartPos.csv
++[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redoAgainAgainAgain_PO_single/EventSegmentation/EventsStartPos/ObsReward_B_02_17_2025_14_48_startPosPropagated.csv
++[skip] intervals not found for ObsReward_B_02_17_2025_14_48_withStartPos.csv
++[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redoAgainAgainAgain_PO_single/EventSegmentation/EventsStartPos/ObsReward_B_02_17_2025_15_11_startPosPropagated.csv
++[skip] intervals not found for ObsReward_B_02_17_2025_15_11_withStartPos.csv
++[ok] wrote events: /Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redoAgainAgainAgain_PO_single/EventSegmentation/EventsStartPos/ObsReward_B_02_17_2025_15_49_startPosPropagated.csv
++[skip] intervals not found for ObsReward_B_02_17_2025_15_49_withStartPos.csv
++[done]
++✅ 06b_propagate_pindrop_startpos.py completed at Mon Apr  6 11:35:57 PDT 2026
++🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️
++
++🚀 Starting computeWalks.py  at Mon Apr  6 11:35:57 PDT 2026
++✅ computeWalks.py completed at Mon Apr  6 11:35:58 PDT 2026
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++🚀 Starting add_pin_drop_vote_score.py at Mon Apr  6 11:35:58 PDT 2026
++🚀 Starting add_pin_drop_vote_score.py at Mon Apr  6 11:35:59 PDT 2026
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++🚀 Starting fillEventsPosWalks.py at Mon Apr  6 11:35:59 PDT 2026
++✅ fillEventsPosWalks.py completed at Mon Apr  6 11:36:00 PDT 2026
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++🚀 Starting fillEventsPosWalks.py at Mon Apr  6 11:36:00 PDT 2026
++✅ fillEventsPosWalks.py completed at Mon Apr  6 11:36:02 PDT 2026
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++🚀 Starting buildIntervalsFromEvents.py at Mon Apr  6 11:36:02 PDT 2026
++✅ buildIntervalsFromEvents.py completed at Mon Apr  6 11:36:02 PDT 2026
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++🚀 Starting propagateIntervalCols.py at Mon Apr  6 11:36:02 PDT 2026
++✅ propagateIntervalCols.py completed at Mon Apr  6 11:36:03 PDT 2026
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++🚀 Starting attach_walk_pindrop_metrics.py at Mon Apr  6 11:36:03 PDT 2026
++✅ attach_walk_pindrop_metrics.py completed at Mon Apr  6 11:36:04 PDT 2026
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++🚀 Starting attach_walk_chest_metrics.py at Mon Apr  6 11:36:04 PDT 2026
++✅ attach_walk_chest_metrics.py completed at Mon Apr  6 11:36:04 PDT 2026
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++🚀 Starting attach_swapVote_metrics.py at Mon Apr  6 11:36:04 PDT 2026
++✅ attach_swapVote_metrics.py completed at Mon Apr  6 11:36:05 PDT 2026
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++🚀 Starting attach_pinDropVote_metrics.py at Mon Apr  6 11:36:05 PDT 2026
++✅ attach_pinDropVote_metrics.py completed at Mon Apr  6 11:36:05 PDT 2026
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++🚀 Starting group_and_append_sessionID.py at Mon Apr  6 11:36:05 PDT 2026
++✅ group_and_append_sessionID.py completed at Mon Apr  6 11:36:06 PDT 2026
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++🚀 Starting add_session_running_totals.py at Mon Apr  6 11:36:06 PDT 2026
++✅ add_session_running_totals.py completed at Mon Apr  6 11:36:06 PDT 2026
++🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼
++
++🚀 Starting preprocRaw_PO_part1.py  at Mon Apr  6 11:37:27 PDT 2026
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++🚀 Starting add_pin_drop_vote_score.py at Mon Apr  6 11:39:11 PDT 2026
++🚀 Starting add_pin_drop_vote_score.py at Mon Apr  6 11:39:12 PDT 2026
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++🚀 Starting fillEventsPosWalks.py at Mon Apr  6 11:39:12 PDT 2026
++✅ fillEventsPosWalks.py completed at Mon Apr  6 11:39:13 PDT 2026
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++🚀 Starting fillEventsPosWalks.py at Mon Apr  6 11:39:13 PDT 2026
++✅ fillEventsPosWalks.py completed at Mon Apr  6 11:39:15 PDT 2026
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++🚀 Starting buildIntervalsFromEvents.py at Mon Apr  6 11:39:15 PDT 2026
++✅ buildIntervalsFromEvents.py completed at Mon Apr  6 11:39:15 PDT 2026
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++🚀 Starting propagateIntervalCols.py at Mon Apr  6 11:39:15 PDT 2026
++✅ propagateIntervalCols.py completed at Mon Apr  6 11:39:16 PDT 2026
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++🚀 Starting attach_walk_pindrop_metrics.py at Mon Apr  6 11:39:16 PDT 2026
++✅ attach_walk_pindrop_metrics.py completed at Mon Apr  6 11:39:17 PDT 2026
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++🚀 Starting attach_walk_chest_metrics.py at Mon Apr  6 11:39:17 PDT 2026
++✅ attach_walk_chest_metrics.py completed at Mon Apr  6 11:39:17 PDT 2026
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++🚀 Starting attach_swapVote_metrics.py at Mon Apr  6 11:39:17 PDT 2026
++✅ attach_swapVote_metrics.py completed at Mon Apr  6 11:39:18 PDT 2026
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++🚀 Starting attach_pinDropVote_metrics.py at Mon Apr  6 11:39:18 PDT 2026
++✅ attach_pinDropVote_metrics.py completed at Mon Apr  6 11:39:18 PDT 2026
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++🚀 Starting group_and_append_sessionID.py at Mon Apr  6 11:39:18 PDT 2026
++✅ group_and_append_sessionID.py completed at Mon Apr  6 11:39:19 PDT 2026
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++🚀 Starting add_session_running_totals.py at Mon Apr  6 11:39:19 PDT 2026
++✅ add_session_running_totals.py completed at Mon Apr  6 11:39:19 PDT 2026
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++🚀 Starting add_swap_rates.py Lambda 1 at Mon Apr  6 11:46:00 PDT 2026
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++🚀 Starting add_swap_rates.py at Mon Apr  6 11:46:58 PDT 2026
++✅ add_swap_rates.py completed at Mon Apr  6 11:46:58 PDT 2026
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++🚀 Starting attach_demo_pvss_to_session_csvs.py at Mon Apr  6 11:46:58 PDT 2026
++✅ attach_demo_pvss_to_session_csvs.py completed at Mon Apr  6 11:46:59 PDT 2026
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++🚀 Starting concat_csvs.py at Mon Apr  6 11:46:59 PDT 2026
++✅ concat_csvs.py completed at Mon Apr  6 11:46:59 PDT 2026
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++🚀 Starting summarize_pindrops.py at Mon Apr  6 12:07:25 PDT 2026
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++🚀 Starting add_swapvote_registered_only.py at Mon Apr  6 12:25:19 PDT 2026
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++🚀 Starting attach_pinDropVote_metrics.py at Mon Apr  6 12:25:44 PDT 2026
++✅ attach_pinDropVote_metrics.py completed at Mon Apr  6 12:25:45 PDT 2026
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++🚀 Starting add_swapvote_registered_only.py at Mon Apr  6 12:25:45 PDT 2026
++✅ add_swapvote_registered_only.py completed at Mon Apr  6 12:25:45 PDT 2026
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++🚀 Starting group_and_append_sessionID.py at Mon Apr  6 12:25:45 PDT 2026
++✅ group_and_append_sessionID.py completed at Mon Apr  6 12:25:46 PDT 2026
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++🚀 Starting add_session_running_totals.py at Mon Apr  6 12:25:46 PDT 2026
++✅ add_session_running_totals.py completed at Mon Apr  6 12:25:46 PDT 2026
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++🚀 Starting add_swap_rates.py at Mon Apr  6 12:25:46 PDT 2026
++✅ add_swap_rates.py completed at Mon Apr  6 12:25:47 PDT 2026
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++🚀 Starting attach_demo_pvss_to_session_csvs.py at Mon Apr  6 12:25:47 PDT 2026
++✅ attach_demo_pvss_to_session_csvs.py completed at Mon Apr  6 12:25:47 PDT 2026
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++🚀 Starting concat_csvs.py at Mon Apr  6 12:25:47 PDT 2026
++✅ concat_csvs.py completed at Mon Apr  6 12:25:47 PDT 2026
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++🚀 Starting summarize_pindrops.py at Mon Apr  6 12:25:47 PDT 2026
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++🚀 Starting attach_pinDropVote_metrics.py at Mon Apr  6 12:27:13 PDT 2026
++✅ attach_pinDropVote_metrics.py completed at Mon Apr  6 12:27:14 PDT 2026
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++🚀 Starting add_swapvote_registered_only.py at Mon Apr  6 12:27:14 PDT 2026
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++🚀 Starting attach_pinDropVote_metrics.py at Mon Apr  6 12:27:36 PDT 2026
++✅ attach_pinDropVote_metrics.py completed at Mon Apr  6 12:27:37 PDT 2026
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++🚀 Starting add_swapvote_registered_only.py at Mon Apr  6 12:27:37 PDT 2026
++✅ add_swapvote_registered_only.py completed at Mon Apr  6 12:27:37 PDT 2026
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++🚀 Starting group_and_append_sessionID.py at Mon Apr  6 12:27:37 PDT 2026
++✅ group_and_append_sessionID.py completed at Mon Apr  6 12:27:38 PDT 2026
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++🚀 Starting add_session_running_totals.py at Mon Apr  6 12:27:38 PDT 2026
++✅ add_session_running_totals.py completed at Mon Apr  6 12:27:38 PDT 2026
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++🚀 Starting add_swap_rates.py at Mon Apr  6 12:27:38 PDT 2026
++✅ add_swap_rates.py completed at Mon Apr  6 12:27:38 PDT 2026
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++🚀 Starting attach_demo_pvss_to_session_csvs.py at Mon Apr  6 12:27:38 PDT 2026
++✅ attach_demo_pvss_to_session_csvs.py completed at Mon Apr  6 12:27:39 PDT 2026
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++🚀 Starting concat_csvs.py at Mon Apr  6 12:27:39 PDT 2026
++✅ concat_csvs.py completed at Mon Apr  6 12:27:39 PDT 2026
++✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
++🚀 Starting summarize_pindrops.py at Mon Apr  6 12:27:39 PDT 2026

@@ -354,7 +354,6 @@ def process_pin_drop_v6(df, allowed_statuses):
                 offsets_events = [
                     ("PinDropSound", 0.000, 0.403),
                     ("GrayPinVis", 0.000, 2.000),
-                    ("VotingWindow", 0.000, 2.000),
                     ("VoteInstrText_Vis_start", 0.000, 0.000),
                     ("Feedback_Sound", 2.000, 0.182),
                     ("FeedbackTextVis", 2.000, 1.000),
@@ -379,6 +378,111 @@ def process_pin_drop_v6(df, allowed_statuses):
             i += 1
 
     return events
+
+def process_pin_drop_vote(df, allowed_statuses):
+    events = []
+    i = 0
+
+    def _is_event_type(v) -> bool:
+        return isinstance(v, str) and v.strip().lower() == "event"
+
+    while i < len(df):
+        row = df.iloc[i]
+        block_status = row.get("BlockStatus", "unknown")
+
+        if pd.notna(row.get("BlockNum")) and block_status not in allowed_statuses:
+            i += 1
+            continue
+
+        msg = row.get("Message")
+        if _is_event_type(row.get("Type")) and isinstance(msg, str) and "Dropped pin was dropped at " in msg:
+            try:
+                common_info = build_common_event_fields_noTime(row, i)
+                event = {
+                    "lo_eventType": "PinDropVote_Moment",
+                    "med_eventType": "PinDropVote",
+                    "hi_eventType": "PinDrop",
+                    "hiMeta_eventType": "BlockActivity",
+                    "source": "logged",
+                    "details": {},
+                    **common_info,
+                }
+
+                m = re.search(
+                    r"Dropped pin was dropped at (?P<dropDist>\d+\.\d{2}) from chest (?P<idvCoinID>\d+)"
+                    r" originally at \((?P<coinPos_x>-?\d+\.\d{2}),\s*(?P<coinPos_y>-?\d+\.\d{2}),\s*(?P<coinPos_z>-?\d+\.\d{2})\)"
+                    r":(?P<dropQual>CORRECT|INCORRECT)",
+                    msg,
+                )
+                if m:
+                    d = m.groupdict()
+                    event["details"].update({
+                        "idvCoinID": int(d["idvCoinID"]),
+                    })
+
+                found_vote = False
+                j = i + 1
+                while j < len(df):
+                    next_row = df.iloc[j]
+                    if not _is_event_type(next_row.get("Type")) or not isinstance(next_row.get("Message"), str):
+                        j += 1
+                        continue
+
+                    msg1 = next_row["Message"]
+                    if "for this pindrop from the navigator" in msg1 and "Observer" in msg1:
+                        start_time = next_row["AppTime"]
+                        start_ts = next_row["eMLT_orig"]
+
+                        event.update({
+                            "eMLT_orig": start_ts,
+                            "AppTime": start_time,
+                            "mLT_raw": next_row["mLT_raw"],
+                            "mLT_orig": next_row["mLT_orig"],
+                            "start_AppTime": start_time,
+                            "end_AppTime": start_time,
+                            "start_eMLT_orig": start_ts,
+                            "end_eMLT_orig": start_ts,
+                        })
+
+                        mv = re.search(
+                            r"Observer chose (?P<pinDropVote>CORRECT|INCORRECT) for this pindrop from the navigator",
+                            msg1,
+                        )
+                        if mv:
+                            event["details"].update(mv.groupdict())
+                            found_vote = True
+                            break
+
+                        if "Observer did not vote for this pindrop from the navigator" in msg1:
+                            event["details"]["pinDropVote"] = "DID_NOT_VOTE"
+                            found_vote = True
+                            break
+
+                    j += 1
+
+                if found_vote:
+                    events.append(event)
+
+                    offsets_events = [
+                        ("VoteInstrText_Vis_end", 0.000, 0.000),
+                    ]
+                    event_meta = {
+                        "med_eventType": "PinDrop_Animation",
+                        "hi_eventType": "PinDrop",
+                        "hiMeta_eventType": "BlockActivity",
+                    }
+                    synthetic = generate_synthetic_events_v3(start_ts, start_time, offsets_events, common_info, event_meta)
+                    events.extend(synthetic)
+
+            except Exception as e:
+                print(f"⚠️ Failed to process pin drop at row {i}: {e}")
+
+            i = j
+        else:
+            i += 1
+
+    return events
+
 
 def process_feedback_collect_v5(df, allowed_statuses):
     #print('starting process feedback collect')
@@ -580,7 +684,8 @@ def buildEvents_PO(df, allowed_statuses):
             process_feedback_collect_v5(df, allowed_statuses) +
             process_chest_collect_v3(df, allowed_statuses) +
             process_swap_votes_v4(df, allowed_statuses) +
-            process_roundSummary(df, allowed_statuses)
+            process_roundSummary(df, allowed_statuses) + 
+            process_pin_drop_vote(df, allowed_statuses)
         )
 
         # 2. Generate cascade windows from them

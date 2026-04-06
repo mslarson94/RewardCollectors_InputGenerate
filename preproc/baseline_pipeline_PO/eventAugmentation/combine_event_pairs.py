@@ -11,11 +11,13 @@ import numpy as np
 PAIR_SPECS = [
     ("CoinVis", "CoinVis_start", "CoinVis_end"),
     ("SwapVoteTextVis", "CoinCollect_Moment_PinDrop", "SwapVoteText_Vis_end"),
+    ("VoteInstrText_Vis", "VoteInstrText_Vis_start", "VoteInstrText_Vis_end")
+
 ]
 
 GROUP_KEYS = ["BlockNum", "BlockInstance", "effectiveRoundNum"]
 TIME_COL = "AppTime"
-
+CHEST_GROUP_KEYS = ["BlockNum", "BlockInstance", "effectiveRoundNum"]
 
 def replace_suffix(name: str, in_suffix: str, out_suffix: str) -> str:
     if not name.endswith(in_suffix):
@@ -147,10 +149,6 @@ def _iter_csvs(input_dir: Path, pattern: str, recursive: bool) -> list[Path]:
         return sorted(input_dir.rglob(pattern))
     return sorted(input_dir.glob(pattern))
 
-import pandas as pd
-import numpy as np
-
-CHEST_GROUP_KEYS = ["BlockNum", "BlockInstance", "effectiveRoundNum"]
 
 def _ensure_num(s: pd.Series) -> pd.Series:
     return pd.to_numeric(s, errors="coerce")
@@ -345,6 +343,7 @@ def process_one_file(
     df2 = combine_event_pairs(df, drop_originals=drop_originals)
     # 2) then build ChestVis with the special logic
     df3 = build_chestvis_intervals(df2, drop_inputs=True, drop_nextchestvis=True)
+    df3 = df3[df3.lo_eventType != "CurrChestVis_end"]
     df3.to_csv(out_path, index=False)
     return out_path
 

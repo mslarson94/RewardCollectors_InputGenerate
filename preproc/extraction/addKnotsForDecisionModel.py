@@ -3,11 +3,30 @@ addKnotsForDecisionModel.py
 
 Add piecewise-linear "early/late" knot features for session time.
 
-For each knot K:
-  t_early_K = min(TotSesh, K)
-  t_late_K  = max(TotSesh - K, 0)
+To characterize changes in decision-making across the session, we 
+constructed continuous piecewise-linear time variables based on total 
+session round number (TotSesh_actTest_RoundNum). For each candidate 
+knot (K), the early-session component was defined as
 
-Optionally mean-center these columns (recommended when you plan to use interactions).
+  t_early_K = min(T, K)
+
+and the late-session component was defined as
+
+  t_late_K  = max(T - K, 0)
+
+
+where (T) represents total session round number. The early-session 
+variable therefore increased linearly through round (K) and remained 
+constant thereafter, whereas the late-session variable was zero through 
+round (K) and increased linearly during subsequent rounds. Interactions 
+between these time variables and alternative-specific decision attributes 
+were used to estimate whether sensitivity to reward value and spatial 
+cost changed at different rates during earlier and later portions 
+of the session.
+
+
+
+
 """
 
 from __future__ import annotations

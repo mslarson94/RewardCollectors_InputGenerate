@@ -19,123 +19,205 @@ fi
 # Segment barebones
 CODE_DIR="/Users/mairahmac/Desktop/myra_code/Python/RewardCollectors_InputGenerate/preproc/plotting"
 TRUE_BASE_DIR="/Users/mairahmac/Desktop/RC_TestingNotes"
-PROC_DIR="FreshStart_redoAgainAgainAgain"
-# PROC_DIR="FreshStart_mini"
+PROC_DIR="FreshStart_redoAgainAgainAgain_PO_redo"
 META_FILE="collatedData.xlsx"
 EVENTS_DIR="Events_Final_NoWalks"
 LAMBDA="1"
+MEGA_FILE="${TRUE_BASE_DIR}/${PROC_DIR}/EventSegmentation/megaFiles/allIntervalDataKnotted_AN_patched_baseQC_roundDur_optionA_main.csv"
+
+
+# echo "💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰" | tee -a "$LOG_FILE"
+# echo "" | tee -a "$LOG_FILE"
+# echo "🚀 Starting pinDropWrapper_v2 for roundElapsed_s for Coin Interactions at $(date)" | tee -a "$LOG_FILE"
+# python "${CODE_DIR}/pinDropPlots/pinDropWrapper_v2.py" \
+#   --input "${MEGA_FILE}" \
+#   --formats png \
+#   --out-root "${TRUE_BASE_DIR}/${PROC_DIR}/Plotting/FlexPlotByCoinType/RoundElapsed_all"\
+#   --voi roundElapsed_s \
+#   --voi-unit seconds \
+#   --voi-str "Round Elapsed Time" \
+#   --require-cols isEligibleBase isEligibleRoundDur \
+#   --exclude-true-cols roundDur_pref_out \
+#   --outlier-method "MAD on round_dur_s within main_RR+sessionID, robust z = 3.0" \
+#   --dot-mode none \
+#   >> "$LOG_FILE" 2>&1
+
+# echo "✅ pinDropWrapper_v2 for roundElapsed_s for Coin Interactions completed at $(date)" | tee -a "$LOG_FILE"
+
+# echo '✨ done ✨' | tee -a "$LOG_FILE"
+
+
+# echo "💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰" | tee -a "$LOG_FILE"
+# echo "" | tee -a "$LOG_FILE"
+# echo "🚀 Starting pinDropWrapper_v2 for dropDist for Coin Interactions at $(date)" | tee -a "$LOG_FILE"
+# python "${CODE_DIR}/pinDropPlots/pinDropWrapper_v2.py" \
+#   --input "${MEGA_FILE}" \
+#   --formats png \
+#   --out-root "${TRUE_BASE_DIR}/${PROC_DIR}/Plotting/FlexPlotByCoinType/DropDist_all"\
+#   --voi dropDist \
+#   --voi-unit meters \
+#   --voi-str "Pin Drop Distance" \
+#   --require-cols isEligibleBase \
+#   --outlier-method "no outlier filter" \
+#   --dot-mode none \
+#   >> "$LOG_FILE" 2>&1
+# echo "✅ pinDropWrapper_v2 for dropDist for Coin Interactions completed at $(date)" | tee -a "$LOG_FILE"
+
+# echo "💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰" | tee -a "$LOG_FILE"
+# echo "" | tee -a "$LOG_FILE"
+# echo "🚀 Starting pinDropWrapper_v2 for dropDist for Coin Interactions at $(date)" | tee -a "$LOG_FILE"
+# python "${CODE_DIR}/pinDropPlots/pinDropWrapper_v2.py" \
+#   --input "${MEGA_FILE}" \
+#   --formats png \
+#   --out-root "${TRUE_BASE_DIR}/${PROC_DIR}/Plotting/FlexPlotByCoinType/DropDist_correct"\
+#   --voi dropDist \
+#   --voi-unit meters \
+#   --voi-str "Pin Drop Distance" \
+#   --require-cols isPerfectRound isEligibleBase \
+#   --outlier-method "not outlier, filtered for correct pin drops only" \
+#   --dot-mode none \
+#   >> "$LOG_FILE" 2>&1
+# echo "✅ pinDropWrapper_v2 for dropDist for Coin Interactions completed at $(date)" | tee -a "$LOG_FILE"
+
+
+# echo "💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰" | tee -a "$LOG_FILE"
+# echo "" | tee -a "$LOG_FILE"
+# echo "🚀 Starting pinDropWrapper_v2 for roundFrac for Coin Interactions at $(date)" | tee -a "$LOG_FILE"
+# python "${CODE_DIR}/pinDropPlots/pinDropWrapper_v2.py" \
+#   --input "${MEGA_FILE}" \
+#   --formats png \
+#   --out-root "${TRUE_BASE_DIR}/${PROC_DIR}/Plotting/FlexPlotByCoinType/RoundFrac"\
+#   --voi roundFrac \
+#   --voi-unit "Round Fraction (elapsed time / total round duration)" \
+#   --voi-str "Round Fraction (elapsed time / total round duration)" \
+#   --require-cols isEligibleBase isEligibleRoundDur \
+#   --exclude-true-cols roundDur_pref_out \
+#   --outlier-method "MAD on round_dur_s within main_RR+sessionID, robust z = 3.0" \
+#   --dot-mode none \
+#   >> "$LOG_FILE" 2>&1
+# echo "✅ pinDropWrapper_v2 for roundFrac for Coin Interactions completed at $(date)" | tee -a "$LOG_FILE"
+
+# ##################
+# echo "💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰" | tee -a "$LOG_FILE"
+# echo "" | tee -a "$LOG_FILE"
+# echo "🚀 Starting layoutFacetWrapper for dropDist for Coin Interactions at $(date)" | tee -a "$LOG_FILE"
+# python "${CODE_DIR}/pinDropPlots/layoutFacetWrapper.py" \
+#   --input "${MEGA_FILE}" \
+#   --out-root "${TRUE_BASE_DIR}/${PROC_DIR}/Plotting/LayoutFacet_dropDist_coinSet" \
+#   --voi dropDist \
+#   --voi-str "Pin Drop Distance" \
+#   --voi-unit meters \
+#   --layout-col coinSet \
+#   --require-cols isEligibleBase isPerfectRound \
+#   >> "$LOG_FILE" 2>&1
+# echo "✅ layoutFacetWrapper for dropDist for Coin Interactions completed at $(date)" | tee -a "$LOG_FILE"
+
+
+# echo "💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰" | tee -a "$LOG_FILE"
+# echo "" | tee -a "$LOG_FILE"
+# echo "🚀 Starting layoutFacetWrapper for roundElapsed_s for Coin Interactions at $(date)" | tee -a "$LOG_FILE"
+# python "${CODE_DIR}/pinDropPlots/layoutFacetWrapper.py" \
+#   --input "${MEGA_FILE}" \
+#   --out-root "${TRUE_BASE_DIR}/${PROC_DIR}/Plotting/LayoutFacet_roundElapsedTime_CoinSetID" \
+#   --voi roundElapsed_s \
+#   --voi-str "Round Elapsed Time" \
+#   --voi-unit seconds \
+#   --layout-col CoinSetID \
+#   --require-cols isEligibleBase isEligibleRoundDur \
+#   >> "$LOG_FILE" 2>&1
+# echo "✅ layoutFacetWrapper for roundElapsed_s for Coin Interactions completed at $(date)" | tee -a "$LOG_FILE"
+
+# echo "💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰" | tee -a "$LOG_FILE"
+# echo "" | tee -a "$LOG_FILE"
+# echo "🚀 Starting layoutFacetWrapper for roundFrac for Coin Interactions at $(date)" | tee -a "$LOG_FILE"
+# python "${CODE_DIR}/pinDropPlots/layoutFacetWrapper.py" \
+#   --input "${MEGA_FILE}" \
+#   --out-root "${TRUE_BASE_DIR}/${PROC_DIR}/Plotting/LayoutFacet_roundFrac_CoinSetID" \
+#   --voi roundFrac \
+#   --voi-str "Round Fraction (elapsed time / total round duration)" \
+#   --voi-unit roundFrac \
+#   --layout-col CoinSetID \
+#   --require-cols isEligibleBase isEligibleRoundDur \
+#   >> "$LOG_FILE" 2>&1
+# echo "✅ layoutFacetWrapper for roundFrac for Coin Interactions completed at $(date)" | tee -a "$LOG_FILE"
+
+##################
+echo "💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰" | tee -a "$LOG_FILE"
+echo "" | tee -a "$LOG_FILE"
+echo "🚀 Starting layoutFacetWrapper for dropDist for Coin Interactions at $(date)" | tee -a "$LOG_FILE"
+python "${CODE_DIR}/pinDropPlots/layoutFacetWrapper.py" \
+  --input "${MEGA_FILE}" \
+  --out-root "${TRUE_BASE_DIR}/${PROC_DIR}/Plotting/LayoutFacet_dropDist_EV_behMod" \
+  --voi dropDist \
+  --voi-str "Pin Drop Distance" \
+  --voi-unit meters \
+  --layout-col EV_behMod \
+  --require-cols isEligibleBase isPerfectRound \
+  >> "$LOG_FILE" 2>&1
+echo "✅ layoutFacetWrapper for dropDist for Coin Interactions completed at $(date)" | tee -a "$LOG_FILE"
 
 
 echo "💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰" | tee -a "$LOG_FILE"
 echo "" | tee -a "$LOG_FILE"
-echo "🚀 Starting pinDropWrapper for COIN INTERACTIONS at $(date)" | tee -a "$LOG_FILE"
-# add to run_overnight_modular3.sh after add_coin_labels_from_collated.py
-python "${CODE_DIR}/pinDropWrapper.py" \
-  --input "${TRUE_BASE_DIR}/${PROC_DIR}/EventSegmentation/intervalsFinal_L1" \
-  --pattern "*__withDemo.csv" \
-  --formats pdf \
-  --recursive \
-  --out-root "${TRUE_BASE_DIR}/${PROC_DIR}/Plotting/FlexPlotByCoinType/RoundElapsed"\
-  --no-group-subdirs \
-  --variable-of-interest roundElapsed_s \
-  --blocks-per-facet 40 \
-  --use-outlier-filter \
-  --filter-columns roundElapsed_s \
+echo "🚀 Starting layoutFacetWrapper for roundElapsed_s for Coin Interactions at $(date)" | tee -a "$LOG_FILE"
+python "${CODE_DIR}/pinDropPlots/layoutFacetWrapper.py" \
+  --input "${MEGA_FILE}" \
+  --out-root "${TRUE_BASE_DIR}/${PROC_DIR}/Plotting/LayoutFacet_roundElapsedTime_EV_behMod" \
+  --voi roundElapsed_s \
+  --voi-str "Round Elapsed Time" \
+  --voi-unit seconds \
+  --layout-col EV_behMod \
+  --require-cols isEligibleBase isEligibleRoundDur \
   >> "$LOG_FILE" 2>&1
-
-echo "✅ flexiblePlotByCoinType2 for PARTICIPANT ROLE COIN INTERACTIONS completed at $(date)" | tee -a "$LOG_FILE"
-
-echo '✨ done ✨' | tee -a "$LOG_FILE"
-
+echo "✅ layoutFacetWrapper for roundElapsed_s for Coin Interactions completed at $(date)" | tee -a "$LOG_FILE"
 
 echo "💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰" | tee -a "$LOG_FILE"
 echo "" | tee -a "$LOG_FILE"
-echo "🚀 Starting pinDropWrapper for COIN INTERACTIONS at $(date)" | tee -a "$LOG_FILE"
-# add to run_overnight_modular3.sh after add_coin_labels_from_collated.py
-python "${CODE_DIR}/pinDropWrapper.py" \
-  --input "${TRUE_BASE_DIR}/${PROC_DIR}/EventSegmentation/intervalsFinal_L1" \
-  --pattern "*__withDemo.csv" \
-  --formats pdf \
-  --recursive \
-  --out-root "${TRUE_BASE_DIR}/${PROC_DIR}/Plotting/FlexPlotByCoinType/DropDist"\
-  --no-group-subdirs \
-  --variable-of-interest dropDist \
-  --blocks-per-facet 40 \
-  --use-outlier-filter \
-  --filter-columns roundElapsed_s \
+echo "🚀 Starting layoutFacetWrapper for roundFrac for Coin Interactions at $(date)" | tee -a "$LOG_FILE"
+python "${CODE_DIR}/pinDropPlots/layoutFacetWrapper.py" \
+  --input "${MEGA_FILE}" \
+  --out-root "${TRUE_BASE_DIR}/${PROC_DIR}/Plotting/LayoutFacet_roundFrac_EV_behMod" \
+  --voi roundFrac \
+  --voi-str "Round Fraction (elapsed time / total round duration)" \
+  --voi-unit roundFrac \
+  --layout-col EV_behMod \
+  --require-cols isEligibleBase isEligibleRoundDur \
   >> "$LOG_FILE" 2>&1
+echo "✅ layoutFacetWrapper for roundFrac for Coin Interactions completed at $(date)" | tee -a "$LOG_FILE"
 
-echo "✅ flexiblePlotByCoinType2 for PARTICIPANT ROLE COIN INTERACTIONS completed at $(date)" | tee -a "$LOG_FILE"
-
-echo '✨ done ✨' | tee -a "$LOG_FILE"
-
-
-echo "💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰" | tee -a "$LOG_FILE"
-echo "" | tee -a "$LOG_FILE"
-echo "🚀 Starting pinDropWrapper for COIN INTERACTIONS at $(date)" | tee -a "$LOG_FILE"
-# add to run_overnight_modular3.sh after add_coin_labels_from_collated.py
-python "${CODE_DIR}/pinDropWrapper.py" \
-  --input "${TRUE_BASE_DIR}/${PROC_DIR}/EventSegmentation/intervalsFinal_L1" \
-  --pattern "*__withDemo.csv" \
-  --formats pdf \
-  --recursive \
-  --out-root "${TRUE_BASE_DIR}/${PROC_DIR}/Plotting/FlexPlotByCoinType/RoundFrac"\
-  --no-group-subdirs \
-  --variable-of-interest roundFrac \
-  --blocks-per-facet 40 \
-  --use-outlier-filter \
-  --filter-columns roundFrac \
-  >> "$LOG_FILE" 2>&1
-
-echo "✅ flexiblePlotByCoinType2 for PARTICIPANT ROLE COIN INTERACTIONS completed at $(date)" | tee -a "$LOG_FILE"
-
-echo '✨ done ✨' | tee -a "$LOG_FILE"
+# echo "💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰" | tee -a "$LOG_FILE"
+# echo "" | tee -a "$LOG_FILE"
+# echo "🚀 Starting pinDropWrapper_v2 for WalkAvgSpeed for Coin Interactions at $(date)" | tee -a "$LOG_FILE"
+# python "${CODE_DIR}/pinDropWrapper_v2.py" \
+#   --input "${MEGA_FILE}" \
+#   --formats png \
+#   --out-root "${TRUE_BASE_DIR}/${PROC_DIR}/Plotting/FlexPlotByCoinType/AvgWalkSpeed"\
+#   --voi WalkAvgSpeed \
+#   --voi-unit MetersPerSecond \
+#   --filter-cols isPerfectRound isEligibleBase isEligibleRoundDur \
+#   --outlier-method "MAD on round_dur_s within main_RR+sessionID" \
+#   --dot-mode none \
+#   >> "$LOG_FILE" 2>&1
+# echo "✅ pinDropWrapper_v2 for WalkAvgSpeed for Coin Interactions completed at $(date)" | tee -a "$LOG_FILE"
 
 
-echo "💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰" | tee -a "$LOG_FILE"
-echo "" | tee -a "$LOG_FILE"
-echo "🚀 Starting pinDropWrapper for COIN INTERACTIONS at $(date)" | tee -a "$LOG_FILE"
-# add to run_overnight_modular3.sh after add_coin_labels_from_collated.py
-python "${CODE_DIR}/pinDropWrapper.py" \
-  --input "${TRUE_BASE_DIR}/${PROC_DIR}/EventSegmentation/intervalsFinal_L1" \
-  --pattern "*__withDemo.csv" \
-  --formats pdf \
-  --recursive \
-  --out-root "${TRUE_BASE_DIR}/${PROC_DIR}/Plotting/FlexPlotByCoinType/AvgWalkSpeed"\
-  --no-group-subdirs \
-  --variable-of-interest WalkAvgSpeed \
-  --blocks-per-facet 40 \
-  --use-outlier-filter \
-  --filter-columns WalkAvgSpeed \
-  >> "$LOG_FILE" 2>&1
 
-echo "✅ flexiblePlotByCoinType2 for PARTICIPANT ROLE COIN INTERACTIONS completed at $(date)" | tee -a "$LOG_FILE"
+# echo "💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰" | tee -a "$LOG_FILE"
+# echo "" | tee -a "$LOG_FILE"
+# echo "🚀 Starting pinDropWrapper_v2 for WalkDist for Coin Interactions at $(date)" | tee -a "$LOG_FILE"
+# python "${CODE_DIR}/pinDropWrapper_v2.py" \
+#   --input "${MEGA_FILE}" \
+#   --formats png \
+#   --out-root "${TRUE_BASE_DIR}/${PROC_DIR}/Plotting/FlexPlotByCoinType/WalkDist"\
+#   --voi WalkDist \
+#   --voi-unit meters \
+#   --filter-cols isPerfectRound isEligibleBase isEligibleRoundDur \
+#   --outlier-method "MAD on round_dur_s within main_RR+sessionID" \
+#   --dot-mode none \
+#   >> "$LOG_FILE" 2>&1
+# echo "✅ pinDropWrapper_v2 for WalkDist for Coin Interactions completed at $(date)" | tee -a "$LOG_FILE"
 
-echo '✨ done ✨' | tee -a "$LOG_FILE"
-
-
-echo "💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰" | tee -a "$LOG_FILE"
-echo "" | tee -a "$LOG_FILE"
-echo "🚀 Starting pinDropWrapper for COIN INTERACTIONS at $(date)" | tee -a "$LOG_FILE"
-# add to run_overnight_modular3.sh after add_coin_labels_from_collated.py
-python "${CODE_DIR}/pinDropWrapper.py" \
-  --input "${TRUE_BASE_DIR}/${PROC_DIR}/EventSegmentation/intervalsFinal_L1" \
-  --pattern "*__withDemo.csv" \
-  --formats pdf \
-  --recursive \
-  --out-root "${TRUE_BASE_DIR}/${PROC_DIR}/Plotting/FlexPlotByCoinType/PathEff"\
-  --no-group-subdirs \
-  --variable-of-interest path_eff_raw \
-  --blocks-per-facet 40 \
-  --use-outlier-filter \
-  --filter-columns path_eff_raw \
-  >> "$LOG_FILE" 2>&1
-
-echo "✅ flexiblePlotByCoinType2 for PARTICIPANT ROLE COIN INTERACTIONS completed at $(date)" | tee -a "$LOG_FILE"
-
-echo '✨ done ✨' | tee -a "$LOG_FILE"
-
-
+################################################################################################################
 
 # echo "🍄🍄🍄🍄🍄🍄🍄🍄🍄🍄🍄🍄🍄🍄🍄🍄🍄🍄🍄🍄🍄🍄🍄🍄🍄🍄" | tee -a "$LOG_FILE"
 # echo "" | tee -a "$LOG_FILE"
@@ -182,32 +264,34 @@ echo '✨ done ✨' | tee -a "$LOG_FILE"
 
 
 
-echo "✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨" | tee -a "$LOG_FILE"
-echo "🚀 Starting pinDropWrapper.py at $(date)" | tee -a "$LOG_FILE"
-python "${CODE_DIR}/pinDropWrapper.py" \
-  --input  "${TRUE_BASE_DIR}/${PROC_DIR}/full/PinDrops_All/PinDrops_ALL_main.csv" \
-  --out-root "${TRUE_BASE_DIR}/${PROC_DIR}/full/PinDrops_Main/FacetByCoinSetID_NoOutlier" \
-  --formats "pdf" \
-  --voi "dropDist" \
-  --voi-str "Pin Drop Distance" \
-  --voi-unit "(m)" \
-  --facet-by "CoinSetID" \
-  --use-outlier-filter \
-  >> "$LOG_FILE" 2>&1
-echo "✅ pinDropWrapper.py completed at $(date)" | tee -a "$LOG_FILE"
+# echo "✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨" | tee -a "$LOG_FILE"
+# echo "🚀 Starting pinDropWrapper.py at $(date)" | tee -a "$LOG_FILE"
+# python "${CODE_DIR}/pinDropWrapper.py" \
+#   --input  "${TRUE_BASE_DIR}/${PROC_DIR}/full/PinDrops_All/PinDrops_ALL_main.csv" \
+#   --out-root "${TRUE_BASE_DIR}/${PROC_DIR}/full/PinDrops_Main/FacetByCoinSetID_NoOutlier" \
+#   --formats "pdf" \
+#   --voi "dropDist" \
+#   --voi-str "Pin Drop Distance" \
+#   --voi-unit "(m)" \
+#   --facet-by "CoinSetID" \
+#   --use-outlier-filter \
+#   >> "$LOG_FILE" 2>&1
+# echo "✅ pinDropWrapper.py completed at $(date)" | tee -a "$LOG_FILE"
 
 
-echo "✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨" | tee -a "$LOG_FILE"
-echo "🚀 Starting pinDropWrapper.py at $(date)" | tee -a "$LOG_FILE"
-python "${CODE_DIR}/pinDropWrapper.py" \
-  --input  "${TRUE_BASE_DIR}/${PROC_DIR}/full/PinDrops_All/PinDrops_ALL_main.csv" \
-  --out-root "${TRUE_BASE_DIR}/${PROC_DIR}/full/PinDrops_Main/FacetByCoinSetID_NoOutlier" \
-  --formats "pdf" \
-  --voi "truecontent_elapsed_s" \
-  --voi-str "Round Elapsed Time" \
-  --voi-unit "(s)" \
-  --facet-by "CoinSetID" \
-  --use-outlier-filter \
-  >> "$LOG_FILE" 2>&1
-echo "✅ pinDropWrapper.py completed at $(date)" | tee -a "$LOG_FILE"
+# echo "✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨" | tee -a "$LOG_FILE"
+# echo "🚀 Starting pinDropWrapper.py at $(date)" | tee -a "$LOG_FILE"
+# python "${CODE_DIR}/pinDropWrapper.py" \
+#   --input  "${TRUE_BASE_DIR}/${PROC_DIR}/full/PinDrops_All/PinDrops_ALL_main.csv" \
+#   --out-root "${TRUE_BASE_DIR}/${PROC_DIR}/full/PinDrops_Main/FacetByCoinSetID_NoOutlier" \
+#   --formats "pdf" \
+#   --voi "truecontent_elapsed_s" \
+#   --voi-str "Round Elapsed Time" \
+#   --voi-unit "(s)" \
+#   --facet-by "CoinSetID" \
+#   --use-outlier-filter \
+#   >> "$LOG_FILE" 2>&1
+# echo "✅ pinDropWrapper.py completed at $(date)" | tee -a "$LOG_FILE"
 
+
+echo '✨ done ✨' | tee -a "$LOG_FILE"

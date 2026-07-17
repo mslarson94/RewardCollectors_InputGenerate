@@ -118,40 +118,42 @@ run_lmer_diagnostics <- function(
   )
   
   # 5) Correlation heatmap (RAW numeric predictors) -> pdf
-  X_raw <- .extract_raw_predictors(model)
-  dropped <- attr(X_raw, "dropped_non_numeric")
-  if (length(dropped) > 0) {
-    message(
-      "Correlation heatmap: dropped non-numeric raw predictors: ",
-      paste(dropped, collapse = ", ")
-    )
-  }
+  p_corr <- NULL
+  dropped <- character(0)
   
-  p_corr <- .make_corr_heatmap(X_raw, title = paste0(name, " predictor correlation (raw)"))
-  
-  ggplot2::ggsave(
-    filename = f_corr_pdf,
-    plot = p_corr,
-    width = corr_width,
-    height = corr_height
+  corr_attempt <- tryCatch(
+    {
+      X_raw <- .extract_raw_predictors(model)
+      dropped <<- attr(X_raw, "dropped_non_numeric")
+      
+      if (length(dropped) > 0) {
+        message(
+          "Correlation heatmap: dropped non-numeric raw predictors: ",
+          paste(dropped, collapse = ", ")
+        )
+      }
+      
+      .make_corr_heatmap(
+        X_raw,
+        title = paste0(name, " predictor correlation (raw)")
+      )
+    },
+    error = function(e) {
+      message("Skipping correlation heatmap for ", name, ": ", conditionMessage(e))
+      NULL
+    }
   )
   
-  invisible(list(
-    summary_file = f_summary,
-    fixef_plot = p_fixef,
-    check_plot = p_check,
-    vif_plot = p_vif,
-    corr_plot = p_corr,
-    dropped_non_numeric_predictors = dropped,
-    files = list(
-      summary = f_summary,
-      fixef_png = f_fixef_png,
-      check_pdf = f_check_pdf,
-      vif_pdf = f_vif_pdf,
-      corr_pdf = f_corr_pdf
+  p_corr <- corr_attempt
+  
+  if (!is.null(p_corr)) {
+    ggplot2::ggsave(
+      filename = f_corr_pdf,
+      plot = p_corr,
+      width = corr_width,
+      height = corr_height
     )
-  ))
+  }
 }
-
 # Example:
 # run_lmer_diagnostics(pathEfficiency_knotted, out_dir = out_dir)

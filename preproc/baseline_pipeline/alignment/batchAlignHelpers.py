@@ -187,7 +187,7 @@ def _series_for_label(df: pd.DataFrame, label: str):
     ts_col = f"{label}_RPi_Timestamp"
     if drift_col not in df.columns or ts_col not in df.columns:
         return None
-    ml_ts = pd.to_datetime(df.get("mLTimestamp", pd.Series([pd.NaT]*len(df))), errors="coerce")
+    ml_ts = pd.to_datetime(df.get("eMLT_orig", pd.Series([pd.NaT]*len(df))), errors="coerce")
     mask = (~df[drift_col].isna()) & (~ml_ts.isna()) & (~df[ts_col].isna())
     if not mask.any():
         return None
@@ -304,7 +304,7 @@ def _resolve_ml_csv(ml_root: Path, cleaned_value: str, suffixes: Sequence[str]) 
 
     candidates = [
         ml_root / p.name,  # as provided
-        ml_root / f"{stem}_events_final{ext}",
+        ml_root / f"{stem}_eventsFlat{ext}",
         ml_root / f"{stem}_processed{ext}",
         ml_root / f"{stem}{ext}",
     ]

@@ -19,7 +19,7 @@ fi
 # Segment barebones
 CODE_DIR="/Users/mairahmac/Desktop/myra_code/Python/RewardCollectors_InputGenerate"
 TRUE_BASE_DIR="/Users/mairahmac/Desktop/RC_TestingNotes"
-PROC_DIR="FreshStart_redoAgainAgainAgain"
+PROC_DIR="FreshStart_redoAgainAgainAgain_PO"
 #PROC_DIR="FreshStart_redoAgainSingle"
 META_FILE="collatedData.xlsx"
 EVENTS_DIR="Events_Pos"
@@ -40,16 +40,6 @@ LAMBDA="1"
 # echo "✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨" | tee -a "$LOG_FILE"
 # echo "🚀 Starting addKnotsForDecisionModel.py Lambda ${LAMBDA} at $(date)" | tee -a "$LOG_FILE"
 # python "${CODE_DIR}/preproc/extraction/addKnotsForDecisionModel.py" \
-#   --in_csv "${TRUE_BASE_DIR}/${PROC_DIR}/EventSegmentation/megaFiles/decisionExpanded_L${LAMBDA}.csv" \
-#   --out_csv "${TRUE_BASE_DIR}/${PROC_DIR}/EventSegmentation/megaFiles/decisionExpandedKnotted_L${LAMBDA}.csv" \
-#   --knots 15 20 25 \
-#   >> "$LOG_FILE" 2>&1
-# echo "✅ addKnotsForDecisionModel.py Lambda ${LAMBDA} completed at $(date)" | tee -a "$LOG_FILE"
-
-# ### Adding Learning Knots
-# echo "✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨" | tee -a "$LOG_FILE"
-# echo "🚀 Starting addKnotsForDecisionModel.py Lambda ${LAMBDA} at $(date)" | tee -a "$LOG_FILE"
-# python "${CODE_DIR}/preproc/extraction/addKnotsForDecisionModel.py" \
 #   --in_csv "${TRUE_BASE_DIR}/${PROC_DIR}/EventSegmentation/megaFiles/allIntervalData_L${LAMBDA}.csv" \
 #   --out_csv "${TRUE_BASE_DIR}/${PROC_DIR}/EventSegmentation/megaFiles/allIntervalDataKnotted_L${LAMBDA}.csv" \
 #   --out_pruned "${TRUE_BASE_DIR}/${PROC_DIR}/EventSegmentation/megaFiles/allIntervalDataKnotted_Prune_L${LAMBDA}.csv" \
@@ -57,23 +47,94 @@ LAMBDA="1"
 #   >> "$LOG_FILE" 2>&1
 # echo "✅ addKnotsForDecisionModel.py Lambda ${LAMBDA} completed at $(date)" | tee -a "$LOG_FILE"
 
-
 # ### Making my decision expansion file
 # echo "✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨" | tee -a "$LOG_FILE"
 # echo "🚀 Starting prepDataForDecisionModel.py Lambda ${LAMBDA} at $(date)" | tee -a "$LOG_FILE"
 # python "${CODE_DIR}/preproc/extraction/prepDataForDecisionModel.py" \
-#   --interval_csv "${TRUE_BASE_DIR}/${PROC_DIR}/EventSegmentation/megaFiles/allIntervalDataKnotted_Prune_L${LAMBDA}.csv" \
+#   --interval_csv "${TRUE_BASE_DIR}/${PROC_DIR}/EventSegmentation/megaFiles/allIntervalData_AN.csv" \
 #   --utility_csv "/Users/mairahmac/Desktop/TriangleSets/RoutePlanWeightUtility/pathUtility_All/pathUtility_lambda${LAMBDA}.csv" \
-#   --out_csv "${TRUE_BASE_DIR}/${PROC_DIR}/EventSegmentation/megaFiles/decisionExpanded_L${LAMBDA}.csv" \
+#   --out_csv "${TRUE_BASE_DIR}/${PROC_DIR}/EventSegmentation/megaFiles/decisionExpanded_AN.csv" \
 #   >> "$LOG_FILE" 2>&1
 # echo "✅ prepDataForDecisionModel.py Lambda ${LAMBDA} completed at $(date)" | tee -a "$LOG_FILE"
 
-## running mixed model stuff
+# ### Adding Learning Knots
+# echo "✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨" | tee -a "$LOG_FILE"
+# echo "🚀 Starting addKnotsForDecisionModel.py Lambda ${LAMBDA} at $(date)" | tee -a "$LOG_FILE"
+# python "${CODE_DIR}/preproc/extraction/addKnotsForDecisionModel.py" \
+#   --in_csv "${TRUE_BASE_DIR}/${PROC_DIR}/EventSegmentation/megaFiles/allIntervalData_AN.csv" \
+#   --out_csv "${TRUE_BASE_DIR}/${PROC_DIR}/EventSegmentation/megaFiles/allIntervalDataKnotted_AN.csv" \
+#   --out_pruned "${TRUE_BASE_DIR}/${PROC_DIR}/EventSegmentation/megaFiles/allIntervalDataKnotted_Prune_AN.csv" \
+#   --knots 15 20 25 \
+#   >> "$LOG_FILE" 2>&1
+# echo "✅ addKnotsForDecisionModel.py Lambda ${LAMBDA} completed at $(date)" | tee -a "$LOG_FILE"
+
+### Adding Learning Knots
 echo "✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨" | tee -a "$LOG_FILE"
-echo "🚀 Starting mixedModel.py Lambda ${LAMBDA} at $(date)" | tee -a "$LOG_FILE"
-python "${CODE_DIR}/preproc/plotting/mixedModel.py" \
+echo "🚀 Starting addKnotsForDecisionModel.py Lambda ${LAMBDA} at $(date)" | tee -a "$LOG_FILE"
+python "${CODE_DIR}/preproc/extraction/addKnotsForDecisionModel.py" \
+  --in_csv "${TRUE_BASE_DIR}/${PROC_DIR}/EventSegmentation/megaFiles/allIntervalData_AN.csv" \
+  --out_csv "${TRUE_BASE_DIR}/${PROC_DIR}/EventSegmentation/megaFiles/allIntervalDataKnotted_AN.csv" \
+  --out_pruned "${TRUE_BASE_DIR}/${PROC_DIR}/EventSegmentation/megaFiles/allIntervalDataKnotted_Prune_AN.csv" \
+  --knots 15 20 25 \
   >> "$LOG_FILE" 2>&1
-echo "✅ mixedModel.py Lambda ${LAMBDA} completed at $(date)" | tee -a "$LOG_FILE"
+echo "✅ addKnotsForDecisionModel.py Lambda ${LAMBDA} completed at $(date)" | tee -a "$LOG_FILE"
+
+### Making my decision expansion file
+echo "✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨" | tee -a "$LOG_FILE"
+echo "🚀 Starting prepDataForDecisionModel.py Lambda ${LAMBDA} at $(date)" | tee -a "$LOG_FILE"
+python "${CODE_DIR}/preproc/extraction/prepDataForDecisionModel.py" \
+  --interval_csv "${TRUE_BASE_DIR}/${PROC_DIR}/EventSegmentation/megaFiles/allIntervalDataKnotted_Prune_AN.csv" \
+  --utility_csv "/Users/mairahmac/Desktop/TriangleSets/RoutePlanWeightUtility/pathUtility_All/pathUtility_lambda${LAMBDA}.csv" \
+  --out_csv "${TRUE_BASE_DIR}/${PROC_DIR}/EventSegmentation/megaFiles/decisionExpanded_AN.csv" \
+  >> "$LOG_FILE" 2>&1
+echo "✅ prepDataForDecisionModel.py Lambda ${LAMBDA} completed at $(date)" | tee -a "$LOG_FILE"
+
+### Adding Learning Knots
+echo "✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨" | tee -a "$LOG_FILE"
+echo "🚀 Starting addKnotsForDecisionModel.py Lambda ${LAMBDA} at $(date)" | tee -a "$LOG_FILE"
+python "${CODE_DIR}/preproc/extraction/addKnotsForDecisionModel.py" \
+  --in_csv "${TRUE_BASE_DIR}/${PROC_DIR}/EventSegmentation/megaFiles/allIntervalData_PO.csv" \
+  --out_csv "${TRUE_BASE_DIR}/${PROC_DIR}/EventSegmentation/megaFiles/allIntervalDataKnotted_PO.csv" \
+  --out_pruned "${TRUE_BASE_DIR}/${PROC_DIR}/EventSegmentation/megaFiles/allIntervalDataKnotted_Prune_PO.csv" \
+  --knots 15 20 25 \
+  >> "$LOG_FILE" 2>&1
+echo "✅ addKnotsForDecisionModel.py Lambda ${LAMBDA} completed at $(date)" | tee -a "$LOG_FILE"
+
+### Making my decision expansion file
+echo "✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨" | tee -a "$LOG_FILE"
+echo "🚀 Starting prepDataForDecisionModel.py Lambda ${LAMBDA} at $(date)" | tee -a "$LOG_FILE"
+python "${CODE_DIR}/preproc/extraction/prepDataForDecisionModel.py" \
+  --interval_csv "${TRUE_BASE_DIR}/${PROC_DIR}/EventSegmentation/megaFiles/allIntervalDataKnotted_Prune_PO.csv" \
+  --utility_csv "/Users/mairahmac/Desktop/TriangleSets/RoutePlanWeightUtility/pathUtility_All/pathUtility_lambda${LAMBDA}.csv" \
+  --out_csv "${TRUE_BASE_DIR}/${PROC_DIR}/EventSegmentation/megaFiles/decisionExpanded_PO.csv" \
+  >> "$LOG_FILE" 2>&1
+echo "✅ prepDataForDecisionModel.py Lambda ${LAMBDA} completed at $(date)" | tee -a "$LOG_FILE"
+# ### Making my decision expansion file
+# echo "✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨" | tee -a "$LOG_FILE"
+# echo "🚀 Starting prepDataForDecisionModel.py at $(date)" | tee -a "$LOG_FILE"
+# python "${CODE_DIR}/preproc/extraction/prepDataForDecisionModel.py" \
+#   --interval_csv "${TRUE_BASE_DIR}/${PROC_DIR}/EventSegmentation/megaFiles/allIntervalDataKnotted_Prune_PO.csv" \
+#   --utility_csv "/Users/mairahmac/Desktop/TriangleSets/RoutePlanWeightUtility/pathUtility_All/pathUtility_lambda1.csv" \
+#   --out_csv "${TRUE_BASE_DIR}/${PROC_DIR}/EventSegmentation/megaFiles/decisionExpanded_PO.csv" \
+#   >> "$LOG_FILE" 2>&1
+# echo "✅ prepDataForDecisionModel.py completed at $(date)" | tee -a "$LOG_FILE"
+
+# ### Adding Learning Knots
+# echo "✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨" | tee -a "$LOG_FILE"
+# echo "🚀 Starting addKnotsForDecisionModel.py at $(date)" | tee -a "$LOG_FILE"
+# python "${CODE_DIR}/preproc/extraction/addKnotsForDecisionModel.py" \
+#   --in_csv "${TRUE_BASE_DIR}/${PROC_DIR}/EventSegmentation/megaFiles/decisionExpanded_PO.csv" \
+#   --out_csv "${TRUE_BASE_DIR}/${PROC_DIR}/EventSegmentation/megaFiles/decisionExpandedKnotted_PO.csv" \
+#   --knots 15 20 25 \
+#   >> "$LOG_FILE" 2>&1
+# echo "✅ addKnotsForDecisionModel.py completed at $(date)" | tee -a "$LOG_FILE"
+
+# ## running mixed model stuff
+# echo "✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨" | tee -a "$LOG_FILE"
+# echo "🚀 Starting mixedModel.py Lambda ${LAMBDA} at $(date)" | tee -a "$LOG_FILE"
+# python "${CODE_DIR}/preproc/plotting/mixedModel.py" \
+#   >> "$LOG_FILE" 2>&1
+# echo "✅ mixedModel.py Lambda ${LAMBDA} completed at $(date)" | tee -a "$LOG_FILE"
 
 # ## running prelim condit logit All Subjects stuff
 # echo "✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨" | tee -a "$LOG_FILE"

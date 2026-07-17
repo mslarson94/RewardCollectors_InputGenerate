@@ -1,0 +1,16 @@
+Figure 2: Valenced Expectation Violation Events
+
+The Reward Collectors task is broken down into 4 phases: Initial Encoding, Test Phase 1 (TP1), Test Phase 2 (TP2), and Role Reversal (RR). IE is previously described in Figure 1d – e, and TP1 is previously described as the TEL Phase in Figure 1f – g. Participants complete multiple rounds in TP1 until they have reached a criterion indicating that they have overlearned all reward locations. Once they have completed TP1, they will enter TP2, wherein there will be a mix of Original and valenced EV rounds. 
+
+A)	Overall experiment timeline 
+
+B)	Original and EV Round Diagrams
+
+C)	AN’s timeline under correct and incorrect conditions for the NEV and PEV events. For all diagrams, 
+		0) Each participant has relocated to their new start position and the task has officially begun. A small 2D pin is visible in both participants’ headsets to indicate that a pin needs to be dropped. 
+		1) AN has dropped their first pin. The audio for the pin drop will briefly play. This new AR pinhead will remain gray for 2 seconds. 
+		2) Once those 2 seconds have passed, A sound will play, the AR pinhead color will change, and text will appear to indicate correctness for 1 second. The original value for that rewarded location associated with this pin drop will also become visible until step 3. 
+		3) The EV coin will then appear to both participants and the coin value text will update to the earned EV value. The accompanying sound for EV coin presentation will play for 0.65 seconds. After 1 second of becoming visible, the coin will be unlocked for collection. 
+		4) A brief period between the coin becoming unlocked and the actual coin collection event. Determined by the speed of the participant.
+		5) Upon collection, the coin collection sound will play (unique to each coin type) for 0.654 seconds. Coin value text will continue to persist for another 2 seconds after coin collection. The tiny 2D pin icon will reappear in the upper right corner until the next pin drop. After the 3rd pin drop, the tiny pin icon will not reappear since it is the last pin to be dropped for a given round.
+IE: Initial Encoding, TP1: Test Phase 1, TP2: Test Phase 2, EV: Expectation Violation, NEV: Negative EV, PEV: Positive EV, RR: Role Reversal, AN: Active Navigator, 2D: 2 Dimensional

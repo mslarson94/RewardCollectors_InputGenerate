@@ -1,0 +1,164 @@
+
+================================================
+Mixed Models Round Fraction
+All Participants Over All Time In All Coin Layouts
+
+================================================
+[1] "/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redoAgainAgainAgain_PO_redo/EventSegmentation/megaFiles/allIntervalDataKnotted_AN_patched_baseQC_roundDur_optionA.csv"
+[1mindexing[0m [34mallIntervalDataKnotted_AN_patched_baseQC_roundDur_optionA.csv[0m [================================================================================================================================================] [32m170.48GB/s[0m, eta: [36m 0s[0m                                                                                                                                                                                                                                                                                 # A tibble: 3,213 × 214
+   BlockInstance BlockNum RoundNum round_start_AppTime round_start_origRow round_end_AppTime round_end_origRow round_dur_s round_index_in_block block_start_AppTime block_start_origRow block_end_AppTime block_end_origRow block_dur_s
+           <dbl>    <dbl>    <dbl>               <dbl>               <dbl>             <dbl>             <dbl>       <dbl>                <dbl>               <dbl>               <dbl>             <dbl>             <dbl>       <dbl>
+ 1             1        0        1                114.                2104              197.              4358        82.9                    1                36.1                   5              197.              4358       161. 
+ 2             1        0        1                114.                2104              197.              4358        82.9                    1                36.1                   5              197.              4358       161. 
+ 3             1        0        1                114.                2104              197.              4358        82.9                    1                36.1                   5              197.              4358       161. 
+ 4             2        1        1                210.                4723              262.              6149        51.6                    1               197.                 4359              262.              6149        64.6
+ 5             2        1        1                210.                4723              262.              6149        51.6                    1               197.                 4359              262.              6149        64.6
+ 6             2        1        1                210.                4723              262.              6149        51.6                    1               197.                 4359              262.              6149        64.6
+ 7             3        2        1                277.                6582              347.              8457        69.3                    1               262.                 6150              347.              8457        85.0
+ 8             3        2        1                277.                6582              347.              8457        69.3                    1               262.                 6150              347.              8457        85.0
+ 9             3        2        1                277.                6582              347.              8457        69.3                    1               262.                 6150              347.              8457        85.0
+10             4        3        1                361.                8862              405.             10076        43.8                    1               347.                 8458              405.             10076        58.3
+# ℹ 3,203 more rows
+# ℹ 200 more variables: chestPin_num <dbl>, dropDist <dbl>, coinLabel <chr>, actualClosestCoinLabel <chr>, actualClosestCoinDist <dbl>, origRow_start <dbl>, origRow_end <dbl>, start_AppTime <dbl>, end_AppTime <dbl>, dropQual <chr>,
+#   path_order_round <chr>, path_step_in_round <dbl>, path_order_round_num <dbl>, CoinSetID <dbl>, coinSet <chr>, startPos <chr>, totDistRound <dbl>, totDistBlock <dbl>, BlockType <chr>, effectiveRoundNum <dbl>, BlockStatus <chr>,
+#   WalkAvgSpeed <dbl>, WalkAvgSpeed_Adj <dbl>, WalkDist <dbl>, WalkDist_Adj <dbl>, Walk_Dur <dbl>, Walk_Dur_Adj <dbl>, avgBlockSpeed <dbl>, avgRoundSpeed <dbl>, blockElapsed_s <dbl>, blockElapsed_s_adj <dbl>, blockFrac <dbl>,
+#   blockFrac_adj <dbl>, currentRole <chr>, device <chr>, main_RR <chr>, origRow_end_adjwalk <dbl>, origRow_end_walk <dbl>, origRow_start_adjwalk <dbl>, origRow_start_walk <dbl>, pairID <dbl>, participantID <chr>, ptIsAorB <chr>,
+#   roundElapsed_s <dbl>, roundFrac <dbl>, sessionID <chr>, sessionType <chr>, source_file <chr>, taskNaive <dbl>, testingDate <chr>, testingOrder <dbl>, totalRounds <dbl>, SwapVote <chr>, SwapVoteScore <chr>, currGrandTotal <dbl>,
+#   runningBlockTotal <dbl>, chest1_currGrandTotal <dbl>, chest3_runningBlockTotal <dbl>, roundEarnings <dbl>, roundGrandTotal <dbl>, swapVoteRegistered_n <dbl>, swapVoteRegistered_d <dbl>, swapVoteRegistered <dbl>, …
+# ℹ Use `print(n = ...)` to see more rows, and `colnames()` to see all variable names
+[1mwrote[0m [32m53.70kB[0m in [36m 0s[0m, [32m6.62GB/s[0m[1mwrote[0m [32m1.00TB[0m in [36m 0s[0m, [32m14.79TB/s[0m                                                                                                                                                                                                                                            [1mwrote[0m [32m58.51kB[0m in [36m 0s[0m, [32m11.69GB/s[0m[1mwrote[0m [32m1.00TB[0m in [36m 0s[0m, [32m330.60TB/s[0m                                                                                                                                                                                                                                            
+Counts (model_df_raw)
+
+ A Ax  B Bx  C  D 
+36 37 36 16 19 16 
+
+ HV  NV 
+129  31 
+
+  0   1 
+  0 160 
+
+main   RR 
+ 148   12 
+N = 160 
+
+
+
+
+
+lmer: dropDist ~  coinSet
+
+# A tibble: 6 × 6
+  coinSet     n median_path_eff mean_path_eff    q1    q3
+  <fct>   <int>           <dbl>         <dbl> <dbl> <dbl>
+1 A          36           0.413         0.521 0.246 0.545
+2 Ax         37           0.346         0.433 0.159 0.447
+3 B          36           0.462         0.665 0.253 0.602
+4 Bx         16           0.318         0.507 0.181 0.768
+5 C          19           0.392         0.393 0.242 0.556
+6 D          16           0.376         0.365 0.255 0.428
+bl>
+ 1             1        0        1                114.                2104              197.              4358        82.9                    1                36.1                   5              197.              4358       161. 
+ 2             1        0        1                114.                2104              197.              4358        82.9                    1                36.1                   5              197.              4358       161. 
+ 3             1        0        1                114.                2104              197.              4358        82.9                    1                36.1                   5              197.              4358       161. 
+ 4             2        1        1                210.                4723              262.              6149        51.6                    1               197.                 4359              262.              6149        64.6
+ 5             2        1        1                210.                4723              262.              6149        51.6                    1               197.                 4359              262.              6149        64.6
+ 6             2        1        1                210.                4723              262.              6149        51.6                    1               197.                 4359              262.              6149        64.6
+ 7             3        2        1                277.                6582              347.              8457        69.3                    1               262.                 6150              347.              8457        85.0
+ 8             3        2        1                277.                6582              347.              8457        69.3                    1               262.                 6150              347.              8457        85.0
+ 9             3        2        1                277.                6582              347.              8457        69.3                    1               262.                 6150              347.              8457        85.0
+10             4        3        1                361.                8862              405.             10076        43.8                    1               347.                 8458              405.             10076        58.3
+# ℹ 3,203 more rows
+# ℹ 200 more variables: chestPin_num <dbl>, dropDist <dbl>, coinLabel <chr>, actualClosestCoinLabel <chr>, actualClosestCoinDist <dbl>, origRow_start <dbl>, origRow_end <dbl>, start_AppTime <dbl>, end_AppTime <dbl>, dropQual <chr>,
+#   path_order_round <chr>, path_step_in_round <dbl>, path_order_round_num <dbl>, CoinSetID <dbl>, coinSet <chr>, startPos <chr>, totDistRound <dbl>, totDistBlock <dbl>, BlockType <chr>, effectiveRoundNum <dbl>, BlockStatus <chr>,
+#   WalkAvgSpeed <dbl>, WalkAvgSpeed_Adj <dbl>, WalkDist <dbl>, WalkDist_Adj <dbl>, Walk_Dur <dbl>, Walk_Dur_Adj <dbl>, avgBlockSpeed <dbl>, avgRoundSpeed <dbl>, blockElapsed_s <dbl>, blockElapsed_s_adj <dbl>, blockFrac <dbl>,
+#   blockFrac_adj <dbl>, currentRole <chr>, device <chr>, main_RR <chr>, origRow_end_adjwalk <dbl>, origRow_end_walk <dbl>, origRow_start_adjwalk <dbl>, origRow_start_walk <dbl>, pairID <dbl>, participantID <chr>, ptIsAorB <chr>,
+#   roundElapsed_s <dbl>, roundFrac <dbl>, sessionID <chr>, sessionType <chr>, source_file <chr>, taskNaive <dbl>, testingDate <chr>, testingOrder <dbl>, totalRounds <dbl>, SwapVote <chr>, SwapVoteScore <chr>, currGrandTotal <dbl>,
+#   runningBlockTotal <dbl>, chest1_currGrandTotal <dbl>, chest3_runningBlockTotal <dbl>, roundEarnings <dbl>, roundGrandTotal <dbl>, swapVoteRegistered_n <dbl>, swapVoteRegistered_d <dbl>, swapVoteRegistered <dbl>, …
+# ℹ Use `print(n = ...)` to see more rows, and `colnames()` to see all variable names
+[1mwrote[0m [32m53.70kB[0m in [36m 0s[0m, [32m6.62GB/s[0m[1mwrote[0m [32m1.00TB[0m in [36m 0s[0m, [32m14.79TB/s[0m                                                                                                                                                                                                                                            [1mwrote[0m [32m58.51kB[0m in [36m 0s[0m, [32m11.69GB/s[0m[1mwrote[0m [32m1.00TB[0m in [36m 0s[0m, [32m330.60TB/s[0m                                                                                                                                                                                                                                            
+Counts (model_df_raw)
+
+ A Ax  B Bx  C  D 
+36 37 36 16 19 16 
+
+ HV  NV 
+129  31 
+
+  0   1 
+  0 160 
+
+main   RR 
+ 148   12 
+N = 160 
+
+
+
+
+
+lmer: dropDist ~  coinSet
+
+# A tibble: 6 × 6
+  coinSet     n median_path_eff mean_path_eff    q1    q3
+  <fct>   <int>           <dbl>         <dbl> <dbl> <dbl>
+1 A          36           0.413         0.521 0.246 0.545
+2 Ax         37           0.346         0.433 0.159 0.447
+3 B          36           0.462         0.665 0.253 0.602
+4 Bx         16           0.318         0.507 0.181 0.768
+5 C          19           0.392         0.393 0.242 0.556
+6 D          16           0.376         0.365 0.255 0.428
+ round_end_AppTime round_end_origRow round_dur_s round_index_in_block block_start_AppTime block_start_origRow block_end_AppTime block_end_origRow block_dur_s
+           <dbl>    <dbl>    <dbl>               <dbl>               <dbl>             <dbl>             <dbl>       <dbl>                <dbl>               <dbl>               <dbl>             <dbl>             <dbl>       <dbl>
+ 1             1        0        1                114.                2104              197.              4358        82.9                    1                36.1                   5              197.              4358       161. 
+ 2             1        0        1                114.                2104              197.              4358        82.9                    1                36.1                   5              197.              4358       161. 
+ 3             1        0        1                114.                2104              197.              4358        82.9                    1                36.1                   5              197.              4358       161. 
+ 4             2        1        1                210.                4723              262.              6149        51.6                    1               197.                 4359              262.              6149        64.6
+ 5             2        1        1                210.                4723              262.              6149        51.6                    1               197.                 4359              262.              6149        64.6
+ 6             2        1        1                210.                4723              262.              6149        51.6                    1               197.                 4359              262.              6149        64.6
+ 7             3        2        1                277.                6582              347.              8457        69.3                    1               262.                 6150              347.              8457        85.0
+ 8             3        2        1                277.                6582              347.              8457        69.3                    1               262.                 6150              347.              8457        85.0
+ 9             3        2        1                277.                6582              347.              8457        69.3                    1               262.                 6150              347.              8457        85.0
+10             4        3        1                361.                8862              405.             10076        43.8                    1               347.                 8458              405.             10076        58.3
+# ℹ 3,203 more rows
+# ℹ 200 more variables: chestPin_num <dbl>, dropDist <dbl>, coinLabel <chr>, actualClosestCoinLabel <chr>, actualClosestCoinDist <dbl>, origRow_start <dbl>, origRow_end <dbl>, start_AppTime <dbl>, end_AppTime <dbl>, dropQual <chr>,
+#   path_order_round <chr>, path_step_in_round <dbl>, path_order_round_num <dbl>, CoinSetID <dbl>, coinSet <chr>, startPos <chr>, totDistRound <dbl>, totDistBlock <dbl>, BlockType <chr>, effectiveRoundNum <dbl>, BlockStatus <chr>,
+#   WalkAvgSpeed <dbl>, WalkAvgSpeed_Adj <dbl>, WalkDist <dbl>, WalkDist_Adj <dbl>, Walk_Dur <dbl>, Walk_Dur_Adj <dbl>, avgBlockSpeed <dbl>, avgRoundSpeed <dbl>, blockElapsed_s <dbl>, blockElapsed_s_adj <dbl>, blockFrac <dbl>,
+#   blockFrac_adj <dbl>, currentRole <chr>, device <chr>, main_RR <chr>, origRow_end_adjwalk <dbl>, origRow_end_walk <dbl>, origRow_start_adjwalk <dbl>, origRow_start_walk <dbl>, pairID <dbl>, participantID <chr>, ptIsAorB <chr>,
+#   roundElapsed_s <dbl>, roundFrac <dbl>, sessionID <chr>, sessionType <chr>, source_file <chr>, taskNaive <dbl>, testingDate <chr>, testingOrder <dbl>, [1mwrote[0m [32m53.70kB[0m in [36m 0s[0m, [32m6.62GB/s[0m[1mwrote[0m [32m1.00TB[0m in [36m 0s[0m, [32m14.79TB/s[0m                                                                                                                                                                                                                                            [1mwrote[0m [32m58.51kB[0m in [36m 0s[0m, [32m11.69GB/s[0m[1mwrote[0m [32m1.00TB[0m in [36m 0s[0m, [32m330.60TB/s[0m                                                                                                                                                                                                                                            
+Counts (model_df_raw)
+
+ A Ax  B Bx  C  D 
+36 37 36 16 19 16 
+
+ HV  NV 
+129  31 
+
+  0   1 
+  0 160 
+
+main   RR 
+ 148   12 
+N = 160 
+
+
+
+
+
+lmer: dropDist ~  coinSet
+
+# A tibble: 6 × 6
+  coinSet     n median_path_eff mean_path_eff    q1    q3
+  <fct>   <int>           <dbl>         <dbl> <dbl> <dbl>
+1 A          36           0.413         0.521 0.246 0.545
+2 Ax         37           0.346         0.433 0.159 0.447
+3 B          36           0.462         0.665 0.253 0.602
+4 Bx         16           0.318         0.507 0.181 0.768
+5 C          19    # A tibble: 6 × 6
+  coinSet     n median_path_eff mean_path_eff    q1    q3
+  <fct>   <int>           <dbl>         <dbl> <dbl> <dbl>
+1 A          36           0.413         0.521 0.246 0.545
+2 Ax         37           0.346         0.433 0.159 0.447
+3 B          36           0.462         0.665 0.253 0.602
+4 Bx         16           0.318         0.507 0.181 0.768
+5 C          19           0.392         0.393 0.242 0.556
+6 D          16           0.376         0.365 0.255 0.428

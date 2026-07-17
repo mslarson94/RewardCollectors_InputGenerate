@@ -199,17 +199,18 @@ def summarize_dataframe(df: pd.DataFrame, file_label: str) -> dict:
     else:
         tot_points = None
 
-    avg_round_speed = float(filtered["avgRoundSpeed_num"].mean())
-    std_round_speed = float(filtered["avgRoundSpeed_num"].std())
-
-    avg_path_eff = float(filtered["path_eff_raw_num"].mean())
-    std_path_eff = float(filtered["path_eff_raw_num"].std())
 
     round_level = (
         filtered.sort_values("_orig_index")
         .drop_duplicates(subset=["round_id"], keep="last")
         .copy()
     )
+
+    avg_round_speed = float(round_level["avgRoundSpeed_num"].mean())
+    std_round_speed = float(round_level["avgRoundSpeed_num"].std())
+
+    avg_path_eff = float(round_level["path_eff_raw_num"].mean())
+    std_path_eff = float(round_level["path_eff_raw_num"].std())
 
     path_order_counts = round_level["path_order_round"].value_counts(dropna=False).to_dict()
 

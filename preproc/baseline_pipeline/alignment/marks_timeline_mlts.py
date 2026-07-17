@@ -2,7 +2,7 @@
 # marks_timeline_mlts.py
 """
 Overlay Raspberry Pi marks (blue) and Events marks (red) on a single datetime axis,
-using the Events file's mLTimestamp directly. Blocks and rounds come from Events.
+using the Events file's eMLT_orig directly. Blocks and rounds come from Events.
 
 Example:
   python scripts/marks_timeline_mlts.py \
@@ -26,7 +26,7 @@ import matplotlib.pyplot as plt
 # ---------- column detection ----------
 def detect_events_columns(df: pd.DataFrame) -> Dict[str, Optional[str]]:
     cols = {c.lower(): c for c in df.columns}
-    ts_col = cols.get("mltimestamp")  # required for this script
+    ts_col = cols.get("emlt_orig")  # required for this script
     etype = cols.get("lo_eventtype") or cols.get("eventtype") or cols.get("event_type") or cols.get("type")
     block = cols.get("blocknum") or cols.get("block") or cols.get("blockid") or cols.get("block_id") or cols.get("lo_block")
     rnd   = cols.get("roundnum") or cols.get("round") or cols.get("roundid") or cols.get("round_id") or cols.get("lo_round")
@@ -142,7 +142,7 @@ def render_plot(
             plt.text(pd.to_datetime(r["end"]), 1.05, f"B{int(r['block'])} end", rotation=90, va="bottom", ha="left")
 
     plt.yticks([0, 1], ["RPi Mark (blue)", "Events Mark (red)"])
-    plt.xlabel("Time (mLTimestamp)")
+    plt.xlabel("Time (eMLT_orig)")
     plt.title(f"Marks Timeline — Block: {title_suffix}")
     plt.tight_layout()
 
@@ -155,8 +155,8 @@ def render_plot(
 
 # ---------- CLI pipeline ----------
 def main() -> None:
-    ap = argparse.ArgumentParser(description="Overlay RPi vs Events marks using Events.mLTimestamp (datetime).")
-    ap.add_argument("--events", required=True, type=Path, help="Events CSV path (must have mLTimestamp).")
+    ap = argparse.ArgumentParser(description="Overlay RPi vs Events marks using Events.eMLT_orig (datetime).")
+    ap.add_argument("--events", required=True, type=Path, help="Events CSV path (must have eMLT_orig).")
     ap.add_argument("--rpi", required=True, type=Path, help="RPi marks CSV path (with absolute datetime column).")
     ap.add_argument("--block", default="All", help='Block number or "All"')
     ap.add_argument("--out", type=Path, default=Path("./marks_timeline.png"), help="Output PNG path")
@@ -172,7 +172,7 @@ def main() -> None:
     blk_col = ev["block"]
 
     if not ts_col or not et_col:
-        raise RuntimeError("Events file must contain 'mLTimestamp' and an event-type column (e.g., 'lo_eventType').")
+        raise RuntimeError("Events file must contain 'eMLT_orig' and an event-type column (e.g., 'lo_eventType').")
 
     # Parse event timestamps (datetime)
     events[ts_col] = pd.to_datetime(events[ts_col], errors="coerce", infer_datetime_format=True)

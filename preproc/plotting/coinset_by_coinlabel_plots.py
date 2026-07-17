@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# coinset_by_coinlabel_plots.py
 from __future__ import annotations
 
 import argparse
@@ -17,7 +18,6 @@ from histoHelpers import (
     exclude_outliers,
 )
 
-# Optional seaborn: your suite already uses it, so this should be fine
 import seaborn as sns
 from scipy.stats import kruskal, ks_2samp, mannwhitneyu
 
@@ -121,10 +121,34 @@ def plot_and_stats_for_coinlabel(
     axes[0].set_xlabel(coinset_col)
     axes[0].set_ylabel(voi)
     axes[0].set_title("Violin + points")
+    
+    # choose a reproducible bin width from the plotted data
+    x_all = pd.to_numeric(sub[voi], errors="coerce").dropna().to_numpy()
 
+    if x_all.size >= 2:
+        q25, q75 = np.percentile(x_all, [25, 75])
+        iqr = q75 - q25
+        if iqr > 0:
+            hist_binwidth = 2 * iqr / (x_all.size ** (1 / 3))   # Freedman–Diaconis
+        else:
+            hist_binwidth = (x_all.max() - x_all.min()) / 10 if x_all.max() > x_all.min() else 1.0
+    else:
+        hist_binwidth = 1.0
+    # sns.histplot(
+    #     data=sub, x=voi, hue=coinset_col, hue_order=order,
+    #     stat="density", common_norm=False, element="step", alpha=0.35, ax=axes[1]
+    # )
     sns.histplot(
-        data=sub, x=voi, hue=coinset_col, hue_order=order,
-        stat="density", common_norm=False, element="step", alpha=0.35, ax=axes[1]
+        data=sub,
+        x=voi,
+        hue=coinset_col,
+        hue_order=order,
+        stat="density",
+        common_norm=False,
+        element="step",
+        alpha=0.35,
+        binwidth=hist_binwidth,
+        ax=axes[1],
     )
     try:
         sns.kdeplot(data=sub, x=voi, hue=coinset_col, hue_order=order, common_norm=False, ax=axes[1], lw=2, legend=False)
@@ -132,12 +156,43 @@ def plot_and_stats_for_coinlabel(
         pass
     axes[1].set_xlabel(voi)
     axes[1].set_ylabel("Density")
-    axes[1].set_title("Hist + KDE by CoinSetID")
+    axes[1].set_title("Hist + KDE by Coin Layout")
+    ## f"{label}: n={n}, μ={mean:.1f}, σ={sd:.1f}, bin {hist_binwidth:.3g}" # Use me later for plot annotation
+    fig.suptitle(f"coinLabel={coinlabel} — {voi} by CoinSet Layout", fontsize=14, y=1.03)
 
-    fig.suptitle(f"coinLabel={coinlabel} — {voi} by CoinSetID", fontsize=14, y=1.03)
+    stats_lines = []
+    for label in order:
+        values = pd.to_numeric(
+            sub.loc[sub[coinset_col].astype("string") == str(label), voi],
+            errors="coerce",
+        ).dropna().to_numpy()
+
+        if values.size == 0:
+            continue
+
+        mean = values.mean()
+        sd = values.std(ddof=1) if values.size > 1 else float("nan")
+
+        stats_lines.append(
+            f"{label}: n={values.size}, μ={mean:.2f}, σ={sd:.2f}, bin {hist_binwidth:.3g}"
+        )
+
+    stats_text = "\n".join(stats_lines)
+
+    axes[1].text(
+        0.02, 0.98,
+        stats_text,
+        transform=axes[1].transAxes,
+        ha="left",
+        va="top",
+        fontsize=10,
+        bbox=dict(boxstyle="round,pad=0.4", facecolor="white", edgecolor="black", alpha=0.9),
+    )
+
+    
     fig.tight_layout()
 
-    stem = f"coinLabel-{_slugify(coinlabel)}__{_slugify(voi)}__by_CoinSetID"
+    stem = f"coinLabel-{_slugify(coinlabel)}__{_slugify(voi)}__by_CoinSetLayout"
     for ext in formats:
         fig.savefig(out_dir / f"{stem}.{ext}", dpi=220, bbox_inches="tight")
     plt.close(fig)
@@ -150,6 +205,14 @@ def plot_and_stats_for_coinlabel(
             groups[str(k)] = x
 
     omnibus = {"coinLabel": coinlabel, "voi": voi, "kruskal_H": np.nan, "kruskal_p": np.nan, "sizes": {}}
+    omnibus = {
+        "coinLabel": coinlabel,
+        "voi": voi,
+        "kruskal_H": np.nan,
+        "kruskal_p": np.nan,
+        "sizes": {},
+        "hist_binwidth": float(hist_binwidth),
+    }
     pairwise = pd.DataFrame()
 
     if len(groups) >= 2:
@@ -200,7 +263,7 @@ def main():
     ap.add_argument("--out-root", required=True, help="Output directory")
     ap.add_argument("--formats", default="png,pdf", help="Comma-separated formats (png,pdf)")
     ap.add_argument("--coinlabel-col", default="coinLabel")
-    ap.add_argument("--coinset-col", default="CoinSetID")
+    ap.add_argument("--coinset-col", default="coinSet")
     ap.add_argument("--voi", nargs="*", default=["dropDist", "truecontent_elapsed_s"])
     ap.add_argument("--min-n", type=int, default=10, help="Min N per CoinSetID group for stats")
 

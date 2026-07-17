@@ -1,3 +1,5 @@
+#plottingSelectedCombos.py
+
 import pandas as pd
 import matplotlib.pyplot as plt
 from pathlib import Path
@@ -152,7 +154,7 @@ def plot_single_triangle_with_arena(
     ax.fill(tri_x, tri_y, color=color, alpha=0.25)
 
     for (x, y), val in zip(verts, VERTEX_VALUES):
-        ax.scatter([x], [y], color=color, s=50, zorder=3, marker="x")
+        ax.scatter([x], [y], color=color, s=50, zorder=3, marker="o")
         ax.text(x + 0.1, y + 0.1, str(val),
                 fontsize=10, fontweight="bold", color=color)
 
@@ -210,7 +212,7 @@ def plot_triangles_A_B_with_arena(
         ax.fill(tri_x, tri_y, color=color, alpha=0.25)
 
         for (x, y), val in zip(verts, VERTEX_VALUES):
-            ax.scatter([x], [y], color=color, s=50, zorder=3, marker="x")
+            ax.scatter([x], [y], color=color, s=50, zorder=3, marker="o")
             ax.text(x + 0.1, y + 0.1, str(val),
                     fontsize=10, fontweight="bold", color=color)
 
@@ -292,5 +294,5 @@ if __name__ == "__main__":
     ylim_real = (-15, 10)
     plot_triangles_A_B_with_arena(infile, outPath, pairlist)
     #plot_single_triangle_with_arena('A', infile, outPath, xlim_real, ylim_real)
-    plot_single_triangle_with_arena('Bx', infile, outPath, xlim_real, ylim_real)
+    plot_single_triangle_with_arena('A', infile, outPath)
     #plot_single_triangle_no_background('A', infile, outPath, xlim_real, ylim_real)

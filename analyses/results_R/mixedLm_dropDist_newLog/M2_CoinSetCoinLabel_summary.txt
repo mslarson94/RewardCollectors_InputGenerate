@@ -1,0 +1,35 @@
+Linear mixed model fit by maximum likelihood . t-tests use Satterthwaite's method ['lmerModLmerTest']
+Formula: ln_dropDist ~ coinSet + coinLabel + (1 | participantID)
+   Data: analysis_df
+
+     AIC      BIC   logLik deviance df.resid 
+  4905.5   4951.2  -2444.8   4889.5     2214 
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-5.8064 -0.5315  0.0660  0.5841  4.6255 
+
+Random effects:
+ Groups        Name        Variance Std.Dev.
+ participantID (Intercept) 0.1544   0.3929  
+ Residual                  0.5134   0.7165  
+Number of obs: 2222, groups:  participantID, 19
+
+Fixed effects:
+              Estimate Std. Error         df t value Pr(>|t|)    
+(Intercept) -7.165e-01  1.253e-01  2.203e+01  -5.719 9.39e-06 ***
+coinSetAx   -2.341e-01  1.982e-01  2.290e+01  -1.181    0.250    
+coinSetB    -2.949e-01  6.998e-02  1.967e+03  -4.213 2.63e-05 ***
+coinSetBx   -8.927e-02  2.133e-01  2.747e+01  -0.419    0.679    
+coinLabelHV  8.996e-04  3.724e-02  2.203e+03   0.024    0.981    
+coinLabelNV  1.514e-01  3.723e-02  2.203e+03   4.066 4.95e-05 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Correlation of Fixed Effects:
+            (Intr) cnStAx conStB cnStBx cnLbHV
+coinSetAx   -0.614                            
+coinSetB    -0.201  0.128                     
+coinSetBx   -0.571  0.684  0.119              
+coinLabelHV -0.148 -0.003 -0.003  0.002       
+coinLabelNV -0.146 -0.001 -0.010 -0.001  0.500

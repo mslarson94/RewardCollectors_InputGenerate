@@ -1,0 +1,43 @@
+Linear mixed model fit by maximum likelihood . t-tests use Satterthwaite's method ['lmerModLmerTest']
+Formula: dropDist ~ t_early_20 + t_late_20 + coinSet + coinLabel + (1 |      participantID)
+   Data: analysis_df
+
+     AIC      BIC   logLik deviance df.resid 
+  -528.1   -459.5    276.0   -552.1     2236 
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-2.4688 -0.6942 -0.1008  0.6241  3.6753 
+
+Random effects:
+ Groups        Name        Variance Std.Dev.
+ participantID (Intercept) 0.01690  0.1300  
+ Residual                  0.04441  0.2107  
+Number of obs: 2248, groups:  participantID, 19
+
+Fixed effects:
+              Estimate Std. Error         df t value Pr(>|t|)    
+(Intercept)  6.010e-01  4.204e-02  2.332e+01  14.297 4.97e-13 ***
+t_early_20  -5.427e-03  8.508e-04  2.248e+03  -6.378 2.17e-10 ***
+t_late_20    1.126e-03  8.588e-04  2.239e+03   1.312    0.190    
+coinSetAx   -1.079e-01  6.510e-02  2.254e+01  -1.657    0.111    
+coinSetB    -1.738e-01  1.963e-02  2.195e+03  -8.853  < 2e-16 ***
+coinSetBx   -4.364e-02  6.927e-02  2.655e+01  -0.630    0.534    
+coinSetC    -1.868e-01  2.038e-02  2.231e+03  -9.165  < 2e-16 ***
+coinSetD    -1.679e-01  1.860e-02  2.246e+03  -9.025  < 2e-16 ***
+coinLabelLV  1.294e-02  1.085e-02  2.229e+03   1.193    0.233    
+coinLabelNV  1.037e-02  1.094e-02  2.229e+03   0.948    0.343    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Correlation of Fixed Effects:
+            (Intr) t_r_20 t_l_20 cnStAx conStB cnStBx conStC conStD cnLbLV
+t_early_20  -0.219                                                        
+t_late_20    0.084 -0.534                                                 
+coinSetAx   -0.590 -0.039 -0.015                                          
+coinSetB    -0.174  0.040 -0.026  0.106                                   
+coinSetBx   -0.572  0.038 -0.010  0.712  0.103                            
+coinSetC    -0.134 -0.006 -0.060  0.093  0.478  0.083                     
+coinSetD    -0.118  0.023 -0.082  0.078  0.339  0.071  0.452              
+coinLabelLV -0.131 -0.005  0.004  0.004 -0.006 -0.001  0.002 -0.001       
+coinLabelNV -0.125 -0.001  0.001  0.000 -0.010 -0.004 -0.011 -0.016  0.499

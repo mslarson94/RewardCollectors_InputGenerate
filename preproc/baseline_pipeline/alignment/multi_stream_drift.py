@@ -30,7 +30,7 @@ ML + RPi only:
 
     python multi_stream_drift.py \
         --mark-col markNumber_aligned \
-        --ml-csv  R037_mergedML_trim.csv  --ml-time-col  mLTimestamp \
+        --ml-csv  R037_mergedML_trim.csv  --ml-time-col  eMLT_orig \
         --rpi-csv R037_mergedRPi_trim.csv --rpi-time-col RPi_Time_verb \
         --out-csv R037_ML_RPi_drift.csv \
         --print-summary
@@ -39,7 +39,7 @@ ML + RPi + LFP with midi-chunk summaries:
 
     python multi_stream_drift.py \
         --mark-col markNumber_aligned \
-        --ml-csv  R019_mergedML_trim.csv   --ml-time-col  mLTimestamp \
+        --ml-csv  R019_mergedML_trim.csv   --ml-time-col  eMLT_orig \
         --rpi-csv R019_mergedRPi_trim.csv  --rpi-time-col RPi_Time_verb \
         --lfp-csv R019_mergedLFP_trim.csv  --lfp-time-col time_abs \
         --chunk-csv R019_mergedRPi_trim.csv \

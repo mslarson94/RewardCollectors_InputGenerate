@@ -1,0 +1,39 @@
+{
+  "input": "/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redoAgainAgainAgain_PO_redo/EventSegmentation/megaFiles_filtered/allIntervalData_AN_baseQC.csv",
+  "preferred_group": "rr_sess",
+  "preferred_method": "mad",
+  "group_levels": [
+    {
+      "rr_sess": [
+        "main_RR",
+        "sessionID"
+      ]
+    },
+    {
+      "rr_pt": [
+        "main_RR",
+        "participantID"
+      ]
+    },
+    {
+      "rr": [
+        "main_RR"
+      ]
+    }
+  ],
+  "mad_threshold": 3.0,
+  "iqr_multiplier": 1.5,
+  "min_group_n": 8,
+  "outputs": {
+    "augmented_optionA": "/Users/mairahmac/Desktop/myra_code/Python/RewardCollectors_InputGenerate/preproc/baseline_pipeline/overnightRuns/roundDur_optionA_outputs/allIntervalData_AN_baseQC_roundDur_optionA.csv",
+    "round_summary": "/Users/mairahmac/Desktop/myra_code/Python/RewardCollectors_InputGenerate/preproc/baseline_pipeline/overnightRuns/roundDur_optionA_outputs/round_dur_optionA_round_summary.csv",
+    "group_stats": "/Users/mairahmac/Desktop/myra_code/Python/RewardCollectors_InputGenerate/preproc/baseline_pipeline/overnightRuns/roundDur_optionA_outputs/round_dur_optionA_group_stats.csv",
+    "overall_summary": "/Users/mairahmac/Desktop/myra_code/Python/RewardCollectors_InputGenerate/preproc/baseline_pipeline/overnightRuns/roundDur_optionA_outputs/round_dur_optionA_overall_summary.csv"
+  },
+  "notes": {
+    "isEligibleRoundDur": "True when isEligibleBase is True and round_dur_s is non-null",
+    "roundDur_pref_group": "Global preferred grouping level for Option A",
+    "roundDur_pref_method": "Global preferred outlier method for Option A",
+    "roundDur_pref_out": "Preferred Option A outlier flag for round_dur_s"
+  }
+}

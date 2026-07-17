@@ -133,7 +133,7 @@ def main() -> None:
         if dt is None:
             if args.debug: print(f"[warn] skip malformed time '{t_str}' for mark={mark}")
             continue
-        print(mark[0])
+        #print(mark[0])
         mn = int(mark[0])                 # markNumber is 1-based
         lpi = mn - 1                   # LogPairIndex is 0-based
         rows.append(MarkRow(

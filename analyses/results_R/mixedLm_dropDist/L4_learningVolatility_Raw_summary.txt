@@ -1,0 +1,47 @@
+Linear mixed model fit by maximum likelihood . t-tests use Satterthwaite's method ['lmerModLmerTest']
+Formula: dropDist ~ t_early_20 + t_late_20 + recentSwapRate_all + coinSet +      orderedCollect + coinLabel + (1 | participantID)
+   Data: analysis_df
+
+     AIC      BIC   logLik deviance df.resid 
+  -534.7   -454.7    281.3   -562.7     2229 
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-2.4987 -0.6915 -0.0949  0.6164  3.6744 
+
+Random effects:
+ Groups        Name        Variance Std.Dev.
+ participantID (Intercept) 0.01695  0.1302  
+ Residual                  0.04417  0.2102  
+Number of obs: 2243, groups:  participantID, 19
+
+Fixed effects:
+                     Estimate Std. Error         df t value Pr(>|t|)    
+(Intercept)         5.913e-01  4.251e-02  2.416e+01  13.911 4.98e-13 ***
+t_early_20         -5.192e-03  8.927e-04  2.242e+03  -5.816 6.90e-09 ***
+t_late_20           1.264e-03  8.616e-04  2.233e+03   1.468   0.1423    
+recentSwapRate_all -3.941e-02  5.365e-02  2.238e+03  -0.735   0.4627    
+coinSetAx          -1.154e-01  6.533e-02  2.267e+01  -1.766   0.0909 .  
+coinSetB           -1.799e-01  2.002e-02  2.176e+03  -8.984  < 2e-16 ***
+coinSetBx          -5.170e-02  6.951e-02  2.667e+01  -0.744   0.4635    
+coinSetC           -1.899e-01  2.060e-02  2.225e+03  -9.221  < 2e-16 ***
+coinSetD           -1.720e-01  1.887e-02  2.240e+03  -9.117  < 2e-16 ***
+orderedCollect1     1.869e-02  1.202e-02  2.243e+03   1.555   0.1202    
+coinLabelLV         1.369e-02  1.083e-02  2.224e+03   1.264   0.2064    
+coinLabelNV         9.603e-03  1.092e-02  2.224e+03   0.879   0.3794    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Correlation of Fixed Effects:
+            (Intr) t_r_20 t_l_20 rcnSR_ cnStAx conStB cnStBx conStC conStD ordrC1 cnLbLV
+t_early_20  -0.197                                                                      
+t_late_20    0.078 -0.478                                                               
+rcntSwpRt_l -0.023 -0.309 -0.084                                                        
+coinSetAx   -0.574 -0.046 -0.020  0.030                                                 
+coinSetB    -0.141  0.028 -0.039  0.033  0.118                                          
+coinSetBx   -0.558  0.023 -0.017  0.044  0.715  0.113                                   
+coinSetC    -0.110  0.012 -0.063 -0.053  0.099  0.491  0.088                            
+coinSetD    -0.091  0.020 -0.091  0.006  0.088  0.363  0.080  0.466                     
+ordrdCllct1 -0.138  0.018  0.048 -0.080 -0.066 -0.203 -0.062 -0.139 -0.169              
+coinLabelLV -0.128  0.001  0.005 -0.020  0.004 -0.005 -0.001  0.004  0.000 -0.005       
+coinLabelNV -0.121 -0.001 -0.001 -0.002  0.001 -0.005 -0.003 -0.007 -0.012 -0.017  0.498

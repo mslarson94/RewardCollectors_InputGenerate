@@ -1,0 +1,16 @@
+Task identity
+Reward Collectors is a value - location association task including two distinct roles: Active Navigator and Passive Observer
+Environment
+Participants navigate an augmented reality space in a real world laboratory environment with various visual landmarks that are similar in content to one another. 
+Initial Encoding phase
+Participants move to treasure chests placed at random locations. Each chest reveals a coin that is worth 1 of 3 values (0 points, 5 points, and 10 points), and participants are required to remember the location of each of these coins.
+Test Enhanced Learning
+Participants move through the augmented reality space and drop AR pins where they believe a coin was located. After 2 seconds, both participants will 
+Feedback phase
+Correct and recalled locations are shown, often linked by lines, and participants receive points based on accuracy, speed, and distractor performance.
+
+
+Implementation details
+The task is built in Unity, with details about the display system, VR/AR hardware, locomotion method, environment dimensions, and trial structure.
+Trial structure
+Number of trials, number of targets per trial, empty chests if applicable, total targets, and total experiment duration.

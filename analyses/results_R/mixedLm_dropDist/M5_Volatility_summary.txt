@@ -1,0 +1,41 @@
+Linear mixed model fit by maximum likelihood . t-tests use Satterthwaite's method ['lmerModLmerTest']
+Formula: dropDist ~ recentSwapRate_all + coinSet + coinLabel + (1 | participantID)
+   Data: analysis_df
+
+     AIC      BIC   logLik deviance df.resid 
+  -494.1   -431.2    258.0   -516.1     2237 
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-2.5018 -0.7052 -0.1181  0.6239  3.5581 
+
+Random effects:
+ Groups        Name        Variance Std.Dev.
+ participantID (Intercept) 0.01552  0.1246  
+ Residual                  0.04516  0.2125  
+Number of obs: 2248, groups:  participantID, 19
+
+Fixed effects:
+                     Estimate Std. Error         df t value Pr(>|t|)    
+(Intercept)           0.55278    0.03971   22.00217  13.919 2.19e-12 ***
+recentSwapRate_all   -0.15861    0.04938 2247.93914  -3.212  0.00134 ** 
+coinSetAx            -0.13060    0.06266   22.78493  -2.084  0.04854 *  
+coinSetB             -0.17042    0.01977 2176.07773  -8.621  < 2e-16 ***
+coinSetBx            -0.03618    0.06706   27.05880  -0.540  0.59387    
+coinSetC             -0.18572    0.02055 2223.05910  -9.038  < 2e-16 ***
+coinSetD             -0.16755    0.01868 2244.25662  -8.968  < 2e-16 ***
+coinLabelLV           0.01332    0.01094 2229.46028   1.217  0.22378    
+coinLabelNV           0.01037    0.01103 2229.09015   0.940  0.34713    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Correlation of Fixed Effects:
+            (Intr) rcnSR_ cnStAx conStB cnStBx conStC conStD cnLbLV
+rcntSwpRt_l -0.115                                                 
+coinSetAx   -0.610  0.000                                          
+coinSetB    -0.180  0.026  0.113                                   
+coinSetBx   -0.575  0.051  0.698  0.107                            
+coinSetC    -0.138 -0.082  0.094  0.476  0.084                     
+coinSetD    -0.121 -0.023  0.080  0.339  0.073  0.449              
+coinLabelLV -0.139 -0.019  0.004 -0.006 -0.001  0.003  0.000       
+coinLabelNV -0.134 -0.003  0.000 -0.010 -0.005 -0.011 -0.016  0.499

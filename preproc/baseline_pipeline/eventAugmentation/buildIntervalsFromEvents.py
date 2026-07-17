@@ -251,7 +251,7 @@ def main():
                 print(f"❌ Failed: {interval_path} :: {e}", file=sys.stderr)
 
         sys.exit(1 if failures else 0)
-
+    print('Done!')
     # ---- single-file mode ----
     if args.events is None or args.out is None:
         ap.error("--events and --out are required in single-file mode (--interval)")
@@ -262,6 +262,8 @@ def main():
     out_df = build_interval_from_events_split(interval_df, events_df, debug=debug)
     out_df.to_csv(args.out, index=False)
     print(f"✅ Wrote: {args.out}")
+
+    print('Done!')
 
 
 if __name__ == "__main__":

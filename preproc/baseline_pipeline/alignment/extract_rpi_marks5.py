@@ -65,7 +65,7 @@ def main() -> None:
     ap.add_argument(
         "--out_dir", default="", help="Directory to write the marks CSV(s) (default: alongside ML/CSV input).",)
     ap.add_argument(
-        "--strip-ml-suffixes", default="_events_final,_processed", help="Comma-separated suffixes to strip from ML stem for output naming.",)
+        "--strip-ml-suffixes", default="_eventsFlat,_processed", help="Comma-separated suffixes to strip from ML stem for output naming.",)
     ap.add_argument(
         "--allow_day_rollover", action="store_true", help="If times go backward across files, add 1 day to subsequent times.",)
     ap.add_argument(
@@ -160,9 +160,9 @@ def main() -> None:
         if not args.ml_csv_file or not Path(args.ml_csv_file).exists():
             raise ValueError("auto timezone offset requires --ml_csv_file")
         ml_df = pd.read_csv(args.ml_csv_file)
-        if "mLTimestamp" not in ml_df.columns:
-            raise ValueError("ML CSV must contain 'mLTimestamp' column for auto offset")
-        ml_times = pd.to_datetime(ml_df["mLTimestamp"], errors="coerce").dropna()
+        if "eMLT_orig" not in ml_df.columns:
+            raise ValueError("ML CSV must contain 'eMLT_orig' column for auto offset")
+        ml_times = pd.to_datetime(ml_df["eMLT_orig"], errors="coerce").dropna()
         if ml_times.empty:
             raise ValueError("No valid timestamps found in ML CSV for auto offset")
         est = _auto_offset_hours(

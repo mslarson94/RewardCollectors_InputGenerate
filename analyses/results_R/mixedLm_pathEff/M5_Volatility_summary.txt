@@ -1,0 +1,33 @@
+Linear mixed model fit by maximum likelihood . t-tests use Satterthwaite's method ['lmerModLmerTest']
+Formula: path_eff_raw ~ recentSwapRate_all + coinSet + (1 | participantID)
+   Data: analysis_df
+
+     AIC      BIC   logLik deviance df.resid 
+ -3428.1  -3388.9   1721.1  -3442.1     1989 
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-4.5797 -0.5609  0.0311  0.5693  3.8996 
+
+Random effects:
+ Groups        Name        Variance Std.Dev.
+ participantID (Intercept) 0.009251 0.09618 
+ Residual                  0.010013 0.10007 
+Number of obs: 1996, groups:  participantID, 19
+
+Fixed effects:
+                     Estimate Std. Error         df t value Pr(>|t|)    
+(Intercept)         4.570e-01  2.959e-02  1.958e+01  15.445    2e-12 ***
+recentSwapRate_all  2.579e-01  2.502e-02  1.991e+03  10.310  < 2e-16 ***
+coinSetAx           2.773e-03  4.629e-02  2.056e+01   0.060 0.952800    
+coinSetB           -4.185e-02  1.082e-02  1.984e+03  -3.869 0.000113 ***
+coinSetBx           3.729e-03  4.795e-02  2.316e+01   0.078 0.938678    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Correlation of Fixed Effects:
+            (Intr) rcnSR_ cnStAx conStB
+rcntSwpRt_l -0.074                     
+coinSetAx   -0.635 -0.006              
+coinSetB    -0.132  0.003  0.084       
+coinSetBx   -0.617  0.040  0.850  0.082

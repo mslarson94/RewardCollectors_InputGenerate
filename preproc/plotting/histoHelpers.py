@@ -86,6 +86,7 @@ def add_true_session_elapsed_by_block_events(
     df[out_col] = delta.groupby(block_id).cumsum()
     return df
 
+## should be renamed to exclude_by_group_median_sd_threshold
 def exclude_outliers(
     df: pd.DataFrame,
     column: str,

@@ -1,0 +1,43 @@
+Linear mixed model fit by maximum likelihood . t-tests use Satterthwaite's method ['lmerModLmerTest']
+Formula: path_eff_raw ~ t_early_20 + t_late_20 + recentSwapRate_all +      coinSet + orderedCollect + pathValue + (1 | participantID)
+   Data: analysis_df
+
+     AIC      BIC   logLik deviance df.resid 
+ -3606.9  -3539.7   1815.4  -3630.9     1984 
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-5.2373 -0.5532  0.0071  0.5417  3.9365 
+
+Random effects:
+ Groups        Name        Variance Std.Dev.
+ participantID (Intercept) 0.011320 0.10640 
+ Residual                  0.009084 0.09531 
+Number of obs: 1996, groups:  participantID, 19
+
+Fixed effects:
+                     Estimate Std. Error         df t value Pr(>|t|)    
+(Intercept)         4.061e-01  3.311e-02  2.030e+01  12.264 7.63e-11 ***
+t_early_20          5.307e-03  4.405e-04  1.993e+03  12.050  < 2e-16 ***
+t_late_20          -5.992e-05  1.598e-04  1.983e+03  -0.375    0.708    
+recentSwapRate_all  1.485e-01  2.538e-02  1.982e+03   5.850 5.73e-09 ***
+coinSetAx          -3.434e-02  5.089e-02  1.994e+01  -0.675    0.508    
+coinSetB           -4.149e-02  1.044e-02  1.994e+03  -3.973 7.35e-05 ***
+coinSetBx           2.466e-02  5.227e-02  2.189e+01   0.472    0.642    
+orderedCollect1     6.971e-04  5.884e-03  1.989e+03   0.118    0.906    
+pathValue25        -4.273e-02  1.060e-02  1.981e+03  -4.031 5.76e-05 ***
+pathValue30         3.709e-03  7.088e-03  1.994e+03   0.523    0.601    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Correlation of Fixed Effects:
+            (Intr) t_r_20 t_l_20 rcnSR_ cnStAx conStB cnStBx ordrC1 pthV25
+t_early_20  -0.107                                                        
+t_late_20    0.028 -0.353                                                 
+rcntSwpRt_l -0.024 -0.315 -0.016                                          
+coinSetAx   -0.617 -0.043 -0.021  0.013                                   
+coinSetB    -0.093  0.028 -0.015 -0.005  0.076                            
+coinSetBx   -0.612  0.031 -0.002  0.022  0.879  0.076                     
+ordrdCllct1 -0.064 -0.019  0.093 -0.005 -0.028 -0.068 -0.026              
+pathValue25 -0.077 -0.018  0.018  0.000 -0.013 -0.068 -0.012  0.081       
+pathValue30 -0.094 -0.123  0.000  0.044 -0.007 -0.111 -0.016 -0.257  0.426

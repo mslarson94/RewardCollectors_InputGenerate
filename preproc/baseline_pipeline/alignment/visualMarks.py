@@ -36,7 +36,7 @@ def parse_ml_time(tstr: str):
 def load_ml_marks(csv_path: str) -> pd.DataFrame:
     df = pd.read_csv(csv_path)
     marks = df[df["lo_eventType"].astype(str).str.strip().str.lower() == "mark"].copy()
-    marks["ml_dt"] = marks["mLTimestamp_raw"].astype(str).map(parse_ml_time)
+    marks["ml_dt"] = marks["eMLT_orig"]
 
     def fmt_label(b, r):
         if pd.notnull(b) and pd.notnull(r):
@@ -44,7 +44,7 @@ def load_ml_marks(csv_path: str) -> pd.DataFrame:
         return ""
 
     marks["label"] = marks.apply(lambda r: fmt_label(r["BlockNum"], r["RoundNum"]), axis=1)
-    return marks[["mLTimestamp_raw", "ml_dt", "BlockNum", "RoundNum", "label"]].reset_index(drop=True)
+    return marks[["eMLT_orig", "ml_dt", "BlockNum", "RoundNum", "label"]].reset_index(drop=True)
 
 
 def extract_times_after_tag(log_path: str, tag: str) -> pd.DataFrame:

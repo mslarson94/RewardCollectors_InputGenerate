@@ -19,7 +19,7 @@ fi
 # Segment barebones
 CODE_DIR="/Users/mairahmac/Desktop/myra_code/Python/RewardCollectors_InputGenerate/preproc/plotting"
 TRUE_BASE_DIR="/Users/mairahmac/Desktop/RC_TestingNotes"
-PROC_DIR="FreshStart"
+PROC_DIR="FreshStart_redoAgainAgainAgain_PO"
 # PROC_DIR="FreshStart_mini"
 META_FILE="collatedData.xlsx"
 EVENTS_DIR="Events_Final_NoWalks"
@@ -27,13 +27,59 @@ EVENTS_DIR="Events_Final_NoWalks"
 echo "✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨" | tee -a "$LOG_FILE"
 echo "🚀 Starting coinset_by_coinlabel_plots.py at $(date)" | tee -a "$LOG_FILE"
 python "${CODE_DIR}/coinset_by_coinlabel_plots.py" \
-  --input "${TRUE_BASE_DIR}/${PROC_DIR}/full/PinDrops_All/PinDrops_ALL_main.csv" \
-  --out-root "${TRUE_BASE_DIR}/${PROC_DIR}/full/PinDrops_Main/CoinSetByCoinLabel" \
+  --input "${TRUE_BASE_DIR}/${PROC_DIR}/EventSegmentation/megaFiles/allIntervalData_AN.csv" \
+  --out-root "${TRUE_BASE_DIR}/${PROC_DIR}/EventSegmentation/megaFiles/CoinSetByCoinSetID" \
   --formats png,pdf \
   --voi dropDist \
+  --coinlabel-col CoinSetID \
   --use-outlier-filter \
   >> "$LOG_FILE" 2>&1
 echo "✅ coinset_by_coinlabel_plots.py completed at $(date)" | tee -a "$LOG_FILE"
+
+
+echo "✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨" | tee -a "$LOG_FILE"
+echo "🚀 Starting coinset_by_coinlabel_plots.py at $(date)" | tee -a "$LOG_FILE"
+python "${CODE_DIR}/coinset_by_coinlabel_plots.py" \
+  --input "${TRUE_BASE_DIR}/${PROC_DIR}/EventSegmentation/megaFiles/allIntervalData_AN.csv" \
+  --out-root "${TRUE_BASE_DIR}/${PROC_DIR}/EventSegmentation/megaFiles/CoinSetByCoinSetID" \
+  --formats png,pdf \
+  --voi roundElapsed_s \
+  --coinlabel-col CoinSetID \
+  --use-outlier-filter \
+  >> "$LOG_FILE" 2>&1
+echo "✅ coinset_by_coinlabel_plots.py completed at $(date)" | tee -a "$LOG_FILE"
+
+echo "✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨" | tee -a "$LOG_FILE"
+echo "🚀 Starting coinset_by_coinlabel_plots.py at $(date)" | tee -a "$LOG_FILE"
+python "${CODE_DIR}/coinset_by_coinlabel_plots.py" \
+  --input "${TRUE_BASE_DIR}/${PROC_DIR}/EventSegmentation/megaFiles/allIntervalData_AN.csv" \
+  --out-root "${TRUE_BASE_DIR}/${PROC_DIR}/EventSegmentation/megaFiles/CoinSetByCoinSetID" \
+  --formats png,pdf \
+  --voi roundFrac \
+  --coinlabel-col CoinSetID \
+  --use-outlier-filter \
+  >> "$LOG_FILE" 2>&1
+echo "✅ coinset_by_coinlabel_plots.py completed at $(date)" | tee -a "$LOG_FILE"
+
+
+echo "✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨" | tee -a "$LOG_FILE"
+echo "🚀 Starting coinset_by_coinlabel_plots.py at $(date)" | tee -a "$LOG_FILE"
+python "${CODE_DIR}/coinset_by_coinlabel_plots.py" \
+  --input "${TRUE_BASE_DIR}/${PROC_DIR}/EventSegmentation/megaFiles/allIntervalData_AN.csv" \
+  --out-root "${TRUE_BASE_DIR}/${PROC_DIR}/EventSegmentation/megaFiles/CoinSetByCoinSetID" \
+  --formats png,pdf \
+  --voi path_eff_raw \
+  --coinlabel-col CoinSetID \
+  --use-outlier-filter \
+  >> "$LOG_FILE" 2>&1
+echo "✅ coinset_by_coinlabel_plots.py completed at $(date)" | tee -a "$LOG_FILE"
+
+
+
+
+
+
+
 
 # echo "✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨" | tee -a "$LOG_FILE"
 # echo "🚀 Starting coinset_by_coinlabel_plots.py at $(date)" | tee -a "$LOG_FILE"

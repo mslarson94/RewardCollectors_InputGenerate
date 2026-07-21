@@ -29,6 +29,85 @@ def read_csv_loose(path: Path) -> pd.DataFrame:
     return df
 
 
+def attach_participant_metrics(
+    df: pd.DataFrame,
+    summary_path: Path,
+) -> pd.DataFrame:
+    """Attach swapRate_tot and PVSS_AvgScore without changing row count."""
+    summary = pd.read_csv(summary_path)
+
+    required_main = {"participantID", "sessionID"}
+    required_summary = {
+        "participantID",
+        "totScore",
+        "swapRate_tot",
+        "PVSS_TotalScore",
+        "PVSS_AvgScore",
+    }
+
+    missing_main = required_main - set(df.columns)
+    if missing_main:
+        raise ValueError(
+            "Participant metrics require these input columns: "
+            f"{sorted(missing_main)}"
+        )
+
+    missing_summary = required_summary - set(summary.columns)
+    if missing_summary:
+        raise ValueError(
+            "Participant summary is missing columns: "
+            f"{sorted(missing_summary)}"
+        )
+
+    # Normalize identifiers to avoid int/string merge mismatches.
+    out = df.copy()
+    out["participantID"] = out["participantID"].astype("string").str.strip()
+    out["sessionID"] = out["sessionID"].astype("string").str.strip()
+
+    summary = summary.copy()
+    summary["participantID"] = (
+        summary["participantID"].astype("string").str.strip()
+    )
+
+    merge_keys = ["participantID"]
+    if "sessionID" in summary.columns:
+        summary["sessionID"] = summary["sessionID"].astype("string").str.strip()
+        merge_keys.append("sessionID")
+
+    keep_cols = merge_keys + [
+        "totScore",
+        "swapRate_tot",
+        "PVSS_TotalScore",
+        "PVSS_AvgScore",
+    ]
+    summary = summary[keep_cols].copy()
+
+    # Multiple identical summary rows are harmless; conflicting rows are not.
+    summary = summary.drop_duplicates()
+    duplicate_keys = summary.duplicated(merge_keys, keep=False)
+    if duplicate_keys.any():
+        conflicts = summary.loc[duplicate_keys, merge_keys].drop_duplicates()
+        raise ValueError(
+            "Participant summary contains multiple metric rows for the same "
+            f"merge key(s) {merge_keys}. Conflicting keys include:\n"
+            f"{conflicts.head(10).to_string(index=False)}"
+        )
+
+    before = len(out)
+    out = out.merge(
+        summary,
+        on=merge_keys,
+        how="left",
+        validate="many_to_one",
+    )
+    if len(out) != before:
+        raise RuntimeError(
+            "Participant metric merge unexpectedly changed the input row count."
+        )
+
+    return out
+
+
 def _series_truthy(s: pd.Series) -> pd.Series:
     if pd.api.types.is_bool_dtype(s):
         return s.fillna(False)
@@ -107,6 +186,25 @@ def parse_args() -> argparse.Namespace:
     ap.add_argument("--min-n-per-group", type=int, default=10, help="Minimum n per group for stats")
     ap.add_argument("--alpha", type=float, default=0.05, help="Alpha for reporting")
     ap.add_argument("--layout-ncols", type=int, default=3, help="Number of columns for layout-first facet grids")
+    ap.add_argument(
+        "--show-plot-stats",
+        action=argparse.BooleanOptionalAction,
+        default=True,
+        help="Show n, mean, SD, and histogram bin size annotations (default: on).",
+    )
+    ap.add_argument(
+        "--show-participant-metrics",
+        action="store_true",
+        help=(
+            "Show swapRate_tot and PVSS_AvgScore in sessionID facets. "
+            "Requires --participant-summary."
+        ),
+    )
+    ap.add_argument(
+        "--participant-summary",
+        type=Path,
+        help="CSV containing participantID, totScore, swapRate_tot, PVSS_TotalScore, and PVSS_AvgScore.",
+    )
     return ap.parse_args()
 
 
@@ -123,6 +221,17 @@ def main() -> None:
         require_cols=args.require_cols,
         exclude_true_cols=args.exclude_true_cols,
     )
+
+    if args.show_participant_metrics:
+        if args.layout_col != "sessionID":
+            raise ValueError(
+                "--show-participant-metrics requires --layout-col sessionID."
+            )
+        if args.participant_summary is None:
+            raise ValueError(
+                "--show-participant-metrics requires --participant-summary PATH."
+            )
+        df = attach_participant_metrics(df, args.participant_summary)
 
     if args.layout_col not in df.columns:
         raise ValueError(f"Missing layout column: {args.layout_col}")
@@ -142,6 +251,8 @@ def main() -> None:
         voi_str=args.voi_str,
         voi_unit=args.voi_unit,
         ncols=args.layout_ncols,
+        show_stats=args.show_plot_stats,
+        show_participant_metrics=args.show_participant_metrics,
     )
     _save_figs(
         figs,
@@ -163,6 +274,8 @@ def main() -> None:
         voi_str=args.voi_str,
         voi_unit=args.voi_unit,
         ncols=args.layout_ncols,
+        show_stats=args.show_plot_stats,
+        show_participant_metrics=args.show_participant_metrics,
     )
     _save_figs(
         figs,
@@ -183,6 +296,8 @@ def main() -> None:
         layout_col=args.layout_col,
         voi_str=args.voi_str,
         voi_unit=args.voi_unit,
+        show_stats=args.show_plot_stats,
+        show_participant_metrics=False,
     )
     _save_figs(
         figs,
@@ -203,6 +318,8 @@ def main() -> None:
         layout_col=args.layout_col,
         voi_str=args.voi_str,
         voi_unit=args.voi_unit,
+        show_stats=args.show_plot_stats,
+        show_participant_metrics=False,
     )
     _save_figs(
         figs,

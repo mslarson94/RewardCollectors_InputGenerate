@@ -116,9 +116,9 @@ def main() -> None:
     no_cd_main_df = filtered_df.loc[filtered_cohort == args.main_label].copy()
     no_cd_rr_df = filtered_df.loc[filtered_cohort == args.rr_label].copy()
 
-    no_cd_all_out = add_suffix(output_base, "noABCD_all")
-    no_cd_main_out = add_suffix(output_base, "noABCD_main")
-    no_cd_rr_out = add_suffix(output_base, "noABCD_RR")
+    no_cd_all_out = add_suffix(output_base, "noCD_all")
+    no_cd_main_out = add_suffix(output_base, "noCD_main")
+    no_cd_rr_out = add_suffix(output_base, "noCD_RR")
 
     # Write files
     original_all_df.to_csv(original_all_out, index=False)
@@ -134,7 +134,7 @@ def main() -> None:
     print(f"Cohort column: {args.cohort_col}")
     print(f"Main label: {args.main_label}")
     print(f"RR label: {args.rr_label}")
-    print(f"Excluded {args.coinset_col} values for noABCD outputs: {sorted(exclude_values)}")
+    print(f"Excluded {args.coinset_col} values for noCD outputs: {sorted(exclude_values)}")
     print(f"Rows before exclusion: {len(df)}")
     print(f"Rows after exclusion: {len(filtered_df)}")
     print(f"Rows removed by exclusion: {len(df) - len(filtered_df)}")
@@ -159,19 +159,19 @@ def main() -> None:
     )
     summarize_output(
         no_cd_all_df,
-        name="NO A/B/C/D - ALL",
+        name="NO C/D - ALL",
         coinset_col=args.coinset_col,
         path=no_cd_all_out,
     )
     summarize_output(
         no_cd_main_df,
-        name="NO A/B/C/D - MAIN",
+        name="NO C/D - MAIN",
         coinset_col=args.coinset_col,
         path=no_cd_main_out,
     )
     summarize_output(
         no_cd_rr_df,
-        name="NO A/B/C/D - RR",
+        name="NO C/D - RR",
         coinset_col=args.coinset_col,
         path=no_cd_rr_out,
     )

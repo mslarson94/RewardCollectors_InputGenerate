@@ -1,4 +1,3 @@
-```python
 #!/usr/bin/env python3
 
 from __future__ import annotations
@@ -18,7 +17,7 @@ def parse_arguments() -> argparse.Namespace:
     )
 
     parser.add_argument(
-        "input_file",
+        "--inFile",
         type=Path,
         help="Path to the input CSV file.",
     )
@@ -63,9 +62,9 @@ def parse_arguments() -> argparse.Namespace:
 
 
 def validate_arguments(args: argparse.Namespace) -> None:
-    if not args.input_file.is_file():
+    if not args.inFile.is_file():
         raise FileNotFoundError(
-            f"Input file does not exist: {args.input_file}"
+            f"Input file does not exist: {args.inFile}"
         )
 
     if args.max_rounds < 1:
@@ -76,8 +75,8 @@ def build_default_output_path(
     input_file: Path,
     max_rounds: int,
 ) -> Path:
-    return input_file.with_name(
-        f"{input_file.stem}_first_{max_rounds}_rounds.csv"
+    return inFile.with_name(
+        f"{inFile.stem}_first_{max_rounds}_rounds.csv"
     )
 
 
@@ -165,7 +164,7 @@ def main() -> None:
     )
 
     df = pd.read_csv(
-        args.input_file,
+        args.inFile,
         low_memory=False,
     )
 
@@ -186,7 +185,7 @@ def main() -> None:
         index=False,
     )
 
-    print(f"Input file:      {args.input_file}")
+    print(f"Input file:      {args.inFile}")
     print(f"Output file:     {output_file}")
     print(f"Original rows:   {len(df):,}")
     print(f"Retained rows:   {len(filtered_df):,}")
@@ -216,4 +215,4 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-```
+

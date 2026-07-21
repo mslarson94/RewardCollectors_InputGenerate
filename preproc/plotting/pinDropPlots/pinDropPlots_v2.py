@@ -213,18 +213,18 @@ def plot_tp2_scatter_allsubjects(
     voi_unit: str = "",
     title_prefix: str = "",
 ):
-    req = [variableOfInterest, "coinLabel", "trueSession_elapsed_s"]
+    req = [variableOfInterest, "coinLabel", "roundElapsed_s"]
     missing = [c for c in req if c not in df.columns]
     if missing:
         raise ValueError(f"Missing columns for TP2 scatter: {missing}")
 
     sdf = df.copy()
     sdf[variableOfInterest] = pd.to_numeric(sdf[variableOfInterest], errors="coerce")
-    sdf["trueSession_elapsed_s"] = pd.to_numeric(sdf["trueSession_elapsed_s"], errors="coerce")
-    mask = sdf[variableOfInterest].notna() & sdf["trueSession_elapsed_s"].notna() & sdf["coinLabel"].notna()
+    sdf["roundElapsed_s"] = pd.to_numeric(sdf["roundElapsed_s"], errors="coerce")
+    mask = sdf[variableOfInterest].notna() & sdf["roundElapsed_s"].notna() & sdf["coinLabel"].notna()
     if "dropQual" in sdf.columns:
         mask &= sdf["dropQual"].astype(str).str.lower().isin(["good", "bad"])
-    dat = sdf.loc[mask, ["trueSession_elapsed_s", variableOfInterest, "coinLabel"]].reset_index(drop=True)
+    dat = sdf.loc[mask, ["roundElapsed_s", variableOfInterest, "coinLabel"]].reset_index(drop=True)
     if dat.empty:
         raise ValueError("No data left after filtering; cannot plot.")
 
@@ -234,7 +234,7 @@ def plot_tp2_scatter_allsubjects(
 
     fig, ax = plt.subplots(figsize=(12, 6))
     for k, sub in dat.groupby("coinLabel", sort=True):
-        ax.scatter(sub["trueSession_elapsed_s"], sub[variableOfInterest], s=18, alpha=0.5, label=k)
+        ax.scatter(sub["roundElapsed_s"], sub[variableOfInterest], s=18, alpha=0.5, label=k)
 
     title_bits = [t for t in [title_prefix.strip(), f"{voi_str} vs Overall Session Elapsed Time"] if t]
     ax.set_title(" — ".join(title_bits), fontsize=14)

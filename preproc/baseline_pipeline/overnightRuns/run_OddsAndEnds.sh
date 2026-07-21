@@ -138,7 +138,7 @@ LAMBDA="1"
 # echo "🚀 Starting generate_round_dur_optionA.py at $(date)" | tee -a "$LOG_FILE"
 # python "${CODE_DIR}/preproc/baseline_pipeline/eventAugmentation/generate_round_dur_optionA.py" \
 #   --input "${TRUE_BASE_DIR}/${PROC_DIR}/EventSegmentation/megaFiles/allIntervalDataKnotted_AN_EVBeh_baseQC.csv" \
-#   --outdir "${TRUE_BASE_DIR}/${PROC_DIR}/EventSegmentation/megaFiles" \
+#   --outdir "${TRUE_BASE_DIR}/${PROC_DIR}/EventSegmentation/megaFiles/mad_2" \
 #   --preferred-group rr_sess \
 #   --preferred-method mad \
 #   --mad-threshold 3.0 \
@@ -147,8 +147,7 @@ LAMBDA="1"
 # echo "✅ generate_round_dur_optionA.py completed at $(date)" | tee -a "$LOG_FILE"
 
 
-
-
+# ########## All Rounds ###########
 # ### Making my decision expansion file
 # echo "✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨" | tee -a "$LOG_FILE"
 # echo "🚀 Starting prepDataForDecisionModel.py Lambda ${LAMBDA} at $(date)" | tee -a "$LOG_FILE"
@@ -159,7 +158,7 @@ LAMBDA="1"
 #   >> "$LOG_FILE" 2>&1
 # echo "✅ prepDataForDecisionModel.py Lambda ${LAMBDA} completed at $(date)" | tee -a "$LOG_FILE"
 
-# ### Making my decision expansion file
+
 # echo "✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨" | tee -a "$LOG_FILE"
 # echo "🚀 Starting prepDataForDecisionModel.py Lambda ${LAMBDA} at $(date)" | tee -a "$LOG_FILE"
 # python "${CODE_DIR}/preproc/extraction/prepDataForDecisionModel.py" \
@@ -168,25 +167,81 @@ LAMBDA="1"
 #   --out_csv "${TRUE_BASE_DIR}/${PROC_DIR}/EventSegmentation/megaFiles/decisionExpanded_PO.csv" \
 #   >> "$LOG_FILE" 2>&1
 # echo "✅ prepDataForDecisionModel.py Lambda ${LAMBDA} completed at $(date)" | tee -a "$LOG_FILE"
+# ####################
 
+######### First 50 rounds only ###########
+
+echo "✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨" | tee -a "$LOG_FILE"
+echo "🚀 Starting cappingTotalRounds.py at $(date)" | tee -a "$LOG_FILE"
+python "${CODE_DIR}/preproc/extraction/cappingTotalRounds.py" \
+    --inFile "${TRUE_BASE_DIR}/${PROC_DIR}/EventSegmentation/megaFiles/allIntervalDataKnotted_AN_EVBeh.csv" \
+    --output "${TRUE_BASE_DIR}/${PROC_DIR}/EventSegmentation/megaFiles/allIntervalDataKnotted_AN_EVBeh_1st50Rds.csv" \
+    --summary "${TRUE_BASE_DIR}/${PROC_DIR}/EventSegmentation/megaFiles/session_round_counts.csv" \
+    >> "$LOG_FILE" 2>&1
+echo "✅ cappingTotalRounds.py completed at $(date)" | tee -a "$LOG_FILE"
+
+echo "✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨" | tee -a "$LOG_FILE"
+echo "🚀 Starting cappingTotalRounds.py at $(date)" | tee -a "$LOG_FILE"
+python "${CODE_DIR}/preproc/extraction/cappingTotalRounds.py" \
+    --inFile "${TRUE_BASE_DIR}/${PROC_DIR}/EventSegmentation/megaFiles/allIntervalDataKnotted_Prune_PO.csv" \
+    --output "${TRUE_BASE_DIR}/${PROC_DIR}/EventSegmentation/megaFiles/allIntervalDataKnotted_Prune_PO_1st50Rds.csv" \
+    --summary "${TRUE_BASE_DIR}/${PROC_DIR}/EventSegmentation/megaFiles/session_round_counts.csv" \
+    >> "$LOG_FILE" 2>&1
+echo "✅ cappingTotalRounds.py completed at $(date)" | tee -a "$LOG_FILE"
+
+echo "✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨" | tee -a "$LOG_FILE"
+echo "🚀 Starting generate_base_qc_flags.py at $(date)" | tee -a "$LOG_FILE"
+python "${CODE_DIR}/preproc/baseline_pipeline/eventAugmentation/generate_base_qc_flags.py" \
+  --input "${TRUE_BASE_DIR}/${PROC_DIR}/EventSegmentation/megaFiles/allIntervalDataKnotted_AN_EVBeh_1st50Rds.csv" \
+  --outdir "${TRUE_BASE_DIR}/${PROC_DIR}/EventSegmentation/megaFiles" \
+  >> "$LOG_FILE" 2>&1
+echo "✅ generate_base_qc_flags.py completed at $(date)" | tee -a "$LOG_FILE"
+
+echo "✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨" | tee -a "$LOG_FILE"
+echo "🚀 Starting generate_round_dur_optionA.py at $(date)" | tee -a "$LOG_FILE"
+python "${CODE_DIR}/preproc/baseline_pipeline/eventAugmentation/generate_round_dur_optionA.py" \
+  --input "${TRUE_BASE_DIR}/${PROC_DIR}/EventSegmentation/megaFiles/allIntervalDataKnotted_AN_EVBeh_1st50Rds_baseQC.csv" \
+  --outdir "${TRUE_BASE_DIR}/${PROC_DIR}/EventSegmentation/megaFiles/mad_2" \
+  --preferred-group rr_sess \
+  --preferred-method mad \
+  --mad-threshold 2.0 \
+  --min-group-n 8 \
+  >> "$LOG_FILE" 2>&1
+echo "✅ generate_round_dur_optionA.py completed at $(date)" | tee -a "$LOG_FILE"
+
+
+
+### Making my decision expansion file
+echo "✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨" | tee -a "$LOG_FILE"
+echo "🚀 Starting prepDataForDecisionModel.py Lambda ${LAMBDA} at $(date)" | tee -a "$LOG_FILE"
+python "${CODE_DIR}/preproc/extraction/prepDataForDecisionModel.py" \
+  --interval_csv "${TRUE_BASE_DIR}/${PROC_DIR}/EventSegmentation/megaFiles/mad_2/allIntervalDataKnotted_AN_EVBeh_1st50Rds_baseQC_roundDur_optionA.csv" \
+  --utility_csv "/Users/mairahmac/Desktop/TriangleSets/RoutePlanWeightUtility/pathUtility_All/pathUtility_lambda${LAMBDA}.csv" \
+  --out_csv "${TRUE_BASE_DIR}/${PROC_DIR}/EventSegmentation/megaFiles/mad_2/decisionExpanded_AN.csv" \
+  >> "$LOG_FILE" 2>&1
+echo "✅ prepDataForDecisionModel.py Lambda ${LAMBDA} completed at $(date)" | tee -a "$LOG_FILE"
+
+### Making my decision expansion file
+echo "✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨" | tee -a "$LOG_FILE"
+echo "🚀 Starting prepDataForDecisionModel.py Lambda ${LAMBDA} at $(date)" | tee -a "$LOG_FILE"
+python "${CODE_DIR}/preproc/extraction/prepDataForDecisionModel.py" \
+  --interval_csv "${TRUE_BASE_DIR}/${PROC_DIR}/EventSegmentation/megaFiles/allIntervalDataKnotted_Prune_PO_1st50Rds.csv" \
+  --utility_csv "/Users/mairahmac/Desktop/TriangleSets/RoutePlanWeightUtility/pathUtility_All/pathUtility_lambda${LAMBDA}.csv" \
+  --out_csv "${TRUE_BASE_DIR}/${PROC_DIR}/EventSegmentation/megaFiles/mad_2/decisionExpanded_PO.csv" \
+  >> "$LOG_FILE" 2>&1
+echo "✅ prepDataForDecisionModel.py Lambda ${LAMBDA} completed at $(date)" | tee -a "$LOG_FILE"
+#######################
 
 echo "✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨" | tee -a "$LOG_FILE"
 echo "🚀 Starting exclude_coinsets_cd.py at $(date)" | tee -a "$LOG_FILE"
 python "${CODE_DIR}/preproc/baseline_pipeline/eventAugmentation/exclude_coinsets_cd.py" \
-  --input "${TRUE_BASE_DIR}/${PROC_DIR}/EventSegmentation/megaFiles/allIntervalDataKnotted_AN_EVBeh_baseQC_roundDur_optionA.csv" \
-  --output "${TRUE_BASE_DIR}/${PROC_DIR}/EventSegmentation/megaFiles/AN_PinDropsKnottedFiltered.csv" \
-  --exclude A B C D \
+  --input "${TRUE_BASE_DIR}/${PROC_DIR}/EventSegmentation/megaFiles/mad_2/allIntervalDataKnotted_AN_EVBeh_1st50Rds_baseQC_roundDur_optionA.csv" \
+  --output "${TRUE_BASE_DIR}/${PROC_DIR}/EventSegmentation/megaFiles/mad_2/AN_PinDropsKnottedFiltered_1st50Rds.csv" \
+  --exclude C D \
 >> "$LOG_FILE" 2>&1
 echo "✅ exclude_coinsets_bcd.py completed at $(date)" | tee -a "$LOG_FILE"
 
-INPUT_FILE_1="${TRUE_BASE_DIR}/${PROC_DIR}/EventSegmentation/megaFiles/AN_PinDropsKnottedFiltered_all.csv"
-OUTPUT_FILE_2="${TRUE_BASE_DIR}/${PROC_DIR}/EventSegmentation/megaFiles/AN_PinDropsKnottedFiltered_1st50Rds_noCD_all.csv"
-SUMMARY_FILE="${TRUE_BASE_DIR}/${PROC_DIR}/EventSegmentation/megaFiles/session_round_counts.csv"
-MAX_UNIQUE_ROUNDS = 50
-python filter_rounds.py \
-    AN_PinDropsKnottedFiltered_all.csv \
-    --output filtered.csv \
-    --summary session_summary.csv
+
 # ### Plotting Ideal Distances Stuff 
 # echo "✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨" | tee -a "$LOG_FILE"
 # echo "🚀 Starting plot_idealDistByCoinLayout.py at $(date)" | tee -a "$LOG_FILE"

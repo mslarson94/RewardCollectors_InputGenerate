@@ -15,7 +15,7 @@ from matplotlib.lines import Line2D
 # Configuration
 # -------------------------------
 #CSV_PATH = Path("/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/MergedEvents_noWalks/Merged_ParticipantDayRoleCoinSet/MergedEvents/R037_AN_B_main_events.csv")
-CSV_PATH = Path("/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart/full/PinDrops_All/PinDrops_ALL.csv")
+CSV_PATH = Path("/Users/mairahmac/Desktop/RC_TestingNotes/FreshStart_redoAgainAgainAgain_PO_redo/EventSegmentation/megaFiles/mad_2/AN_PinDropsKnottedFiltered_1st50Rds_noCD_main.csv")
 # Marker/Color conventions (explicitly requested)
 MARKER_BY_COIN = {"HV": "*", "LV": "o", "NV": "o"}       # NV will be hollow
 FILLED_BY_COIN = {"HV": True, "LV": True, "NV": False}

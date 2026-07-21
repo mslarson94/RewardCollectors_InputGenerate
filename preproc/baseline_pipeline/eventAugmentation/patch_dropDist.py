@@ -48,9 +48,9 @@ def main() -> None:
 
     x = pd.to_numeric(df[args.dropdist_col], errors="coerce")
 
-    df["dropQual_corrected"] = pd.Series(pd.NA, index=df.index, dtype="string")
-    df.loc[x.notna() & (x <= args.threshold), "dropQual_corrected"] = "good"
-    df.loc[x.notna() & (x > args.threshold), "dropQual_corrected"] = "bad"
+    # df["dropQual_corrected"] = pd.Series(pd.NA, index=df.index, dtype="string")
+    # df.loc[x.notna() & (x <= args.threshold), "dropQual_corrected"] = "good"
+    # df.loc[x.notna() & (x > args.threshold), "dropQual_corrected"] = "bad"
 
     df[args.log_col] = np.where(x > 0, np.log(x), np.nan)
 

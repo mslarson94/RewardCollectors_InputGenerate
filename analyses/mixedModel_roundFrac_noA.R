@@ -78,7 +78,7 @@ df <- df %>%
 # Offending rows + model_df  (FIXED)
 # ----------------------------------
 needed <- c(
-  "roundElapsed_s", "coinLabel", "TotSesh_runTot_RoundNum", "recentSwapRate_all", "roundFrac",
+  "roundElapsed_s", "coinLabel", "TotSesh_actTest_RoundNum", "recentSwapRate_all", "roundFrac",
   "main_RR", "WalkAvgSpeed", "coinSet", "isSwap", "participantID",
   "t_early_15", "t_late_15", "t_early_20", "t_late_20", "t_early_25", "t_late_25"
 )

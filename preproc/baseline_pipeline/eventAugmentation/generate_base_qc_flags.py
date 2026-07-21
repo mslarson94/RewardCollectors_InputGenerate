@@ -189,6 +189,8 @@ def main() -> None:
     args = parse_args()
     outdir = Path(args.outdir)
     outdir.mkdir(parents=True, exist_ok=True)
+    outdir_qc = Path(args.outdir, "RoundDurationQCFiles")
+    outdir_qc.mkdir(parents=True, exist_ok=True)
 
     input_path = Path(args.input)
     df = pd.read_csv(input_path)
@@ -198,9 +200,9 @@ def main() -> None:
 
     stem = input_path.stem
     augmented_path = outdir / f"{stem}_baseQC.csv"
-    round_summary_path = outdir / "round_base_qc_summary.csv"
-    overall_summary_path = outdir / "base_qc_overall_summary.csv"
-    metadata_path = outdir / "base_qc_run_metadata.json"
+    round_summary_path = outdir_qc / "round_base_qc_summary.csv"
+    overall_summary_path = outdir_qc / "base_qc_overall_summary.csv"
+    metadata_path = outdir_qc / "base_qc_run_metadata.json"
 
     pin_df.to_csv(augmented_path, index=False)
     round_df.to_csv(round_summary_path, index=False)

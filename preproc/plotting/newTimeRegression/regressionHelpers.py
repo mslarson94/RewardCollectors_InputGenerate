@@ -11,12 +11,11 @@ import pandas as pd
 
 
 DEFAULT_OUTCOME_COLUMN = "dropDist"
-DEFAULT_SESSION_COLUMN = "sessionID"
-DEFAULT_ROUND_COLUMN = "roundID"
-DEFAULT_SUBJECT_COLUMN = "participantID"
+DEFAULT_SUBJECT_COLUMN = "sessionID"
 DEFAULT_COIN_COLUMN = "coinLabel"
-DEFAULT_CORRECTNESS_COLUMN = "dropQual_corrected"
-DEFAULT_TP2_COLUMN = "isTP2_round"
+DEFAULT_CORRECTNESS_COLUMN = "dropQual"
+DEFAULT_TP2_COLUMN = "isTP2"
+DEFAULT_TASKPROGRESSION_COLUMN = "TotSesh_actTest_RoundNum"
 
 MARKER_BY_COIN = {
     "HV": "*",
@@ -120,37 +119,13 @@ def normalize_tp2_flag(value: object) -> Optional[bool]:
     return None
 
 
-def derive_task_progression(
-    df: pd.DataFrame,
-    session_column: str,
-    round_column: str,
-) -> pd.DataFrame:
-    ordered_rounds = (
-        df.reset_index(names="_row_order")
-        [[session_column, round_column, "_row_order"]]
-        .dropna(subset=[session_column, round_column])
-        .drop_duplicates(subset=[session_column, round_column], keep="first")
-        .sort_values([session_column, "_row_order"], kind="stable")
-        .copy()
-    )
-
-    ordered_rounds["taskProgression"] = (
-        ordered_rounds.groupby(session_column).cumcount() + 1
-    )
-
-    merged = df.merge(
-        ordered_rounds[[session_column, round_column, "taskProgression"]],
-        on=[session_column, round_column],
-        how="left",
-        validate="many_to_one",
-    )
-    return merged
 
 
 def prepare_analysis_frame(
     df: pd.DataFrame,
     *,
     outcome_column: str,
+    task_progression_column: str,
     subject_column: str,
     coin_column: str,
     correctness_column: str,
@@ -161,19 +136,27 @@ def prepare_analysis_frame(
     frame = df.copy()
 
     frame[outcome_column] = pd.to_numeric(frame[outcome_column], errors="coerce")
-    frame["taskProgression"] = pd.to_numeric(frame["taskProgression"], errors="coerce")
+    frame[task_progression_column] = pd.to_numeric(
+        frame[task_progression_column], errors="coerce"
+    )
 
     frame[subject_column] = frame[subject_column].map(coerce_string_label)
     frame[coin_column] = frame[coin_column].map(normalize_coin_label)
     frame["dropCorrectness"] = frame[correctness_column].map(normalize_correctness_label)
-    frame["isTP2_round_bool"] = frame[tp2_column].map(normalize_tp2_flag)
+    frame["isTP2"] = frame[tp2_column].map(normalize_tp2_flag)
 
     frame = frame.dropna(
-        subset=["taskProgression", outcome_column, subject_column, coin_column, "dropCorrectness"]
+        subset=[
+            task_progression_column,
+            outcome_column,
+            subject_column,
+            coin_column,
+            "dropCorrectness",
+        ]
     ).copy()
 
     if not include_tp1:
-        frame = frame.loc[frame["isTP2_round_bool"] == True].copy()
+        frame = frame.loc[frame["isTP2"] == True].copy()
 
     if correct_only:
         frame = frame.loc[frame["dropCorrectness"] == "correct"].copy()

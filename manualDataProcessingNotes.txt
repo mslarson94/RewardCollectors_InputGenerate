@@ -1,0 +1,12 @@
+data processing notes
+
+@ concat_csvs.py 
+	 intervalSourceFile 						participantID   sessionID  	pairID 		currentRole  				 TotSesh_runTot_RoundNum_all
+396  00_Ax_main_AN_8888__withDemo.csv           NaN       		NaN     	NaN         NaN                          112
+548   01_Bx_main_AN_101__withDemo.csv           NaN       		NaN     	NaN         NaN                           52
+
+in 00_Ax_main_AN_8888 -> the final line was partially corrupted from a truncated block (somehow it escaped earlier detection?). I had to hand edit that line to include the basic demographics information for the concat_csvs to work (with assigning the unique roundID information). I can't trace the original file this truncation came from, so I gave the line its own file name (ObsReward_A_01_20_2025_99_99_processed.csv) and gave it the testing order value 7 so it doesn't contaminate the last valid data row. 
+
+in 01_Bx_main_AN_101__withDemo -> the final line was partially corrupted from a truncated block (somehow it escaped earlier detection?). I had to hand edit that line to include the basic demographics information for the concat_csvs to work (with assigning the unique roundID information). I can't trace the original file this truncation came from, so I gave the line its own file name (ObsReward_A_01_25_2025_99_99_processed.csv) and gave it the testing order value 4 so it doesn't contaminate the last valid data row. 
+
+actually, i had to just delete those rows completely. 

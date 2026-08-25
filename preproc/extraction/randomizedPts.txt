@@ -1,0 +1,28 @@
+Main Cohort
+single representative: 06_B_main
+pin drop distance: 05_B_main
+round elapsed time: 02_Bx_main
+pathChoice: 200_A_main
+path efficiency: 05_A_main
+swap vote score: 07_A_main
+pin drop vote score: 01_Bx_main
+total score: 06_A_main
+swap rate: 03_Ax_main
+path example: 08_B_main
+distance-points trade off: 00_Ax_main
+seed 42
+
+RR Cohort
+single representative: 05_A_RR
+pin drop distance: 00_Ax_RR
+round elapsed time: 07_B_RR
+pathChoice: 02_Bx_RR
+path efficiency: 07_A_RR
+swap vote score: 06_B_RR
+pin drop vote score: 05_A_RR
+total score: 06_A_RR
+swap rate: 08_A_RR
+path example: 00_Ax_RR
+distance-points trade off: 07_B_RR
+
+seed 42

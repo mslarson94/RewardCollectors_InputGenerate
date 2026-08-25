@@ -80,29 +80,44 @@ def filter_for_spec(
     return filtered.copy()
 
 
+# file: regressionStats.py
+
 def fit_linear_model(
     df: pd.DataFrame,
     *,
     outcome_column: str,
-) -> tuple[sm.regression.linear_model.RegressionResultsWrapper, pd.DataFrame]:
-    x = df["taskProgression"].astype(float)
+    task_progression_column: str,
+) -> tuple[
+    sm.regression.linear_model.RegressionResultsWrapper,
+    pd.DataFrame,
+]:
+    x = df[task_progression_column].astype(float)
     y = df[outcome_column].astype(float)
 
-    design = sm.add_constant(x)
+    design = sm.add_constant(x, has_constant="add")
     model = sm.OLS(y, design).fit()
 
     x_grid = np.linspace(x.min(), x.max(), 200)
-    pred_design = sm.add_constant(pd.Series(x_grid, name="taskProgression"))
+
+    pred_design = sm.add_constant(
+        pd.Series(
+            x_grid,
+            name=task_progression_column,
+        ),
+        has_constant="add",
+    )
+
     prediction = model.get_prediction(pred_design).summary_frame(alpha=0.05)
 
     pred_df = pd.DataFrame(
         {
-            "taskProgression": x_grid,
+            task_progression_column: x_grid,
             "mean": prediction["mean"].to_numpy(),
             "mean_ci_lower": prediction["mean_ci_lower"].to_numpy(),
             "mean_ci_upper": prediction["mean_ci_upper"].to_numpy(),
         }
     )
+
     return model, pred_df
 
-
+    

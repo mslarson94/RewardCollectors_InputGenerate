@@ -150,7 +150,9 @@ def create_regression_summary_plot(
     df: pd.DataFrame,
     pred_df: pd.DataFrame,
     outcome_column: str,
+    task_progression_column: str,
     outcome_label: str,
+    coin_column: str,
     spec: PlotSpec,
     include_tp1: bool,
     correct_only: bool,
@@ -166,34 +168,34 @@ def create_regression_summary_plot(
         for _, row in df.iterrows():
             scatter_styled_point(
                 ax,
-                x=float(row["taskProgression"]),
+                x=float(row[task_progression_column]),
                 y=float(row[outcome_column]),
-                coin=str(row["coinLabel"]),
+                coin=str(row[coin_column]),
                 correctness=str(row["dropCorrectness"]),
             )
 
     ax.plot(
-        pred_df["taskProgression"],
+        pred_df[task_progression_column],
         pred_df["mean"],
         linewidth=2.1,
     )
 
     if ci_style == "ribbon":
         ax.fill_between(
-            pred_df["taskProgression"],
+            pred_df[task_progression_column],
             pred_df["mean_ci_lower"],
             pred_df["mean_ci_upper"],
             alpha=0.18,
         )
     else:
         ax.plot(
-            pred_df["taskProgression"],
+            pred_df[task_progression_column],
             pred_df["mean_ci_lower"],
             linestyle=(0, (3, 3)),
             linewidth=1.3,
         )
         ax.plot(
-            pred_df["taskProgression"],
+            pred_df[task_progression_column],
             pred_df["mean_ci_upper"],
             linestyle=(0, (3, 3)),
             linewidth=1.3,

@@ -23,10 +23,24 @@ PROC_DIR="FreshStart_redoAgainAgainAgain_PO_redo"
 META_FILE="collatedData.xlsx"
 EVENTS_DIR="Events_Final_NoWalks"
 LAMBDA="1"
-MEGA_FILE="${TRUE_BASE_DIR}/${PROC_DIR}/EventSegmentation/megaFiles/mad_2/AN_PinDropsKnottedFiltered_1st50Rds_noCD_main.csv"
-MEGA_SUMMARY="${TRUE_BASE_DIR}/${PROC_DIR}/EventSegmentation/megaFiles/participantSummaryData_AN.csv"
-OUTDIR="${TRUE_BASE_DIR}/${PROC_DIR}/Plotting/mad_2/1st50Rounds/main/noCD"
+ROUND_DUR_FILTER=2.0
+MEGA_DIR="${TRUE_BASE_DIR}/${PROC_DIR}/EventSegmentation/megaFiles_final"
 
+MEGA_FILE="${MEGA_DIR}/mad_${ROUND_DUR_FILTER}/1st50IntervalDataKnotted_AN_noCD_all.csv"
+MEGA_SUMMARY="${MEGA_DIR}/participantSummaryData_1st50_AN_noCD.csv"
+OUTDIR="${TRUE_BASE_DIR}/${PROC_DIR}/Plotting/mad_${ROUND_DUR_FILTER}/1st50Rounds/all/noCD"
+
+# MEGA_FILE="${MEGA_DIR}/mad_${ROUND_DUR_FILTER}/1st50IntervalDataKnotted_AN_RR.csv"
+# MEGA_SUMMARY="${MEGA_DIR}/participantSummaryData_1st50_AN.csv"
+# OUTDIR="${TRUE_BASE_DIR}/${PROC_DIR}/Plotting/mad_${ROUND_DUR_FILTER}/1st50Rounds/RR/all"
+
+# MEGA_FILE="${MEGA_DIR}/mad_${ROUND_DUR_FILTER}/allIntervalDataKnotted_AN_noCD_RR.csv"
+# MEGA_SUMMARY="${MEGA_DIR}/participantSummaryData_AN_noCD.csv"
+# OUTDIR="${TRUE_BASE_DIR}/${PROC_DIR}/Plotting/mad_${ROUND_DUR_FILTER}/AllRounds/RR/noCD"
+
+# MEGA_FILE="${MEGA_DIR}/mad_${ROUND_DUR_FILTER}/allIntervalDataKnotted_AN_RR.csv"
+# MEGA_SUMMARY="${MEGA_DIR}/participantSummaryData_AN.csv"
+# OUTDIR="${TRUE_BASE_DIR}/${PROC_DIR}/Plotting/mad_${ROUND_DUR_FILTER}/AllRounds/RR/all"
 
 
 # echo "💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰" | tee -a "$LOG_FILE"
@@ -135,7 +149,7 @@ OUTDIR="${TRUE_BASE_DIR}/${PROC_DIR}/Plotting/mad_2/1st50Rounds/main/noCD"
 # echo "💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰" | tee -a "$LOG_FILE"
 # echo "" | tee -a "$LOG_FILE"
 # echo "🚀 Starting layoutFacetWrapper for dropDist for Coin Interactions at $(date)" | tee -a "$LOG_FILE"
-# python "${CODE_DIR}/pinDropPlots/layoutFacetWrapper.py" \
+# python "${CODE_DIR}/pinDropPlots_facets/layoutFacetWrapper.py" \
 #   --input "${MEGA_FILE}" \
 #   --out-root "${OUTDIR}/LayoutFacet_dropDist_coinSet" \
 #   --voi dropDist \
@@ -150,7 +164,7 @@ OUTDIR="${TRUE_BASE_DIR}/${PROC_DIR}/Plotting/mad_2/1st50Rounds/main/noCD"
 # echo "💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰" | tee -a "$LOG_FILE"
 # echo "" | tee -a "$LOG_FILE"
 # echo "🚀 Starting layoutFacetWrapper for ln_dropDist for Coin Interactions at $(date)" | tee -a "$LOG_FILE"
-# python "${CODE_DIR}/pinDropPlots/layoutFacetWrapper.py" \
+# python "${CODE_DIR}/pinDropPlots_facets/layoutFacetWrapper.py" \
 #   --input "${MEGA_FILE}" \
 #   --out-root "${OUTDIR}/LayoutFacet_ln_dropDist_coinSet" \
 #   --voi ln_dropDist \
@@ -165,7 +179,7 @@ OUTDIR="${TRUE_BASE_DIR}/${PROC_DIR}/Plotting/mad_2/1st50Rounds/main/noCD"
 # echo "💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰" | tee -a "$LOG_FILE"
 # echo "" | tee -a "$LOG_FILE"
 # echo "🚀 Starting layoutFacetWrapper for roundFrac for Coin Interactions at $(date)" | tee -a "$LOG_FILE"
-# python "${CODE_DIR}/pinDropPlots/layoutFacetWrapper.py" \
+# python "${CODE_DIR}/pinDropPlots_facets/layoutFacetWrapper.py" \
 #   --input "${MEGA_FILE}" \
 #   --out-root "${OUTDIR}/LayoutFacet_roundFrac_coinSet" \
 #   --voi roundFrac \
@@ -180,7 +194,7 @@ OUTDIR="${TRUE_BASE_DIR}/${PROC_DIR}/Plotting/mad_2/1st50Rounds/main/noCD"
 # echo "💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰" | tee -a "$LOG_FILE"
 # echo "" | tee -a "$LOG_FILE"
 # echo "🚀 Starting layoutFacetWrapper for roundElapsed_s for Coin Interactions at $(date)" | tee -a "$LOG_FILE"
-# python "${CODE_DIR}/pinDropPlots/layoutFacetWrapper.py" \
+# python "${CODE_DIR}/pinDropPlots_facets/layoutFacetWrapper.py" \
 #   --input "${MEGA_FILE}" \
 #   --out-root "${OUTDIR}/LayoutFacet_roundElapsed_s_coinSet" \
 #   --voi roundElapsed_s \
@@ -194,21 +208,8 @@ OUTDIR="${TRUE_BASE_DIR}/${PROC_DIR}/Plotting/mad_2/1st50Rounds/main/noCD"
 # ##################
 # echo "💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰" | tee -a "$LOG_FILE"
 # echo "" | tee -a "$LOG_FILE"
-# echo "🚀 Starting pathChoiceWrapper at $(date)" | tee -a "$LOG_FILE"
-# python "${CODE_DIR}/pathChoice/pathChoiceWrapper.py" \
-#   --input "${MEGA_FILE}" \
-#   --summary "${MEGA_SUMMARY}" \
-#   --out-dir "${OUTDIR}/PathChoiceViolins" \
-#   --formats png,pdf \
-#   --ncols 3 \
-#   >> "$LOG_FILE" 2>&1
-# echo "✅ pathChoiceWrapper completed at $(date)" | tee -a "$LOG_FILE"
-
-# ##################
-# echo "💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰" | tee -a "$LOG_FILE"
-# echo "" | tee -a "$LOG_FILE"
 # echo "🚀 Starting layoutFacetWrapper for roundElapsed_s for Coin Interactions at $(date)" | tee -a "$LOG_FILE"
-# python "${CODE_DIR}/pinDropPlots/layoutFacetWrapper.py" \
+# python "${CODE_DIR}/pinDropPlots_facets/layoutFacetWrapper.py" \
 #   --input "${MEGA_FILE}" \
 #   --out-root "${OUTDIR}/LayoutFacet_roundElapsed_s_sessionID" \
 #   --voi roundElapsed_s \
@@ -225,7 +226,7 @@ OUTDIR="${TRUE_BASE_DIR}/${PROC_DIR}/Plotting/mad_2/1st50Rounds/main/noCD"
 # echo "💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰" | tee -a "$LOG_FILE"
 # echo "" | tee -a "$LOG_FILE"
 # echo "🚀 Starting layoutFacetWrapper for dropDist for Coin Interactions at $(date)" | tee -a "$LOG_FILE"
-# python "${CODE_DIR}/pinDropPlots/layoutFacetWrapper.py" \
+# python "${CODE_DIR}/pinDropPlots_facets/layoutFacetWrapper.py" \
 #   --input "${MEGA_FILE}" \
 #   --out-root "${OUTDIR}/LayoutFacet_dropDist_sessionID" \
 #   --voi dropDist \
@@ -237,21 +238,6 @@ OUTDIR="${TRUE_BASE_DIR}/${PROC_DIR}/Plotting/mad_2/1st50Rounds/main/noCD"
 #   --show-participant-metrics \
 #   >> "$LOG_FILE" 2>&1
 # echo "✅ layoutFacetWrapper for roundElapsed_s for Coin Interactions completed at $(date)" | tee -a "$LOG_FILE"
-
-# ##################
-# echo "💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰" | tee -a "$LOG_FILE"
-# echo "" | tee -a "$LOG_FILE"
-# echo "🚀 Starting generate_regression_summary_plots at $(date)" | tee -a "$LOG_FILE"
-# python "${CODE_DIR}/pinDropDistOverTime/generate_regression_summary_plots.py" \
-#   --input "${MEGA_FILE}" \
-#   --output-dir "${OUTDIR}/regression_summary_plots" \
-#   --show-raw \
-#   --ci-style ribbon \
-#   --outcome-column dropDist \
-#   --outcome-label "Pin Drop Distance" \
-#   >> "$LOG_FILE" 2>&1
-# echo "✅ layoutFacetWrapper for roundElapsed_s for Coin Interactions completed at $(date)" | tee -a "$LOG_FILE"
-
 
 
 ##################
@@ -266,5 +252,37 @@ python "${CODE_DIR}/newTimeRegression/regressionWrapper.py" \
   --include-tp1 \
   --width 10 \
   --height 6.5 \
+  --subject-column sessionID \
   >> "$LOG_FILE" 2>&1
 echo "✅ regressionWrapper for dropDist for Coin Interactions completed at $(date)" | tee -a "$LOG_FILE"
+
+
+##################
+echo "💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰" | tee -a "$LOG_FILE"
+echo "" | tee -a "$LOG_FILE"
+echo "🚀 Starting regressionWrapper for ln_dropDist for Coin Interactions at $(date)" | tee -a "$LOG_FILE"
+python "${CODE_DIR}/newTimeRegression/regressionWrapper.py" \
+  --input "${MEGA_FILE}" \
+  --output-dir "${OUTDIR}/ln_dropDist_Regression" \
+  --outcome-column ln_dropDist \
+  --show-raw \
+  --include-tp1 \
+  --width 10 \
+  --height 6.5 \
+  --subject-column sessionID \
+  >> "$LOG_FILE" 2>&1
+echo "✅ regressionWrapper for dropDist for Coin Interactions completed at $(date)" | tee -a "$LOG_FILE"
+
+
+##################
+echo "💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰💰" | tee -a "$LOG_FILE"
+echo "" | tee -a "$LOG_FILE"
+echo "🚀 Starting pathChoiceWrapper at $(date)" | tee -a "$LOG_FILE"
+python "${CODE_DIR}/pathChoice/pathChoiceWrapper.py" \
+  --input "${MEGA_FILE}" \
+  --summary "${MEGA_SUMMARY}" \
+  --out-dir "${OUTDIR}/PathChoiceViolins" \
+  --formats png,pdf \
+  --ncols 3 \
+  >> "$LOG_FILE" 2>&1
+echo "✅ pathChoiceWrapper completed at $(date)" | tee -a "$LOG_FILE"

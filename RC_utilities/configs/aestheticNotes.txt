@@ -1,0 +1,36 @@
+Fonts: Avenir or Helvetica or Arial 
+
+Active Navigator Color: #f69c36
+Passive Observer Color: #49a7f4
+
+
+IBM color blind safe palette for plotting
+PLOT_COLORS = [
+    "#648FFF",
+    "#785EF0",
+    "#DC267F",
+    "#FE6100",
+    "#FFB000",
+
+]
+
+
+Overall Task Timeline Phases
+
+Day 1:
+    Outline:                            #352651
+    Initial Encoding:                   #e1dbf5
+    Test Phase 1:                       #acabde
+    Test Phase 2 (Orig Trials):         #8c8ac7
+    Test Phase 2 (EV Trials Outline):   #254d22
+    Test Phase 2 (EV Trials):           #94c47d
+    Role Reversal: #7675c9
+
+Day 2: 
+    Outline:                            #0e3e3e
+    Initial Encoding:                   #ccf0ec
+    Test Phase 1:                       #aedfd7
+    Test Phase 2 (Orig Trials):         #8bc8c1
+    Test Phase 2 (EV Trials Outline):   #61311e
+    Test Phase 2 (EV Trials):           #f0d080
+    Role Reversal:                      #6caca5

@@ -220,7 +220,7 @@ def normalize_round_numbers(series: pd.Series) -> pd.Series:
     return numeric.astype("Int64")
 
 
-def normalize_required_identifier(
+def normalize_required_identifier_v1(
     series: pd.Series,
     column_name: str,
 ) -> pd.Series:
@@ -236,6 +236,36 @@ def normalize_required_identifier(
 
     return normalized
 
+def normalize_required_identifier(
+    dataframe: pd.DataFrame,
+    column_name: str,
+    source_column: str = "intervalSourceFile",
+) -> pd.Series:
+    normalized = dataframe[column_name].map(normalize_identifier).astype("string")
+    invalid = normalized.isna() | normalized.eq("")
+
+    if invalid.any():
+        detail_columns = [
+            column
+            for column in [
+                source_column,
+                "participantID",
+                "sessionID",
+                "pairID",
+                "currentRole",
+                ROUND_NUMBER_COLUMN,
+            ]
+            if column in dataframe.columns
+        ]
+
+        details = dataframe.loc[invalid, detail_columns].head(20)
+
+        raise ValueError(
+            f"{column_name} is missing or blank:\n"
+            f"{details.to_string(index=True)}"
+        )
+
+    return normalized
 
 def add_round_ids(dataframe: pd.DataFrame) -> pd.DataFrame:
     require_columns(
@@ -252,12 +282,22 @@ def add_round_ids(dataframe: pd.DataFrame) -> pd.DataFrame:
         errors="ignore",
     ).copy()
 
+    # participant_id = normalize_required_identifier(
+    #     result["participantID"],
+    #     "participantID",
+    # )
+    # session_id = normalize_required_identifier(
+    #     result["sessionID"],
+    #     "sessionID",
+    # )
+
     participant_id = normalize_required_identifier(
-        result["participantID"],
-        "participantID",
+    result,
+    "participantID",
     )
+
     session_id = normalize_required_identifier(
-        result["sessionID"],
+        result,
         "sessionID",
     )
     round_number = normalize_round_numbers(

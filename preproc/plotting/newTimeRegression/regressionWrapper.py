@@ -14,11 +14,9 @@ from regressionHelpers import (
     DEFAULT_COIN_COLUMN,
     DEFAULT_CORRECTNESS_COLUMN,
     DEFAULT_OUTCOME_COLUMN,
-    DEFAULT_ROUND_COLUMN,
-    DEFAULT_SESSION_COLUMN,
     DEFAULT_SUBJECT_COLUMN,
     DEFAULT_TP2_COLUMN,
-    derive_task_progression,
+    DEFAULT_TASKPROGRESSION_COLUMN,
     prepare_analysis_frame,
     prettify_name,
     read_table,
@@ -80,16 +78,10 @@ def parse_args() -> argparse.Namespace:
         help=f"TP2 flag column. Default: {DEFAULT_TP2_COLUMN}",
     )
     parser.add_argument(
-        "--session-column",
+        "--task-progression-column",
         type=str,
-        default=DEFAULT_SESSION_COLUMN,
-        help=f"Session column. Default: {DEFAULT_SESSION_COLUMN}",
-    )
-    parser.add_argument(
-        "--round-column",
-        type=str,
-        default=DEFAULT_ROUND_COLUMN,
-        help=f"Round column used to derive task progression. Default: {DEFAULT_ROUND_COLUMN}",
+        default=DEFAULT_TASKPROGRESSION_COLUMN,
+        help=f"task progression variable. Default: {DEFAULT_TASKPROGRESSION_COLUMN}",
     )
     parser.add_argument(
         "--ci-style",
@@ -129,13 +121,13 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--height", type=float, default=6.5, help="Figure height in inches.")
     parser.add_argument(
         "--include-all-subjects",
-        action="store_true",
+        action=argparse.BooleanOptionalAction,
         default=True,
         help="Include an All Subjects aggregate.",
     )
     parser.add_argument(
         "--include-all-coins",
-        action="store_true",
+        action=argparse.BooleanOptionalAction,
         default=True,
         help="Include an All Coins aggregate.",
     )
@@ -191,8 +183,7 @@ def main() -> None:
         df,
         [
             args.outcome_column,
-            args.session_column,
-            args.round_column,
+            args.task_progression_column,
             args.subject_column,
             args.coin_column,
             args.correctness_column,
@@ -200,22 +191,19 @@ def main() -> None:
         ],
     )
 
-    df = derive_task_progression(
-        df=df,
-        session_column=args.session_column,
-        round_column=args.round_column,
-    )
 
     df = prepare_analysis_frame(
         df=df,
         outcome_column=args.outcome_column,
         subject_column=args.subject_column,
+        task_progression_column=args.task_progression_column,
         coin_column=args.coin_column,
         correctness_column=args.correctness_column,
         tp2_column=args.tp2_column,
         include_tp1=args.include_tp1,
         correct_only=args.correct_only,
     )
+    
 
     outcome_label = args.outcome_label or prettify_name(args.outcome_column)
 
@@ -240,7 +228,7 @@ def main() -> None:
         )
 
         n_rows = len(subset)
-        n_unique_x = subset["taskProgression"].nunique()
+        n_unique_x = subset[args.task_progression_column].nunique()
 
         if n_rows < args.min_rows or n_unique_x < args.min_unique_x:
             manifest_rows.append(
@@ -263,7 +251,9 @@ def main() -> None:
             model, pred_df = fit_linear_model(
                 df=subset,
                 outcome_column=args.outcome_column,
+                task_progression_column=args.task_progression_column,
             )
+            
         except Exception as exc:
             manifest_rows.append(
                 {
@@ -285,7 +275,9 @@ def main() -> None:
             df=subset,
             pred_df=pred_df,
             outcome_column=args.outcome_column,
+            coin_column=args.coin_column,
             outcome_label=outcome_label,
+            task_progression_column=args.task_progression_column,
             spec=spec,
             include_tp1=args.include_tp1,
             correct_only=args.correct_only,
@@ -317,9 +309,9 @@ def main() -> None:
                 "drop_scope": "Correct only" if args.correct_only else "All drops",
                 "n_rows": n_rows,
                 "n_unique_task_progression": n_unique_x,
-                "slope": model.params.get("taskProgression", np.nan),
+                "slope": model.params.get(args.task_progression_column, np.nan),
+                "p_value_slope": model.pvalues.get(args.task_progression_column, np.nan),
                 "intercept": model.params.get("const", np.nan),
-                "p_value_slope": model.pvalues.get("taskProgression", np.nan),
                 "r_squared": model.rsquared,
                 "status": "exported",
             }

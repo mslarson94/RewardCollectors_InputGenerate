@@ -41,6 +41,8 @@ p_stars <- function(p) {
   )
 }
 
+trim_lower <- function(x) str_to_lower(str_trim(as.character(x)))
+
 # -------------------------
 # Conditional logit helpers (survival::clogit)
 # -------------------------

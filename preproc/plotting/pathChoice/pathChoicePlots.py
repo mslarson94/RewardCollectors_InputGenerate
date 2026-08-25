@@ -14,6 +14,15 @@ import seaborn as sns
 
 from pathChoiceHelpers import SUMMARY_COLUMNS, derive_path_order
 
+#IBM color blind safe palette for plotting
+PLOT_COLORS = [
+    "#648FFF",
+    "#785EF0",
+    "#DC267F",
+    "#FE6100",
+    "#FFB000",
+]
+
 
 def _format_value(value: object, *, digits: int = 3) -> str:
     """Format compact facet annotation values."""

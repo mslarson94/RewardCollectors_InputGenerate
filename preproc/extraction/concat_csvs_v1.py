@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-concat_csvs.py
+concat_csvs_v1.py
 
 Append all CSVs in a directory into one CSV (one header total) using pandas.
 

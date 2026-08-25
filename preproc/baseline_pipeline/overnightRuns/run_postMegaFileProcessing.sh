@@ -318,3 +318,14 @@ python "${CODE_DIR}/preproc/baseline_pipeline/eventAugmentation/exclude_coinsets
 >> "$LOG_FILE" 2>&1
 echo "✅ exclude_coinsets_bcd.py completed at $(date)" | tee -a "$LOG_FILE"
 
+# ## I don't really care about this anymore.
+# echo "✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨" | tee -a "$LOG_FILE"
+# echo "🚀 Starting qc_first50_rounds.py at $(date)" | tee -a "$LOG_FILE"
+# python "/Users/mairahmac/Desktop/myra_code/Python/RewardCollectors_InputGenerate/preproc/extraction/qc_first50_rounds.py" \
+#   "${MEGA_DIR}_final/mad_${ROUND_DUR_FILTER}" \
+#   "${TRUE_BASE_DIR}/${PROC_DIR}/EventSegmentation/megaFiles_final/participantSummaryData_1st50_AN.csv" \
+#   --max-rounds 50 \
+#   --out-dir "${TRUE_BASE_DIR}/${PROC_DIR}/EventSegmentation/megaFiles_final/qc_first50" \
+# >> "$LOG_FILE" 2>&1
+# echo "✅ qc_first50_rounds.py completed at $(date)" | tee -a "$LOG_FILE"
+

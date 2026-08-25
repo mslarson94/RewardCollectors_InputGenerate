@@ -1,0 +1,33 @@
+Linear mixed model fit by maximum likelihood . t-tests use Satterthwaite's method ['lmerModLmerTest']
+Formula: m4_formula
+   Data: analysis_df
+
+     AIC      BIC   logLik deviance df.resid 
+  2995.6   3032.0  -1490.8   2981.6     1333 
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-1.1659 -0.3761 -0.1463  0.1210 19.4361 
+
+Random effects:
+ Groups        Name        Variance Std.Dev.
+ participantID (Intercept) 0.03929  0.1982  
+ Residual                  0.53050  0.7284  
+Number of obs: 1340, groups:  participantID, 14
+
+Fixed effects:
+                           Estimate Std. Error         df t value Pr(>|t|)    
+(Intercept)                 0.66476    0.09465   18.92397   7.023 1.12e-06 ***
+TotSesh_actTest_RoundNum   -0.00676    0.00194 1252.64775  -3.485 0.000509 ***
+coinSetAx                   0.06999    0.13014   17.73543   0.538 0.597383    
+coinSetB                   -0.12770    0.07444 1131.33154  -1.715 0.086536 .  
+coinSetBx                   0.10006    0.14117   18.84112   0.709 0.487112    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Correlation of Fixed Effects:
+            (Intr) TS_T_R cnStAx conStB
+TtSsh_cT_RN -0.230                     
+coinSetAx   -0.662 -0.120              
+coinSetB    -0.305  0.015  0.218       
+coinSetBx   -0.626 -0.040  0.574  0.202

@@ -345,12 +345,18 @@ def build_round_intervals(
     Build one row per TRUE round:
       (BlockInstance, BlockNum, RoundNum,
        round_start_AppTime, round_end_AppTime, round_dur_s, round_index_in_block,
-       round_start_origRow, round_end_origRow)
+       round_start_origRow, round_end_origRow,
+       earliestRound_start_AppTime, earliestRound_start_origRow,
+       earliestRound_dur_s)
+
 
     STRICT:
       - requires cfg.origRow_col (typically "origRow_start") to exist in events_df
       - requires blocks_df to include block_end_origRow (from build_block_intervals above)
       - True rounds are only RoundNum in [1..max_round]
+      - earliestRoundStart is optional enrichment; missing values remain NaN
+      - earliestRoundStart rows outside [1..max_round], including RoundNum 5555,
+        are ignored
     """
     if mode not in {"truecontent", "roundstartend"}:
         raise ValueError(f"mode must be 'truecontent' or 'roundstartend', got {mode}")
@@ -480,6 +486,61 @@ def build_round_intervals(
         raise ValueError(
             f"Found {int(bad.sum())} rounds where round_end_origRow < round_start_origRow (origRow anchoring is inconsistent)."
         )
+
+    # Optional parallel timing anchor. This does not define or modify canonical rounds.
+    earliest = ev[ev[lo] == "earliestRoundStart"][
+        [cfg.block_instance_col, cfg.block_num_col, cfg.round_num_col, t, o]
+    ].copy()
+
+    earliest = earliest[
+        earliest[cfg.round_num_col].apply(
+            lambda x: is_true_roundnum(x, max_round=max_round)
+        )
+    ].copy()
+
+    earliest = earliest.rename(
+        columns={
+            cfg.round_num_col: "RoundNum",
+            t: "earliestRound_start_AppTime",
+            o: "earliestRound_start_origRow",
+        }
+    )
+
+    earliest_keys = [
+        cfg.block_instance_col,
+        cfg.block_num_col,
+        "RoundNum",
+    ]
+
+    # Multiple valid earliestRoundStart events for one true round are ambiguous
+    # and should not be resolved silently.
+    assert_unique(
+        earliest,
+        earliest_keys,
+        name="earliestRoundStart events",
+    )
+
+    rounds = safe_merge(
+        rounds,
+        earliest[
+            earliest_keys
+            + [
+                "earliestRound_start_AppTime",
+                "earliestRound_start_origRow",
+            ]
+        ],
+        earliest_keys,
+        how="left",
+        validate="1:1",
+        indicator=False,
+        logger=logger,
+        label="rounds add earliestRoundStart",
+    )
+
+    rounds["earliestRound_dur_s"] = (
+        rounds["round_end_AppTime"]
+        - rounds["earliestRound_start_AppTime"]
+    )
 
     return rounds
 
@@ -712,7 +773,7 @@ def cleanup_merge_suffixes(
 
     return out
 
-def augment_processed_with_intervals(
+def augment_processed_with_intervals_v1(
     processed_df: pd.DataFrame,
     blocks_df: pd.DataFrame,
     rounds_df: pd.DataFrame,
@@ -843,6 +904,250 @@ def augment_processed_with_intervals(
     session_start = pd.to_numeric(df[time_col], errors="coerce").min()
     df["session_start_AppTime"] = session_start
     df["totalSessionElapsed_s"] = df[time_col] - session_start
+
+    return df
+
+def augment_processed_with_intervals(
+    processed_df: pd.DataFrame,
+    blocks_df: pd.DataFrame,
+    rounds_df: pd.DataFrame,
+    *,
+    max_round: int = DEFAULT_MAX_TRUE_ROUNDNUM,
+    time_col: str = "AppTime",
+    cfg: IntervalBuildConfig = IntervalBuildConfig(),
+    logger: Optional[Any] = None,
+) -> pd.DataFrame:
+    """
+    Adds interval metadata + elapsed time + fractions to processed rows.
+
+    STRICT:
+      - requires processed_df to contain 'origRow' (canonical processed row id)
+      - requires rounds_df to contain earliestRoundStart enrichment columns
+      - preserves and restores canonical output order: sorted by origRow
+      - all interval assignment is done without ever relying on positional row order
+
+    Adds:
+      block_start_AppTime, block_end_AppTime, block_dur_s
+      round_start_AppTime, round_end_AppTime, round_dur_s
+      earliestRound_start_AppTime, earliestRound_start_origRow,
+      earliestRound_dur_s
+      RoundNum_interval_assigned
+      inBlockInterval, inRoundInterval
+      blockElapsed_s, roundElapsed_s, earliestRoundElapsed_s
+      blockFrac, roundFrac
+      session_start_AppTime, totalSessionElapsed_s
+    """
+    df = processed_df.copy()
+
+    if "origRow" not in df.columns:
+        raise ValueError(
+            "processed_df missing required 'origRow' "
+            "(canonical processed row id)."
+        )
+
+    if time_col not in df.columns:
+        raise ValueError(f"processed_df missing {time_col}")
+
+    # Enforce origRow integrity early.
+    df["origRow"] = pd.to_numeric(df["origRow"], errors="raise")
+    bad_or = df["origRow"].isna() | (df["origRow"] % 1 != 0)
+    if bad_or.any():
+        raise ValueError(
+            f"processed_df has {int(bad_or.sum())} invalid origRow values "
+            "(NaN or non-integer)."
+        )
+
+    df["origRow"] = df["origRow"].astype("int64")
+
+    if df["origRow"].duplicated().any():
+        raise ValueError(
+            "processed_df origRow must be unique; found "
+            f"{int(df['origRow'].duplicated().sum())} duplicates."
+        )
+
+    # Coerce and normalize keys.
+    df = _coerce_numeric(
+        df,
+        [time_col, cfg.block_instance_col, cfg.block_num_col],
+    )
+    df = normalize_keys(
+        df,
+        [cfg.block_instance_col, cfg.block_num_col],
+        inplace=True,
+    )
+
+    blocks = blocks_df.copy()
+    blocks = _coerce_numeric(
+        blocks,
+        [
+            "block_start_AppTime",
+            "block_end_AppTime",
+            "block_dur_s",
+            cfg.block_instance_col,
+            cfg.block_num_col,
+        ],
+    )
+    blocks = normalize_keys(
+        blocks,
+        [cfg.block_instance_col, cfg.block_num_col],
+        inplace=True,
+    )
+
+    # Attach blocks via (BlockInstance, BlockNum).
+    df = safe_merge(
+        df,
+        blocks[
+            [
+                cfg.block_instance_col,
+                cfg.block_num_col,
+                "block_start_AppTime",
+                "block_end_AppTime",
+                "block_dur_s",
+            ]
+        ],
+        [cfg.block_instance_col, cfg.block_num_col],
+        how="left",
+        validate="m:1",
+        logger=logger,
+        label="processed add blocks",
+    )
+
+    # Prepare rounds for asof attach.
+    rounds = rounds_df.copy().rename(
+        columns={"RoundNum": "RoundNum_interval_assigned"}
+    )
+
+    # Fail clearly if Step 02 is accidentally run against an older
+    # Step-01 round interval file.
+    required_earliest_cols = [
+        "earliestRound_start_AppTime",
+        "earliestRound_start_origRow",
+        "earliestRound_dur_s",
+    ]
+    missing_earliest_cols = [
+        col
+        for col in required_earliest_cols
+        if col not in rounds.columns
+    ]
+    if missing_earliest_cols:
+        raise ValueError(
+            "rounds_df is missing earliest-round interval columns: "
+            f"{missing_earliest_cols}. Re-run Step 01 with the updated "
+            "build_round_intervals()."
+        )
+
+    rounds = rounds[
+        rounds["RoundNum_interval_assigned"].apply(
+            lambda x: is_true_roundnum(x, max_round=max_round)
+        )
+    ].copy()
+
+    rounds = _coerce_numeric(
+        rounds,
+        [
+            "round_start_AppTime",
+            "round_end_AppTime",
+            "round_dur_s",
+            "earliestRound_start_AppTime",
+            "earliestRound_start_origRow",
+            "earliestRound_dur_s",
+            cfg.block_instance_col,
+        ],
+    )
+    rounds = normalize_keys(
+        rounds,
+        [cfg.block_instance_col],
+        inplace=True,
+    )
+
+    # Existing canonical assignment remains based on round_start_AppTime.
+    df_for_asof = df.sort_values(
+        [cfg.block_instance_col, time_col, "origRow"],
+        kind="mergesort",
+    )
+
+    df = merge_asof_by_group(
+        df_for_asof,
+        rounds[
+            [
+                cfg.block_instance_col,
+                "RoundNum_interval_assigned",
+                "round_start_AppTime",
+                "round_end_AppTime",
+                "round_dur_s",
+                "round_index_in_block",
+                "earliestRound_start_AppTime",
+                "earliestRound_start_origRow",
+                "earliestRound_dur_s",
+            ]
+        ].copy(),
+        group_col=cfg.block_instance_col,
+        left_on=time_col,
+        right_on="round_start_AppTime",
+        direction="backward",
+        allow_exact_matches=True,
+    )
+
+    # Restore canonical processed order immediately.
+    if "origRow" not in df.columns:
+        raise ValueError(
+            "BUG: origRow was lost during merge_asof_by_group(). "
+            "This must never happen."
+        )
+
+    df = df.sort_values(
+        "origRow",
+        kind="mergesort",
+    ).reset_index(drop=True)
+
+    # Membership flags.
+    df["inBlockInterval"] = (
+        df[time_col].notna()
+        & df["block_start_AppTime"].notna()
+        & df["block_end_AppTime"].notna()
+        & (df[time_col] >= df["block_start_AppTime"])
+        & (df[time_col] <= df["block_end_AppTime"])
+    )
+
+    df["inRoundInterval"] = (
+        df[time_col].notna()
+        & df["round_start_AppTime"].notna()
+        & df["round_end_AppTime"].notna()
+        & (df[time_col] >= df["round_start_AppTime"])
+        & (df[time_col] < df["round_end_AppTime"])
+    )
+
+    # Existing elapsed + fraction calculations remain unchanged.
+    df["blockElapsed_s"] = (
+        df[time_col] - df["block_start_AppTime"]
+    )
+    df["roundElapsed_s"] = (
+        df[time_col] - df["round_start_AppTime"]
+    )
+
+    # Parallel earliest-round elapsed time.
+    # Missing earliestRoundStart values naturally remain NaN.
+    df["earliestRoundElapsed_s"] = (
+        df[time_col] - df["earliestRound_start_AppTime"]
+    )
+
+    df["blockFrac"] = (
+        df["blockElapsed_s"] / df["block_dur_s"]
+    )
+    df["roundFrac"] = (
+        df["roundElapsed_s"] / df["round_dur_s"]
+    )
+
+    # Total session elapsed.
+    session_start = pd.to_numeric(
+        df[time_col],
+        errors="coerce",
+    ).min()
+
+    df["session_start_AppTime"] = session_start
+    df["totalSessionElapsed_s"] = (
+        df[time_col] - session_start
+    )
 
     return df
 

@@ -19,7 +19,7 @@ fi
 # Segment barebones
 CODE_DIR="/Users/mairahmac/Desktop/myra_code/Python/RewardCollectors_InputGenerate/preproc/baseline_pipeline"
 TRUE_BASE_DIR="/Users/mairahmac/Desktop/RC_TestingNotes"
-PROC_DIR="FreshStart_redoAgainAgainAgain_PO_redo"
+PROC_DIR="FreshStart_redoAgainAgainAgain_PO_redo_new"
 #PROC_DIR="FreshStart_redoAgainSingle"
 META_FILE="collatedData.xlsx"
 EVENTS_DIR="Events_Pos"
@@ -28,81 +28,90 @@ EVENTS_DIR="Events_Pos"
 # # Raw Preprocessing
 # ###################
 
-# echo "🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼" | tee -a "$LOG_FILE"
-# echo "" | tee -a "$LOG_FILE"
-# echo "🚀 Starting preprocRaw_PO_part1.py  at $(date)" | tee -a "$LOG_FILE"
-# python "${CODE_DIR}/preprocRaw/preprocRaw_PO_part1.py" \
-#   --root-dir "$TRUE_BASE_DIR" \
-#   --proc-dir "$PROC_DIR" \
-#   >> "$LOG_FILE" 2>&1
-# echo "✅ preprocRaw_PO_part1.py completed at $(date)" | tee -a "$LOG_FILE"
-
-# echo "🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼" | tee -a "$LOG_FILE"
-# echo "" | tee -a "$LOG_FILE"
-# echo "🚀 Starting preprocRaw_PO_part2.py  at $(date)" | tee -a "$LOG_FILE"
-# python "${CODE_DIR}/preprocRaw/preprocRaw_PO_part2.py" \
-#   --root-dir "$TRUE_BASE_DIR" \
-#   --proc-dir "$PROC_DIR" \
-#   >> "$LOG_FILE" 2>&1
-# echo "✅ preprocRaw_PO_part2.py completed at $(date)" | tee -a "$LOG_FILE"
-
-# # # ####################################
-# # # Initial Event Segmentation for PO
-# # # ####################################
-
-# echo "🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝" | tee -a "$LOG_FILE"
-# echo "🚀 Starting preFrontalCortex_unifiedEventSeg.py for PO  setting at $(date)" | tee -a "$LOG_FILE"
-# python "${CODE_DIR}/eventSeg/preFrontalCortex_unifiedEventSeg.py" \
-#   --trueRootDir "$TRUE_BASE_DIR" \
-#   --procDir "$PROC_DIR" \
-#   --role PO \
-#   --allowed-status complete \
-#   --allowed-status truncated \
-#   >> "$LOG_FILE" 2>&1
-# echo "✅ preFrontalCortex_unifiedEventSeg.py for PO completed at $(date)" | tee -a "$LOG_FILE" 
+echo "🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑" | tee -a "$LOG_FILE"
+echo "🚀 Starting preprocRaw_AN.py at $(date)" | tee -a "$LOG_FILE"
+python "${CODE_DIR}/preprocRaw/preprocRaw_AN.py" \
+  --root-dir "$TRUE_BASE_DIR" \
+  --proc-dir "$PROC_DIR" \
+  >> "$LOG_FILE" 2>&1
+echo "✅ preprocRaw_AN.py  completed at $(date)" | tee -a "$LOG_FILE"
 
 
-# ####################################
-# # Initial Event Segmentation for AN
-# ####################################
+echo "🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼" | tee -a "$LOG_FILE"
+echo "" | tee -a "$LOG_FILE"
+echo "🚀 Starting preprocRaw_PO_part1.py  at $(date)" | tee -a "$LOG_FILE"
+python "${CODE_DIR}/preprocRaw/preprocRaw_PO_part1.py" \
+  --root-dir "$TRUE_BASE_DIR" \
+  --proc-dir "$PROC_DIR" \
+  >> "$LOG_FILE" 2>&1
+echo "✅ preprocRaw_PO_part1.py completed at $(date)" | tee -a "$LOG_FILE"
 
-# echo "🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝" | tee -a "$LOG_FILE"
-# echo "🚀 Starting preFrontalCortex_unifiedEventSeg.py for AN  setting at $(date)" | tee -a "$LOG_FILE"
-# python "${CODE_DIR}/eventSeg/preFrontalCortex_unifiedEventSeg.py" \
-#   --trueRootDir "$TRUE_BASE_DIR" \
-#   --procDir "$PROC_DIR" \
-#   --role AN \
-#   --allowed-status complete \
-#   --allowed-status truncated \
-#   >> "$LOG_FILE" 2>&1
-# echo "✅ preFrontalCortex_unifiedEventSeg.py for AN completed at $(date)" | tee -a "$LOG_FILE" 
+echo "🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼" | tee -a "$LOG_FILE"
+echo "" | tee -a "$LOG_FILE"
+echo "🚀 Starting preprocRaw_PO_part2.py  at $(date)" | tee -a "$LOG_FILE"
+python "${CODE_DIR}/preprocRaw/preprocRaw_PO_part2.py" \
+  --root-dir "$TRUE_BASE_DIR" \
+  --proc-dir "$PROC_DIR" \
+  >> "$LOG_FILE" 2>&1
+echo "✅ preprocRaw_PO_part2.py completed at $(date)" | tee -a "$LOG_FILE"
 
-# ###########################################################################
-# # Event Augmentation Pipeline | Flattening Events' Details Column of Dict's 
-# ###########################################################################
-# echo "🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭" | tee -a "$LOG_FILE"
-# echo "" | tee -a "$LOG_FILE"
-# echo "🚀 Starting justFlatten.py  at $(date)" | tee -a "$LOG_FILE"
-# python "${CODE_DIR}/eventAugmentation/justFlatten.py" \
-#   --root-dir "$TRUE_BASE_DIR" \
-#   --proc-dir "$PROC_DIR" \
-#   >> "$LOG_FILE" 2>&1
-# echo "✅ justFlatten.py completed at $(date)" | tee -a "$LOG_FILE"
+# # ####################################
+# # Initial Event Segmentation for PO
+# # ####################################
 
-# ##########################################################################################################
-# # Event Augmentation Pipeline | Generating earliestRoundStart
-# ##########################################################################################################
-# echo "🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️" | tee -a "$LOG_FILE"
-# echo "" | tee -a "$LOG_FILE"
-# echo "🚀 Starting computeEarliestRoundStart.py  at $(date)" | tee -a "$LOG_FILE"
-# python "${CODE_DIR}/eventAugmentation/computeEarliestRoundStart.py" \
-#     --root-dir "$TRUE_BASE_DIR" \
-#     --proc-dir "$PROC_DIR" \
-#     --events-dir-name "Events_Flattened" \
-#     --eventsEnding "eventsFlat" \
-#     --output-dir-name "earliestRoundStart" \
-#   >> "$LOG_FILE" 2>&1
-# echo "✅ computeWalks.py completed at $(date)" | tee -a "$LOG_FILE"
+echo "🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝" | tee -a "$LOG_FILE"
+echo "🚀 Starting preFrontalCortex_unifiedEventSeg.py for PO  setting at $(date)" | tee -a "$LOG_FILE"
+python "${CODE_DIR}/eventSeg/preFrontalCortex_unifiedEventSeg.py" \
+  --trueRootDir "$TRUE_BASE_DIR" \
+  --procDir "$PROC_DIR" \
+  --role PO \
+  --allowed-status complete \
+  --allowed-status truncated \
+  >> "$LOG_FILE" 2>&1
+echo "✅ preFrontalCortex_unifiedEventSeg.py for PO completed at $(date)" | tee -a "$LOG_FILE" 
+
+
+####################################
+# Initial Event Segmentation for AN
+####################################
+
+echo "🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝" | tee -a "$LOG_FILE"
+echo "🚀 Starting preFrontalCortex_unifiedEventSeg.py for AN  setting at $(date)" | tee -a "$LOG_FILE"
+python "${CODE_DIR}/eventSeg/preFrontalCortex_unifiedEventSeg.py" \
+  --trueRootDir "$TRUE_BASE_DIR" \
+  --procDir "$PROC_DIR" \
+  --role AN \
+  --allowed-status complete \
+  --allowed-status truncated \
+  >> "$LOG_FILE" 2>&1
+echo "✅ preFrontalCortex_unifiedEventSeg.py for AN completed at $(date)" | tee -a "$LOG_FILE" 
+
+###########################################################################
+# Event Augmentation Pipeline | Flattening Events' Details Column of Dict's 
+###########################################################################
+echo "🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭" | tee -a "$LOG_FILE"
+echo "" | tee -a "$LOG_FILE"
+echo "🚀 Starting justFlatten.py  at $(date)" | tee -a "$LOG_FILE"
+python "${CODE_DIR}/eventAugmentation/justFlatten.py" \
+  --root-dir "$TRUE_BASE_DIR" \
+  --proc-dir "$PROC_DIR" \
+  >> "$LOG_FILE" 2>&1
+echo "✅ justFlatten.py completed at $(date)" | tee -a "$LOG_FILE"
+
+##########################################################################################################
+# Event Augmentation Pipeline | Generating earliestRoundStart
+##########################################################################################################
+echo "🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️" | tee -a "$LOG_FILE"
+echo "" | tee -a "$LOG_FILE"
+echo "🚀 Starting computeEarliestRoundStart.py  at $(date)" | tee -a "$LOG_FILE"
+python "${CODE_DIR}/eventAugmentation/computeEarliestRoundStart.py" \
+    --root-dir "$TRUE_BASE_DIR" \
+    --proc-dir "$PROC_DIR" \
+    --events-dir-name "Events_Flattened" \
+    --eventsEnding "eventsFlat" \
+    --output-dir-name "EarliestRoundStart" \
+  >> "$LOG_FILE" 2>&1
+echo "✅ computeWalks.py completed at $(date)" | tee -a "$LOG_FILE"
 
 
 # ##################################################
@@ -116,7 +125,7 @@ EVENTS_DIR="Events_Pos"
 #   --coin-sets "${TRUE_BASE_DIR}/CoinSets.csv" \
 #   --events-dir "${TRUE_BASE_DIR}/${PROC_DIR}/EventSegmentation/EarliestRoundStart" \
 #   --out-dir "${TRUE_BASE_DIR}/${PROC_DIR}/EventSegmentation/Events_CoinsLabeled" \
-#   --pattern "EarliestRoundStart" \
+#   --pattern "earliestRoundStart" \
 #   --sheet "MagicLeapFiles" \
 #   >> "$LOG_FILE" 2>&1
 # echo "✅ add_coin_labels_from_collated.py completed at $(date)" | tee -a "$LOG_FILE"
@@ -164,49 +173,52 @@ EVENTS_DIR="Events_Pos"
 #   >> "$LOG_FILE" 2>&1
 # echo "✅ getPositions.py completed at $(date)" | tee -a "$LOG_FILE"
 
-####################################################################
-# ReProcessing Pipeline |  00_ Batch Running Reproc Scripts 01 - 04
-####################################################################
-echo "✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨" | tee -a "$LOG_FILE"
-echo "🚀 Starting 00_batch_reproc_steps_01_04.py at $(date)" | tee -a "$LOG_FILE"
-echo "            01_build_intervals : Build Block/Round Interval Tables - Single Row for Every True Round"
-echo "            02_reproc_processed_add_elapsed_and_distance : Add Elapsed Time & Distance to _processed.csv to make _PreLimReprocessed.csv files"
-echo "            03_compute_speed : Compute Speed to Make Final _reprocessed.csv files"
-echo "            04_finalize_events_and_intervals_with_pindrops (no startPos here): Fleshing out Block/Round Interval Tables & Events Files with More Dist & Time Info"
-python "${CODE_DIR}/reproc/00_batch_reproc_steps_01_04.py" \
-  --events-root "${TRUE_BASE_DIR}/${PROC_DIR}/EventSegmentation/Events_Pos" \
-  --processed-root "${TRUE_BASE_DIR}/${PROC_DIR}/ProcessedData_Flat" \
-  --intervals-dir "${TRUE_BASE_DIR}/${PROC_DIR}/EventSegmentation/Events_Intervals" \
-  --prelim-reproc-dir "${TRUE_BASE_DIR}/${PROC_DIR}/PreLimReProcessedData_Flat" \
-  --reproc-dir "${TRUE_BASE_DIR}/${PROC_DIR}/ReProcessedData_Flat" \
-  --events-pre-dir "${TRUE_BASE_DIR}/${PROC_DIR}/EventSegmentation/EventsPreReproc" \
-  --events-reproc-dir "${TRUE_BASE_DIR}/${PROC_DIR}/EventSegmentation/EventsReproc" \
-  --pattern "ObsReward_B_*_events_pos.csv" \
-  --max-round 100 \
-  --round-mode roundstartend \
-  >> "$LOG_FILE" 2>&1
-echo "✅ 00_batch_reproc_steps_01_04.py completed at $(date)" | tee -a "$LOG_FILE"
+# ####################################################################
+# # ReProcessing Pipeline |  00_ Batch Running Reproc Scripts 01 - 04
+# ####################################################################
+# echo "✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨" | tee -a "$LOG_FILE"
+# echo "🚀 Starting 00_batch_reproc_steps_01_04.py at $(date)" | tee -a "$LOG_FILE"
+# echo "            01_build_intervals : Build Block/Round Interval Tables - Single Row for Every True Round"
+# echo "            02_reproc_processed_add_elapsed_and_distance : Add Elapsed Time & Distance to _processed.csv to make _PreLimReprocessed.csv files"
+# echo "            03_compute_speed : Compute Speed to Make Final _reprocessed.csv files"
+# echo "            04_finalize_events_and_intervals_with_pindrops (no startPos here): Fleshing out Block/Round Interval Tables & Events Files with More Dist & Time Info"
+# python "${CODE_DIR}/reproc/00_batch_reproc_steps_01_04.py" \
+#   --events-root "${TRUE_BASE_DIR}/${PROC_DIR}/EventSegmentation/Events_Pos" \
+#   --processed-root "${TRUE_BASE_DIR}/${PROC_DIR}/ProcessedData_Flat" \
+#   --intervals-dir "${TRUE_BASE_DIR}/${PROC_DIR}/EventSegmentation/Events_Intervals" \
+#   --prelim-reproc-dir "${TRUE_BASE_DIR}/${PROC_DIR}/PreLimReProcessedData_Flat" \
+#   --reproc-dir "${TRUE_BASE_DIR}/${PROC_DIR}/ReProcessedData_Flat" \
+#   --events-pre-dir "${TRUE_BASE_DIR}/${PROC_DIR}/EventSegmentation/EventsPreReproc" \
+#   --events-reproc-dir "${TRUE_BASE_DIR}/${PROC_DIR}/EventSegmentation/EventsReproc" \
+#   --pattern "ObsReward_B_*_events_pos.csv" \
+#   --max-round 100 \
+#   --round-mode roundstartend \
+#   >> "$LOG_FILE" 2>&1
+# echo "✅ 00_batch_reproc_steps_01_04.py completed at $(date)" | tee -a "$LOG_FILE"
 
 
-# # echo "✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨" | tee -a "$LOG_FILE"
-# # echo "🚀 Starting 00_batch_reproc_steps_01_04.py at $(date)" | tee -a "$LOG_FILE"
-# # echo "            01_build_intervals : Build Block/Round Interval Tables - Single Row for Every True Round"
-# # echo "            02_reproc_processed_add_elapsed_and_distance : Add Elapsed Time & Distance to _processed.csv to make _PreLimReprocessed.csv files"
-# # echo "            03_compute_speed : Compute Speed to Make Final _reprocessed.csv files"
-# # echo "            04_finalize_events_and_intervals_with_pindrops (no startPos here): Fleshing out Block/Round Interval Tables & Events Files with More Dist & Time Info"
-# # python "${CODE_DIR}/reproc/00_batch_reproc_steps_01_04.py" \
-# #   --events-root "${TRUE_BASE_DIR}/${PROC_DIR}/EventSegmentation/Events_Pos" \
-# #   --processed-root "${TRUE_BASE_DIR}/${PROC_DIR}/ProcessedData_Flat" \
-# #   --intervals-dir "${TRUE_BASE_DIR}/${PROC_DIR}/EventSegmentation/Events_Intervals" \
-# #   --prelim-reproc-dir "${TRUE_BASE_DIR}/${PROC_DIR}/PreLimReProcessedData_Flat" \
-# #   --reproc-dir "${TRUE_BASE_DIR}/${PROC_DIR}/ReProcessedData_Flat" \
-# #   --events-pre-dir "${TRUE_BASE_DIR}/${PROC_DIR}/EventSegmentation/EventsPreReproc" \
-# #   --events-reproc-dir "${TRUE_BASE_DIR}/${PROC_DIR}/EventSegmentation/EventsReproc" \
-# #   --pattern "ObsReward_A_*_events_pos.csv" \
-# #   --max-round 100 \
-# #   --round-mode auto \
-# #   >> "$LOG_FILE" 2>&1
-# # echo "✅ 00_batch_reproc_steps_01_04.py completed at $(date)" | tee -a "$LOG_FILE"
+# ####################################################################
+# # ReProcessing Pipeline |  00_ Batch Running Reproc Scripts 01 - 04
+# ####################################################################
+# echo "✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨" | tee -a "$LOG_FILE"
+# echo "🚀 Starting 00_batch_reproc_steps_01_04.py at $(date)" | tee -a "$LOG_FILE"
+# echo "            01_build_intervals : Build Block/Round Interval Tables - Single Row for Every True Round"
+# echo "            02_reproc_processed_add_elapsed_and_distance : Add Elapsed Time & Distance to _processed.csv to make _PreLimReprocessed.csv files"
+# echo "            03_compute_speed : Compute Speed to Make Final _reprocessed.csv files"
+# echo "            04_finalize_events_and_intervals_with_pindrops (no startPos here): Fleshing out Block/Round Interval Tables & Events Files with More Dist & Time Info"
+# python "${CODE_DIR}/reproc/00_batch_reproc_steps_01_04.py" \
+#   --events-root "${TRUE_BASE_DIR}/${PROC_DIR}/EventSegmentation/Events_Pos" \
+#   --processed-root "${TRUE_BASE_DIR}/${PROC_DIR}/ProcessedData_Flat" \
+#   --intervals-dir "${TRUE_BASE_DIR}/${PROC_DIR}/EventSegmentation/Events_Intervals" \
+#   --prelim-reproc-dir "${TRUE_BASE_DIR}/${PROC_DIR}/PreLimReProcessedData_Flat" \
+#   --reproc-dir "${TRUE_BASE_DIR}/${PROC_DIR}/ReProcessedData_Flat" \
+#   --events-pre-dir "${TRUE_BASE_DIR}/${PROC_DIR}/EventSegmentation/EventsPreReproc" \
+#   --events-reproc-dir "${TRUE_BASE_DIR}/${PROC_DIR}/EventSegmentation/EventsReproc" \
+#   --pattern "ObsReward_A_*_events_pos.csv" \
+#   --max-round 100 \
+#   --round-mode auto \
+#   >> "$LOG_FILE" 2>&1
+# echo "✅ 00_batch_reproc_steps_01_04.py completed at $(date)" | tee -a "$LOG_FILE"
 
 # # #######################################################################################
 # # # Reprocessing Pipeline | Adding Instantaneous Distance Calcs to _reprocessed.csv files
@@ -222,8 +234,8 @@ echo "✅ 00_batch_reproc_steps_01_04.py completed at $(date)" | tee -a "$LOG_FI
 #   --overwrite \
 #   >> "$LOG_FILE" 2>&1
 # echo "✅ instantDistCalc.py completed at $(date)" | tee -a "$LOG_FILE"
-# ### directory mode
-# ### python add_distances.py --input-dir processed/ --output-dir out/ --events-dir events/ --events-suffix "_events.csv" --coinsets CoinSets.csv
+# ## directory mode
+# ## python add_distances.py --input-dir processed/ --output-dir out/ --events-dir events/ --events-suffix "_events.csv" --coinsets CoinSets.csv
 
 # #######################################################################
 # # ReProcessing Pipeline |  Adding StartPos to all PinDrop_Moment events
@@ -278,9 +290,29 @@ echo "✅ 00_batch_reproc_steps_01_04.py completed at $(date)" | tee -a "$LOG_FI
 #   --meta-dir-name "MetaData_Flat" \
 #   --output-dir-name "Events_ComputedWalks" \
 #   --eventsEnding "startPosPropagated" \
+#   --event-type PO \
 #   >> "$LOG_FILE" 2>&1
 # echo "✅ computeWalks.py completed at $(date)" | tee -a "$LOG_FILE"
 
+# ##########################################################################################################
+# # Event Augmentation Pipeline | Generating New Walk Events within a Round (i.e. Walk_PinDrop & Walk_Chest)
+# ##########################################################################################################
+# echo "🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️" | tee -a "$LOG_FILE"
+# echo "" | tee -a "$LOG_FILE"
+# echo "🚀 Starting computeWalks.py  at $(date)" | tee -a "$LOG_FILE"
+# python "${CODE_DIR}/eventAugmentation/computeWalks.py" \
+#   --root-dir "$TRUE_BASE_DIR" \
+#   --proc-dir "$PROC_DIR" \
+#   --events-dir-name "EventsStartPos" \
+#   --meta-dir-name "MetaData_Flat" \
+#   --output-dir-name "Events_ComputedWalks" \
+#   --eventsEnding "startPosPropagated" \
+#   --event-type AN \
+#   >> "$LOG_FILE" 2>&1
+# echo "✅ computeWalks.py completed at $(date)" | tee -a "$LOG_FILE"
+
+
+#######################
 
 # #############################################################################################################################################################
 # # Event/Interval Augmentation Pipeline | Pin Drop Vote Scoring

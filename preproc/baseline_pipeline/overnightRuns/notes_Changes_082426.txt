@@ -1,0 +1,9 @@
+exclusive to AN 
+- runningBlockTotal
+
+exclusive to PO
+- idvCoinID
+- pinDropVote
+
+5555 -> roundnum key, earliest round start error, happens when a pindropping round starts but is truncated before the first pin drop takes place. Excluded from analysis
+

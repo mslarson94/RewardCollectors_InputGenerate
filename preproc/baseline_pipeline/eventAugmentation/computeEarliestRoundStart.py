@@ -258,14 +258,13 @@ def create_earliest_round_start_rows(
             # Do not retain potentially incorrect inherited round coding.
             if "RoundNum" in df.columns:
                 new_row["RoundNum"] = 5555
+                new_row["totalRounds"] = pd.NA
 
 
         else:
             if "RoundNum" in df.columns:
-                new_row["RoundNum"] = reference_event.get(
-                    "RoundNum",
-                    pd.NA,
-                )
+                new_row["RoundNum"] = reference_event.get("RoundNum", pd.NA)
+                new_row["totalRounds"] = reference_event.get("totalRounds", pd.NA)
 
 
         generated_rows.append(new_row)

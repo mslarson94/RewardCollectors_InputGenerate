@@ -74,6 +74,7 @@ def _root_keyV1(s: str) -> str:
     root = name
     for suf in (
         "_events_coinLabel",
+        "_earliestRoundStart",
         "_eventsFlat",
         "_processed_events",
         "_events_flat",
@@ -434,6 +435,8 @@ def out_name_for(infile: Path) -> str:
         return base[:-len("_processed_events.csv")] + "_events_coinLabel.csv"
     if base.endswith("_eventsFlat.csv"):
         return base[:-len("_eventsFlat.csv")] + "_events_coinLabel.csv"
+    if base.endswith("_earliestRoundStart.csv"):
+        return base[:-len("_earliestRoundStart.csv")] + "_events_coinLabel.csv"
     return infile.stem + "_events_coinLabel.csv"
 
 # ----------------------------- pipeline -----------------------------

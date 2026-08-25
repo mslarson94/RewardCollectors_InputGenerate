@@ -256,7 +256,7 @@ def run_steps_01_to_04_for_file(
 
     metrics = [
         "totDistRound", "totDistBlock", "currSpeed",
-        "roundElapsed_s", "blockElapsed_s", "totalSessionElapsed_s",
+        "roundElapsed_s", "blockElapsed_s", "totalSessionElapsed_s", "earliestRoundElapsed_s",
         "roundFrac", "blockFrac",
         "dt", "stepDist",
         "totDistBlock_current", "totDistRound_current",

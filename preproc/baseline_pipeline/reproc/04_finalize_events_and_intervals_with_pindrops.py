@@ -152,11 +152,12 @@ def main():
         # core distances + speed
         "totDistRound", "totDistBlock", "currSpeed",
         # elapsed + fractions
-        "roundElapsed_s", "blockElapsed_s", "totalSessionElapsed_s",
+        "roundElapsed_s", "blockElapsed_s", "totalSessionElapsed_s", "earliestRoundElapsed_s",
         "roundFrac", "blockFrac",
         # sanity columns (optional but useful)
         "dt", "stepDist",
     ]
+
 
     # also pull start/end positions for events (simple + robust)
     pos_cols = ["HeadPosAnchored_x", "HeadPosAnchored_y", "HeadPosAnchored_z"]

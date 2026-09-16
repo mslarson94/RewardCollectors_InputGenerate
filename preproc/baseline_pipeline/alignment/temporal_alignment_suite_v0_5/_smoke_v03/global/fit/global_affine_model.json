@@ -1,0 +1,22 @@
+{
+  "model_type": "global_affine",
+  "version": 1,
+  "robust": true,
+  "slope": 1.000473264207244,
+  "intercept_s": 0.3830724211238064,
+  "origin_unix_s": 1735732800.0,
+  "clock_skew_ppm": 473.2642072440285,
+  "n_used": 16,
+  "fit_time_start": "2025-01-01 12:00:00",
+  "fit_time_end": "2025-01-01 12:07:30",
+  "match_mode": "manual",
+  "fit_metrics": {
+    "n": 16,
+    "median_residual_s": -0.0010569095611572266,
+    "median_abs_residual_s": 0.018339037895202637,
+    "mad_residual_s": 0.019395947456359863,
+    "rmse_s": 0.02597915062946085,
+    "p95_abs_residual_s": 0.04494577646255493,
+    "max_abs_residual_s": 0.0533444881439209
+  }
+}

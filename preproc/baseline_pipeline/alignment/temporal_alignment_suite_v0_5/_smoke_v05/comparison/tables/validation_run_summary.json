@@ -1,0 +1,14 @@
+{
+  "n_models_evaluated": 3,
+  "n_insample_files": 3,
+  "n_heldout_files": 0,
+  "has_matching_comparison": true,
+  "matching_agreement": {
+    "n_rows": 12,
+    "n_same_pair": 10,
+    "n_different_pair": 2,
+    "fraction_same_pair": 0.8333333333333334,
+    "median_abs_offset_difference_s": 0.0,
+    "max_abs_offset_difference_s": 0.04
+  }
+}

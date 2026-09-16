@@ -137,6 +137,19 @@ mL5_learning_clustered <- clogit(
   method = "efron"
 )
 
+mL5_learning <- clogit(
+  chosen ~
+    points + idealDistance +
+    points:t_early_15 + idealDistance:t_early_15 +
+    points:t_late_15  + idealDistance:t_late_15 +
+    # swap-rate moderates sensitivities (identifiable)
+    points:recentSwapRate_all_z +
+    idealDistance:recentSwapRate_all_z +
+    strata(roundID),
+  data = dat,
+  method = "efron"
+)
+
 mL6_learning_clustered <- clogit(
   chosen ~
     points + idealDistance +
@@ -146,6 +159,8 @@ mL6_learning_clustered <- clogit(
   data = dat,
   method = "efron"
 )
+
+
 
 mL7_learning_clustered <- clogit(
   chosen ~
@@ -226,15 +241,23 @@ cat("L4: (points + distance * learning)*participantCluster\n")
 cat("=====================================================\n")
 print(summary(mL4_learning_clustered))
 
+
+cat("\n\n=================================================\n")
+cat("L5: (points + distance * learning)*participant + recentSwapRate_all \n")
+cat("=====================================================\n")
+print(summary(mL5_learning))
+
 cat("\n\n=================================================\n")
 cat("L5: (points + distance * learning)*participant + recentSwapRate_all Cluster\n")
 cat("=====================================================\n")
 print(summary(mL5_learning_clustered))
 
+
 cat("\n\n=================================================\n")
 cat("L6: (points + distance * learning)*participant + recentSwapRate_all Cluster\n")
 cat("=====================================================\n")
 print(summary(mL6_learning_clustered))
+
 
 cat("\n\n=================================================\n")
 cat("L7: (points + distance * learning)*participant + recentSwapRate_all Cluster\n")
@@ -434,6 +457,7 @@ model_list <- list(
   M3_value_distance = m3_value_distance,
   L3_learning = mL3_learning,
   L4_learning_clustered = mL4_learning_clustered,
+  L5_learning = mL5_learning,
   L5_learning_clustered = mL5_learning_clustered,
   L6_learning_clustered = mL6_learning_clustered,
   L7_learning_clustered = mL7_learning_clustered,
@@ -474,8 +498,14 @@ cat("Implied lambda from L4\n")
 cat("==================================\n")
 cat("lambda =", as.numeric(lambda_from(mL4_learning_clustered)), "\n")
 
+
 cat("\n\n==============================\n")
 cat("Implied lambda from L5\n")
+cat("==================================\n")
+cat("lambda =", as.numeric(lambda_from(mL5_learning)), "\n")
+
+cat("\n\n==============================\n")
+cat("Implied lambda from L5c\n")
 cat("==================================\n")
 cat("lambda =", as.numeric(lambda_from(mL5_learning_clustered)), "\n")
 
@@ -588,6 +618,7 @@ save_clogit_bundle(m2_distance,             "M2_distance",            out_dir, d
 save_clogit_bundle(m3_value_distance,       "M3_value_distance",      out_dir, data = dat, term_recode = term_recode)
 save_clogit_bundle(mL3_learning,            "L3_learning",            out_dir, data = dat, term_recode = term_recode)
 save_clogit_bundle(mL4_learning_clustered,  "L4_learning_clustered",  out_dir, data = dat, term_recode = term_recode)
+save_clogit_bundle(mL5_learning,            "L5_Learning",            out_dir, data = dat, term_recode = term_recode)
 save_clogit_bundle(mL5_learning_clustered,  "L5_Learning_clustered",  out_dir, data = dat, term_recode = term_recode)
 save_clogit_bundle(mL6_learning_clustered,  "L6_Learning_clustered",  out_dir, data = dat, term_recode = term_recode)
 save_clogit_bundle(mL7_learning_clustered,  "L7_Learning_clustered",  out_dir, data = dat, term_recode = term_recode)

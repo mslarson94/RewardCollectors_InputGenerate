@@ -1,0 +1,27 @@
+# echo "🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸" | tee -a "$LOG_FILE"
+# echo "🚀 Starting compare_alignment_methods.py at $(date)" | tee -a "$LOG_FILE"
+# python "${CODE_DIR}/alignment/alignmentSuite/batch_compare_alignment_methods_elapsed.py" \
+#   --input_dir "${TRUE_BASE_DIR}/${PROC_DIR}/RPi_preproc_${TIMECOL}/AlignedSplit_${TIMECOL}" \
+#   --out_dir "${TRUE_BASE_DIR}/${PROC_DIR}/RPi_preproc_${TIMECOL}/AlignmentCompare" \
+#   --recursive \
+#   >> "$LOG_FILE" 2>&1
+# echo "✅ batch_split_pipeline3.py completed at $(date)" | tee -a "$LOG_FILE"
+
+
+
+# echo "🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸" | tee -a "$LOG_FILE"
+# echo "🚀 Starting compare_alignment_methods.py at $(date)" | tee -a "$LOG_FILE"
+# python "${CODE_DIR}/alignment/alignmentSuite/collate_alignment_comparisons.py" \
+#   --comparison_root ${TRUE_BASE_DIR}/${PROC_DIR}/RPi_preproc_${TIMECOL}/AlignmentCompare \
+#   --out_dir "${TRUE_BASE_DIR}/${PROC_DIR}/RPi_preproc_${TIMECOL}/AlignmentCompare/All" \
+#   >> "$LOG_FILE" 2>&1
+# echo "✅ batch_split_pipeline3.py completed at $(date)" | tee -a "$LOG_FILE"
+
+# echo "🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸" | tee -a "$LOG_FILE"
+# echo "🚀 Starting compare_drift_timecols.py at $(date)" | tee -a "$LOG_FILE"
+# python "${CODE_DIR}/alignment/compare_drift_timecols.py" \
+#   --emlt-root "${TRUE_BASE_DIR}/${PROC_DIR}/RPi_preproc_eMLT_orig/AlignedSplit_eMLT_orig/Drift" \
+#   --mlt-root "${TRUE_BASE_DIR}/${PROC_DIR}/RPi_preproc_mLT_orig/AlignedSplit_mLT_orig/Drift" \
+#   --out-dir "${TRUE_BASE_DIR}/${PROC_DIR}/RPi_preproc_eMLT_v_mLT_Drift" \
+#   >> "$LOG_FILE" 2>&1
+# echo "✅ compare_drift_timecols.py completed at $(date)" | tee -a "$LOG_FILE"

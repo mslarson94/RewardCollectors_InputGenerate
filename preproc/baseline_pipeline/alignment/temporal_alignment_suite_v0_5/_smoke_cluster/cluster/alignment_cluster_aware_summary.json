@@ -1,0 +1,11 @@
+{
+  "model_name": "cluster_aware_affine",
+  "n_complete_chunks": 2,
+  "n": 12,
+  "median_residual_s": 0.0,
+  "median_abs_residual_s": 0.0,
+  "mad_residual_s": 0.0,
+  "rmse_s": 5.24159509272294e-07,
+  "p95_abs_residual_s": 1.168251037597656e-06,
+  "max_abs_residual_s": 1.430511474609375e-06
+}

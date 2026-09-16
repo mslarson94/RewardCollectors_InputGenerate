@@ -1,0 +1,32 @@
+corrected ML mark timestamps
+matched marks
+preliminary exclusions
+reviewed cluster/chunk metadata
+        │
+        ▼
+┌──────────────────────────────┐
+│ 1. MASTER MARK TABLE SUITE   │
+└──────────────────────────────┘
+        │
+        ├─────────────────────────────────────┐
+        │                                     │
+        ▼                                     ▼
+┌──────────────────────┐            ┌───────────────────────┐
+│ 2. DRIFT CALCULATION │            │ alignment input data  │
+│        SUITE         │            └───────────────────────┘
+└──────────────────────┘                     │
+                                             ├───────────────┬───────────────┐
+                                             ▼               ▼               ▼
+                                  ┌────────────────┐ ┌────────────────┐ ┌────────────────┐
+                                  │ 3. GLOBAL      │ │ 4. BLIND       │ │ 5. CLUSTER-    │
+                                  │    AFFINE      │ │    PIECEWISE   │ │    AWARE       │
+                                  │    ALIGNMENT   │ │    ALIGNMENT   │ │    ALIGNMENT   │
+                                  └────────────────┘ └────────────────┘ └────────────────┘
+                                             │               │               │
+                                             └───────────────┴───────────────┘
+                                                             │
+                                                             ▼
+                                                ┌─────────────────────────┐
+                                                │ 6. COMPARISON /         │
+                                                │    VALIDATION SUITE     │
+                                                └─────────────────────────┘

@@ -1,0 +1,84 @@
+# echo "🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸" | tee -a "$LOG_FILE"
+# echo "🚀 Starting multi_stream_drift.py at $(date)" | tee -a "$LOG_FILE"
+# python ${CODE_DIR}/alignment/multi_stream_drift.py \
+#         --mark-col markNum_aligned \
+#         --lfp-csv "${TRUE_BASE_DIR}/${PROC_DIR}/RPi_preproc/RNS/RPi_unified/R037/R037_mergedLFP_trim.csv" \
+#         --lfp-time-col time_abs \
+#         --rpi-csv "${TRUE_BASE_DIR}/${PROC_DIR}/RPi_preproc/RNS/RPi_unified/R037/R037_mergedRPi_trim.csv" \
+#         --rpi-time-col RPi_Time_verb \
+#         --out-csv "${TRUE_BASE_DIR}/${PROC_DIR}/RPi_preproc/RNS/RPi_unified/R037/R037_LFP_RPi_drift.csv" \
+#         --chunk-csv "${TRUE_BASE_DIR}/${PROC_DIR}/RPi_preproc/RNS/RPi_unified/R037/R037_mergedRPi_trim.csv" \
+#         --chunk-col con_chunk_RPi \
+#         --midi-chunks 1,2,3,4,5,6,7 \
+#         --print-summary \
+#    >> "$LOG_FILE" 2>&1
+
+# echo "✅ multi_stream_drift.py completed at $(date)" | tee -a "$LOG_FILE"
+
+# echo "🍄🍄🍄🍄🍄🍄🍄🍄🍄🍄🍄🍄🍄🍄🍄🍄🍄🍄🍄🍄🍄🍄🍄🍄🍄" | tee -a "$LOG_FILE"
+# echo "🚀 Starting multi_stream_drift.py at $(date)" | tee -a "$LOG_FILE"
+# python ${CODE_DIR}/alignment/multi_stream_drift.py \
+#         --mark-col markNum_aligned \
+#         --lfp-csv "${TRUE_BASE_DIR}/${PROC_DIR}/RPi_preproc/RNS/RPi_unified/R019/R019_mergedLFP_trim.csv"  \
+#         --lfp-time-col time_abs \
+#         --rpi-csv "${TRUE_BASE_DIR}/${PROC_DIR}/RPi_preproc/RNS/RPi_unified/R019/R019_mergedRPi_trim.csv" \
+#         --rpi-time-col RPi_Time_verb \
+#         --out-csv "${TRUE_BASE_DIR}/${PROC_DIR}/RPi_preproc/RNS/RPi_unified/R019/R019_LFP_RPi_drift.csv" \
+#         --chunk-csv "${TRUE_BASE_DIR}/${PROC_DIR}/RPi_preproc/RNS/RPi_unified/R019/R019_mergedRPi_trim.csv" \
+#         --chunk-col con_chunk_RPi \
+#         --midi-chunks 1,2,3,4,5,6,7 \
+#         --print-summary \
+#    >> "$LOG_FILE" 2>&1
+
+# echo "✅ multi_stream_drift.py completed at $(date)" | tee -a "$LOG_FILE"
+
+# echo "🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸" | tee -a "$LOG_FILE"
+# echo "🚀 Starting multi_stream_drift.py at $(date)" | tee -a "$LOG_FILE"
+# python ${CODE_DIR}/alignment/multi_stream_drift.py \
+#         --mark-col markNum_aligned \
+#         --ml-csv  R037_ML.csv  --ml-time-col  mLTimestamp \
+#         --lfp-csv R037_LFP.csv  --lfp-time-col time_abs \
+#         --rpi-csv R037_mergedRPi_trim.csv --rpi-time-col RPi_Time_verb \
+#         --out-csv R037_LFP_RPi_drift.csv
+#    >> "$LOG_FILE" 2>&1
+
+# echo "✅ multi_stream_drift.py completed at $(date)" | tee -a "$LOG_FILE"
+#  # ####################################
+# # # # Magic Leap Alignment to RPi Marks 
+# # # ####################################
+# echo "🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛" | tee -a "$LOG_FILE"
+# echo "🚀 Starting marks_timeline_mlts.py at $(date)" | tee -a "$LOG_FILE"
+# python ${CODE_DIR}/alignment/marks_timeline_mlts.py \
+#     --events "${TRUE_BASE_DIR}/${PROC_DIR}/EventSegmentation/Events_Flattened/ObsReward_B_03_17_2025_14_16_eventsFlat.csv" \
+#     --rpi    "${TRUE_BASE_DIR}/${PROC_DIR}/RPi_preproc/RNS/RPi_unified/ObsReward_B_03_17_2025_14_16_RNS_RPi_unified.csv" \
+#     --block All \
+#     --out   "${TRUE_BASE_DIR}/${PROC_DIR}/markTimelines/R019_14_16_marks_timeline.png" \
+#     --dpi   150 \
+#     --show \
+#     >> "$LOG_FILE" 2>&1
+# echo "✅ marks_timeline_mlts.py completed at $(date)" | tee -a "$LOG_FILE"
+
+# echo "🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛" | tee -a "$LOG_FILE"
+# echo "🚀 Starting marks_timeline_mlts.py at $(date)" | tee -a "$LOG_FILE"
+# python ${CODE_DIR}/alignment/marks_timeline_mlts.py \
+#     --events "${TRUE_BASE_DIR}/${PROC_DIR}/EventSegmentation/Events_Flattened/ObsReward_B_03_17_2025_14_16_eventsFlat.csv" \
+#     --rpi    "${TRUE_BASE_DIR}/${PROC_DIR}/RPi_preproc/RNS/RPi_unified/ObsReward_B_03_17_2025_14_16_RNS_RPi_unified.csv" \
+#     --block All \
+#     --out   "${TRUE_BASE_DIR}/${PROC_DIR}/markTimelines/R019_14_16_marks_timeline.png" \
+#     --dpi   150 \
+#     --show \
+#     >> "$LOG_FILE" 2>&1
+# echo "✅ marks_timeline_mlts.py completed at $(date)" | tee -a "$LOG_FILE"
+
+
+# echo "🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛" | tee -a "$LOG_FILE"
+# echo "🚀 Starting marks_timeline_mlts.py at $(date)" | tee -a "$LOG_FILE"
+# python ${CODE_DIR}/alignment/marks_timeline_mlts.py \
+#     --events "${TRUE_BASE_DIR}/${PROC_DIR}/EventSegmentation/Events_Flattened/ObsReward_A_01_25_2025_17_07_eventsFlat.csv" \
+#     --rpi    "${TRUE_BASE_DIR}/${PROC_DIR}/RPi_preproc/RNS/RPi_unified/ObsReward_A_01_25_2025_17_07_RNS_RPi_unified.csv" \
+#     --block All \
+#     --out   "${TRUE_BASE_DIR}/${PROC_DIR}/markTimelines/R019_14_16_marks_timeline.png" \
+#     --dpi   150 \
+#     --show \
+#     >> "$LOG_FILE" 2>&1
+# echo "✅ marks_timeline_mlts.py completed at $(date)" | tee -a "$LOG_FILE"

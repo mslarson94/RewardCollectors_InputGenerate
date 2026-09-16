@@ -1,0 +1,8 @@
+{
+  "robust": true,
+  "by": "both",
+  "n_input_rows": 20,
+  "n_usable_rows": 20,
+  "n_models_ok": 3,
+  "n_models_total": 3
+}

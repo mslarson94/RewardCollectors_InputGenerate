@@ -4,6 +4,19 @@ set -Eeuo pipefail
 # Set up log file
 LOG_FILE="/Users/mairahmac/Desktop/modFreshStart_processing_log_$(date +'%Y-%m-%d_%H-%M-%S').log"
 
+on_exit() {
+    exit_code=$?
+
+    if [ "$exit_code" -eq 0 ]; then
+        afplay /System/Library/Sounds/Blow.aiff
+    else
+        afplay /System/Library/Sounds/Sosumi.aiff
+    fi
+}
+
+trap on_exit EXIT
+
+
 # Activate virtual environment (fail hard if missing)
 if ! command -v conda >/dev/null 2>&1; then
   echo "❌ conda not found on PATH" | tee -a "$LOG_FILE"

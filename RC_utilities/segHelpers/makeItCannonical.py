@@ -12,7 +12,7 @@ import pandas as pd
 
 EVENT_RANK = {
     "BlockStart": 0,
-    "RoundStart": 1,
+    "RoundStart_tentative": 1,
     "TrueContentStart": 2,
     "TrueContentEnd": 3,
     "BlockEnd": 4,

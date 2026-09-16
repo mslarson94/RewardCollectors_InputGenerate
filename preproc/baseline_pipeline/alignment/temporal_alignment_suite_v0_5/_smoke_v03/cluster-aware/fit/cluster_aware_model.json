@@ -1,0 +1,68 @@
+{
+  "model_type": "cluster_aware_affine",
+  "version": 1,
+  "boundary_estimator": "median_raw_offset",
+  "match_mode": "manual",
+  "chunks": [
+    {
+      "chunk_id": "chunk_1",
+      "start_cluster_ids": [
+        "c1"
+      ],
+      "end_cluster_ids": [
+        "c2"
+      ],
+      "start_boundary_ml_unix_s": 1735732815.0,
+      "end_boundary_ml_unix_s": 1735732935.0,
+      "start_boundary_ml_time": "2025-01-01 12:00:15",
+      "end_boundary_ml_time": "2025-01-01 12:02:15",
+      "start_offset_s": 0.403,
+      "end_offset_s": 0.427,
+      "drift_rate_s_per_s": 0.0001999999999999997,
+      "clock_skew_ppm": 199.99999999999972,
+      "n_start_marks_used": 2,
+      "n_end_marks_used": 2,
+      "fit_metrics": {
+        "n": 6,
+        "median_residual_s": 0.0,
+        "median_abs_residual_s": 0.0,
+        "mad_residual_s": 0.0,
+        "rmse_s": 9.733397733303619e-08,
+        "p95_abs_residual_s": 1.7881393432617188e-07,
+        "max_abs_residual_s": 2.384185791015625e-07
+      },
+      "apply_start_ml_unix_s": null,
+      "apply_end_ml_unix_s": 1735732965.0
+    },
+    {
+      "chunk_id": "chunk_2",
+      "start_cluster_ids": [
+        "c3"
+      ],
+      "end_cluster_ids": [
+        "c4"
+      ],
+      "start_boundary_ml_unix_s": 1735732995.0,
+      "end_boundary_ml_unix_s": 1735733115.0,
+      "start_boundary_ml_time": "2025-01-01 12:03:15",
+      "end_boundary_ml_time": "2025-01-01 12:05:15",
+      "start_offset_s": 0.439,
+      "end_offset_s": 0.5575000000000001,
+      "drift_rate_s_per_s": 0.000987500000000001,
+      "clock_skew_ppm": 987.5000000000009,
+      "n_start_marks_used": 2,
+      "n_end_marks_used": 2,
+      "fit_metrics": {
+        "n": 6,
+        "median_residual_s": 0.01256263256072998,
+        "median_abs_residual_s": 0.013312578201293945,
+        "mad_residual_s": 0.02512526512145996,
+        "rmse_s": 0.03331445867879328,
+        "p95_abs_residual_s": 0.05990636348724365,
+        "max_abs_residual_s": 0.06656265258789062
+      },
+      "apply_start_ml_unix_s": 1735732965.0,
+      "apply_end_ml_unix_s": null
+    }
+  ]
+}

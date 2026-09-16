@@ -19,7 +19,7 @@ fi
 # Segment barebones
 CODE_DIR="/Users/mairahmac/Desktop/myra_code/Python/RewardCollectors_InputGenerate/preproc/baseline_pipeline"
 TRUE_BASE_DIR="/Users/mairahmac/Desktop/RC_TestingNotes"
-PROC_DIR="FreshStart_redoAgainAgainAgain_PO"
+PROC_DIR="FreshStart_redoAgainAgainAgain_PO_redo_new"
 #PROC_DIR="FreshStart_redoAgainSingle"
 META_FILE="collatedData.xlsx"
 EVENTS_DIR="Events_Pos"
@@ -49,43 +49,43 @@ EVENTS_DIR="Events_Pos"
 #   >> "$LOG_FILE" 2>&1
 # echo "✅ batch_read_rpi_logs_to_csv.py completed at $(date)" | tee -a "$LOG_FILE" 
 
+# # echo "🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛" | tee -a "$LOG_FILE"
+# # echo "🚀 Starting rpi_preproc_pipeline3.py at $(date)" | tee -a "$LOG_FILE"
+
+# # python ${CODE_DIR}/alignment/rpi_preproc_pipeline3.py \
+# #   --collated "${TRUE_BASE_DIR}/collatedData.xlsx" \
+# #   --device-ip-map "/Users/mairahmac/Desktop/myra_code/Python/RewardCollectors_InputGenerate/RC_utilities/configs/DeviceIPAddresses.txt" \
+# #   --code-dir "${CODE_DIR}/alignment" \
+# #   --base-dir "${TRUE_BASE_DIR}" \
+# #   --proc-dir "${PROC_DIR}" \
+# #   --timezone-offset auto \
+# #   --sheet MagicLeapFiles \
+# #   --events-dir-name "${TRUE_BASE_DIR}/${PROC_DIR}/EventSegmentation/Events_Flattened" \
+# #   --out-dir "${TRUE_BASE_DIR}/${PROC_DIR}/"  \
+# #   --marks-timestamp-col "RPi_Time_verb" \
+# #   --strip-ml-suffixes "_eventsFlat,_processed" \
+# #   --only-rows-with-rpi \
+# #   --dedupe-sec 0.05 \
+# #   --debug \
+# #   >> "$LOG_FILE" 2>&1
+# # echo "✅ rpi_preproc_pipeline.py completed at $(date)" | tee -a "$LOG_FILE"
+# #ACTUAL_PROC="${TRUE_BASE_DIR}/${PROC_DIR}/full"
+
 # echo "🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛" | tee -a "$LOG_FILE"
 # echo "🚀 Starting rpi_preproc_pipeline3.py at $(date)" | tee -a "$LOG_FILE"
-
 # python ${CODE_DIR}/alignment/rpi_preproc_pipeline3.py \
 #   --collated "${TRUE_BASE_DIR}/collatedData.xlsx" \
 #   --device-ip-map "/Users/mairahmac/Desktop/myra_code/Python/RewardCollectors_InputGenerate/RC_utilities/configs/DeviceIPAddresses.txt" \
 #   --code-dir "${CODE_DIR}/alignment" \
 #   --base-dir "${TRUE_BASE_DIR}" \
 #   --proc-dir "${PROC_DIR}" \
-#   --timezone-offset auto \
-#   --sheet MagicLeapFiles \
-#   --events-dir-name "${TRUE_BASE_DIR}/${PROC_DIR}/EventSegmentation/Events_Flattened" \
 #   --out-dir "${TRUE_BASE_DIR}/${PROC_DIR}/"  \
-#   --marks-timestamp-col "RPi_Time_verb" \
-#   --strip-ml-suffixes "_eventsFlat,_processed" \
-#   --only-rows-with-rpi \
-#   --dedupe-sec 0.05 \
-#   --debug \
-#   >> "$LOG_FILE" 2>&1
-# echo "✅ rpi_preproc_pipeline.py completed at $(date)" | tee -a "$LOG_FILE"
-ACTUAL_PROC="${TRUE_BASE_DIR}/${PROC_DIR}/full"
-
-# echo "🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛" | tee -a "$LOG_FILE"
-# echo "🚀 Starting rpi_preproc_pipeline3.py at $(date)" | tee -a "$LOG_FILE"
-# python ${CODE_DIR}/alignment/rpi_preproc_pipeline3.py \
-#   --collated "${TRUE_BASE_DIR}/collatedData.xlsx" \
-#   --device-ip-map "/Users/mairahmac/Desktop/myra_code/Python/RewardCollectors_InputGenerate/RC_utilities/configs/DeviceIPAddresses.txt" \
-#   --code-dir "${CODE_DIR}/alignment" \
-#   --base-dir "${TRUE_BASE_DIR}" \
-#   --proc-dir "${PROC_DIR}" \
-#   --out-dir "${TRUE_BASE_DIR}/${PROC_DIR}/"  \
-#   --events-dir-name "EventSegmentation/Events_Flattened" \
+#   --events-dir-name "EventSegmentation/EarliestRoundStart" \
 #   --sheet "MagicLeapFiles" \
 #   --only-rows-with-rpi \
 #   --stage-report-csv "${TRUE_BASE_DIR}/${PROC_DIR}/RPi_preproc/rpi_preproc_stage_report.csv" \
 #   --marks-timestamp-col "RPi_Time_verb" \
-#   --strip-ml-suffixes "_eventsFlat,_processed" \
+#   --strip-ml-suffixes "_earliestRoundStart,_processed" \
 #   --dedupe-sec 0.05 \
 #   --timezone-offset auto \
 # >> "$LOG_FILE" 2>&1
@@ -209,15 +209,15 @@ ACTUAL_PROC="${TRUE_BASE_DIR}/${PROC_DIR}/full"
 #   >> "$LOG_FILE" 2>&1
 # echo "✅ mark_review_app.py completed at $(date)" | tee -a "$LOG_FILE"
 
-# echo "🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛" | tee -a "$LOG_FILE"
-# echo "🚀 Starting mark_review_app.py at $(date)" | tee -a "$LOG_FILE"
-# python "${CODE_DIR}/alignment/mark_review_app.py" \
-#   --events-dir "${TRUE_BASE_DIR}/${PROC_DIR}/EventSegmentation/Events_Flattened" \
-#   --rpi-dir "${TRUE_BASE_DIR}/${PROC_DIR}/RPi_preproc/RNS/RPi_unified/" \
-#   --review-dir "${TRUE_BASE_DIR}/${PROC_DIR}/RPi_preproc/reviewDecisions_RNS3" \
-#   --skip-reviewed-pairs \
-#   >> "$LOG_FILE" 2>&1
-# echo "✅ mark_review_app.py completed at $(date)" | tee -a "$LOG_FILE"
+echo "🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛" | tee -a "$LOG_FILE"
+echo "🚀 Starting mark_review_app.py at $(date)" | tee -a "$LOG_FILE"
+python "${CODE_DIR}/alignment/mark_review_app.py" \
+  --events-dir "${TRUE_BASE_DIR}/${PROC_DIR}/EventSegmentation/Events_Flattened" \
+  --rpi-dir "${TRUE_BASE_DIR}/${PROC_DIR}/RPi_preproc/RNS/RPi_unified/" \
+  --review-dir "${TRUE_BASE_DIR}/${PROC_DIR}/RPi_preproc/reviewDecisions_RNS" \
+  --skip-reviewed-pairs \
+  >> "$LOG_FILE" 2>&1
+echo "✅ mark_review_app.py completed at $(date)" | tee -a "$LOG_FILE"
 
 # # echo "🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛" | tee -a "$LOG_FILE"
 # # echo "🚀 Starting export_filtered_copies.py at $(date)" | tee -a "$LOG_FILE"
@@ -306,40 +306,41 @@ ACTUAL_PROC="${TRUE_BASE_DIR}/${PROC_DIR}/full"
 # >> "$LOG_FILE" 2>&1
 # echo "✅ mark_chunk_prototype.py RNS completed at $(date)" | tee -a "$LOG_FILE"
 
-echo "🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛" | tee -a "$LOG_FILE"
-python "${CODE_DIR}/alignment/mark_chunk_review_tool.py" propose \
-  --input "${TRUE_BASE_DIR}/${PROC_DIR}/EventSegmentation/MostlyFilledEvents/ObsReward_A_03_17_2025_14_16_filled_intervalProps.csv" \
-  --output-dir "${TRUE_BASE_DIR}/${PROC_DIR}/EventSegmentation/MarkReview_R019_14_16" \
-  --time-col eMLT_orig \
-  --event-col lo_eventType \
-  --block-col BlockNum \
-  --mark-gap-seconds 30 \
-  --context-window-seconds 300 \
-  --boundary-pair-max-seconds 300 \
-  >> "$LOG_FILE" 2>&1
-echo "✅ mark_chunk_review_tool.py propose completed at $(date)" | tee -a "$LOG_FILE"
+######################
+# echo "🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛" | tee -a "$LOG_FILE"
+# python "${CODE_DIR}/alignment/mark_chunk_review_tool.py" propose \
+#   --input "${TRUE_BASE_DIR}/${PROC_DIR}/EventSegmentation/EarliestRoundStart/ObsReward_A_03_17_2025_14_16_earliestRoundStart.csv" \
+#   --output-dir "${TRUE_BASE_DIR}/${PROC_DIR}/EventSegmentation/MarkReview_R019_14_16" \
+#   --time-col eMLT_orig \
+#   --event-col lo_eventType \
+#   --block-col BlockNum \
+#   --mark-gap-seconds 30 \
+#   --context-window-seconds 300 \
+#   --boundary-pair-max-seconds 300 \
+#   >> "$LOG_FILE" 2>&1
+# echo "✅ mark_chunk_review_tool.py propose completed at $(date)" | tee -a "$LOG_FILE"
 
-echo "🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛" | tee -a "$LOG_FILE"
-echo "🚀 Starting Streamlit review app at $(date)" | tee -a "$LOG_FILE"
-python "${CODE_DIR}/alignment/mark_review_tk.py"\
-  --cluster-csv "${TRUE_BASE_DIR}/${PROC_DIR}/EventSegmentation/MarkReview_R019_14_16/mark_clusters.csv" \
-  --context-csv "${TRUE_BASE_DIR}/${PROC_DIR}/EventSegmentation/MarkReview_R019_14_16/mark_cluster_context.csv" \
-  --source-csv "${TRUE_BASE_DIR}/${PROC_DIR}/EventSegmentation/MostlyFilledEvents/ObsReward_A_03_17_2025_14_16_filled_intervalProps.csv" \
-  --review-csv "${TRUE_BASE_DIR}/${PROC_DIR}/EventSegmentation/MarkReview_R019_14_16/review_edits.csv" \
-  --time-col eMLT_orig \
-  --event-col lo_eventType \
-  --block-col BlockNum \
-  --context-seconds 300 \
-  >> "$LOG_FILE" 2>&1
-echo "✅ Streamlit review app closed at $(date)" | tee -a "$LOG_FILE"
+# echo "🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛" | tee -a "$LOG_FILE"
+# echo "🚀 Starting Streamlit review app at $(date)" | tee -a "$LOG_FILE"
+# python "${CODE_DIR}/alignment/mark_review_tk.py"\
+#   --cluster-csv "${TRUE_BASE_DIR}/${PROC_DIR}/EventSegmentation/MarkReview_R019_14_16/mark_clusters.csv" \
+#   --context-csv "${TRUE_BASE_DIR}/${PROC_DIR}/EventSegmentation/MarkReview_R019_14_16/mark_cluster_context.csv" \
+#   --source-csv "${TRUE_BASE_DIR}/${PROC_DIR}/EventSegmentation/EarliestRoundStart/ObsReward_A_03_17_2025_14_16_earliestRoundStart.csv" \
+#   --review-csv "${TRUE_BASE_DIR}/${PROC_DIR}/EventSegmentation/MarkReview_R019_14_16/review_edits.csv" \
+#   --time-col eMLT_orig \
+#   --event-col lo_eventType \
+#   --block-col BlockNum \
+#   --context-seconds 300 \
+#   >> "$LOG_FILE" 2>&1
+# echo "✅ Streamlit review app closed at $(date)" | tee -a "$LOG_FILE"
 
 # echo "🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛" | tee -a "$LOG_FILE"
 # echo "🚀 Starting mark_chunk_review_tool.py apply-edits at $(date)" | tee -a "$LOG_FILE"
 # python "${CODE_DIR}/alignment/mark_chunk_review_tool.py" apply-edits \
-#   --cluster-csv "${TRUE_BASE_DIR}/${PROC_DIR}/EventSegmentation/MarkReview/mark_clusters.csv" \
-#   --review-csv "${TRUE_BASE_DIR}/${PROC_DIR}/EventSegmentation/MarkReview/review_edits.csv" \
-#   --context-csv "${TRUE_BASE_DIR}/${PROC_DIR}/EventSegmentation/MarkReview/mark_cluster_context.csv" \
-#   --output-dir "${TRUE_BASE_DIR}/${PROC_DIR}/EventSegmentation/MarkReview/Finalized" \
+#   --cluster-csv "${TRUE_BASE_DIR}/${PROC_DIR}/EventSegmentation/MarkReview_R019_14_16/mark_clusters.csv" \
+#   --review-csv "${TRUE_BASE_DIR}/${PROC_DIR}/EventSegmentation/MarkReview_R019_14_16/review_edits.csv" \
+#   --context-csv "${TRUE_BASE_DIR}/${PROC_DIR}/EventSegmentation/MarkReview_R019_14_16/mark_cluster_context.csv" \
+#   --output-dir "${TRUE_BASE_DIR}/${PROC_DIR}/EventSegmentation/MarkReview_R019_14_16/Finalized" \
 #   >> "$LOG_FILE" 2>&1
 # echo "✅ mark_chunk_review_tool.py apply-edits completed at $(date)" | tee -a "$LOG_FILE"
 

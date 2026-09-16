@@ -1,0 +1,13 @@
+{
+  "model_name": "blind_piecewise_affine",
+  "n_segments": 1,
+  "min_points": 4,
+  "penalty": 0.01,
+  "n": 12,
+  "median_residual_s": 0.0,
+  "median_abs_residual_s": 0.0,
+  "mad_residual_s": 0.0,
+  "rmse_s": 9.733397733303619e-08,
+  "p95_abs_residual_s": 2.384185791015625e-07,
+  "max_abs_residual_s": 2.384185791015625e-07
+}

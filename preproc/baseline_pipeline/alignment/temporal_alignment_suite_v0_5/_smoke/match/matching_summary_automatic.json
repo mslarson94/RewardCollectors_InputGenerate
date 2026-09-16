@@ -1,0 +1,8 @@
+{
+  "match_mode": "automatic",
+  "n_ml_marks": 12,
+  "n_rpi_marks": 12,
+  "n_matched": 12,
+  "n_effectively_excluded": 0,
+  "max_match_gap_s": 2.0
+}

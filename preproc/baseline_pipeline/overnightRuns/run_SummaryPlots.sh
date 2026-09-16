@@ -1,6 +1,19 @@
 #!/usr/bin/env bash
 set -Eeuo pipefail
 
+on_exit() {
+    exit_code=$?
+
+    if [ "$exit_code" -eq 0 ]; then
+        afplay /System/Library/Sounds/Blow.aiff
+    else
+        afplay /System/Library/Sounds/Sosumi.aiff
+    fi
+}
+
+trap on_exit EXIT
+
+
 # Set up log file
 LOG_FILE="/Users/mairahmac/Desktop/summaryPlots_log_$(date +'%Y-%m-%d_%H-%M-%S').log"
 

@@ -1,0 +1,10 @@
+{
+  "in_sample": {
+    "model_name": "cluster_aware_affine",
+    "match_mode": "manual",
+    "median_abs_residual_s": 0.019125,
+    "rmse_s": 0.0192994494740134,
+    "p95_abs_residual_s": 0.0228375,
+    "note": "In-sample results describe fit quality only and should not determine the final model alone."
+  }
+}

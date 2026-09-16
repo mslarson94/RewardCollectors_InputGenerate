@@ -28,32 +28,32 @@ EVENTS_DIR="Events_Pos"
 # # Raw Preprocessing
 # ###################
 
-echo "🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑" | tee -a "$LOG_FILE"
-echo "🚀 Starting preprocRaw_AN.py at $(date)" | tee -a "$LOG_FILE"
-python "${CODE_DIR}/preprocRaw/preprocRaw_AN.py" \
-  --root-dir "$TRUE_BASE_DIR" \
-  --proc-dir "$PROC_DIR" \
-  >> "$LOG_FILE" 2>&1
-echo "✅ preprocRaw_AN.py  completed at $(date)" | tee -a "$LOG_FILE"
+# echo "🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑" | tee -a "$LOG_FILE"
+# echo "🚀 Starting preprocRaw_AN.py at $(date)" | tee -a "$LOG_FILE"
+# python "${CODE_DIR}/preprocRaw/preprocRaw_AN.py" \
+#   --root-dir "$TRUE_BASE_DIR" \
+#   --proc-dir "$PROC_DIR" \
+#   >> "$LOG_FILE" 2>&1
+# echo "✅ preprocRaw_AN.py  completed at $(date)" | tee -a "$LOG_FILE"
 
 
-echo "🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼" | tee -a "$LOG_FILE"
-echo "" | tee -a "$LOG_FILE"
-echo "🚀 Starting preprocRaw_PO_part1.py  at $(date)" | tee -a "$LOG_FILE"
-python "${CODE_DIR}/preprocRaw/preprocRaw_PO_part1.py" \
-  --root-dir "$TRUE_BASE_DIR" \
-  --proc-dir "$PROC_DIR" \
-  >> "$LOG_FILE" 2>&1
-echo "✅ preprocRaw_PO_part1.py completed at $(date)" | tee -a "$LOG_FILE"
+# echo "🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼" | tee -a "$LOG_FILE"
+# echo "" | tee -a "$LOG_FILE"
+# echo "🚀 Starting preprocRaw_PO_part1.py  at $(date)" | tee -a "$LOG_FILE"
+# python "${CODE_DIR}/preprocRaw/preprocRaw_PO_part1.py" \
+#   --root-dir "$TRUE_BASE_DIR" \
+#   --proc-dir "$PROC_DIR" \
+#   >> "$LOG_FILE" 2>&1
+# echo "✅ preprocRaw_PO_part1.py completed at $(date)" | tee -a "$LOG_FILE"
 
-echo "🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼" | tee -a "$LOG_FILE"
-echo "" | tee -a "$LOG_FILE"
-echo "🚀 Starting preprocRaw_PO_part2.py  at $(date)" | tee -a "$LOG_FILE"
-python "${CODE_DIR}/preprocRaw/preprocRaw_PO_part2.py" \
-  --root-dir "$TRUE_BASE_DIR" \
-  --proc-dir "$PROC_DIR" \
-  >> "$LOG_FILE" 2>&1
-echo "✅ preprocRaw_PO_part2.py completed at $(date)" | tee -a "$LOG_FILE"
+# echo "🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼" | tee -a "$LOG_FILE"
+# echo "" | tee -a "$LOG_FILE"
+# echo "🚀 Starting preprocRaw_PO_part2.py  at $(date)" | tee -a "$LOG_FILE"
+# python "${CODE_DIR}/preprocRaw/preprocRaw_PO_part2.py" \
+#   --root-dir "$TRUE_BASE_DIR" \
+#   --proc-dir "$PROC_DIR" \
+#   >> "$LOG_FILE" 2>&1
+# echo "✅ preprocRaw_PO_part2.py completed at $(date)" | tee -a "$LOG_FILE"
 
 # # ####################################
 # # Initial Event Segmentation for PO

@@ -203,8 +203,8 @@ def process_all_obsreward_files(dataDir, metadata, role, subDirs=None, allowed_s
                         end_col="end_AppTime",
                         group_first=False
                     )
-                    x = pd.to_numeric(enriched_events['dropDist'], errors="coerce")
-                    enriched_events['ln_dropDist'] = np.where(x > 0, np.log(x), np.nan)
+                    #x = pd.to_numeric(enriched_events['dropDist'], errors="coerce")
+                    #enriched_events['ln_dropDist'] = np.where(x > 0, np.log(x), np.nan)
                     enriched_events.to_csv(nestedOutDirs["events_csv_path"], index=False)
 
                     enriched_events.to_json(nestedOutDirs["events_json_path"], orient='records', lines=True)
@@ -237,6 +237,7 @@ def process_all_obsreward_files(dataDir, metadata, role, subDirs=None, allowed_s
                 except Exception as e:
                     logger.log(f"🚫 Failed to process {fname} — Error: {e}")
                     print(f"🚫 Failed: {fname} with error {e}")
+                    traceback.print_exc()
 
         if manifest_records:
 

@@ -1,0 +1,12 @@
+{
+  "model": "global",
+  "scheme": "loocv",
+  "n_predictions": 12,
+  "n": 12,
+  "median_residual_s": 0.0,
+  "median_abs_residual_s": 0.0,
+  "mad_residual_s": 0.0,
+  "rmse_s": 6.882551541204759e-08,
+  "p95_abs_residual_s": 1.0728836059570296e-07,
+  "max_abs_residual_s": 2.384185791015625e-07
+}

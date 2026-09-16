@@ -1,0 +1,10 @@
+{
+  "session_id": "synthetic",
+  "label": "RNS",
+  "n_ml_marks": 12,
+  "n_rpi_marks": 12,
+  "ml_times_monotonic": true,
+  "rpi_times_monotonic": true,
+  "n_clustered_ml_marks": 0,
+  "n_chunks": 0
+}

@@ -29993,3 +29993,68 @@ run_RPi.sh: line 427: unexpected EOF while looking for matching `"'
 ✅ batch_read_rpi_logs_to_csv.py completed at Wed Sep 16 13:38:18 PDT 2026
 🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛
 🚀 Starting rpi_preproc_pipeline3.py at Wed Sep 16 13:38:18 PDT 2026
+✅ rpi_preproc_pipeline.py completed at Wed Sep 16 13:45:15 PDT 2026
+🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡
+🚀 Starting batch_split_pipeline5.py at Wed Sep 16 13:45:15 PDT 2026
+🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡
+🚀 Starting batch_split_pipeline5.py at Wed Sep 16 14:34:04 PDT 2026
+✅ batch_split_pipeline5.py completed at Wed Sep 16 14:37:58 PDT 2026
+🌻🌻🌻🌻🌻🌻🌻🌻🌻🌻🌻🌻🌻🌻🌻🌻🌻🌻🌻🌻🌻🌻🌻🌻🌻
+🚀 Starting alignment_qc_suite.py at Wed Sep 16 14:37:58 PDT 2026
+🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡
+🚀 Starting batch_split_pipeline5.py at Wed Sep 16 14:41:05 PDT 2026
+✅ batch_split_pipeline5.py completed at Wed Sep 16 14:51:33 PDT 2026
+🌻🌻🌻🌻🌻🌻🌻🌻🌻🌻🌻🌻🌻🌻🌻🌻🌻🌻🌻🌻🌻🌻🌻🌻🌻
+🚀 Starting alignment_qc_suite.py at Wed Sep 16 14:51:33 PDT 2026
+✅ alignment_qc_suite.py completed at Wed Sep 16 14:51:37 PDT 2026
+🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸
+🚀 Starting batch_read_rpi_logs_to_csv.py at Wed Sep 16 15:20:05 PDT 2026
+✅ batch_read_rpi_logs_to_csv.py completed at Wed Sep 16 15:20:18 PDT 2026
+🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛
+🚀 Starting rpi_preproc_pipeline3.py at Wed Sep 16 15:20:18 PDT 2026
+✅ rpi_preproc_pipeline.py completed at Wed Sep 16 15:27:07 PDT 2026
+🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡
+🚀 Starting batch_split_pipeline5.py at Wed Sep 16 15:27:07 PDT 2026
+✅ batch_split_pipeline5.py completed at Wed Sep 16 15:37:37 PDT 2026
+🌻🌻🌻🌻🌻🌻🌻🌻🌻🌻🌻🌻🌻🌻🌻🌻🌻🌻🌻🌻🌻🌻🌻🌻🌻
+🚀 Starting alignment_qc_suite.py at Wed Sep 16 15:37:37 PDT 2026
+✅ alignment_qc_suite.py completed at Wed Sep 16 15:37:41 PDT 2026
+🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+🚀 Starting characterize_fit_robustness.py at Wed Sep 16 19:29:15 PDT 2026
+✅ characterize_fit_robustness.py completed at Wed Sep 16 19:29:16 PDT 2026
+🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+🚀 Starting characterize_fit_robustness.py at Thu Sep 17 00:12:54 PDT 2026
+🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+🚀 Starting characterize_fit_robustness.py at Thu Sep 17 00:14:44 PDT 2026
+🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+🚀 Starting characterize_fit_robustness.py at Thu Sep 17 00:15:08 PDT 2026
+✅ characterize_fit_robustness.py completed at Thu Sep 17 00:15:10 PDT 2026
+🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+🚀 Starting characterize_fit_robustness.py at Thu Sep 17 00:15:35 PDT 2026
+✅ characterize_fit_robustness.py completed at Thu Sep 17 00:15:37 PDT 2026
+🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+🚀 Starting characterize_fit_robustness.py at Thu Sep 17 00:16:46 PDT 2026
+✅ characterize_fit_robustness.py completed at Thu Sep 17 00:16:47 PDT 2026
+🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸
+🚀 Starting batch_read_rpi_logs_to_csv.py at Thu Sep 17 15:21:26 PDT 2026
+✅ batch_read_rpi_logs_to_csv.py completed at Thu Sep 17 15:21:43 PDT 2026
+🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛
+🚀 Starting rpi_preproc_pipeline3.py at Thu Sep 17 15:21:43 PDT 2026
+✅ rpi_preproc_pipeline.py completed at Thu Sep 17 15:28:39 PDT 2026
+🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡
+🚀 Starting mark_matching_suite at Thu Sep 17 15:28:40 PDT 2026
+🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡
+🚀 Starting mark_matching_suite at Thu Sep 17 15:50:04 PDT 2026
+🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡
+🚀 Starting mark_matching_suite at Thu Sep 17 15:50:39 PDT 2026
+✅ batch_split_pipeline5.py completed at Thu Sep 17 15:53:26 PDT 2026
+🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+🚀 Starting characterize_fit_robustness.py at Thu Sep 17 15:53:26 PDT 2026
+🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡
+🚀 Starting mark_matching_suite at Thu Sep 17 15:53:57 PDT 2026
+✅ batch_split_pipeline5.py completed at Thu Sep 17 15:56:45 PDT 2026
+🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+🚀 Starting characterize_fit_robustness.py at Thu Sep 17 15:56:45 PDT 2026
+🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡
+🚀 Starting mark_matching_suite at Thu Sep 17 17:27:05 PDT 2026
+✅ batch_split_pipeline5.py completed at Thu Sep 17 17:31:03 PDT 2026

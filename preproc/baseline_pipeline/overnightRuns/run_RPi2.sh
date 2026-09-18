@@ -40,46 +40,46 @@ TIMECOL="mLT_orig"
 # RPi Mark PreProc
 ####################################
 
-echo "🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸" | tee -a "$LOG_FILE"
-echo "🚀 Starting batch_read_rpi_logs_to_csv.py at $(date)" | tee -a "$LOG_FILE"
-python "${CODE_DIR}/alignment/baseRPiHandling/batch_read_rpi_logs_to_csv.py" \
-  --collated_xlsx "${TRUE_BASE_DIR}/collatedData.xlsx" \
-  --sheet_name "MagicLeapFiles" \
-  --raw_data_dir "${TRUE_BASE_DIR}/${PROC_DIR}/RawData" \
-  --rpi_preproc_dir "${TRUE_BASE_DIR}/${PROC_DIR}/RPi_preproc_${TIMECOL}" \
-  --read_script "${CODE_DIR}/alignment/baseRPiHandling/read_rpi_logs_to_csv.py" \
-  --output_mode flat \
-  >> "$LOG_FILE" 2>&1
-echo "✅ batch_read_rpi_logs_to_csv.py completed at $(date)" | tee -a "$LOG_FILE" 
+# echo "🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸" | tee -a "$LOG_FILE"
+# echo "🚀 Starting batch_read_rpi_logs_to_csv.py at $(date)" | tee -a "$LOG_FILE"
+# python "${CODE_DIR}/alignment/baseRPiHandling/batch_read_rpi_logs_to_csv.py" \
+#   --collated_xlsx "${TRUE_BASE_DIR}/collatedData.xlsx" \
+#   --sheet_name "MagicLeapFiles" \
+#   --raw_data_dir "${TRUE_BASE_DIR}/${PROC_DIR}/RawData" \
+#   --rpi_preproc_dir "${TRUE_BASE_DIR}/${PROC_DIR}/RPi_preproc_${TIMECOL}" \
+#   --read_script "${CODE_DIR}/alignment/baseRPiHandling/read_rpi_logs_to_csv.py" \
+#   --output_mode flat \
+#   >> "$LOG_FILE" 2>&1
+# echo "✅ batch_read_rpi_logs_to_csv.py completed at $(date)" | tee -a "$LOG_FILE" 
 
-echo "🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛" | tee -a "$LOG_FILE"
-echo "🚀 Starting rpi_preproc_pipeline3.py at $(date)" | tee -a "$LOG_FILE"
-python ${CODE_DIR}/alignment/rpi_preproc/rpi_preproc_pipeline3.py \
-  --collated "${TRUE_BASE_DIR}/collatedData.xlsx" \
-  --device-ip-map "/Users/mairahmac/Desktop/myra_code/Python/RewardCollectors_InputGenerate/RC_utilities/configs/DeviceIPAddresses.txt" \
-  --code-dir "${CODE_DIR}/alignment/rpi_preproc" \
-  --base-dir "${TRUE_BASE_DIR}" \
-  --proc-dir "${PROC_DIR}" \
-  --out-dir "${TRUE_BASE_DIR}/${PROC_DIR}/RPi_preproc_${TIMECOL}"  \
-  --events-dir-name "EventSegmentation/EarliestRoundStart" \
-  --sheet "MagicLeapFiles" \
-  --only-rows-with-rpi \
-  --stage-report-csv "${TRUE_BASE_DIR}/${PROC_DIR}/RPi_preproc_${TIMECOL}/rpi_preproc_stage_report.csv" \
-  --marks-timestamp-col "RPi_Time_verb" \
-  --strip-ml-suffixes "_earliestRoundStart,_processed" \
-  --dedupe-sec 0.05 \
-  --timezone-offset auto \
-  --timeCol "${TIMECOL}" \
->> "$LOG_FILE" 2>&1
-echo "✅ rpi_preproc_pipeline.py completed at $(date)" | tee -a "$LOG_FILE"
+# echo "🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛" | tee -a "$LOG_FILE"
+# echo "🚀 Starting rpi_preproc_pipeline3.py at $(date)" | tee -a "$LOG_FILE"
+# python ${CODE_DIR}/alignment/rpi_preproc/rpi_preproc_pipeline3.py \
+#   --collated "${TRUE_BASE_DIR}/collatedData.xlsx" \
+#   --device-ip-map "/Users/mairahmac/Desktop/myra_code/Python/RewardCollectors_InputGenerate/RC_utilities/configs/DeviceIPAddresses.txt" \
+#   --code-dir "${CODE_DIR}/alignment/rpi_preproc" \
+#   --base-dir "${TRUE_BASE_DIR}" \
+#   --proc-dir "${PROC_DIR}" \
+#   --out-dir "${TRUE_BASE_DIR}/${PROC_DIR}/RPi_preproc_${TIMECOL}"  \
+#   --events-dir-name "EventSegmentation/EarliestRoundStart" \
+#   --sheet "MagicLeapFiles" \
+#   --only-rows-with-rpi \
+#   --stage-report-csv "${TRUE_BASE_DIR}/${PROC_DIR}/RPi_preproc_${TIMECOL}/rpi_preproc_stage_report.csv" \
+#   --marks-timestamp-col "RPi_Time_verb" \
+#   --strip-ml-suffixes "_earliestRoundStart,_processed" \
+#   --dedupe-sec 0.05 \
+#   --timezone-offset auto \
+#   --timeCol "${TIMECOL}" \
+# >> "$LOG_FILE" 2>&1
+# echo "✅ rpi_preproc_pipeline.py completed at $(date)" | tee -a "$LOG_FILE"
 
 
 echo "🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡" | tee -a "$LOG_FILE"
-echo "🚀 Starting batch_split_pipeline5.py at $(date)" | tee -a "$LOG_FILE"
-python "${CODE_DIR}/alignment/alignmentSuite/batch_split_pipeline5.py" \
+echo "🚀 Starting mark_matching_suite at $(date)" | tee -a "$LOG_FILE"
+python "${CODE_DIR}/alignment/markMatchingSuite/mark_matching_suite.py" \
   --collated "${TRUE_BASE_DIR}/collatedData.xlsx" \
   --device-ip-map "/Users/mairahmac/Desktop/myra_code/Python/RewardCollectors_InputGenerate/RC_utilities/configs/DeviceIPAddresses.txt" \
-  --code-dir "${CODE_DIR}/alignment/alignmentSuite" \
+  --code-dir "${CODE_DIR}/alignment/markMatchingSuite" \
   --base-dir "${TRUE_BASE_DIR}" \
   --proc-dir "${PROC_DIR}" \
   --rpi-preproc-dir "RPi_preproc_${TIMECOL}" \
@@ -90,29 +90,63 @@ python "${CODE_DIR}/alignment/alignmentSuite/batch_split_pipeline5.py" \
   --out-dir "AlignedSplit_${TIMECOL}" \
   --strip_ml_suffixes "_earliestRoundStart,_processed" \
   --only-rows-with-rpi \
-  --blankRowTemplate "/Users/mairahmac/Desktop/myra_code/Python/RewardCollectors_InputGenerate/RC_utilities/alignHelpers/NewRowInfo.csv" \
   --initial_match_gap_s 1.0 \
   --final_match_gap_s 0.35 \
+  --burst_gap_s 30.0 \
   --rpi_time_type "RPi_Time_simple" \
 >> "$LOG_FILE" 2>&1
 echo "✅ batch_split_pipeline5.py completed at $(date)" | tee -a "$LOG_FILE"
 
 
-echo "🌻🌻🌻🌻🌻🌻🌻🌻🌻🌻🌻🌻🌻🌻🌻🌻🌻🌻🌻🌻🌻🌻🌻🌻🌻" | tee -a "$LOG_FILE"
-echo "🚀 Starting alignment_qc_suite.py at $(date)" | tee -a "$LOG_FILE"
-python "${CODE_DIR}/alignment/alignmentQCSuite/alignment_qc_suite.py" \
-  --input-dir "${TRUE_BASE_DIR}/${PROC_DIR}/RPi_preproc_${TIMECOL}/AlignedSplit_${TIMECOL}" \
-  --code-dir "${CODE_DIR}/alignment/alignmentQCSuite" \
-  --out-dir "${TRUE_BASE_DIR}/${PROC_DIR}/RPi_preproc_${TIMECOL}/AlignmentQC_${TIMECOL}" \
-  --max-rmse-ms 50 \
-  --max-mad-ms 30 \
-  --min-inlier-fraction 0.80 \
-  --min-drift-span-s 60 \
-  --no-use-accumulated-drift \
-  --high-burst-range-ms 100 \
-  --high-burst-shift-ms 50 \
->> "$LOG_FILE" 2>&1
-echo "✅ alignment_qc_suite.py completed at $(date)" | tee -a "$LOG_FILE"
+# echo "🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡" | tee -a "$LOG_FILE"
+# echo "🚀 Starting batch_split_pipeline5.py at $(date)" | tee -a "$LOG_FILE"
+# python "${CODE_DIR}/alignment/alignmentSuite/batch_split_pipeline5.py" \
+#   --collated "${TRUE_BASE_DIR}/collatedData.xlsx" \
+#   --device-ip-map "/Users/mairahmac/Desktop/myra_code/Python/RewardCollectors_InputGenerate/RC_utilities/configs/DeviceIPAddresses.txt" \
+#   --code-dir "${CODE_DIR}/alignment/alignmentSuite" \
+#   --base-dir "${TRUE_BASE_DIR}" \
+#   --proc-dir "${PROC_DIR}" \
+#   --rpi-preproc-dir "RPi_preproc_${TIMECOL}" \
+#   --events-dir-name "EventSegmentation/EarliestRoundStart" \
+#   --csv-timestamp-column "${TIMECOL}"  \
+#   --event-type-column "lo_eventType" \
+#   --sheet "MagicLeapFiles" \
+#   --out-dir "AlignedSplit_${TIMECOL}" \
+#   --strip_ml_suffixes "_earliestRoundStart,_processed" \
+#   --only-rows-with-rpi \
+#   --blankRowTemplate "/Users/mairahmac/Desktop/myra_code/Python/RewardCollectors_InputGenerate/RC_utilities/alignHelpers/NewRowInfo.csv" \
+#   --initial_match_gap_s 1.0 \
+#   --final_match_gap_s 0.35 \
+#   --rpi_time_type "RPi_Time_simple" \
+# >> "$LOG_FILE" 2>&1
+# echo "✅ batch_split_pipeline5.py completed at $(date)" | tee -a "$LOG_FILE"
+
+
+# echo "🌻🌻🌻🌻🌻🌻🌻🌻🌻🌻🌻🌻🌻🌻🌻🌻🌻🌻🌻🌻🌻🌻🌻🌻🌻" | tee -a "$LOG_FILE"
+# echo "🚀 Starting alignment_qc_suite.py at $(date)" | tee -a "$LOG_FILE"
+# python "${CODE_DIR}/alignment/alignmentQCSuite/alignment_qc_suite.py" \
+#   --input-dir "${TRUE_BASE_DIR}/${PROC_DIR}/RPi_preproc_${TIMECOL}/AlignedSplit_${TIMECOL}" \
+#   --code-dir "${CODE_DIR}/alignment/alignmentQCSuite" \
+#   --out-dir "${TRUE_BASE_DIR}/${PROC_DIR}/RPi_preproc_${TIMECOL}/AlignmentQC_${TIMECOL}" \
+#   --max-rmse-ms 50 \
+#   --max-mad-ms 30 \
+#   --min-inlier-fraction 0.80 \
+#   --min-drift-span-s 60 \
+#   --no-use-accumulated-drift \
+#   --high-burst-range-ms 100 \
+#   --high-burst-shift-ms 50 \
+# >> "$LOG_FILE" 2>&1
+# echo "✅ alignment_qc_suite.py completed at $(date)" | tee -a "$LOG_FILE"
+
+
+# echo "🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥" | tee -a "$LOG_FILE"
+# echo "🚀 Starting characterize_fit_robustness.py at $(date)" | tee -a "$LOG_FILE"
+# python "${CODE_DIR}/alignment/alignmentQCSuite/characterize_fit_robustness.py" \
+#     --root "${TRUE_BASE_DIR}/${PROC_DIR}/RPi_preproc_${TIMECOL}/AlignedSplit_${TIMECOL}" \
+#     --manifest-csv "${TRUE_BASE_DIR}/${PROC_DIR}/RPi_preproc_${TIMECOL}/AlignmentQC_${TIMECOL}/Categories/global_fail_low_local_movement.csv" \
+#     --out-dir "${TRUE_BASE_DIR}/${PROC_DIR}/RPi_preproc_${TIMECOL}/AlignmentQC_${TIMECOL}/FitRobustnessQC" \
+# >> "$LOG_FILE" 2>&1
+# echo "✅ characterize_fit_robustness.py completed at $(date)" | tee -a "$LOG_FILE"
 
 
 

@@ -10,6 +10,7 @@ import subprocess
 from dataclasses import asdict, dataclass
 from pathlib import Path
 from typing import Optional
+import sys
 
 import pandas as pd
 
@@ -35,9 +36,9 @@ class StageResult:
     status: str
     message: str
     rpi_marks_csv: str
-    matched_marks_csv: str
-    aligned_csv: str
-    combined_csv: str
+    auto_matched_csv: str
+    hybrid_matched_csv: str
+    manual_matched_csv: str
     output_path: str
 
 
@@ -84,9 +85,9 @@ def record(
     status: str,
     message: str,
     rpi_marks_csv: Path,
-    matched_marks_csv: Path,
-    aligned_csv: Path,
-    combined_csv: Path,
+    auto_matched_csv: Path,
+    hybrid_matched_csv: Path,
+    manual_matched_csv: Path,
     output_path: str = "",
 ) -> None:
     result = StageResult(
@@ -102,9 +103,9 @@ def record(
         status=status,
         message=message,
         rpi_marks_csv=str(rpi_marks_csv),
-        matched_marks_csv=str(matched_marks_csv),
-        aligned_csv=str(aligned_csv),
-        combined_csv=str(combined_csv),
+        auto_matched_csv=str(auto_matched_csv),
+        hybrid_matched_csv=str(hybrid_matched_csv),
+        manual_matched_csv=str(manual_matched_csv),
         output_path=output_path,
     )
     all_results.append(result)
@@ -159,7 +160,7 @@ def _safe_text(value) -> str:
 
 
 def main() -> None:
-    ap = argparse.ArgumentParser(description="Batch automatic ML/RPi mark matching followed by global affine alignment over collatedData.xlsx.")
+    ap = argparse.ArgumentParser(description="Batch generation of frozen ML/RPi mark correspondences for automatic, manual-exclusion-assisted, and manual matching.")
 
     ap.add_argument("--collated", required=True)
     ap.add_argument("--device-ip-map", required=True)
@@ -173,21 +174,21 @@ def main() -> None:
     ap.add_argument("--sheet", default="MagicLeapFiles")
     ap.add_argument("--out-dir", default="")
 
-    ap.add_argument("--strip_ml_suffixes", default="_events_final,_processed")
+    ap.add_argument("--strip_ml_suffixes", "--strip-ml-suffixes", dest="strip_ml_suffixes", default="_events_final,_processed")
     ap.add_argument("--only-rows-with-rpi", action="store_true")
     ap.add_argument("--dry-run", action="store_true")
     ap.add_argument("--debug", action="store_true")
-
-    ap.add_argument("--blankRowTemplate", required=True)
 
     ap.add_argument("--initial_match_gap_s", default="1.0")
     ap.add_argument("--final_match_gap_s", default="0.35")
     ap.add_argument("--coarse_search_window_s", default="30.0")
     ap.add_argument("--sigma_clip", default="4.0")
+    ap.add_argument("--burst_gap_s", default="30.0")
+    ap.add_argument("--manual_filter_time_tolerance_s", default="0.005")
 
     ap.add_argument("--stage-report-csv", default="")
     ap.add_argument("--rpi-preproc-dir", required=True, help="RPi preprocessing directory relative to <base-dir>/<proc-dir>.")
-    ap.add_argument("--rpi_time_type", default="RPi_Time_simple", help="Exact RPi timestamp column used by the automatic matcher.")
+    ap.add_argument("--rpi_time_type", required=True, help="Exact RPi timestamp column used by the automatic matcher.")
 
     args = ap.parse_args()
 
@@ -225,17 +226,15 @@ def main() -> None:
 
     code_dir = Path(args.code_dir)
 
-    matcher_script = code_dir / "match_ml_rpi_marks.py"
-    global_affine_script = code_dir / "fit_global_affine_from_matches.py"
-    summarize_script = code_dir / "summarize_alignment3.py"
-    merge_both_script = code_dir / "merge_rpi_event_files2.py"
-    
+    auto_matcher_script = code_dir / "auto_match_ml_rpi_marks.py"
+    hybrid_matcher_script = code_dir / "hybrid_match_ml_rpi_marks.py"
+    manual_matcher_script = code_dir / "manual_match_ml_rpi_marks.py"
 
     required_scripts = [
-        matcher_script,
-        global_affine_script,
-        summarize_script,
-        merge_both_script,
+        auto_matcher_script,
+        hybrid_matcher_script,
+        # manual_matcher_script,
+
     ]
 
 
@@ -249,7 +248,6 @@ def main() -> None:
     out_root = None
     if args.out_dir:
         out_root = Path(args.base_dir) / args.proc_dir / rpi_preproc_arg / args.out_dir
-        
         out_root.mkdir(parents=True, exist_ok=True)
 
     debug_dir = (out_root or Path.cwd()) / "debugging"
@@ -265,19 +263,13 @@ def main() -> None:
     missing_rpi_list: list[str] = []
 
     for _, row in df.iterrows():
-        cleaned_raw = _safe_text(
-            row["cleanedFile"]
-        )
+        cleaned_raw = _safe_text(row["cleanedFile"])
 
         if not cleaned_raw:
             continue
 
         try:
-            ml_csv = _resolve_ml_csv(
-                ml_root,
-                cleaned_raw,
-                suffixes,
-            )
+            ml_csv = _resolve_ml_csv(ml_root, cleaned_raw, suffixes)
         except FileNotFoundError as exc:
             msg = f"[skip] {exc}"
             resolve_ml_fail_list.append(msg)
@@ -316,29 +308,33 @@ def main() -> None:
 
         ml_rootname = _normalize_ml_stem(ml_csv.stem, suffixes,)
 
-        bio_aligned = target_dir / "BioPac_Aligned" / f"{ml_rootname}_BioPac_{device}_aligned_with_RPi.csv"
-        rns_aligned = target_dir / "RNS_Aligned" / f"{ml_rootname}_RNS_{device}_aligned_with_RPi.csv"
-        combined_csv = target_dir / "BioPacRNS_Aligned" / f"{ml_rootname}_{device}_BioPacRNS_events.csv"
-        
-        bio_current_ok = False
-        rns_current_ok = False
 
-        source_specs = [("BioPac", "BioPac_RPi", bio_aligned), ("RNS", "RNS_RPi", rns_aligned)]
+        source_specs = [("BioPac", "BioPac_RPi"), ("RNS", "RNS_RPi")]
 
-        for (label, source_col, aligned_csv) in source_specs:
+        for label, source_col in source_specs:
             fname = _safe_text(row[source_col])
 
-            # Existing RPi preprocessed mark table. The filename/location is
-            # unchanged for compatibility even though downstream alignment now
-            # explicitly selects one timestamp column from it.
+            # Existing RPi preprocessed mark table. 
             rpi_marks_csv = Path(args.base_dir) / args.proc_dir / rpi_preproc_arg / label / "RPi_unified" / f"{ml_rootname}_{label}_RPi_unified.csv"
-            matched_marks_csv =  target_dir / f"{ml_rootname}_{label}_{device}_matched_marks.csv"
+            mark_singles_csv = Path(args.base_dir) / args.proc_dir / rpi_preproc_arg / f"markMatches_{label}" / f"{ml_rootname}_{label}_mark_singles.csv"
+            mark_pairs_csv = Path(args.base_dir) / args.proc_dir / rpi_preproc_arg / f"markMatches_{label}" / f"{ml_rootname}_{label}_mark_matches.csv"
 
-            
+            auto_dir   = target_dir / "AutomaticMarkMatching" / label 
+            hybrid_dir = target_dir / "HybridMarkMatching"    / label
+            manual_dir = target_dir / "ManualMarkMatching"    / label
+
+
+            auto_dir.mkdir(parents=True, exist_ok=True)
+            hybrid_dir.mkdir(parents=True, exist_ok=True)
+            manual_dir.mkdir(parents=True, exist_ok=True)
+
+            auto_matched_csv   = auto_dir   / f"{ml_rootname}_{label}_{device}_matched_marks.csv"
+            hybrid_matched_csv = hybrid_dir / f"{ml_rootname}_{label}_{device}_matched_marks.csv"
+            manual_matched_csv = manual_dir / f"{ml_rootname}_{label}_{device}_matched_marks.csv"
 
             if _missing_like(fname):
                 msg = f"no {label} RPi file listed for ML CSV: {ml_csv.name}"
-                
+
                 missing_like_list.append(msg)
 
                 record(
@@ -351,19 +347,19 @@ def main() -> None:
                     label=label,
                     ml_csv=ml_csv,
                     ml_rootname=ml_rootname,
-                    stage="match",
+                    stage="automatic_match",
                     status="skip",
                     message=msg,
                     rpi_marks_csv=rpi_marks_csv,
-                    matched_marks_csv=matched_marks_csv,
-                    aligned_csv=aligned_csv,
-                    combined_csv=combined_csv,
+                    auto_matched_csv=auto_matched_csv,
+                    hybrid_matched_csv=hybrid_matched_csv,
+                    manual_matched_csv=manual_matched_csv,
                 )
                 continue
 
-            if (not args.dry_run and not rpi_marks_csv.exists()):
+            if not args.dry_run and not rpi_marks_csv.exists():
                 msg = f"missing RPi marks CSV: {rpi_marks_csv}"
-                
+
                 missing_rpi_list.append(msg)
 
                 record(
@@ -376,22 +372,24 @@ def main() -> None:
                     label=label,
                     ml_csv=ml_csv,
                     ml_rootname=ml_rootname,
-                    stage="match",
+                    stage="automatic_match",
                     status="skip",
                     message=msg,
                     rpi_marks_csv=rpi_marks_csv,
-                    matched_marks_csv=matched_marks_csv,
-                    aligned_csv=aligned_csv,
-                    combined_csv=combined_csv,
+                    auto_matched_csv=auto_matched_csv,
+                    hybrid_matched_csv=hybrid_matched_csv,
+                    manual_matched_csv=manual_matched_csv,
                 )
                 continue
 
-            # -------------------------------------------------------------
-            # Stage 1: automatic canonical mark matching.
-            # -------------------------------------------------------------
-            cmd_match = [
-                "python",
-                str(matcher_script),
+            # Remove stale automatic result before running.
+            if not args.dry_run:
+                auto_matched_csv.unlink(missing_ok=True)
+
+            ###### Automatic Matching #######
+            cmd_auto_match = [
+                sys.executable,
+                str(auto_matcher_script),
                 "--ml_csv_file",
                 str(ml_csv),
                 "--rpi_marks_csv",
@@ -418,16 +416,59 @@ def main() -> None:
                 args.coarse_search_window_s,
                 "--sigma_clip",
                 args.sigma_clip,
+                "--burst_gap_s",
+                args.burst_gap_s,
+                "--out_dir",
+                str(auto_dir),
             ]
 
-            if out_root is not None:
-                cmd_match += ["--out_dir", str(out_root)]
-
-            ok_match, msg_match = run_cmd(
-                cmd_match,
+            ok_match_auto, msg_match_auto = run_cmd(
+                cmd_auto_match,
                 args.debug,
                 args.dry_run,
             )
+
+            if not ok_match_auto:
+                record(
+                    all_results,
+                    pair=pair,
+                    testing_date=testing_date,
+                    session_type=session_type,
+                    device=device,
+                    device_ip=device_ip,
+                    label=label,
+                    ml_csv=ml_csv,
+                    ml_rootname=ml_rootname,
+                    stage="automatic_match",
+                    status="fail",
+                    message=msg_match_auto,
+                    rpi_marks_csv=rpi_marks_csv,
+                    auto_matched_csv=auto_matched_csv,
+                    hybrid_matched_csv=hybrid_matched_csv,
+                    manual_matched_csv=manual_matched_csv,
+                )
+                
+
+            if not args.dry_run and not auto_matched_csv.exists():
+                record(
+                    all_results,
+                    pair=pair,
+                    testing_date=testing_date,
+                    session_type=session_type,
+                    device=device,
+                    device_ip=device_ip,
+                    label=label,
+                    ml_csv=ml_csv,
+                    ml_rootname=ml_rootname,
+                    stage="automatic_match",
+                    status="fail",
+                    message="matched-mark CSV not found after automatic matcher",
+                    rpi_marks_csv=rpi_marks_csv,
+                    auto_matched_csv=auto_matched_csv,
+                    hybrid_matched_csv=hybrid_matched_csv,
+                    manual_matched_csv=manual_matched_csv,
+                )
+                
 
             record(
                 all_results,
@@ -439,80 +480,125 @@ def main() -> None:
                 label=label,
                 ml_csv=ml_csv,
                 ml_rootname=ml_rootname,
-                stage="match",
-                status=(
-                    "ok"
-                    if ok_match
-                    else "fail"
-                ),
-                message=(msg_match or "matching complete"),
+                stage="automatic_match",
+                status="ok",
+                message=msg_match_auto or "automatic matching complete",
                 rpi_marks_csv=rpi_marks_csv,
-                matched_marks_csv=matched_marks_csv,
-                aligned_csv=aligned_csv,
-                combined_csv=combined_csv,
-                output_path=(
-                    str(matched_marks_csv)
-                    if (args.dry_run or matched_marks_csv.exists())
-                    else ""
-                ),
+                auto_matched_csv=auto_matched_csv,
+                hybrid_matched_csv=hybrid_matched_csv,
+                manual_matched_csv=manual_matched_csv,
+                output_path=str(auto_matched_csv),
             )
 
-            if not ok_match:
-                continue
-
-            if (not args.dry_run and not matched_marks_csv.exists()):
-                record(
-                    all_results,
-                    pair=pair,
-                    testing_date=testing_date,
-                    session_type=session_type,
-                    device=device,
-                    device_ip=device_ip,
-                    label=label,
-                    ml_csv=ml_csv,
-                    ml_rootname=ml_rootname,
-                    stage="global_affine",
-                    status="skip",
-                    message="matched-mark CSV not found after matcher",
-                    rpi_marks_csv=rpi_marks_csv,
-                    matched_marks_csv=matched_marks_csv,
-                    aligned_csv=aligned_csv,
-                    combined_csv=combined_csv,
-                )
-                continue
-
-            # -------------------------------------------------------------
-            # Stage 2: final global affine fit from frozen correspondences.
-            # -------------------------------------------------------------
-            cmd_global = [
-                "python",
-                str(global_affine_script),
+            ###### Hybrid Matching #######
+            cmd_hybrid_match = [
+                sys.executable,
+                str(hybrid_matcher_script),
                 "--ml_csv_file",
                 str(ml_csv),
-                "--matched_marks_csv",
-                str(matched_marks_csv),
+                "--rpi_marks_csv",
+                str(rpi_marks_csv),
                 "--csv_timestamp_column",
                 args.csv_timestamp_column,
+                "--event_type_column",
+                args.event_type_column,
+                "--event_type_values",
+                "Mark",
                 "--label",
                 label,
                 "--device",
                 device,
-                "--blankRowTemplate",
-                str(args.blankRowTemplate),
-                "--sigma_clip",
-                args.sigma_clip,
                 "--strip_ml_suffixes",
                 ",".join(suffixes),
+                "--rpi_time_type",
+                args.rpi_time_type,
+                "--initial_match_gap_s",
+                args.initial_match_gap_s,
+                "--final_match_gap_s",
+                args.final_match_gap_s,
+                "--coarse_search_window_s",
+                args.coarse_search_window_s,
+                "--sigma_clip",
+                args.sigma_clip,
+                "--burst_gap_s",
+                args.burst_gap_s,
+                "--out_dir",
+                str(hybrid_dir),
+                "--manual_filter_time_tolerance_s",
+                args.manual_filter_time_tolerance_s,
+                "--mark_singles_csv",
+                str(mark_singles_csv),
+
             ]
 
-            if out_root is not None:
-                cmd_global += ["--out_dir", str(out_root)]
+            if not args.dry_run and not mark_singles_csv.exists():
+                record(
+                    all_results,
+                    pair=pair,
+                    testing_date=testing_date,
+                    session_type=session_type,
+                    device=device,
+                    device_ip=device_ip,
+                    label=label,
+                    ml_csv=ml_csv,
+                    ml_rootname=ml_rootname,
+                    stage="hybrid_match",
+                    status="skip",
+                    message=f"missing mark_singles CSV: {mark_singles_csv}",
+                    rpi_marks_csv=rpi_marks_csv,
+                    auto_matched_csv=auto_matched_csv,
+                    hybrid_matched_csv=hybrid_matched_csv,
+                    manual_matched_csv=manual_matched_csv,
+                )
 
-            ok_global, msg_global = run_cmd(
-                cmd_global,
+            ok_match_hybrid, msg_match_hybrid = run_cmd(
+                cmd_hybrid_match,
                 args.debug,
                 args.dry_run,
             )
+
+            if not ok_match_hybrid:
+                record(
+                    all_results,
+                    pair=pair,
+                    testing_date=testing_date,
+                    session_type=session_type,
+                    device=device,
+                    device_ip=device_ip,
+                    label=label,
+                    ml_csv=ml_csv,
+                    ml_rootname=ml_rootname,
+                    stage="hybrid_match",
+                    status="fail",
+                    message=msg_match_hybrid,
+                    rpi_marks_csv=rpi_marks_csv,
+                    auto_matched_csv=auto_matched_csv,
+                    hybrid_matched_csv=hybrid_matched_csv,
+                    manual_matched_csv=manual_matched_csv,
+                )
+            
+
+
+            if not args.dry_run and not hybrid_matched_csv.exists():
+                record(
+                    all_results,
+                    pair=pair,
+                    testing_date=testing_date,
+                    session_type=session_type,
+                    device=device,
+                    device_ip=device_ip,
+                    label=label,
+                    ml_csv=ml_csv,
+                    ml_rootname=ml_rootname,
+                    stage="hybrid_match",
+                    status="fail",
+                    message="matched-mark CSV not found after hybrid matcher",
+                    rpi_marks_csv=rpi_marks_csv,
+                    auto_matched_csv=auto_matched_csv,
+                    hybrid_matched_csv=hybrid_matched_csv,
+                    manual_matched_csv=manual_matched_csv,
+                )
+                
 
             record(
                 all_results,
@@ -524,254 +610,20 @@ def main() -> None:
                 label=label,
                 ml_csv=ml_csv,
                 ml_rootname=ml_rootname,
-                stage="global_affine",
-                status=(
-                    "ok"
-                    if ok_global
-                    else "fail"
-                ),
-                message=(msg_global or "global affine complete"),
+                stage="hybrid_match",
+                status="ok",
+                message=msg_match_hybrid or "hybrid matching complete",
                 rpi_marks_csv=rpi_marks_csv,
-                matched_marks_csv=matched_marks_csv,
-                aligned_csv=aligned_csv,
-                combined_csv=combined_csv,
-                output_path=(
-                    str(aligned_csv)
-                    if (
-                        args.dry_run
-                        or aligned_csv.exists()
-                    )
-                    else ""
-                ),
+                auto_matched_csv=auto_matched_csv,
+                hybrid_matched_csv=hybrid_matched_csv,
+                manual_matched_csv=manual_matched_csv,
+                output_path=str(hybrid_matched_csv),
             )
-
-            if not ok_global:
-                continue
-
-            if not args.dry_run and not aligned_csv.exists():
-                record(
-                    all_results,
-                    pair=pair,
-                    testing_date=testing_date,
-                    session_type=session_type,
-                    device=device,
-                    device_ip=device_ip,
-                    label=label,
-                    ml_csv=ml_csv,
-                    ml_rootname=ml_rootname,
-                    stage="global_affine_output_check",
-                    status="fail",
-                    message="global affine command succeeded but aligned CSV was not created",
-                    rpi_marks_csv=rpi_marks_csv,
-                    matched_marks_csv=matched_marks_csv,
-                    aligned_csv=aligned_csv,
-                    combined_csv=combined_csv,
-                )
-                continue
-
-            if label == "BioPac":
-                bio_current_ok = True
-            elif label == "RNS":
-                rns_current_ok = True
-
-
-
-            # -------------------------------------------------------------
-            # Existing per-source summary stage.
-            # -------------------------------------------------------------
-            if (args.dry_run or aligned_csv.exists()):
-                cmd_summarize = [
-                    "python",
-                    str(summarize_script),
-                    "--merged_ml_csv",
-                    str(aligned_csv),
-                    "--label",
-                    label,
-                    "--timeCol",
-                    args.csv_timestamp_column,
-                ]
-
-                ok_sum, msg_sum = run_cmd(
-                    cmd_summarize,
-                    args.debug,
-                    args.dry_run,
-                )
-
-                record(
-                    all_results,
-                    pair=pair,
-                    testing_date=testing_date,
-                    session_type=session_type,
-                    device=device,
-                    device_ip=device_ip,
-                    label=label,
-                    ml_csv=ml_csv,
-                    ml_rootname=ml_rootname,
-                    stage="summarize_source",
-                    status=(
-                        "ok"
-                        if ok_sum
-                        else "fail"
-                    ),
-                    message=(
-                        msg_sum
-                        or "source summarize complete"
-                    ),
-                    rpi_marks_csv=rpi_marks_csv,
-                    matched_marks_csv=matched_marks_csv,
-                    aligned_csv=aligned_csv,
-                    combined_csv=combined_csv,
-                    output_path=str(
-                        aligned_csv
-                    ),
-                )
-
-        # -------------------------------------------------------------
-        # Existing combined BioPac/RNS event merge.
-        # -------------------------------------------------------------
-        bio_exists = args.dry_run or bio_current_ok
-        rns_exists = args.dry_run or rns_current_ok
-
-        if bio_exists or rns_exists:
-            cmd_merge_both = [
-                "python",
-                str(merge_both_script),
-                "--csv_timestamp_column",
-                args.csv_timestamp_column,
-            ]
-
-            if bio_exists:
-                cmd_merge_both += ["--biopac_events_csv", str(bio_aligned)]
-
-            if rns_exists:
-                cmd_merge_both += ["--rns_events_csv", str(rns_aligned)]
-
-            if out_root is not None:
-                cmd_merge_both += ["--out_dir", str(out_root)]
-
-            ok_both, msg_both = run_cmd(
-                cmd_merge_both,
-                args.debug,
-                args.dry_run,
-            )
-
-            record(
-                all_results,
-                pair=pair,
-                testing_date=testing_date,
-                session_type=session_type,
-                device=device,
-                device_ip=device_ip,
-                label="BioPacRNS",
-                ml_csv=ml_csv,
-                ml_rootname=ml_rootname,
-                stage="merge_combined",
-                status=(
-                    "ok"
-                    if ok_both
-                    else "fail"
-                ),
-                message=(
-                    msg_both
-                    or "combined merge complete"
-                ),
-                rpi_marks_csv=Path(""),
-                matched_marks_csv=Path(""),
-                aligned_csv=Path(""),
-                combined_csv=combined_csv,
-                output_path=(
-                    str(combined_csv)
-                    if (
-                        args.dry_run
-                        or combined_csv.exists()
-                    )
-                    else ""
-                ),
-            )
-
-            if (ok_both and ( args.dry_run or combined_csv.exists())):
-                combined_labels = []
-
-                if bio_exists:
-                    combined_labels.append("BioPac")
-
-                if rns_exists:
-                    combined_labels.append("RNS")
-
-                for summary_label in combined_labels:
-                    cmd_sum_combined = [
-                        "python",
-                        str(summarize_script),
-                        "--merged_ml_csv",
-                        str(combined_csv),
-                        "--label",
-                        summary_label,
-                        "--timeCol",
-                        args.csv_timestamp_column,
-                    ]
-
-                    ok_sum_combined, msg_sum_combined = run_cmd(
-                        cmd_sum_combined,
-                        args.debug,
-                        args.dry_run,
-                    )
-
-                    record(
-                        all_results,
-                        pair=pair,
-                        testing_date=testing_date,
-                        session_type=session_type,
-                        device=device,
-                        device_ip=device_ip,
-                        label=summary_label,
-                        ml_csv=ml_csv,
-                        ml_rootname=ml_rootname,
-                        stage="summarize_combined",
-                        status=(
-                            "ok"
-                            if ok_sum_combined
-                            else "fail"
-                        ),
-                        message=(
-                            msg_sum_combined
-                            or "combined summarize complete"
-                        ),
-                        rpi_marks_csv=Path(""),
-                        matched_marks_csv=Path(""),
-                        aligned_csv=Path(""),
-                        combined_csv=combined_csv,
-                        output_path=str(combined_csv),
-                    )
-                
-
-        else:
-            record(
-                all_results,
-                pair=pair,
-                testing_date=testing_date,
-                session_type=session_type,
-                device=device,
-                device_ip=device_ip,
-                label="BioPacRNS",
-                ml_csv=ml_csv,
-                ml_rootname=ml_rootname,
-                stage="merge_combined",
-                status="skip",
-                message=(
-                    "no BioPac or RNS aligned "
-                    "outputs available"
-                ),
-                rpi_marks_csv=Path(""),
-                matched_marks_csv=Path(""),
-                aligned_csv=Path(""),
-                combined_csv=combined_csv,
-            )
-
 
 
     summarize_results(all_results)
 
-    write_stage_report(all_results, args.stage_report_csv or str(debug_dir / "batch_split_stage_report.csv"))
+    write_stage_report(all_results, args.stage_report_csv or str(debug_dir / "mark_matching_stage_report.csv"))
 
     if resolve_ml_fail_list:
         pd.DataFrame(resolve_ml_fail_list, columns=["resolve_ml_csv_fails"]).to_csv(debug_dir / "resolve_ml_fails.csv", index=False)

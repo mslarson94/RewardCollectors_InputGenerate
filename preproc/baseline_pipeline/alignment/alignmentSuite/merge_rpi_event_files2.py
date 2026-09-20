@@ -58,9 +58,9 @@ def main() -> None:
         help="Path to <base>_RNS_<device>_aligned_with_RPi.csv (optional)",
     )
     ap.add_argument(
-        "--out_dir",
-        default="",
-        help="Directory for output (defaults to folder of first provided file)",
+        "--out_path",
+        required=True,
+        help="path for output ",
     )
     ap.add_argument(
         "--csv_timestamp_column",

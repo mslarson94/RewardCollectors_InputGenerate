@@ -30058,3 +30058,53 @@ run_RPi.sh: line 427: unexpected EOF while looking for matching `"'
 🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡
 🚀 Starting mark_matching_suite at Thu Sep 17 17:27:05 PDT 2026
 ✅ batch_split_pipeline5.py completed at Thu Sep 17 17:31:03 PDT 2026
+🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑
+🚀 Starting preprocRaw_AN.py at Fri Sep 18 15:18:16 PDT 2026
+✅ preprocRaw_AN.py  completed at Fri Sep 18 16:13:47 PDT 2026
+🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿🪿
+Look Right Here Myra
+🚀 Starting preFrontalCortex_unifiedEventSeg.py for AN at Fri Sep 18 16:13:47 PDT 2026
+✅ preFrontalCortex_unifiedEventSeg.py for AN completed at Fri Sep 18 16:47:45 PDT 2026
+🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭
+
+🚀 Starting justFlatten.py  at Fri Sep 18 16:47:45 PDT 2026
+🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼
+
+🚀 Starting preprocRaw_PO_part1.py  at Fri Sep 18 16:47:56 PDT 2026
+✅ justFlatten.py completed at Fri Sep 18 16:47:58 PDT 2026
+🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️
+
+🚀 Starting computeEarliestRoundStart.py  at Fri Sep 18 16:47:58 PDT 2026
+✅ computeWalks.py completed at Fri Sep 18 16:48:04 PDT 2026
+✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
+🚀 Starting 00_batch_reproc_steps_01_04.py at Fri Sep 18 16:48:04 PDT 2026
+            01_build_intervals : Build Block/Round Interval Tables - Single Row for Every True Round
+            02_reproc_processed_add_elapsed_and_distance : Add Elapsed Time & Distance to _processed.csv to make _PreLimReprocessed.csv files
+            03_compute_speed : Compute Speed to Make Final _reprocessed.csv files
+            04_finalize_events_and_intervals_with_pindrops (no startPos here): Fleshing out Block/Round Interval Tables & Events Files with More Dist & Time Info
+✅ 00_batch_reproc_steps_01_04.py completed at Fri Sep 18 16:48:04 PDT 2026
+✅ preprocRaw_PO_part1.py completed at Fri Sep 18 17:22:23 PDT 2026
+🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼
+
+🚀 Starting preprocRaw_PO_part2.py  at Fri Sep 18 17:22:23 PDT 2026
+✅ preprocRaw_PO_part2.py completed at Fri Sep 18 17:36:34 PDT 2026
+🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝
+🚀 Starting preFrontalCortex_unifiedEventSeg.py for PO  setting at Fri Sep 18 17:36:34 PDT 2026
+✅ preFrontalCortex_unifiedEventSeg.py for PO completed at Fri Sep 18 18:16:07 PDT 2026
+🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭🦭
+
+🚀 Starting justFlatten.py  at Fri Sep 18 18:16:07 PDT 2026
+✅ justFlatten.py completed at Fri Sep 18 18:16:35 PDT 2026
+🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️🚶🏻‍♀️‍➡️
+
+🚀 Starting computeEarliestRoundStart.py  at Fri Sep 18 18:16:35 PDT 2026
+✅ computeEarliestRoundStart.py completed at Fri Sep 18 18:16:46 PDT 2026
+🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸
+🚀 Starting batch_read_rpi_logs_to_csv.py at Fri Sep 18 18:33:35 PDT 2026
+✅ batch_read_rpi_logs_to_csv.py completed at Fri Sep 18 18:33:48 PDT 2026
+🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛🐦‍⬛
+🚀 Starting rpi_preproc_pipeline3.py at Fri Sep 18 18:33:48 PDT 2026
+✅ rpi_preproc_pipeline.py completed at Fri Sep 18 18:37:36 PDT 2026
+🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡
+🚀 Starting mark_matching_suite at Fri Sep 18 20:23:49 PDT 2026
+✅ mark_matching_suite.py completed at Fri Sep 18 20:28:18 PDT 2026

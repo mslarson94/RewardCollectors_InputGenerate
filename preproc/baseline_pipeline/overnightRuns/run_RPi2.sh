@@ -95,7 +95,7 @@ python "${CODE_DIR}/alignment/markMatchingSuite/mark_matching_suite.py" \
   --burst_gap_s 30.0 \
   --rpi_time_type "RPi_Time_simple" \
 >> "$LOG_FILE" 2>&1
-echo "✅ batch_split_pipeline5.py completed at $(date)" | tee -a "$LOG_FILE"
+echo "✅ mark_matching_suite.py completed at $(date)" | tee -a "$LOG_FILE"
 
 
 # echo "🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡" | tee -a "$LOG_FILE"

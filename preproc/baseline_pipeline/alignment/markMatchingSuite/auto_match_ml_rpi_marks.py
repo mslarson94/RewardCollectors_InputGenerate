@@ -388,10 +388,7 @@ def main() -> None:
     # Preserve unmatched RPi marks.
     # ---------------------------------------------------------
 
-    unused_rpi_indices = sorted(
-        set(range(len(rpi_df)))
-        - used_rpi
-    )
+    unused_rpi_indices = sorted(set(range(len(rpi_df))) - used_rpi)
 
     for j in unused_rpi_indices:
         rows.append(
@@ -422,9 +419,7 @@ def main() -> None:
             }
         )
 
-    matches_df = pd.DataFrame(
-        rows
-    )
+    matches_df = pd.DataFrame(rows)
 
     # ---------------------------------------------------------
     # Output paths.

@@ -89,9 +89,9 @@ def main() -> None:
     base, _, device = _parse_aligned_stem(src_path.stem)
 
     out_root = Path(args.out_dir) if args.out_dir else src_path.parent
-    out_dir = out_root / "BioPacRNS"
-    out_dir.mkdir(parents=True, exist_ok=True)
-    out_csv = out_dir / f"{base}_{device}_BioPacRNS_events.csv"
+    #out_dir = out_root / "BioPacRNS"
+    #out_dir.mkdir(parents=True, exist_ok=True)
+    out_csv = out_root / f"{base}_BioPacRNS_{device}_events.csv"
 
     if df_bio is None or df_rns is None:
         single_df = df_bio if df_bio is not None else df_rns

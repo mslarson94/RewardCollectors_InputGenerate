@@ -2,7 +2,20 @@
 set -Eeuo pipefail
 
 # Set up log file
-LOG_FILE="/Users/mairahmac/Desktop/SingleFileTesting_$(date +'%Y-%m-%d_%H-%M-%S').log"
+LOG_FILE="/Users/mairahmac/Desktop/PO_processing_$(date +'%Y-%m-%d_%H-%M-%S').log"
+
+on_exit() {
+    exit_code=$?
+
+    if [ "$exit_code" -eq 0 ]; then
+        afplay /System/Library/Sounds/Blow.aiff
+    else
+        afplay /System/Library/Sounds/Sosumi.aiff
+    fi
+}
+
+trap on_exit EXIT
+
 
 # Activate virtual environment (fail hard if missing)
 if ! command -v conda >/dev/null 2>&1; then
@@ -16,6 +29,9 @@ if ! conda activate RewardCollectors; then
   exit 1
 fi
 
+
+
+
 # Segment barebones
 CODE_DIR="/Users/mairahmac/Desktop/myra_code/Python/RewardCollectors_InputGenerate/preproc/baseline_pipeline"
 TRUE_BASE_DIR="/Users/mairahmac/Desktop/RC_TestingNotes"
@@ -28,32 +44,23 @@ EVENTS_DIR="Events_Pos"
 # # Raw Preprocessing
 # ###################
 
-# echo "🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑" | tee -a "$LOG_FILE"
-# echo "🚀 Starting preprocRaw_AN.py at $(date)" | tee -a "$LOG_FILE"
-# python "${CODE_DIR}/preprocRaw/preprocRaw_AN.py" \
-#   --root-dir "$TRUE_BASE_DIR" \
-#   --proc-dir "$PROC_DIR" \
-#   >> "$LOG_FILE" 2>&1
-# echo "✅ preprocRaw_AN.py  completed at $(date)" | tee -a "$LOG_FILE"
+echo "🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼" | tee -a "$LOG_FILE"
+echo "" | tee -a "$LOG_FILE"
+echo "🚀 Starting preprocRaw_PO_part1.py  at $(date)" | tee -a "$LOG_FILE"
+python "${CODE_DIR}/preprocRaw/preprocRaw_PO_part1.py" \
+  --root-dir "$TRUE_BASE_DIR" \
+  --proc-dir "$PROC_DIR" \
+  >> "$LOG_FILE" 2>&1
+echo "✅ preprocRaw_PO_part1.py completed at $(date)" | tee -a "$LOG_FILE"
 
-
-# echo "🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼" | tee -a "$LOG_FILE"
-# echo "" | tee -a "$LOG_FILE"
-# echo "🚀 Starting preprocRaw_PO_part1.py  at $(date)" | tee -a "$LOG_FILE"
-# python "${CODE_DIR}/preprocRaw/preprocRaw_PO_part1.py" \
-#   --root-dir "$TRUE_BASE_DIR" \
-#   --proc-dir "$PROC_DIR" \
-#   >> "$LOG_FILE" 2>&1
-# echo "✅ preprocRaw_PO_part1.py completed at $(date)" | tee -a "$LOG_FILE"
-
-# echo "🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼" | tee -a "$LOG_FILE"
-# echo "" | tee -a "$LOG_FILE"
-# echo "🚀 Starting preprocRaw_PO_part2.py  at $(date)" | tee -a "$LOG_FILE"
-# python "${CODE_DIR}/preprocRaw/preprocRaw_PO_part2.py" \
-#   --root-dir "$TRUE_BASE_DIR" \
-#   --proc-dir "$PROC_DIR" \
-#   >> "$LOG_FILE" 2>&1
-# echo "✅ preprocRaw_PO_part2.py completed at $(date)" | tee -a "$LOG_FILE"
+echo "🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼" | tee -a "$LOG_FILE"
+echo "" | tee -a "$LOG_FILE"
+echo "🚀 Starting preprocRaw_PO_part2.py  at $(date)" | tee -a "$LOG_FILE"
+python "${CODE_DIR}/preprocRaw/preprocRaw_PO_part2.py" \
+  --root-dir "$TRUE_BASE_DIR" \
+  --proc-dir "$PROC_DIR" \
+  >> "$LOG_FILE" 2>&1
+echo "✅ preprocRaw_PO_part2.py completed at $(date)" | tee -a "$LOG_FILE"
 
 # # ####################################
 # # Initial Event Segmentation for PO
@@ -70,21 +77,6 @@ python "${CODE_DIR}/eventSeg/preFrontalCortex_unifiedEventSeg.py" \
   >> "$LOG_FILE" 2>&1
 echo "✅ preFrontalCortex_unifiedEventSeg.py for PO completed at $(date)" | tee -a "$LOG_FILE" 
 
-
-####################################
-# Initial Event Segmentation for AN
-####################################
-
-echo "🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝🐝" | tee -a "$LOG_FILE"
-echo "🚀 Starting preFrontalCortex_unifiedEventSeg.py for AN  setting at $(date)" | tee -a "$LOG_FILE"
-python "${CODE_DIR}/eventSeg/preFrontalCortex_unifiedEventSeg.py" \
-  --trueRootDir "$TRUE_BASE_DIR" \
-  --procDir "$PROC_DIR" \
-  --role AN \
-  --allowed-status complete \
-  --allowed-status truncated \
-  >> "$LOG_FILE" 2>&1
-echo "✅ preFrontalCortex_unifiedEventSeg.py for AN completed at $(date)" | tee -a "$LOG_FILE" 
 
 ###########################################################################
 # Event Augmentation Pipeline | Flattening Events' Details Column of Dict's 
@@ -111,7 +103,7 @@ python "${CODE_DIR}/eventAugmentation/computeEarliestRoundStart.py" \
     --eventsEnding "eventsFlat" \
     --output-dir-name "EarliestRoundStart" \
   >> "$LOG_FILE" 2>&1
-echo "✅ computeWalks.py completed at $(date)" | tee -a "$LOG_FILE"
+echo "✅ computeEarliestRoundStart.py completed at $(date)" | tee -a "$LOG_FILE"
 
 
 # ##################################################

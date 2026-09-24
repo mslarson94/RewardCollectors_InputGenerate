@@ -18,6 +18,21 @@ import numpy as np
 import pandas as pd
 
 
+# -----------------------------------------------------------------------------
+# GUI ARCHITECTURE OVERVIEW
+# -----------------------------------------------------------------------------
+# This program uses Matplotlib as an interactive GUI toolkit.  The important
+# pieces are:
+#   1. STATE: pandas DataFrames + attributes on the app object hold the truth.
+#   2. VIEW:  draw() reads that state and paints lines, points, labels, etc.
+#   3. INPUT: fig.canvas.mpl_connect(...) registers mouse/keyboard callbacks.
+#   4. UPDATE: a callback changes state, optionally saves CSV data, then calls
+#      draw() / draw_idle() so the visible figure reflects the new state.
+#
+# This "state -> draw -> event -> update -> redraw" loop is the key idea to
+# follow when learning how these GUIs work.
+# -----------------------------------------------------------------------------
+
 logger = logging.getLogger("mark_match_app")
 logger.setLevel(logging.DEBUG)
 
@@ -101,6 +116,8 @@ class LoadedPair:
     rpi_time_type: str
 
 
+# Normalize filenames by repeatedly removing known suffixes so related CSV files can be matched by
+# a common base name.
 def strip_suffixes(stem: str, suffixes: list[str]) -> str:
     base = stem
     changed = True
@@ -115,6 +132,7 @@ def strip_suffixes(stem: str, suffixes: list[str]) -> str:
     return base.rstrip("_-")
 
 
+# Look up important Events CSV columns by name, while accepting a few alternate spellings.
 def detect_events_columns(df: pd.DataFrame) -> dict[str, Optional[str]]:
     cols = {column.lower(): column for column in df.columns}
 
@@ -137,6 +155,8 @@ def detect_events_columns(df: pd.DataFrame) -> dict[str, Optional[str]]:
 
 
 
+# Build a table of block start/end times. Later GUI views use these boundaries for block
+# navigation and plotting.
 def build_blocks(events: pd.DataFrame, ts_col: str, etype_col: str, block_col: Optional[str]) -> pd.DataFrame:
     ordered = events.sort_values(ts_col).copy()
     event_types = ordered[etype_col].astype(str).str.lower()
@@ -181,6 +201,8 @@ def build_blocks(events: pd.DataFrame, ts_col: str, etype_col: str, block_col: O
     return blocks
 
 
+# Assign each timestamp to the block interval that contains it. This is vectorized with NumPy
+# rather than looping row-by-row.
 def assign_block(times: pd.Series, blocks: pd.DataFrame) -> pd.Series:
     ordered = blocks.sort_values("start")
 
@@ -202,6 +224,8 @@ def assign_block(times: pd.Series, blocks: pd.DataFrame) -> pd.Series:
     return pd.Series(result, index=times.index)
 
 
+# Add GUI-friendly metadata to each mark: a stable ordinal/id, its stream name, and its assigned
+# block.
 def prepare_marks(df: pd.DataFrame, stream: str, ts_col: str, blocks: pd.DataFrame) -> pd.DataFrame:
     out = df.copy().reset_index(drop=True)
 
@@ -218,6 +242,8 @@ def prepare_marks(df: pd.DataFrame, stream: str, ts_col: str, blocks: pd.DataFra
     return out
 
 #### right here myra
+# Load one Events/RPi file pair, convert timestamp columns, isolate marks, build blocks, and
+# return all data needed by the GUI.
 def load_pair(pair: FilePair, rpi_time_type: str) -> LoadedPair:
     logger.info(
         "Loading pair: events=%s | rpi=%s | label=%s",
@@ -310,6 +336,7 @@ def load_pair(pair: FilePair, rpi_time_type: str) -> LoadedPair:
     )
 
 
+# Read an explicit CSV manifest and convert each row into a FilePair object.
 def load_manifest(path: Path,) -> list[FilePair]:
     manifest = pd.read_csv(path)
 
@@ -330,6 +357,8 @@ def load_manifest(path: Path,) -> list[FilePair]:
     ]
 
 
+# Automatically discover matching Events and RPi CSV files from two directories using their
+# filename conventions.
 def build_pairs_from_directories(events_dir: Path, rpi_dir: Path) -> list[FilePair]:
     events_dir = events_dir.expanduser()
     rpi_dir = rpi_dir.expanduser()
@@ -391,6 +420,9 @@ def build_pairs_from_directories(events_dir: Path, rpi_dir: Path) -> list[FilePa
 
 
 class MarkMatchApp:
+    # Initialize application state and build the Matplotlib GUI. `plt.subplots()` creates the
+    # window's Figure and plotting Axes; `mpl_connect()` wires GUI events to Python callback
+    # methods.
     def __init__( self, pairs: list[FilePair], output_dir: Path, rpi_time_type: str, start_index: int = 0) -> None:
         if not pairs:
             raise ValueError("At least one Events/RPi pair is required.")
@@ -414,6 +446,7 @@ class MarkMatchApp:
 
         self._load_saved_state()
 
+        # Figure = the whole GUI window; Axes = the plotting area inside that window.
         self.fig, self.ax = plt.subplots(figsize=(16, 7))
 
         self.default_xlim: Optional[tuple[float, float]] = None
@@ -442,6 +475,8 @@ class MarkMatchApp:
         if "agg" in backend:
             logger.warning("Matplotlib backend is %s. An Agg backend is non-interactive, so mouse clicks/drags will not work.", matplotlib.get_backend())
 
+        # mpl_connect registers callbacks with Matplotlib's event loop.
+        # When the user clicks, Matplotlib creates a MouseEvent and passes it to on_press.
         self.press_connection_id = self.fig.canvas.mpl_connect("button_press_event", self.on_press)
         self.release_connection_id = self.fig.canvas.mpl_connect("button_release_event", self.on_release)
         self.key_connection_id = self.fig.canvas.mpl_connect("key_press_event", self.on_key)
@@ -459,11 +494,15 @@ class MarkMatchApp:
 
         self.draw(reset_view=True)
 
+    # Return the earliest block start and latest block end; this defines the x-axis range for the
+    # full-session view.
     def full_session_bounds(self) -> tuple[pd.Timestamp, pd.Timestamp]:
         """Return the full Events-derived block range."""
         blocks = self.loaded.blocks
         return pd.to_datetime(blocks["start"].min()), pd.to_datetime(blocks["end"].max()),
         
+    # Translate the current block selection into concrete start/end timestamps used for the
+    # visible x-axis.
     def current_view_bounds(self) -> tuple[pd.Timestamp, pd.Timestamp]:
         """Return the currently selected block or full-session bounds."""
         if str(self.current_block).lower() == "all":
@@ -485,6 +524,7 @@ class MarkMatchApp:
 
         return pd.to_datetime(block["start"]), pd.to_datetime(block["end"]),
         
+    # Change which block is being viewed, then redraw the plot with the new time bounds.
     def next_block(self, step: int,) -> None:
         """Move forward/backward through Events-derived blocks."""
         blocks = sorted(self.loaded.blocks["block"].dropna().astype(int).unique().tolist())
@@ -515,6 +555,7 @@ class MarkMatchApp:
 
         self.draw(reset_view=True)
 
+    # Switch back to the all-blocks view and redraw.
     def reset_view(self) -> None:
         """Return to the full-session view."""
         self.current_block = "All"
@@ -523,9 +564,12 @@ class MarkMatchApp:
 
         self.draw(reset_view=True)
 
+    # Return the FilePair currently displayed by the GUI.
     def current_pair(self) -> FilePair:
         return self.pairs[self.current_index]
 
+    # Matplotlib's toolbar can capture mouse input while pan/zoom is active; callbacks use this
+    # check to avoid conflicting interactions.
     def toolbar_navigation_active(self) -> bool:
         """Return True while Matplotlib pan or zoom mode is active."""
         toolbar = getattr(self.fig.canvas, "toolbar", None)
@@ -545,6 +589,7 @@ class MarkMatchApp:
             }
         )
 
+    # Build the common filename stem used for this pair's saved match/single CSV files.
     def output_base(self) -> str:
         pair = self.current_pair()
 
@@ -552,12 +597,16 @@ class MarkMatchApp:
 
         return f"{base}_{pair.label}"
 
+    # Return the output path for manually-created mark pairs.
     def match_path(self) -> Path:
         return self.output_dir / f"{self.output_base()}_mark_matches.csv"
         
+    # Return the output path for per-mark review state.
     def single_path(self) -> Path:
         return self.output_dir / f"{self.output_base()}_mark_singles.csv"
         
+    # Restore previous GUI work from CSV files so reopening the app continues where the reviewer
+    # left off.
     def _load_saved_state(self) -> None:
         match_path = self.match_path()
         single_path = self.single_path()
@@ -604,6 +653,8 @@ class MarkMatchApp:
 
             logger.info("Built fresh singles table with %d rows", len(self.singles))
 
+    # Create one bookkeeping row for every Events and RPi mark. This table stores
+    # unmatched/excluded state independently of visual artists.
     def _build_single_table(self) -> pd.DataFrame:
         rows: list[dict[str, object]] = []
 
@@ -689,6 +740,8 @@ class MarkMatchApp:
 
         return pd.DataFrame(rows, columns=SINGLE_COLUMNS)
 
+    # Persist the current in-memory GUI state to CSV. Saving data separately from drawing keeps
+    # the UI reproducible across sessions.
     def save(self) -> None:
         self.matches.to_csv(self.match_path(), index=False)
         self.singles.to_csv(self.single_path(), index=False)
@@ -696,6 +749,7 @@ class MarkMatchApp:
         logger.info("Saved matches -> %s", self.match_path())
         logger.info("Saved singles -> %s", self.single_path())
 
+    # Select the DataFrame that owns a mark based on whether it came from Events or RPi.
     def mark_dataframe(self, stream: str) -> pd.DataFrame:
         if stream == "events":
             return self.loaded.events_marks
@@ -705,6 +759,7 @@ class MarkMatchApp:
 
         raise ValueError(f"Unknown stream: {stream}")
 
+    # Look up one mark row by its generated mark_id.
     def find_mark(self, stream: str, mark_id: str) -> Optional[pd.Series]:
         df = self.mark_dataframe(stream)
 
@@ -715,6 +770,8 @@ class MarkMatchApp:
 
         return subset.iloc[0]
 
+    # Combine the two streams into one temporary hit-testing table. `_y` maps Events to y=1 and
+    # RPi to y=0; `_xnum` converts datetimes to Matplotlib coordinates.
     def visible_marks(self) -> pd.DataFrame:
         ts_col = self.loaded.ts_col
 
@@ -732,6 +789,8 @@ class MarkMatchApp:
 
         return combined
 
+    # Convert a mouse click into a logical mark selection. Distances are measured in normalized
+    # plot coordinates so hit-testing remains usable at different zoom levels.
     def find_nearest_mark(self, event) -> Optional[tuple[str, str]]:
         logger.debug(
             "find_nearest_mark: inaxes=%s xdata=%r ydata=%r",
@@ -805,6 +864,7 @@ class MarkMatchApp:
 
         return result
 
+    # Check whether a mark already belongs to a saved match and return that pair_id if it does.
     def pair_for_mark(self, stream: str, mark_id: str) -> Optional[str]:
         if self.matches.empty:
             return None
@@ -822,6 +882,7 @@ class MarkMatchApp:
 
         return str(subset.iloc[-1]["pair_id"])
 
+    # Generate the next unique identifier for a newly-created manual match.
     def next_pair_id(self) -> str:
         maximum = 0
 
@@ -836,6 +897,8 @@ class MarkMatchApp:
 
         return f"pair_{maximum + 1:04d}"
 
+    # Create a logical match between one Events mark and one RPi mark, update bookkeeping tables,
+    # save, and refresh the GUI.
     def add_match(self, source: tuple[str, str], target: tuple[str, str]) -> None:
         """Create a one-to-one Events ↔ RPi mark match."""
         logger.info("add_match called: source=%r target=%r", source, target)
@@ -991,6 +1054,7 @@ class MarkMatchApp:
             f"Δ={delta_seconds:.3f}s"
         )
 
+    # Update the singles table so a mark knows whether it belongs to a pair.
     def _set_single_match(
         self,
         stream: str,
@@ -1011,6 +1075,8 @@ class MarkMatchApp:
             "matched_pair_id",
         ] = pair_id
 
+    # Toggle the excluded/kept state of one unpaired mark, timestamp the review action, save it,
+    # and redraw.
     def toggle_single_exclusion(
         self,
         stream: str,
@@ -1068,6 +1134,8 @@ class MarkMatchApp:
 
         self.save()
 
+    # Hit-test the drawn connection between two matched marks so clicking near a line can select
+    # the pair itself.
     def find_nearest_pair(
         self,
         event,
@@ -1201,6 +1269,8 @@ class MarkMatchApp:
 
         return best_pair_id
 
+    # Toggle whether an existing match should be excluded, then synchronize the stored review
+    # state and redraw.
     def toggle_pair_exclusion(
         self,
         pair_id: str,
@@ -1252,6 +1322,8 @@ class MarkMatchApp:
 
         self.save()
 
+    # Render the entire current application state onto the Matplotlib Axes. GUI code commonly
+    # redraws from state instead of manually editing many artists one-by-one.
     def draw(
         self,
         reset_view: bool = True,
@@ -1679,6 +1751,7 @@ class MarkMatchApp:
             excluded_single_count,
         )
 
+    # Update transient status text shown inside the figure, then request a canvas refresh.
     def set_status(
         self,
         message: str,
@@ -1688,6 +1761,8 @@ class MarkMatchApp:
             message,
         )
 
+    # Mouse-button press callback. It decides whether the user clicked a mark/pair and records
+    # drag/selection state for the later release event.
     def on_press(
         self,
         event,
@@ -1824,6 +1899,8 @@ class MarkMatchApp:
                 "EXCLUDE CLICK: no mark or pair found"
             )
 
+    # Mouse-button release callback. Together with `on_press`, this implements drag-to-match
+    # behavior between the two streams.
     def on_release(
         self,
         event,
@@ -1899,6 +1976,8 @@ class MarkMatchApp:
             reset_view=False
         )
 
+    # Mouse-wheel callback. Matplotlib passes an event object containing the cursor position and
+    # scroll direction.
     def on_scroll(
         self,
         event,
@@ -1980,6 +2059,8 @@ class MarkMatchApp:
         )
         self.fig.canvas.draw_idle()
 
+    # Save the current file's work, load another Events/RPi pair, reset pair-specific selection
+    # state, and redraw.
     def goto_pair(
         self,
         index: int,
@@ -2013,6 +2094,8 @@ class MarkMatchApp:
             reset_view=True
         )
 
+    # Keyboard callback. This is effectively the GUI's shortcut dispatcher: inspect event.key,
+    # change state, then redraw/save as needed.
     def on_key(
         self,
         event,
@@ -2123,6 +2206,7 @@ class MarkMatchApp:
             )
             return
 
+    # Remove an existing logical match and return both marks to the singles pool.
     def unmatch_pair(
         self,
         pair_id: str,
@@ -2222,6 +2306,7 @@ class MarkMatchApp:
         )
 
 
+# Define and parse the command-line options used to launch this GUI.
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Interactive Events ↔ RPi mark matcher.")
 
@@ -2239,6 +2324,7 @@ def parse_args() -> argparse.Namespace:
     return parser.parse_args()
 
 
+# Choose whether file pairs come from a manifest or automatic directory matching.
 def build_pairs(args: argparse.Namespace) -> list[FilePair]:
     if args.manifest:
         return load_manifest(args.manifest)
@@ -2253,6 +2339,8 @@ def build_pairs(args: argparse.Namespace) -> list[FilePair]:
 
 
 
+# Program entry point: parse command-line arguments, discover file pairs, construct the GUI
+# object, and hand control to Matplotlib's event loop.
 def main() -> None:
     args = parse_args()
     pairs = build_pairs(args)

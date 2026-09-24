@@ -1,0 +1,22 @@
+echo "🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡🐡" | tee -a "$LOG_FILE"
+echo "🚀 Starting batch_split_pipeline5.py at $(date)" | tee -a "$LOG_FILE"
+python "${CODE_DIR}/alignment/alignmentSuite/batch_split_pipeline5.py" \
+  --collated "${TRUE_BASE_DIR}/collatedData.xlsx" \
+  --device-ip-map "/Users/mairahmac/Desktop/myra_code/Python/RewardCollectors_InputGenerate/RC_utilities/configs/DeviceIPAddresses.txt" \
+  --code-dir "${CODE_DIR}/alignment/alignmentSuite" \
+  --base-dir "${TRUE_BASE_DIR}" \
+  --proc-dir "${PROC_DIR}" \
+  --rpi-preproc-dir "RPi_preproc_${TIMECOL}" \
+  --events-dir-name "EventSegmentation/EarliestRoundStart" \
+  --csv-timestamp-column "${TIMECOL}"  \
+  --event-type-column "lo_eventType" \
+  --sheet "MagicLeapFiles" \
+  --out-dir "AlignedSplit_${TIMECOL}" \
+  --strip_ml_suffixes "_earliestRoundStart,_processed" \
+  --only-rows-with-rpi \
+  --blankRowTemplate "/Users/mairahmac/Desktop/myra_code/Python/RewardCollectors_InputGenerate/RC_utilities/alignHelpers/NewRowInfo.csv" \
+  --initial_match_gap_s 1.0 \
+  --final_match_gap_s 0.35 \
+  --rpi_time_type "RPi_Time_simple" \
+>> "$LOG_FILE" 2>&1
+echo "✅ batch_split_pipeline5.py completed at $(date)" | tee -a "$LOG_FILE"

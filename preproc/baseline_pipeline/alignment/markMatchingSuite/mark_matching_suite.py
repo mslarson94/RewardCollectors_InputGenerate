@@ -189,18 +189,14 @@ def main() -> None:
 
     ap.add_argument("--proc-dir", default="FreshStart")
     ap.add_argument("--events-dir-name", default="Events_Final_NoWalks")
+    ap.add_argument("--rpi-preproc-dir", required=True, help="RPi preprocessing directory relative to <base-dir>/<proc-dir>.")
+    ap.add_argument("--out-dir", default="")
+    ap.add_argument("--sheet", default="MagicLeapFiles")
     ap.add_argument("--csv-timestamp-column", default="mLT_orig")
     ap.add_argument("--event-type-column", default="lo_eventType")
-    ap.add_argument("--sheet", default="MagicLeapFiles")
-    ap.add_argument("--out-dir", default="")
+    ap.add_argument("--rpi_time_type", required=True, help="Exact RPi timestamp column used by the matching scripts.")
 
-    ap.add_argument(
-        "--strip_ml_suffixes",
-        "--strip-ml-suffixes",
-        dest="strip_ml_suffixes",
-        default="_events_final,_processed",
-    )
-
+    ap.add_argument("--strip_ml_suffixes", "--strip-ml-suffixes", dest="strip_ml_suffixes", default="_events_final,_processed")
     ap.add_argument("--only-rows-with-rpi", action="store_true")
     ap.add_argument("--dry-run", action="store_true")
     ap.add_argument("--debug", action="store_true")
@@ -210,27 +206,10 @@ def main() -> None:
     ap.add_argument("--coarse_search_window_s", default="30.0")
     ap.add_argument("--sigma_clip", default="4.0")
     ap.add_argument("--burst_gap_s", default="30.0")
-    ap.add_argument(
-        "--manual_filter_time_tolerance_s",
-        default="0.005",
-    )
+    ap.add_argument("--manual_filter_time_tolerance_s", default="0.005")
 
     ap.add_argument("--stage-report-csv", default="")
-
-    ap.add_argument(
-        "--rpi-preproc-dir",
-        required=True,
-        help=(
-            "RPi preprocessing directory relative to "
-            "<base-dir>/<proc-dir>."
-        ),
-    )
-
-    ap.add_argument(
-        "--rpi_time_type",
-        required=True,
-        help="Exact RPi timestamp column used by the matching scripts.",
-    )
+    
 
     args = ap.parse_args()
 
@@ -290,7 +269,7 @@ def main() -> None:
         code_dir / "hybrid_match_ml_rpi_marks.py"
     )
     manual_matcher_script = (
-        code_dir / "manual_match_ml_rpi_marks.py"
+        code_dir / "manual_match_ml_rpi_marks_updated.py"
     )
 
     required_scripts = [
@@ -363,21 +342,13 @@ def main() -> None:
             print(msg)
             continue
 
-        pair = _safe_text(
-            row["pairID_py"]
-        )
+        pair = _safe_text(row["pairID_py"])
 
-        testing_date = _safe_text(
-            row["testingDate"]
-        )
+        testing_date = _safe_text(row["testingDate"])
 
-        session_type = _safe_text(
-            row["sessionType"]
-        )
+        session_type = _safe_text(row["sessionType"])
 
-        device = _safe_text(
-            row["device"]
-        )
+        device = _safe_text(row["device"])
 
         device_ip = ip_map.get(
             device,
@@ -385,31 +356,18 @@ def main() -> None:
         )
 
         if not device_ip:
-            print(
-                f"[skip] no IP for device {device}"
-            )
+            print(f"[skip] no IP for device {device}")
             continue
 
         try:
-            tmp_ml = pd.read_csv(
-                ml_csv,
-                usecols=[args.event_type_column],
-            )
+            tmp_ml = pd.read_csv(ml_csv, usecols=[args.event_type_column])
 
-            has_mark = (
-                tmp_ml[args.event_type_column]
-                .astype(str)
-                .str.strip()
-                .str.lower()
-                .eq("mark")
-                .any()
-            )
+            has_mark = tmp_ml[args.event_type_column].astype(str).str.strip().str.lower().eq("mark").any()
+            
 
         except Exception as exc:
-            msg = (
-                f"[skip] failed reading ML file "
-                f"{ml_csv.name!r}: {exc}"
-            )
+            msg = f"[skip] failed reading ML file {ml_csv.name!r}: {exc}"
+            
 
             ml_file_fail_list.append(msg)
             print(msg)
@@ -426,115 +384,42 @@ def main() -> None:
             print(msg)
             continue
 
-        target_dir = (
-            out_root
-            or ml_csv.parent
-        )
+        target_dir = out_root or ml_csv.parent
+        
 
-        ml_rootname = _normalize_ml_stem(
-            ml_csv.stem,
-            suffixes,
-        )
+        ml_rootname = _normalize_ml_stem(ml_csv.stem, suffixes)
 
-        source_specs = [
-            ("BioPac", "BioPac_RPi"),
-            ("RNS", "RNS_RPi"),
-        ]
+        source_specs = [("BioPac", "BioPac_RPi"), ("RNS", "RNS_RPi")]
 
         for label, source_col in source_specs:
-            fname = _safe_text(
-                row[source_col]
-            )
+            fname = _safe_text( row[source_col])
 
-            rpi_marks_csv = (
-                Path(args.base_dir)
-                / args.proc_dir
-                / rpi_preproc_arg
-                / label
-                / "RPi_unified"
-                / f"{ml_rootname}_{label}_RPi_unified.csv"
-            )
+            rpi_marks_csv = Path(args.base_dir) / args.proc_dir / rpi_preproc_arg / label / "RPi_unified" / f"{ml_rootname}_{label}_RPi_unified.csv"
+            mark_singles_csv = Path(args.base_dir) / args.proc_dir / rpi_preproc_arg / f"markMatches_{label}" / f"{ml_rootname}_{label}_mark_singles.csv"
+            mark_pairs_csv = Path(args.base_dir) / args.proc_dir / rpi_preproc_arg / f"markMatches_{label}" / f"{ml_rootname}_{label}_mark_matches.csv"
+            print(mark_singles_csv)
+            
 
-            mark_singles_csv = (
-                Path(args.base_dir)
-                / args.proc_dir
-                / rpi_preproc_arg
-                / f"markMatches_{label}"
-                / f"{ml_rootname}_{label}_mark_singles.csv"
-            )
+            auto_dir = target_dir / "MarkMatching" / "auto" / label
+            hybrid_dir = target_dir / "MarkMatching" / "hybrid" / label
+            manual_dir = target_dir / "MarkMatching" / "manual" / label
+            
 
-            mark_pairs_csv = (
-                Path(args.base_dir)
-                / args.proc_dir
-                / rpi_preproc_arg
-                / f"markMatches_{label}"
-                / f"{ml_rootname}_{label}_mark_matches.csv"
-            )
+            auto_dir.mkdir(parents=True, exist_ok=True)
+            hybrid_dir.mkdir(parents=True, exist_ok=True)
+            manual_dir.mkdir(parents=True, exist_ok=True)
 
-            auto_dir = (
-                target_dir
-                / "MarkMatching"
-                / "auto"
-                / label
-            )
-
-            hybrid_dir = (
-                target_dir
-                / "MarkMatching"
-                / "hybrid"
-                / label
-            )
-
-            manual_dir = (
-                target_dir
-                / "MarkMatching"
-                / "manual"
-                / label
-            )
-
-            auto_dir.mkdir(
-                parents=True,
-                exist_ok=True,
-            )
-
-            hybrid_dir.mkdir(
-                parents=True,
-                exist_ok=True,
-            )
-
-            manual_dir.mkdir(
-                parents=True,
-                exist_ok=True,
-            )
-
-            auto_matched_csv = (
-                auto_dir
-                / f"{ml_rootname}_{label}_{device}_matched_marks.csv"
-            )
-
-            hybrid_matched_csv = (
-                hybrid_dir
-                / f"{ml_rootname}_{label}_{device}_matched_marks.csv"
-            )
-
-            manual_matched_csv = (
-                manual_dir
-                / f"{ml_rootname}_{label}_{device}_matched_marks.csv"
-            )
+            auto_matched_csv = auto_dir / f"{ml_rootname}_{label}_{device}_matched_marks.csv"
+            hybrid_matched_csv = hybrid_dir / f"{ml_rootname}_{label}_{device}_matched_marks.csv"
+            manual_matched_csv = manual_dir / f"{ml_rootname}_{label}_{device}_matched_marks.csv"
+            
 
             if _missing_like(fname):
-                msg = (
-                    f"no {label} RPi file listed for "
-                    f"ML CSV: {ml_csv.name}"
-                )
+                msg = f"no {label} RPi file listed for ML CSV: {ml_csv.name}"
 
                 missing_like_list.append(msg)
 
-                for stage in (
-                    "automatic_match",
-                    "hybrid_match",
-                    "manual_match",
-                ):
+                for stage in ("automatic_match", "hybrid_match", "manual_match"):
                     record(
                         all_results,
                         pair=pair,
@@ -556,22 +441,13 @@ def main() -> None:
 
                 continue
 
-            if (
-                not args.dry_run
-                and not rpi_marks_csv.exists()
-            ):
-                msg = (
-                    f"missing RPi marks CSV: "
-                    f"{rpi_marks_csv}"
-                )
+            if (not args.dry_run and not rpi_marks_csv.exists()):
+                msg = f"missing RPi marks CSV: {rpi_marks_csv}"
+                
 
                 missing_rpi_list.append(msg)
 
-                for stage in (
-                    "automatic_match",
-                    "hybrid_match",
-                    "manual_match",
-                ):
+                for stage in ("automatic_match", "hybrid_match", "manual_match"):
                     record(
                         all_results,
                         pair=pair,
@@ -594,9 +470,7 @@ def main() -> None:
                 continue
 
             if not args.dry_run:
-                auto_matched_csv.unlink(
-                    missing_ok=True
-                )
+                auto_matched_csv.unlink(missing_ok=True)
 
             # =========================================================
             # Automatic matching
@@ -663,10 +537,7 @@ def main() -> None:
                     manual_matched_csv=manual_matched_csv,
                 )
 
-            elif (
-                not args.dry_run
-                and not auto_matched_csv.exists()
-            ):
+            elif (not args.dry_run and not auto_matched_csv.exists()):
                 record(
                     all_results,
                     pair=pair,
@@ -679,10 +550,7 @@ def main() -> None:
                     ml_rootname=ml_rootname,
                     stage="automatic_match",
                     status="fail",
-                    message=(
-                        "matched-mark CSV not found "
-                        "after automatic matcher"
-                    ),
+                    message="matched-mark CSV not found after automatic matcher",
                     rpi_marks_csv=rpi_marks_csv,
                     auto_matched_csv=auto_matched_csv,
                     hybrid_matched_csv=hybrid_matched_csv,
@@ -702,10 +570,7 @@ def main() -> None:
                     ml_rootname=ml_rootname,
                     stage="automatic_match",
                     status="ok",
-                    message=(
-                        msg_match_auto
-                        or "automatic matching complete"
-                    ),
+                    message=(msg_match_auto or "automatic matching complete"),
                     rpi_marks_csv=rpi_marks_csv,
                     auto_matched_csv=auto_matched_csv,
                     hybrid_matched_csv=hybrid_matched_csv,
@@ -733,10 +598,7 @@ def main() -> None:
                     ml_rootname=ml_rootname,
                     stage="hybrid_match",
                     status="skip",
-                    message=(
-                        f"missing mark_singles CSV: "
-                        f"{mark_singles_csv}"
-                    ),
+                    message=f"missing mark_singles CSV: {mark_singles_csv}",
                     rpi_marks_csv=rpi_marks_csv,
                     auto_matched_csv=auto_matched_csv,
                     hybrid_matched_csv=hybrid_matched_csv,
@@ -825,10 +687,7 @@ def main() -> None:
                         ml_rootname=ml_rootname,
                         stage="hybrid_match",
                         status="fail",
-                        message=(
-                            "matched-mark CSV not found "
-                            "after hybrid matcher"
-                        ),
+                        message="matched-mark CSV not found after hybrid matcher",
                         rpi_marks_csv=rpi_marks_csv,
                         auto_matched_csv=auto_matched_csv,
                         hybrid_matched_csv=hybrid_matched_csv,
@@ -848,10 +707,7 @@ def main() -> None:
                         ml_rootname=ml_rootname,
                         stage="hybrid_match",
                         status="ok",
-                        message=(
-                            msg_match_hybrid
-                            or "hybrid matching complete"
-                        ),
+                        message=msg_match_hybrid or "hybrid matching complete",
                         rpi_marks_csv=rpi_marks_csv,
                         auto_matched_csv=auto_matched_csv,
                         hybrid_matched_csv=hybrid_matched_csv,
@@ -865,21 +721,11 @@ def main() -> None:
 
             manual_missing: list[str] = []
 
-            if (
-                not args.dry_run
-                and not mark_singles_csv.exists()
-            ):
-                manual_missing.append(
-                    f"mark_singles CSV: {mark_singles_csv}"
-                )
+            if (not args.dry_run and not mark_singles_csv.exists()):
+                manual_missing.append(f"mark_singles CSV: {mark_singles_csv}")
 
-            if (
-                not args.dry_run
-                and not mark_pairs_csv.exists()
-            ):
-                manual_missing.append(
-                    f"mark_matches CSV: {mark_pairs_csv}"
-                )
+            if (not args.dry_run and not mark_pairs_csv.exists()):
+                manual_missing.append(f"mark_matches CSV: {mark_pairs_csv}")
 
             if manual_missing:
                 record(
@@ -980,10 +826,7 @@ def main() -> None:
                         ml_rootname=ml_rootname,
                         stage="manual_match",
                         status="fail",
-                        message=(
-                            "matched-mark CSV not found "
-                            "after manual matcher"
-                        ),
+                        message="matched-mark CSV not found after manual matcher",
                         rpi_marks_csv=rpi_marks_csv,
                         auto_matched_csv=auto_matched_csv,
                         hybrid_matched_csv=hybrid_matched_csv,
@@ -1003,10 +846,7 @@ def main() -> None:
                         ml_rootname=ml_rootname,
                         stage="manual_match",
                         status="ok",
-                        message=(
-                            msg_match_manual
-                            or "manual matching complete"
-                        ),
+                        message=msg_match_manual or "manual matching complete",
                         rpi_marks_csv=rpi_marks_csv,
                         auto_matched_csv=auto_matched_csv,
                         hybrid_matched_csv=hybrid_matched_csv,
@@ -1014,63 +854,28 @@ def main() -> None:
                         output_path=str(manual_matched_csv),
                     )
 
-    summarize_results(
-        all_results
-    )
+    summarize_results(all_results)
 
     write_stage_report(
         all_results,
         args.stage_report_csv
-        or str(
-            debug_dir
-            / "mark_matching_stage_report.csv"
-        ),
+        or str(debug_dir / "mark_matching_stage_report.csv"),
     )
 
     if resolve_ml_fail_list:
-        pd.DataFrame(
-            resolve_ml_fail_list,
-            columns=["resolve_ml_csv_fails"],
-        ).to_csv(
-            debug_dir / "resolve_ml_fails.csv",
-            index=False,
-        )
+        pd.DataFrame(resolve_ml_fail_list, columns=["resolve_ml_csv_fails"],).to_csv(debug_dir / "resolve_ml_fails.csv", index=False)
 
     if ml_file_fail_list:
-        pd.DataFrame(
-            ml_file_fail_list,
-            columns=["ml_file_fails"],
-        ).to_csv(
-            debug_dir / "ml_file_fails.csv",
-            index=False,
-        )
+        pd.DataFrame(ml_file_fail_list, columns=["ml_file_fails"]).to_csv(debug_dir / "ml_file_fails.csv", index=False)
 
     if no_marks_list:
-        pd.DataFrame(
-            no_marks_list,
-            columns=["no_marks_files"],
-        ).to_csv(
-            debug_dir / "no_marks_files.csv",
-            index=False,
-        )
+        pd.DataFrame(no_marks_list, columns=["no_marks_files"]).to_csv(debug_dir / "no_marks_files.csv", index=False)
 
     if missing_like_list:
-        pd.DataFrame(
-            missing_like_list,
-            columns=["missingLikes"],
-        ).to_csv(
-            debug_dir / "missingLikes.csv",
-            index=False,
-        )
+        pd.DataFrame(missing_like_list, columns=["missingLikes"]).to_csv(debug_dir / "missingLikes.csv", index=False)
 
     if missing_rpi_list:
-        pd.DataFrame(
-            missing_rpi_list,
-            columns=["missingRpiMarks"],
-        ).to_csv(
-            debug_dir / "missingRpiMarks.csv",
-            index=False,
-        )
+        pd.DataFrame(missing_rpi_list, columns=["missingRpiMarks"]).to_csv(debug_dir / "missingRpiMarks.csv", index=False)
 
 
 if __name__ == "__main__":

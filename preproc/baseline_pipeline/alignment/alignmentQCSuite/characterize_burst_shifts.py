@@ -140,7 +140,7 @@ def characterize_session(path: Path) -> tuple[dict, pd.DataFrame]:
 
     burst_df = pd.DataFrame(burst_rows)
 
-    stable_bursts = burst_df.loc[burst_df["n_stable_marks"] > 0 & burst_df["stable_median_residual_s"].notna()].copy()
+    stable_bursts = burst_df.loc[(burst_df["n_stable_marks"] > 0) & burst_df["stable_median_residual_s"].notna()].copy()
 
     if stable_bursts.empty:
         raise ValueError(f"{path.name}: no bursts with stable marks")
@@ -212,7 +212,7 @@ def main() -> None:
     args = parse_args()
 
     root = Path(args.root)
-
+    print(root)
     if not root.exists():
         raise FileNotFoundError(root)
 

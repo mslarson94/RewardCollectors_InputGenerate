@@ -176,28 +176,27 @@ def main() -> None:
     ap = argparse.ArgumentParser(description="Batch global affine fitting from frozen automatic, hybrid, and manual ML/RPi mark correspondences.")
 
     ap.add_argument("--collated", required=True)
+    ap.add_argument("--sheet", default="MagicLeapFiles")
     ap.add_argument("--device-ip-map", required=True)
     ap.add_argument("--code-dir", required=True)
     ap.add_argument("--base-dir", required=True)
-
     ap.add_argument("--proc-dir", default="FreshStart")
     ap.add_argument("--events-dir-name", default="Events_Final_NoWalks")
-    ap.add_argument("--csv-timestamp-column", default="mLT_orig")
-    ap.add_argument("--event-type-column", default="lo_eventType")
-    ap.add_argument("--sheet", default="MagicLeapFiles")
+    ap.add_argument("--rpi-preproc-dir", required=True, help="RPi preprocessing directory relative to <base-dir>/<proc-dir>.")
     ap.add_argument("--out-dir", default="")
 
+    ap.add_argument("--csv-timestamp-column", default="mLT_orig")
+    ap.add_argument("--event-type-column", default="lo_eventType")
+    ap.add_argument("--blankRowTemplate", required=True)
+    
     ap.add_argument("--strip_ml_suffixes", default="_events_final,_processed")
     ap.add_argument("--only-rows-with-rpi", action="store_true")
     ap.add_argument("--dry-run", action="store_true")
     ap.add_argument("--debug", action="store_true")
-
-    ap.add_argument("--blankRowTemplate", required=True)
+    ap.add_argument("--stage-report-csv", default="")
 
     ap.add_argument("--sigma_clip", default="4.0")
-
-    ap.add_argument("--stage-report-csv", default="")
-    ap.add_argument("--rpi-preproc-dir", required=True, help="RPi preprocessing directory relative to <base-dir>/<proc-dir>.")
+    
     args = ap.parse_args()
 
     suffixes = [

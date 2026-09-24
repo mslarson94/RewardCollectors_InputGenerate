@@ -21,7 +21,6 @@ MATCH_REQUIRED_COLUMNS = {
     "events_mark_id",
     "rpi_mark_id",
     "events_time",
-    "rpi_time",
     "exclude",
     "reason",
 }
@@ -30,7 +29,6 @@ SINGLE_REQUIRED_COLUMNS = {
     "stream",
     "mark_id",
     "ordinal",
-    "mark_time",
     "matched_pair_id",
     "exclude",
     "reason",
@@ -149,15 +147,22 @@ def _prepare_single_stream(
     *,
     stream: str,
     candidate_times: pd.Series,
+    manual_time_column: str,
     tolerance_s: float,
 ) -> tuple[pd.DataFrame, list[dict]]:
+    if manual_time_column not in singles.columns:
+        raise KeyError(
+            f"manual singles CSV missing timestamp column "
+            f"{manual_time_column!r} for stream={stream!r}"
+        )
+
     rows = singles.loc[singles["stream"].astype(str).str.strip().str.lower().eq(stream.lower())].copy()
 
     if rows.empty:
         raise ValueError(f"manual singles CSV contains no stream={stream!r} rows")
 
     rows["ordinal"] = pd.to_numeric(rows["ordinal"], errors="raise").astype(int)
-    rows["manual_mark_time"] = pd.to_datetime(rows["mark_time"], errors="coerce")
+    rows["manual_mark_time"] = pd.to_datetime(rows[manual_time_column], errors="coerce")
     rows["manual_exclude"] = _as_bool(rows["exclude"])
     rows["mark_id"] = rows["mark_id"].astype(str).str.strip()
     rows["matched_pair_id"] = rows["matched_pair_id"].fillna("").astype(str).str.strip()
@@ -214,6 +219,7 @@ def _prepare_single_stream(
                 "mark_id": row["mark_id"],
                 "ordinal": ordinal,
                 "pair_id": row["matched_pair_id"],
+                "manual_time_column": manual_time_column,
                 "manual_time": manual_time,
                 "raw_time": raw_time,
                 "time_difference_s": delta_s,
@@ -226,7 +232,11 @@ def _prepare_single_stream(
         )
 
         if not time_ok:
-            raise ValueError(f"{stream} ordinal {ordinal} ({row['mark_id']}) manual timestamp does not match current candidate within {tolerance_s:.6f}s; difference={delta_s!r}s")
+            raise ValueError(
+                f"{stream} ordinal {ordinal} ({row['mark_id']}) manual timestamp "
+                f"from {manual_time_column!r} does not match current candidate "
+                f"within {tolerance_s:.6f}s; difference={delta_s!r}s"
+            )
 
         rows.at[idx, "raw_time"] = raw_time
 
@@ -252,6 +262,7 @@ def _validate_manual_pairs(
     *,
     events_lookup: dict[str, pd.Series],
     rpi_lookup: dict[str, pd.Series],
+    rpi_time_column: str,
     tolerance_s: float,
 ) -> tuple[
     dict[int, dict],
@@ -259,6 +270,12 @@ def _validate_manual_pairs(
     set[int],
     list[dict],
 ]:
+    if rpi_time_column not in matches.columns:
+        raise KeyError(
+            f"manual matches CSV missing requested RPi timestamp column "
+            f"{rpi_time_column!r}"
+        )
+
     work = matches.copy()
 
     work["pair_id"] = work["pair_id"].fillna("").astype(str).str.strip()
@@ -266,7 +283,7 @@ def _validate_manual_pairs(
     work["rpi_mark_id"] = work["rpi_mark_id"].fillna("").astype(str).str.strip()
     work["manual_pair_exclude"] = _as_bool(work["exclude"])
     work["manual_events_time"] = pd.to_datetime(work["events_time"], errors="coerce")
-    work["manual_rpi_time"] = pd.to_datetime(work["rpi_time"], errors="coerce")
+    work["manual_rpi_time"] = pd.to_datetime(work[rpi_time_column], errors="coerce")
     work["reason"] = work["reason"].fillna("").astype(str)
 
     duplicate_pair_id = work["pair_id"].duplicated(keep=False)
@@ -385,6 +402,7 @@ def _validate_manual_pairs(
                 "mark_id": f"{event_id}|{rpi_id}",
                 "ordinal": f"{ml_ordinal}|{rpi_ordinal}",
                 "pair_id": pair_id,
+                "manual_time_column": f"events_time|{rpi_time_column}",
                 "manual_time": f"{pair_event_time}|{pair_rpi_time}",
                 "raw_time": f"{current_ml_time}|{current_rpi_time}",
                 "time_difference_s": f"{event_delta_s}|{rpi_delta_s}",
@@ -511,6 +529,23 @@ def main() -> None:
     _require_columns(manual_matches, MATCH_REQUIRED_COLUMNS, "manual matches CSV")
     _require_columns(manual_singles, SINGLE_REQUIRED_COLUMNS, "manual singles CSV")
 
+    if args.rpi_time_type not in manual_matches.columns:
+        raise KeyError(
+            f"manual matches CSV missing requested RPi timestamp column "
+            f"{args.rpi_time_type!r}"
+        )
+
+    if "mark_time_orig" not in manual_singles.columns:
+        raise KeyError(
+            "manual singles CSV missing ML timestamp column 'mark_time_orig'"
+        )
+
+    if args.rpi_time_type not in manual_singles.columns:
+        raise KeyError(
+            f"manual singles CSV missing requested RPi timestamp column "
+            f"{args.rpi_time_type!r}"
+        )
+
     _validate_label_column(manual_matches, args.label, "manual matches CSV")
     _validate_label_column(manual_singles, args.label, "manual singles CSV")
 
@@ -518,6 +553,7 @@ def main() -> None:
         manual_singles,
         stream="events",
         candidate_times=ml_times,
+        manual_time_column="mark_time_orig",
         tolerance_s=args.manual_time_tolerance_s,
     )
 
@@ -525,19 +561,23 @@ def main() -> None:
         manual_singles,
         stream="rpi",
         candidate_times=rpi_times,
+        manual_time_column=args.rpi_time_type,
         tolerance_s=args.manual_time_tolerance_s,
     )
 
     events_lookup = _build_lookup(events_singles, "events")
     rpi_lookup = _build_lookup(rpi_singles, "rpi")
 
-    
-    accepted_by_ml_ordinal, used_ml_ordinals, used_rpi_ordinals, pair_audit = _validate_manual_pairs(
-    manual_matches,
-    events_lookup=events_lookup,
-    rpi_lookup=rpi_lookup,
-    tolerance_s=args.manual_time_tolerance_s,
-)
+
+    accepted_by_ml_ordinal, used_ml_ordinals, used_rpi_ordinals, pair_audit = (
+        _validate_manual_pairs(
+            manual_matches,
+            events_lookup=events_lookup,
+            rpi_lookup=rpi_lookup,
+            rpi_time_column=args.rpi_time_type,
+            tolerance_s=args.manual_time_tolerance_s,
+        )
+    )
 
     burst_ids, burst_positions, n_matched_bursts = _compute_burst_metadata(
         ml_times,

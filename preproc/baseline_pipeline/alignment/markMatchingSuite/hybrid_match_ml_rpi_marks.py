@@ -10,7 +10,7 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 
-from batchAlignHelpers import (
+from RC_utilities.alignHelpers.batchAlignHelpers import (
     _automatic_affine_alignment,
     _normalize_ml_stem,
     _select_mark_rows,
@@ -25,88 +25,127 @@ def _as_bool(series: pd.Series) -> pd.Series:
     return series.fillna("").astype(str).str.strip().str.lower().isin(truthy)
 
 
+def _choose_rpi_times_and_sources(rpi_df: pd.DataFrame, rpi_time_type: str,) -> tuple[pd.Series, pd.Series]:
+    if rpi_time_type not in rpi_df.columns:
+        raise KeyError(f"RPi timestamp column not found: {rpi_time_type!r}")
+
+    rpi_times = pd.to_datetime(rpi_df[rpi_time_type], errors="coerce")
+
+    rpi_sources = pd.Series(rpi_time_type, index=rpi_df.index, dtype="string")
+
+    return rpi_times, rpi_sources
+
+
 def _validate_and_get_exclusions(
     singles_df: pd.DataFrame,
     stream: str,
     candidate_times: pd.Series,
     *,
-    tolerance_s: float,
-) -> tuple[set[int], pd.DataFrame]:
-    """
-    Resolve exclusions by stream-local ordinal, while verifying that the
-    mark_singles timestamp at that ordinal matches the raw candidate timestamp.
+    manual_time_column: str,
+    tolerance_s: float) -> tuple[set[int], pd.DataFrame]:
 
-    This deliberately ignores matched_pair_id and does not consume manual pairs.
-    """
-    required = {"stream", "ordinal", "mark_time", "exclude"}
+    required = {
+        "stream",
+        "ordinal",
+        "exclude",
+        manual_time_column,
+    }
+
     missing = sorted(required - set(singles_df.columns))
+
     if missing:
         raise KeyError(f"mark_singles CSV missing required columns: {missing}")
 
     rows = singles_df.loc[
-        singles_df["stream"].astype(str).str.strip().str.lower() == stream.lower()
-    ].copy()
+        singles_df["stream"].astype(str).str.strip().str.lower().eq(stream.lower())].copy()
 
     if rows.empty:
-        raise ValueError(f"mark_singles CSV contains no stream='{stream}' rows")
+        raise ValueError(f"mark_singles CSV contains no stream={stream!r} rows")
 
     rows["ordinal"] = pd.to_numeric(rows["ordinal"], errors="raise").astype(int)
-    rows["manual_mark_time"] = pd.to_datetime(rows["mark_time"], errors="coerce")
+
+    rows["manual_mark_time"] = pd.to_datetime(rows[manual_time_column], errors="coerce")
+
     rows["manual_exclude"] = _as_bool(rows["exclude"])
 
     duplicates = rows["ordinal"].duplicated(keep=False)
+
     if duplicates.any():
         vals = sorted(rows.loc[duplicates, "ordinal"].unique().tolist())
-        raise ValueError(f"Duplicate {stream} ordinals in mark_singles CSV: {vals}")
+
+        raise ValueError( f"Duplicate {stream} ordinals in mark_singles CSV: {vals}")
 
     n = len(candidate_times)
+
     bad_ord = rows.loc[(rows["ordinal"] < 0) | (rows["ordinal"] >= n), "ordinal"]
+
     if len(bad_ord):
-        raise ValueError(
-            f"{stream} ordinal(s) outside raw candidate range 0..{n-1}: "
-            f"{sorted(bad_ord.tolist())}"
-        )
+        raise ValueError(f"{stream} ordinal(s) outside raw candidate range 0..{n - 1}: {sorted(bad_ord.tolist())}")
 
     raw_times = pd.to_datetime(candidate_times, errors="coerce").reset_index(drop=True)
+
     audit_rows = []
 
     for _, row in rows.sort_values("ordinal").iterrows():
+
         ordinal = int(row["ordinal"])
+
         manual_time = row["manual_mark_time"]
         raw_time = raw_times.iloc[ordinal]
 
         delta_s = np.nan
         time_ok = False
-        if pd.notna(manual_time) and pd.notna(raw_time):
+
+        if (pd.notna(manual_time) and pd.notna(raw_time)):
             delta_s = abs((raw_time - manual_time).total_seconds())
-            time_ok = delta_s <= float(tolerance_s)
 
-        audit_rows.append({
-            "stream": stream,
-            "ordinal": ordinal,
-            "manual_mark_time": manual_time,
-            "raw_mark_time": raw_time,
-            "time_difference_s": delta_s,
-            "time_check_ok": time_ok,
-            "manual_exclude": bool(row["manual_exclude"]),
-            "reason": row.get("reason", np.nan),
-            "mark_id": row.get("mark_id", np.nan),
-        })
+            time_ok = (delta_s <= float(tolerance_s))
 
-    audit = pd.DataFrame(audit_rows)
-    failures = audit.loc[~audit["time_check_ok"]]
-    if len(failures):
-        preview = failures.head(8)[
-            ["stream", "ordinal", "manual_mark_time", "raw_mark_time", "time_difference_s"]
-        ].to_dict("records")
-        raise ValueError(
-            f"mark_singles does not match the raw {stream} mark train within "
-            f"{tolerance_s:.6f}s. First mismatches: {preview}"
+        audit_rows.append(
+            {
+                "stream": stream,
+                "ordinal": ordinal,
+                "manual_time_column": manual_time_column,
+                "manual_mark_time": manual_time,
+                "raw_mark_time": raw_time,
+                "time_difference_s": delta_s,
+                "time_check_ok": time_ok,
+                "manual_exclude": bool(row["manual_exclude"]),
+                "reason": row.get("reason", np.nan),
+                "mark_id": row.get("mark_id", np.nan),
+            }
         )
 
-    exclusions = set(
-        audit.loc[audit["manual_exclude"], "ordinal"].astype(int).tolist()
+    audit = pd.DataFrame(
+        audit_rows
     )
+
+    failures = audit.loc[
+        ~audit["time_check_ok"]
+    ]
+
+    if len(failures):
+        preview = failures.head(8)[
+            [
+                "stream",
+                "ordinal",
+                "manual_time_column",
+                "manual_mark_time",
+                "raw_mark_time",
+                "time_difference_s",
+            ]
+        ].to_dict("records")
+
+        raise ValueError(
+            f"mark_singles does not match the raw "
+            f"{stream} mark train using "
+            f"{manual_time_column!r} within "
+            f"{tolerance_s:.6f}s. "
+            f"First mismatches: {preview}"
+        )
+
+    exclusions = set(audit.loc[audit["manual_exclude"], "ordinal"].astype(int).tolist())
+
     return exclusions, audit
 
 
@@ -158,6 +197,7 @@ def _parse_args() -> Args:
         help="Max raw-vs-mark_singles timestamp discrepancy allowed for ordinal validation.")
     ap.add_argument("--out_dir", default="")
     ap.add_argument("--strip-ml-suffixes", default="_events_final,_events,_final")
+    ap.add_argument("--strip_ml_suffixes", default="_events_final,_events,_final")
     
     ns = ap.parse_args()
     return Args(**vars(ns))
@@ -213,12 +253,14 @@ def main() -> None:
         singles_df,
         "events",
         ml_mark_times_raw,
+        manual_time_column="mark_time_orig",
         tolerance_s=args.manual_filter_time_tolerance_s,
     )
     rpi_excluded_ordinals, rpi_audit = _validate_and_get_exclusions(
         singles_df,
         "rpi",
         rpi_times_raw,
+        manual_time_column=args.rpi_time_type,
         tolerance_s=args.manual_filter_time_tolerance_s,
     )
 
@@ -558,9 +600,7 @@ def main() -> None:
         )
 
 
-    matches_df = pd.DataFrame(
-        rows
-    )
+    matches_df = pd.DataFrame(rows)
 
     # ---------------------------------------------------------
     # Output paths.
